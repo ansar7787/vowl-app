@@ -57,7 +57,6 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
   final ValueNotifier<bool> _isFlipped = ValueNotifier(false);
   final ValueNotifier<bool> _isAnimating = ValueNotifier(false);
   final ValueNotifier<bool> _showFlipHint = ValueNotifier(true);
-  final ValueNotifier<bool> _pendingTyping = ValueNotifier(false);
   final ScrollController _cardScrollController = ScrollController();
 
   // Progressive Monetization Gating: Words 1-5 free (index 0-4).
@@ -72,6 +71,7 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
   final ValueNotifier<String?> _translatedWord = ValueNotifier(null);
   final ValueNotifier<String?> _translatedDefinition = ValueNotifier(null);
   final ValueNotifier<String?> _translatedExample = ValueNotifier(null);
+  String? _targetLocale;
 
   @override
   void initState() {
@@ -127,8 +127,19 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
       DailyWordsLoadRequested(isPremium: isPremium),
     );
 
-    // Audio Pre-caching: Warm up TTS voice engine for instantaneous pronunciation
-    unawaited(_tts.reloadVoice());
+    // Audio Pre-caching: Warm up TTS voice engine for instantaneous pronunciation on low-budget devices
+    unawaited(_preCacheTtsAndTranslation());
+  }
+
+  Future<void> _preCacheTtsAndTranslation() async {
+    try {
+      await _tts.preWarm();
+      final targetLang = await _translationService.getTargetLanguageBcpCode();
+      if (targetLang != null && targetLang.isNotEmpty) {
+        _targetLocale = targetLang;
+        await _tts.preWarm(locale: targetLang);
+      }
+    } catch (_) {}
   }
 
   @override
@@ -142,7 +153,6 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
     _isFlipped.dispose();
     _isAnimating.dispose();
     _showFlipHint.dispose();
-    _pendingTyping.dispose();
     _cardScrollController.dispose();
     _unlockedUpToIndex.dispose();
     _translationUnlocked.dispose();
@@ -157,7 +167,6 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
     if (_isAnimating.value) return;
     _haptics.light();
     _showFlipHint.value = false;
-    _pendingTyping.value = false;
     _isFlipped.value = !_isFlipped.value;
     if (_isFlipped.value) {
       _flipController.forward();
@@ -522,27 +531,8 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
     return completer.future;
   }
 
-  Future<void> _initiateGotItConfirmation(DailyWord word) async {
-    if (_isAnimating.value || _pendingTyping.value) return;
-
-    _haptics.selection();
-    _pendingTyping.value = true;
-
-    // Auto-scroll immediately to bottom to show the TypeToConfirmOverlay
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      if (mounted && _cardScrollController.hasClients) {
-        _cardScrollController.animateTo(
-          _cardScrollController.position.maxScrollExtent,
-          duration: const Duration(milliseconds: 260),
-          curve: Curves.easeOutQuad,
-        );
-      }
-    });
-  }
-
-  Future<void> _executeGotIt(DailyWord word, {bool mastered = false}) async {
+  Future<void> _executeGotIt(DailyWord word, {bool mastered = true}) async {
     if (_isAnimating.value) return;
-    _pendingTyping.value = false;
     final state = context.read<DailyWordsBloc>().state;
     final isPremium = context.read<AuthBloc>().state.user?.isPremium ?? false;
 
@@ -595,7 +585,7 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
     _isFlipped.value = false;
     _isAnimating.value = false;
     _showFlipHint.value = true;
-    _translationUnlocked.value = isPremium;
+    _translationUnlocked.value = _translationUnlocked.value || isPremium;
     // Reset translations for the new card
     _translatedWord.value = null;
     _translatedDefinition.value = null;
@@ -612,7 +602,6 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
 
   Future<void> _markNeedsReviewAndNext(DailyWord word) async {
     if (_isAnimating.value) return;
-    _pendingTyping.value = false;
     final state = context.read<DailyWordsBloc>().state;
     final isPremium = context.read<AuthBloc>().state.user?.isPremium ?? false;
 
@@ -659,7 +648,7 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
     _isFlipped.value = false;
     _isAnimating.value = false;
     _showFlipHint.value = true;
-    _translationUnlocked.value = isPremium;
+    _translationUnlocked.value = _translationUnlocked.value || isPremium;
     _translatedWord.value = null;
     _translatedDefinition.value = null;
     _translatedExample.value = null;
@@ -675,7 +664,6 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
 
   Future<void> _navigatePrevious() async {
     if (_isAnimating.value) return;
-    _pendingTyping.value = false;
     final bloc = context.read<DailyWordsBloc>();
     if (!bloc.state.canGoPrevious) return;
 
@@ -695,7 +683,7 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
     _isAnimating.value = false;
     _showFlipHint.value = true;
     final isPremium = context.read<AuthBloc>().state.user?.isPremium ?? false;
-    _translationUnlocked.value = isPremium;
+    _translationUnlocked.value = _translationUnlocked.value || isPremium;
     _translatedWord.value = null;
     _translatedDefinition.value = null;
     _translatedExample.value = null;
@@ -706,9 +694,9 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
     _entranceController.forward();
   }
 
-  void _speakWord(String text, {double? rate}) {
+  void _speakWord(String text, {double? rate, String? locale}) {
     unawaited(_tts.stop());
-    _tts.speak(text, rate: rate);
+    _tts.speak(text, rate: rate, locale: locale);
     _haptics.selection();
   }
 
@@ -776,6 +764,12 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
 
   Future<void> _performTranslation(DailyWord word) async {
     try {
+      final targetLang = await _translationService.getTargetLanguageBcpCode();
+      if (targetLang != null && targetLang.isNotEmpty) {
+        _targetLocale = targetLang;
+        unawaited(_tts.preWarm(locale: targetLang));
+      }
+
       final tWord = await _translationService.translate(word.word);
       final tDef = await _translationService.translate(word.definition);
       final tEx = await _translationService.translate(word.example);
@@ -845,17 +839,11 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
         }
       },
       builder: (context, state) {
-        final canDirectPop =
-            (state.isSessionDone || state.currentIndex == 0) &&
-            !_pendingTyping.value;
+        final canDirectPop = state.isSessionDone || state.currentIndex == 0;
         return PopScope(
           canPop: canDirectPop,
           onPopInvokedWithResult: (didPop, result) {
             if (didPop) return;
-            if (_pendingTyping.value) {
-              _pendingTyping.value = false;
-              return;
-            }
             _confirmExitSession(state);
           },
           child: Scaffold(
@@ -1001,10 +989,6 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
                       child: GestureDetector(
                         onTap: () {
                           di.sl<HapticService>().light();
-                          if (_pendingTyping.value) {
-                            _pendingTyping.value = false;
-                            return;
-                          }
                           if (state.isSessionDone || state.currentIndex == 0) {
                             if (context.canPop()) {
                               context.pop();
@@ -1156,9 +1140,8 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
                     child: SlideTransition(
                       position: _entranceAnimation,
                       child: GestureDetector(
-                        onTap: _pendingTyping.value ? null : _toggleFlip,
-                        onHorizontalDragEnd:
-                            (_pendingTyping.value || _isAnimating.value)
+                        onTap: _toggleFlip,
+                        onHorizontalDragEnd: _isAnimating.value
                             ? null
                             : (details) {
                                 final velocity = details.primaryVelocity ?? 0.0;
@@ -1174,15 +1157,12 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
                                   // Swiped left -> Review Later
                                   _markNeedsReviewAndNext(word);
                                 } else if (velocity > 300) {
-                                  // Swiped right -> Got it! triggers type-to-confirm game mechanism
-                                  _initiateGotItConfirmation(word);
+                                  // Swiped right -> Got it!
+                                  _executeGotIt(word, mastered: true);
                                 }
                               },
                         child: AnimatedBuilder(
-                          animation: Listenable.merge([
-                            _flipAnimation,
-                            _pendingTyping,
-                          ]),
+                          animation: _flipAnimation,
                           builder: (context, child) {
                             final angle = _flipAnimation.value * 3.14159;
                             final showBack = _flipAnimation.value > 0.5;
@@ -1202,6 +1182,20 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
                                         onSpeak: () => _speakWord(word.word),
                                         onSpeakExample: () =>
                                             _speakWord(word.example),
+                                        onSpeakTranslatedDefinition:
+                                            _translatedDefinition.value != null
+                                            ? () => _speakWord(
+                                                _translatedDefinition.value!,
+                                                locale: _targetLocale,
+                                              )
+                                            : null,
+                                        onSpeakTranslatedExample:
+                                            _translatedExample.value != null
+                                            ? () => _speakWord(
+                                                _translatedExample.value!,
+                                                locale: _targetLocale,
+                                              )
+                                            : null,
                                         onTranslate: () =>
                                             _handleTranslate(word),
                                         isTranslating: _isTranslating.value,
@@ -1209,14 +1203,7 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
                                             _translatedDefinition.value,
                                         translatedExample:
                                             _translatedExample.value,
-                                        showTypeToConfirm: _pendingTyping.value,
                                         scrollController: _cardScrollController,
-                                        onTypingConfirmed: () =>
-                                            _executeGotIt(word, mastered: true),
-                                        onTypingSkipped: () => _executeGotIt(
-                                          word,
-                                          mastered: false,
-                                        ),
                                       ),
                                     )
                                   : WordCardFront(
@@ -1225,6 +1212,13 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
                                       onSpeak: () => _speakWord(word.word),
                                       onSpeakSlow: () =>
                                           _speakWord(word.word, rate: 0.28),
+                                      onSpeakTranslated:
+                                          _translatedWord.value != null
+                                          ? () => _speakWord(
+                                              _translatedWord.value!,
+                                              locale: _targetLocale,
+                                            )
+                                          : null,
                                       onTranslate: () => _handleTranslate(word),
                                       isTranslating: _isTranslating.value,
                                       translatedWord: _translatedWord.value,
@@ -1242,67 +1236,58 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
               ),
               Padding(
                 padding: EdgeInsets.fromLTRB(14.w, 0, 14.w, 16.h),
-                child: ValueListenableBuilder<bool>(
-                  valueListenable: _pendingTyping,
-                  builder: (context, isPendingTyping, _) {
-                    return AnimatedSwitcher(
-                      duration: const Duration(milliseconds: 180),
-                      switchInCurve: Curves.easeOutQuad,
-                      switchOutCurve: Curves.easeInQuad,
-                      transitionBuilder: (child, animation) {
-                        return FadeTransition(opacity: animation, child: child);
-                      },
-                      child: !_isFlipped.value
-                          ? ActionButton(
-                              key: const ValueKey('flip_btn'),
-                              label: context.tr(
-                                'daily_words.show_definition',
-                                fallback: 'Show Definition',
-                              ),
-                              icon: Icons.visibility_rounded,
-                              color: AppColors.indigo500,
-                              isDark: isDark,
-                              onTap: _toggleFlip,
-                            )
-                          : isPendingTyping
-                          ? const SizedBox.shrink(
-                              key: ValueKey('typing_active'),
-                            )
-                          : Row(
-                              key: const ValueKey('actions_row'),
-                              children: [
-                                Expanded(
-                                  child: ActionButton(
-                                    key: const ValueKey('skip_btn'),
-                                    label: context.tr(
-                                      'daily_words.skip',
-                                      fallback: 'Review Later',
-                                    ),
-                                    icon: Icons.replay_rounded,
-                                    color: AppColors.amber500,
-                                    isDark: isDark,
-                                    onTap: () => _markNeedsReviewAndNext(word),
-                                  ),
-                                ),
-                                SizedBox(width: 12.w),
-                                Expanded(
-                                  child: ActionButton(
-                                    key: const ValueKey('learned_btn'),
-                                    label: context.tr(
-                                      'daily_words.learned',
-                                      fallback: 'Got it!',
-                                    ),
-                                    icon: Icons.verified_rounded,
-                                    color: AppColors.emerald500,
-                                    isDark: isDark,
-                                    onTap: () =>
-                                        _initiateGotItConfirmation(word),
-                                  ),
-                                ),
-                              ],
-                            ),
-                    );
+                child: AnimatedSwitcher(
+                  duration: const Duration(milliseconds: 180),
+                  switchInCurve: Curves.easeOutQuad,
+                  switchOutCurve: Curves.easeInQuad,
+                  transitionBuilder: (child, animation) {
+                    return FadeTransition(opacity: animation, child: child);
                   },
+                  child: !_isFlipped.value
+                      ? ActionButton(
+                          key: const ValueKey('flip_btn'),
+                          label: context.tr(
+                            'daily_words.show_definition',
+                            fallback: 'Show Definition',
+                          ),
+                          icon: Icons.visibility_rounded,
+                          color: AppColors.indigo500,
+                          isDark: isDark,
+                          onTap: _toggleFlip,
+                        )
+                      : Row(
+                          key: const ValueKey('actions_row'),
+                          children: [
+                            Expanded(
+                              child: ActionButton(
+                                key: const ValueKey('skip_btn'),
+                                label: context.tr(
+                                  'daily_words.skip',
+                                  fallback: 'Review Later',
+                                ),
+                                icon: Icons.replay_rounded,
+                                color: AppColors.amber500,
+                                isDark: isDark,
+                                onTap: () => _markNeedsReviewAndNext(word),
+                              ),
+                            ),
+                            SizedBox(width: 12.w),
+                            Expanded(
+                              child: ActionButton(
+                                key: const ValueKey('learned_btn'),
+                                label: context.tr(
+                                  'daily_words.learned',
+                                  fallback: 'Got it!',
+                                ),
+                                icon: Icons.verified_rounded,
+                                color: AppColors.emerald500,
+                                isDark: isDark,
+                                onTap: () =>
+                                    _executeGotIt(word, mastered: true),
+                              ),
+                            ),
+                          ],
+                        ),
                 ),
               ),
             ],

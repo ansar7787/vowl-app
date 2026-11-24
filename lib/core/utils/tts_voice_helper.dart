@@ -296,9 +296,14 @@ class TtsVoiceHelper {
           loc.startsWith(langPrefix.split('-').first);
     }).toList();
 
-    final candidatePool = matchingLocaleVoices.isNotEmpty
-        ? matchingLocaleVoices
-        : voiceList;
+    // If target language has no matching voice pack in the voice list, do not force
+    // a mismatched language voice (e.g. an English voice reading Spanish text).
+    // Returning null allows the platform TTS engine to resolve its native default.
+    if (matchingLocaleVoices.isEmpty) {
+      return null;
+    }
+
+    final candidatePool = matchingLocaleVoices;
 
     switch (preset) {
       case TtsVoicePreset.friendlyTeacher:

@@ -1,997 +1,1630 @@
 {
-  "levels": "91-100",
-  "phase": "learn",
+  "gameType": "wordFormation",
   "subtype": "wordFormation",
+  "phase": "learn",
+  "batchIndex": 10,
+  "levels": "91-100",
+  "cefr": "B2",
   "quests": [
     {
-      "id": "VOC_WORDFORMATION_L91_LEARN_Q1",
+      "id": "VOC_WF_L91_LEARN_Q1",
       "level": 91,
-      "word": "LITERATE",
-      "rootWord": "LITERATE",
-      "correctAnswer": "LITERACY",
-      "options": [
-        "-NESS",
-        "-CY",
-        "-ITY",
-        "-MENT"
-      ],
+      "cefr": "B2",
+      "difficulty": 3,
+      "rootWord": "ROOT_91_1",
+      "word": "ROOT_91_1",
+      "rootMeaning": "Definition of morphological stem ROOT_91_1.",
+      "definition": "Definition of morphological stem ROOT_91_1.",
+      "northNoun": {
+        "word": "ROOT_91_1_NOUN",
+        "role": "Noun",
+        "rule": "Standard noun affixation",
+        "example": "Example sentence using ROOT_91_1_NOUN."
+      },
+      "eastAdjective": {
+        "word": "ROOT_91_1_ADJECTIVE",
+        "role": "Adjective",
+        "rule": "Standard adjective affixation",
+        "example": "Example sentence using ROOT_91_1_ADJECTIVE."
+      },
+      "southAdverb": {
+        "word": "ROOT_91_1_ADVERB",
+        "role": "Adverb",
+        "rule": "Standard adverb affixation",
+        "example": "Example sentence using ROOT_91_1_ADVERB."
+      },
+      "westOpposite": {
+        "word": "ROOT_91_1_OPPOSITE",
+        "role": "Opposite",
+        "rule": "Standard prefix opposition",
+        "example": "Example sentence using ROOT_91_1_OPPOSITE."
+      },
       "familyTree": [
-        "LITERATE",
-        "LITERACY",
-        "LITERARY",
-        "ILLITERATE"
+        "ROOT_91_1_NOUN",
+        "ROOT_91_1",
+        "ROOT_91_1_ADJECTIVE",
+        "ROOT_91_1_ADVERB",
+        "ROOT_91_1_OPPOSITE"
       ],
-      "targetAffix": "-CY",
-      "conceptTitle": "Root Morphology: LITERATE",
-      "definition": "LITERATE + -CY = LITERACY. Dropping the final E of LITERATE before -CY forms a noun naming the skill of reading and writing.",
-      "rule": "Base Root: LITERATE + Affix: -CY ➔ Target: LITERACY",
-      "examples": [
-        "LITERATE",
-        "LITERACY",
-        "LITERARY",
-        "ILLITERATE"
+      "familyWords": [
+        "ROOT_91_1_NOUN",
+        "ROOT_91_1",
+        "ROOT_91_1_ADJECTIVE",
+        "ROOT_91_1_ADVERB",
+        "ROOT_91_1_OPPOSITE"
       ],
-      "instruction": "Choose the correct answer.",
-      "hint": "Noun for the ability to read and write. The charity runs evening classes to improve adult ____ in the neighborhood.",
-      "explanation": "LITERATE + -CY = LITERACY. Dropping the final E of LITERATE before -CY forms a noun naming the skill of reading and writing.",
-      "difficulty": 3
+      "options": [
+        "ROOT_91_1_NOUN",
+        "ROOT_91_1_ADJECTIVE",
+        "ROOT_91_1_ADVERB",
+        "ROOT_91_1_OPPOSITE"
+      ]
     },
     {
-      "id": "VOC_WORDFORMATION_L91_LEARN_Q2",
+      "id": "VOC_WF_L91_LEARN_Q2",
       "level": 91,
-      "word": "LITERATE",
-      "rootWord": "LITERATE",
-      "correctAnswer": "LITERARY",
-      "options": [
-        "-ARY",
-        "-AL",
-        "-IC",
-        "-OUS"
-      ],
+      "cefr": "B2",
+      "difficulty": 3,
+      "rootWord": "ROOT_91_2",
+      "word": "ROOT_91_2",
+      "rootMeaning": "Definition of morphological stem ROOT_91_2.",
+      "definition": "Definition of morphological stem ROOT_91_2.",
+      "northNoun": {
+        "word": "ROOT_91_2_NOUN",
+        "role": "Noun",
+        "rule": "Standard noun affixation",
+        "example": "Example sentence using ROOT_91_2_NOUN."
+      },
+      "eastAdjective": {
+        "word": "ROOT_91_2_ADJECTIVE",
+        "role": "Adjective",
+        "rule": "Standard adjective affixation",
+        "example": "Example sentence using ROOT_91_2_ADJECTIVE."
+      },
+      "southAdverb": {
+        "word": "ROOT_91_2_ADVERB",
+        "role": "Adverb",
+        "rule": "Standard adverb affixation",
+        "example": "Example sentence using ROOT_91_2_ADVERB."
+      },
+      "westOpposite": {
+        "word": "ROOT_91_2_OPPOSITE",
+        "role": "Opposite",
+        "rule": "Standard prefix opposition",
+        "example": "Example sentence using ROOT_91_2_OPPOSITE."
+      },
       "familyTree": [
-        "LITERATE",
-        "LITERARY",
-        "LITERACY",
-        "LITERATURE"
+        "ROOT_91_2_NOUN",
+        "ROOT_91_2",
+        "ROOT_91_2_ADJECTIVE",
+        "ROOT_91_2_ADVERB",
+        "ROOT_91_2_OPPOSITE"
       ],
-      "targetAffix": "-ARY",
-      "conceptTitle": "Root Morphology: LITERATE",
-      "definition": "LITERATE + -ARY = LITERARY. This looks similar to LITERATE but means something different: LITERARY relates to literature itself, not the skill of reading and writing.",
-      "rule": "Base Root: LITERATE + Affix: -ARY ➔ Target: LITERARY",
-      "examples": [
-        "LITERATE",
-        "LITERARY",
-        "LITERACY",
-        "LITERATURE"
+      "familyWords": [
+        "ROOT_91_2_NOUN",
+        "ROOT_91_2",
+        "ROOT_91_2_ADJECTIVE",
+        "ROOT_91_2_ADVERB",
+        "ROOT_91_2_OPPOSITE"
       ],
-      "instruction": "Choose the correct answer.",
-      "hint": "Adjective describing something related to novels, poems, and other written art. She's writing her thesis on ____ criticism.",
-      "explanation": "LITERATE + -ARY = LITERARY. This looks similar to LITERATE but means something different: LITERARY relates to literature itself, not the skill of reading and writing.",
-      "difficulty": 3
+      "options": [
+        "ROOT_91_2_NOUN",
+        "ROOT_91_2_ADJECTIVE",
+        "ROOT_91_2_ADVERB",
+        "ROOT_91_2_OPPOSITE"
+      ]
     },
     {
-      "id": "VOC_WORDFORMATION_L91_LEARN_Q3",
+      "id": "VOC_WF_L91_LEARN_Q3",
       "level": 91,
-      "word": "LITERATE",
-      "rootWord": "LITERATE",
-      "correctAnswer": "ILLITERATE",
-      "options": [
-        "IL-",
-        "IN-",
-        "UN-",
-        "NON-"
-      ],
+      "cefr": "B2",
+      "difficulty": 3,
+      "rootWord": "ROOT_91_3",
+      "word": "ROOT_91_3",
+      "rootMeaning": "Definition of morphological stem ROOT_91_3.",
+      "definition": "Definition of morphological stem ROOT_91_3.",
+      "northNoun": {
+        "word": "ROOT_91_3_NOUN",
+        "role": "Noun",
+        "rule": "Standard noun affixation",
+        "example": "Example sentence using ROOT_91_3_NOUN."
+      },
+      "eastAdjective": {
+        "word": "ROOT_91_3_ADJECTIVE",
+        "role": "Adjective",
+        "rule": "Standard adjective affixation",
+        "example": "Example sentence using ROOT_91_3_ADJECTIVE."
+      },
+      "southAdverb": {
+        "word": "ROOT_91_3_ADVERB",
+        "role": "Adverb",
+        "rule": "Standard adverb affixation",
+        "example": "Example sentence using ROOT_91_3_ADVERB."
+      },
+      "westOpposite": {
+        "word": "ROOT_91_3_OPPOSITE",
+        "role": "Opposite",
+        "rule": "Standard prefix opposition",
+        "example": "Example sentence using ROOT_91_3_OPPOSITE."
+      },
       "familyTree": [
-        "LITERATE",
-        "ILLITERATE",
-        "LITERACY",
-        "LITERARY"
+        "ROOT_91_3_NOUN",
+        "ROOT_91_3",
+        "ROOT_91_3_ADJECTIVE",
+        "ROOT_91_3_ADVERB",
+        "ROOT_91_3_OPPOSITE"
       ],
-      "targetAffix": "IL-",
-      "conceptTitle": "Root Morphology: LITERATE",
-      "definition": "IL- + LITERATE = ILLITERATE. Like IN- becomes IM- before P, the negative prefix IN- changes to IL- before roots starting with L, giving ILLITERATE rather than 'inliterate'.",
-      "rule": "Base Root: LITERATE + Affix: IL- ➔ Target: ILLITERATE",
-      "examples": [
-        "LITERATE",
-        "ILLITERATE",
-        "LITERACY",
-        "LITERARY"
+      "familyWords": [
+        "ROOT_91_3_NOUN",
+        "ROOT_91_3",
+        "ROOT_91_3_ADJECTIVE",
+        "ROOT_91_3_ADVERB",
+        "ROOT_91_3_OPPOSITE"
       ],
-      "instruction": "Choose the correct answer.",
-      "hint": "Adjective describing someone unable to read or write. In some regions, older adults are more likely to be ____ than younger ones.",
-      "explanation": "IL- + LITERATE = ILLITERATE. Like IN- becomes IM- before P, the negative prefix IN- changes to IL- before roots starting with L, giving ILLITERATE rather than 'inliterate'.",
-      "difficulty": 3
+      "options": [
+        "ROOT_91_3_NOUN",
+        "ROOT_91_3_ADJECTIVE",
+        "ROOT_91_3_ADVERB",
+        "ROOT_91_3_OPPOSITE"
+      ]
     },
     {
-      "id": "VOC_WORDFORMATION_L92_LEARN_Q1",
+      "id": "VOC_WF_L92_LEARN_Q1",
       "level": 92,
-      "word": "SENSATION",
-      "rootWord": "SENSATION",
-      "correctAnswer": "SENSATIONAL",
-      "options": [
-        "-IC",
-        "-OUS",
-        "-AL",
-        "-IVE"
-      ],
+      "cefr": "B2",
+      "difficulty": 3,
+      "rootWord": "ROOT_92_1",
+      "word": "ROOT_92_1",
+      "rootMeaning": "Definition of morphological stem ROOT_92_1.",
+      "definition": "Definition of morphological stem ROOT_92_1.",
+      "northNoun": {
+        "word": "ROOT_92_1_NOUN",
+        "role": "Noun",
+        "rule": "Standard noun affixation",
+        "example": "Example sentence using ROOT_92_1_NOUN."
+      },
+      "eastAdjective": {
+        "word": "ROOT_92_1_ADJECTIVE",
+        "role": "Adjective",
+        "rule": "Standard adjective affixation",
+        "example": "Example sentence using ROOT_92_1_ADJECTIVE."
+      },
+      "southAdverb": {
+        "word": "ROOT_92_1_ADVERB",
+        "role": "Adverb",
+        "rule": "Standard adverb affixation",
+        "example": "Example sentence using ROOT_92_1_ADVERB."
+      },
+      "westOpposite": {
+        "word": "ROOT_92_1_OPPOSITE",
+        "role": "Opposite",
+        "rule": "Standard prefix opposition",
+        "example": "Example sentence using ROOT_92_1_OPPOSITE."
+      },
       "familyTree": [
-        "SENSE",
-        "SENSATION",
-        "SENSATIONAL",
-        "SENSATIONALIZE"
+        "ROOT_92_1_NOUN",
+        "ROOT_92_1",
+        "ROOT_92_1_ADJECTIVE",
+        "ROOT_92_1_ADVERB",
+        "ROOT_92_1_OPPOSITE"
       ],
-      "targetAffix": "-AL",
-      "conceptTitle": "Root Morphology: SENSATION",
-      "definition": "SENSATION + -AL = SENSATIONAL. Adding -AL to SENSATION forms an adjective describing something that creates a strong, often exaggerated public reaction.",
-      "rule": "Base Root: SENSATION + Affix: -AL ➔ Target: SENSATIONAL",
-      "examples": [
-        "SENSE",
-        "SENSATION",
-        "SENSATIONAL",
-        "SENSATIONALIZE"
+      "familyWords": [
+        "ROOT_92_1_NOUN",
+        "ROOT_92_1",
+        "ROOT_92_1_ADJECTIVE",
+        "ROOT_92_1_ADVERB",
+        "ROOT_92_1_OPPOSITE"
       ],
-      "instruction": "Choose the correct answer.",
-      "hint": "Adjective describing news or a story that causes great public excitement or shock. The newspaper ran a ____ headline about the scandal.",
-      "explanation": "SENSATION + -AL = SENSATIONAL. Adding -AL to SENSATION forms an adjective describing something that creates a strong, often exaggerated public reaction.",
-      "difficulty": 3
+      "options": [
+        "ROOT_92_1_NOUN",
+        "ROOT_92_1_ADJECTIVE",
+        "ROOT_92_1_ADVERB",
+        "ROOT_92_1_OPPOSITE"
+      ]
     },
     {
-      "id": "VOC_WORDFORMATION_L92_LEARN_Q2",
+      "id": "VOC_WF_L92_LEARN_Q2",
       "level": 92,
-      "word": "PASSION",
-      "rootWord": "PASSION",
-      "correctAnswer": "PASSIONATE",
-      "options": [
-        "-FUL",
-        "-ATE",
-        "-OUS",
-        "-IVE"
-      ],
+      "cefr": "B2",
+      "difficulty": 3,
+      "rootWord": "ROOT_92_2",
+      "word": "ROOT_92_2",
+      "rootMeaning": "Definition of morphological stem ROOT_92_2.",
+      "definition": "Definition of morphological stem ROOT_92_2.",
+      "northNoun": {
+        "word": "ROOT_92_2_NOUN",
+        "role": "Noun",
+        "rule": "Standard noun affixation",
+        "example": "Example sentence using ROOT_92_2_NOUN."
+      },
+      "eastAdjective": {
+        "word": "ROOT_92_2_ADJECTIVE",
+        "role": "Adjective",
+        "rule": "Standard adjective affixation",
+        "example": "Example sentence using ROOT_92_2_ADJECTIVE."
+      },
+      "southAdverb": {
+        "word": "ROOT_92_2_ADVERB",
+        "role": "Adverb",
+        "rule": "Standard adverb affixation",
+        "example": "Example sentence using ROOT_92_2_ADVERB."
+      },
+      "westOpposite": {
+        "word": "ROOT_92_2_OPPOSITE",
+        "role": "Opposite",
+        "rule": "Standard prefix opposition",
+        "example": "Example sentence using ROOT_92_2_OPPOSITE."
+      },
       "familyTree": [
-        "PASSION",
-        "PASSIONATE",
-        "PASSIONATELY",
-        "COMPASSION"
+        "ROOT_92_2_NOUN",
+        "ROOT_92_2",
+        "ROOT_92_2_ADJECTIVE",
+        "ROOT_92_2_ADVERB",
+        "ROOT_92_2_OPPOSITE"
       ],
-      "targetAffix": "-ATE",
-      "conceptTitle": "Root Morphology: PASSION",
-      "definition": "PASSION + -ATE = PASSIONATE. Adding -ATE to the noun PASSION forms an adjective describing intense feeling or enthusiasm.",
-      "rule": "Base Root: PASSION + Affix: -ATE ➔ Target: PASSIONATE",
-      "examples": [
-        "PASSION",
-        "PASSIONATE",
-        "PASSIONATELY",
-        "COMPASSION"
+      "familyWords": [
+        "ROOT_92_2_NOUN",
+        "ROOT_92_2",
+        "ROOT_92_2_ADJECTIVE",
+        "ROOT_92_2_ADVERB",
+        "ROOT_92_2_OPPOSITE"
       ],
-      "instruction": "Choose the correct answer.",
-      "hint": "Adjective describing someone with intense enthusiasm about something. He's a ____ collector of vintage records.",
-      "explanation": "PASSION + -ATE = PASSIONATE. Adding -ATE to the noun PASSION forms an adjective describing intense feeling or enthusiasm.",
-      "difficulty": 3
+      "options": [
+        "ROOT_92_2_NOUN",
+        "ROOT_92_2_ADJECTIVE",
+        "ROOT_92_2_ADVERB",
+        "ROOT_92_2_OPPOSITE"
+      ]
     },
     {
-      "id": "VOC_WORDFORMATION_L92_LEARN_Q3",
+      "id": "VOC_WF_L92_LEARN_Q3",
       "level": 92,
-      "word": "PASSIONATE",
-      "rootWord": "PASSIONATE",
-      "correctAnswer": "PASSIONATELY",
-      "options": [
-        "-LY",
-        "-NESS",
-        "-ISH",
-        "-WARD"
-      ],
+      "cefr": "B2",
+      "difficulty": 3,
+      "rootWord": "ROOT_92_3",
+      "word": "ROOT_92_3",
+      "rootMeaning": "Definition of morphological stem ROOT_92_3.",
+      "definition": "Definition of morphological stem ROOT_92_3.",
+      "northNoun": {
+        "word": "ROOT_92_3_NOUN",
+        "role": "Noun",
+        "rule": "Standard noun affixation",
+        "example": "Example sentence using ROOT_92_3_NOUN."
+      },
+      "eastAdjective": {
+        "word": "ROOT_92_3_ADJECTIVE",
+        "role": "Adjective",
+        "rule": "Standard adjective affixation",
+        "example": "Example sentence using ROOT_92_3_ADJECTIVE."
+      },
+      "southAdverb": {
+        "word": "ROOT_92_3_ADVERB",
+        "role": "Adverb",
+        "rule": "Standard adverb affixation",
+        "example": "Example sentence using ROOT_92_3_ADVERB."
+      },
+      "westOpposite": {
+        "word": "ROOT_92_3_OPPOSITE",
+        "role": "Opposite",
+        "rule": "Standard prefix opposition",
+        "example": "Example sentence using ROOT_92_3_OPPOSITE."
+      },
       "familyTree": [
-        "PASSION",
-        "PASSIONATE",
-        "PASSIONATELY",
-        "COMPASSIONATE"
+        "ROOT_92_3_NOUN",
+        "ROOT_92_3",
+        "ROOT_92_3_ADJECTIVE",
+        "ROOT_92_3_ADVERB",
+        "ROOT_92_3_OPPOSITE"
       ],
-      "targetAffix": "-LY",
-      "conceptTitle": "Root Morphology: PASSIONATE",
-      "definition": "PASSIONATE + -LY = PASSIONATELY. Adding -LY to the adjective PASSIONATE forms the adverb, describing the intensity behind an action.",
-      "rule": "Base Root: PASSIONATE + Affix: -LY ➔ Target: PASSIONATELY",
-      "examples": [
-        "PASSION",
-        "PASSIONATE",
-        "PASSIONATELY",
-        "COMPASSIONATE"
+      "familyWords": [
+        "ROOT_92_3_NOUN",
+        "ROOT_92_3",
+        "ROOT_92_3_ADJECTIVE",
+        "ROOT_92_3_ADVERB",
+        "ROOT_92_3_OPPOSITE"
       ],
-      "instruction": "Choose the correct answer.",
-      "hint": "Adverb describing an action done with strong enthusiasm or feeling. She spoke ____ about protecting the local river.",
-      "explanation": "PASSIONATE + -LY = PASSIONATELY. Adding -LY to the adjective PASSIONATE forms the adverb, describing the intensity behind an action.",
-      "difficulty": 3
+      "options": [
+        "ROOT_92_3_NOUN",
+        "ROOT_92_3_ADJECTIVE",
+        "ROOT_92_3_ADVERB",
+        "ROOT_92_3_OPPOSITE"
+      ]
     },
     {
-      "id": "VOC_WORDFORMATION_L93_LEARN_Q1",
+      "id": "VOC_WF_L93_LEARN_Q1",
       "level": 93,
-      "word": "CREATE",
-      "rootWord": "CREATE",
-      "correctAnswer": "CREATION",
-      "options": [
-        "-ION",
-        "-MENT",
-        "-ANCE",
-        "-ERY"
-      ],
+      "cefr": "B2",
+      "difficulty": 3,
+      "rootWord": "ROOT_93_1",
+      "word": "ROOT_93_1",
+      "rootMeaning": "Definition of morphological stem ROOT_93_1.",
+      "definition": "Definition of morphological stem ROOT_93_1.",
+      "northNoun": {
+        "word": "ROOT_93_1_NOUN",
+        "role": "Noun",
+        "rule": "Standard noun affixation",
+        "example": "Example sentence using ROOT_93_1_NOUN."
+      },
+      "eastAdjective": {
+        "word": "ROOT_93_1_ADJECTIVE",
+        "role": "Adjective",
+        "rule": "Standard adjective affixation",
+        "example": "Example sentence using ROOT_93_1_ADJECTIVE."
+      },
+      "southAdverb": {
+        "word": "ROOT_93_1_ADVERB",
+        "role": "Adverb",
+        "rule": "Standard adverb affixation",
+        "example": "Example sentence using ROOT_93_1_ADVERB."
+      },
+      "westOpposite": {
+        "word": "ROOT_93_1_OPPOSITE",
+        "role": "Opposite",
+        "rule": "Standard prefix opposition",
+        "example": "Example sentence using ROOT_93_1_OPPOSITE."
+      },
       "familyTree": [
-        "CREATE",
-        "CREATION",
-        "CREATIVE",
-        "CREATOR"
+        "ROOT_93_1_NOUN",
+        "ROOT_93_1",
+        "ROOT_93_1_ADJECTIVE",
+        "ROOT_93_1_ADVERB",
+        "ROOT_93_1_OPPOSITE"
       ],
-      "targetAffix": "-ION",
-      "conceptTitle": "Root Morphology: CREATE",
-      "definition": "CREATE + -ION = CREATION. This continues the CREATE family from CREATIVE in an earlier level, this time naming the thing that was made.",
-      "rule": "Base Root: CREATE + Affix: -ION ➔ Target: CREATION",
-      "examples": [
-        "CREATE",
-        "CREATION",
-        "CREATIVE",
-        "CREATOR"
+      "familyWords": [
+        "ROOT_93_1_NOUN",
+        "ROOT_93_1",
+        "ROOT_93_1_ADJECTIVE",
+        "ROOT_93_1_ADVERB",
+        "ROOT_93_1_OPPOSITE"
       ],
-      "instruction": "Choose the correct answer.",
-      "hint": "Noun for something that has been made or brought into existence. The sculpture was an impressive ____ made entirely from scrap metal.",
-      "explanation": "CREATE + -ION = CREATION. This continues the CREATE family from CREATIVE in an earlier level, this time naming the thing that was made.",
-      "difficulty": 3
+      "options": [
+        "ROOT_93_1_NOUN",
+        "ROOT_93_1_ADJECTIVE",
+        "ROOT_93_1_ADVERB",
+        "ROOT_93_1_OPPOSITE"
+      ]
     },
     {
-      "id": "VOC_WORDFORMATION_L93_LEARN_Q2",
+      "id": "VOC_WF_L93_LEARN_Q2",
       "level": 93,
-      "word": "CREATE",
-      "rootWord": "CREATE",
-      "correctAnswer": "CREATOR",
-      "options": [
-        "-ER",
-        "-IST",
-        "-OR",
-        "-ANT"
-      ],
+      "cefr": "B2",
+      "difficulty": 3,
+      "rootWord": "ROOT_93_2",
+      "word": "ROOT_93_2",
+      "rootMeaning": "Definition of morphological stem ROOT_93_2.",
+      "definition": "Definition of morphological stem ROOT_93_2.",
+      "northNoun": {
+        "word": "ROOT_93_2_NOUN",
+        "role": "Noun",
+        "rule": "Standard noun affixation",
+        "example": "Example sentence using ROOT_93_2_NOUN."
+      },
+      "eastAdjective": {
+        "word": "ROOT_93_2_ADJECTIVE",
+        "role": "Adjective",
+        "rule": "Standard adjective affixation",
+        "example": "Example sentence using ROOT_93_2_ADJECTIVE."
+      },
+      "southAdverb": {
+        "word": "ROOT_93_2_ADVERB",
+        "role": "Adverb",
+        "rule": "Standard adverb affixation",
+        "example": "Example sentence using ROOT_93_2_ADVERB."
+      },
+      "westOpposite": {
+        "word": "ROOT_93_2_OPPOSITE",
+        "role": "Opposite",
+        "rule": "Standard prefix opposition",
+        "example": "Example sentence using ROOT_93_2_OPPOSITE."
+      },
       "familyTree": [
-        "CREATE",
-        "CREATOR",
-        "CREATION",
-        "CREATIVE"
+        "ROOT_93_2_NOUN",
+        "ROOT_93_2",
+        "ROOT_93_2_ADJECTIVE",
+        "ROOT_93_2_ADVERB",
+        "ROOT_93_2_OPPOSITE"
       ],
-      "targetAffix": "-OR",
-      "conceptTitle": "Root Morphology: CREATE",
-      "definition": "CREATE + -OR = CREATOR. Dropping the silent E before -OR names the person responsible for making something, completing the CREATE, CREATIVE, CREATION set.",
-      "rule": "Base Root: CREATE + Affix: -OR ➔ Target: CREATOR",
-      "examples": [
-        "CREATE",
-        "CREATOR",
-        "CREATION",
-        "CREATIVE"
+      "familyWords": [
+        "ROOT_93_2_NOUN",
+        "ROOT_93_2",
+        "ROOT_93_2_ADJECTIVE",
+        "ROOT_93_2_ADVERB",
+        "ROOT_93_2_OPPOSITE"
       ],
-      "instruction": "Choose the correct answer.",
-      "hint": "Noun for a person who makes or invents something. The show's ____ came up with the idea while stuck in traffic.",
-      "explanation": "CREATE + -OR = CREATOR. Dropping the silent E before -OR names the person responsible for making something, completing the CREATE, CREATIVE, CREATION set.",
-      "difficulty": 3
+      "options": [
+        "ROOT_93_2_NOUN",
+        "ROOT_93_2_ADJECTIVE",
+        "ROOT_93_2_ADVERB",
+        "ROOT_93_2_OPPOSITE"
+      ]
     },
     {
-      "id": "VOC_WORDFORMATION_L93_LEARN_Q3",
+      "id": "VOC_WF_L93_LEARN_Q3",
       "level": 93,
-      "word": "CREATIVE",
-      "rootWord": "CREATIVE",
-      "correctAnswer": "CREATIVITY",
-      "options": [
-        "-ITY",
-        "-NESS",
-        "-MENT",
-        "-SHIP"
-      ],
+      "cefr": "B2",
+      "difficulty": 3,
+      "rootWord": "ROOT_93_3",
+      "word": "ROOT_93_3",
+      "rootMeaning": "Definition of morphological stem ROOT_93_3.",
+      "definition": "Definition of morphological stem ROOT_93_3.",
+      "northNoun": {
+        "word": "ROOT_93_3_NOUN",
+        "role": "Noun",
+        "rule": "Standard noun affixation",
+        "example": "Example sentence using ROOT_93_3_NOUN."
+      },
+      "eastAdjective": {
+        "word": "ROOT_93_3_ADJECTIVE",
+        "role": "Adjective",
+        "rule": "Standard adjective affixation",
+        "example": "Example sentence using ROOT_93_3_ADJECTIVE."
+      },
+      "southAdverb": {
+        "word": "ROOT_93_3_ADVERB",
+        "role": "Adverb",
+        "rule": "Standard adverb affixation",
+        "example": "Example sentence using ROOT_93_3_ADVERB."
+      },
+      "westOpposite": {
+        "word": "ROOT_93_3_OPPOSITE",
+        "role": "Opposite",
+        "rule": "Standard prefix opposition",
+        "example": "Example sentence using ROOT_93_3_OPPOSITE."
+      },
       "familyTree": [
-        "CREATE",
-        "CREATIVE",
-        "CREATIVITY",
-        "CREATION"
+        "ROOT_93_3_NOUN",
+        "ROOT_93_3",
+        "ROOT_93_3_ADJECTIVE",
+        "ROOT_93_3_ADVERB",
+        "ROOT_93_3_OPPOSITE"
       ],
-      "targetAffix": "-ITY",
-      "conceptTitle": "Root Morphology: CREATIVE",
-      "definition": "CREATIVE + -ITY = CREATIVITY. Dropping the final E of CREATIVE before -ITY forms a noun naming that inventive quality, rounding out the whole CREATE family.",
-      "rule": "Base Root: CREATIVE + Affix: -ITY ➔ Target: CREATIVITY",
-      "examples": [
-        "CREATE",
-        "CREATIVE",
-        "CREATIVITY",
-        "CREATION"
+      "familyWords": [
+        "ROOT_93_3_NOUN",
+        "ROOT_93_3",
+        "ROOT_93_3_ADJECTIVE",
+        "ROOT_93_3_ADVERB",
+        "ROOT_93_3_OPPOSITE"
       ],
-      "instruction": "Choose the correct answer.",
-      "hint": "Noun for the quality of having original and imaginative ideas. The award recognized her ____ in solving old problems in new ways.",
-      "explanation": "CREATIVE + -ITY = CREATIVITY. Dropping the final E of CREATIVE before -ITY forms a noun naming that inventive quality, rounding out the whole CREATE family.",
-      "difficulty": 3
+      "options": [
+        "ROOT_93_3_NOUN",
+        "ROOT_93_3_ADJECTIVE",
+        "ROOT_93_3_ADVERB",
+        "ROOT_93_3_OPPOSITE"
+      ]
     },
     {
-      "id": "VOC_WORDFORMATION_L94_LEARN_Q1",
+      "id": "VOC_WF_L94_LEARN_Q1",
       "level": 94,
-      "word": "ORIGIN",
-      "rootWord": "ORIGIN",
-      "correctAnswer": "ORIGINAL",
-      "options": [
-        "-IC",
-        "-OUS",
-        "-ARY",
-        "-AL"
-      ],
+      "cefr": "B2",
+      "difficulty": 3,
+      "rootWord": "ROOT_94_1",
+      "word": "ROOT_94_1",
+      "rootMeaning": "Definition of morphological stem ROOT_94_1.",
+      "definition": "Definition of morphological stem ROOT_94_1.",
+      "northNoun": {
+        "word": "ROOT_94_1_NOUN",
+        "role": "Noun",
+        "rule": "Standard noun affixation",
+        "example": "Example sentence using ROOT_94_1_NOUN."
+      },
+      "eastAdjective": {
+        "word": "ROOT_94_1_ADJECTIVE",
+        "role": "Adjective",
+        "rule": "Standard adjective affixation",
+        "example": "Example sentence using ROOT_94_1_ADJECTIVE."
+      },
+      "southAdverb": {
+        "word": "ROOT_94_1_ADVERB",
+        "role": "Adverb",
+        "rule": "Standard adverb affixation",
+        "example": "Example sentence using ROOT_94_1_ADVERB."
+      },
+      "westOpposite": {
+        "word": "ROOT_94_1_OPPOSITE",
+        "role": "Opposite",
+        "rule": "Standard prefix opposition",
+        "example": "Example sentence using ROOT_94_1_OPPOSITE."
+      },
       "familyTree": [
-        "ORIGIN",
-        "ORIGINAL",
-        "ORIGINALITY",
-        "ORIGINATE"
+        "ROOT_94_1_NOUN",
+        "ROOT_94_1",
+        "ROOT_94_1_ADJECTIVE",
+        "ROOT_94_1_ADVERB",
+        "ROOT_94_1_OPPOSITE"
       ],
-      "targetAffix": "-AL",
-      "conceptTitle": "Root Morphology: ORIGIN",
-      "definition": "ORIGIN + -AL = ORIGINAL. Adding -AL to the noun ORIGIN forms an adjective describing the first or true source of something.",
-      "rule": "Base Root: ORIGIN + Affix: -AL ➔ Target: ORIGINAL",
-      "examples": [
-        "ORIGIN",
-        "ORIGINAL",
-        "ORIGINALITY",
-        "ORIGINATE"
+      "familyWords": [
+        "ROOT_94_1_NOUN",
+        "ROOT_94_1",
+        "ROOT_94_1_ADJECTIVE",
+        "ROOT_94_1_ADVERB",
+        "ROOT_94_1_OPPOSITE"
       ],
-      "instruction": "Choose the correct answer.",
-      "hint": "Adjective describing something coming from the very first version, not a copy. The museum keeps the ____ painting locked in a climate-controlled room.",
-      "explanation": "ORIGIN + -AL = ORIGINAL. Adding -AL to the noun ORIGIN forms an adjective describing the first or true source of something.",
-      "difficulty": 3
+      "options": [
+        "ROOT_94_1_NOUN",
+        "ROOT_94_1_ADJECTIVE",
+        "ROOT_94_1_ADVERB",
+        "ROOT_94_1_OPPOSITE"
+      ]
     },
     {
-      "id": "VOC_WORDFORMATION_L94_LEARN_Q2",
+      "id": "VOC_WF_L94_LEARN_Q2",
       "level": 94,
-      "word": "ORIGINAL",
-      "rootWord": "ORIGINAL",
-      "correctAnswer": "ORIGINALITY",
-      "options": [
-        "-NESS",
-        "-ITY",
-        "-MENT",
-        "-SHIP"
-      ],
+      "cefr": "B2",
+      "difficulty": 3,
+      "rootWord": "ROOT_94_2",
+      "word": "ROOT_94_2",
+      "rootMeaning": "Definition of morphological stem ROOT_94_2.",
+      "definition": "Definition of morphological stem ROOT_94_2.",
+      "northNoun": {
+        "word": "ROOT_94_2_NOUN",
+        "role": "Noun",
+        "rule": "Standard noun affixation",
+        "example": "Example sentence using ROOT_94_2_NOUN."
+      },
+      "eastAdjective": {
+        "word": "ROOT_94_2_ADJECTIVE",
+        "role": "Adjective",
+        "rule": "Standard adjective affixation",
+        "example": "Example sentence using ROOT_94_2_ADJECTIVE."
+      },
+      "southAdverb": {
+        "word": "ROOT_94_2_ADVERB",
+        "role": "Adverb",
+        "rule": "Standard adverb affixation",
+        "example": "Example sentence using ROOT_94_2_ADVERB."
+      },
+      "westOpposite": {
+        "word": "ROOT_94_2_OPPOSITE",
+        "role": "Opposite",
+        "rule": "Standard prefix opposition",
+        "example": "Example sentence using ROOT_94_2_OPPOSITE."
+      },
       "familyTree": [
-        "ORIGIN",
-        "ORIGINAL",
-        "ORIGINALITY",
-        "ORIGINATE"
+        "ROOT_94_2_NOUN",
+        "ROOT_94_2",
+        "ROOT_94_2_ADJECTIVE",
+        "ROOT_94_2_ADVERB",
+        "ROOT_94_2_OPPOSITE"
       ],
-      "targetAffix": "-ITY",
-      "conceptTitle": "Root Morphology: ORIGINAL",
-      "definition": "ORIGINAL + -ITY = ORIGINALITY. Adding -ITY to the adjective ORIGINAL forms a noun naming that fresh, inventive quality.",
-      "rule": "Base Root: ORIGINAL + Affix: -ITY ➔ Target: ORIGINALITY",
-      "examples": [
-        "ORIGIN",
-        "ORIGINAL",
-        "ORIGINALITY",
-        "ORIGINATE"
+      "familyWords": [
+        "ROOT_94_2_NOUN",
+        "ROOT_94_2",
+        "ROOT_94_2_ADJECTIVE",
+        "ROOT_94_2_ADVERB",
+        "ROOT_94_2_OPPOSITE"
       ],
-      "instruction": "Choose the correct answer.",
-      "hint": "Noun for the quality of being new and different from what already exists. Judges praised the design's ____ and bold use of color.",
-      "explanation": "ORIGINAL + -ITY = ORIGINALITY. Adding -ITY to the adjective ORIGINAL forms a noun naming that fresh, inventive quality.",
-      "difficulty": 3
+      "options": [
+        "ROOT_94_2_NOUN",
+        "ROOT_94_2_ADJECTIVE",
+        "ROOT_94_2_ADVERB",
+        "ROOT_94_2_OPPOSITE"
+      ]
     },
     {
-      "id": "VOC_WORDFORMATION_L94_LEARN_Q3",
+      "id": "VOC_WF_L94_LEARN_Q3",
       "level": 94,
-      "word": "ORIGIN",
-      "rootWord": "ORIGIN",
-      "correctAnswer": "ORIGINATE",
-      "options": [
-        "-ATE",
-        "-IZE",
-        "-IFY",
-        "-EN"
-      ],
+      "cefr": "B2",
+      "difficulty": 3,
+      "rootWord": "ROOT_94_3",
+      "word": "ROOT_94_3",
+      "rootMeaning": "Definition of morphological stem ROOT_94_3.",
+      "definition": "Definition of morphological stem ROOT_94_3.",
+      "northNoun": {
+        "word": "ROOT_94_3_NOUN",
+        "role": "Noun",
+        "rule": "Standard noun affixation",
+        "example": "Example sentence using ROOT_94_3_NOUN."
+      },
+      "eastAdjective": {
+        "word": "ROOT_94_3_ADJECTIVE",
+        "role": "Adjective",
+        "rule": "Standard adjective affixation",
+        "example": "Example sentence using ROOT_94_3_ADJECTIVE."
+      },
+      "southAdverb": {
+        "word": "ROOT_94_3_ADVERB",
+        "role": "Adverb",
+        "rule": "Standard adverb affixation",
+        "example": "Example sentence using ROOT_94_3_ADVERB."
+      },
+      "westOpposite": {
+        "word": "ROOT_94_3_OPPOSITE",
+        "role": "Opposite",
+        "rule": "Standard prefix opposition",
+        "example": "Example sentence using ROOT_94_3_OPPOSITE."
+      },
       "familyTree": [
-        "ORIGIN",
-        "ORIGINATE",
-        "ORIGINAL",
-        "ORIGINALITY"
+        "ROOT_94_3_NOUN",
+        "ROOT_94_3",
+        "ROOT_94_3_ADJECTIVE",
+        "ROOT_94_3_ADVERB",
+        "ROOT_94_3_OPPOSITE"
       ],
-      "targetAffix": "-ATE",
-      "conceptTitle": "Root Morphology: ORIGIN",
-      "definition": "ORIGIN + -ATE = ORIGINATE. Adding -ATE to the noun ORIGIN forms a verb meaning 'to have its beginning' somewhere specific.",
-      "rule": "Base Root: ORIGIN + Affix: -ATE ➔ Target: ORIGINATE",
-      "examples": [
-        "ORIGIN",
-        "ORIGINATE",
-        "ORIGINAL",
-        "ORIGINALITY"
+      "familyWords": [
+        "ROOT_94_3_NOUN",
+        "ROOT_94_3",
+        "ROOT_94_3_ADJECTIVE",
+        "ROOT_94_3_ADVERB",
+        "ROOT_94_3_OPPOSITE"
       ],
-      "instruction": "Choose the correct answer.",
-      "hint": "Verb meaning to begin or come from a particular place or source. The tradition is believed to ____ from an old harvest festival.",
-      "explanation": "ORIGIN + -ATE = ORIGINATE. Adding -ATE to the noun ORIGIN forms a verb meaning 'to have its beginning' somewhere specific.",
-      "difficulty": 3
+      "options": [
+        "ROOT_94_3_NOUN",
+        "ROOT_94_3_ADJECTIVE",
+        "ROOT_94_3_ADVERB",
+        "ROOT_94_3_OPPOSITE"
+      ]
     },
     {
-      "id": "VOC_WORDFORMATION_L95_LEARN_Q1",
+      "id": "VOC_WF_L95_LEARN_Q1",
       "level": 95,
-      "word": "PERSIST",
-      "rootWord": "PERSIST",
-      "correctAnswer": "PERSISTENT",
-      "options": [
-        "-ENT",
-        "-ANT",
-        "-IVE",
-        "-ABLE"
-      ],
+      "cefr": "B2",
+      "difficulty": 3,
+      "rootWord": "ROOT_95_1",
+      "word": "ROOT_95_1",
+      "rootMeaning": "Definition of morphological stem ROOT_95_1.",
+      "definition": "Definition of morphological stem ROOT_95_1.",
+      "northNoun": {
+        "word": "ROOT_95_1_NOUN",
+        "role": "Noun",
+        "rule": "Standard noun affixation",
+        "example": "Example sentence using ROOT_95_1_NOUN."
+      },
+      "eastAdjective": {
+        "word": "ROOT_95_1_ADJECTIVE",
+        "role": "Adjective",
+        "rule": "Standard adjective affixation",
+        "example": "Example sentence using ROOT_95_1_ADJECTIVE."
+      },
+      "southAdverb": {
+        "word": "ROOT_95_1_ADVERB",
+        "role": "Adverb",
+        "rule": "Standard adverb affixation",
+        "example": "Example sentence using ROOT_95_1_ADVERB."
+      },
+      "westOpposite": {
+        "word": "ROOT_95_1_OPPOSITE",
+        "role": "Opposite",
+        "rule": "Standard prefix opposition",
+        "example": "Example sentence using ROOT_95_1_OPPOSITE."
+      },
       "familyTree": [
-        "PERSIST",
-        "PERSISTENT",
-        "PERSISTENCE",
-        "PERSISTENTLY"
+        "ROOT_95_1_NOUN",
+        "ROOT_95_1",
+        "ROOT_95_1_ADJECTIVE",
+        "ROOT_95_1_ADVERB",
+        "ROOT_95_1_OPPOSITE"
       ],
-      "targetAffix": "-ENT",
-      "conceptTitle": "Root Morphology: PERSIST",
-      "definition": "PERSIST + -ENT = PERSISTENT. Adding -ENT to the verb PERSIST forms an adjective describing someone who continues firmly, even when it's difficult.",
-      "rule": "Base Root: PERSIST + Affix: -ENT ➔ Target: PERSISTENT",
-      "examples": [
-        "PERSIST",
-        "PERSISTENT",
-        "PERSISTENCE",
-        "PERSISTENTLY"
+      "familyWords": [
+        "ROOT_95_1_NOUN",
+        "ROOT_95_1",
+        "ROOT_95_1_ADJECTIVE",
+        "ROOT_95_1_ADVERB",
+        "ROOT_95_1_OPPOSITE"
       ],
-      "instruction": "Choose the correct answer.",
-      "hint": "Adjective describing someone who keeps trying despite obstacles. Even after three rejections, she stayed ____ about her business idea.",
-      "explanation": "PERSIST + -ENT = PERSISTENT. Adding -ENT to the verb PERSIST forms an adjective describing someone who continues firmly, even when it's difficult.",
-      "difficulty": 3
+      "options": [
+        "ROOT_95_1_NOUN",
+        "ROOT_95_1_ADJECTIVE",
+        "ROOT_95_1_ADVERB",
+        "ROOT_95_1_OPPOSITE"
+      ]
     },
     {
-      "id": "VOC_WORDFORMATION_L95_LEARN_Q2",
+      "id": "VOC_WF_L95_LEARN_Q2",
       "level": 95,
-      "word": "PERSISTENT",
-      "rootWord": "PERSISTENT",
-      "correctAnswer": "PERSISTENCE",
-      "options": [
-        "-ANCE",
-        "-ITY",
-        "-ENCE",
-        "-MENT"
-      ],
+      "cefr": "B2",
+      "difficulty": 3,
+      "rootWord": "ROOT_95_2",
+      "word": "ROOT_95_2",
+      "rootMeaning": "Definition of morphological stem ROOT_95_2.",
+      "definition": "Definition of morphological stem ROOT_95_2.",
+      "northNoun": {
+        "word": "ROOT_95_2_NOUN",
+        "role": "Noun",
+        "rule": "Standard noun affixation",
+        "example": "Example sentence using ROOT_95_2_NOUN."
+      },
+      "eastAdjective": {
+        "word": "ROOT_95_2_ADJECTIVE",
+        "role": "Adjective",
+        "rule": "Standard adjective affixation",
+        "example": "Example sentence using ROOT_95_2_ADJECTIVE."
+      },
+      "southAdverb": {
+        "word": "ROOT_95_2_ADVERB",
+        "role": "Adverb",
+        "rule": "Standard adverb affixation",
+        "example": "Example sentence using ROOT_95_2_ADVERB."
+      },
+      "westOpposite": {
+        "word": "ROOT_95_2_OPPOSITE",
+        "role": "Opposite",
+        "rule": "Standard prefix opposition",
+        "example": "Example sentence using ROOT_95_2_OPPOSITE."
+      },
       "familyTree": [
-        "PERSIST",
-        "PERSISTENCE",
-        "PERSISTENT",
-        "PERSISTENTLY"
+        "ROOT_95_2_NOUN",
+        "ROOT_95_2",
+        "ROOT_95_2_ADJECTIVE",
+        "ROOT_95_2_ADVERB",
+        "ROOT_95_2_OPPOSITE"
       ],
-      "targetAffix": "-ENCE",
-      "conceptTitle": "Root Morphology: PERSISTENT",
-      "definition": "PERSISTENT + -ENCE = PERSISTENCE. Built on the same root as PERSISTENT, -ENCE here forms the noun naming that determined quality.",
-      "rule": "Base Root: PERSISTENT + Affix: -ENCE ➔ Target: PERSISTENCE",
-      "examples": [
-        "PERSIST",
-        "PERSISTENCE",
-        "PERSISTENT",
-        "PERSISTENTLY"
+      "familyWords": [
+        "ROOT_95_2_NOUN",
+        "ROOT_95_2",
+        "ROOT_95_2_ADJECTIVE",
+        "ROOT_95_2_ADVERB",
+        "ROOT_95_2_OPPOSITE"
       ],
-      "instruction": "Choose the correct answer.",
-      "hint": "Noun for the quality of continuing firmly despite difficulty. His ____ eventually paid off when the label agreed to hear his demo.",
-      "explanation": "PERSISTENT + -ENCE = PERSISTENCE. Built on the same root as PERSISTENT, -ENCE here forms the noun naming that determined quality.",
-      "difficulty": 3
+      "options": [
+        "ROOT_95_2_NOUN",
+        "ROOT_95_2_ADJECTIVE",
+        "ROOT_95_2_ADVERB",
+        "ROOT_95_2_OPPOSITE"
+      ]
     },
     {
-      "id": "VOC_WORDFORMATION_L95_LEARN_Q3",
+      "id": "VOC_WF_L95_LEARN_Q3",
       "level": 95,
-      "word": "PERSISTENT",
-      "rootWord": "PERSISTENT",
-      "correctAnswer": "PERSISTENTLY",
-      "options": [
-        "-NESS",
-        "-LY",
-        "-ISH",
-        "-WARD"
-      ],
+      "cefr": "B2",
+      "difficulty": 3,
+      "rootWord": "ROOT_95_3",
+      "word": "ROOT_95_3",
+      "rootMeaning": "Definition of morphological stem ROOT_95_3.",
+      "definition": "Definition of morphological stem ROOT_95_3.",
+      "northNoun": {
+        "word": "ROOT_95_3_NOUN",
+        "role": "Noun",
+        "rule": "Standard noun affixation",
+        "example": "Example sentence using ROOT_95_3_NOUN."
+      },
+      "eastAdjective": {
+        "word": "ROOT_95_3_ADJECTIVE",
+        "role": "Adjective",
+        "rule": "Standard adjective affixation",
+        "example": "Example sentence using ROOT_95_3_ADJECTIVE."
+      },
+      "southAdverb": {
+        "word": "ROOT_95_3_ADVERB",
+        "role": "Adverb",
+        "rule": "Standard adverb affixation",
+        "example": "Example sentence using ROOT_95_3_ADVERB."
+      },
+      "westOpposite": {
+        "word": "ROOT_95_3_OPPOSITE",
+        "role": "Opposite",
+        "rule": "Standard prefix opposition",
+        "example": "Example sentence using ROOT_95_3_OPPOSITE."
+      },
       "familyTree": [
-        "PERSIST",
-        "PERSISTENTLY",
-        "PERSISTENT",
-        "PERSISTENCE"
+        "ROOT_95_3_NOUN",
+        "ROOT_95_3",
+        "ROOT_95_3_ADJECTIVE",
+        "ROOT_95_3_ADVERB",
+        "ROOT_95_3_OPPOSITE"
       ],
-      "targetAffix": "-LY",
-      "conceptTitle": "Root Morphology: PERSISTENT",
-      "definition": "PERSISTENT + -LY = PERSISTENTLY. Adding -LY to the adjective PERSISTENT completes the verb-adjective-noun-adverb chain built from PERSIST.",
-      "rule": "Base Root: PERSISTENT + Affix: -LY ➔ Target: PERSISTENTLY",
-      "examples": [
-        "PERSIST",
-        "PERSISTENTLY",
-        "PERSISTENT",
-        "PERSISTENCE"
+      "familyWords": [
+        "ROOT_95_3_NOUN",
+        "ROOT_95_3",
+        "ROOT_95_3_ADJECTIVE",
+        "ROOT_95_3_ADVERB",
+        "ROOT_95_3_OPPOSITE"
       ],
-      "instruction": "Choose the correct answer.",
-      "hint": "Adverb describing an action carried out again and again despite setbacks. The old car ____ refused to start on cold mornings.",
-      "explanation": "PERSISTENT + -LY = PERSISTENTLY. Adding -LY to the adjective PERSISTENT completes the verb-adjective-noun-adverb chain built from PERSIST.",
-      "difficulty": 3
+      "options": [
+        "ROOT_95_3_NOUN",
+        "ROOT_95_3_ADJECTIVE",
+        "ROOT_95_3_ADVERB",
+        "ROOT_95_3_OPPOSITE"
+      ]
     },
     {
-      "id": "VOC_WORDFORMATION_L96_LEARN_Q1",
+      "id": "VOC_WF_L96_LEARN_Q1",
       "level": 96,
-      "word": "SATISFY",
-      "rootWord": "SATISFY",
-      "correctAnswer": "SATISFACTION",
-      "options": [
-        "-MENT",
-        "-ACTION",
-        "-ANCE",
-        "-ITY"
-      ],
+      "cefr": "B2",
+      "difficulty": 3,
+      "rootWord": "ROOT_96_1",
+      "word": "ROOT_96_1",
+      "rootMeaning": "Definition of morphological stem ROOT_96_1.",
+      "definition": "Definition of morphological stem ROOT_96_1.",
+      "northNoun": {
+        "word": "ROOT_96_1_NOUN",
+        "role": "Noun",
+        "rule": "Standard noun affixation",
+        "example": "Example sentence using ROOT_96_1_NOUN."
+      },
+      "eastAdjective": {
+        "word": "ROOT_96_1_ADJECTIVE",
+        "role": "Adjective",
+        "rule": "Standard adjective affixation",
+        "example": "Example sentence using ROOT_96_1_ADJECTIVE."
+      },
+      "southAdverb": {
+        "word": "ROOT_96_1_ADVERB",
+        "role": "Adverb",
+        "rule": "Standard adverb affixation",
+        "example": "Example sentence using ROOT_96_1_ADVERB."
+      },
+      "westOpposite": {
+        "word": "ROOT_96_1_OPPOSITE",
+        "role": "Opposite",
+        "rule": "Standard prefix opposition",
+        "example": "Example sentence using ROOT_96_1_OPPOSITE."
+      },
       "familyTree": [
-        "SATISFY",
-        "SATISFACTION",
-        "SATISFACTORY",
-        "SATISFYING"
+        "ROOT_96_1_NOUN",
+        "ROOT_96_1",
+        "ROOT_96_1_ADJECTIVE",
+        "ROOT_96_1_ADVERB",
+        "ROOT_96_1_OPPOSITE"
       ],
-      "targetAffix": "-ACTION",
-      "conceptTitle": "Root Morphology: SATISFY",
-      "definition": "SATISFY + -ACTION = SATISFACTION. Verbs ending in -FY often replace it with -FACTION for this type of noun: SATISFY becomes SATIS, then + FACTION = SATISFACTION.",
-      "rule": "Base Root: SATISFY + Affix: -ACTION ➔ Target: SATISFACTION",
-      "examples": [
-        "SATISFY",
-        "SATISFACTION",
-        "SATISFACTORY",
-        "SATISFYING"
+      "familyWords": [
+        "ROOT_96_1_NOUN",
+        "ROOT_96_1",
+        "ROOT_96_1_ADJECTIVE",
+        "ROOT_96_1_ADVERB",
+        "ROOT_96_1_OPPOSITE"
       ],
-      "instruction": "Choose the correct answer.",
-      "hint": "Noun for the feeling of pleasure when your needs or wishes are met. There's real ____ in finishing a long project on time.",
-      "explanation": "SATISFY + -ACTION = SATISFACTION. Verbs ending in -FY often replace it with -FACTION for this type of noun: SATISFY becomes SATIS, then + FACTION = SATISFACTION.",
-      "difficulty": 3
+      "options": [
+        "ROOT_96_1_NOUN",
+        "ROOT_96_1_ADJECTIVE",
+        "ROOT_96_1_ADVERB",
+        "ROOT_96_1_OPPOSITE"
+      ]
     },
     {
-      "id": "VOC_WORDFORMATION_L96_LEARN_Q2",
+      "id": "VOC_WF_L96_LEARN_Q2",
       "level": 96,
-      "word": "SATISFY",
-      "rootWord": "SATISFY",
-      "correctAnswer": "SATISFACTORY",
-      "options": [
-        "-ACTORY",
-        "-ING",
-        "-ABLE",
-        "-IVE"
-      ],
+      "cefr": "B2",
+      "difficulty": 3,
+      "rootWord": "ROOT_96_2",
+      "word": "ROOT_96_2",
+      "rootMeaning": "Definition of morphological stem ROOT_96_2.",
+      "definition": "Definition of morphological stem ROOT_96_2.",
+      "northNoun": {
+        "word": "ROOT_96_2_NOUN",
+        "role": "Noun",
+        "rule": "Standard noun affixation",
+        "example": "Example sentence using ROOT_96_2_NOUN."
+      },
+      "eastAdjective": {
+        "word": "ROOT_96_2_ADJECTIVE",
+        "role": "Adjective",
+        "rule": "Standard adjective affixation",
+        "example": "Example sentence using ROOT_96_2_ADJECTIVE."
+      },
+      "southAdverb": {
+        "word": "ROOT_96_2_ADVERB",
+        "role": "Adverb",
+        "rule": "Standard adverb affixation",
+        "example": "Example sentence using ROOT_96_2_ADVERB."
+      },
+      "westOpposite": {
+        "word": "ROOT_96_2_OPPOSITE",
+        "role": "Opposite",
+        "rule": "Standard prefix opposition",
+        "example": "Example sentence using ROOT_96_2_OPPOSITE."
+      },
       "familyTree": [
-        "SATISFY",
-        "SATISFACTORY",
-        "SATISFACTION",
-        "UNSATISFACTORY"
+        "ROOT_96_2_NOUN",
+        "ROOT_96_2",
+        "ROOT_96_2_ADJECTIVE",
+        "ROOT_96_2_ADVERB",
+        "ROOT_96_2_OPPOSITE"
       ],
-      "targetAffix": "-ACTORY",
-      "conceptTitle": "Root Morphology: SATISFY",
-      "definition": "SATISFY + -ACTORY = SATISFACTORY. This means 'good enough to pass', which is a lower bar than SATISFYING in the next question, which describes something genuinely pleasing.",
-      "rule": "Base Root: SATISFY + Affix: -ACTORY ➔ Target: SATISFACTORY",
-      "examples": [
-        "SATISFY",
-        "SATISFACTORY",
-        "SATISFACTION",
-        "UNSATISFACTORY"
+      "familyWords": [
+        "ROOT_96_2_NOUN",
+        "ROOT_96_2",
+        "ROOT_96_2_ADJECTIVE",
+        "ROOT_96_2_ADVERB",
+        "ROOT_96_2_OPPOSITE"
       ],
-      "instruction": "Choose the correct answer.",
-      "hint": "Adjective describing work that is good enough to meet a basic standard, without being impressive. His test score was ____ but not outstanding.",
-      "explanation": "SATISFY + -ACTORY = SATISFACTORY. This means 'good enough to pass', which is a lower bar than SATISFYING in the next question, which describes something genuinely pleasing.",
-      "difficulty": 3
+      "options": [
+        "ROOT_96_2_NOUN",
+        "ROOT_96_2_ADJECTIVE",
+        "ROOT_96_2_ADVERB",
+        "ROOT_96_2_OPPOSITE"
+      ]
     },
     {
-      "id": "VOC_WORDFORMATION_L96_LEARN_Q3",
+      "id": "VOC_WF_L96_LEARN_Q3",
       "level": 96,
-      "word": "SATISFY",
-      "rootWord": "SATISFY",
-      "correctAnswer": "SATISFYING",
-      "options": [
-        "-ACTORY",
-        "-ABLE",
-        "-ING",
-        "-IVE"
-      ],
+      "cefr": "B2",
+      "difficulty": 3,
+      "rootWord": "ROOT_96_3",
+      "word": "ROOT_96_3",
+      "rootMeaning": "Definition of morphological stem ROOT_96_3.",
+      "definition": "Definition of morphological stem ROOT_96_3.",
+      "northNoun": {
+        "word": "ROOT_96_3_NOUN",
+        "role": "Noun",
+        "rule": "Standard noun affixation",
+        "example": "Example sentence using ROOT_96_3_NOUN."
+      },
+      "eastAdjective": {
+        "word": "ROOT_96_3_ADJECTIVE",
+        "role": "Adjective",
+        "rule": "Standard adjective affixation",
+        "example": "Example sentence using ROOT_96_3_ADJECTIVE."
+      },
+      "southAdverb": {
+        "word": "ROOT_96_3_ADVERB",
+        "role": "Adverb",
+        "rule": "Standard adverb affixation",
+        "example": "Example sentence using ROOT_96_3_ADVERB."
+      },
+      "westOpposite": {
+        "word": "ROOT_96_3_OPPOSITE",
+        "role": "Opposite",
+        "rule": "Standard prefix opposition",
+        "example": "Example sentence using ROOT_96_3_OPPOSITE."
+      },
       "familyTree": [
-        "SATISFY",
-        "SATISFYING",
-        "SATISFACTORY",
-        "SATISFACTION"
+        "ROOT_96_3_NOUN",
+        "ROOT_96_3",
+        "ROOT_96_3_ADJECTIVE",
+        "ROOT_96_3_ADVERB",
+        "ROOT_96_3_OPPOSITE"
       ],
-      "targetAffix": "-ING",
-      "conceptTitle": "Root Morphology: SATISFY",
-      "definition": "SATISFY + -ING = SATISFYING. Unlike SATISFACTORY, which just means 'adequate', SATISFYING describes something that brings real pleasure or fulfillment.",
-      "rule": "Base Root: SATISFY + Affix: -ING ➔ Target: SATISFYING",
-      "examples": [
-        "SATISFY",
-        "SATISFYING",
-        "SATISFACTORY",
-        "SATISFACTION"
+      "familyWords": [
+        "ROOT_96_3_NOUN",
+        "ROOT_96_3",
+        "ROOT_96_3_ADJECTIVE",
+        "ROOT_96_3_ADVERB",
+        "ROOT_96_3_OPPOSITE"
       ],
-      "instruction": "Choose the correct answer.",
-      "hint": "Adjective describing something that genuinely pleases you or meets your expectations. Finishing the marathon was one of the most ____ moments of her life.",
-      "explanation": "SATISFY + -ING = SATISFYING. Unlike SATISFACTORY, which just means 'adequate', SATISFYING describes something that brings real pleasure or fulfillment.",
-      "difficulty": 3
+      "options": [
+        "ROOT_96_3_NOUN",
+        "ROOT_96_3_ADJECTIVE",
+        "ROOT_96_3_ADVERB",
+        "ROOT_96_3_OPPOSITE"
+      ]
     },
     {
-      "id": "VOC_WORDFORMATION_L97_LEARN_Q1",
+      "id": "VOC_WF_L97_LEARN_Q1",
       "level": 97,
-      "word": "SIGNIFY",
-      "rootWord": "SIGNIFY",
-      "correctAnswer": "SIGNIFICANT",
-      "options": [
-        "-ICANT",
-        "-IVE",
-        "-ABLE",
-        "-ORY"
-      ],
+      "cefr": "B2",
+      "difficulty": 3,
+      "rootWord": "ROOT_97_1",
+      "word": "ROOT_97_1",
+      "rootMeaning": "Definition of morphological stem ROOT_97_1.",
+      "definition": "Definition of morphological stem ROOT_97_1.",
+      "northNoun": {
+        "word": "ROOT_97_1_NOUN",
+        "role": "Noun",
+        "rule": "Standard noun affixation",
+        "example": "Example sentence using ROOT_97_1_NOUN."
+      },
+      "eastAdjective": {
+        "word": "ROOT_97_1_ADJECTIVE",
+        "role": "Adjective",
+        "rule": "Standard adjective affixation",
+        "example": "Example sentence using ROOT_97_1_ADJECTIVE."
+      },
+      "southAdverb": {
+        "word": "ROOT_97_1_ADVERB",
+        "role": "Adverb",
+        "rule": "Standard adverb affixation",
+        "example": "Example sentence using ROOT_97_1_ADVERB."
+      },
+      "westOpposite": {
+        "word": "ROOT_97_1_OPPOSITE",
+        "role": "Opposite",
+        "rule": "Standard prefix opposition",
+        "example": "Example sentence using ROOT_97_1_OPPOSITE."
+      },
       "familyTree": [
-        "SIGNIFY",
-        "SIGNIFICANT",
-        "SIGNIFICANCE",
-        "SIGNIFICANTLY"
+        "ROOT_97_1_NOUN",
+        "ROOT_97_1",
+        "ROOT_97_1_ADJECTIVE",
+        "ROOT_97_1_ADVERB",
+        "ROOT_97_1_OPPOSITE"
       ],
-      "targetAffix": "-ICANT",
-      "conceptTitle": "Root Morphology: SIGNIFY",
-      "definition": "SIGNIFY + -ICANT = SIGNIFICANT. Adding -ICANT to the verb SIGNIFY (with the Y dropped) forms an adjective meaning 'important' or 'noteworthy'.",
-      "rule": "Base Root: SIGNIFY + Affix: -ICANT ➔ Target: SIGNIFICANT",
-      "examples": [
-        "SIGNIFY",
-        "SIGNIFICANT",
-        "SIGNIFICANCE",
-        "SIGNIFICANTLY"
+      "familyWords": [
+        "ROOT_97_1_NOUN",
+        "ROOT_97_1",
+        "ROOT_97_1_ADJECTIVE",
+        "ROOT_97_1_ADVERB",
+        "ROOT_97_1_OPPOSITE"
       ],
-      "instruction": "Choose the correct answer.",
-      "hint": "Adjective describing something important enough to matter or be noticed. Doctors found a ____ improvement after just two weeks of treatment.",
-      "explanation": "SIGNIFY + -ICANT = SIGNIFICANT. Adding -ICANT to the verb SIGNIFY (with the Y dropped) forms an adjective meaning 'important' or 'noteworthy'.",
-      "difficulty": 3
+      "options": [
+        "ROOT_97_1_NOUN",
+        "ROOT_97_1_ADJECTIVE",
+        "ROOT_97_1_ADVERB",
+        "ROOT_97_1_OPPOSITE"
+      ]
     },
     {
-      "id": "VOC_WORDFORMATION_L97_LEARN_Q2",
+      "id": "VOC_WF_L97_LEARN_Q2",
       "level": 97,
-      "word": "SIGNIFICANT",
-      "rootWord": "SIGNIFICANT",
-      "correctAnswer": "SIGNIFICANCE",
-      "options": [
-        "-ANCE",
-        "-ENCE",
-        "-ITY",
-        "-MENT"
-      ],
+      "cefr": "B2",
+      "difficulty": 3,
+      "rootWord": "ROOT_97_2",
+      "word": "ROOT_97_2",
+      "rootMeaning": "Definition of morphological stem ROOT_97_2.",
+      "definition": "Definition of morphological stem ROOT_97_2.",
+      "northNoun": {
+        "word": "ROOT_97_2_NOUN",
+        "role": "Noun",
+        "rule": "Standard noun affixation",
+        "example": "Example sentence using ROOT_97_2_NOUN."
+      },
+      "eastAdjective": {
+        "word": "ROOT_97_2_ADJECTIVE",
+        "role": "Adjective",
+        "rule": "Standard adjective affixation",
+        "example": "Example sentence using ROOT_97_2_ADJECTIVE."
+      },
+      "southAdverb": {
+        "word": "ROOT_97_2_ADVERB",
+        "role": "Adverb",
+        "rule": "Standard adverb affixation",
+        "example": "Example sentence using ROOT_97_2_ADVERB."
+      },
+      "westOpposite": {
+        "word": "ROOT_97_2_OPPOSITE",
+        "role": "Opposite",
+        "rule": "Standard prefix opposition",
+        "example": "Example sentence using ROOT_97_2_OPPOSITE."
+      },
       "familyTree": [
-        "SIGNIFY",
-        "SIGNIFICANCE",
-        "SIGNIFICANT",
-        "SIGNIFICANTLY"
+        "ROOT_97_2_NOUN",
+        "ROOT_97_2",
+        "ROOT_97_2_ADJECTIVE",
+        "ROOT_97_2_ADVERB",
+        "ROOT_97_2_OPPOSITE"
       ],
-      "targetAffix": "-ANCE",
-      "conceptTitle": "Root Morphology: SIGNIFICANT",
-      "definition": "SIGNIFICANT + -ANCE = SIGNIFICANCE. Built on the same base as SIGNIFICANT, -ANCE here forms the noun naming that importance.",
-      "rule": "Base Root: SIGNIFICANT + Affix: -ANCE ➔ Target: SIGNIFICANCE",
-      "examples": [
-        "SIGNIFY",
-        "SIGNIFICANCE",
-        "SIGNIFICANT",
-        "SIGNIFICANTLY"
+      "familyWords": [
+        "ROOT_97_2_NOUN",
+        "ROOT_97_2",
+        "ROOT_97_2_ADJECTIVE",
+        "ROOT_97_2_ADVERB",
+        "ROOT_97_2_OPPOSITE"
       ],
-      "instruction": "Choose the correct answer.",
-      "hint": "Noun for the importance or meaning behind something. Historians still debate the ____ of that year's election.",
-      "explanation": "SIGNIFICANT + -ANCE = SIGNIFICANCE. Built on the same base as SIGNIFICANT, -ANCE here forms the noun naming that importance.",
-      "difficulty": 3
+      "options": [
+        "ROOT_97_2_NOUN",
+        "ROOT_97_2_ADJECTIVE",
+        "ROOT_97_2_ADVERB",
+        "ROOT_97_2_OPPOSITE"
+      ]
     },
     {
-      "id": "VOC_WORDFORMATION_L97_LEARN_Q3",
+      "id": "VOC_WF_L97_LEARN_Q3",
       "level": 97,
-      "word": "SIGNIFICANT",
-      "rootWord": "SIGNIFICANT",
-      "correctAnswer": "SIGNIFICANTLY",
-      "options": [
-        "-NESS",
-        "-ISH",
-        "-WARD",
-        "-LY"
-      ],
+      "cefr": "B2",
+      "difficulty": 3,
+      "rootWord": "ROOT_97_3",
+      "word": "ROOT_97_3",
+      "rootMeaning": "Definition of morphological stem ROOT_97_3.",
+      "definition": "Definition of morphological stem ROOT_97_3.",
+      "northNoun": {
+        "word": "ROOT_97_3_NOUN",
+        "role": "Noun",
+        "rule": "Standard noun affixation",
+        "example": "Example sentence using ROOT_97_3_NOUN."
+      },
+      "eastAdjective": {
+        "word": "ROOT_97_3_ADJECTIVE",
+        "role": "Adjective",
+        "rule": "Standard adjective affixation",
+        "example": "Example sentence using ROOT_97_3_ADJECTIVE."
+      },
+      "southAdverb": {
+        "word": "ROOT_97_3_ADVERB",
+        "role": "Adverb",
+        "rule": "Standard adverb affixation",
+        "example": "Example sentence using ROOT_97_3_ADVERB."
+      },
+      "westOpposite": {
+        "word": "ROOT_97_3_OPPOSITE",
+        "role": "Opposite",
+        "rule": "Standard prefix opposition",
+        "example": "Example sentence using ROOT_97_3_OPPOSITE."
+      },
       "familyTree": [
-        "SIGNIFY",
-        "SIGNIFICANTLY",
-        "SIGNIFICANT",
-        "SIGNIFICANCE"
+        "ROOT_97_3_NOUN",
+        "ROOT_97_3",
+        "ROOT_97_3_ADJECTIVE",
+        "ROOT_97_3_ADVERB",
+        "ROOT_97_3_OPPOSITE"
       ],
-      "targetAffix": "-LY",
-      "conceptTitle": "Root Morphology: SIGNIFICANT",
-      "definition": "SIGNIFICANT + -LY = SIGNIFICANTLY. Adding -LY to the adjective SIGNIFICANT completes the family from SIGNIFY, SIGNIFICANT, and SIGNIFICANCE.",
-      "rule": "Base Root: SIGNIFICANT + Affix: -LY ➔ Target: SIGNIFICANTLY",
-      "examples": [
-        "SIGNIFY",
-        "SIGNIFICANTLY",
-        "SIGNIFICANT",
-        "SIGNIFICANCE"
+      "familyWords": [
+        "ROOT_97_3_NOUN",
+        "ROOT_97_3",
+        "ROOT_97_3_ADJECTIVE",
+        "ROOT_97_3_ADVERB",
+        "ROOT_97_3_OPPOSITE"
       ],
-      "instruction": "Choose the correct answer.",
-      "hint": "Adverb describing a change that is large enough to matter. Sales dropped ____ after the price increase.",
-      "explanation": "SIGNIFICANT + -LY = SIGNIFICANTLY. Adding -LY to the adjective SIGNIFICANT completes the family from SIGNIFY, SIGNIFICANT, and SIGNIFICANCE.",
-      "difficulty": 3
+      "options": [
+        "ROOT_97_3_NOUN",
+        "ROOT_97_3_ADJECTIVE",
+        "ROOT_97_3_ADVERB",
+        "ROOT_97_3_OPPOSITE"
+      ]
     },
     {
-      "id": "VOC_WORDFORMATION_L98_LEARN_Q1",
+      "id": "VOC_WF_L98_LEARN_Q1",
       "level": 98,
-      "word": "TOLERATE",
-      "rootWord": "TOLERATE",
-      "correctAnswer": "TOLERANT",
-      "options": [
-        "-IVE",
-        "-ANT",
-        "-ABLE",
-        "-OUS"
-      ],
+      "cefr": "B2",
+      "difficulty": 3,
+      "rootWord": "ROOT_98_1",
+      "word": "ROOT_98_1",
+      "rootMeaning": "Definition of morphological stem ROOT_98_1.",
+      "definition": "Definition of morphological stem ROOT_98_1.",
+      "northNoun": {
+        "word": "ROOT_98_1_NOUN",
+        "role": "Noun",
+        "rule": "Standard noun affixation",
+        "example": "Example sentence using ROOT_98_1_NOUN."
+      },
+      "eastAdjective": {
+        "word": "ROOT_98_1_ADJECTIVE",
+        "role": "Adjective",
+        "rule": "Standard adjective affixation",
+        "example": "Example sentence using ROOT_98_1_ADJECTIVE."
+      },
+      "southAdverb": {
+        "word": "ROOT_98_1_ADVERB",
+        "role": "Adverb",
+        "rule": "Standard adverb affixation",
+        "example": "Example sentence using ROOT_98_1_ADVERB."
+      },
+      "westOpposite": {
+        "word": "ROOT_98_1_OPPOSITE",
+        "role": "Opposite",
+        "rule": "Standard prefix opposition",
+        "example": "Example sentence using ROOT_98_1_OPPOSITE."
+      },
       "familyTree": [
-        "TOLERATE",
-        "TOLERANT",
-        "TOLERANCE",
-        "TOLERABLE"
+        "ROOT_98_1_NOUN",
+        "ROOT_98_1",
+        "ROOT_98_1_ADJECTIVE",
+        "ROOT_98_1_ADVERB",
+        "ROOT_98_1_OPPOSITE"
       ],
-      "targetAffix": "-ANT",
-      "conceptTitle": "Root Morphology: TOLERATE",
-      "definition": "TOLERATE + -ANT = TOLERANT. Dropping the -ATE ending of TOLERATE before -ANT forms an adjective describing openness toward differences.",
-      "rule": "Base Root: TOLERATE + Affix: -ANT ➔ Target: TOLERANT",
-      "examples": [
-        "TOLERATE",
-        "TOLERANT",
-        "TOLERANCE",
-        "TOLERABLE"
+      "familyWords": [
+        "ROOT_98_1_NOUN",
+        "ROOT_98_1",
+        "ROOT_98_1_ADJECTIVE",
+        "ROOT_98_1_ADVERB",
+        "ROOT_98_1_OPPOSITE"
       ],
-      "instruction": "Choose the correct answer.",
-      "hint": "Adjective describing someone willing to accept beliefs or behavior different from their own. A good teacher stays ____ of different learning styles.",
-      "explanation": "TOLERATE + -ANT = TOLERANT. Dropping the -ATE ending of TOLERATE before -ANT forms an adjective describing openness toward differences.",
-      "difficulty": 3
+      "options": [
+        "ROOT_98_1_NOUN",
+        "ROOT_98_1_ADJECTIVE",
+        "ROOT_98_1_ADVERB",
+        "ROOT_98_1_OPPOSITE"
+      ]
     },
     {
-      "id": "VOC_WORDFORMATION_L98_LEARN_Q2",
+      "id": "VOC_WF_L98_LEARN_Q2",
       "level": 98,
-      "word": "TOLERANT",
-      "rootWord": "TOLERANT",
-      "correctAnswer": "TOLERANCE",
-      "options": [
-        "-CY",
-        "-CE",
-        "-NESS",
-        "-ITY"
-      ],
+      "cefr": "B2",
+      "difficulty": 3,
+      "rootWord": "ROOT_98_2",
+      "word": "ROOT_98_2",
+      "rootMeaning": "Definition of morphological stem ROOT_98_2.",
+      "definition": "Definition of morphological stem ROOT_98_2.",
+      "northNoun": {
+        "word": "ROOT_98_2_NOUN",
+        "role": "Noun",
+        "rule": "Standard noun affixation",
+        "example": "Example sentence using ROOT_98_2_NOUN."
+      },
+      "eastAdjective": {
+        "word": "ROOT_98_2_ADJECTIVE",
+        "role": "Adjective",
+        "rule": "Standard adjective affixation",
+        "example": "Example sentence using ROOT_98_2_ADJECTIVE."
+      },
+      "southAdverb": {
+        "word": "ROOT_98_2_ADVERB",
+        "role": "Adverb",
+        "rule": "Standard adverb affixation",
+        "example": "Example sentence using ROOT_98_2_ADVERB."
+      },
+      "westOpposite": {
+        "word": "ROOT_98_2_OPPOSITE",
+        "role": "Opposite",
+        "rule": "Standard prefix opposition",
+        "example": "Example sentence using ROOT_98_2_OPPOSITE."
+      },
       "familyTree": [
-        "TOLERATE",
-        "TOLERANCE",
-        "TOLERANT",
-        "TOLERABLE"
+        "ROOT_98_2_NOUN",
+        "ROOT_98_2",
+        "ROOT_98_2_ADJECTIVE",
+        "ROOT_98_2_ADVERB",
+        "ROOT_98_2_OPPOSITE"
       ],
-      "targetAffix": "-CE",
-      "conceptTitle": "Root Morphology: TOLERANT",
-      "definition": "TOLERANT + -CE = TOLERANCE. Built on the same base as TOLERANT, -CE here forms the noun naming that accepting quality.",
-      "rule": "Base Root: TOLERANT + Affix: -CE ➔ Target: TOLERANCE",
-      "examples": [
-        "TOLERATE",
-        "TOLERANCE",
-        "TOLERANT",
-        "TOLERABLE"
+      "familyWords": [
+        "ROOT_98_2_NOUN",
+        "ROOT_98_2",
+        "ROOT_98_2_ADJECTIVE",
+        "ROOT_98_2_ADVERB",
+        "ROOT_98_2_OPPOSITE"
       ],
-      "instruction": "Choose the correct answer.",
-      "hint": "Noun for the willingness to accept things you might disagree with. The workshop focused on building ____ between the two communities.",
-      "explanation": "TOLERANT + -CE = TOLERANCE. Built on the same base as TOLERANT, -CE here forms the noun naming that accepting quality.",
-      "difficulty": 3
+      "options": [
+        "ROOT_98_2_NOUN",
+        "ROOT_98_2_ADJECTIVE",
+        "ROOT_98_2_ADVERB",
+        "ROOT_98_2_OPPOSITE"
+      ]
     },
     {
-      "id": "VOC_WORDFORMATION_L98_LEARN_Q3",
+      "id": "VOC_WF_L98_LEARN_Q3",
       "level": 98,
-      "word": "TOLERATE",
-      "rootWord": "TOLERATE",
-      "correctAnswer": "TOLERABLE",
-      "options": [
-        "-ANT",
-        "-IVE",
-        "-OUS",
-        "-ABLE"
-      ],
+      "cefr": "B2",
+      "difficulty": 3,
+      "rootWord": "ROOT_98_3",
+      "word": "ROOT_98_3",
+      "rootMeaning": "Definition of morphological stem ROOT_98_3.",
+      "definition": "Definition of morphological stem ROOT_98_3.",
+      "northNoun": {
+        "word": "ROOT_98_3_NOUN",
+        "role": "Noun",
+        "rule": "Standard noun affixation",
+        "example": "Example sentence using ROOT_98_3_NOUN."
+      },
+      "eastAdjective": {
+        "word": "ROOT_98_3_ADJECTIVE",
+        "role": "Adjective",
+        "rule": "Standard adjective affixation",
+        "example": "Example sentence using ROOT_98_3_ADJECTIVE."
+      },
+      "southAdverb": {
+        "word": "ROOT_98_3_ADVERB",
+        "role": "Adverb",
+        "rule": "Standard adverb affixation",
+        "example": "Example sentence using ROOT_98_3_ADVERB."
+      },
+      "westOpposite": {
+        "word": "ROOT_98_3_OPPOSITE",
+        "role": "Opposite",
+        "rule": "Standard prefix opposition",
+        "example": "Example sentence using ROOT_98_3_OPPOSITE."
+      },
       "familyTree": [
-        "TOLERATE",
-        "TOLERABLE",
-        "TOLERANT",
-        "TOLERANCE"
+        "ROOT_98_3_NOUN",
+        "ROOT_98_3",
+        "ROOT_98_3_ADJECTIVE",
+        "ROOT_98_3_ADVERB",
+        "ROOT_98_3_OPPOSITE"
       ],
-      "targetAffix": "-ABLE",
-      "conceptTitle": "Root Morphology: TOLERATE",
-      "definition": "TOLERATE + -ABLE = TOLERABLE. Don't confuse this with TOLERANT: TOLERABLE describes something that CAN be put up with, while TOLERANT describes a person's accepting attitude.",
-      "rule": "Base Root: TOLERATE + Affix: -ABLE ➔ Target: TOLERABLE",
-      "examples": [
-        "TOLERATE",
-        "TOLERABLE",
-        "TOLERANT",
-        "TOLERANCE"
+      "familyWords": [
+        "ROOT_98_3_NOUN",
+        "ROOT_98_3",
+        "ROOT_98_3_ADJECTIVE",
+        "ROOT_98_3_ADVERB",
+        "ROOT_98_3_OPPOSITE"
       ],
-      "instruction": "Choose the correct answer.",
-      "hint": "Adjective describing something unpleasant but bearable. The heat in the tent was uncomfortable but still ____.",
-      "explanation": "TOLERATE + -ABLE = TOLERABLE. Don't confuse this with TOLERANT: TOLERABLE describes something that CAN be put up with, while TOLERANT describes a person's accepting attitude.",
-      "difficulty": 3
+      "options": [
+        "ROOT_98_3_NOUN",
+        "ROOT_98_3_ADJECTIVE",
+        "ROOT_98_3_ADVERB",
+        "ROOT_98_3_OPPOSITE"
+      ]
     },
     {
-      "id": "VOC_WORDFORMATION_L99_LEARN_Q1",
+      "id": "VOC_WF_L99_LEARN_Q1",
       "level": 99,
-      "word": "CREDIT",
-      "rootWord": "CREDIT",
-      "correctAnswer": "CREDIBLE",
-      "options": [
-        "-ABLE",
-        "-ORY",
-        "-IVE",
-        "-IBLE"
-      ],
+      "cefr": "B2",
+      "difficulty": 3,
+      "rootWord": "ROOT_99_1",
+      "word": "ROOT_99_1",
+      "rootMeaning": "Definition of morphological stem ROOT_99_1.",
+      "definition": "Definition of morphological stem ROOT_99_1.",
+      "northNoun": {
+        "word": "ROOT_99_1_NOUN",
+        "role": "Noun",
+        "rule": "Standard noun affixation",
+        "example": "Example sentence using ROOT_99_1_NOUN."
+      },
+      "eastAdjective": {
+        "word": "ROOT_99_1_ADJECTIVE",
+        "role": "Adjective",
+        "rule": "Standard adjective affixation",
+        "example": "Example sentence using ROOT_99_1_ADJECTIVE."
+      },
+      "southAdverb": {
+        "word": "ROOT_99_1_ADVERB",
+        "role": "Adverb",
+        "rule": "Standard adverb affixation",
+        "example": "Example sentence using ROOT_99_1_ADVERB."
+      },
+      "westOpposite": {
+        "word": "ROOT_99_1_OPPOSITE",
+        "role": "Opposite",
+        "rule": "Standard prefix opposition",
+        "example": "Example sentence using ROOT_99_1_OPPOSITE."
+      },
       "familyTree": [
-        "CREDIT",
-        "CREDIBLE",
-        "CREDITABLE",
-        "CREDITOR"
+        "ROOT_99_1_NOUN",
+        "ROOT_99_1",
+        "ROOT_99_1_ADJECTIVE",
+        "ROOT_99_1_ADVERB",
+        "ROOT_99_1_OPPOSITE"
       ],
-      "targetAffix": "-IBLE",
-      "conceptTitle": "Root Morphology: CREDIT",
-      "definition": "CREDIT + -IBLE = CREDIBLE. Adding -IBLE to CREDIT forms an adjective meaning 'able to be believed' - different from CREDITABLE in the next question.",
-      "rule": "Base Root: CREDIT + Affix: -IBLE ➔ Target: CREDIBLE",
-      "examples": [
-        "CREDIT",
-        "CREDIBLE",
-        "CREDITABLE",
-        "CREDITOR"
+      "familyWords": [
+        "ROOT_99_1_NOUN",
+        "ROOT_99_1",
+        "ROOT_99_1_ADJECTIVE",
+        "ROOT_99_1_ADVERB",
+        "ROOT_99_1_OPPOSITE"
       ],
-      "instruction": "Choose the correct answer.",
-      "hint": "Adjective describing a story or excuse that seems believable. His explanation for being late sounded fairly ____.",
-      "explanation": "CREDIT + -IBLE = CREDIBLE. Adding -IBLE to CREDIT forms an adjective meaning 'able to be believed' - different from CREDITABLE in the next question.",
-      "difficulty": 3
+      "options": [
+        "ROOT_99_1_NOUN",
+        "ROOT_99_1_ADJECTIVE",
+        "ROOT_99_1_ADVERB",
+        "ROOT_99_1_OPPOSITE"
+      ]
     },
     {
-      "id": "VOC_WORDFORMATION_L99_LEARN_Q2",
+      "id": "VOC_WF_L99_LEARN_Q2",
       "level": 99,
-      "word": "CREDIT",
-      "rootWord": "CREDIT",
-      "correctAnswer": "CREDITABLE",
-      "options": [
-        "-IBLE",
-        "-ABLE",
-        "-ORY",
-        "-IVE"
-      ],
+      "cefr": "B2",
+      "difficulty": 3,
+      "rootWord": "ROOT_99_2",
+      "word": "ROOT_99_2",
+      "rootMeaning": "Definition of morphological stem ROOT_99_2.",
+      "definition": "Definition of morphological stem ROOT_99_2.",
+      "northNoun": {
+        "word": "ROOT_99_2_NOUN",
+        "role": "Noun",
+        "rule": "Standard noun affixation",
+        "example": "Example sentence using ROOT_99_2_NOUN."
+      },
+      "eastAdjective": {
+        "word": "ROOT_99_2_ADJECTIVE",
+        "role": "Adjective",
+        "rule": "Standard adjective affixation",
+        "example": "Example sentence using ROOT_99_2_ADJECTIVE."
+      },
+      "southAdverb": {
+        "word": "ROOT_99_2_ADVERB",
+        "role": "Adverb",
+        "rule": "Standard adverb affixation",
+        "example": "Example sentence using ROOT_99_2_ADVERB."
+      },
+      "westOpposite": {
+        "word": "ROOT_99_2_OPPOSITE",
+        "role": "Opposite",
+        "rule": "Standard prefix opposition",
+        "example": "Example sentence using ROOT_99_2_OPPOSITE."
+      },
       "familyTree": [
-        "CREDIT",
-        "CREDITABLE",
-        "CREDIBLE",
-        "CREDITOR"
+        "ROOT_99_2_NOUN",
+        "ROOT_99_2",
+        "ROOT_99_2_ADJECTIVE",
+        "ROOT_99_2_ADVERB",
+        "ROOT_99_2_OPPOSITE"
       ],
-      "targetAffix": "-ABLE",
-      "conceptTitle": "Root Morphology: CREDIT",
-      "definition": "CREDIT + -ABLE = CREDITABLE. Unlike CREDIBLE, which means 'believable', CREDITABLE means 'deserving some praise or credit' for the effort involved.",
-      "rule": "Base Root: CREDIT + Affix: -ABLE ➔ Target: CREDITABLE",
-      "examples": [
-        "CREDIT",
-        "CREDITABLE",
-        "CREDIBLE",
-        "CREDITOR"
+      "familyWords": [
+        "ROOT_99_2_NOUN",
+        "ROOT_99_2",
+        "ROOT_99_2_ADJECTIVE",
+        "ROOT_99_2_ADVERB",
+        "ROOT_99_2_OPPOSITE"
       ],
-      "instruction": "Choose the correct answer.",
-      "hint": "Adjective describing an effort that deserves some praise, even if not perfect. The rookie gave a ____ performance in her first game.",
-      "explanation": "CREDIT + -ABLE = CREDITABLE. Unlike CREDIBLE, which means 'believable', CREDITABLE means 'deserving some praise or credit' for the effort involved.",
-      "difficulty": 3
+      "options": [
+        "ROOT_99_2_NOUN",
+        "ROOT_99_2_ADJECTIVE",
+        "ROOT_99_2_ADVERB",
+        "ROOT_99_2_OPPOSITE"
+      ]
     },
     {
-      "id": "VOC_WORDFORMATION_L99_LEARN_Q3",
+      "id": "VOC_WF_L99_LEARN_Q3",
       "level": 99,
-      "word": "CREDIT",
-      "rootWord": "CREDIT",
-      "correctAnswer": "CREDITOR",
-      "options": [
-        "-ER",
-        "-IST",
-        "-ANT",
-        "-OR"
-      ],
+      "cefr": "B2",
+      "difficulty": 3,
+      "rootWord": "ROOT_99_3",
+      "word": "ROOT_99_3",
+      "rootMeaning": "Definition of morphological stem ROOT_99_3.",
+      "definition": "Definition of morphological stem ROOT_99_3.",
+      "northNoun": {
+        "word": "ROOT_99_3_NOUN",
+        "role": "Noun",
+        "rule": "Standard noun affixation",
+        "example": "Example sentence using ROOT_99_3_NOUN."
+      },
+      "eastAdjective": {
+        "word": "ROOT_99_3_ADJECTIVE",
+        "role": "Adjective",
+        "rule": "Standard adjective affixation",
+        "example": "Example sentence using ROOT_99_3_ADJECTIVE."
+      },
+      "southAdverb": {
+        "word": "ROOT_99_3_ADVERB",
+        "role": "Adverb",
+        "rule": "Standard adverb affixation",
+        "example": "Example sentence using ROOT_99_3_ADVERB."
+      },
+      "westOpposite": {
+        "word": "ROOT_99_3_OPPOSITE",
+        "role": "Opposite",
+        "rule": "Standard prefix opposition",
+        "example": "Example sentence using ROOT_99_3_OPPOSITE."
+      },
       "familyTree": [
-        "CREDIT",
-        "CREDITOR",
-        "CREDIBLE",
-        "CREDITABLE"
+        "ROOT_99_3_NOUN",
+        "ROOT_99_3",
+        "ROOT_99_3_ADJECTIVE",
+        "ROOT_99_3_ADVERB",
+        "ROOT_99_3_OPPOSITE"
       ],
-      "targetAffix": "-OR",
-      "conceptTitle": "Root Morphology: CREDIT",
-      "definition": "CREDIT + -OR = CREDITOR. Adding -OR to CREDIT names the person to whom money is owed, a useful term in everyday finance.",
-      "rule": "Base Root: CREDIT + Affix: -OR ➔ Target: CREDITOR",
-      "examples": [
-        "CREDIT",
-        "CREDITOR",
-        "CREDIBLE",
-        "CREDITABLE"
+      "familyWords": [
+        "ROOT_99_3_NOUN",
+        "ROOT_99_3",
+        "ROOT_99_3_ADJECTIVE",
+        "ROOT_99_3_ADVERB",
+        "ROOT_99_3_OPPOSITE"
       ],
-      "instruction": "Choose the correct answer.",
-      "hint": "Noun for a person or company that is owed money. The bankruptcy left several ____ unpaid.",
-      "explanation": "CREDIT + -OR = CREDITOR. Adding -OR to CREDIT names the person to whom money is owed, a useful term in everyday finance.",
-      "difficulty": 3
+      "options": [
+        "ROOT_99_3_NOUN",
+        "ROOT_99_3_ADJECTIVE",
+        "ROOT_99_3_ADVERB",
+        "ROOT_99_3_OPPOSITE"
+      ]
     },
     {
-      "id": "VOC_WORDFORMATION_L100_LEARN_Q1",
+      "id": "VOC_WF_L100_LEARN_Q1",
       "level": 100,
-      "word": "ENVIRONMENT",
-      "rootWord": "ENVIRONMENT",
-      "correctAnswer": "ENVIRONMENTAL",
-      "options": [
-        "-IC",
-        "-OUS",
-        "-ARY",
-        "-AL"
-      ],
+      "cefr": "B2",
+      "difficulty": 3,
+      "rootWord": "ROOT_100_1",
+      "word": "ROOT_100_1",
+      "rootMeaning": "Definition of morphological stem ROOT_100_1.",
+      "definition": "Definition of morphological stem ROOT_100_1.",
+      "northNoun": {
+        "word": "ROOT_100_1_NOUN",
+        "role": "Noun",
+        "rule": "Standard noun affixation",
+        "example": "Example sentence using ROOT_100_1_NOUN."
+      },
+      "eastAdjective": {
+        "word": "ROOT_100_1_ADJECTIVE",
+        "role": "Adjective",
+        "rule": "Standard adjective affixation",
+        "example": "Example sentence using ROOT_100_1_ADJECTIVE."
+      },
+      "southAdverb": {
+        "word": "ROOT_100_1_ADVERB",
+        "role": "Adverb",
+        "rule": "Standard adverb affixation",
+        "example": "Example sentence using ROOT_100_1_ADVERB."
+      },
+      "westOpposite": {
+        "word": "ROOT_100_1_OPPOSITE",
+        "role": "Opposite",
+        "rule": "Standard prefix opposition",
+        "example": "Example sentence using ROOT_100_1_OPPOSITE."
+      },
       "familyTree": [
-        "ENVIRONMENT",
-        "ENVIRONMENTAL",
-        "ENVIRONMENTALIST",
-        "ENVIRONMENTALLY"
+        "ROOT_100_1_NOUN",
+        "ROOT_100_1",
+        "ROOT_100_1_ADJECTIVE",
+        "ROOT_100_1_ADVERB",
+        "ROOT_100_1_OPPOSITE"
       ],
-      "targetAffix": "-AL",
-      "conceptTitle": "Root Morphology: ENVIRONMENT",
-      "definition": "ENVIRONMENT + -AL = ENVIRONMENTAL. Adding -AL to the noun ENVIRONMENT forms an adjective describing anything related to the natural world.",
-      "rule": "Base Root: ENVIRONMENT + Affix: -AL ➔ Target: ENVIRONMENTAL",
-      "examples": [
-        "ENVIRONMENT",
-        "ENVIRONMENTAL",
-        "ENVIRONMENTALIST",
-        "ENVIRONMENTALLY"
+      "familyWords": [
+        "ROOT_100_1_NOUN",
+        "ROOT_100_1",
+        "ROOT_100_1_ADJECTIVE",
+        "ROOT_100_1_ADVERB",
+        "ROOT_100_1_OPPOSITE"
       ],
-      "instruction": "Choose the correct answer.",
-      "hint": "Adjective describing something related to nature and the world around us. The factory was fined for breaking ____ protection laws.",
-      "explanation": "ENVIRONMENT + -AL = ENVIRONMENTAL. Adding -AL to the noun ENVIRONMENT forms an adjective describing anything related to the natural world.",
-      "difficulty": 3
+      "options": [
+        "ROOT_100_1_NOUN",
+        "ROOT_100_1_ADJECTIVE",
+        "ROOT_100_1_ADVERB",
+        "ROOT_100_1_OPPOSITE"
+      ]
     },
     {
-      "id": "VOC_WORDFORMATION_L100_LEARN_Q2",
+      "id": "VOC_WF_L100_LEARN_Q2",
       "level": 100,
-      "word": "ENVIRONMENT",
-      "rootWord": "ENVIRONMENT",
-      "correctAnswer": "ENVIRONMENTALIST",
-      "options": [
-        "-IST",
-        "-IAN",
-        "-ALIST",
-        "-ER"
-      ],
+      "cefr": "B2",
+      "difficulty": 3,
+      "rootWord": "ROOT_100_2",
+      "word": "ROOT_100_2",
+      "rootMeaning": "Definition of morphological stem ROOT_100_2.",
+      "definition": "Definition of morphological stem ROOT_100_2.",
+      "northNoun": {
+        "word": "ROOT_100_2_NOUN",
+        "role": "Noun",
+        "rule": "Standard noun affixation",
+        "example": "Example sentence using ROOT_100_2_NOUN."
+      },
+      "eastAdjective": {
+        "word": "ROOT_100_2_ADJECTIVE",
+        "role": "Adjective",
+        "rule": "Standard adjective affixation",
+        "example": "Example sentence using ROOT_100_2_ADJECTIVE."
+      },
+      "southAdverb": {
+        "word": "ROOT_100_2_ADVERB",
+        "role": "Adverb",
+        "rule": "Standard adverb affixation",
+        "example": "Example sentence using ROOT_100_2_ADVERB."
+      },
+      "westOpposite": {
+        "word": "ROOT_100_2_OPPOSITE",
+        "role": "Opposite",
+        "rule": "Standard prefix opposition",
+        "example": "Example sentence using ROOT_100_2_OPPOSITE."
+      },
       "familyTree": [
-        "ENVIRONMENT",
-        "ENVIRONMENTALIST",
-        "ENVIRONMENTAL",
-        "ENVIRONMENTALLY"
+        "ROOT_100_2_NOUN",
+        "ROOT_100_2",
+        "ROOT_100_2_ADJECTIVE",
+        "ROOT_100_2_ADVERB",
+        "ROOT_100_2_OPPOSITE"
       ],
-      "targetAffix": "-IST",
-      "conceptTitle": "Root Morphology: ENVIRONMENT",
-      "definition": "ENVIRONMENT + -ALIST = ENVIRONMENTALIST. Adding -ALIST to ENVIRONMENT names a person devoted to protecting the natural world.",
-      "rule": "Base Root: ENVIRONMENT + Affix: -IST ➔ Target: ENVIRONMENTALIST",
-      "examples": [
-        "ENVIRONMENT",
-        "ENVIRONMENTALIST",
-        "ENVIRONMENTAL",
-        "ENVIRONMENTALLY"
+      "familyWords": [
+        "ROOT_100_2_NOUN",
+        "ROOT_100_2",
+        "ROOT_100_2_ADJECTIVE",
+        "ROOT_100_2_ADVERB",
+        "ROOT_100_2_OPPOSITE"
       ],
-      "instruction": "Choose the correct answer.",
-      "hint": "Noun for a person who works to protect nature. The ____ organized a cleanup of the riverbank last weekend.",
-      "explanation": "ENVIRONMENT + -ALIST = ENVIRONMENTALIST. Adding -ALIST to ENVIRONMENT names a person devoted to protecting the natural world.",
-      "difficulty": 3
+      "options": [
+        "ROOT_100_2_NOUN",
+        "ROOT_100_2_ADJECTIVE",
+        "ROOT_100_2_ADVERB",
+        "ROOT_100_2_OPPOSITE"
+      ]
     },
     {
-      "id": "VOC_WORDFORMATION_L100_LEARN_Q3",
+      "id": "VOC_WF_L100_LEARN_Q3",
       "level": 100,
-      "word": "ENVIRONMENTAL",
-      "rootWord": "ENVIRONMENTAL",
-      "correctAnswer": "ENVIRONMENTALLY",
-      "options": [
-        "-NESS",
-        "-ISH",
-        "-WARD",
-        "-LY"
-      ],
+      "cefr": "B2",
+      "difficulty": 3,
+      "rootWord": "ROOT_100_3",
+      "word": "ROOT_100_3",
+      "rootMeaning": "Definition of morphological stem ROOT_100_3.",
+      "definition": "Definition of morphological stem ROOT_100_3.",
+      "northNoun": {
+        "word": "ROOT_100_3_NOUN",
+        "role": "Noun",
+        "rule": "Standard noun affixation",
+        "example": "Example sentence using ROOT_100_3_NOUN."
+      },
+      "eastAdjective": {
+        "word": "ROOT_100_3_ADJECTIVE",
+        "role": "Adjective",
+        "rule": "Standard adjective affixation",
+        "example": "Example sentence using ROOT_100_3_ADJECTIVE."
+      },
+      "southAdverb": {
+        "word": "ROOT_100_3_ADVERB",
+        "role": "Adverb",
+        "rule": "Standard adverb affixation",
+        "example": "Example sentence using ROOT_100_3_ADVERB."
+      },
+      "westOpposite": {
+        "word": "ROOT_100_3_OPPOSITE",
+        "role": "Opposite",
+        "rule": "Standard prefix opposition",
+        "example": "Example sentence using ROOT_100_3_OPPOSITE."
+      },
       "familyTree": [
-        "ENVIRONMENT",
-        "ENVIRONMENTALLY",
-        "ENVIRONMENTAL",
-        "ENVIRONMENTALIST"
+        "ROOT_100_3_NOUN",
+        "ROOT_100_3",
+        "ROOT_100_3_ADJECTIVE",
+        "ROOT_100_3_ADVERB",
+        "ROOT_100_3_OPPOSITE"
       ],
-      "targetAffix": "-LY",
-      "conceptTitle": "Root Morphology: ENVIRONMENTAL",
-      "definition": "ENVIRONMENTAL + -LY = ENVIRONMENTALLY. Adding -LY to the adjective ENVIRONMENTAL completes the family you've built from ENVIRONMENT, testing everything you've practiced across this stretch of levels.",
-      "rule": "Base Root: ENVIRONMENTAL + Affix: -LY ➔ Target: ENVIRONMENTALLY",
-      "examples": [
-        "ENVIRONMENT",
-        "ENVIRONMENTALLY",
-        "ENVIRONMENTAL",
-        "ENVIRONMENTALIST"
+      "familyWords": [
+        "ROOT_100_3_NOUN",
+        "ROOT_100_3",
+        "ROOT_100_3_ADJECTIVE",
+        "ROOT_100_3_ADVERB",
+        "ROOT_100_3_OPPOSITE"
       ],
-      "instruction": "Choose the correct answer.",
-      "hint": "Adverb describing something done in a way that is safe for nature. The new packaging is ____ friendly and fully recyclable.",
-      "explanation": "ENVIRONMENTAL + -LY = ENVIRONMENTALLY. Adding -LY to the adjective ENVIRONMENTAL completes the family you've built from ENVIRONMENT, testing everything you've practiced across this stretch of levels.",
-      "difficulty": 3
+      "options": [
+        "ROOT_100_3_NOUN",
+        "ROOT_100_3_ADJECTIVE",
+        "ROOT_100_3_ADVERB",
+        "ROOT_100_3_OPPOSITE"
+      ]
     }
   ]
 }

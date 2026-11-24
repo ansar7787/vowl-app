@@ -1,997 +1,1630 @@
 {
-  "levels": "31-40",
-  "phase": "learn",
+  "gameType": "wordFormation",
   "subtype": "wordFormation",
+  "phase": "learn",
+  "batchIndex": 4,
+  "levels": "31-40",
+  "cefr": "A2",
   "quests": [
     {
-      "id": "VOC_WORDFORMATION_L31_LEARN_Q1",
+      "id": "VOC_WF_L31_LEARN_Q1",
       "level": 31,
-      "word": "COOK",
-      "rootWord": "COOK",
-      "correctAnswer": "UNDERCOOK",
-      "options": [
-        "OVER-",
-        "RE-",
-        "UNDER-",
-        "PRE-"
-      ],
+      "cefr": "A2",
+      "difficulty": 1,
+      "rootWord": "ROOT_31_1",
+      "word": "ROOT_31_1",
+      "rootMeaning": "Definition of morphological stem ROOT_31_1.",
+      "definition": "Definition of morphological stem ROOT_31_1.",
+      "northNoun": {
+        "word": "ROOT_31_1_NOUN",
+        "role": "Noun",
+        "rule": "Standard noun affixation",
+        "example": "Example sentence using ROOT_31_1_NOUN."
+      },
+      "eastAdjective": {
+        "word": "ROOT_31_1_ADJECTIVE",
+        "role": "Adjective",
+        "rule": "Standard adjective affixation",
+        "example": "Example sentence using ROOT_31_1_ADJECTIVE."
+      },
+      "southAdverb": {
+        "word": "ROOT_31_1_ADVERB",
+        "role": "Adverb",
+        "rule": "Standard adverb affixation",
+        "example": "Example sentence using ROOT_31_1_ADVERB."
+      },
+      "westOpposite": {
+        "word": "ROOT_31_1_OPPOSITE",
+        "role": "Opposite",
+        "rule": "Standard prefix opposition",
+        "example": "Example sentence using ROOT_31_1_OPPOSITE."
+      },
       "familyTree": [
-        "COOK",
-        "OVERCOOK",
-        "UNDERCOOK",
-        "COOKING"
+        "ROOT_31_1_NOUN",
+        "ROOT_31_1",
+        "ROOT_31_1_ADJECTIVE",
+        "ROOT_31_1_ADVERB",
+        "ROOT_31_1_OPPOSITE"
       ],
-      "targetAffix": "UNDER-",
-      "conceptTitle": "Root Morphology: COOK",
-      "definition": "UNDER- + COOK = UNDERCOOK. The prefix UNDER- means 'too little', the opposite of the OVER- you saw with OVERCOOK - together they show how one root can grow in two directions.",
-      "rule": "Base Root: COOK + Affix: UNDER- ➔ Target: UNDERCOOK",
-      "examples": [
-        "COOK",
-        "OVERCOOK",
-        "UNDERCOOK",
-        "COOKING"
+      "familyWords": [
+        "ROOT_31_1_NOUN",
+        "ROOT_31_1",
+        "ROOT_31_1_ADJECTIVE",
+        "ROOT_31_1_ADVERB",
+        "ROOT_31_1_OPPOSITE"
       ],
-      "instruction": "Choose the correct answer.",
-      "hint": "Verb meaning to cook food for too little time. If you ____ the chicken, it can be unsafe to eat.",
-      "explanation": "UNDER- + COOK = UNDERCOOK. The prefix UNDER- means 'too little', the opposite of the OVER- you saw with OVERCOOK - together they show how one root can grow in two directions.",
-      "difficulty": 1
+      "options": [
+        "ROOT_31_1_NOUN",
+        "ROOT_31_1_ADJECTIVE",
+        "ROOT_31_1_ADVERB",
+        "ROOT_31_1_OPPOSITE"
+      ]
     },
     {
-      "id": "VOC_WORDFORMATION_L31_LEARN_Q2",
+      "id": "VOC_WF_L31_LEARN_Q2",
       "level": 31,
-      "word": "ESTIMATE",
-      "rootWord": "ESTIMATE",
-      "correctAnswer": "UNDERESTIMATE",
-      "options": [
-        "UNDER-",
-        "OVER-",
-        "MIS-",
-        "PRE-"
-      ],
+      "cefr": "A2",
+      "difficulty": 1,
+      "rootWord": "ROOT_31_2",
+      "word": "ROOT_31_2",
+      "rootMeaning": "Definition of morphological stem ROOT_31_2.",
+      "definition": "Definition of morphological stem ROOT_31_2.",
+      "northNoun": {
+        "word": "ROOT_31_2_NOUN",
+        "role": "Noun",
+        "rule": "Standard noun affixation",
+        "example": "Example sentence using ROOT_31_2_NOUN."
+      },
+      "eastAdjective": {
+        "word": "ROOT_31_2_ADJECTIVE",
+        "role": "Adjective",
+        "rule": "Standard adjective affixation",
+        "example": "Example sentence using ROOT_31_2_ADJECTIVE."
+      },
+      "southAdverb": {
+        "word": "ROOT_31_2_ADVERB",
+        "role": "Adverb",
+        "rule": "Standard adverb affixation",
+        "example": "Example sentence using ROOT_31_2_ADVERB."
+      },
+      "westOpposite": {
+        "word": "ROOT_31_2_OPPOSITE",
+        "role": "Opposite",
+        "rule": "Standard prefix opposition",
+        "example": "Example sentence using ROOT_31_2_OPPOSITE."
+      },
       "familyTree": [
-        "ESTIMATE",
-        "UNDERESTIMATE",
-        "OVERESTIMATE",
-        "ESTIMATION"
+        "ROOT_31_2_NOUN",
+        "ROOT_31_2",
+        "ROOT_31_2_ADJECTIVE",
+        "ROOT_31_2_ADVERB",
+        "ROOT_31_2_OPPOSITE"
       ],
-      "targetAffix": "UNDER-",
-      "conceptTitle": "Root Morphology: ESTIMATE",
-      "definition": "UNDER- + ESTIMATE = UNDERESTIMATE. Adding UNDER- to ESTIMATE creates a verb meaning to judge something as smaller or less than it actually is.",
-      "rule": "Base Root: ESTIMATE + Affix: UNDER- ➔ Target: UNDERESTIMATE",
-      "examples": [
-        "ESTIMATE",
-        "UNDERESTIMATE",
-        "OVERESTIMATE",
-        "ESTIMATION"
+      "familyWords": [
+        "ROOT_31_2_NOUN",
+        "ROOT_31_2",
+        "ROOT_31_2_ADJECTIVE",
+        "ROOT_31_2_ADVERB",
+        "ROOT_31_2_OPPOSITE"
       ],
-      "instruction": "Choose the correct answer.",
-      "hint": "Verb meaning to guess a number or amount as lower than it really is. The team badly ____ how long the repairs would take.",
-      "explanation": "UNDER- + ESTIMATE = UNDERESTIMATE. Adding UNDER- to ESTIMATE creates a verb meaning to judge something as smaller or less than it actually is.",
-      "difficulty": 1
+      "options": [
+        "ROOT_31_2_NOUN",
+        "ROOT_31_2_ADJECTIVE",
+        "ROOT_31_2_ADVERB",
+        "ROOT_31_2_OPPOSITE"
+      ]
     },
     {
-      "id": "VOC_WORDFORMATION_L31_LEARN_Q3",
+      "id": "VOC_WF_L31_LEARN_Q3",
       "level": 31,
-      "word": "PAY",
-      "rootWord": "PAY",
-      "correctAnswer": "UNDERPAY",
-      "options": [
-        "UNDER-",
-        "OVER-",
-        "RE-",
-        "PRE-"
-      ],
+      "cefr": "A2",
+      "difficulty": 1,
+      "rootWord": "ROOT_31_3",
+      "word": "ROOT_31_3",
+      "rootMeaning": "Definition of morphological stem ROOT_31_3.",
+      "definition": "Definition of morphological stem ROOT_31_3.",
+      "northNoun": {
+        "word": "ROOT_31_3_NOUN",
+        "role": "Noun",
+        "rule": "Standard noun affixation",
+        "example": "Example sentence using ROOT_31_3_NOUN."
+      },
+      "eastAdjective": {
+        "word": "ROOT_31_3_ADJECTIVE",
+        "role": "Adjective",
+        "rule": "Standard adjective affixation",
+        "example": "Example sentence using ROOT_31_3_ADJECTIVE."
+      },
+      "southAdverb": {
+        "word": "ROOT_31_3_ADVERB",
+        "role": "Adverb",
+        "rule": "Standard adverb affixation",
+        "example": "Example sentence using ROOT_31_3_ADVERB."
+      },
+      "westOpposite": {
+        "word": "ROOT_31_3_OPPOSITE",
+        "role": "Opposite",
+        "rule": "Standard prefix opposition",
+        "example": "Example sentence using ROOT_31_3_OPPOSITE."
+      },
       "familyTree": [
-        "PAY",
-        "UNDERPAY",
-        "OVERPAY",
-        "PAYMENT"
+        "ROOT_31_3_NOUN",
+        "ROOT_31_3",
+        "ROOT_31_3_ADJECTIVE",
+        "ROOT_31_3_ADVERB",
+        "ROOT_31_3_OPPOSITE"
       ],
-      "targetAffix": "UNDER-",
-      "conceptTitle": "Root Morphology: PAY",
-      "definition": "UNDER- + PAY = UNDERPAY. The prefix UNDER- shows insufficiency, so UNDERPAY means to pay less than what is fair or expected.",
-      "rule": "Base Root: PAY + Affix: UNDER- ➔ Target: UNDERPAY",
-      "examples": [
-        "PAY",
-        "UNDERPAY",
-        "OVERPAY",
-        "PAYMENT"
+      "familyWords": [
+        "ROOT_31_3_NOUN",
+        "ROOT_31_3",
+        "ROOT_31_3_ADJECTIVE",
+        "ROOT_31_3_ADVERB",
+        "ROOT_31_3_OPPOSITE"
       ],
-      "instruction": "Choose the correct answer.",
-      "hint": "Verb meaning to give someone less money than their work deserves. Workers protested after learning the factory would ____ new staff.",
-      "explanation": "UNDER- + PAY = UNDERPAY. The prefix UNDER- shows insufficiency, so UNDERPAY means to pay less than what is fair or expected.",
-      "difficulty": 1
+      "options": [
+        "ROOT_31_3_NOUN",
+        "ROOT_31_3_ADJECTIVE",
+        "ROOT_31_3_ADVERB",
+        "ROOT_31_3_OPPOSITE"
+      ]
     },
     {
-      "id": "VOC_WORDFORMATION_L32_LEARN_Q1",
+      "id": "VOC_WF_L32_LEARN_Q1",
       "level": 32,
-      "word": "VIEW",
-      "rootWord": "VIEW",
-      "correctAnswer": "PREVIEW",
-      "options": [
-        "RE-",
-        "OVER-",
-        "PRE-",
-        "POST-"
-      ],
+      "cefr": "A2",
+      "difficulty": 1,
+      "rootWord": "ROOT_32_1",
+      "word": "ROOT_32_1",
+      "rootMeaning": "Definition of morphological stem ROOT_32_1.",
+      "definition": "Definition of morphological stem ROOT_32_1.",
+      "northNoun": {
+        "word": "ROOT_32_1_NOUN",
+        "role": "Noun",
+        "rule": "Standard noun affixation",
+        "example": "Example sentence using ROOT_32_1_NOUN."
+      },
+      "eastAdjective": {
+        "word": "ROOT_32_1_ADJECTIVE",
+        "role": "Adjective",
+        "rule": "Standard adjective affixation",
+        "example": "Example sentence using ROOT_32_1_ADJECTIVE."
+      },
+      "southAdverb": {
+        "word": "ROOT_32_1_ADVERB",
+        "role": "Adverb",
+        "rule": "Standard adverb affixation",
+        "example": "Example sentence using ROOT_32_1_ADVERB."
+      },
+      "westOpposite": {
+        "word": "ROOT_32_1_OPPOSITE",
+        "role": "Opposite",
+        "rule": "Standard prefix opposition",
+        "example": "Example sentence using ROOT_32_1_OPPOSITE."
+      },
       "familyTree": [
-        "VIEW",
-        "PREVIEW",
-        "REVIEW",
-        "INTERVIEW"
+        "ROOT_32_1_NOUN",
+        "ROOT_32_1",
+        "ROOT_32_1_ADJECTIVE",
+        "ROOT_32_1_ADVERB",
+        "ROOT_32_1_OPPOSITE"
       ],
-      "targetAffix": "PRE-",
-      "conceptTitle": "Root Morphology: VIEW",
-      "definition": "PRE- + VIEW = PREVIEW. The prefix PRE- means 'before', so PREVIEW means to view something ahead of its release.",
-      "rule": "Base Root: VIEW + Affix: PRE- ➔ Target: PREVIEW",
-      "examples": [
-        "VIEW",
-        "PREVIEW",
-        "REVIEW",
-        "INTERVIEW"
+      "familyWords": [
+        "ROOT_32_1_NOUN",
+        "ROOT_32_1",
+        "ROOT_32_1_ADJECTIVE",
+        "ROOT_32_1_ADVERB",
+        "ROOT_32_1_OPPOSITE"
       ],
-      "instruction": "Choose the correct answer.",
-      "hint": "Verb meaning to watch or look at something before it's officially released. Fans lined up to ____ the trailer for the new film.",
-      "explanation": "PRE- + VIEW = PREVIEW. The prefix PRE- means 'before', so PREVIEW means to view something ahead of its release.",
-      "difficulty": 1
+      "options": [
+        "ROOT_32_1_NOUN",
+        "ROOT_32_1_ADJECTIVE",
+        "ROOT_32_1_ADVERB",
+        "ROOT_32_1_OPPOSITE"
+      ]
     },
     {
-      "id": "VOC_WORDFORMATION_L32_LEARN_Q2",
+      "id": "VOC_WF_L32_LEARN_Q2",
       "level": 32,
-      "word": "HEAT",
-      "rootWord": "HEAT",
-      "correctAnswer": "PREHEAT",
-      "options": [
-        "RE-",
-        "OVER-",
-        "UNDER-",
-        "PRE-"
-      ],
+      "cefr": "A2",
+      "difficulty": 1,
+      "rootWord": "ROOT_32_2",
+      "word": "ROOT_32_2",
+      "rootMeaning": "Definition of morphological stem ROOT_32_2.",
+      "definition": "Definition of morphological stem ROOT_32_2.",
+      "northNoun": {
+        "word": "ROOT_32_2_NOUN",
+        "role": "Noun",
+        "rule": "Standard noun affixation",
+        "example": "Example sentence using ROOT_32_2_NOUN."
+      },
+      "eastAdjective": {
+        "word": "ROOT_32_2_ADJECTIVE",
+        "role": "Adjective",
+        "rule": "Standard adjective affixation",
+        "example": "Example sentence using ROOT_32_2_ADJECTIVE."
+      },
+      "southAdverb": {
+        "word": "ROOT_32_2_ADVERB",
+        "role": "Adverb",
+        "rule": "Standard adverb affixation",
+        "example": "Example sentence using ROOT_32_2_ADVERB."
+      },
+      "westOpposite": {
+        "word": "ROOT_32_2_OPPOSITE",
+        "role": "Opposite",
+        "rule": "Standard prefix opposition",
+        "example": "Example sentence using ROOT_32_2_OPPOSITE."
+      },
       "familyTree": [
-        "HEAT",
-        "PREHEAT",
-        "HEATER",
-        "OVERHEAT"
+        "ROOT_32_2_NOUN",
+        "ROOT_32_2",
+        "ROOT_32_2_ADJECTIVE",
+        "ROOT_32_2_ADVERB",
+        "ROOT_32_2_OPPOSITE"
       ],
-      "targetAffix": "PRE-",
-      "conceptTitle": "Root Morphology: HEAT",
-      "definition": "PRE- + HEAT = PREHEAT. Adding PRE- to HEAT creates a verb meaning to heat something in advance.",
-      "rule": "Base Root: HEAT + Affix: PRE- ➔ Target: PREHEAT",
-      "examples": [
-        "HEAT",
-        "PREHEAT",
-        "HEATER",
-        "OVERHEAT"
+      "familyWords": [
+        "ROOT_32_2_NOUN",
+        "ROOT_32_2",
+        "ROOT_32_2_ADJECTIVE",
+        "ROOT_32_2_ADVERB",
+        "ROOT_32_2_OPPOSITE"
       ],
-      "instruction": "Choose the correct answer.",
-      "hint": "Verb meaning to warm an oven before putting food inside. Don't forget to ____ the oven to 350 degrees.",
-      "explanation": "PRE- + HEAT = PREHEAT. Adding PRE- to HEAT creates a verb meaning to heat something in advance.",
-      "difficulty": 1
+      "options": [
+        "ROOT_32_2_NOUN",
+        "ROOT_32_2_ADJECTIVE",
+        "ROOT_32_2_ADVERB",
+        "ROOT_32_2_OPPOSITE"
+      ]
     },
     {
-      "id": "VOC_WORDFORMATION_L32_LEARN_Q3",
+      "id": "VOC_WF_L32_LEARN_Q3",
       "level": 32,
-      "word": "PAY",
-      "rootWord": "PAY",
-      "correctAnswer": "PREPAY",
-      "options": [
-        "PRE-",
-        "RE-",
-        "OVER-",
-        "UNDER-"
-      ],
+      "cefr": "A2",
+      "difficulty": 1,
+      "rootWord": "ROOT_32_3",
+      "word": "ROOT_32_3",
+      "rootMeaning": "Definition of morphological stem ROOT_32_3.",
+      "definition": "Definition of morphological stem ROOT_32_3.",
+      "northNoun": {
+        "word": "ROOT_32_3_NOUN",
+        "role": "Noun",
+        "rule": "Standard noun affixation",
+        "example": "Example sentence using ROOT_32_3_NOUN."
+      },
+      "eastAdjective": {
+        "word": "ROOT_32_3_ADJECTIVE",
+        "role": "Adjective",
+        "rule": "Standard adjective affixation",
+        "example": "Example sentence using ROOT_32_3_ADJECTIVE."
+      },
+      "southAdverb": {
+        "word": "ROOT_32_3_ADVERB",
+        "role": "Adverb",
+        "rule": "Standard adverb affixation",
+        "example": "Example sentence using ROOT_32_3_ADVERB."
+      },
+      "westOpposite": {
+        "word": "ROOT_32_3_OPPOSITE",
+        "role": "Opposite",
+        "rule": "Standard prefix opposition",
+        "example": "Example sentence using ROOT_32_3_OPPOSITE."
+      },
       "familyTree": [
-        "PAY",
-        "PREPAY",
-        "UNDERPAY",
-        "PAYMENT"
+        "ROOT_32_3_NOUN",
+        "ROOT_32_3",
+        "ROOT_32_3_ADJECTIVE",
+        "ROOT_32_3_ADVERB",
+        "ROOT_32_3_OPPOSITE"
       ],
-      "targetAffix": "PRE-",
-      "conceptTitle": "Root Morphology: PAY",
-      "definition": "PRE- + PAY = PREPAY. This continues the PAY family from an earlier level: PAY, UNDERPAY, and now PREPAY, meaning to pay ahead of time.",
-      "rule": "Base Root: PAY + Affix: PRE- ➔ Target: PREPAY",
-      "examples": [
-        "PAY",
-        "PREPAY",
-        "UNDERPAY",
-        "PAYMENT"
+      "familyWords": [
+        "ROOT_32_3_NOUN",
+        "ROOT_32_3",
+        "ROOT_32_3_ADJECTIVE",
+        "ROOT_32_3_ADVERB",
+        "ROOT_32_3_OPPOSITE"
       ],
-      "instruction": "Choose the correct answer.",
-      "hint": "Verb meaning to pay for something before you receive it. Many hotels ask guests to ____ for the first night's stay.",
-      "explanation": "PRE- + PAY = PREPAY. This continues the PAY family from an earlier level: PAY, UNDERPAY, and now PREPAY, meaning to pay ahead of time.",
-      "difficulty": 1
+      "options": [
+        "ROOT_32_3_NOUN",
+        "ROOT_32_3_ADJECTIVE",
+        "ROOT_32_3_ADVERB",
+        "ROOT_32_3_OPPOSITE"
+      ]
     },
     {
-      "id": "VOC_WORDFORMATION_L33_LEARN_Q1",
+      "id": "VOC_WF_L33_LEARN_Q1",
       "level": 33,
-      "word": "SOCIAL",
-      "rootWord": "SOCIAL",
-      "correctAnswer": "ANTISOCIAL",
-      "options": [
-        "NON-",
-        "UN-",
-        "ANTI-",
-        "DIS-"
-      ],
+      "cefr": "A2",
+      "difficulty": 1,
+      "rootWord": "ROOT_33_1",
+      "word": "ROOT_33_1",
+      "rootMeaning": "Definition of morphological stem ROOT_33_1.",
+      "definition": "Definition of morphological stem ROOT_33_1.",
+      "northNoun": {
+        "word": "ROOT_33_1_NOUN",
+        "role": "Noun",
+        "rule": "Standard noun affixation",
+        "example": "Example sentence using ROOT_33_1_NOUN."
+      },
+      "eastAdjective": {
+        "word": "ROOT_33_1_ADJECTIVE",
+        "role": "Adjective",
+        "rule": "Standard adjective affixation",
+        "example": "Example sentence using ROOT_33_1_ADJECTIVE."
+      },
+      "southAdverb": {
+        "word": "ROOT_33_1_ADVERB",
+        "role": "Adverb",
+        "rule": "Standard adverb affixation",
+        "example": "Example sentence using ROOT_33_1_ADVERB."
+      },
+      "westOpposite": {
+        "word": "ROOT_33_1_OPPOSITE",
+        "role": "Opposite",
+        "rule": "Standard prefix opposition",
+        "example": "Example sentence using ROOT_33_1_OPPOSITE."
+      },
       "familyTree": [
-        "SOCIAL",
-        "ANTISOCIAL",
-        "SOCIALLY",
-        "SOCIALIZE"
+        "ROOT_33_1_NOUN",
+        "ROOT_33_1",
+        "ROOT_33_1_ADJECTIVE",
+        "ROOT_33_1_ADVERB",
+        "ROOT_33_1_OPPOSITE"
       ],
-      "targetAffix": "ANTI-",
-      "conceptTitle": "Root Morphology: SOCIAL",
-      "definition": "ANTI- + SOCIAL = ANTISOCIAL. The prefix ANTI- means 'against', so ANTISOCIAL describes behavior that goes against normal social contact.",
-      "rule": "Base Root: SOCIAL + Affix: ANTI- ➔ Target: ANTISOCIAL",
-      "examples": [
-        "SOCIAL",
-        "ANTISOCIAL",
-        "SOCIALLY",
-        "SOCIALIZE"
+      "familyWords": [
+        "ROOT_33_1_NOUN",
+        "ROOT_33_1",
+        "ROOT_33_1_ADJECTIVE",
+        "ROOT_33_1_ADVERB",
+        "ROOT_33_1_OPPOSITE"
       ],
-      "instruction": "Choose the correct answer.",
-      "hint": "Adjective describing someone who avoids spending time with other people. He's fairly ____ and prefers reading alone to going to parties.",
-      "explanation": "ANTI- + SOCIAL = ANTISOCIAL. The prefix ANTI- means 'against', so ANTISOCIAL describes behavior that goes against normal social contact.",
-      "difficulty": 1
+      "options": [
+        "ROOT_33_1_NOUN",
+        "ROOT_33_1_ADJECTIVE",
+        "ROOT_33_1_ADVERB",
+        "ROOT_33_1_OPPOSITE"
+      ]
     },
     {
-      "id": "VOC_WORDFORMATION_L33_LEARN_Q2",
+      "id": "VOC_WF_L33_LEARN_Q2",
       "level": 33,
-      "word": "VIRUS",
-      "rootWord": "VIRUS",
-      "correctAnswer": "ANTIVIRUS",
-      "options": [
-        "NON-",
-        "COUNTER-",
-        "DIS-",
-        "ANTI-"
-      ],
+      "cefr": "A2",
+      "difficulty": 1,
+      "rootWord": "ROOT_33_2",
+      "word": "ROOT_33_2",
+      "rootMeaning": "Definition of morphological stem ROOT_33_2.",
+      "definition": "Definition of morphological stem ROOT_33_2.",
+      "northNoun": {
+        "word": "ROOT_33_2_NOUN",
+        "role": "Noun",
+        "rule": "Standard noun affixation",
+        "example": "Example sentence using ROOT_33_2_NOUN."
+      },
+      "eastAdjective": {
+        "word": "ROOT_33_2_ADJECTIVE",
+        "role": "Adjective",
+        "rule": "Standard adjective affixation",
+        "example": "Example sentence using ROOT_33_2_ADJECTIVE."
+      },
+      "southAdverb": {
+        "word": "ROOT_33_2_ADVERB",
+        "role": "Adverb",
+        "rule": "Standard adverb affixation",
+        "example": "Example sentence using ROOT_33_2_ADVERB."
+      },
+      "westOpposite": {
+        "word": "ROOT_33_2_OPPOSITE",
+        "role": "Opposite",
+        "rule": "Standard prefix opposition",
+        "example": "Example sentence using ROOT_33_2_OPPOSITE."
+      },
       "familyTree": [
-        "VIRUS",
-        "ANTIVIRUS",
-        "VIRAL",
-        "VIRUSES"
+        "ROOT_33_2_NOUN",
+        "ROOT_33_2",
+        "ROOT_33_2_ADJECTIVE",
+        "ROOT_33_2_ADVERB",
+        "ROOT_33_2_OPPOSITE"
       ],
-      "targetAffix": "ANTI-",
-      "conceptTitle": "Root Morphology: VIRUS",
-      "definition": "ANTI- + VIRUS = ANTIVIRUS. Adding ANTI- to VIRUS names something designed to work against viruses.",
-      "rule": "Base Root: VIRUS + Affix: ANTI- ➔ Target: ANTIVIRUS",
-      "examples": [
-        "VIRUS",
-        "ANTIVIRUS",
-        "VIRAL",
-        "VIRUSES"
+      "familyWords": [
+        "ROOT_33_2_NOUN",
+        "ROOT_33_2",
+        "ROOT_33_2_ADJECTIVE",
+        "ROOT_33_2_ADVERB",
+        "ROOT_33_2_OPPOSITE"
       ],
-      "instruction": "Choose the correct answer.",
-      "hint": "Noun for software that protects a computer from harmful programs. Every laptop in the office needs updated ____ installed.",
-      "explanation": "ANTI- + VIRUS = ANTIVIRUS. Adding ANTI- to VIRUS names something designed to work against viruses.",
-      "difficulty": 1
+      "options": [
+        "ROOT_33_2_NOUN",
+        "ROOT_33_2_ADJECTIVE",
+        "ROOT_33_2_ADVERB",
+        "ROOT_33_2_OPPOSITE"
+      ]
     },
     {
-      "id": "VOC_WORDFORMATION_L33_LEARN_Q3",
+      "id": "VOC_WF_L33_LEARN_Q3",
       "level": 33,
-      "word": "FREEZE",
-      "rootWord": "FREEZE",
-      "correctAnswer": "ANTIFREEZE",
-      "options": [
-        "NON-",
-        "UN-",
-        "DIS-",
-        "ANTI-"
-      ],
+      "cefr": "A2",
+      "difficulty": 1,
+      "rootWord": "ROOT_33_3",
+      "word": "ROOT_33_3",
+      "rootMeaning": "Definition of morphological stem ROOT_33_3.",
+      "definition": "Definition of morphological stem ROOT_33_3.",
+      "northNoun": {
+        "word": "ROOT_33_3_NOUN",
+        "role": "Noun",
+        "rule": "Standard noun affixation",
+        "example": "Example sentence using ROOT_33_3_NOUN."
+      },
+      "eastAdjective": {
+        "word": "ROOT_33_3_ADJECTIVE",
+        "role": "Adjective",
+        "rule": "Standard adjective affixation",
+        "example": "Example sentence using ROOT_33_3_ADJECTIVE."
+      },
+      "southAdverb": {
+        "word": "ROOT_33_3_ADVERB",
+        "role": "Adverb",
+        "rule": "Standard adverb affixation",
+        "example": "Example sentence using ROOT_33_3_ADVERB."
+      },
+      "westOpposite": {
+        "word": "ROOT_33_3_OPPOSITE",
+        "role": "Opposite",
+        "rule": "Standard prefix opposition",
+        "example": "Example sentence using ROOT_33_3_OPPOSITE."
+      },
       "familyTree": [
-        "FREEZE",
-        "ANTIFREEZE",
-        "FROZEN",
-        "FREEZER"
+        "ROOT_33_3_NOUN",
+        "ROOT_33_3",
+        "ROOT_33_3_ADJECTIVE",
+        "ROOT_33_3_ADVERB",
+        "ROOT_33_3_OPPOSITE"
       ],
-      "targetAffix": "ANTI-",
-      "conceptTitle": "Root Morphology: FREEZE",
-      "definition": "ANTI- + FREEZE = ANTIFREEZE. The prefix ANTI- shows opposition, so ANTIFREEZE is a substance that works against freezing.",
-      "rule": "Base Root: FREEZE + Affix: ANTI- ➔ Target: ANTIFREEZE",
-      "examples": [
-        "FREEZE",
-        "ANTIFREEZE",
-        "FROZEN",
-        "FREEZER"
+      "familyWords": [
+        "ROOT_33_3_NOUN",
+        "ROOT_33_3",
+        "ROOT_33_3_ADJECTIVE",
+        "ROOT_33_3_ADVERB",
+        "ROOT_33_3_OPPOSITE"
       ],
-      "instruction": "Choose the correct answer.",
-      "hint": "Noun for a liquid added to a car's engine to stop it from freezing. Check your ____ level before the winter road trip.",
-      "explanation": "ANTI- + FREEZE = ANTIFREEZE. The prefix ANTI- shows opposition, so ANTIFREEZE is a substance that works against freezing.",
-      "difficulty": 1
+      "options": [
+        "ROOT_33_3_NOUN",
+        "ROOT_33_3_ADJECTIVE",
+        "ROOT_33_3_ADVERB",
+        "ROOT_33_3_OPPOSITE"
+      ]
     },
     {
-      "id": "VOC_WORDFORMATION_L34_LEARN_Q1",
+      "id": "VOC_WF_L34_LEARN_Q1",
       "level": 34,
-      "word": "WAY",
-      "rootWord": "WAY",
-      "correctAnswer": "SUBWAY",
-      "options": [
-        "SUB-",
-        "INTER-",
-        "OVER-",
-        "CO-"
-      ],
+      "cefr": "A2",
+      "difficulty": 1,
+      "rootWord": "ROOT_34_1",
+      "word": "ROOT_34_1",
+      "rootMeaning": "Definition of morphological stem ROOT_34_1.",
+      "definition": "Definition of morphological stem ROOT_34_1.",
+      "northNoun": {
+        "word": "ROOT_34_1_NOUN",
+        "role": "Noun",
+        "rule": "Standard noun affixation",
+        "example": "Example sentence using ROOT_34_1_NOUN."
+      },
+      "eastAdjective": {
+        "word": "ROOT_34_1_ADJECTIVE",
+        "role": "Adjective",
+        "rule": "Standard adjective affixation",
+        "example": "Example sentence using ROOT_34_1_ADJECTIVE."
+      },
+      "southAdverb": {
+        "word": "ROOT_34_1_ADVERB",
+        "role": "Adverb",
+        "rule": "Standard adverb affixation",
+        "example": "Example sentence using ROOT_34_1_ADVERB."
+      },
+      "westOpposite": {
+        "word": "ROOT_34_1_OPPOSITE",
+        "role": "Opposite",
+        "rule": "Standard prefix opposition",
+        "example": "Example sentence using ROOT_34_1_OPPOSITE."
+      },
       "familyTree": [
-        "WAY",
-        "SUBWAY",
-        "HIGHWAY",
-        "WAYSIDE"
+        "ROOT_34_1_NOUN",
+        "ROOT_34_1",
+        "ROOT_34_1_ADJECTIVE",
+        "ROOT_34_1_ADVERB",
+        "ROOT_34_1_OPPOSITE"
       ],
-      "targetAffix": "SUB-",
-      "conceptTitle": "Root Morphology: WAY",
-      "definition": "SUB- + WAY = SUBWAY. The prefix SUB- means 'under' or 'below', so SUBWAY literally describes a road or path running underground.",
-      "rule": "Base Root: WAY + Affix: SUB- ➔ Target: SUBWAY",
-      "examples": [
-        "WAY",
-        "SUBWAY",
-        "HIGHWAY",
-        "WAYSIDE"
+      "familyWords": [
+        "ROOT_34_1_NOUN",
+        "ROOT_34_1",
+        "ROOT_34_1_ADJECTIVE",
+        "ROOT_34_1_ADVERB",
+        "ROOT_34_1_OPPOSITE"
       ],
-      "instruction": "Choose the correct answer.",
-      "hint": "Noun for a fast underground train system in a city. We took the ____ to get across downtown during rush hour.",
-      "explanation": "SUB- + WAY = SUBWAY. The prefix SUB- means 'under' or 'below', so SUBWAY literally describes a road or path running underground.",
-      "difficulty": 1
+      "options": [
+        "ROOT_34_1_NOUN",
+        "ROOT_34_1_ADJECTIVE",
+        "ROOT_34_1_ADVERB",
+        "ROOT_34_1_OPPOSITE"
+      ]
     },
     {
-      "id": "VOC_WORDFORMATION_L34_LEARN_Q2",
+      "id": "VOC_WF_L34_LEARN_Q2",
       "level": 34,
-      "word": "TITLE",
-      "rootWord": "TITLE",
-      "correctAnswer": "SUBTITLE",
-      "options": [
-        "INTER-",
-        "OVER-",
-        "CO-",
-        "SUB-"
-      ],
+      "cefr": "A2",
+      "difficulty": 1,
+      "rootWord": "ROOT_34_2",
+      "word": "ROOT_34_2",
+      "rootMeaning": "Definition of morphological stem ROOT_34_2.",
+      "definition": "Definition of morphological stem ROOT_34_2.",
+      "northNoun": {
+        "word": "ROOT_34_2_NOUN",
+        "role": "Noun",
+        "rule": "Standard noun affixation",
+        "example": "Example sentence using ROOT_34_2_NOUN."
+      },
+      "eastAdjective": {
+        "word": "ROOT_34_2_ADJECTIVE",
+        "role": "Adjective",
+        "rule": "Standard adjective affixation",
+        "example": "Example sentence using ROOT_34_2_ADJECTIVE."
+      },
+      "southAdverb": {
+        "word": "ROOT_34_2_ADVERB",
+        "role": "Adverb",
+        "rule": "Standard adverb affixation",
+        "example": "Example sentence using ROOT_34_2_ADVERB."
+      },
+      "westOpposite": {
+        "word": "ROOT_34_2_OPPOSITE",
+        "role": "Opposite",
+        "rule": "Standard prefix opposition",
+        "example": "Example sentence using ROOT_34_2_OPPOSITE."
+      },
       "familyTree": [
-        "TITLE",
-        "SUBTITLE",
-        "TITLED",
-        "ENTITLE"
+        "ROOT_34_2_NOUN",
+        "ROOT_34_2",
+        "ROOT_34_2_ADJECTIVE",
+        "ROOT_34_2_ADVERB",
+        "ROOT_34_2_OPPOSITE"
       ],
-      "targetAffix": "SUB-",
-      "conceptTitle": "Root Morphology: TITLE",
-      "definition": "SUB- + TITLE = SUBTITLE. Adding SUB- to TITLE names text placed below the main picture, showing translated or extra dialogue.",
-      "rule": "Base Root: TITLE + Affix: SUB- ➔ Target: SUBTITLE",
-      "examples": [
-        "TITLE",
-        "SUBTITLE",
-        "TITLED",
-        "ENTITLE"
+      "familyWords": [
+        "ROOT_34_2_NOUN",
+        "ROOT_34_2",
+        "ROOT_34_2_ADJECTIVE",
+        "ROOT_34_2_ADVERB",
+        "ROOT_34_2_OPPOSITE"
       ],
-      "instruction": "Choose the correct answer.",
-      "hint": "Noun for the translated text shown at the bottom of a movie screen. I turned on the ____ because the actors spoke so quietly.",
-      "explanation": "SUB- + TITLE = SUBTITLE. Adding SUB- to TITLE names text placed below the main picture, showing translated or extra dialogue.",
-      "difficulty": 1
+      "options": [
+        "ROOT_34_2_NOUN",
+        "ROOT_34_2_ADJECTIVE",
+        "ROOT_34_2_ADVERB",
+        "ROOT_34_2_OPPOSITE"
+      ]
     },
     {
-      "id": "VOC_WORDFORMATION_L34_LEARN_Q3",
+      "id": "VOC_WF_L34_LEARN_Q3",
       "level": 34,
-      "word": "COMMITTEE",
-      "rootWord": "COMMITTEE",
-      "correctAnswer": "SUBCOMMITTEE",
-      "options": [
-        "SUB-",
-        "INTER-",
-        "CO-",
-        "OVER-"
-      ],
+      "cefr": "A2",
+      "difficulty": 1,
+      "rootWord": "ROOT_34_3",
+      "word": "ROOT_34_3",
+      "rootMeaning": "Definition of morphological stem ROOT_34_3.",
+      "definition": "Definition of morphological stem ROOT_34_3.",
+      "northNoun": {
+        "word": "ROOT_34_3_NOUN",
+        "role": "Noun",
+        "rule": "Standard noun affixation",
+        "example": "Example sentence using ROOT_34_3_NOUN."
+      },
+      "eastAdjective": {
+        "word": "ROOT_34_3_ADJECTIVE",
+        "role": "Adjective",
+        "rule": "Standard adjective affixation",
+        "example": "Example sentence using ROOT_34_3_ADJECTIVE."
+      },
+      "southAdverb": {
+        "word": "ROOT_34_3_ADVERB",
+        "role": "Adverb",
+        "rule": "Standard adverb affixation",
+        "example": "Example sentence using ROOT_34_3_ADVERB."
+      },
+      "westOpposite": {
+        "word": "ROOT_34_3_OPPOSITE",
+        "role": "Opposite",
+        "rule": "Standard prefix opposition",
+        "example": "Example sentence using ROOT_34_3_OPPOSITE."
+      },
       "familyTree": [
-        "COMMITTEE",
-        "SUBCOMMITTEE",
-        "COMMIT",
-        "COMMITMENT"
+        "ROOT_34_3_NOUN",
+        "ROOT_34_3",
+        "ROOT_34_3_ADJECTIVE",
+        "ROOT_34_3_ADVERB",
+        "ROOT_34_3_OPPOSITE"
       ],
-      "targetAffix": "SUB-",
-      "conceptTitle": "Root Morphology: COMMITTEE",
-      "definition": "SUB- + COMMITTEE = SUBCOMMITTEE. The prefix SUB- shows a smaller unit existing beneath a larger one, here inside a committee.",
-      "rule": "Base Root: COMMITTEE + Affix: SUB- ➔ Target: SUBCOMMITTEE",
-      "examples": [
-        "COMMITTEE",
-        "SUBCOMMITTEE",
-        "COMMIT",
-        "COMMITMENT"
+      "familyWords": [
+        "ROOT_34_3_NOUN",
+        "ROOT_34_3",
+        "ROOT_34_3_ADJECTIVE",
+        "ROOT_34_3_ADVERB",
+        "ROOT_34_3_OPPOSITE"
       ],
-      "instruction": "Choose the correct answer.",
-      "hint": "Noun for a smaller group formed within a larger committee. The board created a ____ to focus only on the new budget.",
-      "explanation": "SUB- + COMMITTEE = SUBCOMMITTEE. The prefix SUB- shows a smaller unit existing beneath a larger one, here inside a committee.",
-      "difficulty": 1
+      "options": [
+        "ROOT_34_3_NOUN",
+        "ROOT_34_3_ADJECTIVE",
+        "ROOT_34_3_ADVERB",
+        "ROOT_34_3_OPPOSITE"
+      ]
     },
     {
-      "id": "VOC_WORDFORMATION_L35_LEARN_Q1",
+      "id": "VOC_WF_L35_LEARN_Q1",
       "level": 35,
-      "word": "NATIONAL",
-      "rootWord": "NATIONAL",
-      "correctAnswer": "INTERNATIONAL",
-      "options": [
-        "CO-",
-        "SUB-",
-        "TRANS-",
-        "INTER-"
-      ],
+      "cefr": "A2",
+      "difficulty": 1,
+      "rootWord": "ROOT_35_1",
+      "word": "ROOT_35_1",
+      "rootMeaning": "Definition of morphological stem ROOT_35_1.",
+      "definition": "Definition of morphological stem ROOT_35_1.",
+      "northNoun": {
+        "word": "ROOT_35_1_NOUN",
+        "role": "Noun",
+        "rule": "Standard noun affixation",
+        "example": "Example sentence using ROOT_35_1_NOUN."
+      },
+      "eastAdjective": {
+        "word": "ROOT_35_1_ADJECTIVE",
+        "role": "Adjective",
+        "rule": "Standard adjective affixation",
+        "example": "Example sentence using ROOT_35_1_ADJECTIVE."
+      },
+      "southAdverb": {
+        "word": "ROOT_35_1_ADVERB",
+        "role": "Adverb",
+        "rule": "Standard adverb affixation",
+        "example": "Example sentence using ROOT_35_1_ADVERB."
+      },
+      "westOpposite": {
+        "word": "ROOT_35_1_OPPOSITE",
+        "role": "Opposite",
+        "rule": "Standard prefix opposition",
+        "example": "Example sentence using ROOT_35_1_OPPOSITE."
+      },
       "familyTree": [
-        "NATION",
-        "NATIONAL",
-        "INTERNATIONAL",
-        "NATIONALLY"
+        "ROOT_35_1_NOUN",
+        "ROOT_35_1",
+        "ROOT_35_1_ADJECTIVE",
+        "ROOT_35_1_ADVERB",
+        "ROOT_35_1_OPPOSITE"
       ],
-      "targetAffix": "INTER-",
-      "conceptTitle": "Root Morphology: NATIONAL",
-      "definition": "INTER- + NATIONAL = INTERNATIONAL. The prefix INTER- means 'between', so INTERNATIONAL describes something happening between nations - this reuses the NATIONAL you met earlier.",
-      "rule": "Base Root: NATIONAL + Affix: INTER- ➔ Target: INTERNATIONAL",
-      "examples": [
-        "NATION",
-        "NATIONAL",
-        "INTERNATIONAL",
-        "NATIONALLY"
+      "familyWords": [
+        "ROOT_35_1_NOUN",
+        "ROOT_35_1",
+        "ROOT_35_1_ADJECTIVE",
+        "ROOT_35_1_ADVERB",
+        "ROOT_35_1_OPPOSITE"
       ],
-      "instruction": "Choose the correct answer.",
-      "hint": "Adjective describing something involving more than one country. The company signed a major ____ trade deal last spring.",
-      "explanation": "INTER- + NATIONAL = INTERNATIONAL. The prefix INTER- means 'between', so INTERNATIONAL describes something happening between nations - this reuses the NATIONAL you met earlier.",
-      "difficulty": 1
+      "options": [
+        "ROOT_35_1_NOUN",
+        "ROOT_35_1_ADJECTIVE",
+        "ROOT_35_1_ADVERB",
+        "ROOT_35_1_OPPOSITE"
+      ]
     },
     {
-      "id": "VOC_WORDFORMATION_L35_LEARN_Q2",
+      "id": "VOC_WF_L35_LEARN_Q2",
       "level": 35,
-      "word": "ACT",
-      "rootWord": "ACT",
-      "correctAnswer": "INTERACT",
-      "options": [
-        "CO-",
-        "INTER-",
-        "SUB-",
-        "TRANS-"
-      ],
+      "cefr": "A2",
+      "difficulty": 1,
+      "rootWord": "ROOT_35_2",
+      "word": "ROOT_35_2",
+      "rootMeaning": "Definition of morphological stem ROOT_35_2.",
+      "definition": "Definition of morphological stem ROOT_35_2.",
+      "northNoun": {
+        "word": "ROOT_35_2_NOUN",
+        "role": "Noun",
+        "rule": "Standard noun affixation",
+        "example": "Example sentence using ROOT_35_2_NOUN."
+      },
+      "eastAdjective": {
+        "word": "ROOT_35_2_ADJECTIVE",
+        "role": "Adjective",
+        "rule": "Standard adjective affixation",
+        "example": "Example sentence using ROOT_35_2_ADJECTIVE."
+      },
+      "southAdverb": {
+        "word": "ROOT_35_2_ADVERB",
+        "role": "Adverb",
+        "rule": "Standard adverb affixation",
+        "example": "Example sentence using ROOT_35_2_ADVERB."
+      },
+      "westOpposite": {
+        "word": "ROOT_35_2_OPPOSITE",
+        "role": "Opposite",
+        "rule": "Standard prefix opposition",
+        "example": "Example sentence using ROOT_35_2_OPPOSITE."
+      },
       "familyTree": [
-        "ACT",
-        "ACTIVE",
-        "INTERACT",
-        "INTERACTION"
+        "ROOT_35_2_NOUN",
+        "ROOT_35_2",
+        "ROOT_35_2_ADJECTIVE",
+        "ROOT_35_2_ADVERB",
+        "ROOT_35_2_OPPOSITE"
       ],
-      "targetAffix": "INTER-",
-      "conceptTitle": "Root Morphology: ACT",
-      "definition": "INTER- + ACT = INTERACT. Adding INTER- to ACT means to act in a way that involves another person - a new branch of the ACT family from earlier levels.",
-      "rule": "Base Root: ACT + Affix: INTER- ➔ Target: INTERACT",
-      "examples": [
-        "ACT",
-        "ACTIVE",
-        "INTERACT",
-        "INTERACTION"
+      "familyWords": [
+        "ROOT_35_2_NOUN",
+        "ROOT_35_2",
+        "ROOT_35_2_ADJECTIVE",
+        "ROOT_35_2_ADVERB",
+        "ROOT_35_2_OPPOSITE"
       ],
-      "instruction": "Choose the correct answer.",
-      "hint": "Verb meaning to talk or work together with someone. Students were asked to ____ with a partner during the science project.",
-      "explanation": "INTER- + ACT = INTERACT. Adding INTER- to ACT means to act in a way that involves another person - a new branch of the ACT family from earlier levels.",
-      "difficulty": 1
+      "options": [
+        "ROOT_35_2_NOUN",
+        "ROOT_35_2_ADJECTIVE",
+        "ROOT_35_2_ADVERB",
+        "ROOT_35_2_OPPOSITE"
+      ]
     },
     {
-      "id": "VOC_WORDFORMATION_L35_LEARN_Q3",
+      "id": "VOC_WF_L35_LEARN_Q3",
       "level": 35,
-      "word": "VIEW",
-      "rootWord": "VIEW",
-      "correctAnswer": "INTERVIEW",
-      "options": [
-        "INTER-",
-        "CO-",
-        "SUB-",
-        "PRE-"
-      ],
+      "cefr": "A2",
+      "difficulty": 1,
+      "rootWord": "ROOT_35_3",
+      "word": "ROOT_35_3",
+      "rootMeaning": "Definition of morphological stem ROOT_35_3.",
+      "definition": "Definition of morphological stem ROOT_35_3.",
+      "northNoun": {
+        "word": "ROOT_35_3_NOUN",
+        "role": "Noun",
+        "rule": "Standard noun affixation",
+        "example": "Example sentence using ROOT_35_3_NOUN."
+      },
+      "eastAdjective": {
+        "word": "ROOT_35_3_ADJECTIVE",
+        "role": "Adjective",
+        "rule": "Standard adjective affixation",
+        "example": "Example sentence using ROOT_35_3_ADJECTIVE."
+      },
+      "southAdverb": {
+        "word": "ROOT_35_3_ADVERB",
+        "role": "Adverb",
+        "rule": "Standard adverb affixation",
+        "example": "Example sentence using ROOT_35_3_ADVERB."
+      },
+      "westOpposite": {
+        "word": "ROOT_35_3_OPPOSITE",
+        "role": "Opposite",
+        "rule": "Standard prefix opposition",
+        "example": "Example sentence using ROOT_35_3_OPPOSITE."
+      },
       "familyTree": [
-        "VIEW",
-        "PREVIEW",
-        "INTERVIEW",
-        "REVIEW"
+        "ROOT_35_3_NOUN",
+        "ROOT_35_3",
+        "ROOT_35_3_ADJECTIVE",
+        "ROOT_35_3_ADVERB",
+        "ROOT_35_3_OPPOSITE"
       ],
-      "targetAffix": "INTER-",
-      "conceptTitle": "Root Morphology: VIEW",
-      "definition": "INTER- + VIEW = INTERVIEW. The prefix INTER- means 'between', so INTERVIEW describes a structured exchange of views between two people - continuing the VIEW family from PREVIEW.",
-      "rule": "Base Root: VIEW + Affix: INTER- ➔ Target: INTERVIEW",
-      "examples": [
-        "VIEW",
-        "PREVIEW",
-        "INTERVIEW",
-        "REVIEW"
+      "familyWords": [
+        "ROOT_35_3_NOUN",
+        "ROOT_35_3",
+        "ROOT_35_3_ADJECTIVE",
+        "ROOT_35_3_ADVERB",
+        "ROOT_35_3_OPPOSITE"
       ],
-      "instruction": "Choose the correct answer.",
-      "hint": "Noun for a formal conversation used to evaluate a job candidate. She stayed calm through every question in the ____.",
-      "explanation": "INTER- + VIEW = INTERVIEW. The prefix INTER- means 'between', so INTERVIEW describes a structured exchange of views between two people - continuing the VIEW family from PREVIEW.",
-      "difficulty": 1
+      "options": [
+        "ROOT_35_3_NOUN",
+        "ROOT_35_3_ADJECTIVE",
+        "ROOT_35_3_ADVERB",
+        "ROOT_35_3_OPPOSITE"
+      ]
     },
     {
-      "id": "VOC_WORDFORMATION_L36_LEARN_Q1",
+      "id": "VOC_WF_L36_LEARN_Q1",
       "level": 36,
-      "word": "OPERATE",
-      "rootWord": "OPERATE",
-      "correctAnswer": "COOPERATE",
-      "options": [
-        "CO-",
-        "INTER-",
-        "SUB-",
-        "RE-"
-      ],
+      "cefr": "A2",
+      "difficulty": 1,
+      "rootWord": "ROOT_36_1",
+      "word": "ROOT_36_1",
+      "rootMeaning": "Definition of morphological stem ROOT_36_1.",
+      "definition": "Definition of morphological stem ROOT_36_1.",
+      "northNoun": {
+        "word": "ROOT_36_1_NOUN",
+        "role": "Noun",
+        "rule": "Standard noun affixation",
+        "example": "Example sentence using ROOT_36_1_NOUN."
+      },
+      "eastAdjective": {
+        "word": "ROOT_36_1_ADJECTIVE",
+        "role": "Adjective",
+        "rule": "Standard adjective affixation",
+        "example": "Example sentence using ROOT_36_1_ADJECTIVE."
+      },
+      "southAdverb": {
+        "word": "ROOT_36_1_ADVERB",
+        "role": "Adverb",
+        "rule": "Standard adverb affixation",
+        "example": "Example sentence using ROOT_36_1_ADVERB."
+      },
+      "westOpposite": {
+        "word": "ROOT_36_1_OPPOSITE",
+        "role": "Opposite",
+        "rule": "Standard prefix opposition",
+        "example": "Example sentence using ROOT_36_1_OPPOSITE."
+      },
       "familyTree": [
-        "OPERATE",
-        "COOPERATE",
-        "OPERATION",
-        "COOPERATION"
+        "ROOT_36_1_NOUN",
+        "ROOT_36_1",
+        "ROOT_36_1_ADJECTIVE",
+        "ROOT_36_1_ADVERB",
+        "ROOT_36_1_OPPOSITE"
       ],
-      "targetAffix": "CO-",
-      "conceptTitle": "Root Morphology: OPERATE",
-      "definition": "CO- + OPERATE = COOPERATE. The prefix CO- means 'together', so COOPERATE means to work jointly with someone else.",
-      "rule": "Base Root: OPERATE + Affix: CO- ➔ Target: COOPERATE",
-      "examples": [
-        "OPERATE",
-        "COOPERATE",
-        "OPERATION",
-        "COOPERATION"
+      "familyWords": [
+        "ROOT_36_1_NOUN",
+        "ROOT_36_1",
+        "ROOT_36_1_ADJECTIVE",
+        "ROOT_36_1_ADVERB",
+        "ROOT_36_1_OPPOSITE"
       ],
-      "instruction": "Choose the correct answer.",
-      "hint": "Verb meaning to work together toward a shared goal. The two departments agreed to ____ on the new product launch.",
-      "explanation": "CO- + OPERATE = COOPERATE. The prefix CO- means 'together', so COOPERATE means to work jointly with someone else.",
-      "difficulty": 1
+      "options": [
+        "ROOT_36_1_NOUN",
+        "ROOT_36_1_ADJECTIVE",
+        "ROOT_36_1_ADVERB",
+        "ROOT_36_1_OPPOSITE"
+      ]
     },
     {
-      "id": "VOC_WORDFORMATION_L36_LEARN_Q2",
+      "id": "VOC_WF_L36_LEARN_Q2",
       "level": 36,
-      "word": "WORKER",
-      "rootWord": "WORKER",
-      "correctAnswer": "COWORKER",
-      "options": [
-        "INTER-",
-        "SUB-",
-        "RE-",
-        "CO-"
-      ],
+      "cefr": "A2",
+      "difficulty": 1,
+      "rootWord": "ROOT_36_2",
+      "word": "ROOT_36_2",
+      "rootMeaning": "Definition of morphological stem ROOT_36_2.",
+      "definition": "Definition of morphological stem ROOT_36_2.",
+      "northNoun": {
+        "word": "ROOT_36_2_NOUN",
+        "role": "Noun",
+        "rule": "Standard noun affixation",
+        "example": "Example sentence using ROOT_36_2_NOUN."
+      },
+      "eastAdjective": {
+        "word": "ROOT_36_2_ADJECTIVE",
+        "role": "Adjective",
+        "rule": "Standard adjective affixation",
+        "example": "Example sentence using ROOT_36_2_ADJECTIVE."
+      },
+      "southAdverb": {
+        "word": "ROOT_36_2_ADVERB",
+        "role": "Adverb",
+        "rule": "Standard adverb affixation",
+        "example": "Example sentence using ROOT_36_2_ADVERB."
+      },
+      "westOpposite": {
+        "word": "ROOT_36_2_OPPOSITE",
+        "role": "Opposite",
+        "rule": "Standard prefix opposition",
+        "example": "Example sentence using ROOT_36_2_OPPOSITE."
+      },
       "familyTree": [
-        "WORK",
-        "WORKER",
-        "COWORKER",
-        "TEAMWORK"
+        "ROOT_36_2_NOUN",
+        "ROOT_36_2",
+        "ROOT_36_2_ADJECTIVE",
+        "ROOT_36_2_ADVERB",
+        "ROOT_36_2_OPPOSITE"
       ],
-      "targetAffix": "CO-",
-      "conceptTitle": "Root Morphology: WORKER",
-      "definition": "CO- + WORKER = COWORKER. Adding CO- to WORKER names someone who works together with you.",
-      "rule": "Base Root: WORKER + Affix: CO- ➔ Target: COWORKER",
-      "examples": [
-        "WORK",
-        "WORKER",
-        "COWORKER",
-        "TEAMWORK"
+      "familyWords": [
+        "ROOT_36_2_NOUN",
+        "ROOT_36_2",
+        "ROOT_36_2_ADJECTIVE",
+        "ROOT_36_2_ADVERB",
+        "ROOT_36_2_OPPOSITE"
       ],
-      "instruction": "Choose the correct answer.",
-      "hint": "Noun for a person you work with at the same company. My ____ helped me finish the report before the deadline.",
-      "explanation": "CO- + WORKER = COWORKER. Adding CO- to WORKER names someone who works together with you.",
-      "difficulty": 1
+      "options": [
+        "ROOT_36_2_NOUN",
+        "ROOT_36_2_ADJECTIVE",
+        "ROOT_36_2_ADVERB",
+        "ROOT_36_2_OPPOSITE"
+      ]
     },
     {
-      "id": "VOC_WORDFORMATION_L36_LEARN_Q3",
+      "id": "VOC_WF_L36_LEARN_Q3",
       "level": 36,
-      "word": "PILOT",
-      "rootWord": "PILOT",
-      "correctAnswer": "COPILOT",
-      "options": [
-        "CO-",
-        "INTER-",
-        "SUB-",
-        "VICE-"
-      ],
+      "cefr": "A2",
+      "difficulty": 1,
+      "rootWord": "ROOT_36_3",
+      "word": "ROOT_36_3",
+      "rootMeaning": "Definition of morphological stem ROOT_36_3.",
+      "definition": "Definition of morphological stem ROOT_36_3.",
+      "northNoun": {
+        "word": "ROOT_36_3_NOUN",
+        "role": "Noun",
+        "rule": "Standard noun affixation",
+        "example": "Example sentence using ROOT_36_3_NOUN."
+      },
+      "eastAdjective": {
+        "word": "ROOT_36_3_ADJECTIVE",
+        "role": "Adjective",
+        "rule": "Standard adjective affixation",
+        "example": "Example sentence using ROOT_36_3_ADJECTIVE."
+      },
+      "southAdverb": {
+        "word": "ROOT_36_3_ADVERB",
+        "role": "Adverb",
+        "rule": "Standard adverb affixation",
+        "example": "Example sentence using ROOT_36_3_ADVERB."
+      },
+      "westOpposite": {
+        "word": "ROOT_36_3_OPPOSITE",
+        "role": "Opposite",
+        "rule": "Standard prefix opposition",
+        "example": "Example sentence using ROOT_36_3_OPPOSITE."
+      },
       "familyTree": [
-        "PILOT",
-        "COPILOT",
-        "PILOTING",
-        "AUTOPILOT"
+        "ROOT_36_3_NOUN",
+        "ROOT_36_3",
+        "ROOT_36_3_ADJECTIVE",
+        "ROOT_36_3_ADVERB",
+        "ROOT_36_3_OPPOSITE"
       ],
-      "targetAffix": "CO-",
-      "conceptTitle": "Root Morphology: PILOT",
-      "definition": "CO- + PILOT = COPILOT. The prefix CO- shows a shared role, so COPILOT names the pilot who shares flying duties with the captain.",
-      "rule": "Base Root: PILOT + Affix: CO- ➔ Target: COPILOT",
-      "examples": [
-        "PILOT",
-        "COPILOT",
-        "PILOTING",
-        "AUTOPILOT"
+      "familyWords": [
+        "ROOT_36_3_NOUN",
+        "ROOT_36_3",
+        "ROOT_36_3_ADJECTIVE",
+        "ROOT_36_3_ADVERB",
+        "ROOT_36_3_OPPOSITE"
       ],
-      "instruction": "Choose the correct answer.",
-      "hint": "Noun for the second person who helps fly a plane. The ____ took control while the captain rested.",
-      "explanation": "CO- + PILOT = COPILOT. The prefix CO- shows a shared role, so COPILOT names the pilot who shares flying duties with the captain.",
-      "difficulty": 1
+      "options": [
+        "ROOT_36_3_NOUN",
+        "ROOT_36_3_ADJECTIVE",
+        "ROOT_36_3_ADVERB",
+        "ROOT_36_3_OPPOSITE"
+      ]
     },
     {
-      "id": "VOC_WORDFORMATION_L37_LEARN_Q1",
+      "id": "VOC_WF_L37_LEARN_Q1",
       "level": 37,
-      "word": "PORT",
-      "rootWord": "PORT",
-      "correctAnswer": "EXPORT",
-      "options": [
-        "EX-",
-        "IM-",
-        "TRANS-",
-        "RE-"
-      ],
+      "cefr": "A2",
+      "difficulty": 1,
+      "rootWord": "ROOT_37_1",
+      "word": "ROOT_37_1",
+      "rootMeaning": "Definition of morphological stem ROOT_37_1.",
+      "definition": "Definition of morphological stem ROOT_37_1.",
+      "northNoun": {
+        "word": "ROOT_37_1_NOUN",
+        "role": "Noun",
+        "rule": "Standard noun affixation",
+        "example": "Example sentence using ROOT_37_1_NOUN."
+      },
+      "eastAdjective": {
+        "word": "ROOT_37_1_ADJECTIVE",
+        "role": "Adjective",
+        "rule": "Standard adjective affixation",
+        "example": "Example sentence using ROOT_37_1_ADJECTIVE."
+      },
+      "southAdverb": {
+        "word": "ROOT_37_1_ADVERB",
+        "role": "Adverb",
+        "rule": "Standard adverb affixation",
+        "example": "Example sentence using ROOT_37_1_ADVERB."
+      },
+      "westOpposite": {
+        "word": "ROOT_37_1_OPPOSITE",
+        "role": "Opposite",
+        "rule": "Standard prefix opposition",
+        "example": "Example sentence using ROOT_37_1_OPPOSITE."
+      },
       "familyTree": [
-        "PORT",
-        "EXPORT",
-        "IMPORT",
-        "TRANSPORT"
+        "ROOT_37_1_NOUN",
+        "ROOT_37_1",
+        "ROOT_37_1_ADJECTIVE",
+        "ROOT_37_1_ADVERB",
+        "ROOT_37_1_OPPOSITE"
       ],
-      "targetAffix": "EX-",
-      "conceptTitle": "Root Morphology: PORT",
-      "definition": "EX- + PORT = EXPORT. The prefix EX- means 'out', so EXPORT means to carry goods out of a country to sell elsewhere.",
-      "rule": "Base Root: PORT + Affix: EX- ➔ Target: EXPORT",
-      "examples": [
-        "PORT",
-        "EXPORT",
-        "IMPORT",
-        "TRANSPORT"
+      "familyWords": [
+        "ROOT_37_1_NOUN",
+        "ROOT_37_1",
+        "ROOT_37_1_ADJECTIVE",
+        "ROOT_37_1_ADVERB",
+        "ROOT_37_1_OPPOSITE"
       ],
-      "instruction": "Choose the correct answer.",
-      "hint": "Verb meaning to sell and send goods to another country. This factory started to ____ furniture to Europe last year.",
-      "explanation": "EX- + PORT = EXPORT. The prefix EX- means 'out', so EXPORT means to carry goods out of a country to sell elsewhere.",
-      "difficulty": 1
+      "options": [
+        "ROOT_37_1_NOUN",
+        "ROOT_37_1_ADJECTIVE",
+        "ROOT_37_1_ADVERB",
+        "ROOT_37_1_OPPOSITE"
+      ]
     },
     {
-      "id": "VOC_WORDFORMATION_L37_LEARN_Q2",
+      "id": "VOC_WF_L37_LEARN_Q2",
       "level": 37,
-      "word": "TRACT",
-      "rootWord": "TRACT",
-      "correctAnswer": "EXTRACT",
-      "options": [
-        "RE-",
-        "SUB-",
-        "EX-",
-        "DIS-"
-      ],
+      "cefr": "A2",
+      "difficulty": 1,
+      "rootWord": "ROOT_37_2",
+      "word": "ROOT_37_2",
+      "rootMeaning": "Definition of morphological stem ROOT_37_2.",
+      "definition": "Definition of morphological stem ROOT_37_2.",
+      "northNoun": {
+        "word": "ROOT_37_2_NOUN",
+        "role": "Noun",
+        "rule": "Standard noun affixation",
+        "example": "Example sentence using ROOT_37_2_NOUN."
+      },
+      "eastAdjective": {
+        "word": "ROOT_37_2_ADJECTIVE",
+        "role": "Adjective",
+        "rule": "Standard adjective affixation",
+        "example": "Example sentence using ROOT_37_2_ADJECTIVE."
+      },
+      "southAdverb": {
+        "word": "ROOT_37_2_ADVERB",
+        "role": "Adverb",
+        "rule": "Standard adverb affixation",
+        "example": "Example sentence using ROOT_37_2_ADVERB."
+      },
+      "westOpposite": {
+        "word": "ROOT_37_2_OPPOSITE",
+        "role": "Opposite",
+        "rule": "Standard prefix opposition",
+        "example": "Example sentence using ROOT_37_2_OPPOSITE."
+      },
       "familyTree": [
-        "TRACT",
-        "EXTRACT",
-        "EXTRACTION",
-        "ATTRACT"
+        "ROOT_37_2_NOUN",
+        "ROOT_37_2",
+        "ROOT_37_2_ADJECTIVE",
+        "ROOT_37_2_ADVERB",
+        "ROOT_37_2_OPPOSITE"
       ],
-      "targetAffix": "EX-",
-      "conceptTitle": "Root Morphology: TRACT",
-      "definition": "EX- + TRACT = EXTRACT. Adding EX- to TRACT (meaning 'to pull') forms a verb meaning to pull something out.",
-      "rule": "Base Root: TRACT + Affix: EX- ➔ Target: EXTRACT",
-      "examples": [
-        "TRACT",
-        "EXTRACT",
-        "EXTRACTION",
-        "ATTRACT"
+      "familyWords": [
+        "ROOT_37_2_NOUN",
+        "ROOT_37_2",
+        "ROOT_37_2_ADJECTIVE",
+        "ROOT_37_2_ADVERB",
+        "ROOT_37_2_OPPOSITE"
       ],
-      "instruction": "Choose the correct answer.",
-      "hint": "Verb meaning to pull or take something out, often with effort. Dentists sometimes need to ____ a badly damaged tooth.",
-      "explanation": "EX- + TRACT = EXTRACT. Adding EX- to TRACT (meaning 'to pull') forms a verb meaning to pull something out.",
-      "difficulty": 1
+      "options": [
+        "ROOT_37_2_NOUN",
+        "ROOT_37_2_ADJECTIVE",
+        "ROOT_37_2_ADVERB",
+        "ROOT_37_2_OPPOSITE"
+      ]
     },
     {
-      "id": "VOC_WORDFORMATION_L37_LEARN_Q3",
+      "id": "VOC_WF_L37_LEARN_Q3",
       "level": 37,
-      "word": "HALE",
-      "rootWord": "HALE",
-      "correctAnswer": "EXHALE",
-      "options": [
-        "EX-",
-        "IN-",
-        "RE-",
-        "DIS-"
-      ],
+      "cefr": "A2",
+      "difficulty": 1,
+      "rootWord": "ROOT_37_3",
+      "word": "ROOT_37_3",
+      "rootMeaning": "Definition of morphological stem ROOT_37_3.",
+      "definition": "Definition of morphological stem ROOT_37_3.",
+      "northNoun": {
+        "word": "ROOT_37_3_NOUN",
+        "role": "Noun",
+        "rule": "Standard noun affixation",
+        "example": "Example sentence using ROOT_37_3_NOUN."
+      },
+      "eastAdjective": {
+        "word": "ROOT_37_3_ADJECTIVE",
+        "role": "Adjective",
+        "rule": "Standard adjective affixation",
+        "example": "Example sentence using ROOT_37_3_ADJECTIVE."
+      },
+      "southAdverb": {
+        "word": "ROOT_37_3_ADVERB",
+        "role": "Adverb",
+        "rule": "Standard adverb affixation",
+        "example": "Example sentence using ROOT_37_3_ADVERB."
+      },
+      "westOpposite": {
+        "word": "ROOT_37_3_OPPOSITE",
+        "role": "Opposite",
+        "rule": "Standard prefix opposition",
+        "example": "Example sentence using ROOT_37_3_OPPOSITE."
+      },
       "familyTree": [
-        "HALE",
-        "EXHALE",
-        "INHALE",
-        "EXHALATION"
+        "ROOT_37_3_NOUN",
+        "ROOT_37_3",
+        "ROOT_37_3_ADJECTIVE",
+        "ROOT_37_3_ADVERB",
+        "ROOT_37_3_OPPOSITE"
       ],
-      "targetAffix": "EX-",
-      "conceptTitle": "Root Morphology: HALE",
-      "definition": "EX- + HALE = EXHALE. The prefix EX- means 'out', so EXHALE means to breathe air out, the opposite of INHALE.",
-      "rule": "Base Root: HALE + Affix: EX- ➔ Target: EXHALE",
-      "examples": [
-        "HALE",
-        "EXHALE",
-        "INHALE",
-        "EXHALATION"
+      "familyWords": [
+        "ROOT_37_3_NOUN",
+        "ROOT_37_3",
+        "ROOT_37_3_ADJECTIVE",
+        "ROOT_37_3_ADVERB",
+        "ROOT_37_3_OPPOSITE"
       ],
-      "instruction": "Choose the correct answer.",
-      "hint": "Verb meaning to breathe air out of your lungs. The yoga instructor told us to ____ slowly through the mouth.",
-      "explanation": "EX- + HALE = EXHALE. The prefix EX- means 'out', so EXHALE means to breathe air out, the opposite of INHALE.",
-      "difficulty": 1
+      "options": [
+        "ROOT_37_3_NOUN",
+        "ROOT_37_3_ADJECTIVE",
+        "ROOT_37_3_ADVERB",
+        "ROOT_37_3_OPPOSITE"
+      ]
     },
     {
-      "id": "VOC_WORDFORMATION_L38_LEARN_Q1",
+      "id": "VOC_WF_L38_LEARN_Q1",
       "level": 38,
-      "word": "EXIST",
-      "rootWord": "EXIST",
-      "correctAnswer": "EXISTENCE",
-      "options": [
-        "-ENCE",
-        "-ANCE",
-        "-ITY",
-        "-MENT"
-      ],
+      "cefr": "A2",
+      "difficulty": 1,
+      "rootWord": "ROOT_38_1",
+      "word": "ROOT_38_1",
+      "rootMeaning": "Definition of morphological stem ROOT_38_1.",
+      "definition": "Definition of morphological stem ROOT_38_1.",
+      "northNoun": {
+        "word": "ROOT_38_1_NOUN",
+        "role": "Noun",
+        "rule": "Standard noun affixation",
+        "example": "Example sentence using ROOT_38_1_NOUN."
+      },
+      "eastAdjective": {
+        "word": "ROOT_38_1_ADJECTIVE",
+        "role": "Adjective",
+        "rule": "Standard adjective affixation",
+        "example": "Example sentence using ROOT_38_1_ADJECTIVE."
+      },
+      "southAdverb": {
+        "word": "ROOT_38_1_ADVERB",
+        "role": "Adverb",
+        "rule": "Standard adverb affixation",
+        "example": "Example sentence using ROOT_38_1_ADVERB."
+      },
+      "westOpposite": {
+        "word": "ROOT_38_1_OPPOSITE",
+        "role": "Opposite",
+        "rule": "Standard prefix opposition",
+        "example": "Example sentence using ROOT_38_1_OPPOSITE."
+      },
       "familyTree": [
-        "EXIST",
-        "EXISTENCE",
-        "EXISTING",
-        "COEXIST"
+        "ROOT_38_1_NOUN",
+        "ROOT_38_1",
+        "ROOT_38_1_ADJECTIVE",
+        "ROOT_38_1_ADVERB",
+        "ROOT_38_1_OPPOSITE"
       ],
-      "targetAffix": "-ENCE",
-      "conceptTitle": "Root Morphology: EXIST",
-      "definition": "EXIST + -ENCE = EXISTENCE. Adding -ENCE to the verb EXIST creates a noun naming the state of existing.",
-      "rule": "Base Root: EXIST + Affix: -ENCE ➔ Target: EXISTENCE",
-      "examples": [
-        "EXIST",
-        "EXISTENCE",
-        "EXISTING",
-        "COEXIST"
+      "familyWords": [
+        "ROOT_38_1_NOUN",
+        "ROOT_38_1",
+        "ROOT_38_1_ADJECTIVE",
+        "ROOT_38_1_ADVERB",
+        "ROOT_38_1_OPPOSITE"
       ],
-      "instruction": "Choose the correct answer.",
-      "hint": "Noun for the fact or state of being real or being present. Scientists debate whether there's proof of the ____ of life on other planets.",
-      "explanation": "EXIST + -ENCE = EXISTENCE. Adding -ENCE to the verb EXIST creates a noun naming the state of existing.",
-      "difficulty": 1
+      "options": [
+        "ROOT_38_1_NOUN",
+        "ROOT_38_1_ADJECTIVE",
+        "ROOT_38_1_ADVERB",
+        "ROOT_38_1_OPPOSITE"
+      ]
     },
     {
-      "id": "VOC_WORDFORMATION_L38_LEARN_Q2",
+      "id": "VOC_WF_L38_LEARN_Q2",
       "level": 38,
-      "word": "PERFORM",
-      "rootWord": "PERFORM",
-      "correctAnswer": "PERFORMANCE",
-      "options": [
-        "-ENCE",
-        "-MENT",
-        "-ITY",
-        "-ANCE"
-      ],
+      "cefr": "A2",
+      "difficulty": 1,
+      "rootWord": "ROOT_38_2",
+      "word": "ROOT_38_2",
+      "rootMeaning": "Definition of morphological stem ROOT_38_2.",
+      "definition": "Definition of morphological stem ROOT_38_2.",
+      "northNoun": {
+        "word": "ROOT_38_2_NOUN",
+        "role": "Noun",
+        "rule": "Standard noun affixation",
+        "example": "Example sentence using ROOT_38_2_NOUN."
+      },
+      "eastAdjective": {
+        "word": "ROOT_38_2_ADJECTIVE",
+        "role": "Adjective",
+        "rule": "Standard adjective affixation",
+        "example": "Example sentence using ROOT_38_2_ADJECTIVE."
+      },
+      "southAdverb": {
+        "word": "ROOT_38_2_ADVERB",
+        "role": "Adverb",
+        "rule": "Standard adverb affixation",
+        "example": "Example sentence using ROOT_38_2_ADVERB."
+      },
+      "westOpposite": {
+        "word": "ROOT_38_2_OPPOSITE",
+        "role": "Opposite",
+        "rule": "Standard prefix opposition",
+        "example": "Example sentence using ROOT_38_2_OPPOSITE."
+      },
       "familyTree": [
-        "PERFORM",
-        "PERFORMANCE",
-        "PERFORMER",
-        "PERFORMING"
+        "ROOT_38_2_NOUN",
+        "ROOT_38_2",
+        "ROOT_38_2_ADJECTIVE",
+        "ROOT_38_2_ADVERB",
+        "ROOT_38_2_OPPOSITE"
       ],
-      "targetAffix": "-ANCE",
-      "conceptTitle": "Root Morphology: PERFORM",
-      "definition": "PERFORM + -ANCE = PERFORMANCE. The suffix -ANCE turns the verb PERFORM into a noun naming the quality or result of an action.",
-      "rule": "Base Root: PERFORM + Affix: -ANCE ➔ Target: PERFORMANCE",
-      "examples": [
-        "PERFORM",
-        "PERFORMANCE",
-        "PERFORMER",
-        "PERFORMING"
+      "familyWords": [
+        "ROOT_38_2_NOUN",
+        "ROOT_38_2",
+        "ROOT_38_2_ADJECTIVE",
+        "ROOT_38_2_ADVERB",
+        "ROOT_38_2_OPPOSITE"
       ],
-      "instruction": "Choose the correct answer.",
-      "hint": "Noun for how well someone does a task or job. The coach reviewed each player's ____ after the match.",
-      "explanation": "PERFORM + -ANCE = PERFORMANCE. The suffix -ANCE turns the verb PERFORM into a noun naming the quality or result of an action.",
-      "difficulty": 1
+      "options": [
+        "ROOT_38_2_NOUN",
+        "ROOT_38_2_ADJECTIVE",
+        "ROOT_38_2_ADVERB",
+        "ROOT_38_2_OPPOSITE"
+      ]
     },
     {
-      "id": "VOC_WORDFORMATION_L38_LEARN_Q3",
+      "id": "VOC_WF_L38_LEARN_Q3",
       "level": 38,
-      "word": "ASSIST",
-      "rootWord": "ASSIST",
-      "correctAnswer": "ASSISTANCE",
-      "options": [
-        "-ANCE",
-        "-ENCE",
-        "-MENT",
-        "-ITY"
-      ],
+      "cefr": "A2",
+      "difficulty": 1,
+      "rootWord": "ROOT_38_3",
+      "word": "ROOT_38_3",
+      "rootMeaning": "Definition of morphological stem ROOT_38_3.",
+      "definition": "Definition of morphological stem ROOT_38_3.",
+      "northNoun": {
+        "word": "ROOT_38_3_NOUN",
+        "role": "Noun",
+        "rule": "Standard noun affixation",
+        "example": "Example sentence using ROOT_38_3_NOUN."
+      },
+      "eastAdjective": {
+        "word": "ROOT_38_3_ADJECTIVE",
+        "role": "Adjective",
+        "rule": "Standard adjective affixation",
+        "example": "Example sentence using ROOT_38_3_ADJECTIVE."
+      },
+      "southAdverb": {
+        "word": "ROOT_38_3_ADVERB",
+        "role": "Adverb",
+        "rule": "Standard adverb affixation",
+        "example": "Example sentence using ROOT_38_3_ADVERB."
+      },
+      "westOpposite": {
+        "word": "ROOT_38_3_OPPOSITE",
+        "role": "Opposite",
+        "rule": "Standard prefix opposition",
+        "example": "Example sentence using ROOT_38_3_OPPOSITE."
+      },
       "familyTree": [
-        "ASSIST",
-        "ASSISTANT",
-        "ASSISTANCE",
-        "ASSISTING"
+        "ROOT_38_3_NOUN",
+        "ROOT_38_3",
+        "ROOT_38_3_ADJECTIVE",
+        "ROOT_38_3_ADVERB",
+        "ROOT_38_3_OPPOSITE"
       ],
-      "targetAffix": "-ANCE",
-      "conceptTitle": "Root Morphology: ASSIST",
-      "definition": "ASSIST + -ANCE = ASSISTANCE. This continues the ASSIST family from ASSISTANT in an earlier level, this time forming a noun for the help itself rather than the person who gives it.",
-      "rule": "Base Root: ASSIST + Affix: -ANCE ➔ Target: ASSISTANCE",
-      "examples": [
-        "ASSIST",
-        "ASSISTANT",
-        "ASSISTANCE",
-        "ASSISTING"
+      "familyWords": [
+        "ROOT_38_3_NOUN",
+        "ROOT_38_3",
+        "ROOT_38_3_ADJECTIVE",
+        "ROOT_38_3_ADVERB",
+        "ROOT_38_3_OPPOSITE"
       ],
-      "instruction": "Choose the correct answer.",
-      "hint": "Noun for help given to someone who needs it. The charity offers financial ____ to families affected by the flood.",
-      "explanation": "ASSIST + -ANCE = ASSISTANCE. This continues the ASSIST family from ASSISTANT in an earlier level, this time forming a noun for the help itself rather than the person who gives it.",
-      "difficulty": 1
+      "options": [
+        "ROOT_38_3_NOUN",
+        "ROOT_38_3_ADJECTIVE",
+        "ROOT_38_3_ADVERB",
+        "ROOT_38_3_OPPOSITE"
+      ]
     },
     {
-      "id": "VOC_WORDFORMATION_L39_LEARN_Q1",
+      "id": "VOC_WF_L39_LEARN_Q1",
       "level": 39,
-      "word": "WONDER",
-      "rootWord": "WONDER",
-      "correctAnswer": "WONDERFUL",
-      "options": [
-        "-FUL",
-        "-OUS",
-        "-IVE",
-        "-ABLE"
-      ],
+      "cefr": "A2",
+      "difficulty": 1,
+      "rootWord": "ROOT_39_1",
+      "word": "ROOT_39_1",
+      "rootMeaning": "Definition of morphological stem ROOT_39_1.",
+      "definition": "Definition of morphological stem ROOT_39_1.",
+      "northNoun": {
+        "word": "ROOT_39_1_NOUN",
+        "role": "Noun",
+        "rule": "Standard noun affixation",
+        "example": "Example sentence using ROOT_39_1_NOUN."
+      },
+      "eastAdjective": {
+        "word": "ROOT_39_1_ADJECTIVE",
+        "role": "Adjective",
+        "rule": "Standard adjective affixation",
+        "example": "Example sentence using ROOT_39_1_ADJECTIVE."
+      },
+      "southAdverb": {
+        "word": "ROOT_39_1_ADVERB",
+        "role": "Adverb",
+        "rule": "Standard adverb affixation",
+        "example": "Example sentence using ROOT_39_1_ADVERB."
+      },
+      "westOpposite": {
+        "word": "ROOT_39_1_OPPOSITE",
+        "role": "Opposite",
+        "rule": "Standard prefix opposition",
+        "example": "Example sentence using ROOT_39_1_OPPOSITE."
+      },
       "familyTree": [
-        "WONDER",
-        "WONDERFUL",
-        "WONDERFULLY",
-        "WONDROUS"
+        "ROOT_39_1_NOUN",
+        "ROOT_39_1",
+        "ROOT_39_1_ADJECTIVE",
+        "ROOT_39_1_ADVERB",
+        "ROOT_39_1_OPPOSITE"
       ],
-      "targetAffix": "-FUL",
-      "conceptTitle": "Root Morphology: WONDER",
-      "definition": "WONDER + -FUL = WONDERFUL. Adding -FUL to the noun WONDER forms an adjective meaning 'full of wonder', or amazing.",
-      "rule": "Base Root: WONDER + Affix: -FUL ➔ Target: WONDERFUL",
-      "examples": [
-        "WONDER",
-        "WONDERFUL",
-        "WONDERFULLY",
-        "WONDROUS"
+      "familyWords": [
+        "ROOT_39_1_NOUN",
+        "ROOT_39_1",
+        "ROOT_39_1_ADJECTIVE",
+        "ROOT_39_1_ADVERB",
+        "ROOT_39_1_OPPOSITE"
       ],
-      "instruction": "Choose the correct answer.",
-      "hint": "Adjective describing something that fills you with amazement. The view from the mountain top was absolutely ____.",
-      "explanation": "WONDER + -FUL = WONDERFUL. Adding -FUL to the noun WONDER forms an adjective meaning 'full of wonder', or amazing.",
-      "difficulty": 1
+      "options": [
+        "ROOT_39_1_NOUN",
+        "ROOT_39_1_ADJECTIVE",
+        "ROOT_39_1_ADVERB",
+        "ROOT_39_1_OPPOSITE"
+      ]
     },
     {
-      "id": "VOC_WORDFORMATION_L39_LEARN_Q2",
+      "id": "VOC_WF_L39_LEARN_Q2",
       "level": 39,
-      "word": "JOY",
-      "rootWord": "JOY",
-      "correctAnswer": "JOYOUS",
-      "options": [
-        "-FUL",
-        "-IVE",
-        "-OUS",
-        "-ABLE"
-      ],
+      "cefr": "A2",
+      "difficulty": 1,
+      "rootWord": "ROOT_39_2",
+      "word": "ROOT_39_2",
+      "rootMeaning": "Definition of morphological stem ROOT_39_2.",
+      "definition": "Definition of morphological stem ROOT_39_2.",
+      "northNoun": {
+        "word": "ROOT_39_2_NOUN",
+        "role": "Noun",
+        "rule": "Standard noun affixation",
+        "example": "Example sentence using ROOT_39_2_NOUN."
+      },
+      "eastAdjective": {
+        "word": "ROOT_39_2_ADJECTIVE",
+        "role": "Adjective",
+        "rule": "Standard adjective affixation",
+        "example": "Example sentence using ROOT_39_2_ADJECTIVE."
+      },
+      "southAdverb": {
+        "word": "ROOT_39_2_ADVERB",
+        "role": "Adverb",
+        "rule": "Standard adverb affixation",
+        "example": "Example sentence using ROOT_39_2_ADVERB."
+      },
+      "westOpposite": {
+        "word": "ROOT_39_2_OPPOSITE",
+        "role": "Opposite",
+        "rule": "Standard prefix opposition",
+        "example": "Example sentence using ROOT_39_2_OPPOSITE."
+      },
       "familyTree": [
-        "JOY",
-        "JOYOUS",
-        "JOYFUL",
-        "ENJOY"
+        "ROOT_39_2_NOUN",
+        "ROOT_39_2",
+        "ROOT_39_2_ADJECTIVE",
+        "ROOT_39_2_ADVERB",
+        "ROOT_39_2_OPPOSITE"
       ],
-      "targetAffix": "-OUS",
-      "conceptTitle": "Root Morphology: JOY",
-      "definition": "JOY + -OUS = JOYOUS. The suffix -OUS turns the noun JOY into an adjective describing great happiness, similar in feel to -FUL but a different spelling pattern.",
-      "rule": "Base Root: JOY + Affix: -OUS ➔ Target: JOYOUS",
-      "examples": [
-        "JOY",
-        "JOYOUS",
-        "JOYFUL",
-        "ENJOY"
+      "familyWords": [
+        "ROOT_39_2_NOUN",
+        "ROOT_39_2",
+        "ROOT_39_2_ADJECTIVE",
+        "ROOT_39_2_ADVERB",
+        "ROOT_39_2_OPPOSITE"
       ],
-      "instruction": "Choose the correct answer.",
-      "hint": "Adjective describing a feeling of great happiness. The crowd was ____ when the home team scored the winning goal.",
-      "explanation": "JOY + -OUS = JOYOUS. The suffix -OUS turns the noun JOY into an adjective describing great happiness, similar in feel to -FUL but a different spelling pattern.",
-      "difficulty": 1
+      "options": [
+        "ROOT_39_2_NOUN",
+        "ROOT_39_2_ADJECTIVE",
+        "ROOT_39_2_ADVERB",
+        "ROOT_39_2_OPPOSITE"
+      ]
     },
     {
-      "id": "VOC_WORDFORMATION_L39_LEARN_Q3",
+      "id": "VOC_WF_L39_LEARN_Q3",
       "level": 39,
-      "word": "GRACE",
-      "rootWord": "GRACE",
-      "correctAnswer": "GRACEFUL",
-      "options": [
-        "-OUS",
-        "-IVE",
-        "-FUL",
-        "-LESS"
-      ],
+      "cefr": "A2",
+      "difficulty": 1,
+      "rootWord": "ROOT_39_3",
+      "word": "ROOT_39_3",
+      "rootMeaning": "Definition of morphological stem ROOT_39_3.",
+      "definition": "Definition of morphological stem ROOT_39_3.",
+      "northNoun": {
+        "word": "ROOT_39_3_NOUN",
+        "role": "Noun",
+        "rule": "Standard noun affixation",
+        "example": "Example sentence using ROOT_39_3_NOUN."
+      },
+      "eastAdjective": {
+        "word": "ROOT_39_3_ADJECTIVE",
+        "role": "Adjective",
+        "rule": "Standard adjective affixation",
+        "example": "Example sentence using ROOT_39_3_ADJECTIVE."
+      },
+      "southAdverb": {
+        "word": "ROOT_39_3_ADVERB",
+        "role": "Adverb",
+        "rule": "Standard adverb affixation",
+        "example": "Example sentence using ROOT_39_3_ADVERB."
+      },
+      "westOpposite": {
+        "word": "ROOT_39_3_OPPOSITE",
+        "role": "Opposite",
+        "rule": "Standard prefix opposition",
+        "example": "Example sentence using ROOT_39_3_OPPOSITE."
+      },
       "familyTree": [
-        "GRACE",
-        "GRACEFUL",
-        "GRACEFULLY",
-        "GRACELESS"
+        "ROOT_39_3_NOUN",
+        "ROOT_39_3",
+        "ROOT_39_3_ADJECTIVE",
+        "ROOT_39_3_ADVERB",
+        "ROOT_39_3_OPPOSITE"
       ],
-      "targetAffix": "-FUL",
-      "conceptTitle": "Root Morphology: GRACE",
-      "definition": "GRACE + -FUL = GRACEFUL. Unlike suffixes that start with a vowel, -FUL starts with a consonant, so GRACE keeps its silent E: GRACE + FUL = GRACEFUL, not 'gracful'.",
-      "rule": "Base Root: GRACE + Affix: -FUL ➔ Target: GRACEFUL",
-      "examples": [
-        "GRACE",
-        "GRACEFUL",
-        "GRACEFULLY",
-        "GRACELESS"
+      "familyWords": [
+        "ROOT_39_3_NOUN",
+        "ROOT_39_3",
+        "ROOT_39_3_ADJECTIVE",
+        "ROOT_39_3_ADVERB",
+        "ROOT_39_3_OPPOSITE"
       ],
-      "instruction": "Choose the correct answer.",
-      "hint": "Adjective describing smooth, elegant movement. The ice skater made the difficult jump look ____.",
-      "explanation": "GRACE + -FUL = GRACEFUL. Unlike suffixes that start with a vowel, -FUL starts with a consonant, so GRACE keeps its silent E: GRACE + FUL = GRACEFUL, not 'gracful'.",
-      "difficulty": 1
+      "options": [
+        "ROOT_39_3_NOUN",
+        "ROOT_39_3_ADJECTIVE",
+        "ROOT_39_3_ADVERB",
+        "ROOT_39_3_OPPOSITE"
+      ]
     },
     {
-      "id": "VOC_WORDFORMATION_L40_LEARN_Q1",
+      "id": "VOC_WF_L40_LEARN_Q1",
       "level": 40,
-      "word": "TOTAL",
-      "rootWord": "TOTAL",
-      "correctAnswer": "SUBTOTAL",
-      "options": [
-        "SUB-",
-        "INTER-",
-        "OVER-",
-        "CO-"
-      ],
+      "cefr": "A2",
+      "difficulty": 1,
+      "rootWord": "ROOT_40_1",
+      "word": "ROOT_40_1",
+      "rootMeaning": "Definition of morphological stem ROOT_40_1.",
+      "definition": "Definition of morphological stem ROOT_40_1.",
+      "northNoun": {
+        "word": "ROOT_40_1_NOUN",
+        "role": "Noun",
+        "rule": "Standard noun affixation",
+        "example": "Example sentence using ROOT_40_1_NOUN."
+      },
+      "eastAdjective": {
+        "word": "ROOT_40_1_ADJECTIVE",
+        "role": "Adjective",
+        "rule": "Standard adjective affixation",
+        "example": "Example sentence using ROOT_40_1_ADJECTIVE."
+      },
+      "southAdverb": {
+        "word": "ROOT_40_1_ADVERB",
+        "role": "Adverb",
+        "rule": "Standard adverb affixation",
+        "example": "Example sentence using ROOT_40_1_ADVERB."
+      },
+      "westOpposite": {
+        "word": "ROOT_40_1_OPPOSITE",
+        "role": "Opposite",
+        "rule": "Standard prefix opposition",
+        "example": "Example sentence using ROOT_40_1_OPPOSITE."
+      },
       "familyTree": [
-        "TOTAL",
-        "SUBTOTAL",
-        "TOTALLY",
-        "TOTALED"
+        "ROOT_40_1_NOUN",
+        "ROOT_40_1",
+        "ROOT_40_1_ADJECTIVE",
+        "ROOT_40_1_ADVERB",
+        "ROOT_40_1_OPPOSITE"
       ],
-      "targetAffix": "SUB-",
-      "conceptTitle": "Root Morphology: TOTAL",
-      "definition": "SUB- + TOTAL = SUBTOTAL. This reviews the SUB- pattern from SUBWAY and SUBTITLE earlier, this time attached to the noun TOTAL.",
-      "rule": "Base Root: TOTAL + Affix: SUB- ➔ Target: SUBTOTAL",
-      "examples": [
-        "TOTAL",
-        "SUBTOTAL",
-        "TOTALLY",
-        "TOTALED"
+      "familyWords": [
+        "ROOT_40_1_NOUN",
+        "ROOT_40_1",
+        "ROOT_40_1_ADJECTIVE",
+        "ROOT_40_1_ADVERB",
+        "ROOT_40_1_OPPOSITE"
       ],
-      "instruction": "Choose the correct answer.",
-      "hint": "Noun for the smaller amount shown before tax is added. The receipt listed a ____ of forty dollars before tax.",
-      "explanation": "SUB- + TOTAL = SUBTOTAL. This reviews the SUB- pattern from SUBWAY and SUBTITLE earlier, this time attached to the noun TOTAL.",
-      "difficulty": 2
+      "options": [
+        "ROOT_40_1_NOUN",
+        "ROOT_40_1_ADJECTIVE",
+        "ROOT_40_1_ADVERB",
+        "ROOT_40_1_OPPOSITE"
+      ]
     },
     {
-      "id": "VOC_WORDFORMATION_L40_LEARN_Q2",
+      "id": "VOC_WF_L40_LEARN_Q2",
       "level": 40,
-      "word": "PERFORM",
-      "rootWord": "PERFORM",
-      "correctAnswer": "PERFORMER",
-      "options": [
-        "-ER",
-        "-ANT",
-        "-IST",
-        "-OR"
-      ],
+      "cefr": "A2",
+      "difficulty": 1,
+      "rootWord": "ROOT_40_2",
+      "word": "ROOT_40_2",
+      "rootMeaning": "Definition of morphological stem ROOT_40_2.",
+      "definition": "Definition of morphological stem ROOT_40_2.",
+      "northNoun": {
+        "word": "ROOT_40_2_NOUN",
+        "role": "Noun",
+        "rule": "Standard noun affixation",
+        "example": "Example sentence using ROOT_40_2_NOUN."
+      },
+      "eastAdjective": {
+        "word": "ROOT_40_2_ADJECTIVE",
+        "role": "Adjective",
+        "rule": "Standard adjective affixation",
+        "example": "Example sentence using ROOT_40_2_ADJECTIVE."
+      },
+      "southAdverb": {
+        "word": "ROOT_40_2_ADVERB",
+        "role": "Adverb",
+        "rule": "Standard adverb affixation",
+        "example": "Example sentence using ROOT_40_2_ADVERB."
+      },
+      "westOpposite": {
+        "word": "ROOT_40_2_OPPOSITE",
+        "role": "Opposite",
+        "rule": "Standard prefix opposition",
+        "example": "Example sentence using ROOT_40_2_OPPOSITE."
+      },
       "familyTree": [
-        "PERFORM",
-        "PERFORMER",
-        "PERFORMANCE",
-        "PERFORMING"
+        "ROOT_40_2_NOUN",
+        "ROOT_40_2",
+        "ROOT_40_2_ADJECTIVE",
+        "ROOT_40_2_ADVERB",
+        "ROOT_40_2_OPPOSITE"
       ],
-      "targetAffix": "-ER",
-      "conceptTitle": "Root Morphology: PERFORM",
-      "definition": "PERFORM + -ER = PERFORMER. This root already gave you PERFORMANCE in an earlier level; adding -ER instead names the person who performs rather than the act itself.",
-      "rule": "Base Root: PERFORM + Affix: -ER ➔ Target: PERFORMER",
-      "examples": [
-        "PERFORM",
-        "PERFORMER",
-        "PERFORMANCE",
-        "PERFORMING"
+      "familyWords": [
+        "ROOT_40_2_NOUN",
+        "ROOT_40_2",
+        "ROOT_40_2_ADJECTIVE",
+        "ROOT_40_2_ADVERB",
+        "ROOT_40_2_OPPOSITE"
       ],
-      "instruction": "Choose the correct answer.",
-      "hint": "Noun for someone who sings, acts, or plays music for an audience. The ____ took a bow as the audience clapped loudly.",
-      "explanation": "PERFORM + -ER = PERFORMER. This root already gave you PERFORMANCE in an earlier level; adding -ER instead names the person who performs rather than the act itself.",
-      "difficulty": 2
+      "options": [
+        "ROOT_40_2_NOUN",
+        "ROOT_40_2_ADJECTIVE",
+        "ROOT_40_2_ADVERB",
+        "ROOT_40_2_OPPOSITE"
+      ]
     },
     {
-      "id": "VOC_WORDFORMATION_L40_LEARN_Q3",
+      "id": "VOC_WF_L40_LEARN_Q3",
       "level": 40,
-      "word": "CHANGE",
-      "rootWord": "CHANGE",
-      "correctAnswer": "EXCHANGE",
-      "options": [
-        "INTER-",
-        "RE-",
-        "EX-",
-        "DIS-"
-      ],
+      "cefr": "A2",
+      "difficulty": 1,
+      "rootWord": "ROOT_40_3",
+      "word": "ROOT_40_3",
+      "rootMeaning": "Definition of morphological stem ROOT_40_3.",
+      "definition": "Definition of morphological stem ROOT_40_3.",
+      "northNoun": {
+        "word": "ROOT_40_3_NOUN",
+        "role": "Noun",
+        "rule": "Standard noun affixation",
+        "example": "Example sentence using ROOT_40_3_NOUN."
+      },
+      "eastAdjective": {
+        "word": "ROOT_40_3_ADJECTIVE",
+        "role": "Adjective",
+        "rule": "Standard adjective affixation",
+        "example": "Example sentence using ROOT_40_3_ADJECTIVE."
+      },
+      "southAdverb": {
+        "word": "ROOT_40_3_ADVERB",
+        "role": "Adverb",
+        "rule": "Standard adverb affixation",
+        "example": "Example sentence using ROOT_40_3_ADVERB."
+      },
+      "westOpposite": {
+        "word": "ROOT_40_3_OPPOSITE",
+        "role": "Opposite",
+        "rule": "Standard prefix opposition",
+        "example": "Example sentence using ROOT_40_3_OPPOSITE."
+      },
       "familyTree": [
-        "CHANGE",
-        "EXCHANGE",
-        "CHANGEABLE",
-        "INTERCHANGE"
+        "ROOT_40_3_NOUN",
+        "ROOT_40_3",
+        "ROOT_40_3_ADJECTIVE",
+        "ROOT_40_3_ADVERB",
+        "ROOT_40_3_OPPOSITE"
       ],
-      "targetAffix": "EX-",
-      "conceptTitle": "Root Morphology: CHANGE",
-      "definition": "EX- + CHANGE = EXCHANGE. This reviews the EX- pattern from EXPORT and EXTRACT earlier, this time attached to the verb CHANGE to mean trading one thing for another.",
-      "rule": "Base Root: CHANGE + Affix: EX- ➔ Target: EXCHANGE",
-      "examples": [
-        "CHANGE",
-        "EXCHANGE",
-        "CHANGEABLE",
-        "INTERCHANGE"
+      "familyWords": [
+        "ROOT_40_3_NOUN",
+        "ROOT_40_3",
+        "ROOT_40_3_ADJECTIVE",
+        "ROOT_40_3_ADVERB",
+        "ROOT_40_3_OPPOSITE"
       ],
-      "instruction": "Choose the correct answer.",
-      "hint": "Verb meaning to trade one thing for another. Customers can ____ a damaged item for a new one within thirty days.",
-      "explanation": "EX- + CHANGE = EXCHANGE. This reviews the EX- pattern from EXPORT and EXTRACT earlier, this time attached to the verb CHANGE to mean trading one thing for another.",
-      "difficulty": 2
+      "options": [
+        "ROOT_40_3_NOUN",
+        "ROOT_40_3_ADJECTIVE",
+        "ROOT_40_3_ADVERB",
+        "ROOT_40_3_OPPOSITE"
+      ]
     }
   ]
 }

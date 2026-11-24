@@ -69,7 +69,10 @@ class VocabularyQuestModel extends VocabularyQuest {
     int? newCorrectIndex = (map['correctAnswerIndex'] as num?)?.toInt();
 
     if (rawOptions != null) {
-      if (newCorrectIndex != null &&
+      if (subtype == GameSubtype.wordFormation) {
+        // Word Formation options are spatially fixed: [North/Noun, East/Adjective, South/Adverb, West/Opposite]
+        shuffledOptions = rawOptions;
+      } else if (newCorrectIndex != null &&
           newCorrectIndex >= 0 &&
           newCorrectIndex < rawOptions.length) {
         final correctOption = rawOptions[newCorrectIndex];
