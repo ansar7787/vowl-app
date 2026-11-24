@@ -172,112 +172,163 @@ class _QuestBriefingOverlayState extends State<QuestBriefingOverlay> {
                           border: Border.all(color: cardBorder, width: 1.0),
                           boxShadow: cardShadows,
                         ),
-                        child: Column(
-                          mainAxisSize: MainAxisSize.min,
-                          crossAxisAlignment: CrossAxisAlignment.start,
+                        child: Stack(
                           children: [
-                            // 1. Top Bar: Category Pill / Phase Badge & Close Button
-                            _buildTopBar(context, isDark, isMidnight),
-                            SizedBox(height: 16.h),
-
-                            // 2. Title (Elevated scale, w800 bold anchor)
-                            Text(
-                              widget.title,
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontSize: 23.sp,
-                                fontWeight: FontWeight.w800,
-                                color: titleCol,
-                                letterSpacing: -0.4,
-                                height: 1.22,
-                              ),
-                            ),
-
-                            // 3. Objective (Clean subtitle)
-                            if (widget.objective.isNotEmpty) ...[
-                              SizedBox(height: 6.h),
-                              Text(
-                                widget.objective,
-                                style: TextStyle(
-                                  fontFamily: 'Outfit',
-                                  fontSize: 14.sp,
-                                  fontWeight: FontWeight.w400,
-                                  color: subtitleCol,
-                                  height: 1.45,
-                                ),
-                              ),
-                            ],
-
-                            // 4. "HOW TO PLAY" Recessed Island Container
-                            if (_ruleWidgets.isNotEmpty) ...[
-                              SizedBox(height: 16.h),
-                              Container(
-                                width: double.infinity,
-                                padding: EdgeInsets.all(14.r),
-                                decoration: BoxDecoration(
-                                  color: isMidnight
-                                      ? const Color(0xFF0F0F12)
-                                      : (isDark
-                                            ? const Color(0xFF202024)
-                                            : const Color(0xFFF1F5F9)),
-                                  borderRadius: BorderRadius.circular(16.r),
-                                  border: Border.all(
-                                    color: isMidnight
-                                        ? Colors.white.withValues(alpha: 0.10)
-                                        : (isDark
-                                              ? Colors.white.withValues(
-                                                  alpha: 0.07,
-                                                )
-                                              : const Color(0xFFE2E8F0)),
-                                    width: 1,
+                            Column(
+                              mainAxisSize: MainAxisSize.min,
+                              crossAxisAlignment: CrossAxisAlignment.stretch,
+                              children: [
+                                // 1. Centered Hero Icon
+                                Center(
+                                  child: Container(
+                                    width: 44.r,
+                                    height: 44.r,
+                                    decoration: BoxDecoration(
+                                      color: widget.primaryColor.withValues(
+                                        alpha: isDark ? 0.16 : 0.10,
+                                      ),
+                                      borderRadius: BorderRadius.circular(14.r),
+                                      border: Border.all(
+                                        color: widget.primaryColor.withValues(
+                                          alpha: isDark ? 0.35 : 0.22,
+                                        ),
+                                        width: 1,
+                                      ),
+                                    ),
+                                    child: Center(
+                                      child: Icon(
+                                        widget.icon,
+                                        color: widget.primaryColor,
+                                        size: 22.r,
+                                      ),
+                                    ),
                                   ),
                                 ),
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Row(
-                                      children: [
-                                        Icon(
-                                          Icons.checklist_rounded,
-                                          size: 15.r,
-                                          color: isDark
-                                              ? Colors.white38
-                                              : const Color(0xFF64748B),
-                                        ),
-                                        SizedBox(width: 6.w),
-                                        Text(
-                                          context
-                                              .tr(
-                                                'games.how_to_play',
-                                                fallback: 'HOW TO PLAY',
+                                SizedBox(height: 10.h),
+
+                                // 2. Centered Phase Badge or Mission Briefing Pill
+                                Center(
+                                  child: _buildBadge(context, isDark),
+                                ),
+                                SizedBox(height: 12.h),
+
+                                // 3. Centered Title (Elevated scale, w800 bold anchor)
+                                Text(
+                                  widget.title,
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 23.sp,
+                                    fontWeight: FontWeight.w800,
+                                    color: titleCol,
+                                    letterSpacing: -0.4,
+                                    height: 1.22,
+                                  ),
+                                ),
+
+                                // 4. Centered Objective Subtitle (No flat feel)
+                                if (widget.objective.isNotEmpty) ...[
+                                  SizedBox(height: 6.h),
+                                  Padding(
+                                    padding: EdgeInsets.symmetric(
+                                      horizontal: 10.w,
+                                    ),
+                                    child: Text(
+                                      widget.objective,
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                        fontFamily: 'Outfit',
+                                        fontSize: 14.sp,
+                                        fontWeight: FontWeight.w400,
+                                        color: subtitleCol,
+                                        height: 1.45,
+                                      ),
+                                    ),
+                                  ),
+                                ],
+
+                                // 5. "HOW TO PLAY" Recessed Island Container
+                                if (_ruleWidgets.isNotEmpty) ...[
+                                  SizedBox(height: 16.h),
+                                  Container(
+                                    width: double.infinity,
+                                    padding: EdgeInsets.all(14.r),
+                                    decoration: BoxDecoration(
+                                      color: isMidnight
+                                          ? const Color(0xFF0F0F12)
+                                          : (isDark
+                                                ? const Color(0xFF202024)
+                                                : const Color(0xFFF1F5F9)),
+                                      borderRadius: BorderRadius.circular(16.r),
+                                      border: Border.all(
+                                        color: isMidnight
+                                            ? Colors.white.withValues(
+                                                alpha: 0.10,
                                               )
-                                              .toUpperCase(),
-                                          style: TextStyle(
-                                            fontFamily: 'Outfit',
-                                            fontSize: 11.sp,
-                                            fontWeight: FontWeight.w800,
-                                            letterSpacing: 1.1,
-                                            color: isDark
-                                                ? Colors.white38
-                                                : const Color(0xFF64748B),
-                                          ),
+                                            : (isDark
+                                                  ? Colors.white.withValues(
+                                                      alpha: 0.07,
+                                                    )
+                                                  : const Color(0xFFE2E8F0)),
+                                        width: 1,
+                                      ),
+                                    ),
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Row(
+                                          children: [
+                                            Icon(
+                                              Icons.checklist_rounded,
+                                              size: 15.r,
+                                              color: isDark
+                                                  ? Colors.white38
+                                                  : const Color(0xFF64748B),
+                                            ),
+                                            SizedBox(width: 6.w),
+                                            Text(
+                                              context
+                                                  .tr(
+                                                    'games.how_to_play',
+                                                    fallback: 'HOW TO PLAY',
+                                                  )
+                                                  .toUpperCase(),
+                                              style: TextStyle(
+                                                fontFamily: 'Outfit',
+                                                fontSize: 11.sp,
+                                                fontWeight: FontWeight.w800,
+                                                letterSpacing: 1.1,
+                                                color: isDark
+                                                    ? Colors.white38
+                                                    : const Color(0xFF64748B),
+                                              ),
+                                            ),
+                                          ],
                                         ),
+                                        SizedBox(height: 12.h),
+                                        ..._ruleWidgets,
                                       ],
                                     ),
-                                    SizedBox(height: 12.h),
-                                    ..._ruleWidgets,
-                                  ],
-                                ),
-                              ),
-                            ],
+                                  ),
+                                ],
 
-                            // 5. Pro-Tip Strip (Subtle, elegant warm accent)
-                            if (widget.tip.isNotEmpty)
-                              _buildTipStrip(isDark, isMidnight),
+                                // 6. Pro-Tip Strip (Subtle, elegant warm accent)
+                                if (widget.tip.isNotEmpty)
+                                  _buildTipStrip(isDark, isMidnight),
 
-                            // 6. Solid Tactile Primary CTA Button (Zero Neon Glow, Modern Chevron)
-                            SizedBox(height: 18.h),
-                            _buildCtaButton(),
+                                // 7. Solid Tactile Primary CTA Button (Zero Neon Glow, Modern Chevron)
+                                SizedBox(height: 18.h),
+                                _buildCtaButton(),
+                              ],
+                            ),
+
+                            // Top-Right Dismiss / Close Button (✕)
+                            Positioned(
+                              top: 0,
+                              right: 0,
+                              child: _buildCloseButton(isDark, isMidnight),
+                            ),
                           ],
                         ),
                       )
@@ -300,126 +351,85 @@ class _QuestBriefingOverlayState extends State<QuestBriefingOverlay> {
     );
   }
 
-  Widget _buildTopBar(BuildContext context, bool isDark, bool isMidnight) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        // Category Icon & Badge
-        Expanded(
-          child: Row(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Container(
-                width: 34.r,
-                height: 34.r,
-                decoration: BoxDecoration(
-                  color: widget.primaryColor.withValues(
-                    alpha: isDark ? 0.16 : 0.10,
-                  ),
-                  borderRadius: BorderRadius.circular(10.r),
-                  border: Border.all(
-                    color: widget.primaryColor.withValues(
-                      alpha: isDark ? 0.35 : 0.20,
-                    ),
-                    width: 1,
-                  ),
-                ),
-                child: Center(
-                  child: Icon(
-                    widget.icon,
-                    color: widget.primaryColor,
-                    size: 18.r,
-                  ),
-                ),
-              ),
-              SizedBox(width: 8.w),
-              if (widget.phaseBadge != null)
-                Flexible(
-                  child: Container(
-                    padding: EdgeInsets.symmetric(horizontal: 9.w, vertical: 3.h),
-                    decoration: BoxDecoration(
-                      color: widget.primaryColor.withValues(
-                        alpha: isDark ? 0.15 : 0.10,
-                      ),
-                      borderRadius: BorderRadius.circular(8.r),
-                      border: Border.all(
-                        color: widget.primaryColor.withValues(
-                          alpha: isDark ? 0.35 : 0.25,
-                        ),
-                        width: 1,
-                      ),
-                    ),
-                    child: Text(
-                      widget.phaseBadge!,
-                      maxLines: 1,
-                      overflow: TextOverflow.ellipsis,
-                      textScaler: const TextScaler.linear(1.0),
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 10.5.sp,
-                        fontWeight: FontWeight.w700,
-                        color: widget.primaryColor,
-                        letterSpacing: 0.6,
-                      ),
-                    ),
-                  ),
-                )
-              else
-                Flexible(
-                  child: Text(
-                    context
-                        .tr('common.mission_briefing', fallback: 'MISSION BRIEFING')
-                        .toUpperCase(),
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
-                    textScaler: const TextScaler.linear(1.0),
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 10.5.sp,
-                      fontWeight: FontWeight.w700,
-                      color: widget.primaryColor,
-                      letterSpacing: 1.2,
-                    ),
-                  ),
-                ),
-            ],
+  Widget _buildBadge(BuildContext context, bool isDark) {
+    if (widget.phaseBadge != null) {
+      return Container(
+        padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 3.5.h),
+        decoration: BoxDecoration(
+          color: widget.primaryColor.withValues(
+            alpha: isDark ? 0.15 : 0.10,
+          ),
+          borderRadius: BorderRadius.circular(8.r),
+          border: Border.all(
+            color: widget.primaryColor.withValues(
+              alpha: isDark ? 0.35 : 0.25,
+            ),
+            width: 1,
           ),
         ),
-        SizedBox(width: 8.w),
+        child: Text(
+          widget.phaseBadge!,
+          maxLines: 1,
+          overflow: TextOverflow.ellipsis,
+          textScaler: const TextScaler.linear(1.0),
+          style: TextStyle(
+            fontFamily: 'Outfit',
+            fontSize: 10.5.sp,
+            fontWeight: FontWeight.w700,
+            color: widget.primaryColor,
+            letterSpacing: 0.6,
+          ),
+        ),
+      );
+    }
 
-        // Dismiss / Close Button (✕)
-        Semantics(
-          button: true,
-          label: 'Close briefing',
-          child: Material(
-            color: Colors.transparent,
-            child: InkWell(
-              borderRadius: BorderRadius.circular(20.r),
-              onTap: _handleDismiss,
-              child: Container(
-                width: 32.r,
-                height: 32.r,
-                decoration: BoxDecoration(
-                  color: isMidnight
-                      ? Colors.white.withValues(alpha: 0.08)
-                      : (isDark
-                            ? Colors.white.withValues(alpha: 0.08)
-                            : const Color(0xFFF1F5F9)),
-                  shape: BoxShape.circle,
-                ),
-                child: Center(
-                  child: Icon(
-                    Icons.close_rounded,
-                    size: 18.r,
-                    color: isDark ? Colors.white70 : const Color(0xFF475569),
-                  ),
-                ),
+    return Text(
+      context
+          .tr('common.mission_briefing', fallback: 'MISSION BRIEFING')
+          .toUpperCase(),
+      maxLines: 1,
+      overflow: TextOverflow.ellipsis,
+      textScaler: const TextScaler.linear(1.0),
+      style: TextStyle(
+        fontFamily: 'Outfit',
+        fontSize: 10.5.sp,
+        fontWeight: FontWeight.w700,
+        color: widget.primaryColor,
+        letterSpacing: 1.2,
+      ),
+    );
+  }
+
+  Widget _buildCloseButton(bool isDark, bool isMidnight) {
+    return Semantics(
+      button: true,
+      label: 'Close briefing',
+      child: Material(
+        color: Colors.transparent,
+        child: InkWell(
+          borderRadius: BorderRadius.circular(20.r),
+          onTap: _handleDismiss,
+          child: Container(
+            width: 32.r,
+            height: 32.r,
+            decoration: BoxDecoration(
+              color: isMidnight
+                  ? Colors.white.withValues(alpha: 0.08)
+                  : (isDark
+                        ? Colors.white.withValues(alpha: 0.08)
+                        : const Color(0xFFF1F5F9)),
+              shape: BoxShape.circle,
+            ),
+            child: Center(
+              child: Icon(
+                Icons.close_rounded,
+                size: 18.r,
+                color: isDark ? Colors.white70 : const Color(0xFF475569),
               ),
             ),
           ),
         ),
-      ],
+      ),
     );
   }
 
