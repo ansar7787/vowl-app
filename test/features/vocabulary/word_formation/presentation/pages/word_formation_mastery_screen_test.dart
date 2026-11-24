@@ -19,7 +19,7 @@ import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
 import 'package:vowl/features/vocabulary/domain/entities/vocabulary_quest.dart';
 import 'package:vowl/features/vocabulary/presentation/bloc/vocabulary_bloc.dart';
 import 'package:vowl/features/vocabulary/word_formation/presentation/pages/word_formation_screen.dart';
-import 'package:vowl/features/vocabulary/word_formation/presentation/widgets/word_formation_4way_launcher.dart';
+import 'package:vowl/features/vocabulary/word_formation/presentation/widgets/word_formation_morph_launcher.dart';
 import 'package:vowl/features/vocabulary/word_formation/presentation/widgets/word_formation_sentence_slot.dart';
 
 class MockVocabularyBloc extends MockBloc<VocabularyEvent, VocabularyState>
@@ -179,7 +179,7 @@ void main() {
 
         expect(find.byType(WordFormationScreen), findsOneWidget);
         expect(find.byType(WordFormationSentenceSlot), findsOneWidget);
-        expect(find.byType(WordFormation4WayLauncher), findsOneWidget);
+        expect(find.byType(WordFormationMorphLauncher), findsOneWidget);
       } finally {
         await tester.pumpWidget(const SizedBox());
         await tester.pumpAndSettle();

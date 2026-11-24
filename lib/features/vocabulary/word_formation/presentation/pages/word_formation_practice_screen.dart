@@ -16,9 +16,9 @@ import 'package:vowl/core/utils/tts_service.dart';
 import 'package:vowl/core/utils/widgets/translate_button_widget.dart';
 import 'package:vowl/features/vocabulary/word_formation/data/services/word_formation_curriculum_service.dart';
 import 'package:vowl/features/vocabulary/word_formation/data/services/word_formation_mistake_vault.dart';
-import 'package:vowl/features/vocabulary/word_formation/presentation/widgets/word_formation_4way_launcher.dart';
 import 'package:vowl/features/vocabulary/word_formation/presentation/widgets/word_formation_family_tree.dart';
 import 'package:vowl/features/vocabulary/word_formation/presentation/widgets/word_formation_morph_core.dart';
+import 'package:vowl/features/vocabulary/word_formation/presentation/widgets/word_formation_morph_launcher.dart';
 import 'package:vowl/features/vocabulary/word_formation/presentation/widgets/word_formation_sentence_slot.dart';
 
 /// Practice Phase screen for Word Formation: The Directional Morph Launcher.
@@ -236,7 +236,7 @@ class _WordFormationPracticeScreenState
                       isDark: isDark,
                     ),
                     SizedBox(height: 12.h),
-                    WordFormation4WayLauncher(
+                    WordFormationMorphLauncher(
                       northWord: northWord,
                       eastWord: eastWord,
                       southWord: southWord,

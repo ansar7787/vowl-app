@@ -8,7 +8,7 @@ import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/utils/tts_service.dart';
 import 'package:vowl/features/vocabulary/word_formation/presentation/pages/word_formation_practice_screen.dart';
-import 'package:vowl/features/vocabulary/word_formation/presentation/widgets/word_formation_4way_launcher.dart';
+import 'package:vowl/features/vocabulary/word_formation/presentation/widgets/word_formation_morph_launcher.dart';
 import 'package:vowl/features/vocabulary/word_formation/presentation/widgets/word_formation_sentence_slot.dart';
 
 class MockTtsService extends Mock implements TtsService {}
@@ -77,7 +77,7 @@ void main() {
 
         expect(find.byType(WordFormationPracticeScreen), findsOneWidget);
         expect(find.byType(WordFormationSentenceSlot), findsOneWidget);
-        expect(find.byType(WordFormation4WayLauncher), findsOneWidget);
+        expect(find.byType(WordFormationMorphLauncher), findsOneWidget);
       } finally {
         await tester.pumpWidget(const SizedBox());
         await tester.pumpAndSettle();
@@ -99,9 +99,9 @@ void main() {
         await tester.pump();
         await tester.pump(const Duration(milliseconds: 300));
 
-        // Find North pad specifically inside the 4-way launcher
+        // Find North pad specifically inside the morph launcher
         final northFinder = find.descendant(
-          of: find.byType(WordFormation4WayLauncher),
+          of: find.byType(WordFormationMorphLauncher),
           matching: find.text('NOUN'),
         );
         expect(northFinder, findsOneWidget);
@@ -136,9 +136,9 @@ void main() {
         await tester.pump();
         await tester.pump(const Duration(milliseconds: 300));
 
-        // Find South pad specifically inside the 4-way launcher (ADVERB)
+        // Find South pad specifically inside the morph launcher (ADVERB)
         final southFinder = find.descendant(
-          of: find.byType(WordFormation4WayLauncher),
+          of: find.byType(WordFormationMorphLauncher),
           matching: find.text('ADVERB'),
         );
         expect(southFinder, findsOneWidget);

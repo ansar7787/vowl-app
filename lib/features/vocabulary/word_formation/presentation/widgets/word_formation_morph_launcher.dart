@@ -7,12 +7,12 @@ import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'word_formation_colors.dart';
 
-/// Spatial 4-way morphological compass launcher.
+/// Directional morphological compass launcher.
 ///
 /// Binds North (Noun), East (Adjective), South (Adverb), and West (Opposite)
 /// with tactile swipe gestures, distinct sensory color identities, and
 /// high-fidelity selection feedback.
-class WordFormation4WayLauncher extends StatefulWidget {
+class WordFormationMorphLauncher extends StatefulWidget {
   final String northWord;
   final String eastWord;
   final String southWord;
@@ -24,7 +24,7 @@ class WordFormation4WayLauncher extends StatefulWidget {
   final int comboStreak;
   final ValueChanged<String> onDirectionSelected;
 
-  const WordFormation4WayLauncher({
+  const WordFormationMorphLauncher({
     super.key,
     required this.northWord,
     required this.eastWord,
@@ -39,11 +39,11 @@ class WordFormation4WayLauncher extends StatefulWidget {
   });
 
   @override
-  State<WordFormation4WayLauncher> createState() =>
-      _WordFormation4WayLauncherState();
+  State<WordFormationMorphLauncher> createState() =>
+      _WordFormationMorphLauncherState();
 }
 
-class _WordFormation4WayLauncherState extends State<WordFormation4WayLauncher> {
+class _WordFormationMorphLauncherState extends State<WordFormationMorphLauncher> {
   String? _dragTarget;
   Offset _dragAccumulator = Offset.zero;
 

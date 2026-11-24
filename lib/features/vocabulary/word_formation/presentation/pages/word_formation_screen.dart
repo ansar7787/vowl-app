@@ -16,7 +16,7 @@ import 'package:vowl/features/vocabulary/presentation/bloc/vocabulary_bloc.dart'
 import 'package:vowl/features/vocabulary/presentation/layout/vocabulary_base_layout.dart';
 import 'package:vowl/features/vocabulary/presentation/mixins/vocabulary_game_screen_mixin.dart';
 import 'package:vowl/features/vocabulary/word_formation/data/services/word_formation_mistake_vault.dart';
-import 'package:vowl/features/vocabulary/word_formation/presentation/widgets/word_formation_4way_launcher.dart';
+import 'package:vowl/features/vocabulary/word_formation/presentation/widgets/word_formation_morph_launcher.dart';
 import 'package:vowl/features/vocabulary/word_formation/presentation/widgets/word_formation_sentence_slot.dart';
 
 /// Mastery Phase Screen for Word Formation: Spatial 4-Way Morph Rush.
@@ -367,7 +367,7 @@ class _WordFormationScreenState extends State<WordFormationScreen>
                               shakeCount: _shakeCount,
                             ),
                             SizedBox(height: 18.h),
-                            WordFormation4WayLauncher(
+                            WordFormationMorphLauncher(
                               northWord: northWord,
                               eastWord: eastWord,
                               southWord: southWord,
