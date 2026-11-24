@@ -120,7 +120,13 @@ class _PrefixSuffixLearnScreenState extends State<PrefixSuffixLearnScreen> {
       phase: 'learn',
     );
     if (mounted) {
-      context.pop();
+      try {
+        context.pushReplacement(
+          '/practice?category=vocabulary&gameType=prefixSuffix&level=${widget.level}',
+        );
+      } catch (_) {
+        context.pop();
+      }
     }
   }
 
@@ -183,7 +189,7 @@ class _PrefixSuffixLearnScreenState extends State<PrefixSuffixLearnScreen> {
       level: widget.level,
       actionLabel: _currentIndex < _rawQuests.length - 1
           ? 'Next Word'
-          : 'Continue',
+          : 'Start Practice',
       onPrevious: _currentIndex > 0
           ? () {
               setState(() {

@@ -100,11 +100,9 @@ class _PrefixSuffixPracticeScreenState
 
     final isCorrect = _controller.slotAffix(option, correctAnswer);
     if (di.sl.isRegistered<HapticService>()) {
-      if (isCorrect) {
-        di.sl<HapticService>().selection();
-      } else {
-        di.sl<HapticService>().error();
-      }
+      isCorrect
+          ? di.sl<HapticService>().selection()
+          : di.sl<HapticService>().error();
     }
   }
 
@@ -116,7 +114,13 @@ class _PrefixSuffixPracticeScreenState
       phase: 'practice',
     );
     if (mounted) {
-      context.pop();
+      try {
+        context.pushReplacement(
+          '/game?category=vocabulary&gameType=prefixSuffix&level=${widget.level}',
+        );
+      } catch (_) {
+        context.pop();
+      }
     }
   }
 
@@ -152,23 +156,18 @@ class _PrefixSuffixPracticeScreenState
     final questData = _rawQuests[_currentIndex];
     final rootWord = questData['rootWord'] as String? ?? 'WORD';
     final rootMeaning = questData['rootMeaning'] as String? ?? '';
-    final contextSentence =
-        questData['contextSentence'] as String? ??
+    final contextSentence = questData['contextSentence'] as String? ??
         questData['clueSentence'] as String? ??
-        questData['sentence'] as String? ??
         '';
-    final correctAnswer =
-        questData['correctAnswer'] as String? ??
+    final correctAnswer = questData['correctAnswer'] as String? ??
         questData['targetAffix'] as String? ??
         '';
-    final rawOptions =
-        (questData['options'] as List<dynamic>?) ??
+    final rawOptions = (questData['options'] as List<dynamic>?) ??
         (questData['tumblerWheelOptions'] as List<dynamic>?) ??
         [];
     final options = rawOptions.map((e) => e.toString()).toList();
     final hint = questData['hint'] as String? ?? '';
-    final explanation =
-        questData['explanation'] as String? ??
+    final explanation = questData['explanation'] as String? ?? '';
         questData['jamExplanation'] as String? ??
         '';
 
@@ -359,7 +358,7 @@ class _PrefixSuffixPracticeScreenState
                       child: Text(
                         _currentIndex < _rawQuests.length - 1
                             ? 'Next Question'
-                            : 'Finish Practice',
+                            : 'Start Mastery',
                         style: TextStyle(
                           fontFamily: 'Inter',
                           fontSize: 14.sp,
