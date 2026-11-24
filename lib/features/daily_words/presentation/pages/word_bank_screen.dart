@@ -118,7 +118,6 @@ class _WordBankScreenState extends State<WordBankScreen> {
 
                 return _buildSliverContent(
                   allWords: state.wordBankEntries,
-                  stats: state.masteryStats,
                   isDark: isDark,
                 );
               },
@@ -131,7 +130,6 @@ class _WordBankScreenState extends State<WordBankScreen> {
 
   Widget _buildSliverContent({
     required List<WordProgress> allWords,
-    required Map<String, int> stats,
     required bool isDark,
   }) {
     final service = di.sl<DailyWordsService>();
