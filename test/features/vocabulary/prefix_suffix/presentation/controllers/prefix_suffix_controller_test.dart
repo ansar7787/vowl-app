@@ -158,6 +158,20 @@ void main() {
           expect(controller.streak, 1);
         },
       );
+
+      test(
+        'evaluateSlice correctly handles unbreakable imposter roots with cutIndex 0',
+        () {
+          final result = controller.evaluateSlice(
+            cutIndex: 0,
+            correctCutIndex: 0,
+          );
+          expect(result, isTrue);
+          expect(controller.isSliced, isTrue);
+          expect(controller.isWrongCut, isFalse);
+          expect(controller.streak, 1);
+        },
+      );
     });
   });
 }

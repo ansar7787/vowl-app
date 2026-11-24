@@ -81,33 +81,28 @@ class _PrefixSuffixPracticeScreenState
     }
   }
 
-  List<Map<String, dynamic>> _buildFallbackQuests() {
-    return [
-      {
-        'id': 'VOC_PS_P_L${widget.level}_Q1',
-        'level': widget.level,
-        'rootWord': 'VIEW',
-        'rootMeaning': 'To look at or inspect',
-        'correctAnswer': 'PRE-',
-        'options': ['PRE-', 'RE-', 'UN-', 'DIS-'],
-        'contextSentence':
-            'We watched the movie {{gap}} before the film began.',
-        'hint': 'Means before or in advance.',
-        'explanation': 'PRE- combines with VIEW to create PREVIEW.',
-      },
-    ];
-  }
+  List<Map<String, dynamic>> _buildFallbackQuests() => [
+    {
+      'id': 'VOC_PS_P_L${widget.level}_Q1',
+      'level': widget.level,
+      'rootWord': 'VIEW',
+      'rootMeaning': 'To look at or inspect',
+      'correctAnswer': 'PRE-',
+      'options': ['PRE-', 'RE-', 'UN-', 'DIS-'],
+      'contextSentence': 'We watched the movie {{gap}} before the film began.',
+      'hint': 'Means before or in advance.',
+      'explanation': 'PRE- combines with VIEW to create PREVIEW.',
+    },
+  ];
 
   void _onAffixSelected(String option, String correctAnswer) {
     if (_controller.isUnlocked) return;
 
     final isCorrect = _controller.slotAffix(option, correctAnswer);
-    if (isCorrect) {
-      if (di.sl.isRegistered<HapticService>()) {
+    if (di.sl.isRegistered<HapticService>()) {
+      if (isCorrect) {
         di.sl<HapticService>().selection();
-      }
-    } else {
-      if (di.sl.isRegistered<HapticService>()) {
+      } else {
         di.sl<HapticService>().error();
       }
     }
@@ -184,13 +179,13 @@ class _PrefixSuffixPracticeScreenState
         final isJammed = _controller.isJammed;
 
         return PracticePhaseScaffold(
-          title: 'Vault Combination Cracker',
+          title: 'Word Vault',
           gameType: 'prefixSuffix',
           level: widget.level,
           currentExerciseIndex: _currentIndex,
           totalExercises: _rawQuests.length,
           actionLabel: _currentIndex < _rawQuests.length - 1
-              ? 'Next Combination'
+              ? 'Next Question'
               : 'Finish Practice',
           isActionEnabled: isUnlocked,
           onComplete: isUnlocked ? _nextWord : () {},
@@ -212,15 +207,15 @@ class _PrefixSuffixPracticeScreenState
                 // Dial Selection Prompt with Practice Reassurance
                 Text(
                   isUnlocked
-                      ? 'COMBINATION UNLOCKED!'
+                      ? 'Word unlocked! Great job.'
                       : (isJammed
-                            ? 'JAMMED — ZERO HEARTS LOST! TRY AGAIN'
-                            : 'SELECT THE MATCHING AFFIX'),
+                            ? 'Not quite — no hearts lost, try another!'
+                            : 'Select the matching affix:'),
                   style: TextStyle(
                     fontFamily: 'Inter',
-                    fontSize: 12.sp,
-                    fontWeight: FontWeight.w800,
-                    letterSpacing: 0.8,
+                    fontSize: 12.5.sp,
+                    fontWeight: FontWeight.w600,
+                    letterSpacing: 0.2,
                     color: isUnlocked
                         ? AppColors.emerald500
                         : (isJammed ? AppColors.amber500 : AppColors.slate400),
@@ -239,16 +234,13 @@ class _PrefixSuffixPracticeScreenState
                     Color btnBg = AppColors.slate800;
                     Color textColor = AppColors.slate50;
 
-                    if (isSelected) {
-                      if (isUnlocked) {
-                        btnBorder = AppColors.emerald500;
-                        btnBg = AppColors.emerald500.withValues(alpha: 0.15);
-                        textColor = AppColors.emerald500;
-                      } else if (isJammed) {
-                        btnBorder = AppColors.red500;
-                        btnBg = AppColors.red500.withValues(alpha: 0.15);
-                        textColor = AppColors.red500;
-                      }
+                    if (isSelected && (isUnlocked || isJammed)) {
+                      final activeColor = isUnlocked
+                          ? AppColors.emerald500
+                          : AppColors.red500;
+                      btnBorder = activeColor;
+                      btnBg = activeColor.withValues(alpha: 0.15);
+                      textColor = activeColor;
                     }
 
                     return AnimatedScale(
@@ -278,8 +270,8 @@ class _PrefixSuffixPracticeScreenState
                             style: TextStyle(
                               fontFamily: 'Inter',
                               fontSize: 16.sp,
-                              fontWeight: FontWeight.w900,
-                              letterSpacing: 1.0,
+                              fontWeight: FontWeight.w700,
+                              letterSpacing: 0.5,
                               color: textColor,
                             ),
                           ),
@@ -311,7 +303,8 @@ class _PrefixSuffixPracticeScreenState
                       style: TextStyle(
                         fontFamily: 'Inter',
                         fontSize: 13.sp,
-                        fontWeight: FontWeight.w600,
+                        fontWeight: FontWeight.w500,
+                        height: 1.4,
                         color: AppColors.emerald500,
                       ),
                     ),
@@ -334,11 +327,11 @@ class _PrefixSuffixPracticeScreenState
                       color: AppColors.amber500,
                     ),
                     label: Text(
-                      _showHint ? 'Hint: $hint' : 'Need a Clue?',
+                      _showHint ? 'Hint: $hint' : 'Need a hint?',
                       style: TextStyle(
                         fontFamily: 'Inter',
                         fontSize: 12.sp,
-                        fontWeight: FontWeight.w700,
+                        fontWeight: FontWeight.w600,
                         color: AppColors.amber500,
                       ),
                     ),
@@ -361,13 +354,13 @@ class _PrefixSuffixPracticeScreenState
                       ),
                       child: Text(
                         _currentIndex < _rawQuests.length - 1
-                            ? 'NEXT COMBINATION'
-                            : 'FINISH PRACTICE',
+                            ? 'Next Question'
+                            : 'Finish Practice',
                         style: TextStyle(
                           fontFamily: 'Inter',
-                          fontSize: 13.sp,
-                          fontWeight: FontWeight.w900,
-                          letterSpacing: 1.0,
+                          fontSize: 14.sp,
+                          fontWeight: FontWeight.w600,
+                          letterSpacing: 0.3,
                           color: Colors.white,
                         ),
                       ),

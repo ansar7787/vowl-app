@@ -134,7 +134,7 @@ class _PrefixSuffixPrecisionSlicerState
         style: TextStyle(
           fontFamily: 'Inter',
           fontSize: 20.sp,
-          fontWeight: FontWeight.w900,
+          fontWeight: FontWeight.w700,
           color: isHighlighted ? AppColors.indigo400 : AppColors.slate50,
         ),
       ),
@@ -222,12 +222,12 @@ class _PrefixSuffixPrecisionSlicerState
                               ),
                               SizedBox(width: 4.w),
                               Text(
-                                'SWIPE DOWN ACROSS A SEAM TO SLICE',
+                                'Swipe down between letters to slice',
                                 style: TextStyle(
                                   fontFamily: 'Inter',
-                                  fontSize: 10.sp,
-                                  fontWeight: FontWeight.w700,
-                                  letterSpacing: 0.8,
+                                  fontSize: 11.sp,
+                                  fontWeight: FontWeight.w600,
+                                  letterSpacing: 0.2,
                                   color: AppColors.slate400,
                                 ),
                               ),
@@ -311,7 +311,7 @@ class _PrefixSuffixPrecisionSlicerState
                       style: TextStyle(
                         fontFamily: 'Inter',
                         fontSize: 11.sp,
-                        fontWeight: FontWeight.w700,
+                        fontWeight: FontWeight.w600,
                         color: AppColors.slate50,
                       ),
                     ),
@@ -354,12 +354,12 @@ class _PrefixSuffixPrecisionSlicerState
       ),
       icon: Icon(Icons.shield_outlined, size: 14.sp, color: text),
       label: Text(
-        'UNBREAKABLE ROOT (NO AFFIX)',
+        'Pure Root (No Affix)',
         style: TextStyle(
           fontFamily: 'Inter',
-          fontSize: 10.sp,
-          fontWeight: FontWeight.w800,
-          letterSpacing: 0.8,
+          fontSize: 11.sp,
+          fontWeight: FontWeight.w600,
+          letterSpacing: 0.3,
           color: text,
         ),
       ),

@@ -82,7 +82,7 @@ void main() {
 
         expect(find.byType(PrefixSuffixPracticeScreen), findsOneWidget);
         expect(find.byType(PrefixSuffixClueBanner), findsOneWidget);
-        expect(find.text('COMBINATION LOCKED'), findsOneWidget);
+        expect(find.text('Find the missing affix'), findsOneWidget);
 
         // Verify incorrect choice triggers jammed feedback
         final wrongOption = find.text('RE-');
@@ -90,7 +90,7 @@ void main() {
           await tester.tap(wrongOption.first);
           await tester.pump();
           await tester.pump(const Duration(milliseconds: 200));
-          expect(find.text('COMBINATION JAMMED'), findsOneWidget);
+          expect(find.text('Not quite — try again'), findsOneWidget);
         }
 
         // Tap correct choice
@@ -101,11 +101,11 @@ void main() {
         await tester.pump(const Duration(milliseconds: 200));
 
         // Vault is unlatched
-        expect(find.text('VAULT UNLATCHED'), findsOneWidget);
-        expect(find.text('COMBINATION UNLOCKED!'), findsOneWidget);
+        expect(find.text('Unlocked!'), findsOneWidget);
+        expect(find.text('Word unlocked! Great job.'), findsOneWidget);
 
         // Hint trigger
-        final hintButton = find.text('Need a Clue?');
+        final hintButton = find.text('Need a hint?');
         if (hintButton.evaluate().isNotEmpty) {
           await tester.tap(hintButton);
           await tester.pump();

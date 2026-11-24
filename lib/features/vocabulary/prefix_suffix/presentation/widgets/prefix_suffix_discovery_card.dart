@@ -37,7 +37,7 @@ class PrefixSuffixDiscoveryCard extends StatelessWidget {
         style: TextStyle(
           fontFamily: 'Inter',
           fontSize: 16.sp,
-          fontWeight: FontWeight.w900,
+          fontWeight: FontWeight.w700,
           color: color ?? AppColors.slate500,
         ),
       ),
@@ -64,8 +64,8 @@ class PrefixSuffixDiscoveryCard extends StatelessWidget {
             style: TextStyle(
               fontFamily: 'Inter',
               fontSize: 14.sp,
-              fontWeight: FontWeight.w900,
-              letterSpacing: 0.8,
+              fontWeight: FontWeight.w700,
+              letterSpacing: 0.5,
               color: color,
             ),
           ),
@@ -75,9 +75,9 @@ class PrefixSuffixDiscoveryCard extends StatelessWidget {
           label,
           style: TextStyle(
             fontFamily: 'Inter',
-            fontSize: 9.sp,
-            fontWeight: FontWeight.w700,
-            color: AppColors.slate500,
+            fontSize: 10.sp,
+            fontWeight: FontWeight.w600,
+            color: AppColors.slate400,
           ),
         ),
       ],
@@ -93,7 +93,8 @@ class PrefixSuffixDiscoveryCard extends StatelessWidget {
         textAlign: TextAlign.center,
         style: TextStyle(
           fontFamily: 'Inter',
-          fontSize: 14.sp,
+          fontSize: 13.5.sp,
+          fontWeight: FontWeight.w400,
           height: 1.45,
           color: AppColors.slate400,
         ),
@@ -106,7 +107,8 @@ class PrefixSuffixDiscoveryCard extends StatelessWidget {
       text: TextSpan(
         style: TextStyle(
           fontFamily: 'Inter',
-          fontSize: 14.sp,
+          fontSize: 13.5.sp,
+          fontWeight: FontWeight.w400,
           height: 1.45,
           color: AppColors.slate400,
         ),
@@ -115,7 +117,7 @@ class PrefixSuffixDiscoveryCard extends StatelessWidget {
           TextSpan(
             text: contextSentence.substring(matchStart, matchEnd),
             style: TextStyle(
-              fontWeight: FontWeight.w900,
+              fontWeight: FontWeight.w700,
               color: AppColors.indigo400,
               decoration: TextDecoration.underline,
               decorationColor: AppColors.indigo500.withValues(alpha: 0.6),
@@ -188,19 +190,19 @@ class PrefixSuffixDiscoveryCard extends StatelessWidget {
                   _buildMorphemeChip(
                     text: isPrefix ? affix : rootWord,
                     color: isPrefix ? AppColors.violet500 : AppColors.indigo400,
-                    label: isPrefix ? 'PREFIX' : 'ROOT',
+                    label: isPrefix ? 'Prefix' : 'Root',
                   ),
                   _buildOperator('+'),
                   _buildMorphemeChip(
                     text: isPrefix ? rootWord : affix,
                     color: isPrefix ? AppColors.indigo400 : AppColors.violet500,
-                    label: isPrefix ? 'ROOT' : 'SUFFIX',
+                    label: isPrefix ? 'Root' : 'Suffix',
                   ),
                   _buildOperator('➔', color: AppColors.emerald500),
                   _buildMorphemeChip(
                     text: combinedWord,
                     color: AppColors.emerald500,
-                    label: 'SYNTHESIS',
+                    label: 'New Word',
                   ),
                 ],
               ),
@@ -223,11 +225,11 @@ class PrefixSuffixDiscoveryCard extends StatelessWidget {
                     ),
                   ),
                   child: Text(
-                    'GRAMMAR: ${PrefixSuffixMorphologyHelper.detectPosShift(affix: affix, affixType: affixType, partOfSpeech: partOfSpeech)}',
+                    'Part of speech: ${PrefixSuffixMorphologyHelper.detectPosShift(affix: affix, affixType: affixType, partOfSpeech: partOfSpeech)}',
                     style: TextStyle(
                       fontFamily: 'Inter',
-                      fontSize: 10.sp,
-                      fontWeight: FontWeight.w800,
+                      fontSize: 10.5.sp,
+                      fontWeight: FontWeight.w600,
                       color: AppColors.indigo400,
                     ),
                   ),
@@ -267,8 +269,8 @@ class PrefixSuffixDiscoveryCard extends StatelessWidget {
                           )!,
                           style: TextStyle(
                             fontFamily: 'Inter',
-                            fontSize: 9.sp,
-                            fontWeight: FontWeight.w700,
+                            fontSize: 9.5.sp,
+                            fontWeight: FontWeight.w600,
                             color: AppColors.amber500,
                           ),
                         ),
@@ -288,8 +290,8 @@ class PrefixSuffixDiscoveryCard extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: 'Inter',
                     fontSize: 22.sp,
-                    fontWeight: FontWeight.w900,
-                    letterSpacing: 1.5,
+                    fontWeight: FontWeight.w700,
+                    letterSpacing: 1.0,
                     color: AppColors.slate50,
                   ),
                 ),
@@ -334,11 +336,11 @@ class PrefixSuffixDiscoveryCard extends StatelessWidget {
                   SizedBox(width: 6.w),
                   Flexible(
                     child: Text(
-                      'Affix Meaning: $affixMeaning',
+                      'Meaning: $affixMeaning',
                       style: TextStyle(
                         fontFamily: 'Inter',
                         fontSize: 12.sp,
-                        fontWeight: FontWeight.w700,
+                        fontWeight: FontWeight.w600,
                         color: AppColors.violet500,
                       ),
                     ),
@@ -355,9 +357,9 @@ class PrefixSuffixDiscoveryCard extends StatelessWidget {
               style: TextStyle(
                 fontFamily: 'Inter',
                 fontSize: 14.sp,
-                fontWeight: FontWeight.w600,
-                height: 1.4,
-                color: AppColors.slate50,
+                fontWeight: FontWeight.w500,
+                height: 1.45,
+                color: AppColors.slate100,
               ),
             ),
             SizedBox(height: 10.h),

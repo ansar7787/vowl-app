@@ -84,7 +84,7 @@ void main() {
         expect(find.byType(PrefixSuffixLearnScreen), findsOneWidget);
         expect(find.byType(PrefixSuffixTumblerCylinder), findsOneWidget);
         expect(find.byType(PrefixSuffixDiscoveryCard), findsOneWidget);
-        expect(find.text('SYNTHESIS'), findsOneWidget);
+        expect(find.text('New Word'), findsOneWidget);
 
         // Verify TTS button interaction
         final ttsButton = find.byTooltip('Listen to pronunciation');

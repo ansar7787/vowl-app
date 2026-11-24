@@ -140,8 +140,8 @@ class _PrefixSuffixClueBannerState extends State<PrefixSuffixClueBanner>
                 style: TextStyle(
                   fontFamily: 'Inter',
                   fontSize: 14.sp,
-                  fontWeight: FontWeight.w800,
-                  letterSpacing: 1.0,
+                  fontWeight: FontWeight.w700,
+                  letterSpacing: 0.5,
                   color: slotColor,
                 ),
               ),
@@ -164,17 +164,17 @@ class _PrefixSuffixClueBannerState extends State<PrefixSuffixClueBanner>
       borderColor = AppColors.emerald500;
       statusBg = AppColors.emerald500.withValues(alpha: 0.15);
       lockIcon = Icons.lock_open_rounded;
-      statusLabel = 'VAULT UNLATCHED';
+      statusLabel = 'Unlocked!';
     } else if (widget.isJammed) {
       borderColor = AppColors.red500;
       statusBg = AppColors.red500.withValues(alpha: 0.15);
       lockIcon = Icons.lock_clock_rounded;
-      statusLabel = 'COMBINATION JAMMED';
+      statusLabel = 'Not quite — try again';
     } else {
       borderColor = AppColors.slate700;
       statusBg = AppColors.slate800;
       lockIcon = Icons.lock_outline_rounded;
-      statusLabel = 'COMBINATION LOCKED';
+      statusLabel = 'Find the missing affix';
     }
 
     return AnimatedBuilder(
@@ -226,9 +226,9 @@ class _PrefixSuffixClueBannerState extends State<PrefixSuffixClueBanner>
                         statusLabel,
                         style: TextStyle(
                           fontFamily: 'Inter',
-                          fontSize: 10.sp,
-                          fontWeight: FontWeight.w800,
-                          letterSpacing: 0.8,
+                          fontSize: 11.sp,
+                          fontWeight: FontWeight.w600,
+                          letterSpacing: 0.2,
                           color: borderColor,
                         ),
                       ),
@@ -250,20 +250,20 @@ class _PrefixSuffixClueBannerState extends State<PrefixSuffixClueBanner>
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       Text(
-                        'ROOT: ',
+                        'Root: ',
                         style: TextStyle(
                           fontFamily: 'Inter',
-                          fontSize: 10.sp,
-                          fontWeight: FontWeight.w700,
-                          color: AppColors.slate500,
+                          fontSize: 10.5.sp,
+                          fontWeight: FontWeight.w600,
+                          color: AppColors.slate400,
                         ),
                       ),
                       Text(
                         widget.rootWord,
                         style: TextStyle(
                           fontFamily: 'Inter',
-                          fontSize: 11.sp,
-                          fontWeight: FontWeight.w900,
+                          fontSize: 11.5.sp,
+                          fontWeight: FontWeight.w700,
                           letterSpacing: 0.5,
                           color: AppColors.indigo400,
                         ),
@@ -281,10 +281,10 @@ class _PrefixSuffixClueBannerState extends State<PrefixSuffixClueBanner>
 
             // Root Meaning Hint
             Text(
-              'Base Meaning: "${widget.rootMeaning}"',
+              'Root meaning: "${widget.rootMeaning}"',
               style: TextStyle(
                 fontFamily: 'Inter',
-                fontSize: 11.sp,
+                fontSize: 11.5.sp,
                 fontStyle: FontStyle.italic,
                 color: AppColors.slate400,
               ),

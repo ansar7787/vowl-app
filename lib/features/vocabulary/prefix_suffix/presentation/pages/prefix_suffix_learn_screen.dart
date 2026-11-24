@@ -178,12 +178,12 @@ class _PrefixSuffixLearnScreenState extends State<PrefixSuffixLearnScreen> {
     }).toList();
 
     return LearnPhaseScaffold(
-      title: 'Prefix & Suffix Lab',
+      title: 'Prefix & Suffix Studio',
       gameType: 'prefixSuffix',
       level: widget.level,
       actionLabel: _currentIndex < _rawQuests.length - 1
           ? 'Next Word'
-          : 'Got It! Continue',
+          : 'Continue',
       onPrevious: _currentIndex > 0
           ? () {
               setState(() {
@@ -210,9 +210,7 @@ class _PrefixSuffixLearnScreenState extends State<PrefixSuffixLearnScreen> {
             PrefixSuffixTumblerCylinder(
               items: dialItems,
               initialIndex: safeIndex,
-              title: affixType == 'prefix'
-                  ? 'PREFIX TUMBLER'
-                  : 'SUFFIX TUMBLER',
+              title: affixType == 'prefix' ? 'Choose Prefix' : 'Choose Suffix',
               onSelectedItemChanged: (index) {
                 setState(() {
                   _selectedDialIndex = index;

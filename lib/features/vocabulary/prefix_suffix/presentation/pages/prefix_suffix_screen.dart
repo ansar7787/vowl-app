@@ -59,7 +59,7 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen>
   int get level => widget.level;
 
   @override
-  String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
+  String getCompletionTitle(BuildContext context) => 'Level Complete!';
 
   late final PrefixSuffixController _controller;
   VocabularyQuest? _currentQuest;
@@ -231,8 +231,8 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen>
                       style: TextStyle(
                         fontFamily: 'Inter',
                         fontSize: 14.sp,
-                        fontWeight: FontWeight.w800,
-                        letterSpacing: 0.8,
+                        fontWeight: FontWeight.w600,
+                        letterSpacing: 0.2,
                         color: AppColors.slate50,
                       ),
                     ),
@@ -266,8 +266,9 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen>
                           style: TextStyle(
                             fontFamily: 'Inter',
                             fontSize: 13.sp,
-                            fontWeight: FontWeight.w500,
-                            color: AppColors.slate400,
+                            fontWeight: FontWeight.w400,
+                            height: 1.45,
+                            color: AppColors.slate300,
                           ),
                         ),
                       ),

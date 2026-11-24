@@ -83,12 +83,12 @@ class PrefixSuffixComboHud extends StatelessWidget {
                       ),
                       SizedBox(width: 4.w),
                       Text(
-                        '${comboMultiplier}x COMBO',
+                        '${comboMultiplier}x Combo',
                         style: TextStyle(
                           fontFamily: 'Inter',
                           fontSize: 12.sp,
-                          fontWeight: FontWeight.w800,
-                          letterSpacing: 0.8,
+                          fontWeight: FontWeight.w700,
+                          letterSpacing: 0.3,
                           color: comboMultiplier > 1
                               ? AppColors.amber500
                               : AppColors.slate400,
@@ -106,11 +106,11 @@ class PrefixSuffixComboHud extends StatelessWidget {
                             borderRadius: BorderRadius.circular(8.r),
                           ),
                           child: Text(
-                            '$currentStreak STREAK',
+                            '$currentStreak Streak',
                             style: TextStyle(
                               fontFamily: 'Inter',
                               fontSize: 10.sp,
-                              fontWeight: FontWeight.w700,
+                              fontWeight: FontWeight.w600,
                               color: AppColors.indigo400,
                             ),
                           ),
@@ -132,7 +132,7 @@ class PrefixSuffixComboHud extends StatelessWidget {
                     style: TextStyle(
                       fontFamily: 'Inter',
                       fontSize: 13.sp,
-                      fontWeight: FontWeight.w800,
+                      fontWeight: FontWeight.w700,
                       color: timerColor,
                     ),
                   ),
