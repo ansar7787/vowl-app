@@ -107,8 +107,8 @@ class _PrefixSuffixLearnScreenState extends State<PrefixSuffixLearnScreen> {
   }
 
   void _speakWord(String text) {
-    if (di.sl.isRegistered<TtsService>()) {
-      di.sl<TtsService>().speak(text);
+    if (text.trim().isNotEmpty && di.sl.isRegistered<TtsService>()) {
+      di.sl<TtsService>().speak(text.trim());
     }
   }
 

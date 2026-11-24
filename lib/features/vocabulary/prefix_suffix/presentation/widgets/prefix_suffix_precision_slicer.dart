@@ -58,7 +58,8 @@ class _PrefixSuffixPrecisionSlicerState
   @override
   void didUpdateWidget(covariant PrefixSuffixPrecisionSlicer oldWidget) {
     super.didUpdateWidget(oldWidget);
-    if (!widget.isSliced && !widget.isWrongCut) {
+    if (oldWidget.word != widget.word ||
+        (!widget.isSliced && !widget.isWrongCut)) {
       _lastCut = null;
     }
     if (widget.isSliced && !oldWidget.isSliced) {
@@ -172,9 +173,15 @@ class _PrefixSuffixPrecisionSlicerState
   @override
   Widget build(BuildContext context) {
     final letters = widget.word.split('');
+    final targetSeam =
+        (_lastCut != null &&
+            widget.secondaryCutIndex != null &&
+            _lastCut == widget.secondaryCutIndex)
+        ? widget.secondaryCutIndex!
+        : widget.correctCutIndex;
     final cutSeam = letters.length < 2
         ? 0
-        : widget.correctCutIndex.clamp(1, letters.length - 1);
+        : targetSeam.clamp(1, letters.length - 1);
 
     return AnimatedBuilder(
       animation: _splitAnimation,

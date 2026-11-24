@@ -280,15 +280,18 @@ class _PrefixSuffixClueBannerState extends State<PrefixSuffixClueBanner>
             SizedBox(height: 8.h),
 
             // Root Meaning Hint
-            Text(
-              'Root meaning: "${widget.rootMeaning}"',
-              style: TextStyle(
-                fontFamily: 'Inter',
-                fontSize: 11.5.sp,
-                fontStyle: FontStyle.italic,
-                color: AppColors.slate400,
+            if (widget.rootMeaning.isNotEmpty) ...[
+              SizedBox(height: 8.h),
+              Text(
+                'Root meaning: "${widget.rootMeaning}"',
+                style: TextStyle(
+                  fontFamily: 'Inter',
+                  fontSize: 11.5.sp,
+                  fontStyle: FontStyle.italic,
+                  color: AppColors.slate400,
+                ),
               ),
-            ),
+            ],
           ],
         ),
       ),
