@@ -6,13 +6,12 @@ import 'package:vowl/core/presentation/phases/phase_progress_recorder.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/presentation/widgets/game_error_view.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
-import 'package:vowl/core/presentation/widgets/tts_speaker_button_widget.dart';
 import 'package:vowl/core/theme/app_spacing.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
-import 'package:vowl/core/utils/tts_service.dart';
 import 'package:vowl/features/vocabulary/synonym_search/data/datasources/synonym_phase_local_data_source.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/controllers/synonym_learn_controller.dart';
+import 'package:vowl/features/vocabulary/synonym_search/presentation/controllers/synonym_tts_helper.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/models/synonym_phase_models.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/widgets/synonym_cousin_preview_strip.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/widgets/synonym_learn_spotlight_header.dart';
@@ -55,9 +54,7 @@ class _SynonymSearchLearnScreenState extends State<SynonymSearchLearnScreen> {
   void initState() {
     super.initState();
     _controller = SynonymLearnController(hapticService: _tryHaptic());
-    try {
-      TtsService().preWarm();
-    } catch (_) {}
+    SynonymTtsHelper.preWarm();
 
     if (widget.initialItems != null && widget.initialItems!.isNotEmpty) {
       _controller.setItems(widget.initialItems!);
@@ -119,22 +116,13 @@ class _SynonymSearchLearnScreenState extends State<SynonymSearchLearnScreen> {
     }
   }
 
-  void _stopAudioSafely() {
-    try {
-      TtsSpeakerButtonWidget.stopAll();
-      TtsService().stop();
-    } catch (_) {}
-  }
-
   void _speakCurrentIfEnabled() {
     if (!_controller.autoSpeak.value) return;
     final item = _controller.currentItem;
     if (item == null) return;
-    try {
-      TtsService().speak(
-        '${item.baseWord}. ${item.synonym}. ${item.coreMeaning}',
-      );
-    } catch (_) {}
+    SynonymTtsHelper.speak(
+      '${item.baseWord}. ${item.synonym}. ${item.coreMeaning}',
+    );
   }
 
   void _handleToggleAutoSpeak() {
@@ -142,12 +130,43 @@ class _SynonymSearchLearnScreenState extends State<SynonymSearchLearnScreen> {
     if (_controller.autoSpeak.value) {
       _speakCurrentIfEnabled();
     } else {
-      _stopAudioSafely();
+      SynonymTtsHelper.stopAll();
     }
   }
 
+  void _handleToggleMakeover(int scenarioIndex) {
+    _controller.toggleMakeoverSwap(scenarioIndex);
+    if (!_controller.autoSpeak.value) return;
+    final item = _controller.currentItem;
+    if (item == null || scenarioIndex >= item.makeovers.length) return;
+    final scenario = item.makeovers[scenarioIndex];
+    final swapped = _controller.isMakeoverSwapped(scenarioIndex);
+    final activeWord = swapped ? scenario.swappedWord : scenario.targetSlotWord;
+    final sentence =
+        (swapped &&
+            scenario.isNaturalSwap &&
+            scenario.spokenSentence.isNotEmpty)
+        ? scenario.spokenSentence
+        : scenario.beforeSentence.replaceAll('___', activeWord);
+    SynonymTtsHelper.speak(sentence);
+  }
+
+  void _handleSelectCousin(int cousinIndex) {
+    _controller.selectCousin(cousinIndex);
+    if (!_controller.autoSpeak.value) return;
+    final selectedIdx = _controller.selectedCousinIndexForCurrent();
+    final item = _controller.currentItem;
+    if (selectedIdx == null ||
+        item == null ||
+        selectedIdx >= item.cousinWords.length) {
+      return;
+    }
+    final cousin = item.cousinWords[selectedIdx];
+    SynonymTtsHelper.speak('${cousin.word}. ${cousin.miniContext}');
+  }
+
   void _handleCompleteOrNext() {
-    _stopAudioSafely();
+    SynonymTtsHelper.stopAll();
     if (_controller.nextPair()) {
       _scrollToTop();
       _speakCurrentIfEnabled();
@@ -165,7 +184,7 @@ class _SynonymSearchLearnScreenState extends State<SynonymSearchLearnScreen> {
   }
 
   void _handlePrevious() {
-    _stopAudioSafely();
+    SynonymTtsHelper.stopAll();
     _controller.previousPair();
     _scrollToTop();
     _speakCurrentIfEnabled();
@@ -173,7 +192,7 @@ class _SynonymSearchLearnScreenState extends State<SynonymSearchLearnScreen> {
 
   @override
   void dispose() {
-    _stopAudioSafely();
+    SynonymTtsHelper.stopAll();
     _scrollController.dispose();
     _controller.dispose();
     super.dispose();
@@ -275,7 +294,7 @@ class _SynonymSearchLearnScreenState extends State<SynonymSearchLearnScreen> {
                     scenarioIndex: i,
                     isSwapped: _controller.isMakeoverSwapped(i),
                     primaryColor: theme.primaryColor,
-                    onToggleSwap: () => _controller.toggleMakeoverSwap(i),
+                    onToggleSwap: () => _handleToggleMakeover(i),
                   ),
                   if (i < item.makeovers.length - 1) SizedBox(height: 12.h),
                 ],
@@ -284,7 +303,7 @@ class _SynonymSearchLearnScreenState extends State<SynonymSearchLearnScreen> {
                   cousins: item.cousinWords,
                   selectedIndex: _controller.selectedCousinIndexForCurrent(),
                   primaryColor: theme.primaryColor,
-                  onSelectCousin: _controller.selectCousin,
+                  onSelectCousin: _handleSelectCousin,
                 ),
               ],
             ),

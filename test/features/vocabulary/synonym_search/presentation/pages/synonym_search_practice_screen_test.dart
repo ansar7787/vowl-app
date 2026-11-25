@@ -231,5 +231,31 @@ void main() {
         expect(find.text('Use Sample Practice'), findsOneWidget);
       },
     );
+
+    testWidgets(
+      'Hint button reveals coaching hint and pre-fills first anchor slot once',
+      (tester) async {
+        final exercises = SynonymPracticeQuest.fallbackExercises(1);
+        await tester.pumpWidget(
+          wrapScreen(
+            SynonymSearchPracticeScreen(level: 1, initialExercises: exercises),
+          ),
+        );
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+
+        final hintFinder = find.byTooltip('Hint');
+        expect(hintFinder, findsOneWidget);
+        await tester.tap(hintFinder);
+        await tester.pump(const Duration(milliseconds: 200));
+
+        expect(find.text(exercises.first.hint), findsOneWidget);
+
+        // Second tap keeps hint visible because button disables once active.
+        await tester.tap(hintFinder);
+        await tester.pump(const Duration(milliseconds: 200));
+        expect(find.text(exercises.first.hint), findsOneWidget);
+      },
+    );
   });
 }

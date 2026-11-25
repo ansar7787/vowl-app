@@ -6,11 +6,16 @@ import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:go_router/go_router.dart';
+import 'package:mocktail/mocktail.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:vowl/core/theme/app_theme.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
+import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/core/utils/tts_service.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/models/synonym_phase_models.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/pages/synonym_search_learn_screen.dart';
+
+class _MockTtsService extends Mock implements TtsService {}
 
 class _DelayedAssetBundle extends CachingAssetBundle {
   final String payload;
@@ -242,5 +247,74 @@ void main() {
       await tester.pumpWidget(const SizedBox.shrink());
       await tester.pump(const Duration(milliseconds: 300));
     });
+
+    testWidgets(
+      'Read aloud uses DI TtsService on toggle, sentence swap, and related word tap',
+      (tester) async {
+        await di.sl.reset();
+        final mockTts = _MockTtsService();
+        when(
+          () => mockTts.isSpeakingNotifier,
+        ).thenReturn(ValueNotifier<bool>(false));
+        when(() => mockTts.isSpeaking).thenReturn(false);
+        when(
+          () => mockTts.preWarm(locale: any(named: 'locale')),
+        ).thenAnswer((_) async {});
+        when(() => mockTts.stop()).thenAnswer((_) async {});
+        when(
+          () => mockTts.speak(
+            any(),
+            rate: any(named: 'rate'),
+            locale: any(named: 'locale'),
+          ),
+        ).thenAnswer((_) async {});
+        di.sl.registerSingleton<TtsService>(mockTts);
+        addTearDown(() async => di.sl.reset());
+
+        await tester.pumpWidget(
+          wrapScreen(
+            SynonymSearchLearnScreen(
+              level: 1,
+              initialItems: [SynonymLearnItem.fallback(1)],
+            ),
+          ),
+        );
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+
+        verify(() => mockTts.preWarm(locale: any(named: 'locale'))).called(1);
+
+        await tester.ensureVisible(
+          find.byKey(const Key('learn_auto_speak_toggle')),
+        );
+        await tester.pump();
+        await tester.tap(find.byKey(const Key('learn_auto_speak_toggle')));
+        await tester.pump();
+        verify(
+          () => mockTts.speak(any(that: contains('Big. Large.'))),
+        ).called(1);
+
+        await tester.ensureVisible(find.byKey(const Key('makeover_slot_0')));
+        await tester.pump();
+        await tester.tap(find.byKey(const Key('makeover_slot_0')));
+        await tester.pump();
+        verify(
+          () =>
+              mockTts.speak('The depot stores a large amount of winter stock.'),
+        ).called(1);
+
+        await tester.ensureVisible(find.byKey(const Key('cousin_chip_0')));
+        await tester.pump();
+        await tester.tap(find.byKey(const Key('cousin_chip_0')));
+        await tester.pump();
+        verify(
+          () => mockTts.speak('Huge. A huge crowd cheered outside.'),
+        ).called(1);
+
+        await tester.pumpWidget(const SizedBox.shrink());
+        await tester.pump(const Duration(milliseconds: 300));
+        verify(() => mockTts.stop()).called(greaterThanOrEqualTo(1));
+      },
+    );
   });
 }

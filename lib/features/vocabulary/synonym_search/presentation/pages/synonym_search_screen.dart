@@ -6,16 +6,15 @@ import 'package:vowl/core/presentation/game_mechanics/shared/speed_challenge_tim
 import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
-import 'package:vowl/core/presentation/widgets/tts_speaker_button_widget.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
-import 'package:vowl/core/utils/tts_service.dart';
 import 'package:vowl/features/vocabulary/domain/entities/vocabulary_quest.dart';
 import 'package:vowl/features/vocabulary/presentation/bloc/vocabulary_bloc.dart';
 import 'package:vowl/features/vocabulary/presentation/layout/vocabulary_base_layout.dart';
 import 'package:vowl/features/vocabulary/presentation/mixins/vocabulary_game_screen_mixin.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/controllers/synonym_grid_builder.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/controllers/synonym_mastery_controller.dart';
+import 'package:vowl/features/vocabulary/synonym_search/presentation/controllers/synonym_tts_helper.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/widgets/synonym_grid_context_header.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/widgets/synonym_streak_timer_bar.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/widgets/synonym_word_grid_board.dart';
@@ -59,9 +58,7 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
     super.initState();
     timerKey = GlobalKey<SpeedChallengeTimerState>();
     initGameLifecycle();
-    try {
-      TtsService().preWarm();
-    } catch (_) {}
+    SynonymTtsHelper.preWarm();
 
     _controller = SynonymMasteryController(
       hapticService: _tryHaptic(),
@@ -96,24 +93,17 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
     }
   }
 
-  void _stopAudioSafely() {
-    try {
-      TtsSpeakerButtonWidget.stopAll();
-      TtsService().stop();
-    } catch (_) {}
-  }
-
   void _handleCorrectFound() {
     if (!mounted) return;
     timerKey?.currentState?.pause();
-    _stopAudioSafely();
+    SynonymTtsHelper.stopAll();
     submitCorrectAnswer();
   }
 
   void _handleWrongAttempt(String? attemptedWord) {
     if (!mounted) return;
     timerKey?.currentState?.pause();
-    _stopAudioSafely();
+    SynonymTtsHelper.stopAll();
     final state = context.read<VocabularyBloc>().state;
     if (state is VocabularyLoaded && state.currentQuestOrNull != null) {
       submitWrongAnswer(
@@ -140,7 +130,7 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
 
   @override
   void dispose() {
-    _stopAudioSafely();
+    SynonymTtsHelper.stopAll();
     _roundResetNonce.dispose();
     _controller.dispose();
     disposeVocabularyGame();
@@ -198,7 +188,7 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
         } else if (state is VocabularyGameOver ||
             state is VocabularyGameComplete) {
           timerKey?.currentState?.pause();
-          _stopAudioSafely();
+          SynonymTtsHelper.stopAll();
         }
       },
       builder: (context, state) {
@@ -226,7 +216,7 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
               useScrolling: true,
               customHintText: quest?.hint,
               onContinue: () {
-                _stopAudioSafely();
+                SynonymTtsHelper.stopAll();
                 dispatchNextQuestion();
               },
               onHint: _controller.activateHint,

@@ -2,7 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/models/synonym_phase_models.dart';
 
-/// Reactive controller managing Sentence Makeover Studio state in Learn Phase.
+/// Reactive controller managing Learn Phase interactive swaps, related word preview, and Read aloud state.
 class SynonymLearnController {
   final HapticService? hapticService;
 

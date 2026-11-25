@@ -6,13 +6,12 @@ import 'package:vowl/core/presentation/phases/practice_phase_scaffold.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/presentation/widgets/game_error_view.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
-import 'package:vowl/core/presentation/widgets/tts_speaker_button_widget.dart';
 import 'package:vowl/core/theme/app_spacing.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
-import 'package:vowl/core/utils/tts_service.dart';
 import 'package:vowl/features/vocabulary/synonym_search/data/datasources/synonym_phase_local_data_source.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/controllers/synonym_practice_controller.dart';
+import 'package:vowl/features/vocabulary/synonym_search/presentation/controllers/synonym_tts_helper.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/models/synonym_phase_models.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/widgets/synonym_contrast_swap_card.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/widgets/synonym_ladder_card.dart';
@@ -55,9 +54,7 @@ class _SynonymSearchPracticeScreenState
   void initState() {
     super.initState();
     _controller = SynonymPracticeController(hapticService: _tryHaptic());
-    try {
-      TtsService().preWarm();
-    } catch (_) {}
+    SynonymTtsHelper.preWarm();
 
     if (widget.initialExercises != null &&
         widget.initialExercises!.isNotEmpty) {
@@ -110,13 +107,6 @@ class _SynonymSearchPracticeScreenState
     }
   }
 
-  void _stopAudioSafely() {
-    try {
-      TtsSpeakerButtonWidget.stopAll();
-      TtsService().stop();
-    } catch (_) {}
-  }
-
   void _scrollToTop() {
     if (_scrollController.hasClients) {
       _scrollController.animateTo(
@@ -143,7 +133,7 @@ class _SynonymSearchPracticeScreenState
       return;
     }
 
-    _stopAudioSafely();
+    SynonymTtsHelper.stopAll();
     if (_controller.nextExercise()) {
       _scrollToTop();
       return;
@@ -162,7 +152,7 @@ class _SynonymSearchPracticeScreenState
 
   @override
   void dispose() {
-    _stopAudioSafely();
+    SynonymTtsHelper.stopAll();
     _scrollController.dispose();
     _controller.dispose();
     super.dispose();
@@ -264,7 +254,8 @@ class _SynonymSearchPracticeScreenState
           level: widget.level,
           currentExerciseIndex: idx,
           totalExercises: total,
-          isHintAvailable: !(hasChecked && isCorrect),
+          isHintAvailable:
+              !(hasChecked && isCorrect) && !_controller.showHint.value,
           onHint: _controller.toggleHint,
           actionLabel: ctaLabel,
           isActionEnabled: ctaEnabled,

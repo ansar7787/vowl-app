@@ -45,7 +45,7 @@ class SynonymCefrHelper {
   }
 }
 
-/// Interactive sentence makeover scenario for Learn Phase ("Sentence Makeover Studio").
+/// Interactive sentence comparison scenario for Learn Phase.
 @immutable
 class SynonymMakeoverScenario {
   final String situationTag;
