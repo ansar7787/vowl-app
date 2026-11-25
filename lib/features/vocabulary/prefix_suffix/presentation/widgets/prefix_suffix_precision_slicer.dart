@@ -115,10 +115,6 @@ class _PrefixSuffixPrecisionSlicerState
         final targetSeam = index + 1;
         if (targetSeam < lettersLength) _executeCut(targetSeam);
       },
-      onVerticalDragEnd: (_) {
-        final targetSeam = index + 1;
-        if (targetSeam < lettersLength) _executeCut(targetSeam);
-      },
       child: Container(
         width: 32.w,
         height: 48.h,
@@ -176,17 +172,16 @@ class _PrefixSuffixPrecisionSlicerState
     return GestureDetector(
       behavior: HitTestBehavior.opaque,
       onTap: () => _executeCut(seam),
-      onVerticalDragEnd: (_) => _executeCut(seam),
       child: Container(
-        width: (isUserPicked || isRevealedCorrect) ? 22.w : 14.w,
+        width: (isUserPicked || isRevealedCorrect) ? 22.w : 18.w,
         height: 52.h,
         alignment: Alignment.center,
         child:
             indicator ??
             AnimatedContainer(
               duration: const Duration(milliseconds: 200),
-              width: 2.0,
-              height: 24.h,
+              width: 2.5,
+              height: 26.h,
               decoration: BoxDecoration(
                 color: color,
                 borderRadius: BorderRadius.circular(2.r),
@@ -239,7 +234,7 @@ class _PrefixSuffixPrecisionSlicerState
             Icon(Icons.touch_app_rounded, size: 13.sp, color: c),
             SizedBox(width: 4.w),
             Text(
-              'Tap or swipe between letters, or pick an option',
+              'Tap between letters or pick an option to slice',
               style: TextStyle(
                 fontFamily: 'Inter',
                 fontSize: 11.sp,
