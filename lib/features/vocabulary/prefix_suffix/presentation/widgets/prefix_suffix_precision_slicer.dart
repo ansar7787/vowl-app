@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/theme/app_colors.dart';
-import 'package:vowl/features/vocabulary/prefix_suffix/presentation/widgets/prefix_suffix_laser_painter.dart';
 import 'package:vowl/features/vocabulary/prefix_suffix/presentation/widgets/prefix_suffix_scissor_pad.dart';
 
 /// Laser Seam Slicer Widget for Prefix & Suffix Mastery Phase ("Morpheme Precision Slicer").
@@ -34,11 +33,7 @@ class PrefixSuffixPrecisionSlicer extends StatefulWidget {
 class _PrefixSuffixPrecisionSlicerState
     extends State<PrefixSuffixPrecisionSlicer>
     with SingleTickerProviderStateMixin {
-  Offset? _dragStartGlobal;
-  Offset? _dragCurrentGlobal;
-  final ValueNotifier<List<Offset?>?> _dragNotifier = ValueNotifier(null);
   int? _lastCut;
-  final GlobalKey _wordContainerKey = GlobalKey();
   final GlobalKey _lettersKey = GlobalKey();
 
   late final _splitController = AnimationController(
@@ -67,101 +62,19 @@ class _PrefixSuffixPrecisionSlicerState
   @override
   void dispose() {
     _splitController.dispose();
-    _dragNotifier.dispose();
     super.dispose();
   }
 
-  void _onPanStart(DragStartDetails d) {
-    if (!widget.isAnswered) {
-      _dragStartGlobal = _dragCurrentGlobal = d.globalPosition;
-      _dragNotifier.value = [d.localPosition, d.localPosition];
-    }
-  }
-
-  void _onPanUpdate(DragUpdateDetails d) {
-    if (!widget.isAnswered && _dragNotifier.value != null) {
-      _dragCurrentGlobal = d.globalPosition;
-      _dragNotifier.value = [_dragNotifier.value![0], d.localPosition];
-    }
-  }
-
-  void _onPanEnd(DragEndDetails d) {
-    final s = _dragNotifier.value?[0];
-    final c = _dragNotifier.value?[1];
-    if (!widget.isAnswered && s != null && c != null) {
-      final dy = (c.dy - s.dy).abs();
-      final dx = (c.dx - s.dx).abs();
-      if (dy >= 18 || (dy < 18 && dx < 18)) {
-        _detectAndExecuteCut(
-          _dragStartGlobal,
-          _dragCurrentGlobal,
-          (s.dx + c.dx) / 2.0,
-        );
-      }
-    }
-    _clearDrag();
-  }
-
-  void _onPanCancel() => _clearDrag();
-  void _clearDrag() {
-    _dragNotifier.value = null;
-    _dragStartGlobal = _dragCurrentGlobal = null;
-  }
-
-  void _onTapUp(TapUpDetails d) {
-    if (!widget.isAnswered) {
-      _detectAndExecuteCut(
-        d.globalPosition,
-        d.globalPosition,
-        d.localPosition.dx,
-      );
-    }
-  }
-
-  void _detectAndExecuteCut(Offset? sG, Offset? eG, double fallbackLocalX) {
-    if (widget.word.length < 2) return;
-    final lBox = _lettersKey.currentContext?.findRenderObject() as RenderBox?;
-    final cBox =
-        _wordContainerKey.currentContext?.findRenderObject() as RenderBox?;
-    if (lBox == null && cBox == null) return;
-
-    double localX = fallbackLocalX;
-    if (lBox != null && sG != null) {
-      final rect = lBox.localToGlobal(Offset.zero) & lBox.size;
-      final sy = sG.dy;
-      final ey = (eG ?? sG).dy;
-      final dy = (ey - sy).abs();
-      final tX = (dy > 4 && eG != null)
-          ? sG.dx +
-                ((rect.center.dy - sy) / (ey - sy)).clamp(0.0, 1.0) *
-                    (eG.dx - sG.dx)
-          : sG.dx;
-      localX = lBox.globalToLocal(Offset(tX, rect.center.dy)).dx;
-    }
-
-    final letterWidth =
-        (lBox?.size.width ?? cBox?.size.width ?? 1.0) / widget.word.length;
-    int target = (localX / letterWidth).round();
-    final isSec =
-        widget.secondaryCutIndex != null && widget.secondaryCutIndex! > 0;
-    if (widget.correctCutIndex > 0 &&
-        (localX - widget.correctCutIndex * letterWidth).abs() <=
-            letterWidth * 0.25) {
-      target = widget.correctCutIndex;
-    } else if (isSec &&
-        (localX - widget.secondaryCutIndex! * letterWidth).abs() <=
-            letterWidth * 0.25) {
-      target = widget.secondaryCutIndex!;
-    }
-
-    final clamped = target.clamp(1, widget.word.length - 1);
+  void _executeCut(int seam) {
+    if (widget.isAnswered) return;
     HapticFeedback.mediumImpact();
-    setState(() => _lastCut = clamped);
-    widget.onSlice(clamped);
+    setState(() => _lastCut = seam);
+    widget.onSlice(seam);
   }
 
   Widget _buildLetterTile(
-    String letter, {
+    String letter,
+    int index, {
     required bool isHighlighted,
     required bool isWrong,
     required bool isDark,
@@ -196,26 +109,81 @@ class _PrefixSuffixPrecisionSlicerState
           ]
         : null;
 
-    return Container(
-      width: 32.w,
-      height: 48.h,
-      alignment: Alignment.center,
-      decoration: BoxDecoration(
-        color: bg,
-        borderRadius: BorderRadius.circular(10.r),
-        border: Border.all(
-          color: border,
-          width: (isHighlighted || isWrong) ? 1.8 : 1.5,
+    return GestureDetector(
+      onTap: () {
+        if (index > 0) _executeCut(index);
+      },
+      child: Container(
+        width: 32.w,
+        height: 48.h,
+        alignment: Alignment.center,
+        decoration: BoxDecoration(
+          color: bg,
+          borderRadius: BorderRadius.circular(10.r),
+          border: Border.all(
+            color: border,
+            width: (isHighlighted || isWrong) ? 1.8 : 1.5,
+          ),
+          boxShadow: shadow,
         ),
-        boxShadow: shadow,
+        child: Text(
+          letter,
+          style: TextStyle(
+            fontFamily: 'Inter',
+            fontSize: 20.sp,
+            fontWeight: FontWeight.w700,
+            color: fg,
+          ),
+        ),
       ),
-      child: Text(
-        letter,
-        style: TextStyle(
-          fontFamily: 'Inter',
-          fontSize: 20.sp,
-          fontWeight: FontWeight.w700,
-          color: fg,
+    );
+  }
+
+  Widget _buildSeamCutter(int seam, {required bool isDark}) {
+    final isThisSeamCorrect =
+        seam == widget.correctCutIndex ||
+        (widget.secondaryCutIndex != null && seam == widget.secondaryCutIndex);
+    final isUserPicked = widget.isWrongCut && _lastCut == seam;
+    final isRevealedCorrect = widget.isWrongCut && isThisSeamCorrect;
+    final isCut =
+        widget.isSliced &&
+        (seam == widget.correctCutIndex ||
+            (widget.secondaryCutIndex != null &&
+                seam == widget.secondaryCutIndex) ||
+            seam == _lastCut);
+
+    Color color;
+    if (isCut || isRevealedCorrect) {
+      color = AppColors.emerald500;
+    } else if (isUserPicked) {
+      color = AppColors.red500;
+    } else {
+      color = isDark ? AppColors.slate600 : AppColors.slate300;
+    }
+
+    return GestureDetector(
+      behavior: HitTestBehavior.opaque,
+      onTap: () => _executeCut(seam),
+      child: Container(
+        width: 12.w,
+        height: 48.h,
+        alignment: Alignment.center,
+        child: AnimatedContainer(
+          duration: const Duration(milliseconds: 200),
+          width: (isCut || isUserPicked || isRevealedCorrect) ? 3.0 : 1.5,
+          height: (isCut || isUserPicked || isRevealedCorrect) ? 42.h : 22.h,
+          decoration: BoxDecoration(
+            color: color,
+            borderRadius: BorderRadius.circular(2.r),
+            boxShadow: (isCut || isRevealedCorrect || isUserPicked)
+                ? [
+                    BoxShadow(
+                      color: color.withValues(alpha: 0.6),
+                      blurRadius: 6,
+                    ),
+                  ]
+                : null,
+          ),
         ),
       ),
     );
@@ -223,6 +191,7 @@ class _PrefixSuffixPrecisionSlicerState
 
   Widget _buildLetterGroup(
     List<String> items,
+    int startIndex,
     double shift,
     double angle, {
     required bool isDark,
@@ -233,16 +202,17 @@ class _PrefixSuffixPrecisionSlicerState
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          for (final l in items)
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 2.w),
-              child: _buildLetterTile(
-                l,
-                isHighlighted: widget.isSliced,
-                isWrong: widget.isWrongCut,
-                isDark: isDark,
-              ),
+          for (int i = 0; i < items.length; i++) ...[
+            _buildLetterTile(
+              items[i],
+              startIndex + i,
+              isHighlighted: widget.isSliced,
+              isWrong: widget.isWrongCut,
+              isDark: isDark,
             ),
+            if (i < items.length - 1)
+              _buildSeamCutter(startIndex + i + 1, isDark: isDark),
+          ],
         ],
       ),
     ),
@@ -260,7 +230,7 @@ class _PrefixSuffixPrecisionSlicerState
             Icon(Icons.touch_app_rounded, size: 13.sp, color: c),
             SizedBox(width: 4.w),
             Text(
-              'Swipe up/down or tap between letters to slice',
+              'Tap between letters or pick an option to slice',
               style: TextStyle(
                 fontFamily: 'Inter',
                 fontSize: 11.sp,
@@ -311,93 +281,78 @@ class _PrefixSuffixPrecisionSlicerState
               isSliced: widget.isSliced,
               isWrongCut: widget.isWrongCut,
               isAnswered: widget.isAnswered,
-              onSlice: (seam) {
-                setState(() => _lastCut = seam);
-                widget.onSlice(seam);
-              },
+              onSlice: _executeCut,
             ),
             SizedBox(height: 12.h),
-            GestureDetector(
-              onTapUp: _onTapUp,
-              onPanStart: _onPanStart,
-              onPanUpdate: _onPanUpdate,
-              onPanEnd: _onPanEnd,
-              onPanCancel: _onPanCancel,
-              behavior: HitTestBehavior.opaque,
-              child: ValueListenableBuilder<List<Offset?>?>(
-                valueListenable: _dragNotifier,
-                builder: (context, drag, child) {
-                  return RepaintBoundary(
-                    child: CustomPaint(
-                      foregroundPainter: PrefixSuffixLaserPainter(
-                        start: drag?[0],
-                        current: drag?[1],
-                        isWrong: widget.isWrongCut,
-                      ),
-                      child: child,
-                    ),
-                  );
-                },
-                child: Container(
-                  key: _wordContainerKey,
-                  padding: EdgeInsets.symmetric(
-                    horizontal: 10.w,
-                    vertical: 16.h,
-                  ),
-                  decoration: BoxDecoration(
-                    color: isDark
-                        ? AppColors.slate900.withValues(alpha: 0.5)
-                        : Colors.white,
-                    borderRadius: BorderRadius.circular(20.r),
-                    border: Border.all(color: boardBorder, width: 2.0),
-                    boxShadow: isDark
-                        ? null
-                        : [
-                            BoxShadow(
-                              color: Colors.black.withValues(alpha: 0.04),
-                              blurRadius: 10,
-                              offset: const Offset(0, 4),
-                            ),
-                          ],
-                  ),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      _buildPrompt(isDark),
-                      FittedBox(
-                        fit: BoxFit.scaleDown,
-                        child: Row(
-                          key: _lettersKey,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            _buildLetterGroup(
-                              letters.sublist(0, cutSeam),
-                              -splitShift,
-                              -tiltAngle,
-                              isDark: isDark,
-                            ),
-                            if (widget.isSliced)
-                              Padding(
-                                padding: EdgeInsets.symmetric(horizontal: 6.w),
-                                child: Icon(
-                                  Icons.content_cut_rounded,
-                                  size: 16.sp,
-                                  color: AppColors.emerald500,
-                                ),
-                              ),
-                            _buildLetterGroup(
-                              letters.sublist(cutSeam),
-                              splitShift,
-                              tiltAngle,
-                              isDark: isDark,
-                            ),
-                          ],
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 16.h),
+              decoration: BoxDecoration(
+                color: isDark
+                    ? AppColors.slate900.withValues(alpha: 0.5)
+                    : Colors.white,
+                borderRadius: BorderRadius.circular(20.r),
+                border: Border.all(color: boardBorder, width: 2.0),
+                boxShadow: isDark
+                    ? null
+                    : [
+                        BoxShadow(
+                          color: Colors.black.withValues(alpha: 0.04),
+                          blurRadius: 10,
+                          offset: const Offset(0, 4),
                         ),
-                      ),
-                    ],
+                      ],
+              ),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  _buildPrompt(isDark),
+                  FittedBox(
+                    fit: BoxFit.scaleDown,
+                    child: Row(
+                      key: _lettersKey,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        _buildLetterGroup(
+                          letters.sublist(0, cutSeam),
+                          0,
+                          -splitShift,
+                          -tiltAngle,
+                          isDark: isDark,
+                        ),
+                        if (widget.isSliced)
+                          Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 6.w),
+                            child: Icon(
+                              Icons.content_cut_rounded,
+                              size: 16.sp,
+                              color: AppColors.emerald500,
+                            ),
+                          )
+                        else if (widget.isWrongCut &&
+                            _lastCut != null &&
+                            _lastCut! > 0)
+                          Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 4.w),
+                            child: Icon(
+                              Icons.close_rounded,
+                              size: 16.sp,
+                              color: AppColors.red500,
+                            ),
+                          )
+                        else
+                          _buildSeamCutter(cutSeam, isDark: isDark),
+                        _buildLetterGroup(
+                          letters.sublist(cutSeam),
+                          cutSeam,
+                          splitShift,
+                          tiltAngle,
+                          isDark: isDark,
+                        ),
+                      ],
+                    ),
                   ),
-                ),
+                ],
               ),
             ),
           ],
