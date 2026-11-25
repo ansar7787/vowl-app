@@ -242,7 +242,7 @@ class _PrefixSuffixPrecisionSlicerState
           children: [
             Icon(Icons.touch_app_rounded, size: 13.sp, color: c),
             SizedBox(width: 4.w),
-            Text('Swipe down or tap between letters to slice', style: st),
+            Text('Swipe up/down or tap between letters to slice', style: st),
           ],
         ),
       ),
