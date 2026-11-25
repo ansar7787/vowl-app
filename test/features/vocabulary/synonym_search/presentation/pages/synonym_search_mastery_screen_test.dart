@@ -358,5 +358,79 @@ void main() {
         await tester.pump(const Duration(milliseconds: 300));
       },
     );
+
+    testWidgets(
+      'supports continuous pointer drag-tracing across grid cells without scroll stealing',
+      (tester) async {
+        await pumpMastery(tester);
+
+        final grid = SynonymGridBuilder.build(
+          questId: quest1.id,
+          correctAnswer: quest1.correctAnswer!,
+          options: quest1.options!,
+        );
+        final path = grid.targetPathIndices;
+        final firstCell = find.byKey(Key('grid_cell_${path.first}'));
+        await tester.ensureVisible(firstCell);
+        await tester.pump();
+
+        final gesture = await tester.startGesture(tester.getCenter(firstCell));
+        await tester.pump();
+        for (int i = 1; i < path.length; i++) {
+          final nextCenter = tester.getCenter(
+            find.byKey(Key('grid_cell_${path[i]}')),
+          );
+          await gesture.moveTo(nextCenter);
+          await tester.pump(const Duration(milliseconds: 16));
+        }
+        await gesture.up();
+        await tester.pump(const Duration(milliseconds: 300));
+
+        verify(
+          () => mockVocabularyBloc.add(const SubmitAnswer(true)),
+        ).called(1);
+
+        await tester.pumpWidget(const SizedBox.shrink());
+        await tester.pump(const Duration(milliseconds: 300));
+      },
+    );
+
+    testWidgets(
+      'resets traced path cleanly when restarting Quest 0 via VocabularyLoading -> VocabularyLoaded',
+      (tester) async {
+        await pumpMastery(tester);
+
+        final grid = SynonymGridBuilder.build(
+          questId: quest1.id,
+          correctAnswer: quest1.correctAnswer!,
+          options: quest1.options!,
+        );
+        final cellFinder = find.byKey(
+          Key('grid_cell_${grid.targetPathIndices.first}'),
+        );
+        await tester.ensureVisible(cellFinder);
+        await tester.tap(cellFinder);
+        await tester.pump();
+
+        expect(find.textContaining('Tracing:'), findsOneWidget);
+
+        // Simulate Pause -> Restart returning back to Quest 0
+        when(
+          () => mockVocabularyBloc.state,
+        ).thenReturn(const VocabularyLoading());
+        streamController.add(const VocabularyLoading());
+        await tester.pump();
+
+        when(() => mockVocabularyBloc.state).thenReturn(initialLoaded);
+        streamController.add(initialLoaded);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+
+        expect(find.text('Drag or tap adjacent letters'), findsOneWidget);
+
+        await tester.pumpWidget(const SizedBox.shrink());
+        await tester.pump(const Duration(milliseconds: 300));
+      },
+    );
   });
 }

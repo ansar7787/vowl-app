@@ -34,7 +34,9 @@ class SynonymMakeoverInlineSentence extends StatelessWidget {
   Widget build(BuildContext context) {
     final parts = beforeSentence.split('___');
     final prefixWords = _tokenize(parts.isNotEmpty ? parts.first : '');
-    final suffixWords = parts.length > 1 ? _tokenize(parts[1]) : const [];
+    final suffixWords = parts.length > 1
+        ? _tokenize(parts.sublist(1).join(' '))
+        : const [];
 
     return Wrap(
       crossAxisAlignment: WrapCrossAlignment.center,

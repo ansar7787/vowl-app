@@ -184,6 +184,7 @@ class SynonymGridBuilder {
       tries++;
       final path = <int>[start];
       final visited = <int>{start};
+      final stepBudget = <int>[0];
       if (_dfsPlace(
         grid: grid,
         word: word,
@@ -194,6 +195,7 @@ class SynonymGridBuilder {
         visited: visited,
         path: path,
         rng: rng,
+        stepBudget: stepBudget,
       )) {
         for (int i = 0; i < word.length; i++) {
           grid[path[i]] = word[i];
@@ -219,6 +221,8 @@ class SynonymGridBuilder {
     return const [];
   }
 
+  static const _maxDfsStepsPerTry = 400;
+
   static bool _dfsPlace({
     required List<String?> grid,
     required String word,
@@ -229,8 +233,10 @@ class SynonymGridBuilder {
     required Set<int> visited,
     required List<int> path,
     required math.Random rng,
+    required List<int> stepBudget,
   }) {
     if (depth >= word.length) return true;
+    if (++stepBudget[0] > _maxDfsStepsPerTry) return false;
 
     final neighbors = _freeNeighbors(
       index: current,
@@ -242,24 +248,18 @@ class SynonymGridBuilder {
     if (neighbors.isEmpty) return false;
 
     neighbors.shuffle(rng);
-    // Warnsdorff heuristic: visit cells with fewer onward exits first so paths stay compact.
-    neighbors.sort((a, b) {
-      final degA = _freeNeighbors(
-        index: a,
-        grid: grid,
-        visited: visited,
-        columns: columns,
-        rows: rows,
-      ).length;
-      final degB = _freeNeighbors(
-        index: b,
-        grid: grid,
-        visited: visited,
-        columns: columns,
-        rows: rows,
-      ).length;
-      return degA.compareTo(degB);
-    });
+    // Warnsdorff heuristic: sort by precomputed onward free-neighbor count (0 allocations).
+    final degrees = <int, int>{
+      for (final n in neighbors)
+        n: _freeNeighborCount(
+          index: n,
+          grid: grid,
+          visited: visited,
+          columns: columns,
+          rows: rows,
+        ),
+    };
+    neighbors.sort((a, b) => degrees[a]!.compareTo(degrees[b]!));
 
     for (final next in neighbors) {
       visited.add(next);
@@ -274,6 +274,7 @@ class SynonymGridBuilder {
         visited: visited,
         path: path,
         rng: rng,
+        stepBudget: stepBudget,
       )) {
         return true;
       }
@@ -281,6 +282,31 @@ class SynonymGridBuilder {
       visited.remove(next);
     }
     return false;
+  }
+
+  static int _freeNeighborCount({
+    required int index,
+    required List<String?> grid,
+    required Set<int> visited,
+    required int columns,
+    required int rows,
+  }) {
+    final r = index ~/ columns;
+    final c = index % columns;
+    int count = 0;
+    for (int dr = -1; dr <= 1; dr++) {
+      for (int dc = -1; dc <= 1; dc++) {
+        if (dr == 0 && dc == 0) continue;
+        final nr = r + dr;
+        final nc = c + dc;
+        if (nr < 0 || nr >= rows || nc < 0 || nc >= columns) continue;
+        final nIdx = nr * columns + nc;
+        if (grid[nIdx] == null && !visited.contains(nIdx)) {
+          count++;
+        }
+      }
+    }
+    return count;
   }
 
   static List<int> _freeNeighbors({

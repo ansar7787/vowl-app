@@ -50,7 +50,9 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
   int get level => widget.level;
 
   late final SynonymMasteryController _controller;
+  final ValueNotifier<int> _roundResetNonce = ValueNotifier<int>(0);
   String? _lastLoadedQuestId;
+  bool _pendingRoundReset = false;
 
   @override
   void initState() {
@@ -139,9 +141,19 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
   @override
   void dispose() {
     _stopAudioSafely();
+    _roundResetNonce.dispose();
     _controller.dispose();
     disposeVocabularyGame();
     super.dispose();
+  }
+
+  bool _handleListenWhen(VocabularyState prev, VocabularyState curr) {
+    if (curr is VocabularyLoading ||
+        curr is VocabularyGameOver ||
+        curr is VocabularyInitial) {
+      _pendingRoundReset = true;
+    }
+    return vocabularyListenWhen(prev, curr);
   }
 
   @override
@@ -153,7 +165,7 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
     );
 
     return BlocConsumer<VocabularyBloc, VocabularyState>(
-      listenWhen: vocabularyListenWhen,
+      listenWhen: _handleListenWhen,
       listener: (context, state) {
         onVocabularyStateChanged(context, state);
 
@@ -161,12 +173,21 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
           final quest = state.currentQuestOrNull;
           if (quest != null) {
             final isNewQuest = _lastLoadedQuestId != quest.id;
+            final shouldForceReset = _pendingRoundReset || isNewQuest;
             _lastLoadedQuestId = quest.id;
             _controller.loadQuest(
               quest,
               level: widget.level,
-              forceReset: isNewQuest,
+              forceReset: shouldForceReset,
             );
+            if (_pendingRoundReset) {
+              _pendingRoundReset = false;
+              if (state.currentIndex == 0 && !state.answerStatus.isAnswered) {
+                _controller.resetForRetryOrNext(keepComboOnNext: false);
+                timerKey = GlobalKey<SpeedChallengeTimerState>();
+                _roundResetNonce.value = _roundResetNonce.value + 1;
+              }
+            }
           }
           if (state.hintUsed) {
             _controller.activateHint();
@@ -243,6 +264,7 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
 
     return ListenableBuilder(
       listenable: Listenable.merge([
+        _roundResetNonce,
         _controller.grid,
         _controller.activePath,
         _controller.comboStreak,

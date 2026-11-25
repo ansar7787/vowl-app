@@ -2,11 +2,11 @@ import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/presentation/widgets/shakeable_wrapper.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/controllers/synonym_grid_builder.dart';
+import 'package:vowl/features/vocabulary/synonym_search/presentation/widgets/synonym_grid_trace_detector.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/widgets/synonym_grid_trace_painter.dart';
 
 /// Responsive 5x5 (or 6x5) connected word-search grid supporting continuous
@@ -56,7 +56,6 @@ class SynonymWordGridBoard extends StatelessWidget {
       shakeCount: shakeCount,
       child: Column(
         children: [
-          // Compact active trace status & accessibility Undo / Clear bar
           Row(
             children: [
               Expanded(
@@ -79,7 +78,7 @@ class SynonymWordGridBoard extends StatelessWidget {
                   ),
                 ),
               ),
-              _MiniControlPill(
+              SynonymGridControlPill(
                 key: const Key('grid_undo_btn'),
                 label: 'Undo',
                 icon: Icons.backspace_outlined,
@@ -88,7 +87,7 @@ class SynonymWordGridBoard extends StatelessWidget {
                 onTap: onBackspace,
               ),
               SizedBox(width: 6.w),
-              _MiniControlPill(
+              SynonymGridControlPill(
                 key: const Key('grid_clear_btn'),
                 label: 'Clear',
                 icon: Icons.refresh_rounded,
@@ -109,7 +108,6 @@ class SynonymWordGridBoard extends StatelessWidget {
               );
               final double rawCellSize =
                   (availWidth - spacing * (grid.columns - 1)) / grid.columns;
-              // Keep tiles large (>= 48dp on 5-col layouts) while capping tablet sizes cleanly.
               final double minCell = grid.columns <= 5 ? 48.0 : 42.0;
               final double cellSize = rawCellSize.clamp(minCell, 60.0);
               final double gridWidth =
@@ -146,37 +144,35 @@ class SynonymWordGridBoard extends StatelessWidget {
                       ),
                     ],
                   ),
-                  child: GestureDetector(
-                    behavior: HitTestBehavior.opaque,
-                    onTapUp: (details) {
+                  child: SynonymGridTraceDetector(
+                    onTapAt: (pos) {
                       final idx = _hitTestCell(
-                        localPos: details.localPosition,
+                        localPos: pos,
                         cellSize: cellSize,
                         spacing: spacing,
                         isDrag: false,
                       );
                       if (idx != null) onTapCell(idx);
                     },
-                    onPanStart: (details) {
+                    onDragStartAt: (pos) {
                       final idx = _hitTestCell(
-                        localPos: details.localPosition,
+                        localPos: pos,
                         cellSize: cellSize,
                         spacing: spacing,
                         isDrag: false,
                       );
                       if (idx != null) onStartDrag(idx);
                     },
-                    onPanUpdate: (details) {
+                    onDragUpdateAt: (pos) {
                       final idx = _hitTestCell(
-                        localPos: details.localPosition,
+                        localPos: pos,
                         cellSize: cellSize,
                         spacing: spacing,
                         isDrag: true,
                       );
                       if (idx != null) onExtendDrag(idx);
                     },
-                    onPanEnd: (_) => onEndDrag(),
-                    onPanCancel: onEndDrag,
+                    onDragEnd: onEndDrag,
                     child: SizedBox(
                       key: const Key('synonym_word_grid'),
                       width: gridWidth,
@@ -241,7 +237,6 @@ class SynonymWordGridBoard extends StatelessWidget {
     if (dx > cellSize || dy > cellSize) return null;
 
     if (isDrag) {
-      // Circular core hitbox avoids accidental corner diagonal snags while swiping fast.
       final center = Offset(cellSize / 2, cellSize / 2);
       if ((Offset(dx, dy) - center).distance > cellSize * 0.48) {
         return null;
@@ -324,67 +319,6 @@ class SynonymWordGridBoard extends StatelessWidget {
               fontSize: (cellSize * 0.42).clamp(16.0, 22.0),
               fontWeight: FontWeight.w900,
               color: letterColor,
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-class _MiniControlPill extends StatelessWidget {
-  final String label;
-  final IconData icon;
-  final bool enabled;
-  final bool isDark;
-  final VoidCallback onTap;
-
-  const _MiniControlPill({
-    super.key,
-    required this.label,
-    required this.icon,
-    required this.enabled,
-    required this.isDark,
-    required this.onTap,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    final fg = enabled
-        ? (isDark ? AppColors.slate100 : AppColors.slate800)
-        : (isDark ? AppColors.slate600 : AppColors.slate400);
-    return Semantics(
-      button: true,
-      enabled: enabled,
-      label: label,
-      child: ScaleButton(
-        onTap: enabled ? onTap : null,
-        child: ConstrainedBox(
-          constraints: const BoxConstraints(minHeight: 48, minWidth: 48),
-          child: Container(
-            padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 6.h),
-            decoration: BoxDecoration(
-              color: isDark ? AppColors.slate800 : AppColors.slate100,
-              borderRadius: BorderRadius.circular(10.r),
-              border: Border.all(
-                color: isDark ? AppColors.slate700 : AppColors.slate300,
-              ),
-            ),
-            child: Row(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Icon(icon, size: 14.sp, color: fg),
-                SizedBox(width: 4.w),
-                Text(
-                  label,
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 12.sp,
-                    fontWeight: FontWeight.w700,
-                    color: fg,
-                  ),
-                ),
-              ],
             ),
           ),
         ),

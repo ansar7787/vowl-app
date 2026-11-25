@@ -321,4 +321,80 @@ void main() {
       },
     );
   }
+
+  testWidgets(
+    'all 3 phase screens render cleanly in Dark Mode on 360x640 without errors',
+    (tester) async {
+      final errors = <String>[];
+      final prevOnError = FlutterError.onError;
+      FlutterError.onError = (details) {
+        errors.add(details.exceptionAsString());
+      };
+
+      const size = Size(360, 640);
+      tester.view.physicalSize = size;
+      tester.view.devicePixelRatio = 1.0;
+
+      try {
+        Widget darkHost(Widget child) {
+          return MultiBlocProvider(
+            providers: [
+              BlocProvider<VocabularyBloc>.value(value: mockVocabularyBloc),
+              BlocProvider<AuthBloc>.value(value: mockAuthBloc),
+              BlocProvider<EconomyBloc>.value(value: mockEconomyBloc),
+            ],
+            child: ScreenUtilInit(
+              designSize: const Size(390, 844),
+              minTextAdapt: true,
+              builder: (context, _) => MaterialApp(
+                theme: AppTheme.darkTheme,
+                home: MediaQuery(
+                  data: const MediaQueryData(
+                    size: size,
+                    disableAnimations: true,
+                  ),
+                  child: child,
+                ),
+              ),
+            ),
+          );
+        }
+
+        await tester.pumpWidget(
+          darkHost(
+            SynonymSearchLearnScreen(
+              level: 1,
+              initialItems: [SynonymLearnItem.fallback(1)],
+            ),
+          ),
+        );
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+
+        await tester.pumpWidget(
+          darkHost(
+            SynonymSearchPracticeScreen(
+              level: 1,
+              initialExercises: SynonymPracticeQuest.fallbackExercises(1),
+            ),
+          ),
+        );
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+
+        await tester.pumpWidget(darkHost(const SynonymSearchScreen(level: 1)));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+
+        await tester.pumpWidget(const SizedBox.shrink());
+        await tester.pump(const Duration(milliseconds: 300));
+      } finally {
+        FlutterError.onError = prevOnError;
+        tester.view.resetPhysicalSize();
+        tester.view.resetDevicePixelRatio();
+      }
+
+      expect(errors, isEmpty, reason: errors.join('\n'));
+    },
+  );
 }

@@ -192,7 +192,9 @@ class _ContrastSlotCard extends StatelessWidget {
 
     final parts = slot.sentenceWithBlank.split('___');
     final beforeWords = _tokenize(parts.isNotEmpty ? parts.first : '');
-    final afterWords = parts.length > 1 ? _tokenize(parts[1]) : const [];
+    final afterWords = parts.length > 1
+        ? _tokenize(parts.sublist(1).join(' '))
+        : const [];
     final textColor = isDark ? AppColors.slate100 : AppColors.slate900;
 
     return Container(

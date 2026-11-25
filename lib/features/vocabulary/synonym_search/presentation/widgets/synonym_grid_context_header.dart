@@ -232,7 +232,9 @@ class _ContextClueWithLiveSlot extends StatelessWidget {
 
     final parts = clueText.split(RegExp(r'_{3,}'));
     final beforeWords = _tokenize(parts.isNotEmpty ? parts.first : '');
-    final afterWords = parts.length > 1 ? _tokenize(parts[1]) : const [];
+    final afterWords = parts.length > 1
+        ? _tokenize(parts.sublist(1).join(' '))
+        : const [];
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
