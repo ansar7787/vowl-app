@@ -91,7 +91,7 @@ const _slides = <_Slide>[
     features: [
       _Feature(Icons.shield_rounded, 'Streak Shields'),
       _Feature(Icons.checkroom_rounded, 'Outfits & Badges'),
-      _Feature(Icons.auto_awesome_rounded, '100% Ad-Free'),
+      _Feature(Icons.auto_awesome_rounded, 'Ad-Free for Premium'),
     ],
   ),
   _Slide(

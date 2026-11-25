@@ -445,7 +445,7 @@ void main() {
       await tester.pump(const Duration(milliseconds: 500));
       expect(find.text('Streak Shields'), findsOneWidget);
       expect(find.text('Outfits & Badges'), findsOneWidget);
-      expect(find.text('100% Ad-Free'), findsOneWidget);
+      expect(find.text('Ad-Free for Premium'), findsOneWidget);
 
       // Slide 4 features
       await tester.tap(find.text('Continue'));
