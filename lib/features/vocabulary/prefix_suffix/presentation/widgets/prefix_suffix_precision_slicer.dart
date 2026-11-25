@@ -92,17 +92,17 @@ class _PrefixSuffixPrecisionSlicerState
       final dy = (c.dy - s.dy).abs();
       final dx = (c.dx - s.dx).abs();
       if (dy >= 18 || (dy < 18 && dx < 18)) {
-        final g = (_dragStartGlobal != null && _dragCurrentGlobal != null)
-            ? (_dragStartGlobal! + _dragCurrentGlobal!) / 2.0
-            : _dragStartGlobal;
-        _detectAndExecuteCut(midGlobal: g, fallbackLocalX: (s.dx + c.dx) / 2.0);
+        _detectAndExecuteCut(
+          _dragStartGlobal,
+          _dragCurrentGlobal,
+          (s.dx + c.dx) / 2.0,
+        );
       }
     }
     _clearDrag();
   }
 
   void _onPanCancel() => _clearDrag();
-
   void _clearDrag() {
     _dragNotifier.value = null;
     _dragStartGlobal = _dragCurrentGlobal = null;
@@ -111,41 +111,50 @@ class _PrefixSuffixPrecisionSlicerState
   void _onTapUp(TapUpDetails d) {
     if (!widget.isAnswered) {
       _detectAndExecuteCut(
-        midGlobal: d.globalPosition,
-        fallbackLocalX: d.localPosition.dx,
+        d.globalPosition,
+        d.globalPosition,
+        d.localPosition.dx,
       );
     }
   }
 
-  void _detectAndExecuteCut({
-    required Offset? midGlobal,
-    required double fallbackLocalX,
-  }) {
+  void _detectAndExecuteCut(Offset? sG, Offset? eG, double fallbackLocalX) {
     if (widget.word.length < 2) return;
     final lBox = _lettersKey.currentContext?.findRenderObject() as RenderBox?;
     final cBox =
         _wordContainerKey.currentContext?.findRenderObject() as RenderBox?;
-    final localX = (lBox != null && midGlobal != null)
-        ? lBox.globalToLocal(midGlobal).dx
-        : fallbackLocalX;
-    final totalWidth = lBox?.size.width ?? cBox?.size.width;
-    if (totalWidth == null) return;
+    if (lBox == null && cBox == null) return;
 
-    final letterWidth = totalWidth / widget.word.length;
-    int targetSeam = (localX / letterWidth).round();
+    double localX = fallbackLocalX;
+    if (lBox != null && sG != null) {
+      final rect = lBox.localToGlobal(Offset.zero) & lBox.size;
+      final sy = sG.dy;
+      final ey = (eG ?? sG).dy;
+      final dy = (ey - sy).abs();
+      final tX = (dy > 4 && eG != null)
+          ? sG.dx +
+                ((rect.center.dy - sy) / (ey - sy)).clamp(0.0, 1.0) *
+                    (eG.dx - sG.dx)
+          : sG.dx;
+      localX = lBox.globalToLocal(Offset(tX, rect.center.dy)).dx;
+    }
+
+    final letterWidth =
+        (lBox?.size.width ?? cBox?.size.width ?? 1.0) / widget.word.length;
+    int target = (localX / letterWidth).round();
     final isSec =
         widget.secondaryCutIndex != null && widget.secondaryCutIndex! > 0;
     if (widget.correctCutIndex > 0 &&
         (localX - widget.correctCutIndex * letterWidth).abs() <=
-            letterWidth * 0.42) {
-      targetSeam = widget.correctCutIndex;
+            letterWidth * 0.25) {
+      target = widget.correctCutIndex;
     } else if (isSec &&
         (localX - widget.secondaryCutIndex! * letterWidth).abs() <=
-            letterWidth * 0.42) {
-      targetSeam = widget.secondaryCutIndex!;
+            letterWidth * 0.25) {
+      target = widget.secondaryCutIndex!;
     }
 
-    final clamped = targetSeam.clamp(1, widget.word.length - 1);
+    final clamped = target.clamp(1, widget.word.length - 1);
     HapticFeedback.mediumImpact();
     setState(() => _lastCut = clamped);
     widget.onSlice(clamped);
@@ -154,24 +163,34 @@ class _PrefixSuffixPrecisionSlicerState
   Widget _buildLetterTile(
     String letter, {
     required bool isHighlighted,
+    required bool isWrong,
     required bool isDark,
   }) {
     final border = isHighlighted
-        ? (isDark ? AppColors.indigo400 : AppColors.indigo500)
-        : (isDark ? AppColors.slate700 : AppColors.slate300);
+        ? AppColors.emerald500
+        : (isWrong
+              ? AppColors.red500
+              : (isDark ? AppColors.slate700 : AppColors.slate300));
     final bg = isHighlighted
         ? (isDark
-              ? AppColors.indigo500.withValues(alpha: 0.18)
-              : AppColors.indigo50.withValues(alpha: 0.8))
-        : (isDark ? AppColors.slate800 : const Color(0xFFF1F5F9));
+              ? AppColors.emerald500.withValues(alpha: 0.22)
+              : AppColors.emerald50.withValues(alpha: 0.85))
+        : (isWrong
+              ? (isDark
+                    ? AppColors.red500.withValues(alpha: 0.18)
+                    : AppColors.red50.withValues(alpha: 0.85))
+              : (isDark ? AppColors.slate800 : const Color(0xFFF1F5F9)));
     final fg = isHighlighted
-        ? (isDark ? AppColors.indigo400 : AppColors.indigo600)
-        : (isDark ? AppColors.slate50 : AppColors.slate900);
+        ? (isDark ? AppColors.emerald400 : AppColors.emerald600)
+        : (isWrong
+              ? (isDark ? AppColors.red500 : AppColors.red900)
+              : (isDark ? AppColors.slate50 : AppColors.slate900));
 
-    final shadow = isHighlighted
+    final shadow = (isHighlighted || isWrong)
         ? [
             BoxShadow(
-              color: AppColors.indigo500.withValues(alpha: isDark ? 0.3 : 0.2),
+              color: (isHighlighted ? AppColors.emerald500 : AppColors.red500)
+                  .withValues(alpha: isDark ? 0.35 : 0.22),
               blurRadius: 8,
             ),
           ]
@@ -184,7 +203,10 @@ class _PrefixSuffixPrecisionSlicerState
       decoration: BoxDecoration(
         color: bg,
         borderRadius: BorderRadius.circular(10.r),
-        border: Border.all(color: border, width: 1.5),
+        border: Border.all(
+          color: border,
+          width: (isHighlighted || isWrong) ? 1.8 : 1.5,
+        ),
         boxShadow: shadow,
       ),
       child: Text(
@@ -217,6 +239,7 @@ class _PrefixSuffixPrecisionSlicerState
               child: _buildLetterTile(
                 l,
                 isHighlighted: widget.isSliced,
+                isWrong: widget.isWrongCut,
                 isDark: isDark,
               ),
             ),
@@ -227,12 +250,6 @@ class _PrefixSuffixPrecisionSlicerState
 
   Widget _buildPrompt(bool isDark) {
     final c = isDark ? AppColors.slate400 : AppColors.slate600;
-    final st = TextStyle(
-      fontFamily: 'Inter',
-      fontSize: 11.sp,
-      fontWeight: FontWeight.w600,
-      color: c,
-    );
     return Padding(
       padding: EdgeInsets.only(bottom: 8.h),
       child: FittedBox(
@@ -242,7 +259,15 @@ class _PrefixSuffixPrecisionSlicerState
           children: [
             Icon(Icons.touch_app_rounded, size: 13.sp, color: c),
             SizedBox(width: 4.w),
-            Text('Swipe up/down or tap between letters to slice', style: st),
+            Text(
+              'Swipe up/down or tap between letters to slice',
+              style: TextStyle(
+                fontFamily: 'Inter',
+                fontSize: 11.sp,
+                fontWeight: FontWeight.w600,
+                color: c,
+              ),
+            ),
           ],
         ),
       ),
@@ -253,10 +278,11 @@ class _PrefixSuffixPrecisionSlicerState
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final letters = widget.word.split('');
-    final targetSeam =
-        (_lastCut != null &&
-            widget.secondaryCutIndex != null &&
-            _lastCut == widget.secondaryCutIndex)
+    final isSec =
+        _lastCut != null &&
+        widget.secondaryCutIndex != null &&
+        _lastCut == widget.secondaryCutIndex;
+    final targetSeam = isSec
         ? widget.secondaryCutIndex!
         : widget.correctCutIndex;
     final cutSeam = letters.length < 2
@@ -351,15 +377,15 @@ class _PrefixSuffixPrecisionSlicerState
                               -tiltAngle,
                               isDark: isDark,
                             ),
-                            if (widget.isSliced) ...[
-                              SizedBox(width: 6.w),
-                              Icon(
-                                Icons.content_cut_rounded,
-                                size: 16.sp,
-                                color: AppColors.emerald500,
+                            if (widget.isSliced)
+                              Padding(
+                                padding: EdgeInsets.symmetric(horizontal: 6.w),
+                                child: Icon(
+                                  Icons.content_cut_rounded,
+                                  size: 16.sp,
+                                  color: AppColors.emerald500,
+                                ),
                               ),
-                              SizedBox(width: 6.w),
-                            ],
                             _buildLetterGroup(
                               letters.sublist(cutSeam),
                               splitShift,
