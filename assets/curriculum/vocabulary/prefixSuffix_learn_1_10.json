@@ -1,665 +1,818 @@
 {
-    "levels": "1-10",
-    "quests": [
+  "gameType": "prefixSuffix",
+  "phase": "learn",
+  "batchIndex": 1,
+  "levels": "1-10",
+  "quests": [
+    {
+      "id": "VOC_PS_L1_LEARN_Q1",
+      "level": 1,
+      "cefr": "A2",
+      "difficulty": 1,
+      "subtype": "prefixSuffix",
+      "type": "vocabulary",
+      "rootWord": "VIEW",
+      "rootMeaning": "To look at or inspect",
+      "rootPartOfSpeech": "VERB",
+      "affix": "PRE-",
+      "affixType": "prefix",
+      "affixMeaning": "Before / In advance",
+      "combinedWord": "PREVIEW",
+      "definition": "An early viewing before public release",
+      "context": "We watched the movie preview before the film began.",
+      "dialCombinations": [
         {
-            "id": "VOC_PREFIXSUFFIX_L1_LEARN_Q1",
-            "level": 1,
-            "word": "REDO",
-            "rootWord": "DO",
-            "correctAnswer": "RE-",
-            "options": [
-                "MIS-",
-                "DE-",
-                "PRE-",
-                "RE-"
-            ],
-            "isPrefix": true,
-            "conceptTitle": "Affix Laboratory: RE-",
-            "affixType": "Prefix (Placed at start)",
-            "meaningBreakdown": "RE (prefix, 'again') + DO (root)",
-            "definition": "RE- means 'again.' Added to DO, it forms REDO — to perform an action a second time, often to correct it.",
-            "instruction": "Pick the prefix that completes the word for this meaning.",
-            "hint": "This prefix shows an action happening one more time, often to fix a mistake.",
-            "explanation": "RE- means 'again.' Added to DO, it forms REDO — to perform an action a second time, often to correct it.",
-            "difficulty": 1
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L1_LEARN_Q2",
-            "level": 1,
-            "word": "REWRITE",
-            "rootWord": "WRITE",
-            "correctAnswer": "RE-",
-            "options": [
-                "PRE-",
-                "POST-",
-                "DE-",
-                "RE-"
-            ],
-            "isPrefix": true,
-            "conceptTitle": "Affix Laboratory: RE-",
-            "affixType": "Prefix (Placed at start)",
-            "meaningBreakdown": "RE (prefix, 'again') + WRITE (root)",
-            "definition": "REWRITE is built from RE- ('again') and WRITE. It means to write something a second time, often to improve it.",
-            "instruction": "Pick the prefix that completes the word for this meaning.",
-            "hint": "Producing a document for the second time, usually to fix earlier mistakes.",
-            "explanation": "REWRITE is built from RE- ('again') and WRITE. It means to write something a second time, often to improve it.",
-            "difficulty": 1
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L1_LEARN_Q3",
-            "level": 1,
-            "word": "REHEAT",
-            "rootWord": "HEAT",
-            "correctAnswer": "RE-",
-            "options": [
-                "DE-",
-                "PRE-",
-                "RE-",
-                "MIS-"
-            ],
-            "isPrefix": true,
-            "conceptTitle": "Affix Laboratory: RE-",
-            "affixType": "Prefix (Placed at start)",
-            "meaningBreakdown": "RE (prefix, 'again') + HEAT (root)",
-            "definition": "RE- ('again') combines with HEAT to form REHEAT — to make something hot a second time. DE- would suggest removing heat, and PRE- would mean before heating.",
-            "instruction": "Which prefix correctly completes this word?",
-            "hint": "Warming up last night's dinner in the microwave is an example of doing this to food.",
-            "explanation": "RE- ('again') combines with HEAT to form REHEAT — to make something hot a second time. DE- would suggest removing heat, and PRE- would mean before heating.",
-            "difficulty": 1
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L2_LEARN_Q1",
-            "level": 2,
-            "word": "UNLOCK",
-            "rootWord": "LOCK",
-            "correctAnswer": "UN-",
-            "options": [
-                "DIS-",
-                "DE-",
-                "UN-",
-                "MIS-"
-            ],
-            "isPrefix": true,
-            "conceptTitle": "Affix Laboratory: UN-",
-            "affixType": "Prefix (Placed at start)",
-            "meaningBreakdown": "UN (prefix, reverses the action) + LOCK (root)",
-            "definition": "UN- reverses an action. Added to LOCK, it forms UNLOCK — to open something that was locked.",
-            "instruction": "Pick the prefix that completes the word for this meaning.",
-            "hint": "Turning a key to open a door that was secured shut.",
-            "explanation": "UN- reverses an action. Added to LOCK, it forms UNLOCK — to open something that was locked.",
-            "difficulty": 1
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L2_LEARN_Q2",
-            "level": 2,
-            "word": "UNTIE",
-            "rootWord": "TIE",
-            "correctAnswer": "UN-",
-            "options": [
-                "NON-",
-                "DIS-",
-                "MIS-",
-                "UN-"
-            ],
-            "isPrefix": true,
-            "conceptTitle": "Affix Laboratory: UN-",
-            "affixType": "Prefix (Placed at start)",
-            "meaningBreakdown": "UN (prefix, reverses the action) + TIE (root)",
-            "definition": "UNTIE combines UN- ('reverse') with TIE. It describes undoing a knot that was tied.",
-            "instruction": "Pick the prefix that completes the word for this meaning.",
-            "hint": "Loosening a knot so a rope falls apart.",
-            "explanation": "UNTIE combines UN- ('reverse') with TIE. It describes undoing a knot that was tied.",
-            "difficulty": 1
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L2_LEARN_Q3",
-            "level": 2,
-            "word": "UNLOAD",
-            "rootWord": "LOAD",
-            "correctAnswer": "UN-",
-            "options": [
-                "DIS-",
-                "MIS-",
-                "UN-",
-                "DE-"
-            ],
-            "isPrefix": true,
-            "conceptTitle": "Affix Laboratory: UN-",
-            "affixType": "Prefix (Placed at start)",
-            "meaningBreakdown": "UN (prefix, reverses the action) + LOAD (root)",
-            "definition": "UN- reverses the action of loading, giving UNLOAD. DIS- also reverses actions in some words (like DISCONNECT), but English pairs LOAD with UN-, not DIS-.",
-            "instruction": "Which prefix correctly completes this word?",
-            "hint": "Carrying boxes off a delivery truck after it arrives.",
-            "explanation": "UN- reverses the action of loading, giving UNLOAD. DIS- also reverses actions in some words (like DISCONNECT), but English pairs LOAD with UN-, not DIS-.",
-            "difficulty": 1
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L3_LEARN_Q1",
-            "level": 3,
-            "word": "TEACHER",
-            "rootWord": "TEACH",
-            "correctAnswer": "-ER",
-            "options": [
-                "-MENT",
-                "-ER",
-                "-ISM",
-                "-HOOD"
-            ],
-            "isPrefix": false,
-            "conceptTitle": "Affix Laboratory: -ER",
-            "affixType": "Suffix (Placed at end)",
-            "meaningBreakdown": "TEACH (root) + ER (suffix, 'person who does')",
-            "definition": "-ER attaches to a verb to name the person who does it. TEACH + -ER = TEACHER, someone who teaches.",
-            "instruction": "Pick the suffix that completes the word for this meaning.",
-            "hint": "This suffix names the person who performs an action, not the action itself.",
-            "explanation": "-ER attaches to a verb to name the person who does it. TEACH + -ER = TEACHER, someone who teaches.",
-            "difficulty": 1
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L3_LEARN_Q2",
-            "level": 3,
-            "word": "SWIMMER",
-            "rootWord": "SWIM",
-            "correctAnswer": "-ER",
-            "options": [
-                "-EE",
-                "-OR",
-                "-IST",
-                "-ER"
-            ],
-            "isPrefix": false,
-            "conceptTitle": "Affix Laboratory: -ER",
-            "affixType": "Suffix (Placed at end)",
-            "meaningBreakdown": "SWIM (root) + ER (suffix, 'person who does')",
-            "definition": "SWIMMER is SWIM + -ER, naming a person who swims — in this case, someone racing in the pool.",
-            "instruction": "Pick the suffix that completes the word for this meaning.",
-            "hint": "Someone competing in the 100-meter freestyle race at the pool.",
-            "explanation": "SWIMMER is SWIM + -ER, naming a person who swims — in this case, someone racing in the pool.",
-            "difficulty": 1
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L3_LEARN_Q3",
-            "level": 3,
-            "word": "PAINTER",
-            "rootWord": "PAINT",
-            "correctAnswer": "-ER",
-            "options": [
-                "-SHIP",
-                "-DOM",
-                "-HOOD",
-                "-ER"
-            ],
-            "isPrefix": false,
-            "conceptTitle": "Affix Laboratory: -ER",
-            "affixType": "Suffix (Placed at end)",
-            "meaningBreakdown": "PAINT (root) + ER (suffix, 'person who does')",
-            "definition": "-ER creates PAINTER from PAINT. Suffixes like -SHIP, -DOM, and -HOOD build different kinds of nouns (a relationship, a territory, a state) — not 'a person who.'",
-            "instruction": "Which suffix correctly completes this word?",
-            "hint": "An artist who fills canvases with color for a living.",
-            "explanation": "-ER creates PAINTER from PAINT. Suffixes like -SHIP, -DOM, and -HOOD build different kinds of nouns (a relationship, a territory, a state) — not 'a person who.'",
-            "difficulty": 1
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L4_LEARN_Q1",
-            "level": 4,
-            "word": "HOPEFUL",
-            "rootWord": "HOPE",
-            "correctAnswer": "-FUL",
-            "options": [
-                "-MENT",
-                "-SHIP",
-                "-DOM",
-                "-FUL"
-            ],
-            "isPrefix": false,
-            "conceptTitle": "Affix Laboratory: -FUL",
-            "affixType": "Suffix (Placed at end)",
-            "meaningBreakdown": "HOPE (root) + FUL (suffix, 'full of')",
-            "definition": "-FUL means 'full of.' HOPE + -FUL = HOPEFUL, full of hope.",
-            "instruction": "Pick the suffix that completes the word for this meaning.",
-            "hint": "Feeling that good things are likely to happen.",
-            "explanation": "-FUL means 'full of.' HOPE + -FUL = HOPEFUL, full of hope.",
-            "difficulty": 1
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L4_LEARN_Q2",
-            "level": 4,
-            "word": "PAINFUL",
-            "rootWord": "PAIN",
-            "correctAnswer": "-FUL",
-            "options": [
-                "-FUL",
-                "-IBLE",
-                "-LESS",
-                "-ABLE"
-            ],
-            "isPrefix": false,
-            "conceptTitle": "Affix Laboratory: -FUL",
-            "affixType": "Suffix (Placed at end)",
-            "meaningBreakdown": "PAIN (root) + FUL (suffix, 'full of')",
-            "definition": "PAINFUL joins PAIN with -FUL to describe something full of pain, like a sprained ankle.",
-            "instruction": "Pick the suffix that completes the word for this meaning.",
-            "hint": "Describing a sprained ankle that makes every step hurt.",
-            "explanation": "PAINFUL joins PAIN with -FUL to describe something full of pain, like a sprained ankle.",
-            "difficulty": 1
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L4_LEARN_Q3",
-            "level": 4,
-            "word": "CAREFUL",
-            "rootWord": "CARE",
-            "correctAnswer": "-FUL",
-            "options": [
-                "-NESS",
-                "-FUL",
-                "-ISH",
-                "-MENT"
-            ],
-            "isPrefix": false,
-            "conceptTitle": "Affix Laboratory: -FUL",
-            "affixType": "Suffix (Placed at end)",
-            "meaningBreakdown": "CARE (root) + FUL (suffix, 'full of')",
-            "definition": "-FUL forms CAREFUL from CARE, meaning full of care or attention. -NESS would instead build a noun naming a quality, and -ISH would suggest 'somewhat like' — neither fits 'full of.'",
-            "instruction": "Which suffix correctly completes this word?",
-            "hint": "Checking your work twice before handing in an important report.",
-            "explanation": "-FUL forms CAREFUL from CARE, meaning full of care or attention. -NESS would instead build a noun naming a quality, and -ISH would suggest 'somewhat like' — neither fits 'full of.'",
-            "difficulty": 1
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L5_LEARN_Q1",
-            "level": 5,
-            "word": "FEARLESS",
-            "rootWord": "FEAR",
-            "correctAnswer": "-LESS",
-            "options": [
-                "-FUL",
-                "-LESS",
-                "-ISH",
-                "-HOOD"
-            ],
-            "isPrefix": false,
-            "conceptTitle": "Affix Laboratory: -LESS",
-            "affixType": "Suffix (Placed at end)",
-            "meaningBreakdown": "FEAR (root) + LESS (suffix, 'without')",
-            "definition": "-LESS means 'without.' FEAR + -LESS = FEARLESS, without fear.",
-            "instruction": "Pick the suffix that completes the word for this meaning.",
-            "hint": "Walking into danger without hesitation or worry.",
-            "explanation": "-LESS means 'without.' FEAR + -LESS = FEARLESS, without fear.",
-            "difficulty": 1
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L5_LEARN_Q2",
-            "level": 5,
-            "word": "HOMELESS",
-            "rootWord": "HOME",
-            "correctAnswer": "-LESS",
-            "options": [
-                "-IBLE",
-                "-LESS",
-                "-FUL",
-                "-ABLE"
-            ],
-            "isPrefix": false,
-            "conceptTitle": "Affix Laboratory: -LESS",
-            "affixType": "Suffix (Placed at end)",
-            "meaningBreakdown": "HOME (root) + LESS (suffix, 'without')",
-            "definition": "HOMELESS combines HOME with -LESS, describing a person without a home.",
-            "instruction": "Pick the suffix that completes the word for this meaning.",
-            "hint": "Describing someone who has no house or shelter to live in.",
-            "explanation": "HOMELESS combines HOME with -LESS, describing a person without a home.",
-            "difficulty": 1
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L5_LEARN_Q3",
-            "level": 5,
-            "word": "USELESS",
-            "rootWord": "USE",
-            "correctAnswer": "-LESS",
-            "options": [
-                "-LESS",
-                "-NESS",
-                "-FUL",
-                "-ISH"
-            ],
-            "isPrefix": false,
-            "conceptTitle": "Affix Laboratory: -LESS",
-            "affixType": "Suffix (Placed at end)",
-            "meaningBreakdown": "USE (root) + LESS (suffix, 'without')",
-            "definition": "-LESS ('without') creates USELESS, meaning without use or purpose. Adding -FUL instead would flip the meaning entirely to USEFUL — full of use. Same root, opposite suffix, opposite meaning.",
-            "instruction": "Which suffix correctly completes this word?",
-            "hint": "A broken umbrella full of holes — it no longer helps you at all in the rain.",
-            "explanation": "-LESS ('without') creates USELESS, meaning without use or purpose. Adding -FUL instead would flip the meaning entirely to USEFUL — full of use. Same root, opposite suffix, opposite meaning.",
-            "difficulty": 1
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L6_LEARN_Q1",
-            "level": 6,
-            "word": "QUIETLY",
-            "rootWord": "QUIET",
-            "correctAnswer": "-LY",
-            "options": [
-                "-FUL",
-                "-LESS",
-                "-NESS",
-                "-LY"
-            ],
-            "isPrefix": false,
-            "conceptTitle": "Affix Laboratory: -LY",
-            "affixType": "Suffix (Placed at end)",
-            "meaningBreakdown": "QUIET (root) + LY (suffix, forms an adverb)",
-            "definition": "-LY turns an adjective into an adverb describing how an action happens. QUIET + -LY = QUIETLY, done without noise.",
-            "instruction": "Pick the suffix that completes the word for this meaning.",
-            "hint": "Closing a door without making any noise, late at night.",
-            "explanation": "-LY turns an adjective into an adverb describing how an action happens. QUIET + -LY = QUIETLY, done without noise.",
-            "difficulty": 1
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L6_LEARN_Q2",
-            "level": 6,
-            "word": "SLOWLY",
-            "rootWord": "SLOW",
-            "correctAnswer": "-LY",
-            "options": [
-                "-ER",
-                "-WISE",
-                "-LY",
-                "-WARD"
-            ],
-            "isPrefix": false,
-            "conceptTitle": "Affix Laboratory: -LY",
-            "affixType": "Suffix (Placed at end)",
-            "meaningBreakdown": "SLOW (root) + LY (suffix, forms an adverb)",
-            "definition": "SLOWLY is SLOW + -LY, an adverb telling how something moves — unhurried and gradual.",
-            "instruction": "Pick the suffix that completes the word for this meaning.",
-            "hint": "Describing how a snail moves across a garden path.",
-            "explanation": "SLOWLY is SLOW + -LY, an adverb telling how something moves — unhurried and gradual.",
-            "difficulty": 1
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L6_LEARN_Q3",
-            "level": 6,
-            "word": "QUICKLY",
-            "rootWord": "QUICK",
-            "correctAnswer": "-LY",
-            "options": [
-                "-NESS",
-                "-LY",
-                "-FUL",
-                "-LESS"
-            ],
-            "isPrefix": false,
-            "conceptTitle": "Affix Laboratory: -LY",
-            "affixType": "Suffix (Placed at end)",
-            "meaningBreakdown": "QUICK (root) + LY (suffix, forms an adverb)",
-            "definition": "-LY converts the adjective QUICK into the adverb QUICKLY, describing the manner of an action. -FUL would instead build an adjective, so it wouldn't fit a sentence describing how someone runs.",
-            "instruction": "Which suffix correctly completes this word?",
-            "hint": "Describing how a sprinter dashes across the finish line.",
-            "explanation": "-LY converts the adjective QUICK into the adverb QUICKLY, describing the manner of an action. -FUL would instead build an adjective, so it wouldn't fit a sentence describing how someone runs.",
-            "difficulty": 1
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L7_LEARN_Q1",
-            "level": 7,
-            "word": "KINDNESS",
-            "rootWord": "KIND",
-            "correctAnswer": "-NESS",
-            "options": [
-                "-FUL",
-                "-ISH",
-                "-NESS",
-                "-DOM"
-            ],
-            "isPrefix": false,
-            "conceptTitle": "Affix Laboratory: -NESS",
-            "affixType": "Suffix (Placed at end)",
-            "meaningBreakdown": "KIND (root) + NESS (suffix, forms a noun of state)",
-            "definition": "-NESS turns an adjective into a noun naming a state or quality. KIND + -NESS = KINDNESS.",
-            "instruction": "Pick the suffix that completes the word for this meaning.",
-            "hint": "The quality shown by someone who shares their lunch with a hungry classmate.",
-            "explanation": "-NESS turns an adjective into a noun naming a state or quality. KIND + -NESS = KINDNESS.",
-            "difficulty": 1
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L7_LEARN_Q2",
-            "level": 7,
-            "word": "DARKNESS",
-            "rootWord": "DARK",
-            "correctAnswer": "-NESS",
-            "options": [
-                "-TION",
-                "-SION",
-                "-NESS",
-                "-MENT"
-            ],
-            "isPrefix": false,
-            "conceptTitle": "Affix Laboratory: -NESS",
-            "affixType": "Suffix (Placed at end)",
-            "meaningBreakdown": "DARK (root) + NESS (suffix, forms a noun of state)",
-            "definition": "DARKNESS is DARK + -NESS, the state or quality of being dark.",
-            "instruction": "Pick the suffix that completes the word for this meaning.",
-            "hint": "What fills a room the moment the power goes out at night.",
-            "explanation": "DARKNESS is DARK + -NESS, the state or quality of being dark.",
-            "difficulty": 1
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L7_LEARN_Q3",
-            "level": 7,
-            "word": "WEAKNESS",
-            "rootWord": "WEAK",
-            "correctAnswer": "-NESS",
-            "options": [
-                "-FUL",
-                "-NESS",
-                "-LESS",
-                "-ISH"
-            ],
-            "isPrefix": false,
-            "conceptTitle": "Affix Laboratory: -NESS",
-            "affixType": "Suffix (Placed at end)",
-            "meaningBreakdown": "WEAK (root) + NESS (suffix, forms a noun of state)",
-            "definition": "-NESS builds WEAKNESS, a noun naming the state of being weak. -FUL instead creates adjectives (like HOPEFUL), so it can't name a quality as a noun the way -NESS does.",
-            "instruction": "Which suffix correctly completes this word?",
-            "hint": "The particular area where a talented player still needs more practice.",
-            "explanation": "-NESS builds WEAKNESS, a noun naming the state of being weak. -FUL instead creates adjectives (like HOPEFUL), so it can't name a quality as a noun the way -NESS does.",
-            "difficulty": 1
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L8_LEARN_Q1",
-            "level": 8,
-            "word": "DISAGREE",
-            "rootWord": "AGREE",
-            "correctAnswer": "DIS-",
-            "options": [
-                "DIS-",
-                "UN-",
-                "MIS-",
-                "-LESS"
-            ],
-            "isPrefix": true,
-            "conceptTitle": "Affix Laboratory: DIS-",
-            "affixType": "Prefix (Placed at start)",
-            "meaningBreakdown": "DIS (prefix, 'not') + AGREE (root)",
-            "definition": "DIS- means 'not' or 'the opposite of.' DIS- + AGREE = DISAGREE, to not agree.",
-            "instruction": "Pick the prefix that completes the word for this meaning.",
-            "hint": "Voicing a different opinion after hearing your friend's plan.",
-            "explanation": "DIS- means 'not' or 'the opposite of.' DIS- + AGREE = DISAGREE, to not agree.",
-            "difficulty": 1
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L8_LEARN_Q2",
-            "level": 8,
-            "word": "DISOBEY",
-            "rootWord": "OBEY",
-            "correctAnswer": "DIS-",
-            "options": [
-                "DIS-",
-                "NON-",
-                "MIS-",
-                "UN-"
-            ],
-            "isPrefix": true,
-            "conceptTitle": "Affix Laboratory: DIS-",
-            "affixType": "Prefix (Placed at start)",
-            "meaningBreakdown": "DIS (prefix, 'not') + OBEY (root)",
-            "definition": "DISOBEY combines DIS- with OBEY, meaning to not follow a rule or instruction.",
-            "instruction": "Pick the prefix that completes the word for this meaning.",
-            "hint": "A dog that runs off instead of following its owner's command to sit.",
-            "explanation": "DISOBEY combines DIS- with OBEY, meaning to not follow a rule or instruction.",
-            "difficulty": 1
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L8_LEARN_Q3",
-            "level": 8,
-            "word": "DISHONEST",
-            "rootWord": "HONEST",
-            "correctAnswer": "DIS-",
-            "options": [
-                "DIS-",
-                "UN-",
-                "MIS-",
-                "-LESS"
-            ],
-            "isPrefix": true,
-            "conceptTitle": "Affix Laboratory: DIS-",
-            "affixType": "Prefix (Placed at start)",
-            "meaningBreakdown": "DIS (prefix, 'not') + HONEST (root)",
-            "definition": "DIS- + HONEST = DISHONEST, not honest. English pairs HONEST with DIS-, not UN- — 'unhonest' isn't a real word, even though UN- carries a similar negative meaning in other words.",
-            "instruction": "Which prefix correctly completes this word?",
-            "hint": "Describing someone caught lying about where the money went.",
-            "explanation": "DIS- + HONEST = DISHONEST, not honest. English pairs HONEST with DIS-, not UN- — 'unhonest' isn't a real word, even though UN- carries a similar negative meaning in other words.",
-            "difficulty": 1
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L9_LEARN_Q1",
-            "level": 9,
-            "word": "WASHABLE",
-            "rootWord": "WASH",
-            "correctAnswer": "-ABLE",
-            "options": [
-                "RE-",
-                "-LESS",
-                "UN-",
-                "-ABLE"
-            ],
-            "isPrefix": false,
-            "conceptTitle": "Affix Laboratory: -ABLE",
-            "affixType": "Suffix (Placed at end)",
-            "meaningBreakdown": "WASH (root) + ABLE (suffix, 'capable of being')",
-            "definition": "-ABLE means 'capable of being.' WASH + -ABLE = WASHABLE, able to be washed.",
-            "instruction": "Pick the suffix that completes the word for this meaning.",
-            "hint": "A jacket label that says it's safe to put in the washing machine.",
-            "explanation": "-ABLE means 'capable of being.' WASH + -ABLE = WASHABLE, able to be washed.",
-            "difficulty": 1
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L9_LEARN_Q2",
-            "level": 9,
-            "word": "ENJOYABLE",
-            "rootWord": "ENJOY",
-            "correctAnswer": "-ABLE",
-            "options": [
-                "-LESS",
-                "-ABLE",
-                "-FUL",
-                "-IBLE"
-            ],
-            "isPrefix": false,
-            "conceptTitle": "Affix Laboratory: -ABLE",
-            "affixType": "Suffix (Placed at end)",
-            "meaningBreakdown": "ENJOY (root) + ABLE (suffix, 'capable of being')",
-            "definition": "ENJOYABLE is ENJOY + -ABLE, describing something capable of being enjoyed.",
-            "instruction": "Pick the suffix that completes the word for this meaning.",
-            "hint": "A movie that made the whole family laugh from start to finish.",
-            "explanation": "ENJOYABLE is ENJOY + -ABLE, describing something capable of being enjoyed.",
-            "difficulty": 1
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L9_LEARN_Q3",
-            "level": 9,
-            "word": "BREAKABLE",
-            "rootWord": "BREAK",
-            "correctAnswer": "-ABLE",
-            "options": [
-                "DIS-",
-                "-LESS",
-                "-FUL",
-                "-ABLE"
-            ],
-            "isPrefix": false,
-            "conceptTitle": "Affix Laboratory: -ABLE",
-            "affixType": "Suffix (Placed at end)",
-            "meaningBreakdown": "BREAK (root) + ABLE (suffix, 'capable of being')",
-            "definition": "-ABLE attaches to BREAK to form BREAKABLE, meaning capable of being broken. -LESS would instead mean 'without breaking' — the opposite idea — so it doesn't fit a fragile-item warning.",
-            "instruction": "Which suffix correctly completes this word?",
-            "hint": "A warning label glued onto a box of glass ornaments during shipping.",
-            "explanation": "-ABLE attaches to BREAK to form BREAKABLE, meaning capable of being broken. -LESS would instead mean 'without breaking' — the opposite idea — so it doesn't fit a fragile-item warning.",
-            "difficulty": 1
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L10_LEARN_Q1",
-            "level": 10,
-            "word": "PREVIEW",
-            "rootWord": "VIEW",
-            "correctAnswer": "PRE-",
-            "options": [
-                "PRE-",
-                "-ER",
-                "RE-",
-                "-MENT"
-            ],
-            "isPrefix": true,
-            "conceptTitle": "Affix Laboratory: PRE-",
-            "affixType": "Prefix (Placed at start)",
-            "meaningBreakdown": "PRE (prefix, 'before') + VIEW (root)",
-            "definition": "PRE- means 'before.' PRE- + VIEW = PREVIEW, to view something before it fully happens.",
-            "instruction": "Pick the prefix that completes the word for this meaning.",
-            "hint": "A short clip released to build excitement before a movie's official opening.",
-            "explanation": "PRE- means 'before.' PRE- + VIEW = PREVIEW, to view something before it fully happens.",
-            "difficulty": 1
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L10_LEARN_Q2",
-            "level": 10,
-            "word": "PREHEAT",
-            "rootWord": "HEAT",
-            "correctAnswer": "PRE-",
-            "options": [
-                "RE-",
-                "POST-",
-                "DE-",
-                "PRE-"
-            ],
-            "isPrefix": true,
-            "conceptTitle": "Affix Laboratory: PRE-",
-            "affixType": "Prefix (Placed at start)",
-            "meaningBreakdown": "PRE (prefix, 'before') + HEAT (root)",
-            "definition": "PREHEAT combines PRE- with HEAT, meaning to heat something, like an oven, before using it.",
-            "instruction": "Pick the prefix that completes the word for this meaning.",
-            "hint": "Setting the oven to the right temperature before putting the cake in.",
-            "explanation": "PREHEAT combines PRE- with HEAT, meaning to heat something, like an oven, before using it.",
-            "difficulty": 1
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L10_LEARN_Q3",
-            "level": 10,
-            "word": "PREPAY",
-            "rootWord": "PAY",
-            "correctAnswer": "PRE-",
-            "options": [
-                "PRE-",
-                "-MENT",
-                "DE-",
-                "RE-"
-            ],
-            "isPrefix": true,
-            "conceptTitle": "Affix Laboratory: PRE-",
-            "affixType": "Prefix (Placed at start)",
-            "meaningBreakdown": "PRE (prefix, 'before') + PAY (root)",
-            "definition": "PRE- ('before') creates PREPAY, to pay before receiving a service. RE- would instead mean paying again, which fits a different situation — like paying a second time after a failed transaction.",
-            "instruction": "Which prefix correctly completes this word?",
-            "hint": "Buying a phone plan and paying for next month's service today, ahead of time.",
-            "explanation": "PRE- ('before') creates PREPAY, to pay before receiving a service. RE- would instead mean paying again, which fits a different situation — like paying a second time after a failed transaction.",
-            "difficulty": 1
+          "prefix": "PRE-",
+          "suffix": "",
+          "combinedWord": "PREVIEW",
+          "affixMeaning": "Before / In advance",
+          "definition": "An early viewing before public release",
+          "context": "We watched the movie preview before the film began."
         }
-    ]
+      ]
+    },
+    {
+      "id": "VOC_PS_L1_LEARN_Q2",
+      "level": 1,
+      "cefr": "A2",
+      "difficulty": 1,
+      "subtype": "prefixSuffix",
+      "type": "vocabulary",
+      "rootWord": "WRITE",
+      "rootMeaning": "To form letters or words",
+      "rootPartOfSpeech": "VERB",
+      "affix": "RE-",
+      "affixType": "prefix",
+      "affixMeaning": "Again / Anew",
+      "combinedWord": "REWRITE",
+      "definition": "To compose something a second time",
+      "context": "Her essay had mistakes, so she had to rewrite the final paragraph.",
+      "dialCombinations": [
+        {
+          "prefix": "RE-",
+          "suffix": "",
+          "combinedWord": "REWRITE",
+          "affixMeaning": "Again / Anew",
+          "definition": "To compose something a second time",
+          "context": "Her essay had mistakes, so she had to rewrite the final paragraph."
+        }
+      ]
+    },
+    {
+      "id": "VOC_PS_L1_LEARN_Q3",
+      "level": 1,
+      "cefr": "A2",
+      "difficulty": 1,
+      "subtype": "prefixSuffix",
+      "type": "vocabulary",
+      "rootWord": "HEAT",
+      "rootMeaning": "To make warm or hot",
+      "rootPartOfSpeech": "VERB",
+      "affix": "RE-",
+      "affixType": "prefix",
+      "affixMeaning": "Again / Anew",
+      "combinedWord": "REHEAT",
+      "definition": "To make food warm a second time",
+      "context": "Let us reheat the leftover soup in the microwave.",
+      "dialCombinations": [
+        {
+          "prefix": "RE-",
+          "suffix": "",
+          "combinedWord": "REHEAT",
+          "affixMeaning": "Again / Anew",
+          "definition": "To make food warm a second time",
+          "context": "Let us reheat the leftover soup in the microwave."
+        }
+      ]
+    },
+    {
+      "id": "VOC_PS_L2_LEARN_Q1",
+      "level": 2,
+      "cefr": "A2",
+      "difficulty": 1,
+      "subtype": "prefixSuffix",
+      "type": "vocabulary",
+      "rootWord": "LOCK",
+      "rootMeaning": "To secure with a key",
+      "rootPartOfSpeech": "VERB",
+      "affix": "UN-",
+      "affixType": "prefix",
+      "affixMeaning": "Reverse action / Open",
+      "combinedWord": "UNLOCK",
+      "definition": "To open a door or box that was secured",
+      "context": "Turn the brass key to unlock the front entrance.",
+      "dialCombinations": [
+        {
+          "prefix": "UN-",
+          "suffix": "",
+          "combinedWord": "UNLOCK",
+          "affixMeaning": "Reverse action / Open",
+          "definition": "To open a door or box that was secured",
+          "context": "Turn the brass key to unlock the front entrance."
+        }
+      ]
+    },
+    {
+      "id": "VOC_PS_L2_LEARN_Q2",
+      "level": 2,
+      "cefr": "A2",
+      "difficulty": 1,
+      "subtype": "prefixSuffix",
+      "type": "vocabulary",
+      "rootWord": "TIE",
+      "rootMeaning": "To fasten with a knot",
+      "rootPartOfSpeech": "VERB",
+      "affix": "UN-",
+      "affixType": "prefix",
+      "affixMeaning": "Reverse action / Undo",
+      "combinedWord": "UNTIE",
+      "definition": "To loosen or open a knot",
+      "context": "Please untie your wet shoelaces before coming inside.",
+      "dialCombinations": [
+        {
+          "prefix": "UN-",
+          "suffix": "",
+          "combinedWord": "UNTIE",
+          "affixMeaning": "Reverse action / Undo",
+          "definition": "To loosen or open a knot",
+          "context": "Please untie your wet shoelaces before coming inside."
+        }
+      ]
+    },
+    {
+      "id": "VOC_PS_L2_LEARN_Q3",
+      "level": 2,
+      "cefr": "A2",
+      "difficulty": 1,
+      "subtype": "prefixSuffix",
+      "type": "vocabulary",
+      "rootWord": "LOAD",
+      "rootMeaning": "To place cargo onto",
+      "rootPartOfSpeech": "VERB",
+      "affix": "UN-",
+      "affixType": "prefix",
+      "affixMeaning": "Reverse action / Remove",
+      "combinedWord": "UNLOAD",
+      "definition": "To take goods or boxes off a vehicle",
+      "context": "The movers helped unload the heavy furniture from the truck.",
+      "dialCombinations": [
+        {
+          "prefix": "UN-",
+          "suffix": "",
+          "combinedWord": "UNLOAD",
+          "affixMeaning": "Reverse action / Remove",
+          "definition": "To take goods or boxes off a vehicle",
+          "context": "The movers helped unload the heavy furniture from the truck."
+        }
+      ]
+    },
+    {
+      "id": "VOC_PS_L3_LEARN_Q1",
+      "level": 3,
+      "cefr": "A2",
+      "difficulty": 1,
+      "subtype": "prefixSuffix",
+      "type": "vocabulary",
+      "rootWord": "CARE",
+      "rootMeaning": "Concern or attention",
+      "rootPartOfSpeech": "NOUN",
+      "affix": "-FUL",
+      "affixType": "suffix",
+      "affixMeaning": "Full of / Having",
+      "combinedWord": "CAREFUL",
+      "definition": "Giving great attention to avoid errors",
+      "context": "Be careful when carrying the delicate glass bowl.",
+      "dialCombinations": [
+        {
+          "prefix": "",
+          "suffix": "-FUL",
+          "combinedWord": "CAREFUL",
+          "affixMeaning": "Full of / Having",
+          "definition": "Giving great attention to avoid errors",
+          "context": "Be careful when carrying the delicate glass bowl."
+        }
+      ]
+    },
+    {
+      "id": "VOC_PS_L3_LEARN_Q2",
+      "level": 3,
+      "cefr": "A2",
+      "difficulty": 1,
+      "subtype": "prefixSuffix",
+      "type": "vocabulary",
+      "rootWord": "HELP",
+      "rootMeaning": "Assistance or support",
+      "rootPartOfSpeech": "NOUN",
+      "affix": "-FUL",
+      "affixType": "suffix",
+      "affixMeaning": "Giving / Providing",
+      "combinedWord": "HELPFUL",
+      "definition": "Ready to give assistance to others",
+      "context": "The librarian was very helpful in finding the reference book.",
+      "dialCombinations": [
+        {
+          "prefix": "",
+          "suffix": "-FUL",
+          "combinedWord": "HELPFUL",
+          "affixMeaning": "Giving / Providing",
+          "definition": "Ready to give assistance to others",
+          "context": "The librarian was very helpful in finding the reference book."
+        }
+      ]
+    },
+    {
+      "id": "VOC_PS_L3_LEARN_Q3",
+      "level": 3,
+      "cefr": "A2",
+      "difficulty": 1,
+      "subtype": "prefixSuffix",
+      "type": "vocabulary",
+      "rootWord": "HOPE",
+      "rootMeaning": "Expectation and desire",
+      "rootPartOfSpeech": "NOUN",
+      "affix": "-LESS",
+      "affixType": "suffix",
+      "affixMeaning": "Without / Lacking",
+      "combinedWord": "HOPELESS",
+      "definition": "Having no expectation of success or cure",
+      "context": "The situation looked hopeless until emergency rescue arrived.",
+      "dialCombinations": [
+        {
+          "prefix": "",
+          "suffix": "-LESS",
+          "combinedWord": "HOPELESS",
+          "affixMeaning": "Without / Lacking",
+          "definition": "Having no expectation of success or cure",
+          "context": "The situation looked hopeless until emergency rescue arrived."
+        }
+      ]
+    },
+    {
+      "id": "VOC_PS_L4_LEARN_Q1",
+      "level": 4,
+      "cefr": "A2",
+      "difficulty": 1,
+      "subtype": "prefixSuffix",
+      "type": "vocabulary",
+      "rootWord": "TEACH",
+      "rootMeaning": "To instruct or educate",
+      "rootPartOfSpeech": "VERB",
+      "affix": "-ER",
+      "affixType": "suffix",
+      "affixMeaning": "One who does",
+      "combinedWord": "TEACHER",
+      "definition": "A person whose job is educating students",
+      "context": "Our history teacher explained the events clearly.",
+      "dialCombinations": [
+        {
+          "prefix": "",
+          "suffix": "-ER",
+          "combinedWord": "TEACHER",
+          "affixMeaning": "One who does",
+          "definition": "A person whose job is educating students",
+          "context": "Our history teacher explained the events clearly."
+        }
+      ]
+    },
+    {
+      "id": "VOC_PS_L4_LEARN_Q2",
+      "level": 4,
+      "cefr": "A2",
+      "difficulty": 1,
+      "subtype": "prefixSuffix",
+      "type": "vocabulary",
+      "rootWord": "DIRECT",
+      "rootMeaning": "To manage or guide",
+      "rootPartOfSpeech": "VERB",
+      "affix": "-OR",
+      "affixType": "suffix",
+      "affixMeaning": "One who does",
+      "combinedWord": "DIRECTOR",
+      "definition": "A person who oversees a movie or department",
+      "context": "The film director called for quiet on the sound stage.",
+      "dialCombinations": [
+        {
+          "prefix": "",
+          "suffix": "-OR",
+          "combinedWord": "DIRECTOR",
+          "affixMeaning": "One who does",
+          "definition": "A person who oversees a movie or department",
+          "context": "The film director called for quiet on the sound stage."
+        }
+      ]
+    },
+    {
+      "id": "VOC_PS_L4_LEARN_Q3",
+      "level": 4,
+      "cefr": "A2",
+      "difficulty": 1,
+      "subtype": "prefixSuffix",
+      "type": "vocabulary",
+      "rootWord": "BUILD",
+      "rootMeaning": "To construct from parts",
+      "rootPartOfSpeech": "VERB",
+      "affix": "-ER",
+      "affixType": "suffix",
+      "affixMeaning": "One who does",
+      "combinedWord": "BUILDER",
+      "definition": "A skilled craftsman who constructs houses",
+      "context": "The master builder inspected the foundation walls.",
+      "dialCombinations": [
+        {
+          "prefix": "",
+          "suffix": "-ER",
+          "combinedWord": "BUILDER",
+          "affixMeaning": "One who does",
+          "definition": "A skilled craftsman who constructs houses",
+          "context": "The master builder inspected the foundation walls."
+        }
+      ]
+    },
+    {
+      "id": "VOC_PS_L5_LEARN_Q1",
+      "level": 5,
+      "cefr": "A2",
+      "difficulty": 1,
+      "subtype": "prefixSuffix",
+      "type": "vocabulary",
+      "rootWord": "AGREE",
+      "rootMeaning": "To share the same opinion",
+      "rootPartOfSpeech": "VERB",
+      "affix": "DIS-",
+      "affixType": "prefix",
+      "affixMeaning": "Opposite / Conflict",
+      "combinedWord": "DISAGREE",
+      "definition": "To hold a different opinion on a topic",
+      "context": "Scientists often disagree on how to interpret new data.",
+      "dialCombinations": [
+        {
+          "prefix": "DIS-",
+          "suffix": "",
+          "combinedWord": "DISAGREE",
+          "affixMeaning": "Opposite / Conflict",
+          "definition": "To hold a different opinion on a topic",
+          "context": "Scientists often disagree on how to interpret new data."
+        }
+      ]
+    },
+    {
+      "id": "VOC_PS_L5_LEARN_Q2",
+      "level": 5,
+      "cefr": "A2",
+      "difficulty": 1,
+      "subtype": "prefixSuffix",
+      "type": "vocabulary",
+      "rootWord": "APPEAR",
+      "rootMeaning": "To become visible",
+      "rootPartOfSpeech": "VERB",
+      "affix": "DIS-",
+      "affixType": "prefix",
+      "affixMeaning": "Opposite / Vanish",
+      "combinedWord": "DISAPPEAR",
+      "definition": "To pass out of sight entirely",
+      "context": "The magician made the gold coin disappear in his palm.",
+      "dialCombinations": [
+        {
+          "prefix": "DIS-",
+          "suffix": "",
+          "combinedWord": "DISAPPEAR",
+          "affixMeaning": "Opposite / Vanish",
+          "definition": "To pass out of sight entirely",
+          "context": "The magician made the gold coin disappear in his palm."
+        }
+      ]
+    },
+    {
+      "id": "VOC_PS_L5_LEARN_Q3",
+      "level": 5,
+      "cefr": "A2",
+      "difficulty": 1,
+      "subtype": "prefixSuffix",
+      "type": "vocabulary",
+      "rootWord": "OBEY",
+      "rootMeaning": "To comply with commands",
+      "rootPartOfSpeech": "VERB",
+      "affix": "DIS-",
+      "affixType": "prefix",
+      "affixMeaning": "Opposite / Defy",
+      "combinedWord": "DISOBEY",
+      "definition": "To refuse to follow an order or law",
+      "context": "Citizens should not disobey safety traffic signals.",
+      "dialCombinations": [
+        {
+          "prefix": "DIS-",
+          "suffix": "",
+          "combinedWord": "DISOBEY",
+          "affixMeaning": "Opposite / Defy",
+          "definition": "To refuse to follow an order or law",
+          "context": "Citizens should not disobey safety traffic signals."
+        }
+      ]
+    },
+    {
+      "id": "VOC_PS_L6_LEARN_Q1",
+      "level": 6,
+      "cefr": "A2",
+      "difficulty": 1,
+      "subtype": "prefixSuffix",
+      "type": "vocabulary",
+      "rootWord": "UNDERSTAND",
+      "rootMeaning": "To perceive intended meaning",
+      "rootPartOfSpeech": "VERB",
+      "affix": "MIS-",
+      "affixType": "prefix",
+      "affixMeaning": "Wrongly / Mistakenly",
+      "combinedWord": "MISUNDERSTAND",
+      "definition": "To fail to interpret words correctly",
+      "context": "Do not misunderstand my quiet tone for agreement.",
+      "dialCombinations": [
+        {
+          "prefix": "MIS-",
+          "suffix": "",
+          "combinedWord": "MISUNDERSTAND",
+          "affixMeaning": "Wrongly / Mistakenly",
+          "definition": "To fail to interpret words correctly",
+          "context": "Do not misunderstand my quiet tone for agreement."
+        }
+      ]
+    },
+    {
+      "id": "VOC_PS_L6_LEARN_Q2",
+      "level": 6,
+      "cefr": "A2",
+      "difficulty": 1,
+      "subtype": "prefixSuffix",
+      "type": "vocabulary",
+      "rootWord": "PLACE",
+      "rootMeaning": "To put in position",
+      "rootPartOfSpeech": "VERB",
+      "affix": "MIS-",
+      "affixType": "prefix",
+      "affixMeaning": "Wrongly / Lost",
+      "combinedWord": "MISPLACE",
+      "definition": "To put an object in a spot and forget where",
+      "context": "I always misplace my reading glasses when I rush.",
+      "dialCombinations": [
+        {
+          "prefix": "MIS-",
+          "suffix": "",
+          "combinedWord": "MISPLACE",
+          "affixMeaning": "Wrongly / Lost",
+          "definition": "To put an object in a spot and forget where",
+          "context": "I always misplace my reading glasses when I rush."
+        }
+      ]
+    },
+    {
+      "id": "VOC_PS_L6_LEARN_Q3",
+      "level": 6,
+      "cefr": "A2",
+      "difficulty": 1,
+      "subtype": "prefixSuffix",
+      "type": "vocabulary",
+      "rootWord": "LEAD",
+      "rootMeaning": "To guide in direction",
+      "rootPartOfSpeech": "VERB",
+      "affix": "MIS-",
+      "affixType": "prefix",
+      "affixMeaning": "Wrongly / Deceptively",
+      "combinedWord": "MISLEAD",
+      "definition": "To give false impressions to deceive someone",
+      "context": "Advertisements must never mislead consumers about pricing.",
+      "dialCombinations": [
+        {
+          "prefix": "MIS-",
+          "suffix": "",
+          "combinedWord": "MISLEAD",
+          "affixMeaning": "Wrongly / Deceptively",
+          "definition": "To give false impressions to deceive someone",
+          "context": "Advertisements must never mislead consumers about pricing."
+        }
+      ]
+    },
+    {
+      "id": "VOC_PS_L7_LEARN_Q1",
+      "level": 7,
+      "cefr": "A2",
+      "difficulty": 1,
+      "subtype": "prefixSuffix",
+      "type": "vocabulary",
+      "rootWord": "COMFORT",
+      "rootMeaning": "Physical ease or relief",
+      "rootPartOfSpeech": "NOUN",
+      "affix": "-ABLE",
+      "affixType": "suffix",
+      "affixMeaning": "Capable of / Providing",
+      "combinedWord": "COMFORTABLE",
+      "definition": "Affording physical ease and relaxation",
+      "context": "This ergonomic chair is very comfortable during work.",
+      "dialCombinations": [
+        {
+          "prefix": "",
+          "suffix": "-ABLE",
+          "combinedWord": "COMFORTABLE",
+          "affixMeaning": "Capable of / Providing",
+          "definition": "Affording physical ease and relaxation",
+          "context": "This ergonomic chair is very comfortable during work."
+        }
+      ]
+    },
+    {
+      "id": "VOC_PS_L7_LEARN_Q2",
+      "level": 7,
+      "cefr": "A2",
+      "difficulty": 1,
+      "subtype": "prefixSuffix",
+      "type": "vocabulary",
+      "rootWord": "READ",
+      "rootMeaning": "To comprehend written text",
+      "rootPartOfSpeech": "VERB",
+      "affix": "-ABLE",
+      "affixType": "suffix",
+      "affixMeaning": "Capable of being read",
+      "combinedWord": "READABLE",
+      "definition": "Clear handwriting makes the doctor note readable.",
+      "context": "Clear handwriting makes the doctor note readable.",
+      "dialCombinations": [
+        {
+          "prefix": "",
+          "suffix": "-ABLE",
+          "combinedWord": "READABLE",
+          "affixMeaning": "Capable of being read",
+          "definition": "Clear handwriting makes the doctor note readable.",
+          "context": "Clear handwriting makes the doctor note readable."
+        }
+      ]
+    },
+    {
+      "id": "VOC_PS_L7_LEARN_Q3",
+      "level": 7,
+      "cefr": "A2",
+      "difficulty": 1,
+      "subtype": "prefixSuffix",
+      "type": "vocabulary",
+      "rootWord": "FLEX",
+      "rootMeaning": "To bend easily",
+      "rootPartOfSpeech": "VERB",
+      "affix": "-IBLE",
+      "affixType": "suffix",
+      "affixMeaning": "Capable of bending",
+      "combinedWord": "FLEXIBLE",
+      "definition": "Silicone rubber is flexible and bends without snapping.",
+      "context": "Silicone rubber is flexible and bends without snapping.",
+      "dialCombinations": [
+        {
+          "prefix": "",
+          "suffix": "-IBLE",
+          "combinedWord": "FLEXIBLE",
+          "affixMeaning": "Capable of bending",
+          "definition": "Silicone rubber is flexible and bends without snapping.",
+          "context": "Silicone rubber is flexible and bends without snapping."
+        }
+      ]
+    },
+    {
+      "id": "VOC_PS_L8_LEARN_Q1",
+      "level": 8,
+      "cefr": "A2",
+      "difficulty": 1,
+      "subtype": "prefixSuffix",
+      "type": "vocabulary",
+      "rootWord": "CHARGE",
+      "rootMeaning": "To demand price or fee",
+      "rootPartOfSpeech": "VERB",
+      "affix": "OVER-",
+      "affixType": "prefix",
+      "affixMeaning": "Too much / Excess",
+      "combinedWord": "OVERCHARGE",
+      "definition": "To bill more than the rightful cost",
+      "context": "The hotel promised not to overcharge guests for water.",
+      "dialCombinations": [
+        {
+          "prefix": "OVER-",
+          "suffix": "",
+          "combinedWord": "OVERCHARGE",
+          "affixMeaning": "Too much / Excess",
+          "definition": "To bill more than the rightful cost",
+          "context": "The hotel promised not to overcharge guests for water."
+        }
+      ]
+    },
+    {
+      "id": "VOC_PS_L8_LEARN_Q2",
+      "level": 8,
+      "cefr": "A2",
+      "difficulty": 1,
+      "subtype": "prefixSuffix",
+      "type": "vocabulary",
+      "rootWord": "COOK",
+      "rootMeaning": "To prepare food with heat",
+      "rootPartOfSpeech": "VERB",
+      "affix": "OVER-",
+      "affixType": "prefix",
+      "affixMeaning": "Too much / Excess",
+      "combinedWord": "OVERCOOK",
+      "definition": "To cook food too long until it dries",
+      "context": "Watch the timer closely so you do not overcook the salmon.",
+      "dialCombinations": [
+        {
+          "prefix": "OVER-",
+          "suffix": "",
+          "combinedWord": "OVERCOOK",
+          "affixMeaning": "Too much / Excess",
+          "definition": "To cook food too long until it dries",
+          "context": "Watch the timer closely so you do not overcook the salmon."
+        }
+      ]
+    },
+    {
+      "id": "VOC_PS_L8_LEARN_Q3",
+      "level": 8,
+      "cefr": "A2",
+      "difficulty": 1,
+      "subtype": "prefixSuffix",
+      "type": "vocabulary",
+      "rootWord": "ESTIMATE",
+      "rootMeaning": "To calculate roughly",
+      "rootPartOfSpeech": "VERB",
+      "affix": "UNDER-",
+      "affixType": "prefix",
+      "affixMeaning": "Too little / Inadequate",
+      "combinedWord": "UNDERESTIMATE",
+      "definition": "To guess a number or strength too low",
+      "context": "Never underestimate the difficulty of learning a new language.",
+      "dialCombinations": [
+        {
+          "prefix": "UNDER-",
+          "suffix": "",
+          "combinedWord": "UNDERESTIMATE",
+          "affixMeaning": "Too little / Inadequate",
+          "definition": "To guess a number or strength too low",
+          "context": "Never underestimate the difficulty of learning a new language."
+        }
+      ]
+    },
+    {
+      "id": "VOC_PS_L9_LEARN_Q1",
+      "level": 9,
+      "cefr": "A2",
+      "difficulty": 1,
+      "subtype": "prefixSuffix",
+      "type": "vocabulary",
+      "rootWord": "QUICK",
+      "rootMeaning": "Fast in movement",
+      "rootPartOfSpeech": "ADJECTIVE",
+      "affix": "-LY",
+      "affixType": "suffix",
+      "affixMeaning": "In a manner of",
+      "combinedWord": "QUICKLY",
+      "definition": "At high speed or rapidly",
+      "context": "The courier ran quickly to deliver the urgent contract.",
+      "dialCombinations": [
+        {
+          "prefix": "",
+          "suffix": "-LY",
+          "combinedWord": "QUICKLY",
+          "affixMeaning": "In a manner of",
+          "definition": "At high speed or rapidly",
+          "context": "The courier ran quickly to deliver the urgent contract."
+        }
+      ]
+    },
+    {
+      "id": "VOC_PS_L9_LEARN_Q2",
+      "level": 9,
+      "cefr": "A2",
+      "difficulty": 1,
+      "subtype": "prefixSuffix",
+      "type": "vocabulary",
+      "rootWord": "KIND",
+      "rootMeaning": "Generous and considerate",
+      "rootPartOfSpeech": "ADJECTIVE",
+      "affix": "-NESS",
+      "affixType": "suffix",
+      "affixMeaning": "Quality / State of being",
+      "combinedWord": "KINDNESS",
+      "definition": "The quality of being friendly and considerate",
+      "context": "Her quiet kindness made the foreign student feel welcome.",
+      "dialCombinations": [
+        {
+          "prefix": "",
+          "suffix": "-NESS",
+          "combinedWord": "KINDNESS",
+          "affixMeaning": "Quality / State of being",
+          "definition": "The quality of being friendly and considerate",
+          "context": "Her quiet kindness made the foreign student feel welcome."
+        }
+      ]
+    },
+    {
+      "id": "VOC_PS_L9_LEARN_Q3",
+      "level": 9,
+      "cefr": "A2",
+      "difficulty": 1,
+      "subtype": "prefixSuffix",
+      "type": "vocabulary",
+      "rootWord": "DARK",
+      "rootMeaning": "Lacking in illumination",
+      "rootPartOfSpeech": "ADJECTIVE",
+      "affix": "-NESS",
+      "affixType": "suffix",
+      "affixMeaning": "Quality / State of being",
+      "combinedWord": "DARKNESS",
+      "definition": "The total absence of visible light",
+      "context": "Stars shone brightly through the midnight darkness.",
+      "dialCombinations": [
+        {
+          "prefix": "",
+          "suffix": "-NESS",
+          "combinedWord": "DARKNESS",
+          "affixMeaning": "Quality / State of being",
+          "definition": "The total absence of visible light",
+          "context": "Stars shone brightly through the midnight darkness."
+        }
+      ]
+    },
+    {
+      "id": "VOC_PS_L10_LEARN_Q1",
+      "level": 10,
+      "cefr": "A2",
+      "difficulty": 1,
+      "subtype": "prefixSuffix",
+      "type": "vocabulary",
+      "rootWord": "PAY",
+      "rootMeaning": "To give money for goods",
+      "rootPartOfSpeech": "VERB",
+      "affix": "-MENT",
+      "affixType": "suffix",
+      "affixMeaning": "Action or result",
+      "combinedWord": "PAYMENT",
+      "definition": "The transfer of money to settle a bill",
+      "context": "The merchant sent an invoice confirming digital payment.",
+      "dialCombinations": [
+        {
+          "prefix": "",
+          "suffix": "-MENT",
+          "combinedWord": "PAYMENT",
+          "affixMeaning": "Action or result",
+          "definition": "The transfer of money to settle a bill",
+          "context": "The merchant sent an invoice confirming digital payment."
+        }
+      ]
+    },
+    {
+      "id": "VOC_PS_L10_LEARN_Q2",
+      "level": 10,
+      "cefr": "A2",
+      "difficulty": 1,
+      "subtype": "prefixSuffix",
+      "type": "vocabulary",
+      "rootWord": "MOVE",
+      "rootMeaning": "To change physical place",
+      "rootPartOfSpeech": "VERB",
+      "affix": "-MENT",
+      "affixType": "suffix",
+      "affixMeaning": "Action or result",
+      "combinedWord": "MOVEMENT",
+      "definition": "An act of changing physical position",
+      "context": "The dancer practiced every fluid movement in the mirror.",
+      "dialCombinations": [
+        {
+          "prefix": "",
+          "suffix": "-MENT",
+          "combinedWord": "MOVEMENT",
+          "affixMeaning": "Action or result",
+          "definition": "An act of changing physical position",
+          "context": "The dancer practiced every fluid movement in the mirror."
+        }
+      ]
+    },
+    {
+      "id": "VOC_PS_L10_LEARN_Q3",
+      "level": 10,
+      "cefr": "A2",
+      "difficulty": 1,
+      "subtype": "prefixSuffix",
+      "type": "vocabulary",
+      "rootWord": "ACT",
+      "rootMeaning": "To take real measures",
+      "rootPartOfSpeech": "VERB",
+      "affix": "-ION",
+      "affixType": "suffix",
+      "affixMeaning": "Process or condition",
+      "combinedWord": "ACTION",
+      "definition": "The process of doing something to achieve an aim",
+      "context": "Decisive executive action resolved the customer dispute.",
+      "dialCombinations": [
+        {
+          "prefix": "",
+          "suffix": "-ION",
+          "combinedWord": "ACTION",
+          "affixMeaning": "Process or condition",
+          "definition": "The process of doing something to achieve an aim",
+          "context": "Decisive executive action resolved the customer dispute."
+        }
+      ]
+    }
+  ]
 }

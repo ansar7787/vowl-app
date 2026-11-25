@@ -1,665 +1,818 @@
 {
-    "levels": "11-20",
-    "quests": [
+  "gameType": "prefixSuffix",
+  "phase": "learn",
+  "batchIndex": 2,
+  "levels": "11-20",
+  "quests": [
+    {
+      "id": "VOC_PS_L11_LEARN_Q1",
+      "level": 11,
+      "cefr": "B1",
+      "difficulty": 2,
+      "subtype": "prefixSuffix",
+      "type": "vocabulary",
+      "rootWord": "NOMY",
+      "rootMeaning": "Rule or customary law",
+      "rootPartOfSpeech": "NOUN",
+      "affix": "AUTO-",
+      "affixType": "prefix",
+      "affixMeaning": "Self / Same",
+      "combinedWord": "AUTONOMY",
+      "definition": "The right or condition of self-government",
+      "context": "The region was granted political autonomy to govern itself.",
+      "dialCombinations": [
         {
-            "id": "VOC_PREFIXSUFFIX_L11_LEARN_Q1",
-            "level": 11,
-            "word": "REBUILD",
-            "rootWord": "BUILD",
-            "correctAnswer": "RE-",
-            "options": [
-                "DE-",
-                "RE-",
-                "PRE-",
-                "MIS-"
-            ],
-            "isPrefix": true,
-            "conceptTitle": "Affix Laboratory: RE-",
-            "affixType": "Prefix (Placed at start)",
-            "meaningBreakdown": "RE (prefix, 'again') + BUILD (root)",
-            "definition": "RE- means 'again.' Added to BUILD, it forms REBUILD — to construct something a second time after damage or failure.",
-            "instruction": "Which prefix fits the meaning below?",
-            "hint": "Constructing a bridge again after a storm knocked it down.",
-            "explanation": "RE- means 'again.' Added to BUILD, it forms REBUILD — to construct something a second time after damage or failure.",
-            "difficulty": 1
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L11_LEARN_Q2",
-            "level": 11,
-            "word": "REOPEN",
-            "rootWord": "OPEN",
-            "correctAnswer": "RE-",
-            "options": [
-                "PRE-",
-                "POST-",
-                "DE-",
-                "RE-"
-            ],
-            "isPrefix": true,
-            "conceptTitle": "Affix Laboratory: RE-",
-            "affixType": "Prefix (Placed at start)",
-            "meaningBreakdown": "RE (prefix, 'again') + OPEN (root)",
-            "definition": "REOPEN is RE- + OPEN, meaning to open something again after it was closed.",
-            "instruction": "Pick the prefix that completes the word for this meaning.",
-            "hint": "A shop turning its lights back on and unlocking the doors after being closed for repairs.",
-            "explanation": "REOPEN is RE- + OPEN, meaning to open something again after it was closed.",
-            "difficulty": 1
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L11_LEARN_Q3",
-            "level": 11,
-            "word": "REFILL",
-            "rootWord": "FILL",
-            "correctAnswer": "RE-",
-            "options": [
-                "UN-",
-                "DIS-",
-                "MIS-",
-                "RE-"
-            ],
-            "isPrefix": true,
-            "conceptTitle": "Affix Laboratory: RE-",
-            "affixType": "Prefix (Placed at start)",
-            "meaningBreakdown": "RE (prefix, 'again') + FILL (root)",
-            "definition": "RE- ('again') builds REFILL, to fill something again. UN- would instead suggest removing what's inside — the opposite idea — so 'unfill' isn't how English expresses this.",
-            "instruction": "Which prefix correctly completes this word?",
-            "hint": "Asking a waiter to top up your glass once it's empty.",
-            "explanation": "RE- ('again') builds REFILL, to fill something again. UN- would instead suggest removing what's inside — the opposite idea — so 'unfill' isn't how English expresses this.",
-            "difficulty": 1
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L12_LEARN_Q1",
-            "level": 12,
-            "word": "UNFOLD",
-            "rootWord": "FOLD",
-            "correctAnswer": "UN-",
-            "options": [
-                "DIS-",
-                "UN-",
-                "DE-",
-                "RE-"
-            ],
-            "isPrefix": true,
-            "conceptTitle": "Affix Laboratory: UN-",
-            "affixType": "Prefix (Placed at start)",
-            "meaningBreakdown": "UN (prefix, reverses the action) + FOLD (root)",
-            "definition": "UN- reverses an action. FOLD + UN- = UNFOLD, to open something that was folded.",
-            "instruction": "Which prefix fits the meaning below?",
-            "hint": "Spreading out a map that was previously creased into small squares.",
-            "explanation": "UN- reverses an action. FOLD + UN- = UNFOLD, to open something that was folded.",
-            "difficulty": 1
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L12_LEARN_Q2",
-            "level": 12,
-            "word": "UNDO",
-            "rootWord": "DO",
-            "correctAnswer": "UN-",
-            "options": [
-                "NON-",
-                "DIS-",
-                "MIS-",
-                "UN-"
-            ],
-            "isPrefix": true,
-            "conceptTitle": "Affix Laboratory: UN-",
-            "affixType": "Prefix (Placed at start)",
-            "meaningBreakdown": "UN (prefix, reverses the action) + DO (root)",
-            "definition": "UNDO reverses a previous action entirely, unlike REDO, which repeats an action. Ctrl+Z famously performs UNDO in most software.",
-            "instruction": "Pick the prefix that completes the word for this meaning.",
-            "hint": "Pressing Ctrl+Z to erase your last edit and return the document to how it was before.",
-            "explanation": "UNDO reverses a previous action entirely, unlike REDO, which repeats an action. Ctrl+Z famously performs UNDO in most software.",
-            "difficulty": 1
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L12_LEARN_Q3",
-            "level": 12,
-            "word": "UNCOVER",
-            "rootWord": "COVER",
-            "correctAnswer": "UN-",
-            "options": [
-                "UN-",
-                "MIS-",
-                "DIS-",
-                "DE-"
-            ],
-            "isPrefix": true,
-            "conceptTitle": "Affix Laboratory: UN-",
-            "affixType": "Prefix (Placed at start)",
-            "meaningBreakdown": "UN (prefix, reverses the action) + COVER (root)",
-            "definition": "UN- + COVER = UNCOVER, to reveal something that was hidden. DIS- also appears in words about concealment (like DISGUISE), but COVER specifically pairs with UN-.",
-            "instruction": "Which prefix correctly completes this word?",
-            "hint": "Pulling a tarp off a swimming pool to reveal the water underneath.",
-            "explanation": "UN- + COVER = UNCOVER, to reveal something that was hidden. DIS- also appears in words about concealment (like DISGUISE), but COVER specifically pairs with UN-.",
-            "difficulty": 1
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L13_LEARN_Q1",
-            "level": 13,
-            "word": "WORKER",
-            "rootWord": "WORK",
-            "correctAnswer": "-ER",
-            "options": [
-                "-MENT",
-                "-ER",
-                "-ISM",
-                "-SHIP"
-            ],
-            "isPrefix": false,
-            "conceptTitle": "Affix Laboratory: -ER",
-            "affixType": "Suffix (Placed at end)",
-            "meaningBreakdown": "WORK (root) + ER (suffix, 'person who does')",
-            "definition": "-ER names a person who performs an action. WORK + -ER = WORKER, a person who works.",
-            "instruction": "Which suffix fits the meaning below?",
-            "hint": "Someone who clocks in at a factory every morning to do their job.",
-            "explanation": "-ER names a person who performs an action. WORK + -ER = WORKER, a person who works.",
-            "difficulty": 1
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L13_LEARN_Q2",
-            "level": 13,
-            "word": "RUNNER",
-            "rootWord": "RUN",
-            "correctAnswer": "-ER",
-            "options": [
-                "-EE",
-                "-OR",
-                "-IST",
-                "-ER"
-            ],
-            "isPrefix": false,
-            "conceptTitle": "Affix Laboratory: -ER",
-            "affixType": "Suffix (Placed at end)",
-            "meaningBreakdown": "RUN (root, n doubled) + ER (suffix, 'person who does')",
-            "definition": "RUNNER is RUN + -ER (with the N doubled before adding the suffix), naming a person who runs, such as someone training for a race.",
-            "instruction": "Pick the suffix that completes the word for this meaning.",
-            "hint": "Someone training for a marathon, logging miles every morning.",
-            "explanation": "RUNNER is RUN + -ER (with the N doubled before adding the suffix), naming a person who runs, such as someone training for a race.",
-            "difficulty": 1
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L13_LEARN_Q3",
-            "level": 13,
-            "word": "PLAYER",
-            "rootWord": "PLAY",
-            "correctAnswer": "-ER",
-            "options": [
-                "-DOM",
-                "-ER",
-                "-MENT",
-                "-HOOD"
-            ],
-            "isPrefix": false,
-            "conceptTitle": "Affix Laboratory: -ER",
-            "affixType": "Suffix (Placed at end)",
-            "meaningBreakdown": "PLAY (root) + ER (suffix, 'person who does')",
-            "definition": "-ER creates PLAYER from PLAY, someone who plays. -MENT and -DOM build entirely different kinds of nouns (a result, or a territory), not a person.",
-            "instruction": "Which suffix correctly completes this word?",
-            "hint": "One of eleven people on a soccer team out on the field.",
-            "explanation": "-ER creates PLAYER from PLAY, someone who plays. -MENT and -DOM build entirely different kinds of nouns (a result, or a territory), not a person.",
-            "difficulty": 1
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L14_LEARN_Q1",
-            "level": 14,
-            "word": "POWERFUL",
-            "rootWord": "POWER",
-            "correctAnswer": "-FUL",
-            "options": [
-                "-FUL",
-                "-NESS",
-                "-MENT",
-                "-ISH"
-            ],
-            "isPrefix": false,
-            "conceptTitle": "Affix Laboratory: -FUL",
-            "affixType": "Suffix (Placed at end)",
-            "meaningBreakdown": "POWER (root) + FUL (suffix, 'full of')",
-            "definition": "-FUL means 'full of.' POWER + -FUL = POWERFUL, full of power or strength.",
-            "instruction": "Which suffix fits the meaning below?",
-            "hint": "Describing an engine strong enough to tow a heavy trailer.",
-            "explanation": "-FUL means 'full of.' POWER + -FUL = POWERFUL, full of power or strength.",
-            "difficulty": 1
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L14_LEARN_Q2",
-            "level": 14,
-            "word": "THANKFUL",
-            "rootWord": "THANK",
-            "correctAnswer": "-FUL",
-            "options": [
-                "-IBLE",
-                "-LESS",
-                "-ABLE",
-                "-FUL"
-            ],
-            "isPrefix": false,
-            "conceptTitle": "Affix Laboratory: -FUL",
-            "affixType": "Suffix (Placed at end)",
-            "meaningBreakdown": "THANK (root) + FUL (suffix, 'full of')",
-            "definition": "THANKFUL is THANK + -FUL, full of gratitude toward someone.",
-            "instruction": "Pick the suffix that completes the word for this meaning.",
-            "hint": "How you feel toward a stranger who returns your lost wallet.",
-            "explanation": "THANKFUL is THANK + -FUL, full of gratitude toward someone.",
-            "difficulty": 1
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L14_LEARN_Q3",
-            "level": 14,
-            "word": "COLORFUL",
-            "rootWord": "COLOR",
-            "correctAnswer": "-FUL",
-            "options": [
-                "-ISH",
-                "-LESS",
-                "-FUL",
-                "-NESS"
-            ],
-            "isPrefix": false,
-            "conceptTitle": "Affix Laboratory: -FUL",
-            "affixType": "Suffix (Placed at end)",
-            "meaningBreakdown": "COLOR (root) + FUL (suffix, 'full of')",
-            "definition": "-FUL builds COLORFUL from COLOR, full of color. -LESS would create the opposite word, COLORLESS, describing something with no color at all — like plain water.",
-            "instruction": "Which suffix correctly completes this word?",
-            "hint": "Describing a garden bursting with red, yellow, and purple flowers.",
-            "explanation": "-FUL builds COLORFUL from COLOR, full of color. -LESS would create the opposite word, COLORLESS, describing something with no color at all — like plain water.",
-            "difficulty": 1
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L15_LEARN_Q1",
-            "level": 15,
-            "word": "ENDLESS",
-            "rootWord": "END",
-            "correctAnswer": "-LESS",
-            "options": [
-                "-FUL",
-                "-ISH",
-                "-LESS",
-                "-NESS"
-            ],
-            "isPrefix": false,
-            "conceptTitle": "Affix Laboratory: -LESS",
-            "affixType": "Suffix (Placed at end)",
-            "meaningBreakdown": "END (root) + LESS (suffix, 'without')",
-            "definition": "-LESS means 'without.' END + -LESS = ENDLESS, without an end.",
-            "instruction": "Which suffix fits the meaning below?",
-            "hint": "Describing a desert highway that seems to stretch on forever.",
-            "explanation": "-LESS means 'without.' END + -LESS = ENDLESS, without an end.",
-            "difficulty": 1
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L15_LEARN_Q2",
-            "level": 15,
-            "word": "SPEECHLESS",
-            "rootWord": "SPEECH",
-            "correctAnswer": "-LESS",
-            "options": [
-                "-IBLE",
-                "-LESS",
-                "-FUL",
-                "-ABLE"
-            ],
-            "isPrefix": false,
-            "conceptTitle": "Affix Laboratory: -LESS",
-            "affixType": "Suffix (Placed at end)",
-            "meaningBreakdown": "SPEECH (root) + LESS (suffix, 'without')",
-            "definition": "SPEECHLESS combines SPEECH with -LESS, describing someone temporarily without words, usually from shock.",
-            "instruction": "Pick the suffix that completes the word for this meaning.",
-            "hint": "Being so shocked by surprising news that you can't find any words to say.",
-            "explanation": "SPEECHLESS combines SPEECH with -LESS, describing someone temporarily without words, usually from shock.",
-            "difficulty": 1
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L15_LEARN_Q3",
-            "level": 15,
-            "word": "HELPLESS",
-            "rootWord": "HELP",
-            "correctAnswer": "-LESS",
-            "options": [
-                "-NESS",
-                "-FUL",
-                "-ISH",
-                "-LESS"
-            ],
-            "isPrefix": false,
-            "conceptTitle": "Affix Laboratory: -LESS",
-            "affixType": "Suffix (Placed at end)",
-            "meaningBreakdown": "HELP (root) + LESS (suffix, 'without')",
-            "definition": "-LESS forms HELPLESS from HELP, meaning without the ability to help oneself. -FUL would flip this to HELPFUL, meaning full of help toward others — a very different idea.",
-            "instruction": "Which suffix correctly completes this word?",
-            "hint": "A kitten stuck at the top of a tree, unable to get down on its own.",
-            "explanation": "-LESS forms HELPLESS from HELP, meaning without the ability to help oneself. -FUL would flip this to HELPFUL, meaning full of help toward others — a very different idea.",
-            "difficulty": 1
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L16_LEARN_Q1",
-            "level": 16,
-            "word": "HONESTLY",
-            "rootWord": "HONEST",
-            "correctAnswer": "-LY",
-            "options": [
-                "-LY",
-                "-NESS",
-                "-FUL",
-                "-LESS"
-            ],
-            "isPrefix": false,
-            "conceptTitle": "Affix Laboratory: -LY",
-            "affixType": "Suffix (Placed at end)",
-            "meaningBreakdown": "HONEST (root) + LY (suffix, forms an adverb)",
-            "definition": "-LY turns HONEST into an adverb, HONESTLY, describing how something is done — truthfully, without hiding facts.",
-            "instruction": "Which suffix fits the meaning below?",
-            "hint": "Telling your boss the real reason a deadline was missed, even though it's uncomfortable.",
-            "explanation": "-LY turns HONEST into an adverb, HONESTLY, describing how something is done — truthfully, without hiding facts.",
-            "difficulty": 1
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L16_LEARN_Q2",
-            "level": 16,
-            "word": "BRAVELY",
-            "rootWord": "BRAVE",
-            "correctAnswer": "-LY",
-            "options": [
-                "-ER",
-                "-WISE",
-                "-LY",
-                "-WARD"
-            ],
-            "isPrefix": false,
-            "conceptTitle": "Affix Laboratory: -LY",
-            "affixType": "Suffix (Placed at end)",
-            "meaningBreakdown": "BRAVE (root) + LY (suffix, forms an adverb)",
-            "definition": "BRAVELY is BRAVE + -LY, an adverb describing an action done with courage.",
-            "instruction": "Pick the suffix that completes the word for this meaning.",
-            "hint": "Describing how a firefighter runs into a burning building to save someone.",
-            "explanation": "BRAVELY is BRAVE + -LY, an adverb describing an action done with courage.",
-            "difficulty": 1
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L16_LEARN_Q3",
-            "level": 16,
-            "word": "CAREFULLY",
-            "rootWord": "CAREFUL",
-            "correctAnswer": "-LY",
-            "options": [
-                "-FUL",
-                "-ISH",
-                "-LY",
-                "-NESS"
-            ],
-            "isPrefix": false,
-            "conceptTitle": "Affix Laboratory: -LY",
-            "affixType": "Suffix (Placed at end)",
-            "meaningBreakdown": "CARE (root) + FUL (suffix, 'full of') + LY (suffix, forms an adverb)",
-            "definition": "CAREFULLY stacks two suffixes onto CARE: -FUL ('full of') first builds the adjective CAREFUL, and -LY then turns that adjective into an adverb describing how an action is performed.",
-            "instruction": "Which suffix turns this adjective into an adverb?",
-            "hint": "Describing how a surgeon handles delicate instruments during an operation.",
-            "explanation": "CAREFULLY stacks two suffixes onto CARE: -FUL ('full of') first builds the adjective CAREFUL, and -LY then turns that adjective into an adverb describing how an action is performed.",
-            "difficulty": 1
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L17_LEARN_Q1",
-            "level": 17,
-            "word": "SADNESS",
-            "rootWord": "SAD",
-            "correctAnswer": "-NESS",
-            "options": [
-                "-NESS",
-                "-ISH",
-                "-FUL",
-                "-LESS"
-            ],
-            "isPrefix": false,
-            "conceptTitle": "Affix Laboratory: -NESS",
-            "affixType": "Suffix (Placed at end)",
-            "meaningBreakdown": "SAD (root) + NESS (suffix, forms a noun of state)",
-            "definition": "-NESS turns an adjective into a noun naming a state. SAD + -NESS = SADNESS.",
-            "instruction": "Which suffix fits the meaning below?",
-            "hint": "The heavy feeling after saying goodbye to a close friend who is moving away.",
-            "explanation": "-NESS turns an adjective into a noun naming a state. SAD + -NESS = SADNESS.",
-            "difficulty": 1
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L17_LEARN_Q2",
-            "level": 17,
-            "word": "ILLNESS",
-            "rootWord": "ILL",
-            "correctAnswer": "-NESS",
-            "options": [
-                "-TION",
-                "-SION",
-                "-NESS",
-                "-MENT"
-            ],
-            "isPrefix": false,
-            "conceptTitle": "Affix Laboratory: -NESS",
-            "affixType": "Suffix (Placed at end)",
-            "meaningBreakdown": "ILL (root) + NESS (suffix, forms a noun of state)",
-            "definition": "ILLNESS is ILL + -NESS, the state of being sick.",
-            "instruction": "Pick the suffix that completes the word for this meaning.",
-            "hint": "The reason someone stays home from work with a fever and a cough.",
-            "explanation": "ILLNESS is ILL + -NESS, the state of being sick.",
-            "difficulty": 1
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L17_LEARN_Q3",
-            "level": 17,
-            "word": "HAPPYNESS",
-            "rootWord": "HAPPY",
-            "correctAnswer": "-NESS",
-            "options": [
-                "-FUL",
-                "-ISH",
-                "-NESS",
-                "-LESS"
-            ],
-            "isPrefix": false,
-            "conceptTitle": "Affix Laboratory: -NESS",
-            "affixType": "Suffix (Placed at end)",
-            "meaningBreakdown": "HAPPI (root, y changes to i) + NESS (suffix, forms a noun of state)",
-            "definition": "-NESS forms HAPPINESS from HAPPY — notice the spelling: the Y changes to I before -NESS is added. -FUL wouldn't work here at all, since 'happyful' isn't a real word.",
-            "instruction": "Which suffix correctly completes this word?",
-            "hint": "The feeling of joy on your favorite holiday morning.",
-            "explanation": "-NESS forms HAPPINESS from HAPPY — notice the spelling: the Y changes to I before -NESS is added. -FUL wouldn't work here at all, since 'happyful' isn't a real word.",
-            "difficulty": 1
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L18_LEARN_Q1",
-            "level": 18,
-            "word": "DISCONNECT",
-            "rootWord": "CONNECT",
-            "correctAnswer": "DIS-",
-            "options": [
-                "DE-",
-                "UN-",
-                "MIS-",
-                "DIS-"
-            ],
-            "isPrefix": true,
-            "conceptTitle": "Affix Laboratory: DIS-",
-            "affixType": "Prefix (Placed at start)",
-            "meaningBreakdown": "DIS (prefix, 'the opposite of') + CONNECT (root)",
-            "definition": "DIS- means 'not' or 'the opposite of.' DIS- + CONNECT = DISCONNECT, to break a connection.",
-            "instruction": "Which prefix fits the meaning below?",
-            "hint": "Unplugging a cable so a device is no longer linked to the network.",
-            "explanation": "DIS- means 'not' or 'the opposite of.' DIS- + CONNECT = DISCONNECT, to break a connection.",
-            "difficulty": 1
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L18_LEARN_Q2",
-            "level": 18,
-            "word": "DISAPPEAR",
-            "rootWord": "APPEAR",
-            "correctAnswer": "DIS-",
-            "options": [
-                "DIS-",
-                "NON-",
-                "MIS-",
-                "UN-"
-            ],
-            "isPrefix": true,
-            "conceptTitle": "Affix Laboratory: DIS-",
-            "affixType": "Prefix (Placed at start)",
-            "meaningBreakdown": "DIS (prefix, 'the opposite of') + APPEAR (root)",
-            "definition": "DISAPPEAR combines DIS- with APPEAR, meaning to stop being visible — the opposite of appearing.",
-            "instruction": "Pick the prefix that completes the word for this meaning.",
-            "hint": "A magician's assistant seeming to vanish from the stage in a puff of smoke.",
-            "explanation": "DISAPPEAR combines DIS- with APPEAR, meaning to stop being visible — the opposite of appearing.",
-            "difficulty": 1
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L18_LEARN_Q3",
-            "level": 18,
-            "word": "DISCONTINUE",
-            "rootWord": "CONTINUE",
-            "correctAnswer": "DIS-",
-            "options": [
-                "UN-",
-                "DIS-",
-                "MIS-",
-                "DE-"
-            ],
-            "isPrefix": true,
-            "conceptTitle": "Affix Laboratory: DIS-",
-            "affixType": "Prefix (Placed at start)",
-            "meaningBreakdown": "DIS (prefix, 'the opposite of') + CONTINUE (root)",
-            "definition": "DIS- + CONTINUE = DISCONTINUE, to stop something that was ongoing. MIS- would instead suggest doing something incorrectly, not stopping it — 'miscontinue' isn't how English expresses this idea.",
-            "instruction": "Which prefix correctly completes this word?",
-            "hint": "A company announcing it will stop making an older phone model.",
-            "explanation": "DIS- + CONTINUE = DISCONTINUE, to stop something that was ongoing. MIS- would instead suggest doing something incorrectly, not stopping it — 'miscontinue' isn't how English expresses this idea.",
-            "difficulty": 1
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L19_LEARN_Q1",
-            "level": 19,
-            "word": "COMFORTABLE",
-            "rootWord": "COMFORT",
-            "correctAnswer": "-ABLE",
-            "options": [
-                "-MENT",
-                "-LESS",
-                "-ABLE",
-                "-FUL"
-            ],
-            "isPrefix": false,
-            "conceptTitle": "Affix Laboratory: -ABLE",
-            "affixType": "Suffix (Placed at end)",
-            "meaningBreakdown": "COMFORT (root) + ABLE (suffix, 'capable of being')",
-            "definition": "-ABLE means 'capable of being' or 'providing.' COMFORT + -ABLE = COMFORTABLE, providing comfort.",
-            "instruction": "Which suffix fits the meaning below?",
-            "hint": "Describing an armchair so soft you could nap in it for hours.",
-            "explanation": "-ABLE means 'capable of being' or 'providing.' COMFORT + -ABLE = COMFORTABLE, providing comfort.",
-            "difficulty": 1
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L19_LEARN_Q2",
-            "level": 19,
-            "word": "AFFORDABLE",
-            "rootWord": "AFFORD",
-            "correctAnswer": "-ABLE",
-            "options": [
-                "-LESS",
-                "-ABLE",
-                "-FUL",
-                "-IBLE"
-            ],
-            "isPrefix": false,
-            "conceptTitle": "Affix Laboratory: -ABLE",
-            "affixType": "Suffix (Placed at end)",
-            "meaningBreakdown": "AFFORD (root) + ABLE (suffix, 'capable of being')",
-            "definition": "AFFORDABLE is AFFORD + -ABLE, meaning capable of being paid for without financial strain.",
-            "instruction": "Pick the suffix that completes the word for this meaning.",
-            "hint": "Describing a used car priced within a tight monthly budget.",
-            "explanation": "AFFORDABLE is AFFORD + -ABLE, meaning capable of being paid for without financial strain.",
-            "difficulty": 1
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L19_LEARN_Q3",
-            "level": 19,
-            "word": "LOVEABLE",
-            "rootWord": "LOVE",
-            "correctAnswer": "-ABLE",
-            "options": [
-                "-ABLE",
-                "-NESS",
-                "-LESS",
-                "-FUL"
-            ],
-            "isPrefix": false,
-            "conceptTitle": "Affix Laboratory: -ABLE",
-            "affixType": "Suffix (Placed at end)",
-            "meaningBreakdown": "LOV (root, silent e dropped) + ABLE (suffix, 'capable of being')",
-            "definition": "-ABLE attaches to LOVE to form LOVABLE — notice the silent E is dropped before adding the suffix. -LESS would instead build LOVELESS, meaning without love, the opposite feeling entirely.",
-            "instruction": "Which suffix correctly completes this word?",
-            "hint": "Describing a puppy so sweet and affectionate that everyone wants to hug it.",
-            "explanation": "-ABLE attaches to LOVE to form LOVABLE — notice the silent E is dropped before adding the suffix. -LESS would instead build LOVELESS, meaning without love, the opposite feeling entirely.",
-            "difficulty": 1
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L20_LEARN_Q1",
-            "level": 20,
-            "word": "PRESET",
-            "rootWord": "SET",
-            "correctAnswer": "PRE-",
-            "options": [
-                "PRE-",
-                "RE-",
-                "DE-",
-                "-MENT"
-            ],
-            "isPrefix": true,
-            "conceptTitle": "Affix Laboratory: PRE-",
-            "affixType": "Prefix (Placed at start)",
-            "meaningBreakdown": "PRE (prefix, 'before') + SET (root)",
-            "definition": "PRE- means 'before.' PRE- + SET = PRESET, set in advance, before it's needed.",
-            "instruction": "Which prefix fits the meaning below?",
-            "hint": "A microwave button already programmed to heat popcorn for exactly the right amount of time.",
-            "explanation": "PRE- means 'before.' PRE- + SET = PRESET, set in advance, before it's needed.",
-            "difficulty": 1
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L20_LEARN_Q2",
-            "level": 20,
-            "word": "PREORDER",
-            "rootWord": "ORDER",
-            "correctAnswer": "PRE-",
-            "options": [
-                "RE-",
-                "POST-",
-                "DE-",
-                "PRE-"
-            ],
-            "isPrefix": true,
-            "conceptTitle": "Affix Laboratory: PRE-",
-            "affixType": "Prefix (Placed at start)",
-            "meaningBreakdown": "PRE (prefix, 'before') + ORDER (root)",
-            "definition": "PREORDER is PRE- + ORDER, to place an order before a product is available.",
-            "instruction": "Pick the prefix that completes the word for this meaning.",
-            "hint": "Reserving a copy of a video game weeks before it officially goes on sale.",
-            "explanation": "PREORDER is PRE- + ORDER, to place an order before a product is available.",
-            "difficulty": 1
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L20_LEARN_Q3",
-            "level": 20,
-            "word": "PRESCHOOL",
-            "rootWord": "SCHOOL",
-            "correctAnswer": "PRE-",
-            "options": [
-                "RE-",
-                "UN-",
-                "PRE-",
-                "DIS-"
-            ],
-            "isPrefix": true,
-            "conceptTitle": "Affix Laboratory: PRE-",
-            "affixType": "Prefix (Placed at start)",
-            "meaningBreakdown": "PRE (prefix, 'before') + SCHOOL (root)",
-            "definition": "PRE- + SCHOOL = PRESCHOOL, school that comes before regular school. Across this unit, RE- has meant 'again,' UN- has reversed an action, and DIS- has meant 'not' — PRE- is the one that always points to 'before,' worth locking in before new prefixes appear.",
-            "instruction": "Review: which prefix always points to something happening earlier in time?",
-            "hint": "The classroom young children attend before starting regular elementary school.",
-            "explanation": "PRE- + SCHOOL = PRESCHOOL, school that comes before regular school. Across this unit, RE- has meant 'again,' UN- has reversed an action, and DIS- has meant 'not' — PRE- is the one that always points to 'before,' worth locking in before new prefixes appear.",
-            "difficulty": 1
+          "prefix": "AUTO-",
+          "suffix": "",
+          "combinedWord": "AUTONOMY",
+          "affixMeaning": "Self / Same",
+          "definition": "The right or condition of self-government",
+          "context": "The region was granted political autonomy to govern itself."
         }
-    ]
+      ]
+    },
+    {
+      "id": "VOC_PS_L11_LEARN_Q2",
+      "level": 11,
+      "cefr": "B1",
+      "difficulty": 2,
+      "subtype": "prefixSuffix",
+      "type": "vocabulary",
+      "rootWord": "MATE",
+      "rootMeaning": "To act or move voluntarily",
+      "rootPartOfSpeech": "VERB",
+      "affix": "AUTO-",
+      "affixType": "prefix",
+      "affixMeaning": "Self / Same",
+      "combinedWord": "AUTOMATE",
+      "definition": "To convert a process to operate automatically",
+      "context": "Engineers automate repetitive tasks using smart software.",
+      "dialCombinations": [
+        {
+          "prefix": "AUTO-",
+          "suffix": "",
+          "combinedWord": "AUTOMATE",
+          "affixMeaning": "Self / Same",
+          "definition": "To convert a process to operate automatically",
+          "context": "Engineers automate repetitive tasks using smart software."
+        }
+      ]
+    },
+    {
+      "id": "VOC_PS_L11_LEARN_Q3",
+      "level": 11,
+      "cefr": "B1",
+      "difficulty": 2,
+      "subtype": "prefixSuffix",
+      "type": "vocabulary",
+      "rootWord": "BIOGRAPHY",
+      "rootMeaning": "Account of a person's life",
+      "rootPartOfSpeech": "NOUN",
+      "affix": "AUTO-",
+      "affixType": "prefix",
+      "affixMeaning": "Self / Same",
+      "combinedWord": "AUTOBIOGRAPHY",
+      "definition": "An account of a person's life written by that person",
+      "context": "The pilot published an autobiography detailing her adventurous flights.",
+      "dialCombinations": [
+        {
+          "prefix": "AUTO-",
+          "suffix": "",
+          "combinedWord": "AUTOBIOGRAPHY",
+          "affixMeaning": "Self / Same",
+          "definition": "An account of a person's life written by that person",
+          "context": "The pilot published an autobiography detailing her adventurous flights."
+        }
+      ]
+    },
+    {
+      "id": "VOC_PS_L12_LEARN_Q1",
+      "level": 12,
+      "cefr": "B1",
+      "difficulty": 2,
+      "subtype": "prefixSuffix",
+      "type": "vocabulary",
+      "rootWord": "LOGY",
+      "rootMeaning": "Study or branch of knowledge",
+      "rootPartOfSpeech": "NOUN",
+      "affix": "BIO-",
+      "affixType": "prefix",
+      "affixMeaning": "Life / Living",
+      "combinedWord": "BIOLOGY",
+      "definition": "The scientific study of living organisms",
+      "context": "She studied biology to understand plant and cellular life.",
+      "dialCombinations": [
+        {
+          "prefix": "BIO-",
+          "suffix": "",
+          "combinedWord": "BIOLOGY",
+          "affixMeaning": "Life / Living",
+          "definition": "The scientific study of living organisms",
+          "context": "She studied biology to understand plant and cellular life."
+        }
+      ]
+    },
+    {
+      "id": "VOC_PS_L12_LEARN_Q2",
+      "level": 12,
+      "cefr": "B1",
+      "difficulty": 2,
+      "subtype": "prefixSuffix",
+      "type": "vocabulary",
+      "rootWord": "DEGRADABLE",
+      "rootMeaning": "Capable of being decomposed",
+      "rootPartOfSpeech": "ADJECTIVE",
+      "affix": "BIO-",
+      "affixType": "prefix",
+      "affixMeaning": "Life / Living",
+      "combinedWord": "BIODEGRADABLE",
+      "definition": "Capable of being broken down by natural organisms",
+      "context": "The supermarket uses biodegradable packaging made from cornstarch.",
+      "dialCombinations": [
+        {
+          "prefix": "BIO-",
+          "suffix": "",
+          "combinedWord": "BIODEGRADABLE",
+          "affixMeaning": "Life / Living",
+          "definition": "Capable of being broken down by natural organisms",
+          "context": "The supermarket uses biodegradable packaging made from cornstarch."
+        }
+      ]
+    },
+    {
+      "id": "VOC_PS_L12_LEARN_Q3",
+      "level": 12,
+      "cefr": "B1",
+      "difficulty": 2,
+      "subtype": "prefixSuffix",
+      "type": "vocabulary",
+      "rootWord": "HAZARD",
+      "rootMeaning": "A danger or risk",
+      "rootPartOfSpeech": "NOUN",
+      "affix": "BIO-",
+      "affixType": "prefix",
+      "affixMeaning": "Life / Living",
+      "combinedWord": "BIOHAZARD",
+      "definition": "A biological substance that poses a threat to human health",
+      "context": "The medical waste container was marked with a bright biohazard symbol.",
+      "dialCombinations": [
+        {
+          "prefix": "BIO-",
+          "suffix": "",
+          "combinedWord": "BIOHAZARD",
+          "affixMeaning": "Life / Living",
+          "definition": "A biological substance that poses a threat to human health",
+          "context": "The medical waste container was marked with a bright biohazard symbol."
+        }
+      ]
+    },
+    {
+      "id": "VOC_PS_L13_LEARN_Q1",
+      "level": 13,
+      "cefr": "B1",
+      "difficulty": 2,
+      "subtype": "prefixSuffix",
+      "type": "vocabulary",
+      "rootWord": "MARINE",
+      "rootMeaning": "Relating to the sea",
+      "rootPartOfSpeech": "ADJECTIVE",
+      "affix": "SUB-",
+      "affixType": "prefix",
+      "affixMeaning": "Under / Below",
+      "combinedWord": "SUBMARINE",
+      "definition": "A vessel designed to navigate deep underwater",
+      "context": "The research submarine dove deep below the ocean surface.",
+      "dialCombinations": [
+        {
+          "prefix": "SUB-",
+          "suffix": "",
+          "combinedWord": "SUBMARINE",
+          "affixMeaning": "Under / Below",
+          "definition": "A vessel designed to navigate deep underwater",
+          "context": "The research submarine dove deep below the ocean surface."
+        }
+      ]
+    },
+    {
+      "id": "VOC_PS_L13_LEARN_Q2",
+      "level": 13,
+      "cefr": "B1",
+      "difficulty": 2,
+      "subtype": "prefixSuffix",
+      "type": "vocabulary",
+      "rootWord": "ZERO",
+      "rootMeaning": "Freezing point or numeral zero",
+      "rootPartOfSpeech": "NOUN",
+      "affix": "SUB-",
+      "affixType": "prefix",
+      "affixMeaning": "Under / Below",
+      "combinedWord": "SUBZERO",
+      "definition": "Below freezing point or below zero temperature",
+      "context": "Expedition members wore insulated parkas in subzero weather.",
+      "dialCombinations": [
+        {
+          "prefix": "SUB-",
+          "suffix": "",
+          "combinedWord": "SUBZERO",
+          "affixMeaning": "Under / Below",
+          "definition": "Below freezing point or below zero temperature",
+          "context": "Expedition members wore insulated parkas in subzero weather."
+        }
+      ]
+    },
+    {
+      "id": "VOC_PS_L13_LEARN_Q3",
+      "level": 13,
+      "cefr": "B1",
+      "difficulty": 2,
+      "subtype": "prefixSuffix",
+      "type": "vocabulary",
+      "rootWord": "MERGE",
+      "rootMeaning": "To dip or plunge into liquid",
+      "rootPartOfSpeech": "VERB",
+      "affix": "SUB-",
+      "affixType": "prefix",
+      "affixMeaning": "Under / Below",
+      "combinedWord": "SUBMERGE",
+      "definition": "To descend or cause to plunge beneath liquid",
+      "context": "Rising river levels began to submerge the coastal pathway.",
+      "dialCombinations": [
+        {
+          "prefix": "SUB-",
+          "suffix": "",
+          "combinedWord": "SUBMERGE",
+          "affixMeaning": "Under / Below",
+          "definition": "To descend or cause to plunge beneath liquid",
+          "context": "Rising river levels began to submerge the coastal pathway."
+        }
+      ]
+    },
+    {
+      "id": "VOC_PS_L14_LEARN_Q1",
+      "level": 14,
+      "cefr": "B1",
+      "difficulty": 2,
+      "subtype": "prefixSuffix",
+      "type": "vocabulary",
+      "rootWord": "FORM",
+      "rootMeaning": "Shape or outward appearance",
+      "rootPartOfSpeech": "VERB",
+      "affix": "TRANS-",
+      "affixType": "prefix",
+      "affixMeaning": "Across / Change",
+      "combinedWord": "TRANSFORM",
+      "definition": "To make a thorough dramatic change in form or character",
+      "context": "Caterpillars transform into butterflies inside their protective chrysalis.",
+      "dialCombinations": [
+        {
+          "prefix": "TRANS-",
+          "suffix": "",
+          "combinedWord": "TRANSFORM",
+          "affixMeaning": "Across / Change",
+          "definition": "To make a thorough dramatic change in form or character",
+          "context": "Caterpillars transform into butterflies inside their protective chrysalis."
+        }
+      ]
+    },
+    {
+      "id": "VOC_PS_L14_LEARN_Q2",
+      "level": 14,
+      "cefr": "B1",
+      "difficulty": 2,
+      "subtype": "prefixSuffix",
+      "type": "vocabulary",
+      "rootWord": "PORT",
+      "rootMeaning": "To carry or convey",
+      "rootPartOfSpeech": "VERB",
+      "affix": "TRANS-",
+      "affixType": "prefix",
+      "affixMeaning": "Across / Through",
+      "combinedWord": "TRANSPORT",
+      "definition": "To take or carry people or goods across distances",
+      "context": "Freight trains transport industrial materials across the continent.",
+      "dialCombinations": [
+        {
+          "prefix": "TRANS-",
+          "suffix": "",
+          "combinedWord": "TRANSPORT",
+          "affixMeaning": "Across / Through",
+          "definition": "To take or carry people or goods across distances",
+          "context": "Freight trains transport industrial materials across the continent."
+        }
+      ]
+    },
+    {
+      "id": "VOC_PS_L14_LEARN_Q3",
+      "level": 14,
+      "cefr": "B1",
+      "difficulty": 2,
+      "subtype": "prefixSuffix",
+      "type": "vocabulary",
+      "rootWord": "ATLANTIC",
+      "rootMeaning": "Relating to the Atlantic Ocean",
+      "rootPartOfSpeech": "ADJECTIVE",
+      "affix": "TRANS-",
+      "affixType": "prefix",
+      "affixMeaning": "Across / Beyond",
+      "combinedWord": "TRANSATLANTIC",
+      "definition": "Crossing or extending across the Atlantic Ocean",
+      "context": "Commercial aviation revolutionized transatlantic travel for millions.",
+      "dialCombinations": [
+        {
+          "prefix": "TRANS-",
+          "suffix": "",
+          "combinedWord": "TRANSATLANTIC",
+          "affixMeaning": "Across / Beyond",
+          "definition": "Crossing or extending across the Atlantic Ocean",
+          "context": "Commercial aviation revolutionized transatlantic travel for millions."
+        }
+      ]
+    },
+    {
+      "id": "VOC_PS_L15_LEARN_Q1",
+      "level": 15,
+      "cefr": "B2",
+      "difficulty": 2,
+      "subtype": "prefixSuffix",
+      "type": "vocabulary",
+      "rootWord": "ACT",
+      "rootMeaning": "To do or perform",
+      "rootPartOfSpeech": "VERB",
+      "affix": "INTER-",
+      "affixType": "prefix",
+      "affixMeaning": "Between / Mutually",
+      "combinedWord": "INTERACT",
+      "definition": "To act reciprocally or communicate with another",
+      "context": "Students interact with foreign exchange peers during international week.",
+      "dialCombinations": [
+        {
+          "prefix": "INTER-",
+          "suffix": "",
+          "combinedWord": "INTERACT",
+          "affixMeaning": "Between / Mutually",
+          "definition": "To act reciprocally or communicate with another",
+          "context": "Students interact with foreign exchange peers during international week."
+        }
+      ]
+    },
+    {
+      "id": "VOC_PS_L15_LEARN_Q2",
+      "level": 15,
+      "cefr": "B2",
+      "difficulty": 2,
+      "subtype": "prefixSuffix",
+      "type": "vocabulary",
+      "rootWord": "SECT",
+      "rootMeaning": "To cut or divide",
+      "rootPartOfSpeech": "VERB",
+      "affix": "INTER-",
+      "affixType": "prefix",
+      "affixMeaning": "Between / Mutually",
+      "combinedWord": "INTERSECT",
+      "definition": "To pass across or divide by passing through",
+      "context": "Two bustling pedestrian avenues intersect at the center fountain.",
+      "dialCombinations": [
+        {
+          "prefix": "INTER-",
+          "suffix": "",
+          "combinedWord": "INTERSECT",
+          "affixMeaning": "Between / Mutually",
+          "definition": "To pass across or divide by passing through",
+          "context": "Two bustling pedestrian avenues intersect at the center fountain."
+        }
+      ]
+    },
+    {
+      "id": "VOC_PS_L15_LEARN_Q3",
+      "level": 15,
+      "cefr": "B2",
+      "difficulty": 2,
+      "subtype": "prefixSuffix",
+      "type": "vocabulary",
+      "rootWord": "NATIONAL",
+      "rootMeaning": "Relating to a nation",
+      "rootPartOfSpeech": "ADJECTIVE",
+      "affix": "INTER-",
+      "affixType": "prefix",
+      "affixMeaning": "Between / Among",
+      "combinedWord": "INTERNATIONAL",
+      "definition": "Existing or occurring between two or more nations",
+      "context": "The climate accord represents significant international cooperation.",
+      "dialCombinations": [
+        {
+          "prefix": "INTER-",
+          "suffix": "",
+          "combinedWord": "INTERNATIONAL",
+          "affixMeaning": "Between / Among",
+          "definition": "Existing or occurring between two or more nations",
+          "context": "The climate accord represents significant international cooperation."
+        }
+      ]
+    },
+    {
+      "id": "VOC_PS_L16_LEARN_Q1",
+      "level": 16,
+      "cefr": "B2",
+      "difficulty": 2,
+      "subtype": "prefixSuffix",
+      "type": "vocabulary",
+      "rootWord": "SUSTAIN",
+      "rootMeaning": "To maintain or endure",
+      "rootPartOfSpeech": "VERB",
+      "affix": "-ABLE",
+      "affixType": "suffix",
+      "affixMeaning": "Capable of / Worthy of",
+      "combinedWord": "SUSTAINABLE",
+      "definition": "Able to be maintained without depleting natural resources",
+      "context": "Solar farms provide clean and sustainable energy for modern cities.",
+      "dialCombinations": [
+        {
+          "prefix": "",
+          "suffix": "-ABLE",
+          "combinedWord": "SUSTAINABLE",
+          "affixMeaning": "Capable of / Worthy of",
+          "definition": "Able to be maintained without depleting natural resources",
+          "context": "Solar farms provide clean and sustainable energy for modern cities."
+        }
+      ]
+    },
+    {
+      "id": "VOC_PS_L16_LEARN_Q2",
+      "level": 16,
+      "cefr": "B2",
+      "difficulty": 2,
+      "subtype": "prefixSuffix",
+      "type": "vocabulary",
+      "rootWord": "ACCESS",
+      "rootMeaning": "Approach or enter",
+      "rootPartOfSpeech": "NOUN",
+      "affix": "-IBLE",
+      "affixType": "suffix",
+      "affixMeaning": "Capable of / Fit for",
+      "combinedWord": "ACCESSIBLE",
+      "definition": "Able to be reached or easily approached",
+      "context": "The library added entrance ramps so books are accessible to everyone.",
+      "dialCombinations": [
+        {
+          "prefix": "",
+          "suffix": "-IBLE",
+          "combinedWord": "ACCESSIBLE",
+          "affixMeaning": "Capable of / Fit for",
+          "definition": "Able to be reached or easily approached",
+          "context": "The library added entrance ramps so books are accessible to everyone."
+        }
+      ]
+    },
+    {
+      "id": "VOC_PS_L16_LEARN_Q3",
+      "level": 16,
+      "cefr": "B2",
+      "difficulty": 2,
+      "subtype": "prefixSuffix",
+      "type": "vocabulary",
+      "rootWord": "FLEX",
+      "rootMeaning": "To bend or stretch",
+      "rootPartOfSpeech": "VERB",
+      "affix": "-IBLE",
+      "affixType": "suffix",
+      "affixMeaning": "Capable of / Responsive",
+      "combinedWord": "FLEXIBLE",
+      "definition": "Capable of bending easily without breaking",
+      "context": "The gymnast maintained flexible muscles through daily stretching drills.",
+      "dialCombinations": [
+        {
+          "prefix": "",
+          "suffix": "-IBLE",
+          "combinedWord": "FLEXIBLE",
+          "affixMeaning": "Capable of / Responsive",
+          "definition": "Capable of bending easily without breaking",
+          "context": "The gymnast maintained flexible muscles through daily stretching drills."
+        }
+      ]
+    },
+    {
+      "id": "VOC_PS_L17_LEARN_Q1",
+      "level": 17,
+      "cefr": "B2",
+      "difficulty": 2,
+      "subtype": "prefixSuffix",
+      "type": "vocabulary",
+      "rootWord": "CHRON",
+      "rootMeaning": "Time",
+      "rootPartOfSpeech": "NOUN",
+      "affix": "-OLOGY",
+      "affixType": "suffix",
+      "affixMeaning": "Study / Science of",
+      "combinedWord": "CHRONOLOGY",
+      "definition": "The arrangement of historical events in order of occurrence",
+      "context": "Archaeologists reconstructed the dynasty timeline in exact chronology.",
+      "dialCombinations": [
+        {
+          "prefix": "",
+          "suffix": "-OLOGY",
+          "combinedWord": "CHRONOLOGY",
+          "affixMeaning": "Study / Science of",
+          "definition": "The arrangement of historical events in order of occurrence",
+          "context": "Archaeologists reconstructed the dynasty timeline in exact chronology."
+        }
+      ]
+    },
+    {
+      "id": "VOC_PS_L17_LEARN_Q2",
+      "level": 17,
+      "cefr": "B2",
+      "difficulty": 2,
+      "subtype": "prefixSuffix",
+      "type": "vocabulary",
+      "rootWord": "ECO",
+      "rootMeaning": "Environment or habitat",
+      "rootPartOfSpeech": "NOUN",
+      "affix": "-OLOGY",
+      "affixType": "suffix",
+      "affixMeaning": "Study / Science of",
+      "combinedWord": "ECOLOGY",
+      "definition": "The scientific study of relationships between organisms and surroundings",
+      "context": "Protecting wetlands is essential for the balanced ecology of migratory birds.",
+      "dialCombinations": [
+        {
+          "prefix": "",
+          "suffix": "-OLOGY",
+          "combinedWord": "ECOLOGY",
+          "affixMeaning": "Study / Science of",
+          "definition": "The scientific study of relationships between organisms and surroundings",
+          "context": "Protecting wetlands is essential for the balanced ecology of migratory birds."
+        }
+      ]
+    },
+    {
+      "id": "VOC_PS_L17_LEARN_Q3",
+      "level": 17,
+      "cefr": "B2",
+      "difficulty": 2,
+      "subtype": "prefixSuffix",
+      "type": "vocabulary",
+      "rootWord": "TECHNO",
+      "rootMeaning": "Art, craft, or technical skill",
+      "rootPartOfSpeech": "NOUN",
+      "affix": "-OLOGY",
+      "affixType": "suffix",
+      "affixMeaning": "Study / Application of",
+      "combinedWord": "TECHNOLOGY",
+      "definition": "The practical application of scientific knowledge to industry",
+      "context": "Cutting-edge medical technology allows doctors to diagnose illness early.",
+      "dialCombinations": [
+        {
+          "prefix": "",
+          "suffix": "-OLOGY",
+          "combinedWord": "TECHNOLOGY",
+          "affixMeaning": "Study / Application of",
+          "definition": "The practical application of scientific knowledge to industry",
+          "context": "Cutting-edge medical technology allows doctors to diagnose illness early."
+        }
+      ]
+    },
+    {
+      "id": "VOC_PS_L18_LEARN_Q1",
+      "level": 18,
+      "cefr": "B2",
+      "difficulty": 2,
+      "subtype": "prefixSuffix",
+      "type": "vocabulary",
+      "rootWord": "POWER",
+      "rootMeaning": "Strength, energy, or authority",
+      "rootPartOfSpeech": "NOUN",
+      "affix": "-LESS",
+      "affixType": "suffix",
+      "affixMeaning": "Without / Lacking",
+      "combinedWord": "POWERLESS",
+      "definition": "Lacking the capacity or authority to act effectively",
+      "context": "Citizens felt powerless as heavy floodwaters overwhelmed the town levees.",
+      "dialCombinations": [
+        {
+          "prefix": "",
+          "suffix": "-LESS",
+          "combinedWord": "POWERLESS",
+          "affixMeaning": "Without / Lacking",
+          "definition": "Lacking the capacity or authority to act effectively",
+          "context": "Citizens felt powerless as heavy floodwaters overwhelmed the town levees."
+        }
+      ]
+    },
+    {
+      "id": "VOC_PS_L18_LEARN_Q2",
+      "level": 18,
+      "cefr": "B2",
+      "difficulty": 2,
+      "subtype": "prefixSuffix",
+      "type": "vocabulary",
+      "rootWord": "POWER",
+      "rootMeaning": "Strength, energy, or authority",
+      "rootPartOfSpeech": "NOUN",
+      "affix": "-FUL",
+      "affixType": "suffix",
+      "affixMeaning": "Full of / Possessing",
+      "combinedWord": "POWERFUL",
+      "definition": "Having great strength, influence, or physical force",
+      "context": "The locomotive has a powerful diesel engine that pulls heavy cargo uphill.",
+      "dialCombinations": [
+        {
+          "prefix": "",
+          "suffix": "-FUL",
+          "combinedWord": "POWERFUL",
+          "affixMeaning": "Full of / Possessing",
+          "definition": "Having great strength, influence, or physical force",
+          "context": "The locomotive has a powerful diesel engine that pulls heavy cargo uphill."
+        }
+      ]
+    },
+    {
+      "id": "VOC_PS_L18_LEARN_Q3",
+      "level": 18,
+      "cefr": "B2",
+      "difficulty": 2,
+      "subtype": "prefixSuffix",
+      "type": "vocabulary",
+      "rootWord": "FLAW",
+      "rootMeaning": "An imperfection or defect",
+      "rootPartOfSpeech": "NOUN",
+      "affix": "-LESS",
+      "affixType": "suffix",
+      "affixMeaning": "Without / Free from",
+      "combinedWord": "FLAWLESS",
+      "definition": "Completely free of blemishes or imperfections",
+      "context": "The jeweler inspected the brilliant diamond under a lens and found it flawless.",
+      "dialCombinations": [
+        {
+          "prefix": "",
+          "suffix": "-LESS",
+          "combinedWord": "FLAWLESS",
+          "affixMeaning": "Without / Free from",
+          "definition": "Completely free of blemishes or imperfections",
+          "context": "The jeweler inspected the brilliant diamond under a lens and found it flawless."
+        }
+      ]
+    },
+    {
+      "id": "VOC_PS_L19_LEARN_Q1",
+      "level": 19,
+      "cefr": "B2",
+      "difficulty": 3,
+      "subtype": "prefixSuffix",
+      "type": "vocabulary",
+      "rootWord": "ACCEPT",
+      "rootMeaning": "To consent to receive",
+      "rootPartOfSpeech": "VERB",
+      "affix": "UN-",
+      "affixType": "prefix",
+      "affixMeaning": "Not / Opposite of",
+      "combinedWord": "UNACCEPTABLE",
+      "definition": "Not satisfactory or tolerable by established standards",
+      "context": "Delivering defective hardware to clients is completely unacceptable.",
+      "dialCombinations": [
+        {
+          "prefix": "UN-",
+          "suffix": "-ABLE",
+          "combinedWord": "UNACCEPTABLE",
+          "affixMeaning": "Not capable of being accepted",
+          "definition": "Not satisfactory or tolerable by established standards",
+          "context": "Delivering defective hardware to clients is completely unacceptable."
+        }
+      ]
+    },
+    {
+      "id": "VOC_PS_L19_LEARN_Q2",
+      "level": 19,
+      "cefr": "B2",
+      "difficulty": 3,
+      "subtype": "prefixSuffix",
+      "type": "vocabulary",
+      "rootWord": "BEAT",
+      "rootMeaning": "To overcome or defeat",
+      "rootPartOfSpeech": "VERB",
+      "affix": "UN-",
+      "affixType": "prefix",
+      "affixMeaning": "Not / Opposite of",
+      "combinedWord": "UNBEATABLE",
+      "definition": "Impossible to defeat or surpass",
+      "context": "The chess grandmaster mounted an unbeatable defense during tournament play.",
+      "dialCombinations": [
+        {
+          "prefix": "UN-",
+          "suffix": "-ABLE",
+          "combinedWord": "UNBEATABLE",
+          "affixMeaning": "Not capable of being beaten",
+          "definition": "Impossible to defeat or surpass",
+          "context": "The chess grandmaster mounted an unbeatable defense during tournament play."
+        }
+      ]
+    },
+    {
+      "id": "VOC_PS_L19_LEARN_Q3",
+      "level": 19,
+      "cefr": "B2",
+      "difficulty": 3,
+      "subtype": "prefixSuffix",
+      "type": "vocabulary",
+      "rootWord": "FORGIVE",
+      "rootMeaning": "To stop feeling resentful",
+      "rootPartOfSpeech": "VERB",
+      "affix": "UN-",
+      "affixType": "prefix",
+      "affixMeaning": "Not / Opposite of",
+      "combinedWord": "UNFORGIVABLE",
+      "definition": "So terrible as to be impossible to excuse or pardon",
+      "context": "Betraying the medical confidentiality of patients is an unforgivable breach.",
+      "dialCombinations": [
+        {
+          "prefix": "UN-",
+          "suffix": "-ABLE",
+          "combinedWord": "UNFORGIVABLE",
+          "affixMeaning": "Not capable of being forgiven",
+          "definition": "So terrible as to be impossible to excuse or pardon",
+          "context": "Betraying the medical confidentiality of patients is an unforgivable breach."
+        }
+      ]
+    },
+    {
+      "id": "VOC_PS_L20_LEARN_Q1",
+      "level": 20,
+      "cefr": "B2",
+      "difficulty": 3,
+      "subtype": "prefixSuffix",
+      "type": "vocabulary",
+      "rootWord": "AUTUMN",
+      "rootMeaning": "Season between summer and winter",
+      "rootPartOfSpeech": "NOUN",
+      "affix": "AUTO-",
+      "affixType": "prefix",
+      "affixMeaning": "Imposter root alert: AUTO- is NOT separable from AUTUMN",
+      "combinedWord": "AUTUMN",
+      "definition": "The season between summer and winter; an unbreakable root word",
+      "context": "Golden maple leaves drift gently across park paths during crisp autumn days.",
+      "dialCombinations": [
+        {
+          "prefix": "",
+          "suffix": "",
+          "combinedWord": "AUTUMN",
+          "affixMeaning": "Unbreakable root: cannot be sliced",
+          "definition": "The season between summer and winter; an unbreakable root word",
+          "context": "Golden maple leaves drift gently across park paths during crisp autumn days."
+        }
+      ]
+    },
+    {
+      "id": "VOC_PS_L20_LEARN_Q2",
+      "level": 20,
+      "cefr": "B2",
+      "difficulty": 3,
+      "subtype": "prefixSuffix",
+      "type": "vocabulary",
+      "rootWord": "BUTTER",
+      "rootMeaning": "Dairy spread made from churned cream",
+      "rootPartOfSpeech": "NOUN",
+      "affix": "-ER",
+      "affixType": "suffix",
+      "affixMeaning": "Imposter suffix alert: -ER is NOT separable from BUTTER",
+      "combinedWord": "BUTTER",
+      "definition": "A yellow dairy spread; an unbreakable root word",
+      "context": "Spread creamy salted butter over hot homemade sourdough bread.",
+      "dialCombinations": [
+        {
+          "prefix": "",
+          "suffix": "",
+          "combinedWord": "BUTTER",
+          "affixMeaning": "Unbreakable root: cannot be sliced",
+          "definition": "A yellow dairy spread; an unbreakable root word",
+          "context": "Spread creamy salted butter over hot homemade sourdough bread."
+        }
+      ]
+    },
+    {
+      "id": "VOC_PS_L20_LEARN_Q3",
+      "level": 20,
+      "cefr": "B2",
+      "difficulty": 3,
+      "subtype": "prefixSuffix",
+      "type": "vocabulary",
+      "rootWord": "INTEREST",
+      "rootMeaning": "State of wanting to learn or give attention",
+      "rootPartOfSpeech": "NOUN",
+      "affix": "INTER-",
+      "affixType": "prefix",
+      "affixMeaning": "Imposter prefix alert: INTER- is NOT separable from INTEREST",
+      "combinedWord": "INTEREST",
+      "definition": "The feeling of wanting to give your attention; an unbreakable root word",
+      "context": "The robotics competition sparked keen interest among young engineering students.",
+      "dialCombinations": [
+        {
+          "prefix": "",
+          "suffix": "",
+          "combinedWord": "INTEREST",
+          "affixMeaning": "Unbreakable root: cannot be sliced",
+          "definition": "The feeling of wanting to give your attention; an unbreakable root word",
+          "context": "The robotics competition sparked keen interest among young engineering students."
+        }
+      ]
+    }
+  ]
 }

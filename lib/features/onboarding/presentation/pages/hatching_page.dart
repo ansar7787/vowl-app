@@ -138,7 +138,7 @@ class _HatchingPageState extends State<HatchingPage> {
   String _getIntroMessage(BuildContext context) => context.tr(
     'hatching.intro_message',
     fallback:
-        "Hoot! I'm Owly, your AI companion. Welcome to Vowl, {0}! We're not just here to beat levels—we're here to master English together. Let's embrace the journey and start your adventure!",
+        "Hoot! I'm Owly, your learning buddy. Welcome to Vowl, {0}! We're not just here to beat levels—we're here to master English together. Let's embrace the journey and start your adventure!",
     args: [widget.userName],
   );
 

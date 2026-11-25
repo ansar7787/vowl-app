@@ -1268,16 +1268,16 @@ class GameInstructionService {
           "Check what role is missing in the blank: a noun naming something, an adjective describing it, an adverb showing how, or an opposite meaning!",
     ),
     GameSubtype.prefixSuffix: GameBriefing(
-      title: "Affix Synthesizer",
-      icon: Icons.spa_rounded,
+      title: "Morpheme Precision Slicer",
+      icon: Icons.content_cut_rounded,
       objective:
-          "A few tiny letters can completely change a word's meaning. Tap the correct prefix or suffix chip to snap it onto the root word, then type the final result to lock it in.",
+          "A few tiny letters can completely flip a word's meaning. Rotate the dial in Learn, crack the combination in Practice, and slice morpheme seams with laser precision in Mastery!",
       rules: [
-        "Read the target meaning",
-        "Tap to snap the affix chip",
-        "Type the final word to confirm",
+        "Read the target meaning clue",
+        "Identify the prefix or suffix boundary",
+        "Slice the morpheme seam before time expires",
       ],
-      actionText: "Start Synthesizing",
+      actionText: "Start Precision Slicing",
       tip:
           "If the target meaning says 'again', look for 're-'. If it says 'without', look for '-less'.",
     ),
