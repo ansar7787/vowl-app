@@ -9,22 +9,28 @@ class PrefixSuffixLaserPainter extends CustomPainter {
 
   static final _corePaint = Paint()
     ..color = Colors.white
-    ..strokeWidth = 2.0
+    ..strokeWidth = 2.5
     ..strokeCap = StrokeCap.round
     ..style = PaintingStyle.stroke;
 
-  PrefixSuffixLaserPainter({this.start, this.current, this.isWrong = false});
+  PrefixSuffixLaserPainter({
+    this.start,
+    this.current,
+    this.isWrong = false,
+    super.repaint,
+  });
 
   @override
   void paint(Canvas canvas, Size size) {
     if (start == null || current == null) return;
+    final color = isWrong ? AppColors.red500 : AppColors.indigo500;
     final glow = Paint()
-      ..color = (isWrong ? AppColors.red500 : AppColors.violet500).withValues(
-        alpha: 0.5,
-      )
-      ..strokeWidth = 6.0
+      ..color = color.withValues(alpha: 0.6)
+      ..strokeWidth = 8.0
       ..strokeCap = StrokeCap.round
+      ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 3.0)
       ..style = PaintingStyle.stroke;
+
     canvas.drawLine(start!, current!, glow);
     canvas.drawLine(start!, current!, _corePaint);
   }

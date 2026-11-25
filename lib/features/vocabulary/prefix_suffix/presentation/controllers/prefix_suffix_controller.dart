@@ -59,8 +59,9 @@ class PrefixSuffixController extends ChangeNotifier {
   // Mastery Phase State (Morpheme Precision Slicer)
   // ---------------------------------------------------------------------------
   Timer? _masteryTimer;
-  int _totalMilliseconds = 5000;
-  int _remainingMilliseconds = 5000;
+  int _totalMilliseconds = 10000;
+  int _remainingMilliseconds = 10000;
+  bool _isPaused = false;
   bool _isAnswered = false;
   bool _isSliced = false;
   bool _isWrongCut = false;
@@ -78,9 +79,20 @@ class PrefixSuffixController extends ChangeNotifier {
   int get streak => _streak;
   int get comboMultiplier => _comboMultiplier;
 
-  /// Starts or resets the 5-second countdown timer for a Mastery quest.
-  void startMasteryTimer({int durationSeconds = 5, VoidCallback? onExpired}) {
+  /// Pauses the countdown timer during pause menus or dialogs.
+  void pauseMasteryTimer() {
+    _isPaused = true;
+  }
+
+  /// Resumes the countdown timer when gameplay resumes.
+  void resumeMasteryTimer() {
+    _isPaused = false;
+  }
+
+  /// Starts or resets the 10-second countdown timer for a Mastery quest.
+  void startMasteryTimer({int durationSeconds = 10, VoidCallback? onExpired}) {
     stopMasteryTimer();
+    _isPaused = false;
     _totalMilliseconds = durationSeconds * 1000;
     _remainingMilliseconds = _totalMilliseconds;
     _isAnswered = false;
@@ -89,6 +101,7 @@ class PrefixSuffixController extends ChangeNotifier {
     notifyListeners();
 
     _masteryTimer = Timer.periodic(const Duration(milliseconds: 100), (timer) {
+      if (_isPaused) return;
       if (_remainingMilliseconds > 100) {
         _remainingMilliseconds -= 100;
         notifyListeners();

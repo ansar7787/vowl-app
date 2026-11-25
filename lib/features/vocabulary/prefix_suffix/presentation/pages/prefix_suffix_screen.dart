@@ -67,6 +67,7 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen>
 
   late final PrefixSuffixController _controller;
   VocabularyQuest? _currentQuest;
+  int _lastProcessedIndex = -1;
 
   @override
   void initState() {
@@ -75,7 +76,28 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen>
     if (di.sl.isRegistered<TtsService>()) {
       unawaited(di.sl<TtsService>().preWarm(locale: 'en-US'));
     }
+    final initialBlocState = context.read<VocabularyBloc>().state;
+    if (initialBlocState is VocabularyLoaded) {
+      final q = initialBlocState.currentQuestOrNull;
+      if (q != null) {
+        _lastProcessedIndex = initialBlocState.currentIndex;
+        _currentQuest = q;
+        WidgetsBinding.instance.addPostFrameCallback((_) {
+          if (mounted) _onQuestLoaded(q);
+        });
+      }
+    }
     initVocabularyGame();
+  }
+
+  @override
+  void onQuestionReset() {
+    isAnsweredNotifier.value = false;
+    isCorrectNotifier.value = null;
+    _controller.resetForNextQuest();
+    if (_currentQuest != null) {
+      _startTimer(_currentQuest!);
+    }
   }
 
   @override
@@ -90,12 +112,19 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen>
   void onGamePaused() {
     super.onGamePaused();
     TtsSpeakerButtonWidget.stopAll();
+    _controller.pauseMasteryTimer();
+  }
+
+  @override
+  void onGameResumed() {
+    super.onGameResumed();
+    _controller.resumeMasteryTimer();
   }
 
   void _startTimer(VocabularyQuest quest) {
     if (!widget.enableTimer) return;
     _controller.startMasteryTimer(
-      durationSeconds: 5,
+      durationSeconds: 10,
       onExpired: () {
         if (!isAnsweredNotifier.value && mounted) {
           _controller.evaluateSlice(cutIndex: -1, correctCutIndex: 0);
@@ -112,7 +141,6 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen>
   }
 
   void _onQuestLoaded(VocabularyQuest quest) {
-    if (_currentQuest?.id == quest.id) return;
     TtsSpeakerButtonWidget.stopAll();
     _currentQuest = quest;
     _controller.resetForNextQuest();
@@ -203,16 +231,23 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen>
       listenWhen: vocabularyListenWhen,
       listener: (context, state) {
         onVocabularyStateChanged(context, state);
-        if (state is VocabularyGameOver) {
+        if (state is VocabularyGameOver || state is VocabularyGameComplete) {
           _controller.stopMasteryTimer();
-        } else if (state is VocabularyLoaded &&
-            isAnsweredNotifier.value &&
-            !state.answerStatus.isAnswered) {
-          isAnsweredNotifier.value = false;
-          isCorrectNotifier.value = null;
-          _controller.resetForNextQuest();
-          if (_currentQuest != null) {
-            _startTimer(_currentQuest!);
+        } else if (state is VocabularyLoaded) {
+          final isNew = state.currentIndex != _lastProcessedIndex;
+          final isRetry =
+              !isNew &&
+              !state.answerStatus.isAnswered &&
+              isAnsweredNotifier.value;
+
+          if (isNew || isRetry) {
+            _lastProcessedIndex = state.currentIndex;
+            _currentQuest = state.currentQuestOrNull ?? _currentQuest;
+            isAnsweredNotifier.value = false;
+            isCorrectNotifier.value = null;
+            if (_currentQuest != null) {
+              _onQuestLoaded(_currentQuest!);
+            }
           }
         }
       },
@@ -243,8 +278,14 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen>
           );
         }
 
-        if (state is VocabularyLoaded) {
-          _onQuestLoaded(quest);
+        if (state is VocabularyLoaded &&
+            state.currentIndex != _lastProcessedIndex) {
+          _lastProcessedIndex = state.currentIndex;
+          WidgetsBinding.instance.addPostFrameCallback((_) {
+            if (mounted) {
+              _onQuestLoaded(quest);
+            }
+          });
         }
 
         final word = quest.word ?? 'PREVIEW';
@@ -253,6 +294,8 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen>
         return VocabularyBaseLayout(
           gameType: gameType,
           level: level,
+          onPause: onGamePaused,
+          onResume: onGameResumed,
           isAnswered: isAnsweredNotifier.value,
           isCorrect: isCorrectNotifier.value,
           onContinue: () {

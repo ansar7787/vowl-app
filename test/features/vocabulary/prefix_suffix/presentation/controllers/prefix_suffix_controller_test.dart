@@ -24,7 +24,7 @@ void main() {
       expect(controller.isSliced, isFalse);
       expect(controller.isWrongCut, isFalse);
       expect(controller.timeFraction, 1.0);
-      expect(controller.secondsRemaining, 5);
+      expect(controller.secondsRemaining, 10);
     });
 
     group('Practice phase logic (Vault Cracker)', () {
