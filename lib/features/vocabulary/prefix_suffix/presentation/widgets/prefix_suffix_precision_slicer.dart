@@ -111,7 +111,9 @@ class _PrefixSuffixPrecisionSlicerState
   void _onTapUp(TapUpDetails d) {
     if (!widget.isAnswered) {
       _detectAndExecuteCut(
-          midGlobal: d.globalPosition, fallbackLocalX: d.localPosition.dx);
+        midGlobal: d.globalPosition,
+        fallbackLocalX: d.localPosition.dx,
+      );
     }
   }
 
@@ -166,6 +168,15 @@ class _PrefixSuffixPrecisionSlicerState
         ? (isDark ? AppColors.indigo400 : AppColors.indigo600)
         : (isDark ? AppColors.slate50 : AppColors.slate900);
 
+    final shadow = isHighlighted
+        ? [
+            BoxShadow(
+              color: AppColors.indigo500.withValues(alpha: isDark ? 0.3 : 0.2),
+              blurRadius: 8,
+            ),
+          ]
+        : null;
+
     return Container(
       width: 32.w,
       height: 48.h,
@@ -174,16 +185,7 @@ class _PrefixSuffixPrecisionSlicerState
         color: bg,
         borderRadius: BorderRadius.circular(10.r),
         border: Border.all(color: border, width: 1.5),
-        boxShadow: isHighlighted
-            ? [
-                BoxShadow(
-                  color: AppColors.indigo500.withValues(
-                    alpha: isDark ? 0.3 : 0.2,
-                  ),
-                  blurRadius: 8,
-                ),
-              ]
-            : null,
+        boxShadow: shadow,
       ),
       child: Text(
         letter,
@@ -223,32 +225,29 @@ class _PrefixSuffixPrecisionSlicerState
     ),
   );
 
-  Widget _buildPrompt(bool isDark) => Padding(
-    padding: EdgeInsets.only(bottom: 8.h),
-    child: FittedBox(
-      fit: BoxFit.scaleDown,
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Icon(
-            Icons.touch_app_rounded,
-            size: 13.sp,
-            color: isDark ? AppColors.slate400 : AppColors.slate600,
-          ),
-          SizedBox(width: 4.w),
-          Text(
-            'Swipe down or tap between letters to slice',
-            style: TextStyle(
-              fontFamily: 'Inter',
-              fontSize: 11.sp,
-              fontWeight: FontWeight.w600,
-              color: isDark ? AppColors.slate400 : AppColors.slate600,
-            ),
-          ),
-        ],
+  Widget _buildPrompt(bool isDark) {
+    final c = isDark ? AppColors.slate400 : AppColors.slate600;
+    final st = TextStyle(
+      fontFamily: 'Inter',
+      fontSize: 11.sp,
+      fontWeight: FontWeight.w600,
+      color: c,
+    );
+    return Padding(
+      padding: EdgeInsets.only(bottom: 8.h),
+      child: FittedBox(
+        fit: BoxFit.scaleDown,
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Icon(Icons.touch_app_rounded, size: 13.sp, color: c),
+            SizedBox(width: 4.w),
+            Text('Swipe down or tap between letters to slice', style: st),
+          ],
+        ),
       ),
-    ),
-  );
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -278,6 +277,20 @@ class _PrefixSuffixPrecisionSlicerState
         return Column(
           mainAxisSize: MainAxisSize.min,
           children: [
+            PrefixSuffixScissorPad(
+              letters: letters,
+              correctCutIndex: widget.correctCutIndex,
+              secondaryCutIndex: widget.secondaryCutIndex,
+              lastCut: _lastCut,
+              isSliced: widget.isSliced,
+              isWrongCut: widget.isWrongCut,
+              isAnswered: widget.isAnswered,
+              onSlice: (seam) {
+                setState(() => _lastCut = seam);
+                widget.onSlice(seam);
+              },
+            ),
+            SizedBox(height: 12.h),
             GestureDetector(
               onTapUp: _onTapUp,
               onPanStart: _onPanStart,
@@ -360,20 +373,6 @@ class _PrefixSuffixPrecisionSlicerState
                   ),
                 ),
               ),
-            ),
-            SizedBox(height: 12.h),
-            PrefixSuffixScissorPad(
-              letters: letters,
-              correctCutIndex: widget.correctCutIndex,
-              secondaryCutIndex: widget.secondaryCutIndex,
-              lastCut: _lastCut,
-              isSliced: widget.isSliced,
-              isWrongCut: widget.isWrongCut,
-              isAnswered: widget.isAnswered,
-              onSlice: (seam) {
-                setState(() => _lastCut = seam);
-                widget.onSlice(seam);
-              },
             ),
           ],
         );

@@ -18,7 +18,6 @@ import 'package:vowl/features/vocabulary/presentation/mixins/vocabulary_game_scr
 import 'package:vowl/features/vocabulary/prefix_suffix/presentation/controllers/prefix_suffix_controller.dart';
 import 'package:vowl/features/vocabulary/prefix_suffix/presentation/widgets/prefix_suffix_combo_hud.dart';
 import 'package:vowl/features/vocabulary/prefix_suffix/presentation/widgets/prefix_suffix_precision_slicer.dart';
-import 'package:vowl/features/vocabulary/prefix_suffix/presentation/widgets/prefix_suffix_translation_banner.dart';
 
 /// Interactive Prefix & Suffix Mastery Game Screen: "Morpheme Precision Slicer".
 ///
@@ -291,33 +290,43 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen>
         final word = quest.word ?? 'PREVIEW';
         final correctCutIndex = _calculateCorrectCutIndex(quest);
 
-        return VocabularyBaseLayout(
-          gameType: gameType,
-          level: level,
-          onPause: onGamePaused,
-          onResume: onGameResumed,
-          isAnswered: isAnsweredNotifier.value,
-          isCorrect: isCorrectNotifier.value,
-          onContinue: () {
-            final currentState = context.read<VocabularyBloc>().state;
-            if (currentState is VocabularyLoaded &&
-                !currentState.isFinalFailure &&
-                isCorrectNotifier.value == false) {
-              isAnsweredNotifier.value = false;
-              isCorrectNotifier.value = null;
-              _controller.resetForNextQuest();
-              if (_currentQuest != null) {
-                _startTimer(_currentQuest!);
-              }
-            } else {
-              context.read<VocabularyBloc>().add(const NextQuestion());
-            }
-          },
-          hasStage2: false,
-          child: ListenableBuilder(
-            listenable: _controller,
-            builder: (context, _) {
-              return SingleChildScrollView(
+        return ListenableBuilder(
+          listenable: Listenable.merge([
+            isAnsweredNotifier,
+            isCorrectNotifier,
+            showConfettiNotifier,
+            _controller,
+          ]),
+          builder: (context, _) {
+            final isAns = isAnsweredNotifier.value;
+            final isCorr = isCorrectNotifier.value;
+            final confetti = showConfettiNotifier.value;
+
+            return VocabularyBaseLayout(
+              gameType: gameType,
+              level: level,
+              onPause: onGamePaused,
+              onResume: onGameResumed,
+              isAnswered: isAns,
+              isCorrect: isCorr,
+              showConfetti: confetti,
+              onContinue: () {
+                final currentState = context.read<VocabularyBloc>().state;
+                if (currentState is VocabularyLoaded &&
+                    !currentState.isFinalFailure &&
+                    isCorr == false) {
+                  isAnsweredNotifier.value = false;
+                  isCorrectNotifier.value = null;
+                  _controller.resetForNextQuest();
+                  if (_currentQuest != null) {
+                    _startTimer(_currentQuest!);
+                  }
+                } else {
+                  context.read<VocabularyBloc>().add(const NextQuestion());
+                }
+              },
+              hasStage2: false,
+              child: SingleChildScrollView(
                 padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
                 child: Column(
                   children: [
@@ -351,27 +360,15 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen>
                       secondaryCutIndex: _calculateSecondaryCutIndex(quest),
                       isSliced: _controller.isSliced,
                       isWrongCut: _controller.isWrongCut,
-                      isAnswered: isAnsweredNotifier.value,
+                      isAnswered: isAns,
                       onSlice: (seam) => _handleSlice(seam, quest),
                     ),
                     SizedBox(height: 16.h),
-
-                    // Semantic Context & Definition with 1-Click Translation & Native Audio
-                    if (quest.definition != null &&
-                        quest.definition!.isNotEmpty) ...[
-                      PrefixSuffixTranslationBanner(
-                        originalText: quest.definition!,
-                        isDark: isDark,
-                        accentColor: AppColors.indigo500,
-                        label: 'Definition & Meaning',
-                      ),
-                    ],
-                    SizedBox(height: 16.h),
                   ],
                 ),
-              );
-            },
-          ),
+              ),
+            );
+          },
         );
       },
     );
