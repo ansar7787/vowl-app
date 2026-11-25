@@ -311,10 +311,14 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen>
               isCorrect: isCorr,
               showConfetti: confetti,
               onContinue: () {
+                TtsSpeakerButtonWidget.stopAll();
                 final currentState = context.read<VocabularyBloc>().state;
-                if (currentState is VocabularyLoaded &&
-                    !currentState.isFinalFailure &&
-                    isCorr == false) {
+                final isFinal =
+                    currentState is VocabularyLoaded &&
+                    (currentState.isFinalFailure ||
+                        currentState.livesRemaining <= 0);
+
+                if (!isFinal && isCorr == false) {
                   isAnsweredNotifier.value = false;
                   isCorrectNotifier.value = null;
                   _controller.resetForNextQuest();
@@ -323,6 +327,13 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen>
                   }
                 } else {
                   context.read<VocabularyBloc>().add(const NextQuestion());
+                }
+              },
+              onHint: () {
+                dispatchHintUsed();
+                if (di.sl.isRegistered<TtsService>()) {
+                  final w = quest.word ?? '';
+                  if (w.isNotEmpty) di.sl<TtsService>().speak(w);
                 }
               },
               hasStage2: false,

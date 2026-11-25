@@ -219,6 +219,7 @@ class _PrefixSuffixPracticeScreenState
                   rootMeaning: rootMeaning,
                   contextSentence: contextSentence,
                   slottedAffix: _controller.slottedAffix,
+                  targetWord: questData['targetWord'] as String?,
                   isJammed: isJammed,
                   isUnlocked: isUnlocked,
                 ),

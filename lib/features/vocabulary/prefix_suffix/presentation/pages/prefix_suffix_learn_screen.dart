@@ -232,6 +232,7 @@ class _PrefixSuffixLearnScreenState extends State<PrefixSuffixLearnScreen> {
               initialIndex: safeIndex,
               title: affixType == 'prefix' ? 'Choose Prefix' : 'Choose Suffix',
               onSelectedItemChanged: (index) {
+                TtsSpeakerButtonWidget.stopAll();
                 setState(() {
                   _selectedDialIndex = index;
                 });

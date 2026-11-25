@@ -21,6 +21,9 @@ class PrefixSuffixClueBanner extends StatefulWidget {
   /// The currently slotted affix, or null if empty.
   final String? slottedAffix;
 
+  /// The complete synthesized target word displayed upon unlocking.
+  final String? targetWord;
+
   /// Whether the vault lock is currently jammed due to an invalid combination.
   final bool isJammed;
 
@@ -33,6 +36,7 @@ class PrefixSuffixClueBanner extends StatefulWidget {
     required this.rootMeaning,
     required this.contextSentence,
     this.slottedAffix,
+    this.targetWord,
     this.isJammed = false,
     this.isUnlocked = false,
   });
@@ -100,7 +104,10 @@ class _PrefixSuffixClueBannerState extends State<PrefixSuffixClueBanner>
 
     final parts = rawSentence.split(gapPlaceholder);
     final hasSlotted = widget.slottedAffix != null;
-    final slotText = widget.slottedAffix ?? ' _ _ _ ';
+    final slotText =
+        widget.isUnlocked && (widget.targetWord?.isNotEmpty ?? false)
+        ? widget.targetWord!
+        : (widget.slottedAffix ?? ' _ _ _ ');
 
     Color slotColor;
     if (widget.isUnlocked) {
