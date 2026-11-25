@@ -1,968 +1,1600 @@
 {
-    "gameType": "synonymSearch",
-    "phase": "practice",
-    "batchIndex": 13,
-    "levels": "121-130",
-    "quests": [
+  "gameType": "synonymSearch",
+  "phase": "practice",
+  "cefr": "C1",
+  "difficulty": 4,
+  "batchIndex": 13,
+  "levels": "121-130",
+  "quests": [
+    {
+      "id": "PLACEHOLDER_PRAC_L121_Q1",
+      "level": 121,
+      "cefr": "C1",
+      "difficulty": 4,
+      "word": "PLACEHOLDER_base_121_1",
+      "targetSynonym": "PLACEHOLDER_synonym_121_1",
+      "exercises": [
         {
-            "id": "VOC_SYNONYMSEARCH_L121_PRAC_Q1",
-            "level": 121,
-            "word": "IRRITATED",
-            "targetMeaning": "Annoyed",
-            "exercises": [
-                {
-                    "exerciseType": "contextPick",
-                    "interactionType": "choice",
-                    "question": "Which definition best captures the natural usage of 'IRRITATED' in context?",
-                    "options": [
-                        "\"Annoyed\" describes a similar mild displeasure as \"irritated,\" often caused by small, repeated frustrations.",
-                        "A rare figurative expression with an unrelated meaning.",
-                        "An opposing concept that reverses the sentence intent."
-                    ],
-                    "correctAnswerIndex": 0,
-                    "feedbackPerOption": [
-                        "Correct! That precisely matches the contextual meaning of 'IRRITATED'.",
-                        "Incorrect: This describes an unrelated expression.",
-                        "Incorrect: This reverses the natural meaning."
-                    ]
-                },
-                {
-                    "exerciseType": "fillGap",
-                    "interactionType": "typing",
-                    "sentence": "Recall in context: In this exercise, the target term is _____.",
-                    "correctAnswer": "annoyed",
-                    "hint": "Recall the target word (7 letters, starts with 'A').",
-                    "feedbackIfWrong": "The correct target word is 'Annoyed'."
-                }
-            ]
+          "exerciseType": "contrastSwap",
+          "prompt": "PLACEHOLDER_swapPrompt_121_1",
+          "pairWords": [
+            "PLACEHOLDER_base_121_1",
+            "PLACEHOLDER_synonym_121_1"
+          ],
+          "slots": [
+            {
+              "contextTag": "PLACEHOLDER_ctx_121_1_1",
+              "sentenceWithBlank": "PLACEHOLDER_blank_121_1_1 ___.",
+              "correctWord": "PLACEHOLDER_base_121_1",
+              "feedback": "PLACEHOLDER_fb_121_1_1"
+            },
+            {
+              "contextTag": "PLACEHOLDER_ctx_121_1_2",
+              "sentenceWithBlank": "PLACEHOLDER_blank_121_1_2 ___.",
+              "correctWord": "PLACEHOLDER_synonym_121_1",
+              "feedback": "PLACEHOLDER_fb_121_1_2"
+            }
+          ],
+          "hint": "PLACEHOLDER_swapHint_121_1"
         },
         {
-            "id": "VOC_SYNONYMSEARCH_L121_PRAC_Q2",
-            "level": 121,
-            "word": "LIVID",
-            "targetMeaning": "Incensed",
-            "exercises": [
-                {
-                    "exerciseType": "contextPick",
-                    "interactionType": "choice",
-                    "question": "Which definition best captures the natural usage of 'LIVID' in context?",
-                    "options": [
-                        "\"Incensed\" describes intense anger, close to the extreme end of the anger scale alongside \"livid.\"",
-                        "A rare figurative expression with an unrelated meaning.",
-                        "An opposing concept that reverses the sentence intent."
-                    ],
-                    "correctAnswerIndex": 0,
-                    "feedbackPerOption": [
-                        "Correct! That precisely matches the contextual meaning of 'LIVID'.",
-                        "Incorrect: This describes an unrelated expression.",
-                        "Incorrect: This reverses the natural meaning."
-                    ]
-                },
-                {
-                    "exerciseType": "fillGap",
-                    "interactionType": "typing",
-                    "sentence": "Recall in context: In this exercise, the target term is _____.",
-                    "correctAnswer": "incensed",
-                    "hint": "Recall the target word (8 letters, starts with 'I').",
-                    "feedbackIfWrong": "The correct target word is 'Incensed'."
-                }
-            ]
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L121_PRAC_Q3",
-            "level": 121,
-            "word": "EXASPERATED",
-            "targetMeaning": "Frustrated",
-            "exercises": [
-                {
-                    "exerciseType": "contextPick",
-                    "interactionType": "choice",
-                    "question": "Which definition best captures the natural usage of 'EXASPERATED' in context?",
-                    "options": [
-                        "\"Frustrated\" describes a similar buildup of irritation as \"exasperated,\" often from repeated setbacks.",
-                        "A rare figurative expression with an unrelated meaning.",
-                        "An opposing concept that reverses the sentence intent."
-                    ],
-                    "correctAnswerIndex": 0,
-                    "feedbackPerOption": [
-                        "Correct! That precisely matches the contextual meaning of 'EXASPERATED'.",
-                        "Incorrect: This describes an unrelated expression.",
-                        "Incorrect: This reverses the natural meaning."
-                    ]
-                },
-                {
-                    "exerciseType": "fillGap",
-                    "interactionType": "typing",
-                    "sentence": "Recall in context: In this exercise, the target term is _____.",
-                    "correctAnswer": "frustrated",
-                    "hint": "Recall the target word (10 letters, starts with 'F').",
-                    "feedbackIfWrong": "The correct target word is 'Frustrated'."
-                }
-            ]
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L122_PRAC_Q1",
-            "level": 122,
-            "word": "UNEASY",
-            "targetMeaning": "Apprehensive",
-            "exercises": [
-                {
-                    "exerciseType": "contextPick",
-                    "interactionType": "choice",
-                    "question": "Which definition best captures the natural usage of 'UNEASY' in context?",
-                    "options": [
-                        "\"Apprehensive\" describes a similar low-level unease, often about something upcoming or uncertain.",
-                        "A rare figurative expression with an unrelated meaning.",
-                        "An opposing concept that reverses the sentence intent."
-                    ],
-                    "correctAnswerIndex": 0,
-                    "feedbackPerOption": [
-                        "Correct! That precisely matches the contextual meaning of 'UNEASY'.",
-                        "Incorrect: This describes an unrelated expression.",
-                        "Incorrect: This reverses the natural meaning."
-                    ]
-                },
-                {
-                    "exerciseType": "fillGap",
-                    "interactionType": "typing",
-                    "sentence": "Recall in context: In this exercise, the target term is _____.",
-                    "correctAnswer": "apprehensive",
-                    "hint": "Recall the target word (12 letters, starts with 'A').",
-                    "feedbackIfWrong": "The correct target word is 'Apprehensive'."
-                }
-            ]
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L122_PRAC_Q2",
-            "level": 122,
-            "word": "PETRIFIED",
-            "targetMeaning": "Paralyzed",
-            "exercises": [
-                {
-                    "exerciseType": "contextPick",
-                    "interactionType": "choice",
-                    "question": "Which definition best captures the natural usage of 'PETRIFIED' in context?",
-                    "options": [
-                        "\"Paralyzed\" describes being unable to act because of overwhelming fear, similar to being petrified.",
-                        "A rare figurative expression with an unrelated meaning.",
-                        "An opposing concept that reverses the sentence intent."
-                    ],
-                    "correctAnswerIndex": 0,
-                    "feedbackPerOption": [
-                        "Correct! That precisely matches the contextual meaning of 'PETRIFIED'.",
-                        "Incorrect: This describes an unrelated expression.",
-                        "Incorrect: This reverses the natural meaning."
-                    ]
-                },
-                {
-                    "exerciseType": "fillGap",
-                    "interactionType": "typing",
-                    "sentence": "Recall in context: In this exercise, the target term is _____.",
-                    "correctAnswer": "paralyzed",
-                    "hint": "Recall the target word (9 letters, starts with 'P').",
-                    "feedbackIfWrong": "The correct target word is 'Paralyzed'."
-                }
-            ]
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L122_PRAC_Q3",
-            "level": 122,
-            "word": "ALARMED",
-            "targetMeaning": "Startled",
-            "exercises": [
-                {
-                    "exerciseType": "contextPick",
-                    "interactionType": "choice",
-                    "question": "Which definition best captures the natural usage of 'ALARMED' in context?",
-                    "options": [
-                        "\"Startled\" describes a sudden shock, often the immediate reaction that leads to feeling alarmed.",
-                        "A rare figurative expression with an unrelated meaning.",
-                        "An opposing concept that reverses the sentence intent."
-                    ],
-                    "correctAnswerIndex": 0,
-                    "feedbackPerOption": [
-                        "Correct! That precisely matches the contextual meaning of 'ALARMED'.",
-                        "Incorrect: This describes an unrelated expression.",
-                        "Incorrect: This reverses the natural meaning."
-                    ]
-                },
-                {
-                    "exerciseType": "fillGap",
-                    "interactionType": "typing",
-                    "sentence": "Recall in context: In this exercise, the target term is _____.",
-                    "correctAnswer": "startled",
-                    "hint": "Recall the target word (8 letters, starts with 'S').",
-                    "feedbackIfWrong": "The correct target word is 'Startled'."
-                }
-            ]
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L123_PRAC_Q1",
-            "level": 123,
-            "word": "ASK FOR",
-            "targetMeaning": "Solicit",
-            "exercises": [
-                {
-                    "exerciseType": "contextPick",
-                    "interactionType": "choice",
-                    "question": "Which definition best captures the natural usage of 'ASK FOR' in context?",
-                    "options": [
-                        "\"Solicit\" is a formal, often official way of asking for something, such as feedback, donations, or advice.",
-                        "A rare figurative expression with an unrelated meaning.",
-                        "An opposing concept that reverses the sentence intent."
-                    ],
-                    "correctAnswerIndex": 0,
-                    "feedbackPerOption": [
-                        "Correct! That precisely matches the contextual meaning of 'ASK FOR'.",
-                        "Incorrect: This describes an unrelated expression.",
-                        "Incorrect: This reverses the natural meaning."
-                    ]
-                },
-                {
-                    "exerciseType": "fillGap",
-                    "interactionType": "typing",
-                    "sentence": "Recall in context: In this exercise, the target term is _____.",
-                    "correctAnswer": "solicit",
-                    "hint": "Recall the target word (7 letters, starts with 'S').",
-                    "feedbackIfWrong": "The correct target word is 'Solicit'."
-                }
-            ]
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L123_PRAC_Q2",
-            "level": 123,
-            "word": "GIVE UP",
-            "targetMeaning": "Relinquish",
-            "exercises": [
-                {
-                    "exerciseType": "contextPick",
-                    "interactionType": "choice",
-                    "question": "Which definition best captures the natural usage of 'GIVE UP' in context?",
-                    "options": [
-                        "\"Relinquish\" is a formal word for giving something up, often a right, position, or possession.",
-                        "A rare figurative expression with an unrelated meaning.",
-                        "An opposing concept that reverses the sentence intent."
-                    ],
-                    "correctAnswerIndex": 0,
-                    "feedbackPerOption": [
-                        "Correct! That precisely matches the contextual meaning of 'GIVE UP'.",
-                        "Incorrect: This describes an unrelated expression.",
-                        "Incorrect: This reverses the natural meaning."
-                    ]
-                },
-                {
-                    "exerciseType": "fillGap",
-                    "interactionType": "typing",
-                    "sentence": "Recall in context: In this exercise, the target term is _____.",
-                    "correctAnswer": "relinquish",
-                    "hint": "Recall the target word (10 letters, starts with 'R').",
-                    "feedbackIfWrong": "The correct target word is 'Relinquish'."
-                }
-            ]
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L123_PRAC_Q3",
-            "level": 123,
-            "word": "PUT OFF",
-            "targetMeaning": "Procrastinate",
-            "exercises": [
-                {
-                    "exerciseType": "contextPick",
-                    "interactionType": "choice",
-                    "question": "Which definition best captures the natural usage of 'PUT OFF' in context?",
-                    "options": [
-                        "\"Procrastinate\" specifically describes delaying a task unnecessarily, often out of avoidance rather than necessity.",
-                        "A rare figurative expression with an unrelated meaning.",
-                        "An opposing concept that reverses the sentence intent."
-                    ],
-                    "correctAnswerIndex": 0,
-                    "feedbackPerOption": [
-                        "Correct! That precisely matches the contextual meaning of 'PUT OFF'.",
-                        "Incorrect: This describes an unrelated expression.",
-                        "Incorrect: This reverses the natural meaning."
-                    ]
-                },
-                {
-                    "exerciseType": "fillGap",
-                    "interactionType": "typing",
-                    "sentence": "Recall in context: In this exercise, the target term is _____.",
-                    "correctAnswer": "procrastinate",
-                    "hint": "Recall the target word (13 letters, starts with 'P').",
-                    "feedbackIfWrong": "The correct target word is 'Procrastinate'."
-                }
-            ]
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L124_PRAC_Q1",
-            "level": 124,
-            "word": "COMPLIMENT",
-            "targetMeaning": "Tribute",
-            "exercises": [
-                {
-                    "exerciseType": "contextPick",
-                    "interactionType": "choice",
-                    "question": "Which definition best captures the natural usage of 'COMPLIMENT' in context?",
-                    "options": [
-                        "\"Tribute\" can describe a public expression of admiration or respect, often more formal and significant than a compliment.",
-                        "A rare figurative expression with an unrelated meaning.",
-                        "An opposing concept that reverses the sentence intent."
-                    ],
-                    "correctAnswerIndex": 0,
-                    "feedbackPerOption": [
-                        "Correct! That precisely matches the contextual meaning of 'COMPLIMENT'.",
-                        "Incorrect: This describes an unrelated expression.",
-                        "Incorrect: This reverses the natural meaning."
-                    ]
-                },
-                {
-                    "exerciseType": "fillGap",
-                    "interactionType": "typing",
-                    "sentence": "Recall in context: In this exercise, the target term is _____.",
-                    "correctAnswer": "tribute",
-                    "hint": "Recall the target word (7 letters, starts with 'T').",
-                    "feedbackIfWrong": "The correct target word is 'Tribute'."
-                }
-            ]
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L124_PRAC_Q2",
-            "level": 124,
-            "word": "FLATTER",
-            "targetMeaning": "Toady",
-            "exercises": [
-                {
-                    "exerciseType": "contextPick",
-                    "interactionType": "choice",
-                    "question": "Which definition best captures the natural usage of 'FLATTER' in context?",
-                    "options": [
-                        "\"Toady\" describes someone who flatters excessively and insincerely to gain favor, closely related to what it means to flatter someone.",
-                        "A rare figurative expression with an unrelated meaning.",
-                        "An opposing concept that reverses the sentence intent."
-                    ],
-                    "correctAnswerIndex": 0,
-                    "feedbackPerOption": [
-                        "Correct! That precisely matches the contextual meaning of 'FLATTER'.",
-                        "Incorrect: This describes an unrelated expression.",
-                        "Incorrect: This reverses the natural meaning."
-                    ]
-                },
-                {
-                    "exerciseType": "fillGap",
-                    "interactionType": "typing",
-                    "sentence": "Recall in context: In this exercise, the target term is _____.",
-                    "correctAnswer": "toady",
-                    "hint": "Recall the target word (5 letters, starts with 'T').",
-                    "feedbackIfWrong": "The correct target word is 'Toady'."
-                }
-            ]
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L124_PRAC_Q3",
-            "level": 124,
-            "word": "ADMIRE",
-            "targetMeaning": "Esteem",
-            "exercises": [
-                {
-                    "exerciseType": "contextPick",
-                    "interactionType": "choice",
-                    "question": "Which definition best captures the natural usage of 'ADMIRE' in context?",
-                    "options": [
-                        "\"Esteem\" describes deep respect and admiration, often for someone's character or achievements.",
-                        "A rare figurative expression with an unrelated meaning.",
-                        "An opposing concept that reverses the sentence intent."
-                    ],
-                    "correctAnswerIndex": 0,
-                    "feedbackPerOption": [
-                        "Correct! That precisely matches the contextual meaning of 'ADMIRE'.",
-                        "Incorrect: This describes an unrelated expression.",
-                        "Incorrect: This reverses the natural meaning."
-                    ]
-                },
-                {
-                    "exerciseType": "fillGap",
-                    "interactionType": "typing",
-                    "sentence": "Recall in context: In this exercise, the target term is _____.",
-                    "correctAnswer": "esteem",
-                    "hint": "Recall the target word (6 letters, starts with 'E').",
-                    "feedbackIfWrong": "The correct target word is 'Esteem'."
-                }
-            ]
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L125_PRAC_Q1",
-            "level": 125,
-            "word": "MOCK",
-            "targetMeaning": "Ridicule",
-            "exercises": [
-                {
-                    "exerciseType": "contextPick",
-                    "interactionType": "choice",
-                    "question": "Which definition best captures the natural usage of 'MOCK' in context?",
-                    "options": [
-                        "\"Ridicule\" describes making fun of someone in a way meant to humiliate them, closely related to mocking.",
-                        "A rare figurative expression with an unrelated meaning.",
-                        "An opposing concept that reverses the sentence intent."
-                    ],
-                    "correctAnswerIndex": 0,
-                    "feedbackPerOption": [
-                        "Correct! That precisely matches the contextual meaning of 'MOCK'.",
-                        "Incorrect: This describes an unrelated expression.",
-                        "Incorrect: This reverses the natural meaning."
-                    ]
-                },
-                {
-                    "exerciseType": "fillGap",
-                    "interactionType": "typing",
-                    "sentence": "Recall in context: In this exercise, the target term is _____.",
-                    "correctAnswer": "ridicule",
-                    "hint": "Recall the target word (8 letters, starts with 'R').",
-                    "feedbackIfWrong": "The correct target word is 'Ridicule'."
-                }
-            ]
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L125_PRAC_Q2",
-            "level": 125,
-            "word": "TEASE",
-            "targetMeaning": "Rib",
-            "exercises": [
-                {
-                    "exerciseType": "contextPick",
-                    "interactionType": "choice",
-                    "question": "Which definition best captures the natural usage of 'TEASE' in context?",
-                    "options": [
-                        "\"Rib\" is an informal word for teasing someone playfully, often among friends.",
-                        "A rare figurative expression with an unrelated meaning.",
-                        "An opposing concept that reverses the sentence intent."
-                    ],
-                    "correctAnswerIndex": 0,
-                    "feedbackPerOption": [
-                        "Correct! That precisely matches the contextual meaning of 'TEASE'.",
-                        "Incorrect: This describes an unrelated expression.",
-                        "Incorrect: This reverses the natural meaning."
-                    ]
-                },
-                {
-                    "exerciseType": "fillGap",
-                    "interactionType": "typing",
-                    "sentence": "Recall in context: In this exercise, the target term is _____.",
-                    "correctAnswer": "rib",
-                    "hint": "Recall the target word (3 letters, starts with 'R').",
-                    "feedbackIfWrong": "The correct target word is 'Rib'."
-                }
-            ]
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L125_PRAC_Q3",
-            "level": 125,
-            "word": "BELITTLE",
-            "targetMeaning": "Disparage",
-            "exercises": [
-                {
-                    "exerciseType": "contextPick",
-                    "interactionType": "choice",
-                    "question": "Which definition best captures the natural usage of 'BELITTLE' in context?",
-                    "options": [
-                        "\"Disparage\" describes speaking about someone or something in a way that diminishes its value, closely related to belittling.",
-                        "A rare figurative expression with an unrelated meaning.",
-                        "An opposing concept that reverses the sentence intent."
-                    ],
-                    "correctAnswerIndex": 0,
-                    "feedbackPerOption": [
-                        "Correct! That precisely matches the contextual meaning of 'BELITTLE'.",
-                        "Incorrect: This describes an unrelated expression.",
-                        "Incorrect: This reverses the natural meaning."
-                    ]
-                },
-                {
-                    "exerciseType": "fillGap",
-                    "interactionType": "typing",
-                    "sentence": "Recall in context: In this exercise, the target term is _____.",
-                    "correctAnswer": "disparage",
-                    "hint": "Recall the target word (9 letters, starts with 'D').",
-                    "feedbackIfWrong": "The correct target word is 'Disparage'."
-                }
-            ]
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L126_PRAC_Q1",
-            "level": 126,
-            "word": "POSSIBLE",
-            "targetMeaning": "Feasible",
-            "exercises": [
-                {
-                    "exerciseType": "contextPick",
-                    "interactionType": "choice",
-                    "question": "Which definition best captures the natural usage of 'POSSIBLE' in context?",
-                    "options": [
-                        "\"Feasible\" describes something that is possible and realistic to accomplish, closely related to being possible.",
-                        "A rare figurative expression with an unrelated meaning.",
-                        "An opposing concept that reverses the sentence intent."
-                    ],
-                    "correctAnswerIndex": 0,
-                    "feedbackPerOption": [
-                        "Correct! That precisely matches the contextual meaning of 'POSSIBLE'.",
-                        "Incorrect: This describes an unrelated expression.",
-                        "Incorrect: This reverses the natural meaning."
-                    ]
-                },
-                {
-                    "exerciseType": "fillGap",
-                    "interactionType": "typing",
-                    "sentence": "Recall in context: In this exercise, the target term is _____.",
-                    "correctAnswer": "feasible",
-                    "hint": "Recall the target word (8 letters, starts with 'F').",
-                    "feedbackIfWrong": "The correct target word is 'Feasible'."
-                }
-            ]
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L126_PRAC_Q2",
-            "level": 126,
-            "word": "LIKELY",
-            "targetMeaning": "Probable",
-            "exercises": [
-                {
-                    "exerciseType": "contextPick",
-                    "interactionType": "choice",
-                    "question": "Which definition best captures the natural usage of 'LIKELY' in context?",
-                    "options": [
-                        "\"Probable\" describes something more likely than not to happen, closely related to being likely.",
-                        "A rare figurative expression with an unrelated meaning.",
-                        "An opposing concept that reverses the sentence intent."
-                    ],
-                    "correctAnswerIndex": 0,
-                    "feedbackPerOption": [
-                        "Correct! That precisely matches the contextual meaning of 'LIKELY'.",
-                        "Incorrect: This describes an unrelated expression.",
-                        "Incorrect: This reverses the natural meaning."
-                    ]
-                },
-                {
-                    "exerciseType": "fillGap",
-                    "interactionType": "typing",
-                    "sentence": "Recall in context: In this exercise, the target term is _____.",
-                    "correctAnswer": "probable",
-                    "hint": "Recall the target word (8 letters, starts with 'P').",
-                    "feedbackIfWrong": "The correct target word is 'Probable'."
-                }
-            ]
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L126_PRAC_Q3",
-            "level": 126,
-            "word": "CERTAIN",
-            "targetMeaning": "Definite",
-            "exercises": [
-                {
-                    "exerciseType": "contextPick",
-                    "interactionType": "choice",
-                    "question": "Which definition best captures the natural usage of 'CERTAIN' in context?",
-                    "options": [
-                        "\"Definite\" describes something clearly established without ambiguity, closely related to being certain.",
-                        "A rare figurative expression with an unrelated meaning.",
-                        "An opposing concept that reverses the sentence intent."
-                    ],
-                    "correctAnswerIndex": 0,
-                    "feedbackPerOption": [
-                        "Correct! That precisely matches the contextual meaning of 'CERTAIN'.",
-                        "Incorrect: This describes an unrelated expression.",
-                        "Incorrect: This reverses the natural meaning."
-                    ]
-                },
-                {
-                    "exerciseType": "fillGap",
-                    "interactionType": "typing",
-                    "sentence": "Recall in context: In this exercise, the target term is _____.",
-                    "correctAnswer": "definite",
-                    "hint": "Recall the target word (8 letters, starts with 'D').",
-                    "feedbackIfWrong": "The correct target word is 'Definite'."
-                }
-            ]
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L127_PRAC_Q1",
-            "level": 127,
-            "word": "MASSIVE",
-            "targetMeaning": "Immense",
-            "exercises": [
-                {
-                    "exerciseType": "contextPick",
-                    "interactionType": "choice",
-                    "question": "Which definition best captures the natural usage of 'MASSIVE' in context?",
-                    "options": [
-                        "\"Immense\" describes something enormous in scale, similarly extreme to \"massive.\"",
-                        "A rare figurative expression with an unrelated meaning.",
-                        "An opposing concept that reverses the sentence intent."
-                    ],
-                    "correctAnswerIndex": 0,
-                    "feedbackPerOption": [
-                        "Correct! That precisely matches the contextual meaning of 'MASSIVE'.",
-                        "Incorrect: This describes an unrelated expression.",
-                        "Incorrect: This reverses the natural meaning."
-                    ]
-                },
-                {
-                    "exerciseType": "fillGap",
-                    "interactionType": "typing",
-                    "sentence": "Recall in context: In this exercise, the target term is _____.",
-                    "correctAnswer": "immense",
-                    "hint": "Recall the target word (7 letters, starts with 'I').",
-                    "feedbackIfWrong": "The correct target word is 'Immense'."
-                }
-            ]
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L127_PRAC_Q2",
-            "level": 127,
-            "word": "MINUSCULE",
-            "targetMeaning": "Negligible",
-            "exercises": [
-                {
-                    "exerciseType": "contextPick",
-                    "interactionType": "choice",
-                    "question": "Which definition best captures the natural usage of 'MINUSCULE' in context?",
-                    "options": [
-                        "\"Negligible\" describes an amount so small it can practically be ignored, closely related to being minuscule.",
-                        "A rare figurative expression with an unrelated meaning.",
-                        "An opposing concept that reverses the sentence intent."
-                    ],
-                    "correctAnswerIndex": 0,
-                    "feedbackPerOption": [
-                        "Correct! That precisely matches the contextual meaning of 'MINUSCULE'.",
-                        "Incorrect: This describes an unrelated expression.",
-                        "Incorrect: This reverses the natural meaning."
-                    ]
-                },
-                {
-                    "exerciseType": "fillGap",
-                    "interactionType": "typing",
-                    "sentence": "Recall in context: In this exercise, the target term is _____.",
-                    "correctAnswer": "negligible",
-                    "hint": "Recall the target word (10 letters, starts with 'N').",
-                    "feedbackIfWrong": "The correct target word is 'Negligible'."
-                }
-            ]
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L127_PRAC_Q3",
-            "level": 127,
-            "word": "VAST",
-            "targetMeaning": "Expansive",
-            "exercises": [
-                {
-                    "exerciseType": "contextPick",
-                    "interactionType": "choice",
-                    "question": "Which definition best captures the natural usage of 'VAST' in context?",
-                    "options": [
-                        "\"Expansive\" describes something covering a very wide area or range, closely related to being vast.",
-                        "A rare figurative expression with an unrelated meaning.",
-                        "An opposing concept that reverses the sentence intent."
-                    ],
-                    "correctAnswerIndex": 0,
-                    "feedbackPerOption": [
-                        "Correct! That precisely matches the contextual meaning of 'VAST'.",
-                        "Incorrect: This describes an unrelated expression.",
-                        "Incorrect: This reverses the natural meaning."
-                    ]
-                },
-                {
-                    "exerciseType": "fillGap",
-                    "interactionType": "typing",
-                    "sentence": "Recall in context: In this exercise, the target term is _____.",
-                    "correctAnswer": "expansive",
-                    "hint": "Recall the target word (9 letters, starts with 'E').",
-                    "feedbackIfWrong": "The correct target word is 'Expansive'."
-                }
-            ]
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L128_PRAC_Q1",
-            "level": 128,
-            "word": "AXE",
-            "targetMeaning": "Sack",
-            "exercises": [
-                {
-                    "exerciseType": "contextPick",
-                    "interactionType": "choice",
-                    "question": "Which definition best captures the natural usage of 'AXE' in context?",
-                    "options": [
-                        "\"Sack\" is an informal, blunt British word for firing someone from a job, closely related to what it means to axe their position.",
-                        "A rare figurative expression with an unrelated meaning.",
-                        "An opposing concept that reverses the sentence intent."
-                    ],
-                    "correctAnswerIndex": 0,
-                    "feedbackPerOption": [
-                        "Correct! That precisely matches the contextual meaning of 'AXE'.",
-                        "Incorrect: This describes an unrelated expression.",
-                        "Incorrect: This reverses the natural meaning."
-                    ]
-                },
-                {
-                    "exerciseType": "fillGap",
-                    "interactionType": "typing",
-                    "sentence": "Recall in context: In this exercise, the target term is _____.",
-                    "correctAnswer": "sack",
-                    "hint": "Recall the target word (4 letters, starts with 'S').",
-                    "feedbackIfWrong": "The correct target word is 'Sack'."
-                }
-            ]
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L128_PRAC_Q2",
-            "level": 128,
-            "word": "DOWNSIZE",
-            "targetMeaning": "Streamline",
-            "exercises": [
-                {
-                    "exerciseType": "contextPick",
-                    "interactionType": "choice",
-                    "question": "Which definition best captures the natural usage of 'DOWNSIZE' in context?",
-                    "options": [
-                        "\"Streamline\" can describe reducing a workforce or process to make it more efficient, though it can also apply to non-staffing changes.",
-                        "A rare figurative expression with an unrelated meaning.",
-                        "An opposing concept that reverses the sentence intent."
-                    ],
-                    "correctAnswerIndex": 0,
-                    "feedbackPerOption": [
-                        "Correct! That precisely matches the contextual meaning of 'DOWNSIZE'.",
-                        "Incorrect: This describes an unrelated expression.",
-                        "Incorrect: This reverses the natural meaning."
-                    ]
-                },
-                {
-                    "exerciseType": "fillGap",
-                    "interactionType": "typing",
-                    "sentence": "Recall in context: In this exercise, the target term is _____.",
-                    "correctAnswer": "streamline",
-                    "hint": "Recall the target word (10 letters, starts with 'S').",
-                    "feedbackIfWrong": "The correct target word is 'Streamline'."
-                }
-            ]
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L128_PRAC_Q3",
-            "level": 128,
-            "word": "RESTRUCTURE",
-            "targetMeaning": "Reorganize",
-            "exercises": [
-                {
-                    "exerciseType": "contextPick",
-                    "interactionType": "choice",
-                    "question": "Which definition best captures the natural usage of 'RESTRUCTURE' in context?",
-                    "options": [
-                        "\"Reorganize\" describes changing how something is arranged or structured, closely related to restructuring it.",
-                        "A rare figurative expression with an unrelated meaning.",
-                        "An opposing concept that reverses the sentence intent."
-                    ],
-                    "correctAnswerIndex": 0,
-                    "feedbackPerOption": [
-                        "Correct! That precisely matches the contextual meaning of 'RESTRUCTURE'.",
-                        "Incorrect: This describes an unrelated expression.",
-                        "Incorrect: This reverses the natural meaning."
-                    ]
-                },
-                {
-                    "exerciseType": "fillGap",
-                    "interactionType": "typing",
-                    "sentence": "Recall in context: In this exercise, the target term is _____.",
-                    "correctAnswer": "reorganize",
-                    "hint": "Recall the target word (10 letters, starts with 'R').",
-                    "feedbackIfWrong": "The correct target word is 'Reorganize'."
-                }
-            ]
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L129_PRAC_Q1",
-            "level": 129,
-            "word": "STUDY",
-            "targetMeaning": "Explore",
-            "exercises": [
-                {
-                    "exerciseType": "contextPick",
-                    "interactionType": "choice",
-                    "question": "Which definition best captures the natural usage of 'STUDY' in context?",
-                    "options": [
-                        "\"Explore\" can describe investigating a topic in an open-ended, curious way, closely related to studying it.",
-                        "A rare figurative expression with an unrelated meaning.",
-                        "An opposing concept that reverses the sentence intent."
-                    ],
-                    "correctAnswerIndex": 0,
-                    "feedbackPerOption": [
-                        "Correct! That precisely matches the contextual meaning of 'STUDY'.",
-                        "Incorrect: This describes an unrelated expression.",
-                        "Incorrect: This reverses the natural meaning."
-                    ]
-                },
-                {
-                    "exerciseType": "fillGap",
-                    "interactionType": "typing",
-                    "sentence": "Recall in context: In this exercise, the target term is _____.",
-                    "correctAnswer": "explore",
-                    "hint": "Recall the target word (7 letters, starts with 'E').",
-                    "feedbackIfWrong": "The correct target word is 'Explore'."
-                }
-            ]
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L129_PRAC_Q2",
-            "level": 129,
-            "word": "SUPPORT",
-            "targetMeaning": "Bolster",
-            "exercises": [
-                {
-                    "exerciseType": "contextPick",
-                    "interactionType": "choice",
-                    "question": "Which definition best captures the natural usage of 'SUPPORT' in context?",
-                    "options": [
-                        "\"Bolster\" describes strengthening an argument with additional evidence, closely related to supporting it.",
-                        "A rare figurative expression with an unrelated meaning.",
-                        "An opposing concept that reverses the sentence intent."
-                    ],
-                    "correctAnswerIndex": 0,
-                    "feedbackPerOption": [
-                        "Correct! That precisely matches the contextual meaning of 'SUPPORT'.",
-                        "Incorrect: This describes an unrelated expression.",
-                        "Incorrect: This reverses the natural meaning."
-                    ]
-                },
-                {
-                    "exerciseType": "fillGap",
-                    "interactionType": "typing",
-                    "sentence": "Recall in context: In this exercise, the target term is _____.",
-                    "correctAnswer": "bolster",
-                    "hint": "Recall the target word (7 letters, starts with 'B').",
-                    "feedbackIfWrong": "The correct target word is 'Bolster'."
-                }
-            ]
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L129_PRAC_Q3",
-            "level": 129,
-            "word": "QUESTION",
-            "targetMeaning": "Challenge",
-            "exercises": [
-                {
-                    "exerciseType": "contextPick",
-                    "interactionType": "choice",
-                    "question": "Which definition best captures the natural usage of 'QUESTION' in context?",
-                    "options": [
-                        "\"Challenge\" describes actively questioning or disputing an idea, closely related to questioning it.",
-                        "A rare figurative expression with an unrelated meaning.",
-                        "An opposing concept that reverses the sentence intent."
-                    ],
-                    "correctAnswerIndex": 0,
-                    "feedbackPerOption": [
-                        "Correct! That precisely matches the contextual meaning of 'QUESTION'.",
-                        "Incorrect: This describes an unrelated expression.",
-                        "Incorrect: This reverses the natural meaning."
-                    ]
-                },
-                {
-                    "exerciseType": "fillGap",
-                    "interactionType": "typing",
-                    "sentence": "Recall in context: In this exercise, the target term is _____.",
-                    "correctAnswer": "challenge",
-                    "hint": "Recall the target word (9 letters, starts with 'C').",
-                    "feedbackIfWrong": "The correct target word is 'Challenge'."
-                }
-            ]
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L130_PRAC_Q1",
-            "level": 130,
-            "word": "GENUINE",
-            "targetMeaning": "Heartfelt",
-            "exercises": [
-                {
-                    "exerciseType": "contextPick",
-                    "interactionType": "choice",
-                    "question": "Which definition best captures the natural usage of 'GENUINE' in context?",
-                    "options": [
-                        "\"Heartfelt\" describes an emotion expressed with real sincerity, closely related to being genuine.",
-                        "A rare figurative expression with an unrelated meaning.",
-                        "An opposing concept that reverses the sentence intent."
-                    ],
-                    "correctAnswerIndex": 0,
-                    "feedbackPerOption": [
-                        "Correct! That precisely matches the contextual meaning of 'GENUINE'.",
-                        "Incorrect: This describes an unrelated expression.",
-                        "Incorrect: This reverses the natural meaning."
-                    ]
-                },
-                {
-                    "exerciseType": "fillGap",
-                    "interactionType": "typing",
-                    "sentence": "Recall in context: In this exercise, the target term is _____.",
-                    "correctAnswer": "heartfelt",
-                    "hint": "Recall the target word (9 letters, starts with 'H').",
-                    "feedbackIfWrong": "The correct target word is 'Heartfelt'."
-                }
-            ]
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L130_PRAC_Q2",
-            "level": 130,
-            "word": "PASSIONATE",
-            "targetMeaning": "Fervent",
-            "exercises": [
-                {
-                    "exerciseType": "contextPick",
-                    "interactionType": "choice",
-                    "question": "Which definition best captures the natural usage of 'PASSIONATE' in context?",
-                    "options": [
-                        "\"Fervent\" describes intense, deeply felt enthusiasm, similarly strong to being passionate.",
-                        "A rare figurative expression with an unrelated meaning.",
-                        "An opposing concept that reverses the sentence intent."
-                    ],
-                    "correctAnswerIndex": 0,
-                    "feedbackPerOption": [
-                        "Correct! That precisely matches the contextual meaning of 'PASSIONATE'.",
-                        "Incorrect: This describes an unrelated expression.",
-                        "Incorrect: This reverses the natural meaning."
-                    ]
-                },
-                {
-                    "exerciseType": "fillGap",
-                    "interactionType": "typing",
-                    "sentence": "Recall in context: In this exercise, the target term is _____.",
-                    "correctAnswer": "fervent",
-                    "hint": "Recall the target word (7 letters, starts with 'F').",
-                    "feedbackIfWrong": "The correct target word is 'Fervent'."
-                }
-            ]
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L130_PRAC_Q3",
-            "level": 130,
-            "word": "DEVOTED",
-            "targetMeaning": "Dedicated",
-            "exercises": [
-                {
-                    "exerciseType": "contextPick",
-                    "interactionType": "choice",
-                    "question": "Which definition best captures the natural usage of 'DEVOTED' in context?",
-                    "options": [
-                        "\"Dedicated\" describes committing significant time and energy to something, closely related to being devoted.",
-                        "A rare figurative expression with an unrelated meaning.",
-                        "An opposing concept that reverses the sentence intent."
-                    ],
-                    "correctAnswerIndex": 0,
-                    "feedbackPerOption": [
-                        "Correct! That precisely matches the contextual meaning of 'DEVOTED'.",
-                        "Incorrect: This describes an unrelated expression.",
-                        "Incorrect: This reverses the natural meaning."
-                    ]
-                },
-                {
-                    "exerciseType": "fillGap",
-                    "interactionType": "typing",
-                    "sentence": "Recall in context: In this exercise, the target term is _____.",
-                    "correctAnswer": "dedicated",
-                    "hint": "Recall the target word (9 letters, starts with 'D').",
-                    "feedbackIfWrong": "The correct target word is 'Dedicated'."
-                }
-            ]
+          "exerciseType": "synonymLadder",
+          "prompt": "PLACEHOLDER_ladderPrompt_121_1",
+          "scaleAxis": "PLACEHOLDER_axis_121_1",
+          "lowLabel": "Everyday",
+          "highLabel": "Formal",
+          "shuffledWords": [
+            "PLACEHOLDER_high_121_1",
+            "PLACEHOLDER_base_121_1",
+            "PLACEHOLDER_synonym_121_1"
+          ],
+          "orderedWords": [
+            "PLACEHOLDER_base_121_1",
+            "PLACEHOLDER_synonym_121_1",
+            "PLACEHOLDER_high_121_1"
+          ],
+          "explanation": "PLACEHOLDER_ladderExp_121_1",
+          "hint": "PLACEHOLDER_ladderHint_121_1",
+          "spokenExample": "PLACEHOLDER_ladderEx_121_1"
         }
-    ]
+      ]
+    },
+    {
+      "id": "PLACEHOLDER_PRAC_L121_Q2",
+      "level": 121,
+      "cefr": "C1",
+      "difficulty": 4,
+      "word": "PLACEHOLDER_base_121_2",
+      "targetSynonym": "PLACEHOLDER_synonym_121_2",
+      "exercises": [
+        {
+          "exerciseType": "contrastSwap",
+          "prompt": "PLACEHOLDER_swapPrompt_121_2",
+          "pairWords": [
+            "PLACEHOLDER_base_121_2",
+            "PLACEHOLDER_synonym_121_2"
+          ],
+          "slots": [
+            {
+              "contextTag": "PLACEHOLDER_ctx_121_2_1",
+              "sentenceWithBlank": "PLACEHOLDER_blank_121_2_1 ___.",
+              "correctWord": "PLACEHOLDER_base_121_2",
+              "feedback": "PLACEHOLDER_fb_121_2_1"
+            },
+            {
+              "contextTag": "PLACEHOLDER_ctx_121_2_2",
+              "sentenceWithBlank": "PLACEHOLDER_blank_121_2_2 ___.",
+              "correctWord": "PLACEHOLDER_synonym_121_2",
+              "feedback": "PLACEHOLDER_fb_121_2_2"
+            }
+          ],
+          "hint": "PLACEHOLDER_swapHint_121_2"
+        },
+        {
+          "exerciseType": "synonymLadder",
+          "prompt": "PLACEHOLDER_ladderPrompt_121_2",
+          "scaleAxis": "PLACEHOLDER_axis_121_2",
+          "lowLabel": "Everyday",
+          "highLabel": "Formal",
+          "shuffledWords": [
+            "PLACEHOLDER_high_121_2",
+            "PLACEHOLDER_base_121_2",
+            "PLACEHOLDER_synonym_121_2"
+          ],
+          "orderedWords": [
+            "PLACEHOLDER_base_121_2",
+            "PLACEHOLDER_synonym_121_2",
+            "PLACEHOLDER_high_121_2"
+          ],
+          "explanation": "PLACEHOLDER_ladderExp_121_2",
+          "hint": "PLACEHOLDER_ladderHint_121_2",
+          "spokenExample": "PLACEHOLDER_ladderEx_121_2"
+        }
+      ]
+    },
+    {
+      "id": "PLACEHOLDER_PRAC_L121_Q3",
+      "level": 121,
+      "cefr": "C1",
+      "difficulty": 4,
+      "word": "PLACEHOLDER_base_121_3",
+      "targetSynonym": "PLACEHOLDER_synonym_121_3",
+      "exercises": [
+        {
+          "exerciseType": "contrastSwap",
+          "prompt": "PLACEHOLDER_swapPrompt_121_3",
+          "pairWords": [
+            "PLACEHOLDER_base_121_3",
+            "PLACEHOLDER_synonym_121_3"
+          ],
+          "slots": [
+            {
+              "contextTag": "PLACEHOLDER_ctx_121_3_1",
+              "sentenceWithBlank": "PLACEHOLDER_blank_121_3_1 ___.",
+              "correctWord": "PLACEHOLDER_base_121_3",
+              "feedback": "PLACEHOLDER_fb_121_3_1"
+            },
+            {
+              "contextTag": "PLACEHOLDER_ctx_121_3_2",
+              "sentenceWithBlank": "PLACEHOLDER_blank_121_3_2 ___.",
+              "correctWord": "PLACEHOLDER_synonym_121_3",
+              "feedback": "PLACEHOLDER_fb_121_3_2"
+            }
+          ],
+          "hint": "PLACEHOLDER_swapHint_121_3"
+        },
+        {
+          "exerciseType": "synonymLadder",
+          "prompt": "PLACEHOLDER_ladderPrompt_121_3",
+          "scaleAxis": "PLACEHOLDER_axis_121_3",
+          "lowLabel": "Everyday",
+          "highLabel": "Formal",
+          "shuffledWords": [
+            "PLACEHOLDER_high_121_3",
+            "PLACEHOLDER_base_121_3",
+            "PLACEHOLDER_synonym_121_3"
+          ],
+          "orderedWords": [
+            "PLACEHOLDER_base_121_3",
+            "PLACEHOLDER_synonym_121_3",
+            "PLACEHOLDER_high_121_3"
+          ],
+          "explanation": "PLACEHOLDER_ladderExp_121_3",
+          "hint": "PLACEHOLDER_ladderHint_121_3",
+          "spokenExample": "PLACEHOLDER_ladderEx_121_3"
+        }
+      ]
+    },
+    {
+      "id": "PLACEHOLDER_PRAC_L122_Q1",
+      "level": 122,
+      "cefr": "C1",
+      "difficulty": 4,
+      "word": "PLACEHOLDER_base_122_1",
+      "targetSynonym": "PLACEHOLDER_synonym_122_1",
+      "exercises": [
+        {
+          "exerciseType": "contrastSwap",
+          "prompt": "PLACEHOLDER_swapPrompt_122_1",
+          "pairWords": [
+            "PLACEHOLDER_base_122_1",
+            "PLACEHOLDER_synonym_122_1"
+          ],
+          "slots": [
+            {
+              "contextTag": "PLACEHOLDER_ctx_122_1_1",
+              "sentenceWithBlank": "PLACEHOLDER_blank_122_1_1 ___.",
+              "correctWord": "PLACEHOLDER_base_122_1",
+              "feedback": "PLACEHOLDER_fb_122_1_1"
+            },
+            {
+              "contextTag": "PLACEHOLDER_ctx_122_1_2",
+              "sentenceWithBlank": "PLACEHOLDER_blank_122_1_2 ___.",
+              "correctWord": "PLACEHOLDER_synonym_122_1",
+              "feedback": "PLACEHOLDER_fb_122_1_2"
+            }
+          ],
+          "hint": "PLACEHOLDER_swapHint_122_1"
+        },
+        {
+          "exerciseType": "synonymLadder",
+          "prompt": "PLACEHOLDER_ladderPrompt_122_1",
+          "scaleAxis": "PLACEHOLDER_axis_122_1",
+          "lowLabel": "Everyday",
+          "highLabel": "Formal",
+          "shuffledWords": [
+            "PLACEHOLDER_high_122_1",
+            "PLACEHOLDER_base_122_1",
+            "PLACEHOLDER_synonym_122_1"
+          ],
+          "orderedWords": [
+            "PLACEHOLDER_base_122_1",
+            "PLACEHOLDER_synonym_122_1",
+            "PLACEHOLDER_high_122_1"
+          ],
+          "explanation": "PLACEHOLDER_ladderExp_122_1",
+          "hint": "PLACEHOLDER_ladderHint_122_1",
+          "spokenExample": "PLACEHOLDER_ladderEx_122_1"
+        }
+      ]
+    },
+    {
+      "id": "PLACEHOLDER_PRAC_L122_Q2",
+      "level": 122,
+      "cefr": "C1",
+      "difficulty": 4,
+      "word": "PLACEHOLDER_base_122_2",
+      "targetSynonym": "PLACEHOLDER_synonym_122_2",
+      "exercises": [
+        {
+          "exerciseType": "contrastSwap",
+          "prompt": "PLACEHOLDER_swapPrompt_122_2",
+          "pairWords": [
+            "PLACEHOLDER_base_122_2",
+            "PLACEHOLDER_synonym_122_2"
+          ],
+          "slots": [
+            {
+              "contextTag": "PLACEHOLDER_ctx_122_2_1",
+              "sentenceWithBlank": "PLACEHOLDER_blank_122_2_1 ___.",
+              "correctWord": "PLACEHOLDER_base_122_2",
+              "feedback": "PLACEHOLDER_fb_122_2_1"
+            },
+            {
+              "contextTag": "PLACEHOLDER_ctx_122_2_2",
+              "sentenceWithBlank": "PLACEHOLDER_blank_122_2_2 ___.",
+              "correctWord": "PLACEHOLDER_synonym_122_2",
+              "feedback": "PLACEHOLDER_fb_122_2_2"
+            }
+          ],
+          "hint": "PLACEHOLDER_swapHint_122_2"
+        },
+        {
+          "exerciseType": "synonymLadder",
+          "prompt": "PLACEHOLDER_ladderPrompt_122_2",
+          "scaleAxis": "PLACEHOLDER_axis_122_2",
+          "lowLabel": "Everyday",
+          "highLabel": "Formal",
+          "shuffledWords": [
+            "PLACEHOLDER_high_122_2",
+            "PLACEHOLDER_base_122_2",
+            "PLACEHOLDER_synonym_122_2"
+          ],
+          "orderedWords": [
+            "PLACEHOLDER_base_122_2",
+            "PLACEHOLDER_synonym_122_2",
+            "PLACEHOLDER_high_122_2"
+          ],
+          "explanation": "PLACEHOLDER_ladderExp_122_2",
+          "hint": "PLACEHOLDER_ladderHint_122_2",
+          "spokenExample": "PLACEHOLDER_ladderEx_122_2"
+        }
+      ]
+    },
+    {
+      "id": "PLACEHOLDER_PRAC_L122_Q3",
+      "level": 122,
+      "cefr": "C1",
+      "difficulty": 4,
+      "word": "PLACEHOLDER_base_122_3",
+      "targetSynonym": "PLACEHOLDER_synonym_122_3",
+      "exercises": [
+        {
+          "exerciseType": "contrastSwap",
+          "prompt": "PLACEHOLDER_swapPrompt_122_3",
+          "pairWords": [
+            "PLACEHOLDER_base_122_3",
+            "PLACEHOLDER_synonym_122_3"
+          ],
+          "slots": [
+            {
+              "contextTag": "PLACEHOLDER_ctx_122_3_1",
+              "sentenceWithBlank": "PLACEHOLDER_blank_122_3_1 ___.",
+              "correctWord": "PLACEHOLDER_base_122_3",
+              "feedback": "PLACEHOLDER_fb_122_3_1"
+            },
+            {
+              "contextTag": "PLACEHOLDER_ctx_122_3_2",
+              "sentenceWithBlank": "PLACEHOLDER_blank_122_3_2 ___.",
+              "correctWord": "PLACEHOLDER_synonym_122_3",
+              "feedback": "PLACEHOLDER_fb_122_3_2"
+            }
+          ],
+          "hint": "PLACEHOLDER_swapHint_122_3"
+        },
+        {
+          "exerciseType": "synonymLadder",
+          "prompt": "PLACEHOLDER_ladderPrompt_122_3",
+          "scaleAxis": "PLACEHOLDER_axis_122_3",
+          "lowLabel": "Everyday",
+          "highLabel": "Formal",
+          "shuffledWords": [
+            "PLACEHOLDER_high_122_3",
+            "PLACEHOLDER_base_122_3",
+            "PLACEHOLDER_synonym_122_3"
+          ],
+          "orderedWords": [
+            "PLACEHOLDER_base_122_3",
+            "PLACEHOLDER_synonym_122_3",
+            "PLACEHOLDER_high_122_3"
+          ],
+          "explanation": "PLACEHOLDER_ladderExp_122_3",
+          "hint": "PLACEHOLDER_ladderHint_122_3",
+          "spokenExample": "PLACEHOLDER_ladderEx_122_3"
+        }
+      ]
+    },
+    {
+      "id": "PLACEHOLDER_PRAC_L123_Q1",
+      "level": 123,
+      "cefr": "C1",
+      "difficulty": 4,
+      "word": "PLACEHOLDER_base_123_1",
+      "targetSynonym": "PLACEHOLDER_synonym_123_1",
+      "exercises": [
+        {
+          "exerciseType": "contrastSwap",
+          "prompt": "PLACEHOLDER_swapPrompt_123_1",
+          "pairWords": [
+            "PLACEHOLDER_base_123_1",
+            "PLACEHOLDER_synonym_123_1"
+          ],
+          "slots": [
+            {
+              "contextTag": "PLACEHOLDER_ctx_123_1_1",
+              "sentenceWithBlank": "PLACEHOLDER_blank_123_1_1 ___.",
+              "correctWord": "PLACEHOLDER_base_123_1",
+              "feedback": "PLACEHOLDER_fb_123_1_1"
+            },
+            {
+              "contextTag": "PLACEHOLDER_ctx_123_1_2",
+              "sentenceWithBlank": "PLACEHOLDER_blank_123_1_2 ___.",
+              "correctWord": "PLACEHOLDER_synonym_123_1",
+              "feedback": "PLACEHOLDER_fb_123_1_2"
+            }
+          ],
+          "hint": "PLACEHOLDER_swapHint_123_1"
+        },
+        {
+          "exerciseType": "synonymLadder",
+          "prompt": "PLACEHOLDER_ladderPrompt_123_1",
+          "scaleAxis": "PLACEHOLDER_axis_123_1",
+          "lowLabel": "Everyday",
+          "highLabel": "Formal",
+          "shuffledWords": [
+            "PLACEHOLDER_high_123_1",
+            "PLACEHOLDER_base_123_1",
+            "PLACEHOLDER_synonym_123_1"
+          ],
+          "orderedWords": [
+            "PLACEHOLDER_base_123_1",
+            "PLACEHOLDER_synonym_123_1",
+            "PLACEHOLDER_high_123_1"
+          ],
+          "explanation": "PLACEHOLDER_ladderExp_123_1",
+          "hint": "PLACEHOLDER_ladderHint_123_1",
+          "spokenExample": "PLACEHOLDER_ladderEx_123_1"
+        }
+      ]
+    },
+    {
+      "id": "PLACEHOLDER_PRAC_L123_Q2",
+      "level": 123,
+      "cefr": "C1",
+      "difficulty": 4,
+      "word": "PLACEHOLDER_base_123_2",
+      "targetSynonym": "PLACEHOLDER_synonym_123_2",
+      "exercises": [
+        {
+          "exerciseType": "contrastSwap",
+          "prompt": "PLACEHOLDER_swapPrompt_123_2",
+          "pairWords": [
+            "PLACEHOLDER_base_123_2",
+            "PLACEHOLDER_synonym_123_2"
+          ],
+          "slots": [
+            {
+              "contextTag": "PLACEHOLDER_ctx_123_2_1",
+              "sentenceWithBlank": "PLACEHOLDER_blank_123_2_1 ___.",
+              "correctWord": "PLACEHOLDER_base_123_2",
+              "feedback": "PLACEHOLDER_fb_123_2_1"
+            },
+            {
+              "contextTag": "PLACEHOLDER_ctx_123_2_2",
+              "sentenceWithBlank": "PLACEHOLDER_blank_123_2_2 ___.",
+              "correctWord": "PLACEHOLDER_synonym_123_2",
+              "feedback": "PLACEHOLDER_fb_123_2_2"
+            }
+          ],
+          "hint": "PLACEHOLDER_swapHint_123_2"
+        },
+        {
+          "exerciseType": "synonymLadder",
+          "prompt": "PLACEHOLDER_ladderPrompt_123_2",
+          "scaleAxis": "PLACEHOLDER_axis_123_2",
+          "lowLabel": "Everyday",
+          "highLabel": "Formal",
+          "shuffledWords": [
+            "PLACEHOLDER_high_123_2",
+            "PLACEHOLDER_base_123_2",
+            "PLACEHOLDER_synonym_123_2"
+          ],
+          "orderedWords": [
+            "PLACEHOLDER_base_123_2",
+            "PLACEHOLDER_synonym_123_2",
+            "PLACEHOLDER_high_123_2"
+          ],
+          "explanation": "PLACEHOLDER_ladderExp_123_2",
+          "hint": "PLACEHOLDER_ladderHint_123_2",
+          "spokenExample": "PLACEHOLDER_ladderEx_123_2"
+        }
+      ]
+    },
+    {
+      "id": "PLACEHOLDER_PRAC_L123_Q3",
+      "level": 123,
+      "cefr": "C1",
+      "difficulty": 4,
+      "word": "PLACEHOLDER_base_123_3",
+      "targetSynonym": "PLACEHOLDER_synonym_123_3",
+      "exercises": [
+        {
+          "exerciseType": "contrastSwap",
+          "prompt": "PLACEHOLDER_swapPrompt_123_3",
+          "pairWords": [
+            "PLACEHOLDER_base_123_3",
+            "PLACEHOLDER_synonym_123_3"
+          ],
+          "slots": [
+            {
+              "contextTag": "PLACEHOLDER_ctx_123_3_1",
+              "sentenceWithBlank": "PLACEHOLDER_blank_123_3_1 ___.",
+              "correctWord": "PLACEHOLDER_base_123_3",
+              "feedback": "PLACEHOLDER_fb_123_3_1"
+            },
+            {
+              "contextTag": "PLACEHOLDER_ctx_123_3_2",
+              "sentenceWithBlank": "PLACEHOLDER_blank_123_3_2 ___.",
+              "correctWord": "PLACEHOLDER_synonym_123_3",
+              "feedback": "PLACEHOLDER_fb_123_3_2"
+            }
+          ],
+          "hint": "PLACEHOLDER_swapHint_123_3"
+        },
+        {
+          "exerciseType": "synonymLadder",
+          "prompt": "PLACEHOLDER_ladderPrompt_123_3",
+          "scaleAxis": "PLACEHOLDER_axis_123_3",
+          "lowLabel": "Everyday",
+          "highLabel": "Formal",
+          "shuffledWords": [
+            "PLACEHOLDER_high_123_3",
+            "PLACEHOLDER_base_123_3",
+            "PLACEHOLDER_synonym_123_3"
+          ],
+          "orderedWords": [
+            "PLACEHOLDER_base_123_3",
+            "PLACEHOLDER_synonym_123_3",
+            "PLACEHOLDER_high_123_3"
+          ],
+          "explanation": "PLACEHOLDER_ladderExp_123_3",
+          "hint": "PLACEHOLDER_ladderHint_123_3",
+          "spokenExample": "PLACEHOLDER_ladderEx_123_3"
+        }
+      ]
+    },
+    {
+      "id": "PLACEHOLDER_PRAC_L124_Q1",
+      "level": 124,
+      "cefr": "C1",
+      "difficulty": 4,
+      "word": "PLACEHOLDER_base_124_1",
+      "targetSynonym": "PLACEHOLDER_synonym_124_1",
+      "exercises": [
+        {
+          "exerciseType": "contrastSwap",
+          "prompt": "PLACEHOLDER_swapPrompt_124_1",
+          "pairWords": [
+            "PLACEHOLDER_base_124_1",
+            "PLACEHOLDER_synonym_124_1"
+          ],
+          "slots": [
+            {
+              "contextTag": "PLACEHOLDER_ctx_124_1_1",
+              "sentenceWithBlank": "PLACEHOLDER_blank_124_1_1 ___.",
+              "correctWord": "PLACEHOLDER_base_124_1",
+              "feedback": "PLACEHOLDER_fb_124_1_1"
+            },
+            {
+              "contextTag": "PLACEHOLDER_ctx_124_1_2",
+              "sentenceWithBlank": "PLACEHOLDER_blank_124_1_2 ___.",
+              "correctWord": "PLACEHOLDER_synonym_124_1",
+              "feedback": "PLACEHOLDER_fb_124_1_2"
+            }
+          ],
+          "hint": "PLACEHOLDER_swapHint_124_1"
+        },
+        {
+          "exerciseType": "synonymLadder",
+          "prompt": "PLACEHOLDER_ladderPrompt_124_1",
+          "scaleAxis": "PLACEHOLDER_axis_124_1",
+          "lowLabel": "Everyday",
+          "highLabel": "Formal",
+          "shuffledWords": [
+            "PLACEHOLDER_high_124_1",
+            "PLACEHOLDER_base_124_1",
+            "PLACEHOLDER_synonym_124_1"
+          ],
+          "orderedWords": [
+            "PLACEHOLDER_base_124_1",
+            "PLACEHOLDER_synonym_124_1",
+            "PLACEHOLDER_high_124_1"
+          ],
+          "explanation": "PLACEHOLDER_ladderExp_124_1",
+          "hint": "PLACEHOLDER_ladderHint_124_1",
+          "spokenExample": "PLACEHOLDER_ladderEx_124_1"
+        }
+      ]
+    },
+    {
+      "id": "PLACEHOLDER_PRAC_L124_Q2",
+      "level": 124,
+      "cefr": "C1",
+      "difficulty": 4,
+      "word": "PLACEHOLDER_base_124_2",
+      "targetSynonym": "PLACEHOLDER_synonym_124_2",
+      "exercises": [
+        {
+          "exerciseType": "contrastSwap",
+          "prompt": "PLACEHOLDER_swapPrompt_124_2",
+          "pairWords": [
+            "PLACEHOLDER_base_124_2",
+            "PLACEHOLDER_synonym_124_2"
+          ],
+          "slots": [
+            {
+              "contextTag": "PLACEHOLDER_ctx_124_2_1",
+              "sentenceWithBlank": "PLACEHOLDER_blank_124_2_1 ___.",
+              "correctWord": "PLACEHOLDER_base_124_2",
+              "feedback": "PLACEHOLDER_fb_124_2_1"
+            },
+            {
+              "contextTag": "PLACEHOLDER_ctx_124_2_2",
+              "sentenceWithBlank": "PLACEHOLDER_blank_124_2_2 ___.",
+              "correctWord": "PLACEHOLDER_synonym_124_2",
+              "feedback": "PLACEHOLDER_fb_124_2_2"
+            }
+          ],
+          "hint": "PLACEHOLDER_swapHint_124_2"
+        },
+        {
+          "exerciseType": "synonymLadder",
+          "prompt": "PLACEHOLDER_ladderPrompt_124_2",
+          "scaleAxis": "PLACEHOLDER_axis_124_2",
+          "lowLabel": "Everyday",
+          "highLabel": "Formal",
+          "shuffledWords": [
+            "PLACEHOLDER_high_124_2",
+            "PLACEHOLDER_base_124_2",
+            "PLACEHOLDER_synonym_124_2"
+          ],
+          "orderedWords": [
+            "PLACEHOLDER_base_124_2",
+            "PLACEHOLDER_synonym_124_2",
+            "PLACEHOLDER_high_124_2"
+          ],
+          "explanation": "PLACEHOLDER_ladderExp_124_2",
+          "hint": "PLACEHOLDER_ladderHint_124_2",
+          "spokenExample": "PLACEHOLDER_ladderEx_124_2"
+        }
+      ]
+    },
+    {
+      "id": "PLACEHOLDER_PRAC_L124_Q3",
+      "level": 124,
+      "cefr": "C1",
+      "difficulty": 4,
+      "word": "PLACEHOLDER_base_124_3",
+      "targetSynonym": "PLACEHOLDER_synonym_124_3",
+      "exercises": [
+        {
+          "exerciseType": "contrastSwap",
+          "prompt": "PLACEHOLDER_swapPrompt_124_3",
+          "pairWords": [
+            "PLACEHOLDER_base_124_3",
+            "PLACEHOLDER_synonym_124_3"
+          ],
+          "slots": [
+            {
+              "contextTag": "PLACEHOLDER_ctx_124_3_1",
+              "sentenceWithBlank": "PLACEHOLDER_blank_124_3_1 ___.",
+              "correctWord": "PLACEHOLDER_base_124_3",
+              "feedback": "PLACEHOLDER_fb_124_3_1"
+            },
+            {
+              "contextTag": "PLACEHOLDER_ctx_124_3_2",
+              "sentenceWithBlank": "PLACEHOLDER_blank_124_3_2 ___.",
+              "correctWord": "PLACEHOLDER_synonym_124_3",
+              "feedback": "PLACEHOLDER_fb_124_3_2"
+            }
+          ],
+          "hint": "PLACEHOLDER_swapHint_124_3"
+        },
+        {
+          "exerciseType": "synonymLadder",
+          "prompt": "PLACEHOLDER_ladderPrompt_124_3",
+          "scaleAxis": "PLACEHOLDER_axis_124_3",
+          "lowLabel": "Everyday",
+          "highLabel": "Formal",
+          "shuffledWords": [
+            "PLACEHOLDER_high_124_3",
+            "PLACEHOLDER_base_124_3",
+            "PLACEHOLDER_synonym_124_3"
+          ],
+          "orderedWords": [
+            "PLACEHOLDER_base_124_3",
+            "PLACEHOLDER_synonym_124_3",
+            "PLACEHOLDER_high_124_3"
+          ],
+          "explanation": "PLACEHOLDER_ladderExp_124_3",
+          "hint": "PLACEHOLDER_ladderHint_124_3",
+          "spokenExample": "PLACEHOLDER_ladderEx_124_3"
+        }
+      ]
+    },
+    {
+      "id": "PLACEHOLDER_PRAC_L125_Q1",
+      "level": 125,
+      "cefr": "C1",
+      "difficulty": 4,
+      "word": "PLACEHOLDER_base_125_1",
+      "targetSynonym": "PLACEHOLDER_synonym_125_1",
+      "exercises": [
+        {
+          "exerciseType": "contrastSwap",
+          "prompt": "PLACEHOLDER_swapPrompt_125_1",
+          "pairWords": [
+            "PLACEHOLDER_base_125_1",
+            "PLACEHOLDER_synonym_125_1"
+          ],
+          "slots": [
+            {
+              "contextTag": "PLACEHOLDER_ctx_125_1_1",
+              "sentenceWithBlank": "PLACEHOLDER_blank_125_1_1 ___.",
+              "correctWord": "PLACEHOLDER_base_125_1",
+              "feedback": "PLACEHOLDER_fb_125_1_1"
+            },
+            {
+              "contextTag": "PLACEHOLDER_ctx_125_1_2",
+              "sentenceWithBlank": "PLACEHOLDER_blank_125_1_2 ___.",
+              "correctWord": "PLACEHOLDER_synonym_125_1",
+              "feedback": "PLACEHOLDER_fb_125_1_2"
+            }
+          ],
+          "hint": "PLACEHOLDER_swapHint_125_1"
+        },
+        {
+          "exerciseType": "synonymLadder",
+          "prompt": "PLACEHOLDER_ladderPrompt_125_1",
+          "scaleAxis": "PLACEHOLDER_axis_125_1",
+          "lowLabel": "Everyday",
+          "highLabel": "Formal",
+          "shuffledWords": [
+            "PLACEHOLDER_high_125_1",
+            "PLACEHOLDER_base_125_1",
+            "PLACEHOLDER_synonym_125_1"
+          ],
+          "orderedWords": [
+            "PLACEHOLDER_base_125_1",
+            "PLACEHOLDER_synonym_125_1",
+            "PLACEHOLDER_high_125_1"
+          ],
+          "explanation": "PLACEHOLDER_ladderExp_125_1",
+          "hint": "PLACEHOLDER_ladderHint_125_1",
+          "spokenExample": "PLACEHOLDER_ladderEx_125_1"
+        }
+      ]
+    },
+    {
+      "id": "PLACEHOLDER_PRAC_L125_Q2",
+      "level": 125,
+      "cefr": "C1",
+      "difficulty": 4,
+      "word": "PLACEHOLDER_base_125_2",
+      "targetSynonym": "PLACEHOLDER_synonym_125_2",
+      "exercises": [
+        {
+          "exerciseType": "contrastSwap",
+          "prompt": "PLACEHOLDER_swapPrompt_125_2",
+          "pairWords": [
+            "PLACEHOLDER_base_125_2",
+            "PLACEHOLDER_synonym_125_2"
+          ],
+          "slots": [
+            {
+              "contextTag": "PLACEHOLDER_ctx_125_2_1",
+              "sentenceWithBlank": "PLACEHOLDER_blank_125_2_1 ___.",
+              "correctWord": "PLACEHOLDER_base_125_2",
+              "feedback": "PLACEHOLDER_fb_125_2_1"
+            },
+            {
+              "contextTag": "PLACEHOLDER_ctx_125_2_2",
+              "sentenceWithBlank": "PLACEHOLDER_blank_125_2_2 ___.",
+              "correctWord": "PLACEHOLDER_synonym_125_2",
+              "feedback": "PLACEHOLDER_fb_125_2_2"
+            }
+          ],
+          "hint": "PLACEHOLDER_swapHint_125_2"
+        },
+        {
+          "exerciseType": "synonymLadder",
+          "prompt": "PLACEHOLDER_ladderPrompt_125_2",
+          "scaleAxis": "PLACEHOLDER_axis_125_2",
+          "lowLabel": "Everyday",
+          "highLabel": "Formal",
+          "shuffledWords": [
+            "PLACEHOLDER_high_125_2",
+            "PLACEHOLDER_base_125_2",
+            "PLACEHOLDER_synonym_125_2"
+          ],
+          "orderedWords": [
+            "PLACEHOLDER_base_125_2",
+            "PLACEHOLDER_synonym_125_2",
+            "PLACEHOLDER_high_125_2"
+          ],
+          "explanation": "PLACEHOLDER_ladderExp_125_2",
+          "hint": "PLACEHOLDER_ladderHint_125_2",
+          "spokenExample": "PLACEHOLDER_ladderEx_125_2"
+        }
+      ]
+    },
+    {
+      "id": "PLACEHOLDER_PRAC_L125_Q3",
+      "level": 125,
+      "cefr": "C1",
+      "difficulty": 4,
+      "word": "PLACEHOLDER_base_125_3",
+      "targetSynonym": "PLACEHOLDER_synonym_125_3",
+      "exercises": [
+        {
+          "exerciseType": "contrastSwap",
+          "prompt": "PLACEHOLDER_swapPrompt_125_3",
+          "pairWords": [
+            "PLACEHOLDER_base_125_3",
+            "PLACEHOLDER_synonym_125_3"
+          ],
+          "slots": [
+            {
+              "contextTag": "PLACEHOLDER_ctx_125_3_1",
+              "sentenceWithBlank": "PLACEHOLDER_blank_125_3_1 ___.",
+              "correctWord": "PLACEHOLDER_base_125_3",
+              "feedback": "PLACEHOLDER_fb_125_3_1"
+            },
+            {
+              "contextTag": "PLACEHOLDER_ctx_125_3_2",
+              "sentenceWithBlank": "PLACEHOLDER_blank_125_3_2 ___.",
+              "correctWord": "PLACEHOLDER_synonym_125_3",
+              "feedback": "PLACEHOLDER_fb_125_3_2"
+            }
+          ],
+          "hint": "PLACEHOLDER_swapHint_125_3"
+        },
+        {
+          "exerciseType": "synonymLadder",
+          "prompt": "PLACEHOLDER_ladderPrompt_125_3",
+          "scaleAxis": "PLACEHOLDER_axis_125_3",
+          "lowLabel": "Everyday",
+          "highLabel": "Formal",
+          "shuffledWords": [
+            "PLACEHOLDER_high_125_3",
+            "PLACEHOLDER_base_125_3",
+            "PLACEHOLDER_synonym_125_3"
+          ],
+          "orderedWords": [
+            "PLACEHOLDER_base_125_3",
+            "PLACEHOLDER_synonym_125_3",
+            "PLACEHOLDER_high_125_3"
+          ],
+          "explanation": "PLACEHOLDER_ladderExp_125_3",
+          "hint": "PLACEHOLDER_ladderHint_125_3",
+          "spokenExample": "PLACEHOLDER_ladderEx_125_3"
+        }
+      ]
+    },
+    {
+      "id": "PLACEHOLDER_PRAC_L126_Q1",
+      "level": 126,
+      "cefr": "C1",
+      "difficulty": 4,
+      "word": "PLACEHOLDER_base_126_1",
+      "targetSynonym": "PLACEHOLDER_synonym_126_1",
+      "exercises": [
+        {
+          "exerciseType": "contrastSwap",
+          "prompt": "PLACEHOLDER_swapPrompt_126_1",
+          "pairWords": [
+            "PLACEHOLDER_base_126_1",
+            "PLACEHOLDER_synonym_126_1"
+          ],
+          "slots": [
+            {
+              "contextTag": "PLACEHOLDER_ctx_126_1_1",
+              "sentenceWithBlank": "PLACEHOLDER_blank_126_1_1 ___.",
+              "correctWord": "PLACEHOLDER_base_126_1",
+              "feedback": "PLACEHOLDER_fb_126_1_1"
+            },
+            {
+              "contextTag": "PLACEHOLDER_ctx_126_1_2",
+              "sentenceWithBlank": "PLACEHOLDER_blank_126_1_2 ___.",
+              "correctWord": "PLACEHOLDER_synonym_126_1",
+              "feedback": "PLACEHOLDER_fb_126_1_2"
+            }
+          ],
+          "hint": "PLACEHOLDER_swapHint_126_1"
+        },
+        {
+          "exerciseType": "synonymLadder",
+          "prompt": "PLACEHOLDER_ladderPrompt_126_1",
+          "scaleAxis": "PLACEHOLDER_axis_126_1",
+          "lowLabel": "Everyday",
+          "highLabel": "Formal",
+          "shuffledWords": [
+            "PLACEHOLDER_high_126_1",
+            "PLACEHOLDER_base_126_1",
+            "PLACEHOLDER_synonym_126_1"
+          ],
+          "orderedWords": [
+            "PLACEHOLDER_base_126_1",
+            "PLACEHOLDER_synonym_126_1",
+            "PLACEHOLDER_high_126_1"
+          ],
+          "explanation": "PLACEHOLDER_ladderExp_126_1",
+          "hint": "PLACEHOLDER_ladderHint_126_1",
+          "spokenExample": "PLACEHOLDER_ladderEx_126_1"
+        }
+      ]
+    },
+    {
+      "id": "PLACEHOLDER_PRAC_L126_Q2",
+      "level": 126,
+      "cefr": "C1",
+      "difficulty": 4,
+      "word": "PLACEHOLDER_base_126_2",
+      "targetSynonym": "PLACEHOLDER_synonym_126_2",
+      "exercises": [
+        {
+          "exerciseType": "contrastSwap",
+          "prompt": "PLACEHOLDER_swapPrompt_126_2",
+          "pairWords": [
+            "PLACEHOLDER_base_126_2",
+            "PLACEHOLDER_synonym_126_2"
+          ],
+          "slots": [
+            {
+              "contextTag": "PLACEHOLDER_ctx_126_2_1",
+              "sentenceWithBlank": "PLACEHOLDER_blank_126_2_1 ___.",
+              "correctWord": "PLACEHOLDER_base_126_2",
+              "feedback": "PLACEHOLDER_fb_126_2_1"
+            },
+            {
+              "contextTag": "PLACEHOLDER_ctx_126_2_2",
+              "sentenceWithBlank": "PLACEHOLDER_blank_126_2_2 ___.",
+              "correctWord": "PLACEHOLDER_synonym_126_2",
+              "feedback": "PLACEHOLDER_fb_126_2_2"
+            }
+          ],
+          "hint": "PLACEHOLDER_swapHint_126_2"
+        },
+        {
+          "exerciseType": "synonymLadder",
+          "prompt": "PLACEHOLDER_ladderPrompt_126_2",
+          "scaleAxis": "PLACEHOLDER_axis_126_2",
+          "lowLabel": "Everyday",
+          "highLabel": "Formal",
+          "shuffledWords": [
+            "PLACEHOLDER_high_126_2",
+            "PLACEHOLDER_base_126_2",
+            "PLACEHOLDER_synonym_126_2"
+          ],
+          "orderedWords": [
+            "PLACEHOLDER_base_126_2",
+            "PLACEHOLDER_synonym_126_2",
+            "PLACEHOLDER_high_126_2"
+          ],
+          "explanation": "PLACEHOLDER_ladderExp_126_2",
+          "hint": "PLACEHOLDER_ladderHint_126_2",
+          "spokenExample": "PLACEHOLDER_ladderEx_126_2"
+        }
+      ]
+    },
+    {
+      "id": "PLACEHOLDER_PRAC_L126_Q3",
+      "level": 126,
+      "cefr": "C1",
+      "difficulty": 4,
+      "word": "PLACEHOLDER_base_126_3",
+      "targetSynonym": "PLACEHOLDER_synonym_126_3",
+      "exercises": [
+        {
+          "exerciseType": "contrastSwap",
+          "prompt": "PLACEHOLDER_swapPrompt_126_3",
+          "pairWords": [
+            "PLACEHOLDER_base_126_3",
+            "PLACEHOLDER_synonym_126_3"
+          ],
+          "slots": [
+            {
+              "contextTag": "PLACEHOLDER_ctx_126_3_1",
+              "sentenceWithBlank": "PLACEHOLDER_blank_126_3_1 ___.",
+              "correctWord": "PLACEHOLDER_base_126_3",
+              "feedback": "PLACEHOLDER_fb_126_3_1"
+            },
+            {
+              "contextTag": "PLACEHOLDER_ctx_126_3_2",
+              "sentenceWithBlank": "PLACEHOLDER_blank_126_3_2 ___.",
+              "correctWord": "PLACEHOLDER_synonym_126_3",
+              "feedback": "PLACEHOLDER_fb_126_3_2"
+            }
+          ],
+          "hint": "PLACEHOLDER_swapHint_126_3"
+        },
+        {
+          "exerciseType": "synonymLadder",
+          "prompt": "PLACEHOLDER_ladderPrompt_126_3",
+          "scaleAxis": "PLACEHOLDER_axis_126_3",
+          "lowLabel": "Everyday",
+          "highLabel": "Formal",
+          "shuffledWords": [
+            "PLACEHOLDER_high_126_3",
+            "PLACEHOLDER_base_126_3",
+            "PLACEHOLDER_synonym_126_3"
+          ],
+          "orderedWords": [
+            "PLACEHOLDER_base_126_3",
+            "PLACEHOLDER_synonym_126_3",
+            "PLACEHOLDER_high_126_3"
+          ],
+          "explanation": "PLACEHOLDER_ladderExp_126_3",
+          "hint": "PLACEHOLDER_ladderHint_126_3",
+          "spokenExample": "PLACEHOLDER_ladderEx_126_3"
+        }
+      ]
+    },
+    {
+      "id": "PLACEHOLDER_PRAC_L127_Q1",
+      "level": 127,
+      "cefr": "C1",
+      "difficulty": 4,
+      "word": "PLACEHOLDER_base_127_1",
+      "targetSynonym": "PLACEHOLDER_synonym_127_1",
+      "exercises": [
+        {
+          "exerciseType": "contrastSwap",
+          "prompt": "PLACEHOLDER_swapPrompt_127_1",
+          "pairWords": [
+            "PLACEHOLDER_base_127_1",
+            "PLACEHOLDER_synonym_127_1"
+          ],
+          "slots": [
+            {
+              "contextTag": "PLACEHOLDER_ctx_127_1_1",
+              "sentenceWithBlank": "PLACEHOLDER_blank_127_1_1 ___.",
+              "correctWord": "PLACEHOLDER_base_127_1",
+              "feedback": "PLACEHOLDER_fb_127_1_1"
+            },
+            {
+              "contextTag": "PLACEHOLDER_ctx_127_1_2",
+              "sentenceWithBlank": "PLACEHOLDER_blank_127_1_2 ___.",
+              "correctWord": "PLACEHOLDER_synonym_127_1",
+              "feedback": "PLACEHOLDER_fb_127_1_2"
+            }
+          ],
+          "hint": "PLACEHOLDER_swapHint_127_1"
+        },
+        {
+          "exerciseType": "synonymLadder",
+          "prompt": "PLACEHOLDER_ladderPrompt_127_1",
+          "scaleAxis": "PLACEHOLDER_axis_127_1",
+          "lowLabel": "Everyday",
+          "highLabel": "Formal",
+          "shuffledWords": [
+            "PLACEHOLDER_high_127_1",
+            "PLACEHOLDER_base_127_1",
+            "PLACEHOLDER_synonym_127_1"
+          ],
+          "orderedWords": [
+            "PLACEHOLDER_base_127_1",
+            "PLACEHOLDER_synonym_127_1",
+            "PLACEHOLDER_high_127_1"
+          ],
+          "explanation": "PLACEHOLDER_ladderExp_127_1",
+          "hint": "PLACEHOLDER_ladderHint_127_1",
+          "spokenExample": "PLACEHOLDER_ladderEx_127_1"
+        }
+      ]
+    },
+    {
+      "id": "PLACEHOLDER_PRAC_L127_Q2",
+      "level": 127,
+      "cefr": "C1",
+      "difficulty": 4,
+      "word": "PLACEHOLDER_base_127_2",
+      "targetSynonym": "PLACEHOLDER_synonym_127_2",
+      "exercises": [
+        {
+          "exerciseType": "contrastSwap",
+          "prompt": "PLACEHOLDER_swapPrompt_127_2",
+          "pairWords": [
+            "PLACEHOLDER_base_127_2",
+            "PLACEHOLDER_synonym_127_2"
+          ],
+          "slots": [
+            {
+              "contextTag": "PLACEHOLDER_ctx_127_2_1",
+              "sentenceWithBlank": "PLACEHOLDER_blank_127_2_1 ___.",
+              "correctWord": "PLACEHOLDER_base_127_2",
+              "feedback": "PLACEHOLDER_fb_127_2_1"
+            },
+            {
+              "contextTag": "PLACEHOLDER_ctx_127_2_2",
+              "sentenceWithBlank": "PLACEHOLDER_blank_127_2_2 ___.",
+              "correctWord": "PLACEHOLDER_synonym_127_2",
+              "feedback": "PLACEHOLDER_fb_127_2_2"
+            }
+          ],
+          "hint": "PLACEHOLDER_swapHint_127_2"
+        },
+        {
+          "exerciseType": "synonymLadder",
+          "prompt": "PLACEHOLDER_ladderPrompt_127_2",
+          "scaleAxis": "PLACEHOLDER_axis_127_2",
+          "lowLabel": "Everyday",
+          "highLabel": "Formal",
+          "shuffledWords": [
+            "PLACEHOLDER_high_127_2",
+            "PLACEHOLDER_base_127_2",
+            "PLACEHOLDER_synonym_127_2"
+          ],
+          "orderedWords": [
+            "PLACEHOLDER_base_127_2",
+            "PLACEHOLDER_synonym_127_2",
+            "PLACEHOLDER_high_127_2"
+          ],
+          "explanation": "PLACEHOLDER_ladderExp_127_2",
+          "hint": "PLACEHOLDER_ladderHint_127_2",
+          "spokenExample": "PLACEHOLDER_ladderEx_127_2"
+        }
+      ]
+    },
+    {
+      "id": "PLACEHOLDER_PRAC_L127_Q3",
+      "level": 127,
+      "cefr": "C1",
+      "difficulty": 4,
+      "word": "PLACEHOLDER_base_127_3",
+      "targetSynonym": "PLACEHOLDER_synonym_127_3",
+      "exercises": [
+        {
+          "exerciseType": "contrastSwap",
+          "prompt": "PLACEHOLDER_swapPrompt_127_3",
+          "pairWords": [
+            "PLACEHOLDER_base_127_3",
+            "PLACEHOLDER_synonym_127_3"
+          ],
+          "slots": [
+            {
+              "contextTag": "PLACEHOLDER_ctx_127_3_1",
+              "sentenceWithBlank": "PLACEHOLDER_blank_127_3_1 ___.",
+              "correctWord": "PLACEHOLDER_base_127_3",
+              "feedback": "PLACEHOLDER_fb_127_3_1"
+            },
+            {
+              "contextTag": "PLACEHOLDER_ctx_127_3_2",
+              "sentenceWithBlank": "PLACEHOLDER_blank_127_3_2 ___.",
+              "correctWord": "PLACEHOLDER_synonym_127_3",
+              "feedback": "PLACEHOLDER_fb_127_3_2"
+            }
+          ],
+          "hint": "PLACEHOLDER_swapHint_127_3"
+        },
+        {
+          "exerciseType": "synonymLadder",
+          "prompt": "PLACEHOLDER_ladderPrompt_127_3",
+          "scaleAxis": "PLACEHOLDER_axis_127_3",
+          "lowLabel": "Everyday",
+          "highLabel": "Formal",
+          "shuffledWords": [
+            "PLACEHOLDER_high_127_3",
+            "PLACEHOLDER_base_127_3",
+            "PLACEHOLDER_synonym_127_3"
+          ],
+          "orderedWords": [
+            "PLACEHOLDER_base_127_3",
+            "PLACEHOLDER_synonym_127_3",
+            "PLACEHOLDER_high_127_3"
+          ],
+          "explanation": "PLACEHOLDER_ladderExp_127_3",
+          "hint": "PLACEHOLDER_ladderHint_127_3",
+          "spokenExample": "PLACEHOLDER_ladderEx_127_3"
+        }
+      ]
+    },
+    {
+      "id": "PLACEHOLDER_PRAC_L128_Q1",
+      "level": 128,
+      "cefr": "C1",
+      "difficulty": 4,
+      "word": "PLACEHOLDER_base_128_1",
+      "targetSynonym": "PLACEHOLDER_synonym_128_1",
+      "exercises": [
+        {
+          "exerciseType": "contrastSwap",
+          "prompt": "PLACEHOLDER_swapPrompt_128_1",
+          "pairWords": [
+            "PLACEHOLDER_base_128_1",
+            "PLACEHOLDER_synonym_128_1"
+          ],
+          "slots": [
+            {
+              "contextTag": "PLACEHOLDER_ctx_128_1_1",
+              "sentenceWithBlank": "PLACEHOLDER_blank_128_1_1 ___.",
+              "correctWord": "PLACEHOLDER_base_128_1",
+              "feedback": "PLACEHOLDER_fb_128_1_1"
+            },
+            {
+              "contextTag": "PLACEHOLDER_ctx_128_1_2",
+              "sentenceWithBlank": "PLACEHOLDER_blank_128_1_2 ___.",
+              "correctWord": "PLACEHOLDER_synonym_128_1",
+              "feedback": "PLACEHOLDER_fb_128_1_2"
+            }
+          ],
+          "hint": "PLACEHOLDER_swapHint_128_1"
+        },
+        {
+          "exerciseType": "synonymLadder",
+          "prompt": "PLACEHOLDER_ladderPrompt_128_1",
+          "scaleAxis": "PLACEHOLDER_axis_128_1",
+          "lowLabel": "Everyday",
+          "highLabel": "Formal",
+          "shuffledWords": [
+            "PLACEHOLDER_high_128_1",
+            "PLACEHOLDER_base_128_1",
+            "PLACEHOLDER_synonym_128_1"
+          ],
+          "orderedWords": [
+            "PLACEHOLDER_base_128_1",
+            "PLACEHOLDER_synonym_128_1",
+            "PLACEHOLDER_high_128_1"
+          ],
+          "explanation": "PLACEHOLDER_ladderExp_128_1",
+          "hint": "PLACEHOLDER_ladderHint_128_1",
+          "spokenExample": "PLACEHOLDER_ladderEx_128_1"
+        }
+      ]
+    },
+    {
+      "id": "PLACEHOLDER_PRAC_L128_Q2",
+      "level": 128,
+      "cefr": "C1",
+      "difficulty": 4,
+      "word": "PLACEHOLDER_base_128_2",
+      "targetSynonym": "PLACEHOLDER_synonym_128_2",
+      "exercises": [
+        {
+          "exerciseType": "contrastSwap",
+          "prompt": "PLACEHOLDER_swapPrompt_128_2",
+          "pairWords": [
+            "PLACEHOLDER_base_128_2",
+            "PLACEHOLDER_synonym_128_2"
+          ],
+          "slots": [
+            {
+              "contextTag": "PLACEHOLDER_ctx_128_2_1",
+              "sentenceWithBlank": "PLACEHOLDER_blank_128_2_1 ___.",
+              "correctWord": "PLACEHOLDER_base_128_2",
+              "feedback": "PLACEHOLDER_fb_128_2_1"
+            },
+            {
+              "contextTag": "PLACEHOLDER_ctx_128_2_2",
+              "sentenceWithBlank": "PLACEHOLDER_blank_128_2_2 ___.",
+              "correctWord": "PLACEHOLDER_synonym_128_2",
+              "feedback": "PLACEHOLDER_fb_128_2_2"
+            }
+          ],
+          "hint": "PLACEHOLDER_swapHint_128_2"
+        },
+        {
+          "exerciseType": "synonymLadder",
+          "prompt": "PLACEHOLDER_ladderPrompt_128_2",
+          "scaleAxis": "PLACEHOLDER_axis_128_2",
+          "lowLabel": "Everyday",
+          "highLabel": "Formal",
+          "shuffledWords": [
+            "PLACEHOLDER_high_128_2",
+            "PLACEHOLDER_base_128_2",
+            "PLACEHOLDER_synonym_128_2"
+          ],
+          "orderedWords": [
+            "PLACEHOLDER_base_128_2",
+            "PLACEHOLDER_synonym_128_2",
+            "PLACEHOLDER_high_128_2"
+          ],
+          "explanation": "PLACEHOLDER_ladderExp_128_2",
+          "hint": "PLACEHOLDER_ladderHint_128_2",
+          "spokenExample": "PLACEHOLDER_ladderEx_128_2"
+        }
+      ]
+    },
+    {
+      "id": "PLACEHOLDER_PRAC_L128_Q3",
+      "level": 128,
+      "cefr": "C1",
+      "difficulty": 4,
+      "word": "PLACEHOLDER_base_128_3",
+      "targetSynonym": "PLACEHOLDER_synonym_128_3",
+      "exercises": [
+        {
+          "exerciseType": "contrastSwap",
+          "prompt": "PLACEHOLDER_swapPrompt_128_3",
+          "pairWords": [
+            "PLACEHOLDER_base_128_3",
+            "PLACEHOLDER_synonym_128_3"
+          ],
+          "slots": [
+            {
+              "contextTag": "PLACEHOLDER_ctx_128_3_1",
+              "sentenceWithBlank": "PLACEHOLDER_blank_128_3_1 ___.",
+              "correctWord": "PLACEHOLDER_base_128_3",
+              "feedback": "PLACEHOLDER_fb_128_3_1"
+            },
+            {
+              "contextTag": "PLACEHOLDER_ctx_128_3_2",
+              "sentenceWithBlank": "PLACEHOLDER_blank_128_3_2 ___.",
+              "correctWord": "PLACEHOLDER_synonym_128_3",
+              "feedback": "PLACEHOLDER_fb_128_3_2"
+            }
+          ],
+          "hint": "PLACEHOLDER_swapHint_128_3"
+        },
+        {
+          "exerciseType": "synonymLadder",
+          "prompt": "PLACEHOLDER_ladderPrompt_128_3",
+          "scaleAxis": "PLACEHOLDER_axis_128_3",
+          "lowLabel": "Everyday",
+          "highLabel": "Formal",
+          "shuffledWords": [
+            "PLACEHOLDER_high_128_3",
+            "PLACEHOLDER_base_128_3",
+            "PLACEHOLDER_synonym_128_3"
+          ],
+          "orderedWords": [
+            "PLACEHOLDER_base_128_3",
+            "PLACEHOLDER_synonym_128_3",
+            "PLACEHOLDER_high_128_3"
+          ],
+          "explanation": "PLACEHOLDER_ladderExp_128_3",
+          "hint": "PLACEHOLDER_ladderHint_128_3",
+          "spokenExample": "PLACEHOLDER_ladderEx_128_3"
+        }
+      ]
+    },
+    {
+      "id": "PLACEHOLDER_PRAC_L129_Q1",
+      "level": 129,
+      "cefr": "C1",
+      "difficulty": 4,
+      "word": "PLACEHOLDER_base_129_1",
+      "targetSynonym": "PLACEHOLDER_synonym_129_1",
+      "exercises": [
+        {
+          "exerciseType": "contrastSwap",
+          "prompt": "PLACEHOLDER_swapPrompt_129_1",
+          "pairWords": [
+            "PLACEHOLDER_base_129_1",
+            "PLACEHOLDER_synonym_129_1"
+          ],
+          "slots": [
+            {
+              "contextTag": "PLACEHOLDER_ctx_129_1_1",
+              "sentenceWithBlank": "PLACEHOLDER_blank_129_1_1 ___.",
+              "correctWord": "PLACEHOLDER_base_129_1",
+              "feedback": "PLACEHOLDER_fb_129_1_1"
+            },
+            {
+              "contextTag": "PLACEHOLDER_ctx_129_1_2",
+              "sentenceWithBlank": "PLACEHOLDER_blank_129_1_2 ___.",
+              "correctWord": "PLACEHOLDER_synonym_129_1",
+              "feedback": "PLACEHOLDER_fb_129_1_2"
+            }
+          ],
+          "hint": "PLACEHOLDER_swapHint_129_1"
+        },
+        {
+          "exerciseType": "synonymLadder",
+          "prompt": "PLACEHOLDER_ladderPrompt_129_1",
+          "scaleAxis": "PLACEHOLDER_axis_129_1",
+          "lowLabel": "Everyday",
+          "highLabel": "Formal",
+          "shuffledWords": [
+            "PLACEHOLDER_high_129_1",
+            "PLACEHOLDER_base_129_1",
+            "PLACEHOLDER_synonym_129_1"
+          ],
+          "orderedWords": [
+            "PLACEHOLDER_base_129_1",
+            "PLACEHOLDER_synonym_129_1",
+            "PLACEHOLDER_high_129_1"
+          ],
+          "explanation": "PLACEHOLDER_ladderExp_129_1",
+          "hint": "PLACEHOLDER_ladderHint_129_1",
+          "spokenExample": "PLACEHOLDER_ladderEx_129_1"
+        }
+      ]
+    },
+    {
+      "id": "PLACEHOLDER_PRAC_L129_Q2",
+      "level": 129,
+      "cefr": "C1",
+      "difficulty": 4,
+      "word": "PLACEHOLDER_base_129_2",
+      "targetSynonym": "PLACEHOLDER_synonym_129_2",
+      "exercises": [
+        {
+          "exerciseType": "contrastSwap",
+          "prompt": "PLACEHOLDER_swapPrompt_129_2",
+          "pairWords": [
+            "PLACEHOLDER_base_129_2",
+            "PLACEHOLDER_synonym_129_2"
+          ],
+          "slots": [
+            {
+              "contextTag": "PLACEHOLDER_ctx_129_2_1",
+              "sentenceWithBlank": "PLACEHOLDER_blank_129_2_1 ___.",
+              "correctWord": "PLACEHOLDER_base_129_2",
+              "feedback": "PLACEHOLDER_fb_129_2_1"
+            },
+            {
+              "contextTag": "PLACEHOLDER_ctx_129_2_2",
+              "sentenceWithBlank": "PLACEHOLDER_blank_129_2_2 ___.",
+              "correctWord": "PLACEHOLDER_synonym_129_2",
+              "feedback": "PLACEHOLDER_fb_129_2_2"
+            }
+          ],
+          "hint": "PLACEHOLDER_swapHint_129_2"
+        },
+        {
+          "exerciseType": "synonymLadder",
+          "prompt": "PLACEHOLDER_ladderPrompt_129_2",
+          "scaleAxis": "PLACEHOLDER_axis_129_2",
+          "lowLabel": "Everyday",
+          "highLabel": "Formal",
+          "shuffledWords": [
+            "PLACEHOLDER_high_129_2",
+            "PLACEHOLDER_base_129_2",
+            "PLACEHOLDER_synonym_129_2"
+          ],
+          "orderedWords": [
+            "PLACEHOLDER_base_129_2",
+            "PLACEHOLDER_synonym_129_2",
+            "PLACEHOLDER_high_129_2"
+          ],
+          "explanation": "PLACEHOLDER_ladderExp_129_2",
+          "hint": "PLACEHOLDER_ladderHint_129_2",
+          "spokenExample": "PLACEHOLDER_ladderEx_129_2"
+        }
+      ]
+    },
+    {
+      "id": "PLACEHOLDER_PRAC_L129_Q3",
+      "level": 129,
+      "cefr": "C1",
+      "difficulty": 4,
+      "word": "PLACEHOLDER_base_129_3",
+      "targetSynonym": "PLACEHOLDER_synonym_129_3",
+      "exercises": [
+        {
+          "exerciseType": "contrastSwap",
+          "prompt": "PLACEHOLDER_swapPrompt_129_3",
+          "pairWords": [
+            "PLACEHOLDER_base_129_3",
+            "PLACEHOLDER_synonym_129_3"
+          ],
+          "slots": [
+            {
+              "contextTag": "PLACEHOLDER_ctx_129_3_1",
+              "sentenceWithBlank": "PLACEHOLDER_blank_129_3_1 ___.",
+              "correctWord": "PLACEHOLDER_base_129_3",
+              "feedback": "PLACEHOLDER_fb_129_3_1"
+            },
+            {
+              "contextTag": "PLACEHOLDER_ctx_129_3_2",
+              "sentenceWithBlank": "PLACEHOLDER_blank_129_3_2 ___.",
+              "correctWord": "PLACEHOLDER_synonym_129_3",
+              "feedback": "PLACEHOLDER_fb_129_3_2"
+            }
+          ],
+          "hint": "PLACEHOLDER_swapHint_129_3"
+        },
+        {
+          "exerciseType": "synonymLadder",
+          "prompt": "PLACEHOLDER_ladderPrompt_129_3",
+          "scaleAxis": "PLACEHOLDER_axis_129_3",
+          "lowLabel": "Everyday",
+          "highLabel": "Formal",
+          "shuffledWords": [
+            "PLACEHOLDER_high_129_3",
+            "PLACEHOLDER_base_129_3",
+            "PLACEHOLDER_synonym_129_3"
+          ],
+          "orderedWords": [
+            "PLACEHOLDER_base_129_3",
+            "PLACEHOLDER_synonym_129_3",
+            "PLACEHOLDER_high_129_3"
+          ],
+          "explanation": "PLACEHOLDER_ladderExp_129_3",
+          "hint": "PLACEHOLDER_ladderHint_129_3",
+          "spokenExample": "PLACEHOLDER_ladderEx_129_3"
+        }
+      ]
+    },
+    {
+      "id": "PLACEHOLDER_PRAC_L130_Q1",
+      "level": 130,
+      "cefr": "C1",
+      "difficulty": 4,
+      "word": "PLACEHOLDER_base_130_1",
+      "targetSynonym": "PLACEHOLDER_synonym_130_1",
+      "exercises": [
+        {
+          "exerciseType": "contrastSwap",
+          "prompt": "PLACEHOLDER_swapPrompt_130_1",
+          "pairWords": [
+            "PLACEHOLDER_base_130_1",
+            "PLACEHOLDER_synonym_130_1"
+          ],
+          "slots": [
+            {
+              "contextTag": "PLACEHOLDER_ctx_130_1_1",
+              "sentenceWithBlank": "PLACEHOLDER_blank_130_1_1 ___.",
+              "correctWord": "PLACEHOLDER_base_130_1",
+              "feedback": "PLACEHOLDER_fb_130_1_1"
+            },
+            {
+              "contextTag": "PLACEHOLDER_ctx_130_1_2",
+              "sentenceWithBlank": "PLACEHOLDER_blank_130_1_2 ___.",
+              "correctWord": "PLACEHOLDER_synonym_130_1",
+              "feedback": "PLACEHOLDER_fb_130_1_2"
+            }
+          ],
+          "hint": "PLACEHOLDER_swapHint_130_1"
+        },
+        {
+          "exerciseType": "synonymLadder",
+          "prompt": "PLACEHOLDER_ladderPrompt_130_1",
+          "scaleAxis": "PLACEHOLDER_axis_130_1",
+          "lowLabel": "Everyday",
+          "highLabel": "Formal",
+          "shuffledWords": [
+            "PLACEHOLDER_high_130_1",
+            "PLACEHOLDER_base_130_1",
+            "PLACEHOLDER_synonym_130_1"
+          ],
+          "orderedWords": [
+            "PLACEHOLDER_base_130_1",
+            "PLACEHOLDER_synonym_130_1",
+            "PLACEHOLDER_high_130_1"
+          ],
+          "explanation": "PLACEHOLDER_ladderExp_130_1",
+          "hint": "PLACEHOLDER_ladderHint_130_1",
+          "spokenExample": "PLACEHOLDER_ladderEx_130_1"
+        }
+      ]
+    },
+    {
+      "id": "PLACEHOLDER_PRAC_L130_Q2",
+      "level": 130,
+      "cefr": "C1",
+      "difficulty": 4,
+      "word": "PLACEHOLDER_base_130_2",
+      "targetSynonym": "PLACEHOLDER_synonym_130_2",
+      "exercises": [
+        {
+          "exerciseType": "contrastSwap",
+          "prompt": "PLACEHOLDER_swapPrompt_130_2",
+          "pairWords": [
+            "PLACEHOLDER_base_130_2",
+            "PLACEHOLDER_synonym_130_2"
+          ],
+          "slots": [
+            {
+              "contextTag": "PLACEHOLDER_ctx_130_2_1",
+              "sentenceWithBlank": "PLACEHOLDER_blank_130_2_1 ___.",
+              "correctWord": "PLACEHOLDER_base_130_2",
+              "feedback": "PLACEHOLDER_fb_130_2_1"
+            },
+            {
+              "contextTag": "PLACEHOLDER_ctx_130_2_2",
+              "sentenceWithBlank": "PLACEHOLDER_blank_130_2_2 ___.",
+              "correctWord": "PLACEHOLDER_synonym_130_2",
+              "feedback": "PLACEHOLDER_fb_130_2_2"
+            }
+          ],
+          "hint": "PLACEHOLDER_swapHint_130_2"
+        },
+        {
+          "exerciseType": "synonymLadder",
+          "prompt": "PLACEHOLDER_ladderPrompt_130_2",
+          "scaleAxis": "PLACEHOLDER_axis_130_2",
+          "lowLabel": "Everyday",
+          "highLabel": "Formal",
+          "shuffledWords": [
+            "PLACEHOLDER_high_130_2",
+            "PLACEHOLDER_base_130_2",
+            "PLACEHOLDER_synonym_130_2"
+          ],
+          "orderedWords": [
+            "PLACEHOLDER_base_130_2",
+            "PLACEHOLDER_synonym_130_2",
+            "PLACEHOLDER_high_130_2"
+          ],
+          "explanation": "PLACEHOLDER_ladderExp_130_2",
+          "hint": "PLACEHOLDER_ladderHint_130_2",
+          "spokenExample": "PLACEHOLDER_ladderEx_130_2"
+        }
+      ]
+    },
+    {
+      "id": "PLACEHOLDER_PRAC_L130_Q3",
+      "level": 130,
+      "cefr": "C1",
+      "difficulty": 4,
+      "word": "PLACEHOLDER_base_130_3",
+      "targetSynonym": "PLACEHOLDER_synonym_130_3",
+      "exercises": [
+        {
+          "exerciseType": "contrastSwap",
+          "prompt": "PLACEHOLDER_swapPrompt_130_3",
+          "pairWords": [
+            "PLACEHOLDER_base_130_3",
+            "PLACEHOLDER_synonym_130_3"
+          ],
+          "slots": [
+            {
+              "contextTag": "PLACEHOLDER_ctx_130_3_1",
+              "sentenceWithBlank": "PLACEHOLDER_blank_130_3_1 ___.",
+              "correctWord": "PLACEHOLDER_base_130_3",
+              "feedback": "PLACEHOLDER_fb_130_3_1"
+            },
+            {
+              "contextTag": "PLACEHOLDER_ctx_130_3_2",
+              "sentenceWithBlank": "PLACEHOLDER_blank_130_3_2 ___.",
+              "correctWord": "PLACEHOLDER_synonym_130_3",
+              "feedback": "PLACEHOLDER_fb_130_3_2"
+            }
+          ],
+          "hint": "PLACEHOLDER_swapHint_130_3"
+        },
+        {
+          "exerciseType": "synonymLadder",
+          "prompt": "PLACEHOLDER_ladderPrompt_130_3",
+          "scaleAxis": "PLACEHOLDER_axis_130_3",
+          "lowLabel": "Everyday",
+          "highLabel": "Formal",
+          "shuffledWords": [
+            "PLACEHOLDER_high_130_3",
+            "PLACEHOLDER_base_130_3",
+            "PLACEHOLDER_synonym_130_3"
+          ],
+          "orderedWords": [
+            "PLACEHOLDER_base_130_3",
+            "PLACEHOLDER_synonym_130_3",
+            "PLACEHOLDER_high_130_3"
+          ],
+          "explanation": "PLACEHOLDER_ladderExp_130_3",
+          "hint": "PLACEHOLDER_ladderHint_130_3",
+          "spokenExample": "PLACEHOLDER_ladderEx_130_3"
+        }
+      ]
+    }
+  ]
 }

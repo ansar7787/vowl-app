@@ -1,1058 +1,1570 @@
 {
-    "gameType": "synonymSearch",
-    "phase": "learn",
-    "batchIndex": 18,
-    "levels": "171-180",
-    "quests": [
+  "gameType": "synonymSearch",
+  "phase": "learn",
+  "cefr": "C2",
+  "difficulty": 5,
+  "batchIndex": 18,
+  "levels": "171-180",
+  "quests": [
+    {
+      "id": "PLACEHOLDER_LEARN_L171_Q1",
+      "level": 171,
+      "cefr": "C2",
+      "difficulty": 5,
+      "pairTitle": "PLACEHOLDER_base_171_1 ↔ PLACEHOLDER_synonym_171_1",
+      "baseWord": "PLACEHOLDER_base_171_1",
+      "synonym": "PLACEHOLDER_synonym_171_1",
+      "partOfSpeech": "Adjective",
+      "coreMeaning": "PLACEHOLDER_coreMeaning_171_1",
+      "whyDifferent": "PLACEHOLDER_whyDifferent_171_1",
+      "makeovers": [
         {
-            "id": "VOC_SYNONYMSEARCH_L171_LEARN_Q1",
-            "level": 171,
-            "conceptTitle": "Concept Exploration: CYNICAL",
-            "word": "CYNICAL",
-            "definition": "\"Jaded\" describes being tired of and distrustful toward something after too much negative experience, closely related to being cynical.",
-            "example": "Example sentence",
-            "nativeTip": "Believing that people are generally motivated by self-interest; distrustful of sincerity.",
-            "visualAnchor": "💡 CYNICAL = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "\"Jaded\" describes being tired of and distrustful toward something after too much negative experience, closely related to being cynical.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "Believing that people are generally motivated by self-interest; distrustful of sincerity."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L171_Q1",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Cynical",
-                "hint": "Believing that people are generally motivated by self-interest; distrustful of sincerity.",
-                "explanation": "\"Jaded\" describes being tired of and distrustful toward something after too much negative experience, closely related to being cynical.",
-                "interactionType": "search",
-                "correctAnswer": "Jaded",
-                "options": [
-                    "Idealistic",
-                    "Trusting",
-                    "Jaded",
-                    "Optimistic"
-                ],
-                "nuanceDifference": "\"Jaded\" specifically implies weariness from repeated disappointment, while \"cynical\" more broadly describes a general distrust of people's motives.",
-                "contextSentence": "Years of broken promises left him jaded about corporate leadership."
-            }
+          "situationTag": "PLACEHOLDER_tag_171_1_1",
+          "beforeSentence": "PLACEHOLDER_sentence_171_1_1 ___.",
+          "targetSlotWord": "PLACEHOLDER_base_171_1",
+          "swappedWord": "PLACEHOLDER_synonym_171_1",
+          "isNaturalSwap": true,
+          "earVerdict": "PLACEHOLDER_naturalVerdict_171_1",
+          "spokenSentence": "PLACEHOLDER_spokenSentence_171_1_1"
         },
         {
-            "id": "VOC_SYNONYMSEARCH_L171_LEARN_Q2",
-            "level": 171,
-            "conceptTitle": "Concept Exploration: CREDULOUS",
-            "word": "CREDULOUS",
-            "definition": "\"Gullible\" describes being easily deceived or tricked, closely related to being credulous.",
-            "example": "Example sentence",
-            "nativeTip": "Too ready to believe things; easily convinced.",
-            "visualAnchor": "💡 CREDULOUS = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "\"Gullible\" describes being easily deceived or tricked, closely related to being credulous.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "Too ready to believe things; easily convinced."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L171_Q2",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Credulous",
-                "hint": "Too ready to believe things; easily convinced.",
-                "explanation": "\"Gullible\" describes being easily deceived or tricked, closely related to being credulous.",
-                "interactionType": "search",
-                "correctAnswer": "Gullible",
-                "options": [
-                    "Skeptical",
-                    "Doubtful",
-                    "Suspicious",
-                    "Gullible"
-                ],
-                "nuanceDifference": "\"Gullible\" is the more common, everyday word, while \"credulous\" is more formal and often used in academic or literary writing.",
-                "contextSentence": "The gullible investor fell for the obvious scam."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L171_LEARN_Q3",
-            "level": 171,
-            "conceptTitle": "Concept Exploration: DISCERNING",
-            "word": "DISCERNING",
-            "definition": "\"Perceptive\" describes noticing and understanding things others might miss, closely related to being discerning.",
-            "example": "Example sentence",
-            "nativeTip": "Showing good judgment, especially in matters of taste or quality.",
-            "visualAnchor": "💡 DISCERNING = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "\"Perceptive\" describes noticing and understanding things others might miss, closely related to being discerning.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "Showing good judgment, especially in matters of taste or quality."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L171_Q3",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Discerning",
-                "hint": "Showing good judgment, especially in matters of taste or quality.",
-                "explanation": "\"Perceptive\" describes noticing and understanding things others might miss, closely related to being discerning.",
-                "interactionType": "search",
-                "correctAnswer": "Perceptive",
-                "options": [
-                    "Oblivious",
-                    "Perceptive",
-                    "Careless",
-                    "Unobservant"
-                ],
-                "nuanceDifference": "\"Perceptive\" often emphasizes noticing subtle details or feelings, while \"discerning\" more often emphasizes good judgment specifically about quality or value.",
-                "contextSentence": "Her perceptive comments revealed she understood the play's deeper themes."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L172_LEARN_Q1",
-            "level": 172,
-            "conceptTitle": "Concept Exploration: VERBOSE",
-            "word": "VERBOSE",
-            "definition": "\"Long-winded\" describes speech or writing that goes on far longer than needed, closely related to being verbose.",
-            "example": "Example sentence",
-            "nativeTip": "Using more words than necessary; wordy.",
-            "visualAnchor": "💡 VERBOSE = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "\"Long-winded\" describes speech or writing that goes on far longer than needed, closely related to being verbose.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "Using more words than necessary; wordy."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L172_Q1",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Verbose",
-                "hint": "Using more words than necessary; wordy.",
-                "explanation": "\"Long-winded\" describes speech or writing that goes on far longer than needed, closely related to being verbose.",
-                "interactionType": "search",
-                "correctAnswer": "Long-winded",
-                "options": [
-                    "Long-winded",
-                    "Concise",
-                    "Succinct",
-                    "Brief"
-                ],
-                "nuanceDifference": "\"Long-winded\" is more informal and often used to criticize a speaker, while \"verbose\" is more formal and can describe writing as well as speech.",
-                "contextSentence": "The long-winded introduction tested the audience's patience."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L172_LEARN_Q2",
-            "level": 172,
-            "conceptTitle": "Concept Exploration: TERSE",
-            "word": "TERSE",
-            "definition": "\"Curt\" describes speech that is short to the point of seeming rude, closely related to being terse.",
-            "example": "Example sentence",
-            "nativeTip": "Using very few words; abrupt.",
-            "visualAnchor": "💡 TERSE = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "\"Curt\" describes speech that is short to the point of seeming rude, closely related to being terse.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "Using very few words; abrupt."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L172_Q2",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Terse",
-                "hint": "Using very few words; abrupt.",
-                "explanation": "\"Curt\" describes speech that is short to the point of seeming rude, closely related to being terse.",
-                "interactionType": "search",
-                "correctAnswer": "Curt",
-                "options": [
-                    "Verbose",
-                    "Elaborate",
-                    "Curt",
-                    "Wordy"
-                ],
-                "nuanceDifference": "\"Curt\" often implies an unfriendly or rude tone, while \"terse\" can simply mean brief and to the point, without necessarily being impolite.",
-                "contextSentence": "His curt one-word reply made it clear the conversation was over."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L172_LEARN_Q3",
-            "level": 172,
-            "conceptTitle": "Concept Exploration: ELOQUENT",
-            "word": "ELOQUENT",
-            "definition": "\"Lucid\" describes writing or speech that is exceptionally clear, closely related to being eloquent, though focused more on clarity than persuasive style.",
-            "example": "Example sentence",
-            "nativeTip": "Fluent and persuasive in speech or writing.",
-            "visualAnchor": "💡 ELOQUENT = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "\"Lucid\" describes writing or speech that is exceptionally clear, closely related to being eloquent, though focused more on clarity than persuasive style.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "Fluent and persuasive in speech or writing."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L172_Q3",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Eloquent",
-                "hint": "Fluent and persuasive in speech or writing.",
-                "explanation": "\"Lucid\" describes writing or speech that is exceptionally clear, closely related to being eloquent, though focused more on clarity than persuasive style.",
-                "interactionType": "search",
-                "correctAnswer": "Lucid",
-                "options": [
-                    "Muddled",
-                    "Confusing",
-                    "Incoherent",
-                    "Lucid"
-                ],
-                "nuanceDifference": "\"Lucid\" specifically emphasizes clarity of thought and expression, while \"eloquent\" more broadly emphasizes graceful, persuasive style.",
-                "contextSentence": "Her lucid explanation made the complex policy easy to understand."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L173_LEARN_Q1",
-            "level": 173,
-            "conceptTitle": "Concept Exploration: PERSONAL",
-            "word": "PERSONAL",
-            "definition": "\"Subjective\" describes a judgment shaped by personal feeling or perspective, closely related to making a personal call on something.",
-            "example": "Example sentence",
-            "nativeTip": "Based on individual feelings or opinions rather than fixed facts.",
-            "visualAnchor": "💡 PERSONAL = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "\"Subjective\" describes a judgment shaped by personal feeling or perspective, closely related to making a personal call on something.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "Based on individual feelings or opinions rather than fixed facts."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L173_Q1",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Personal",
-                "hint": "Based on individual feelings or opinions rather than fixed facts.",
-                "explanation": "\"Subjective\" describes a judgment shaped by personal feeling or perspective, closely related to making a personal call on something.",
-                "interactionType": "search",
-                "correctAnswer": "Subjective",
-                "options": [
-                    "Objective",
-                    "Subjective",
-                    "Fixed",
-                    "Standardized"
-                ],
-                "nuanceDifference": "\"Subjective\" is the more precise, analytical term used in academic or evaluative contexts, while \"personal\" is the everyday word for the same individual, opinion-based judgment.",
-                "contextSentence": "Music criticism is inherently subjective, shaped by each listener's taste."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L173_LEARN_Q2",
-            "level": 173,
-            "conceptTitle": "Concept Exploration: IMPARTIAL",
-            "word": "IMPARTIAL",
-            "definition": "\"Objective\" describes a judgment based on facts rather than personal feelings, closely related to being impartial.",
-            "example": "Example sentence",
-            "nativeTip": "Not favoring one side; fair and unbiased.",
-            "visualAnchor": "💡 IMPARTIAL = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "\"Objective\" describes a judgment based on facts rather than personal feelings, closely related to being impartial.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "Not favoring one side; fair and unbiased."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L173_Q2",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Impartial",
-                "hint": "Not favoring one side; fair and unbiased.",
-                "explanation": "\"Objective\" describes a judgment based on facts rather than personal feelings, closely related to being impartial.",
-                "interactionType": "search",
-                "correctAnswer": "Objective",
-                "options": [
-                    "Objective",
-                    "Biased",
-                    "Subjective",
-                    "Partisan"
-                ],
-                "nuanceDifference": "\"Objective\" emphasizes basing judgment on facts rather than feelings, while \"impartial\" more specifically emphasizes not favoring one side over another.",
-                "contextSentence": "The referee's objective calls kept both teams satisfied."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L173_LEARN_Q3",
-            "level": 173,
-            "conceptTitle": "Concept Exploration: DISCRIMINATING",
-            "word": "DISCRIMINATING",
-            "definition": "\"Refined\" describes elegant, cultivated taste, closely related to being discriminating in matters of quality.",
-            "example": "Example sentence",
-            "nativeTip": "Having or showing good judgment, especially in matters of quality.",
-            "visualAnchor": "💡 DISCRIMINATING = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "\"Refined\" describes elegant, cultivated taste, closely related to being discriminating in matters of quality.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "Having or showing good judgment, especially in matters of quality."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L173_Q3",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Discriminating",
-                "hint": "Having or showing good judgment, especially in matters of quality.",
-                "explanation": "\"Refined\" describes elegant, cultivated taste, closely related to being discriminating in matters of quality.",
-                "interactionType": "search",
-                "correctAnswer": "Refined",
-                "options": [
-                    "Crude",
-                    "Unrefined",
-                    "Coarse",
-                    "Refined"
-                ],
-                "nuanceDifference": "\"Refined\" often emphasizes cultivated elegance developed over time, while \"discriminating\" more specifically emphasizes the ability to judge quality precisely.",
-                "contextSentence": "Her refined palate could identify the subtlest hint of saffron."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L174_LEARN_Q1",
-            "level": 174,
-            "conceptTitle": "Concept Exploration: CAPITULATE",
-            "word": "CAPITULATE",
-            "definition": "\"Relent\" describes giving up resistance, especially after pressure, closely related to capitulating.",
-            "example": "Example sentence",
-            "nativeTip": "To stop resisting and accept something, usually after a struggle.",
-            "visualAnchor": "💡 CAPITULATE = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "\"Relent\" describes giving up resistance, especially after pressure, closely related to capitulating.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "To stop resisting and accept something, usually after a struggle."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L174_Q1",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Capitulate",
-                "hint": "To stop resisting and accept something, usually after a struggle.",
-                "explanation": "\"Relent\" describes giving up resistance, especially after pressure, closely related to capitulating.",
-                "interactionType": "search",
-                "correctAnswer": "Relent",
-                "options": [
-                    "Persist",
-                    "Resist",
-                    "Relent",
-                    "Withstand"
-                ],
-                "nuanceDifference": "\"Relent\" often implies softening after emotional pressure or pleading, while \"capitulate\" more strongly implies surrender after a real struggle or conflict.",
-                "contextSentence": "After hours of pleading, her father finally relented and let her go."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L174_LEARN_Q2",
-            "level": 174,
-            "conceptTitle": "Concept Exploration: RENEGE",
-            "word": "RENEGE",
-            "definition": "\"Backtrack\" describes reversing a previous position or commitment, closely related to reneging on it.",
-            "example": "Example sentence",
-            "nativeTip": "To fail to keep a promise or agreement.",
-            "visualAnchor": "💡 RENEGE = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "\"Backtrack\" describes reversing a previous position or commitment, closely related to reneging on it.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "To fail to keep a promise or agreement."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L174_Q2",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Renege",
-                "hint": "To fail to keep a promise or agreement.",
-                "explanation": "\"Backtrack\" describes reversing a previous position or commitment, closely related to reneging on it.",
-                "interactionType": "search",
-                "correctAnswer": "Backtrack",
-                "options": [
-                    "Deliver",
-                    "Backtrack",
-                    "Honor",
-                    "Fulfill"
-                ],
-                "nuanceDifference": "\"Backtrack\" is more general and can apply to opinions as well as promises, while \"renege\" specifically implies breaking a promise or formal commitment.",
-                "contextSentence": "The supplier backtracked on the agreed delivery date at the last minute."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L174_LEARN_Q3",
-            "level": 174,
-            "conceptTitle": "Concept Exploration: RECANT",
-            "word": "RECANT",
-            "definition": "\"Disavow\" describes publicly denying or rejecting a previous connection to something, closely related to recanting.",
-            "example": "Example sentence",
-            "nativeTip": "To formally withdraw a previously held belief or statement, usually publicly.",
-            "visualAnchor": "💡 RECANT = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "\"Disavow\" describes publicly denying or rejecting a previous connection to something, closely related to recanting.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "To formally withdraw a previously held belief or statement, usually publicly."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L174_Q3",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Recant",
-                "hint": "To formally withdraw a previously held belief or statement, usually publicly.",
-                "explanation": "\"Disavow\" describes publicly denying or rejecting a previous connection to something, closely related to recanting.",
-                "interactionType": "search",
-                "correctAnswer": "Disavow",
-                "options": [
-                    "Affirm",
-                    "Reaffirm",
-                    "Disavow",
-                    "Endorse"
-                ],
-                "nuanceDifference": "\"Disavow\" often emphasizes rejecting association with something, like a group or action, while \"recant\" more specifically emphasizes withdrawing a former belief or confession.",
-                "contextSentence": "The former spokesperson publicly disavowed the organization's tactics."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L175_LEARN_Q1",
-            "level": 175,
-            "conceptTitle": "Concept Exploration: ABSTAIN",
-            "word": "ABSTAIN",
-            "definition": "\"Refrain\" describes stopping yourself from doing something, closely related to abstaining from it.",
-            "example": "Example sentence",
-            "nativeTip": "To deliberately not do or have something, especially something enjoyable.",
-            "visualAnchor": "💡 ABSTAIN = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "\"Refrain\" describes stopping yourself from doing something, closely related to abstaining from it.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "To deliberately not do or have something, especially something enjoyable."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L175_Q1",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Abstain",
-                "hint": "To deliberately not do or have something, especially something enjoyable.",
-                "explanation": "\"Refrain\" describes stopping yourself from doing something, closely related to abstaining from it.",
-                "interactionType": "search",
-                "correctAnswer": "Refrain",
-                "options": [
-                    "Refrain",
-                    "Indulge",
-                    "Partake",
-                    "Engage"
-                ],
-                "nuanceDifference": "\"Refrain\" often applies to a single, specific instance of self-restraint, while \"abstain\" more often applies to a sustained, ongoing choice, like abstaining from alcohol.",
-                "contextSentence": "Please refrain from using your phone during the performance."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L175_LEARN_Q2",
-            "level": 175,
-            "conceptTitle": "Concept Exploration: TEMPERATE",
-            "word": "TEMPERATE",
-            "definition": "\"Restrained\" describes controlled, moderate behavior, closely related to being temperate.",
-            "example": "Example sentence",
-            "nativeTip": "Moderate in behavior or expression; not extreme.",
-            "visualAnchor": "💡 TEMPERATE = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "\"Restrained\" describes controlled, moderate behavior, closely related to being temperate.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "Moderate in behavior or expression; not extreme."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L175_Q2",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Temperate",
-                "hint": "Moderate in behavior or expression; not extreme.",
-                "explanation": "\"Restrained\" describes controlled, moderate behavior, closely related to being temperate.",
-                "interactionType": "search",
-                "correctAnswer": "Restrained",
-                "options": [
-                    "Excessive",
-                    "Extreme",
-                    "Unrestrained",
-                    "Restrained"
-                ],
-                "nuanceDifference": "\"Restrained\" often emphasizes deliberate self-control in a specific moment, while \"temperate\" more broadly describes a general disposition toward moderation.",
-                "contextSentence": "Her restrained reaction surprised everyone who expected outrage."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L175_LEARN_Q3",
-            "level": 175,
-            "conceptTitle": "Concept Exploration: AUSTERE",
-            "word": "AUSTERE",
-            "definition": "\"Spartan\" describes a lifestyle or environment stripped of comfort and luxury, closely related to being austere.",
-            "example": "Example sentence",
-            "nativeTip": "Severe or strict in manner or appearance; without luxury or decoration.",
-            "visualAnchor": "💡 AUSTERE = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "\"Spartan\" describes a lifestyle or environment stripped of comfort and luxury, closely related to being austere.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "Severe or strict in manner or appearance; without luxury or decoration."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L175_Q3",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Austere",
-                "hint": "Severe or strict in manner or appearance; without luxury or decoration.",
-                "explanation": "\"Spartan\" describes a lifestyle or environment stripped of comfort and luxury, closely related to being austere.",
-                "interactionType": "search",
-                "correctAnswer": "Spartan",
-                "options": [
-                    "Luxurious",
-                    "Spartan",
-                    "Lavish",
-                    "Opulent"
-                ],
-                "nuanceDifference": "\"Spartan\" specifically evokes simplicity and discipline, often admiringly, while \"austere\" can describe simplicity in a harsher, less approving tone.",
-                "contextSentence": "The monk's spartan quarters contained only a bed and a small desk."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L176_LEARN_Q1",
-            "level": 176,
-            "conceptTitle": "Concept Exploration: INGRATIATE",
-            "word": "INGRATIATE",
-            "definition": "\"Fawn\" describes trying to gain someone's approval through excessive, often insincere effort, closely related to ingratiating yourself.",
-            "example": "Example sentence",
-            "nativeTip": "To bring oneself into someone's favor, often through deliberate effort.",
-            "visualAnchor": "💡 INGRATIATE = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "\"Fawn\" describes trying to gain someone's approval through excessive, often insincere effort, closely related to ingratiating yourself.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "To bring oneself into someone's favor, often through deliberate effort."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L176_Q1",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Ingratiate",
-                "hint": "To bring oneself into someone's favor, often through deliberate effort.",
-                "explanation": "\"Fawn\" describes trying to gain someone's approval through excessive, often insincere effort, closely related to ingratiating yourself.",
-                "interactionType": "search",
-                "correctAnswer": "Fawn",
-                "options": [
-                    "Fawn",
-                    "Offend",
-                    "Alienate",
-                    "Estrange"
-                ],
-                "nuanceDifference": "\"Fawn\" is vivid and slightly critical in tone, while \"ingratiate\" is the more formal verb describing the same calculated effort to win approval.",
-                "contextSentence": "He tried to fawn over the new boss by arriving early every day."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L176_LEARN_Q2",
-            "level": 176,
-            "conceptTitle": "Concept Exploration: MARGINALIZE",
-            "word": "MARGINALIZE",
-            "definition": "\"Sideline\" describes pushing someone out of an important role or position, closely related to marginalizing them.",
-            "example": "Example sentence",
-            "nativeTip": "To treat a person or group as insignificant or peripheral.",
-            "visualAnchor": "💡 MARGINALIZE = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "\"Sideline\" describes pushing someone out of an important role or position, closely related to marginalizing them.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "To treat a person or group as insignificant or peripheral."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L176_Q2",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Marginalize",
-                "hint": "To treat a person or group as insignificant or peripheral.",
-                "explanation": "\"Sideline\" describes pushing someone out of an important role or position, closely related to marginalizing them.",
-                "interactionType": "search",
-                "correctAnswer": "Sideline",
-                "options": [
-                    "Empower",
-                    "Include",
-                    "Sideline",
-                    "Center"
-                ],
-                "nuanceDifference": "\"Sideline\" often implies removing someone from active involvement, while \"marginalize\" more broadly implies treating a group as unimportant across a system or society.",
-                "contextSentence": "Critics say the reforms sidelined smaller community organizations."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L176_LEARN_Q3",
-            "level": 176,
-            "conceptTitle": "Concept Exploration: OSTRACIZE",
-            "word": "OSTRACIZE",
-            "definition": "\"Shun\" describes deliberately avoiding someone, closely related to ostracizing them.",
-            "example": "Example sentence",
-            "nativeTip": "To exclude someone from a group deliberately.",
-            "visualAnchor": "💡 OSTRACIZE = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "\"Shun\" describes deliberately avoiding someone, closely related to ostracizing them.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "To exclude someone from a group deliberately."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L176_Q3",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Ostracize",
-                "hint": "To exclude someone from a group deliberately.",
-                "explanation": "\"Shun\" describes deliberately avoiding someone, closely related to ostracizing them.",
-                "interactionType": "search",
-                "correctAnswer": "Shun",
-                "options": [
-                    "Welcome",
-                    "Embrace",
-                    "Include",
-                    "Shun"
-                ],
-                "nuanceDifference": "\"Shun\" often describes individual avoidance, while \"ostracize\" more strongly implies a coordinated, community-wide exclusion.",
-                "contextSentence": "The whistleblower was shunned by many former colleagues."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L177_LEARN_Q1",
-            "level": 177,
-            "conceptTitle": "Concept Exploration: SOMBER",
-            "word": "SOMBER",
-            "definition": "\"Solemn\" describes a serious, formal mood, often at an important occasion, closely related to being somber.",
-            "example": "Example sentence",
-            "nativeTip": "Having a dark, serious mood, often at an important or formal occasion.",
-            "visualAnchor": "💡 SOMBER = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "\"Solemn\" describes a serious, formal mood, often at an important occasion, closely related to being somber.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "Having a dark, serious mood, often at an important or formal occasion."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L177_Q1",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Somber",
-                "hint": "Having a dark, serious mood, often at an important or formal occasion.",
-                "explanation": "\"Solemn\" describes a serious, formal mood, often at an important occasion, closely related to being somber.",
-                "interactionType": "search",
-                "correctAnswer": "Solemn",
-                "options": [
-                    "Cheerful",
-                    "Lighthearted",
-                    "Festive",
-                    "Solemn"
-                ],
-                "nuanceDifference": "\"Solemn\" often applies to formal ceremonies and occasions, while \"somber\" more broadly describes a dark, serious mood in any setting.",
-                "contextSentence": "A solemn silence fell over the room during the memorial."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L177_LEARN_Q2",
-            "level": 177,
-            "conceptTitle": "Concept Exploration: WRY",
-            "word": "WRY",
-            "definition": "\"Sardonic\" describes humor that is mocking or bitterly ironic, closely related to being wry, though often with a sharper edge.",
-            "example": "Example sentence",
-            "nativeTip": "Showing dry, ironic humor.",
-            "visualAnchor": "💡 WRY = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "\"Sardonic\" describes humor that is mocking or bitterly ironic, closely related to being wry, though often with a sharper edge.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "Showing dry, ironic humor."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L177_Q2",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Wry",
-                "hint": "Showing dry, ironic humor.",
-                "explanation": "\"Sardonic\" describes humor that is mocking or bitterly ironic, closely related to being wry, though often with a sharper edge.",
-                "interactionType": "search",
-                "correctAnswer": "Sardonic",
-                "options": [
-                    "Sincere",
-                    "Sardonic",
-                    "Earnest",
-                    "Genuine"
-                ],
-                "nuanceDifference": "\"Sardonic\" often carries a sharper, more mocking edge, while \"wry\" implies a gentler, more understated form of ironic humor.",
-                "contextSentence": "He gave a sardonic smile before delivering the bad news."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L177_LEARN_Q3",
-            "level": 177,
-            "conceptTitle": "Concept Exploration: WHIMSICAL",
-            "word": "WHIMSICAL",
-            "definition": "\"Fanciful\" describes something imaginative and not grounded in reality, closely related to being whimsical.",
-            "example": "Example sentence",
-            "nativeTip": "Playful and charmingly imaginative, often in an unusual way.",
-            "visualAnchor": "💡 WHIMSICAL = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "\"Fanciful\" describes something imaginative and not grounded in reality, closely related to being whimsical.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "Playful and charmingly imaginative, often in an unusual way."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L177_Q3",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Whimsical",
-                "hint": "Playful and charmingly imaginative, often in an unusual way.",
-                "explanation": "\"Fanciful\" describes something imaginative and not grounded in reality, closely related to being whimsical.",
-                "interactionType": "search",
-                "correctAnswer": "Fanciful",
-                "options": [
-                    "Realistic",
-                    "Practical",
-                    "Fanciful",
-                    "Grounded"
-                ],
-                "nuanceDifference": "\"Fanciful\" often emphasizes imagination detached from reality, while \"whimsical\" more often carries a light, charming, playful quality.",
-                "contextSentence": "The children's book featured fanciful creatures living in teacups."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L178_LEARN_Q1",
-            "level": 178,
-            "conceptTitle": "Concept Exploration: COHESIVE",
-            "word": "COHESIVE",
-            "definition": "\"Unified\" describes a group acting together with shared purpose, closely related to being cohesive.",
-            "example": "Example sentence",
-            "nativeTip": "United and working well together as a whole.",
-            "visualAnchor": "💡 COHESIVE = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "\"Unified\" describes a group acting together with shared purpose, closely related to being cohesive.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "United and working well together as a whole."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L178_Q1",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Cohesive",
-                "hint": "United and working well together as a whole.",
-                "explanation": "\"Unified\" describes a group acting together with shared purpose, closely related to being cohesive.",
-                "interactionType": "search",
-                "correctAnswer": "Unified",
-                "options": [
-                    "Unified",
-                    "Fractured",
-                    "Divided",
-                    "Disjointed"
-                ],
-                "nuanceDifference": "\"Unified\" often emphasizes shared purpose or identity, while \"cohesive\" more specifically emphasizes how smoothly the different parts function together.",
-                "contextSentence": "The coach worked hard to build a unified locker room."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L178_LEARN_Q2",
-            "level": 178,
-            "conceptTitle": "Concept Exploration: SYSTEMATIC",
-            "word": "SYSTEMATIC",
-            "definition": "\"Methodical\" describes an orderly, step-by-step approach, closely related to being systematic.",
-            "example": "Example sentence",
-            "nativeTip": "Done in an orderly, step-by-step way according to a fixed plan.",
-            "visualAnchor": "💡 SYSTEMATIC = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "\"Methodical\" describes an orderly, step-by-step approach, closely related to being systematic.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "Done in an orderly, step-by-step way according to a fixed plan."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L178_Q2",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Systematic",
-                "hint": "Done in an orderly, step-by-step way according to a fixed plan.",
-                "explanation": "\"Methodical\" describes an orderly, step-by-step approach, closely related to being systematic.",
-                "interactionType": "search",
-                "correctAnswer": "Methodical",
-                "options": [
-                    "Haphazard",
-                    "Methodical",
-                    "Random",
-                    "Disorganized"
-                ],
-                "nuanceDifference": "\"Methodical\" often emphasizes the careful, deliberate pace of a process, while \"systematic\" more strongly emphasizes following a consistent, repeatable structure.",
-                "contextSentence": "Her methodical approach to research rarely missed important details."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L178_LEARN_Q3",
-            "level": 178,
-            "conceptTitle": "Concept Exploration: HIERARCHICAL",
-            "word": "HIERARCHICAL",
-            "definition": "\"Tiered\" describes something arranged in levels or layers, closely related to being hierarchical.",
-            "example": "Example sentence",
-            "nativeTip": "Organized according to rank or level of authority.",
-            "visualAnchor": "💡 HIERARCHICAL = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "\"Tiered\" describes something arranged in levels or layers, closely related to being hierarchical.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "Organized according to rank or level of authority."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L178_Q3",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Hierarchical",
-                "hint": "Organized according to rank or level of authority.",
-                "explanation": "\"Tiered\" describes something arranged in levels or layers, closely related to being hierarchical.",
-                "interactionType": "search",
-                "correctAnswer": "Tiered",
-                "options": [
-                    "Flat",
-                    "Equal",
-                    "Uniform",
-                    "Tiered"
-                ],
-                "nuanceDifference": "\"Tiered\" often describes pricing, membership, or reward systems specifically, while \"hierarchical\" more broadly describes organizational structures of authority.",
-                "contextSentence": "The membership program offers a tiered system of benefits."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L179_LEARN_Q1",
-            "level": 179,
-            "conceptTitle": "Concept Exploration: SCARCE",
-            "word": "SCARCE",
-            "definition": "\"Sparse\" describes something thinly distributed or present in small amounts, closely related to being scarce.",
-            "example": "Example sentence",
-            "nativeTip": "Insufficient for the demand; not easily found.",
-            "visualAnchor": "💡 SCARCE = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "\"Sparse\" describes something thinly distributed or present in small amounts, closely related to being scarce.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "Insufficient for the demand; not easily found."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L179_Q1",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Scarce",
-                "hint": "Insufficient for the demand; not easily found.",
-                "explanation": "\"Sparse\" describes something thinly distributed or present in small amounts, closely related to being scarce.",
-                "interactionType": "search",
-                "correctAnswer": "Sparse",
-                "options": [
-                    "Sparse",
-                    "Abundant",
-                    "Plentiful",
-                    "Ample"
-                ],
-                "nuanceDifference": "\"Sparse\" often describes something spread thin across an area, like sparse vegetation, while \"scarce\" more specifically emphasizes a shortage relative to demand.",
-                "contextSentence": "Water became sparse during the worst months of the drought."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L179_LEARN_Q2",
-            "level": 179,
-            "conceptTitle": "Concept Exploration: ABUNDANT",
-            "word": "ABUNDANT",
-            "definition": "\"Plentiful\" describes something available in large amounts, closely related to being abundant.",
-            "example": "Example sentence",
-            "nativeTip": "Existing in a very large amount or quantity.",
-            "visualAnchor": "💡 ABUNDANT = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "\"Plentiful\" describes something available in large amounts, closely related to being abundant.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "Existing in a very large amount or quantity."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L179_Q2",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Abundant",
-                "hint": "Existing in a very large amount or quantity.",
-                "explanation": "\"Plentiful\" describes something available in large amounts, closely related to being abundant.",
-                "interactionType": "search",
-                "correctAnswer": "Plentiful",
-                "options": [
-                    "Scarce",
-                    "Limited",
-                    "Plentiful",
-                    "Sparse"
-                ],
-                "nuanceDifference": "\"Plentiful\" and \"abundant\" are near-perfect synonyms; \"abundant\" is slightly more formal and common in written English.",
-                "contextSentence": "The region enjoys plentiful rainfall throughout the year."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L179_LEARN_Q3",
-            "level": 179,
-            "conceptTitle": "Concept Exploration: AMPLE",
-            "word": "AMPLE",
-            "definition": "\"Sufficient\" describes an amount that meets a need, closely related to being ample, though without the sense of extra room \"ample\" suggests.",
-            "example": "Example sentence",
-            "nativeTip": "More than enough for what's needed.",
-            "visualAnchor": "💡 AMPLE = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "\"Sufficient\" describes an amount that meets a need, closely related to being ample, though without the sense of extra room \"ample\" suggests.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "More than enough for what's needed."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L179_Q3",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Ample",
-                "hint": "More than enough for what's needed.",
-                "explanation": "\"Sufficient\" describes an amount that meets a need, closely related to being ample, though without the sense of extra room \"ample\" suggests.",
-                "interactionType": "search",
-                "correctAnswer": "Sufficient",
-                "options": [
-                    "Sufficient",
-                    "Inadequate",
-                    "Insufficient",
-                    "Lacking"
-                ],
-                "nuanceDifference": "\"Sufficient\" emphasizes meeting a requirement exactly, while \"ample\" more often implies a comfortable amount beyond the bare minimum needed.",
-                "contextSentence": "There was sufficient evidence to proceed with the case."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L180_LEARN_Q1",
-            "level": 180,
-            "conceptTitle": "Concept Exploration: CONSUMMATE",
-            "word": "CONSUMMATE",
-            "definition": "\"Masterful\" describes skill of the highest level, closely related to being consummate.",
-            "example": "Example sentence",
-            "nativeTip": "Showing a high degree of skill or accomplishment; complete and perfect.",
-            "visualAnchor": "💡 CONSUMMATE = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "\"Masterful\" describes skill of the highest level, closely related to being consummate.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "Showing a high degree of skill or accomplishment; complete and perfect."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L180_Q1",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Consummate",
-                "hint": "Showing a high degree of skill or accomplishment; complete and perfect.",
-                "explanation": "\"Masterful\" describes skill of the highest level, closely related to being consummate.",
-                "interactionType": "search",
-                "correctAnswer": "Masterful",
-                "options": [
-                    "Amateurish",
-                    "Incompetent",
-                    "Masterful",
-                    "Clumsy"
-                ],
-                "nuanceDifference": "\"Masterful\" often emphasizes visible command over a craft in the moment, while \"consummate\" more broadly emphasizes complete, well-rounded skill and refinement.",
-                "contextSentence": "The pianist gave a masterful performance of the difficult concerto."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L180_LEARN_Q2",
-            "level": 180,
-            "conceptTitle": "Concept Exploration: PREEMINENT",
-            "word": "PREEMINENT",
-            "definition": "\"Foremost\" describes being first in importance or rank, closely related to being preeminent.",
-            "example": "Example sentence",
-            "nativeTip": "Surpassing all others; distinguished above all others.",
-            "visualAnchor": "💡 PREEMINENT = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "\"Foremost\" describes being first in importance or rank, closely related to being preeminent.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "Surpassing all others; distinguished above all others."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L180_Q2",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Preeminent",
-                "hint": "Surpassing all others; distinguished above all others.",
-                "explanation": "\"Foremost\" describes being first in importance or rank, closely related to being preeminent.",
-                "interactionType": "search",
-                "correctAnswer": "Foremost",
-                "options": [
-                    "Marginal",
-                    "Foremost",
-                    "Minor",
-                    "Secondary"
-                ],
-                "nuanceDifference": "\"Foremost\" often describes rank within a specific list or category, while \"preeminent\" more strongly emphasizes standing clearly above all rivals or peers.",
-                "contextSentence": "She is regarded as the foremost expert in Renaissance art."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L180_LEARN_Q3",
-            "level": 180,
-            "conceptTitle": "Concept Exploration: UNRIVALED",
-            "word": "UNRIVALED",
-            "definition": "\"Peerless\" describes having no equal in quality or ability, closely related to being unrivaled.",
-            "example": "Example sentence",
-            "nativeTip": "Having no equal; better than all others of its kind.",
-            "visualAnchor": "💡 UNRIVALED = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "\"Peerless\" describes having no equal in quality or ability, closely related to being unrivaled.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "Having no equal; better than all others of its kind."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L180_Q3",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Unrivaled",
-                "hint": "Having no equal; better than all others of its kind.",
-                "explanation": "\"Peerless\" describes having no equal in quality or ability, closely related to being unrivaled.",
-                "interactionType": "search",
-                "correctAnswer": "Peerless",
-                "options": [
-                    "Ordinary",
-                    "Common",
-                    "Matched",
-                    "Peerless"
-                ],
-                "nuanceDifference": "\"Peerless\" is more literary and formal, while \"unrivaled\" is used more widely, including in everyday descriptions of quality or achievement.",
-                "contextSentence": "The chef's peerless attention to detail set the restaurant apart."
-            }
+          "situationTag": "PLACEHOLDER_tag_171_1_2",
+          "beforeSentence": "PLACEHOLDER_sentence_171_1_2 ___.",
+          "targetSlotWord": "PLACEHOLDER_base_171_1",
+          "swappedWord": "PLACEHOLDER_synonym_171_1",
+          "isNaturalSwap": false,
+          "earVerdict": "PLACEHOLDER_awkwardVerdict_171_1",
+          "spokenSentence": "PLACEHOLDER_spokenSentence_171_1_2"
         }
-    ]
+      ],
+      "cousinWords": [
+        {
+          "word": "PLACEHOLDER_cousin_171_1_1",
+          "ipa": "/placeholder/",
+          "toneTag": "Neutral",
+          "miniContext": "PLACEHOLDER_cousinCtx_171_1_1"
+        },
+        {
+          "word": "PLACEHOLDER_cousin_171_1_2",
+          "ipa": "/placeholder/",
+          "toneTag": "Strong",
+          "miniContext": "PLACEHOLDER_cousinCtx_171_1_2"
+        },
+        {
+          "word": "PLACEHOLDER_cousin_171_1_3",
+          "ipa": "/placeholder/",
+          "toneTag": "Formal",
+          "miniContext": "PLACEHOLDER_cousinCtx_171_1_3"
+        }
+      ]
+    },
+    {
+      "id": "PLACEHOLDER_LEARN_L171_Q2",
+      "level": 171,
+      "cefr": "C2",
+      "difficulty": 5,
+      "pairTitle": "PLACEHOLDER_base_171_2 ↔ PLACEHOLDER_synonym_171_2",
+      "baseWord": "PLACEHOLDER_base_171_2",
+      "synonym": "PLACEHOLDER_synonym_171_2",
+      "partOfSpeech": "Adjective",
+      "coreMeaning": "PLACEHOLDER_coreMeaning_171_2",
+      "whyDifferent": "PLACEHOLDER_whyDifferent_171_2",
+      "makeovers": [
+        {
+          "situationTag": "PLACEHOLDER_tag_171_2_1",
+          "beforeSentence": "PLACEHOLDER_sentence_171_2_1 ___.",
+          "targetSlotWord": "PLACEHOLDER_base_171_2",
+          "swappedWord": "PLACEHOLDER_synonym_171_2",
+          "isNaturalSwap": true,
+          "earVerdict": "PLACEHOLDER_naturalVerdict_171_2",
+          "spokenSentence": "PLACEHOLDER_spokenSentence_171_2_1"
+        },
+        {
+          "situationTag": "PLACEHOLDER_tag_171_2_2",
+          "beforeSentence": "PLACEHOLDER_sentence_171_2_2 ___.",
+          "targetSlotWord": "PLACEHOLDER_base_171_2",
+          "swappedWord": "PLACEHOLDER_synonym_171_2",
+          "isNaturalSwap": false,
+          "earVerdict": "PLACEHOLDER_awkwardVerdict_171_2",
+          "spokenSentence": "PLACEHOLDER_spokenSentence_171_2_2"
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "PLACEHOLDER_cousin_171_2_1",
+          "ipa": "/placeholder/",
+          "toneTag": "Neutral",
+          "miniContext": "PLACEHOLDER_cousinCtx_171_2_1"
+        },
+        {
+          "word": "PLACEHOLDER_cousin_171_2_2",
+          "ipa": "/placeholder/",
+          "toneTag": "Strong",
+          "miniContext": "PLACEHOLDER_cousinCtx_171_2_2"
+        },
+        {
+          "word": "PLACEHOLDER_cousin_171_2_3",
+          "ipa": "/placeholder/",
+          "toneTag": "Formal",
+          "miniContext": "PLACEHOLDER_cousinCtx_171_2_3"
+        }
+      ]
+    },
+    {
+      "id": "PLACEHOLDER_LEARN_L171_Q3",
+      "level": 171,
+      "cefr": "C2",
+      "difficulty": 5,
+      "pairTitle": "PLACEHOLDER_base_171_3 ↔ PLACEHOLDER_synonym_171_3",
+      "baseWord": "PLACEHOLDER_base_171_3",
+      "synonym": "PLACEHOLDER_synonym_171_3",
+      "partOfSpeech": "Adjective",
+      "coreMeaning": "PLACEHOLDER_coreMeaning_171_3",
+      "whyDifferent": "PLACEHOLDER_whyDifferent_171_3",
+      "makeovers": [
+        {
+          "situationTag": "PLACEHOLDER_tag_171_3_1",
+          "beforeSentence": "PLACEHOLDER_sentence_171_3_1 ___.",
+          "targetSlotWord": "PLACEHOLDER_base_171_3",
+          "swappedWord": "PLACEHOLDER_synonym_171_3",
+          "isNaturalSwap": true,
+          "earVerdict": "PLACEHOLDER_naturalVerdict_171_3",
+          "spokenSentence": "PLACEHOLDER_spokenSentence_171_3_1"
+        },
+        {
+          "situationTag": "PLACEHOLDER_tag_171_3_2",
+          "beforeSentence": "PLACEHOLDER_sentence_171_3_2 ___.",
+          "targetSlotWord": "PLACEHOLDER_base_171_3",
+          "swappedWord": "PLACEHOLDER_synonym_171_3",
+          "isNaturalSwap": false,
+          "earVerdict": "PLACEHOLDER_awkwardVerdict_171_3",
+          "spokenSentence": "PLACEHOLDER_spokenSentence_171_3_2"
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "PLACEHOLDER_cousin_171_3_1",
+          "ipa": "/placeholder/",
+          "toneTag": "Neutral",
+          "miniContext": "PLACEHOLDER_cousinCtx_171_3_1"
+        },
+        {
+          "word": "PLACEHOLDER_cousin_171_3_2",
+          "ipa": "/placeholder/",
+          "toneTag": "Strong",
+          "miniContext": "PLACEHOLDER_cousinCtx_171_3_2"
+        },
+        {
+          "word": "PLACEHOLDER_cousin_171_3_3",
+          "ipa": "/placeholder/",
+          "toneTag": "Formal",
+          "miniContext": "PLACEHOLDER_cousinCtx_171_3_3"
+        }
+      ]
+    },
+    {
+      "id": "PLACEHOLDER_LEARN_L172_Q1",
+      "level": 172,
+      "cefr": "C2",
+      "difficulty": 5,
+      "pairTitle": "PLACEHOLDER_base_172_1 ↔ PLACEHOLDER_synonym_172_1",
+      "baseWord": "PLACEHOLDER_base_172_1",
+      "synonym": "PLACEHOLDER_synonym_172_1",
+      "partOfSpeech": "Adjective",
+      "coreMeaning": "PLACEHOLDER_coreMeaning_172_1",
+      "whyDifferent": "PLACEHOLDER_whyDifferent_172_1",
+      "makeovers": [
+        {
+          "situationTag": "PLACEHOLDER_tag_172_1_1",
+          "beforeSentence": "PLACEHOLDER_sentence_172_1_1 ___.",
+          "targetSlotWord": "PLACEHOLDER_base_172_1",
+          "swappedWord": "PLACEHOLDER_synonym_172_1",
+          "isNaturalSwap": true,
+          "earVerdict": "PLACEHOLDER_naturalVerdict_172_1",
+          "spokenSentence": "PLACEHOLDER_spokenSentence_172_1_1"
+        },
+        {
+          "situationTag": "PLACEHOLDER_tag_172_1_2",
+          "beforeSentence": "PLACEHOLDER_sentence_172_1_2 ___.",
+          "targetSlotWord": "PLACEHOLDER_base_172_1",
+          "swappedWord": "PLACEHOLDER_synonym_172_1",
+          "isNaturalSwap": false,
+          "earVerdict": "PLACEHOLDER_awkwardVerdict_172_1",
+          "spokenSentence": "PLACEHOLDER_spokenSentence_172_1_2"
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "PLACEHOLDER_cousin_172_1_1",
+          "ipa": "/placeholder/",
+          "toneTag": "Neutral",
+          "miniContext": "PLACEHOLDER_cousinCtx_172_1_1"
+        },
+        {
+          "word": "PLACEHOLDER_cousin_172_1_2",
+          "ipa": "/placeholder/",
+          "toneTag": "Strong",
+          "miniContext": "PLACEHOLDER_cousinCtx_172_1_2"
+        },
+        {
+          "word": "PLACEHOLDER_cousin_172_1_3",
+          "ipa": "/placeholder/",
+          "toneTag": "Formal",
+          "miniContext": "PLACEHOLDER_cousinCtx_172_1_3"
+        }
+      ]
+    },
+    {
+      "id": "PLACEHOLDER_LEARN_L172_Q2",
+      "level": 172,
+      "cefr": "C2",
+      "difficulty": 5,
+      "pairTitle": "PLACEHOLDER_base_172_2 ↔ PLACEHOLDER_synonym_172_2",
+      "baseWord": "PLACEHOLDER_base_172_2",
+      "synonym": "PLACEHOLDER_synonym_172_2",
+      "partOfSpeech": "Adjective",
+      "coreMeaning": "PLACEHOLDER_coreMeaning_172_2",
+      "whyDifferent": "PLACEHOLDER_whyDifferent_172_2",
+      "makeovers": [
+        {
+          "situationTag": "PLACEHOLDER_tag_172_2_1",
+          "beforeSentence": "PLACEHOLDER_sentence_172_2_1 ___.",
+          "targetSlotWord": "PLACEHOLDER_base_172_2",
+          "swappedWord": "PLACEHOLDER_synonym_172_2",
+          "isNaturalSwap": true,
+          "earVerdict": "PLACEHOLDER_naturalVerdict_172_2",
+          "spokenSentence": "PLACEHOLDER_spokenSentence_172_2_1"
+        },
+        {
+          "situationTag": "PLACEHOLDER_tag_172_2_2",
+          "beforeSentence": "PLACEHOLDER_sentence_172_2_2 ___.",
+          "targetSlotWord": "PLACEHOLDER_base_172_2",
+          "swappedWord": "PLACEHOLDER_synonym_172_2",
+          "isNaturalSwap": false,
+          "earVerdict": "PLACEHOLDER_awkwardVerdict_172_2",
+          "spokenSentence": "PLACEHOLDER_spokenSentence_172_2_2"
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "PLACEHOLDER_cousin_172_2_1",
+          "ipa": "/placeholder/",
+          "toneTag": "Neutral",
+          "miniContext": "PLACEHOLDER_cousinCtx_172_2_1"
+        },
+        {
+          "word": "PLACEHOLDER_cousin_172_2_2",
+          "ipa": "/placeholder/",
+          "toneTag": "Strong",
+          "miniContext": "PLACEHOLDER_cousinCtx_172_2_2"
+        },
+        {
+          "word": "PLACEHOLDER_cousin_172_2_3",
+          "ipa": "/placeholder/",
+          "toneTag": "Formal",
+          "miniContext": "PLACEHOLDER_cousinCtx_172_2_3"
+        }
+      ]
+    },
+    {
+      "id": "PLACEHOLDER_LEARN_L172_Q3",
+      "level": 172,
+      "cefr": "C2",
+      "difficulty": 5,
+      "pairTitle": "PLACEHOLDER_base_172_3 ↔ PLACEHOLDER_synonym_172_3",
+      "baseWord": "PLACEHOLDER_base_172_3",
+      "synonym": "PLACEHOLDER_synonym_172_3",
+      "partOfSpeech": "Adjective",
+      "coreMeaning": "PLACEHOLDER_coreMeaning_172_3",
+      "whyDifferent": "PLACEHOLDER_whyDifferent_172_3",
+      "makeovers": [
+        {
+          "situationTag": "PLACEHOLDER_tag_172_3_1",
+          "beforeSentence": "PLACEHOLDER_sentence_172_3_1 ___.",
+          "targetSlotWord": "PLACEHOLDER_base_172_3",
+          "swappedWord": "PLACEHOLDER_synonym_172_3",
+          "isNaturalSwap": true,
+          "earVerdict": "PLACEHOLDER_naturalVerdict_172_3",
+          "spokenSentence": "PLACEHOLDER_spokenSentence_172_3_1"
+        },
+        {
+          "situationTag": "PLACEHOLDER_tag_172_3_2",
+          "beforeSentence": "PLACEHOLDER_sentence_172_3_2 ___.",
+          "targetSlotWord": "PLACEHOLDER_base_172_3",
+          "swappedWord": "PLACEHOLDER_synonym_172_3",
+          "isNaturalSwap": false,
+          "earVerdict": "PLACEHOLDER_awkwardVerdict_172_3",
+          "spokenSentence": "PLACEHOLDER_spokenSentence_172_3_2"
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "PLACEHOLDER_cousin_172_3_1",
+          "ipa": "/placeholder/",
+          "toneTag": "Neutral",
+          "miniContext": "PLACEHOLDER_cousinCtx_172_3_1"
+        },
+        {
+          "word": "PLACEHOLDER_cousin_172_3_2",
+          "ipa": "/placeholder/",
+          "toneTag": "Strong",
+          "miniContext": "PLACEHOLDER_cousinCtx_172_3_2"
+        },
+        {
+          "word": "PLACEHOLDER_cousin_172_3_3",
+          "ipa": "/placeholder/",
+          "toneTag": "Formal",
+          "miniContext": "PLACEHOLDER_cousinCtx_172_3_3"
+        }
+      ]
+    },
+    {
+      "id": "PLACEHOLDER_LEARN_L173_Q1",
+      "level": 173,
+      "cefr": "C2",
+      "difficulty": 5,
+      "pairTitle": "PLACEHOLDER_base_173_1 ↔ PLACEHOLDER_synonym_173_1",
+      "baseWord": "PLACEHOLDER_base_173_1",
+      "synonym": "PLACEHOLDER_synonym_173_1",
+      "partOfSpeech": "Adjective",
+      "coreMeaning": "PLACEHOLDER_coreMeaning_173_1",
+      "whyDifferent": "PLACEHOLDER_whyDifferent_173_1",
+      "makeovers": [
+        {
+          "situationTag": "PLACEHOLDER_tag_173_1_1",
+          "beforeSentence": "PLACEHOLDER_sentence_173_1_1 ___.",
+          "targetSlotWord": "PLACEHOLDER_base_173_1",
+          "swappedWord": "PLACEHOLDER_synonym_173_1",
+          "isNaturalSwap": true,
+          "earVerdict": "PLACEHOLDER_naturalVerdict_173_1",
+          "spokenSentence": "PLACEHOLDER_spokenSentence_173_1_1"
+        },
+        {
+          "situationTag": "PLACEHOLDER_tag_173_1_2",
+          "beforeSentence": "PLACEHOLDER_sentence_173_1_2 ___.",
+          "targetSlotWord": "PLACEHOLDER_base_173_1",
+          "swappedWord": "PLACEHOLDER_synonym_173_1",
+          "isNaturalSwap": false,
+          "earVerdict": "PLACEHOLDER_awkwardVerdict_173_1",
+          "spokenSentence": "PLACEHOLDER_spokenSentence_173_1_2"
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "PLACEHOLDER_cousin_173_1_1",
+          "ipa": "/placeholder/",
+          "toneTag": "Neutral",
+          "miniContext": "PLACEHOLDER_cousinCtx_173_1_1"
+        },
+        {
+          "word": "PLACEHOLDER_cousin_173_1_2",
+          "ipa": "/placeholder/",
+          "toneTag": "Strong",
+          "miniContext": "PLACEHOLDER_cousinCtx_173_1_2"
+        },
+        {
+          "word": "PLACEHOLDER_cousin_173_1_3",
+          "ipa": "/placeholder/",
+          "toneTag": "Formal",
+          "miniContext": "PLACEHOLDER_cousinCtx_173_1_3"
+        }
+      ]
+    },
+    {
+      "id": "PLACEHOLDER_LEARN_L173_Q2",
+      "level": 173,
+      "cefr": "C2",
+      "difficulty": 5,
+      "pairTitle": "PLACEHOLDER_base_173_2 ↔ PLACEHOLDER_synonym_173_2",
+      "baseWord": "PLACEHOLDER_base_173_2",
+      "synonym": "PLACEHOLDER_synonym_173_2",
+      "partOfSpeech": "Adjective",
+      "coreMeaning": "PLACEHOLDER_coreMeaning_173_2",
+      "whyDifferent": "PLACEHOLDER_whyDifferent_173_2",
+      "makeovers": [
+        {
+          "situationTag": "PLACEHOLDER_tag_173_2_1",
+          "beforeSentence": "PLACEHOLDER_sentence_173_2_1 ___.",
+          "targetSlotWord": "PLACEHOLDER_base_173_2",
+          "swappedWord": "PLACEHOLDER_synonym_173_2",
+          "isNaturalSwap": true,
+          "earVerdict": "PLACEHOLDER_naturalVerdict_173_2",
+          "spokenSentence": "PLACEHOLDER_spokenSentence_173_2_1"
+        },
+        {
+          "situationTag": "PLACEHOLDER_tag_173_2_2",
+          "beforeSentence": "PLACEHOLDER_sentence_173_2_2 ___.",
+          "targetSlotWord": "PLACEHOLDER_base_173_2",
+          "swappedWord": "PLACEHOLDER_synonym_173_2",
+          "isNaturalSwap": false,
+          "earVerdict": "PLACEHOLDER_awkwardVerdict_173_2",
+          "spokenSentence": "PLACEHOLDER_spokenSentence_173_2_2"
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "PLACEHOLDER_cousin_173_2_1",
+          "ipa": "/placeholder/",
+          "toneTag": "Neutral",
+          "miniContext": "PLACEHOLDER_cousinCtx_173_2_1"
+        },
+        {
+          "word": "PLACEHOLDER_cousin_173_2_2",
+          "ipa": "/placeholder/",
+          "toneTag": "Strong",
+          "miniContext": "PLACEHOLDER_cousinCtx_173_2_2"
+        },
+        {
+          "word": "PLACEHOLDER_cousin_173_2_3",
+          "ipa": "/placeholder/",
+          "toneTag": "Formal",
+          "miniContext": "PLACEHOLDER_cousinCtx_173_2_3"
+        }
+      ]
+    },
+    {
+      "id": "PLACEHOLDER_LEARN_L173_Q3",
+      "level": 173,
+      "cefr": "C2",
+      "difficulty": 5,
+      "pairTitle": "PLACEHOLDER_base_173_3 ↔ PLACEHOLDER_synonym_173_3",
+      "baseWord": "PLACEHOLDER_base_173_3",
+      "synonym": "PLACEHOLDER_synonym_173_3",
+      "partOfSpeech": "Adjective",
+      "coreMeaning": "PLACEHOLDER_coreMeaning_173_3",
+      "whyDifferent": "PLACEHOLDER_whyDifferent_173_3",
+      "makeovers": [
+        {
+          "situationTag": "PLACEHOLDER_tag_173_3_1",
+          "beforeSentence": "PLACEHOLDER_sentence_173_3_1 ___.",
+          "targetSlotWord": "PLACEHOLDER_base_173_3",
+          "swappedWord": "PLACEHOLDER_synonym_173_3",
+          "isNaturalSwap": true,
+          "earVerdict": "PLACEHOLDER_naturalVerdict_173_3",
+          "spokenSentence": "PLACEHOLDER_spokenSentence_173_3_1"
+        },
+        {
+          "situationTag": "PLACEHOLDER_tag_173_3_2",
+          "beforeSentence": "PLACEHOLDER_sentence_173_3_2 ___.",
+          "targetSlotWord": "PLACEHOLDER_base_173_3",
+          "swappedWord": "PLACEHOLDER_synonym_173_3",
+          "isNaturalSwap": false,
+          "earVerdict": "PLACEHOLDER_awkwardVerdict_173_3",
+          "spokenSentence": "PLACEHOLDER_spokenSentence_173_3_2"
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "PLACEHOLDER_cousin_173_3_1",
+          "ipa": "/placeholder/",
+          "toneTag": "Neutral",
+          "miniContext": "PLACEHOLDER_cousinCtx_173_3_1"
+        },
+        {
+          "word": "PLACEHOLDER_cousin_173_3_2",
+          "ipa": "/placeholder/",
+          "toneTag": "Strong",
+          "miniContext": "PLACEHOLDER_cousinCtx_173_3_2"
+        },
+        {
+          "word": "PLACEHOLDER_cousin_173_3_3",
+          "ipa": "/placeholder/",
+          "toneTag": "Formal",
+          "miniContext": "PLACEHOLDER_cousinCtx_173_3_3"
+        }
+      ]
+    },
+    {
+      "id": "PLACEHOLDER_LEARN_L174_Q1",
+      "level": 174,
+      "cefr": "C2",
+      "difficulty": 5,
+      "pairTitle": "PLACEHOLDER_base_174_1 ↔ PLACEHOLDER_synonym_174_1",
+      "baseWord": "PLACEHOLDER_base_174_1",
+      "synonym": "PLACEHOLDER_synonym_174_1",
+      "partOfSpeech": "Adjective",
+      "coreMeaning": "PLACEHOLDER_coreMeaning_174_1",
+      "whyDifferent": "PLACEHOLDER_whyDifferent_174_1",
+      "makeovers": [
+        {
+          "situationTag": "PLACEHOLDER_tag_174_1_1",
+          "beforeSentence": "PLACEHOLDER_sentence_174_1_1 ___.",
+          "targetSlotWord": "PLACEHOLDER_base_174_1",
+          "swappedWord": "PLACEHOLDER_synonym_174_1",
+          "isNaturalSwap": true,
+          "earVerdict": "PLACEHOLDER_naturalVerdict_174_1",
+          "spokenSentence": "PLACEHOLDER_spokenSentence_174_1_1"
+        },
+        {
+          "situationTag": "PLACEHOLDER_tag_174_1_2",
+          "beforeSentence": "PLACEHOLDER_sentence_174_1_2 ___.",
+          "targetSlotWord": "PLACEHOLDER_base_174_1",
+          "swappedWord": "PLACEHOLDER_synonym_174_1",
+          "isNaturalSwap": false,
+          "earVerdict": "PLACEHOLDER_awkwardVerdict_174_1",
+          "spokenSentence": "PLACEHOLDER_spokenSentence_174_1_2"
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "PLACEHOLDER_cousin_174_1_1",
+          "ipa": "/placeholder/",
+          "toneTag": "Neutral",
+          "miniContext": "PLACEHOLDER_cousinCtx_174_1_1"
+        },
+        {
+          "word": "PLACEHOLDER_cousin_174_1_2",
+          "ipa": "/placeholder/",
+          "toneTag": "Strong",
+          "miniContext": "PLACEHOLDER_cousinCtx_174_1_2"
+        },
+        {
+          "word": "PLACEHOLDER_cousin_174_1_3",
+          "ipa": "/placeholder/",
+          "toneTag": "Formal",
+          "miniContext": "PLACEHOLDER_cousinCtx_174_1_3"
+        }
+      ]
+    },
+    {
+      "id": "PLACEHOLDER_LEARN_L174_Q2",
+      "level": 174,
+      "cefr": "C2",
+      "difficulty": 5,
+      "pairTitle": "PLACEHOLDER_base_174_2 ↔ PLACEHOLDER_synonym_174_2",
+      "baseWord": "PLACEHOLDER_base_174_2",
+      "synonym": "PLACEHOLDER_synonym_174_2",
+      "partOfSpeech": "Adjective",
+      "coreMeaning": "PLACEHOLDER_coreMeaning_174_2",
+      "whyDifferent": "PLACEHOLDER_whyDifferent_174_2",
+      "makeovers": [
+        {
+          "situationTag": "PLACEHOLDER_tag_174_2_1",
+          "beforeSentence": "PLACEHOLDER_sentence_174_2_1 ___.",
+          "targetSlotWord": "PLACEHOLDER_base_174_2",
+          "swappedWord": "PLACEHOLDER_synonym_174_2",
+          "isNaturalSwap": true,
+          "earVerdict": "PLACEHOLDER_naturalVerdict_174_2",
+          "spokenSentence": "PLACEHOLDER_spokenSentence_174_2_1"
+        },
+        {
+          "situationTag": "PLACEHOLDER_tag_174_2_2",
+          "beforeSentence": "PLACEHOLDER_sentence_174_2_2 ___.",
+          "targetSlotWord": "PLACEHOLDER_base_174_2",
+          "swappedWord": "PLACEHOLDER_synonym_174_2",
+          "isNaturalSwap": false,
+          "earVerdict": "PLACEHOLDER_awkwardVerdict_174_2",
+          "spokenSentence": "PLACEHOLDER_spokenSentence_174_2_2"
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "PLACEHOLDER_cousin_174_2_1",
+          "ipa": "/placeholder/",
+          "toneTag": "Neutral",
+          "miniContext": "PLACEHOLDER_cousinCtx_174_2_1"
+        },
+        {
+          "word": "PLACEHOLDER_cousin_174_2_2",
+          "ipa": "/placeholder/",
+          "toneTag": "Strong",
+          "miniContext": "PLACEHOLDER_cousinCtx_174_2_2"
+        },
+        {
+          "word": "PLACEHOLDER_cousin_174_2_3",
+          "ipa": "/placeholder/",
+          "toneTag": "Formal",
+          "miniContext": "PLACEHOLDER_cousinCtx_174_2_3"
+        }
+      ]
+    },
+    {
+      "id": "PLACEHOLDER_LEARN_L174_Q3",
+      "level": 174,
+      "cefr": "C2",
+      "difficulty": 5,
+      "pairTitle": "PLACEHOLDER_base_174_3 ↔ PLACEHOLDER_synonym_174_3",
+      "baseWord": "PLACEHOLDER_base_174_3",
+      "synonym": "PLACEHOLDER_synonym_174_3",
+      "partOfSpeech": "Adjective",
+      "coreMeaning": "PLACEHOLDER_coreMeaning_174_3",
+      "whyDifferent": "PLACEHOLDER_whyDifferent_174_3",
+      "makeovers": [
+        {
+          "situationTag": "PLACEHOLDER_tag_174_3_1",
+          "beforeSentence": "PLACEHOLDER_sentence_174_3_1 ___.",
+          "targetSlotWord": "PLACEHOLDER_base_174_3",
+          "swappedWord": "PLACEHOLDER_synonym_174_3",
+          "isNaturalSwap": true,
+          "earVerdict": "PLACEHOLDER_naturalVerdict_174_3",
+          "spokenSentence": "PLACEHOLDER_spokenSentence_174_3_1"
+        },
+        {
+          "situationTag": "PLACEHOLDER_tag_174_3_2",
+          "beforeSentence": "PLACEHOLDER_sentence_174_3_2 ___.",
+          "targetSlotWord": "PLACEHOLDER_base_174_3",
+          "swappedWord": "PLACEHOLDER_synonym_174_3",
+          "isNaturalSwap": false,
+          "earVerdict": "PLACEHOLDER_awkwardVerdict_174_3",
+          "spokenSentence": "PLACEHOLDER_spokenSentence_174_3_2"
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "PLACEHOLDER_cousin_174_3_1",
+          "ipa": "/placeholder/",
+          "toneTag": "Neutral",
+          "miniContext": "PLACEHOLDER_cousinCtx_174_3_1"
+        },
+        {
+          "word": "PLACEHOLDER_cousin_174_3_2",
+          "ipa": "/placeholder/",
+          "toneTag": "Strong",
+          "miniContext": "PLACEHOLDER_cousinCtx_174_3_2"
+        },
+        {
+          "word": "PLACEHOLDER_cousin_174_3_3",
+          "ipa": "/placeholder/",
+          "toneTag": "Formal",
+          "miniContext": "PLACEHOLDER_cousinCtx_174_3_3"
+        }
+      ]
+    },
+    {
+      "id": "PLACEHOLDER_LEARN_L175_Q1",
+      "level": 175,
+      "cefr": "C2",
+      "difficulty": 5,
+      "pairTitle": "PLACEHOLDER_base_175_1 ↔ PLACEHOLDER_synonym_175_1",
+      "baseWord": "PLACEHOLDER_base_175_1",
+      "synonym": "PLACEHOLDER_synonym_175_1",
+      "partOfSpeech": "Adjective",
+      "coreMeaning": "PLACEHOLDER_coreMeaning_175_1",
+      "whyDifferent": "PLACEHOLDER_whyDifferent_175_1",
+      "makeovers": [
+        {
+          "situationTag": "PLACEHOLDER_tag_175_1_1",
+          "beforeSentence": "PLACEHOLDER_sentence_175_1_1 ___.",
+          "targetSlotWord": "PLACEHOLDER_base_175_1",
+          "swappedWord": "PLACEHOLDER_synonym_175_1",
+          "isNaturalSwap": true,
+          "earVerdict": "PLACEHOLDER_naturalVerdict_175_1",
+          "spokenSentence": "PLACEHOLDER_spokenSentence_175_1_1"
+        },
+        {
+          "situationTag": "PLACEHOLDER_tag_175_1_2",
+          "beforeSentence": "PLACEHOLDER_sentence_175_1_2 ___.",
+          "targetSlotWord": "PLACEHOLDER_base_175_1",
+          "swappedWord": "PLACEHOLDER_synonym_175_1",
+          "isNaturalSwap": false,
+          "earVerdict": "PLACEHOLDER_awkwardVerdict_175_1",
+          "spokenSentence": "PLACEHOLDER_spokenSentence_175_1_2"
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "PLACEHOLDER_cousin_175_1_1",
+          "ipa": "/placeholder/",
+          "toneTag": "Neutral",
+          "miniContext": "PLACEHOLDER_cousinCtx_175_1_1"
+        },
+        {
+          "word": "PLACEHOLDER_cousin_175_1_2",
+          "ipa": "/placeholder/",
+          "toneTag": "Strong",
+          "miniContext": "PLACEHOLDER_cousinCtx_175_1_2"
+        },
+        {
+          "word": "PLACEHOLDER_cousin_175_1_3",
+          "ipa": "/placeholder/",
+          "toneTag": "Formal",
+          "miniContext": "PLACEHOLDER_cousinCtx_175_1_3"
+        }
+      ]
+    },
+    {
+      "id": "PLACEHOLDER_LEARN_L175_Q2",
+      "level": 175,
+      "cefr": "C2",
+      "difficulty": 5,
+      "pairTitle": "PLACEHOLDER_base_175_2 ↔ PLACEHOLDER_synonym_175_2",
+      "baseWord": "PLACEHOLDER_base_175_2",
+      "synonym": "PLACEHOLDER_synonym_175_2",
+      "partOfSpeech": "Adjective",
+      "coreMeaning": "PLACEHOLDER_coreMeaning_175_2",
+      "whyDifferent": "PLACEHOLDER_whyDifferent_175_2",
+      "makeovers": [
+        {
+          "situationTag": "PLACEHOLDER_tag_175_2_1",
+          "beforeSentence": "PLACEHOLDER_sentence_175_2_1 ___.",
+          "targetSlotWord": "PLACEHOLDER_base_175_2",
+          "swappedWord": "PLACEHOLDER_synonym_175_2",
+          "isNaturalSwap": true,
+          "earVerdict": "PLACEHOLDER_naturalVerdict_175_2",
+          "spokenSentence": "PLACEHOLDER_spokenSentence_175_2_1"
+        },
+        {
+          "situationTag": "PLACEHOLDER_tag_175_2_2",
+          "beforeSentence": "PLACEHOLDER_sentence_175_2_2 ___.",
+          "targetSlotWord": "PLACEHOLDER_base_175_2",
+          "swappedWord": "PLACEHOLDER_synonym_175_2",
+          "isNaturalSwap": false,
+          "earVerdict": "PLACEHOLDER_awkwardVerdict_175_2",
+          "spokenSentence": "PLACEHOLDER_spokenSentence_175_2_2"
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "PLACEHOLDER_cousin_175_2_1",
+          "ipa": "/placeholder/",
+          "toneTag": "Neutral",
+          "miniContext": "PLACEHOLDER_cousinCtx_175_2_1"
+        },
+        {
+          "word": "PLACEHOLDER_cousin_175_2_2",
+          "ipa": "/placeholder/",
+          "toneTag": "Strong",
+          "miniContext": "PLACEHOLDER_cousinCtx_175_2_2"
+        },
+        {
+          "word": "PLACEHOLDER_cousin_175_2_3",
+          "ipa": "/placeholder/",
+          "toneTag": "Formal",
+          "miniContext": "PLACEHOLDER_cousinCtx_175_2_3"
+        }
+      ]
+    },
+    {
+      "id": "PLACEHOLDER_LEARN_L175_Q3",
+      "level": 175,
+      "cefr": "C2",
+      "difficulty": 5,
+      "pairTitle": "PLACEHOLDER_base_175_3 ↔ PLACEHOLDER_synonym_175_3",
+      "baseWord": "PLACEHOLDER_base_175_3",
+      "synonym": "PLACEHOLDER_synonym_175_3",
+      "partOfSpeech": "Adjective",
+      "coreMeaning": "PLACEHOLDER_coreMeaning_175_3",
+      "whyDifferent": "PLACEHOLDER_whyDifferent_175_3",
+      "makeovers": [
+        {
+          "situationTag": "PLACEHOLDER_tag_175_3_1",
+          "beforeSentence": "PLACEHOLDER_sentence_175_3_1 ___.",
+          "targetSlotWord": "PLACEHOLDER_base_175_3",
+          "swappedWord": "PLACEHOLDER_synonym_175_3",
+          "isNaturalSwap": true,
+          "earVerdict": "PLACEHOLDER_naturalVerdict_175_3",
+          "spokenSentence": "PLACEHOLDER_spokenSentence_175_3_1"
+        },
+        {
+          "situationTag": "PLACEHOLDER_tag_175_3_2",
+          "beforeSentence": "PLACEHOLDER_sentence_175_3_2 ___.",
+          "targetSlotWord": "PLACEHOLDER_base_175_3",
+          "swappedWord": "PLACEHOLDER_synonym_175_3",
+          "isNaturalSwap": false,
+          "earVerdict": "PLACEHOLDER_awkwardVerdict_175_3",
+          "spokenSentence": "PLACEHOLDER_spokenSentence_175_3_2"
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "PLACEHOLDER_cousin_175_3_1",
+          "ipa": "/placeholder/",
+          "toneTag": "Neutral",
+          "miniContext": "PLACEHOLDER_cousinCtx_175_3_1"
+        },
+        {
+          "word": "PLACEHOLDER_cousin_175_3_2",
+          "ipa": "/placeholder/",
+          "toneTag": "Strong",
+          "miniContext": "PLACEHOLDER_cousinCtx_175_3_2"
+        },
+        {
+          "word": "PLACEHOLDER_cousin_175_3_3",
+          "ipa": "/placeholder/",
+          "toneTag": "Formal",
+          "miniContext": "PLACEHOLDER_cousinCtx_175_3_3"
+        }
+      ]
+    },
+    {
+      "id": "PLACEHOLDER_LEARN_L176_Q1",
+      "level": 176,
+      "cefr": "C2",
+      "difficulty": 5,
+      "pairTitle": "PLACEHOLDER_base_176_1 ↔ PLACEHOLDER_synonym_176_1",
+      "baseWord": "PLACEHOLDER_base_176_1",
+      "synonym": "PLACEHOLDER_synonym_176_1",
+      "partOfSpeech": "Adjective",
+      "coreMeaning": "PLACEHOLDER_coreMeaning_176_1",
+      "whyDifferent": "PLACEHOLDER_whyDifferent_176_1",
+      "makeovers": [
+        {
+          "situationTag": "PLACEHOLDER_tag_176_1_1",
+          "beforeSentence": "PLACEHOLDER_sentence_176_1_1 ___.",
+          "targetSlotWord": "PLACEHOLDER_base_176_1",
+          "swappedWord": "PLACEHOLDER_synonym_176_1",
+          "isNaturalSwap": true,
+          "earVerdict": "PLACEHOLDER_naturalVerdict_176_1",
+          "spokenSentence": "PLACEHOLDER_spokenSentence_176_1_1"
+        },
+        {
+          "situationTag": "PLACEHOLDER_tag_176_1_2",
+          "beforeSentence": "PLACEHOLDER_sentence_176_1_2 ___.",
+          "targetSlotWord": "PLACEHOLDER_base_176_1",
+          "swappedWord": "PLACEHOLDER_synonym_176_1",
+          "isNaturalSwap": false,
+          "earVerdict": "PLACEHOLDER_awkwardVerdict_176_1",
+          "spokenSentence": "PLACEHOLDER_spokenSentence_176_1_2"
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "PLACEHOLDER_cousin_176_1_1",
+          "ipa": "/placeholder/",
+          "toneTag": "Neutral",
+          "miniContext": "PLACEHOLDER_cousinCtx_176_1_1"
+        },
+        {
+          "word": "PLACEHOLDER_cousin_176_1_2",
+          "ipa": "/placeholder/",
+          "toneTag": "Strong",
+          "miniContext": "PLACEHOLDER_cousinCtx_176_1_2"
+        },
+        {
+          "word": "PLACEHOLDER_cousin_176_1_3",
+          "ipa": "/placeholder/",
+          "toneTag": "Formal",
+          "miniContext": "PLACEHOLDER_cousinCtx_176_1_3"
+        }
+      ]
+    },
+    {
+      "id": "PLACEHOLDER_LEARN_L176_Q2",
+      "level": 176,
+      "cefr": "C2",
+      "difficulty": 5,
+      "pairTitle": "PLACEHOLDER_base_176_2 ↔ PLACEHOLDER_synonym_176_2",
+      "baseWord": "PLACEHOLDER_base_176_2",
+      "synonym": "PLACEHOLDER_synonym_176_2",
+      "partOfSpeech": "Adjective",
+      "coreMeaning": "PLACEHOLDER_coreMeaning_176_2",
+      "whyDifferent": "PLACEHOLDER_whyDifferent_176_2",
+      "makeovers": [
+        {
+          "situationTag": "PLACEHOLDER_tag_176_2_1",
+          "beforeSentence": "PLACEHOLDER_sentence_176_2_1 ___.",
+          "targetSlotWord": "PLACEHOLDER_base_176_2",
+          "swappedWord": "PLACEHOLDER_synonym_176_2",
+          "isNaturalSwap": true,
+          "earVerdict": "PLACEHOLDER_naturalVerdict_176_2",
+          "spokenSentence": "PLACEHOLDER_spokenSentence_176_2_1"
+        },
+        {
+          "situationTag": "PLACEHOLDER_tag_176_2_2",
+          "beforeSentence": "PLACEHOLDER_sentence_176_2_2 ___.",
+          "targetSlotWord": "PLACEHOLDER_base_176_2",
+          "swappedWord": "PLACEHOLDER_synonym_176_2",
+          "isNaturalSwap": false,
+          "earVerdict": "PLACEHOLDER_awkwardVerdict_176_2",
+          "spokenSentence": "PLACEHOLDER_spokenSentence_176_2_2"
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "PLACEHOLDER_cousin_176_2_1",
+          "ipa": "/placeholder/",
+          "toneTag": "Neutral",
+          "miniContext": "PLACEHOLDER_cousinCtx_176_2_1"
+        },
+        {
+          "word": "PLACEHOLDER_cousin_176_2_2",
+          "ipa": "/placeholder/",
+          "toneTag": "Strong",
+          "miniContext": "PLACEHOLDER_cousinCtx_176_2_2"
+        },
+        {
+          "word": "PLACEHOLDER_cousin_176_2_3",
+          "ipa": "/placeholder/",
+          "toneTag": "Formal",
+          "miniContext": "PLACEHOLDER_cousinCtx_176_2_3"
+        }
+      ]
+    },
+    {
+      "id": "PLACEHOLDER_LEARN_L176_Q3",
+      "level": 176,
+      "cefr": "C2",
+      "difficulty": 5,
+      "pairTitle": "PLACEHOLDER_base_176_3 ↔ PLACEHOLDER_synonym_176_3",
+      "baseWord": "PLACEHOLDER_base_176_3",
+      "synonym": "PLACEHOLDER_synonym_176_3",
+      "partOfSpeech": "Adjective",
+      "coreMeaning": "PLACEHOLDER_coreMeaning_176_3",
+      "whyDifferent": "PLACEHOLDER_whyDifferent_176_3",
+      "makeovers": [
+        {
+          "situationTag": "PLACEHOLDER_tag_176_3_1",
+          "beforeSentence": "PLACEHOLDER_sentence_176_3_1 ___.",
+          "targetSlotWord": "PLACEHOLDER_base_176_3",
+          "swappedWord": "PLACEHOLDER_synonym_176_3",
+          "isNaturalSwap": true,
+          "earVerdict": "PLACEHOLDER_naturalVerdict_176_3",
+          "spokenSentence": "PLACEHOLDER_spokenSentence_176_3_1"
+        },
+        {
+          "situationTag": "PLACEHOLDER_tag_176_3_2",
+          "beforeSentence": "PLACEHOLDER_sentence_176_3_2 ___.",
+          "targetSlotWord": "PLACEHOLDER_base_176_3",
+          "swappedWord": "PLACEHOLDER_synonym_176_3",
+          "isNaturalSwap": false,
+          "earVerdict": "PLACEHOLDER_awkwardVerdict_176_3",
+          "spokenSentence": "PLACEHOLDER_spokenSentence_176_3_2"
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "PLACEHOLDER_cousin_176_3_1",
+          "ipa": "/placeholder/",
+          "toneTag": "Neutral",
+          "miniContext": "PLACEHOLDER_cousinCtx_176_3_1"
+        },
+        {
+          "word": "PLACEHOLDER_cousin_176_3_2",
+          "ipa": "/placeholder/",
+          "toneTag": "Strong",
+          "miniContext": "PLACEHOLDER_cousinCtx_176_3_2"
+        },
+        {
+          "word": "PLACEHOLDER_cousin_176_3_3",
+          "ipa": "/placeholder/",
+          "toneTag": "Formal",
+          "miniContext": "PLACEHOLDER_cousinCtx_176_3_3"
+        }
+      ]
+    },
+    {
+      "id": "PLACEHOLDER_LEARN_L177_Q1",
+      "level": 177,
+      "cefr": "C2",
+      "difficulty": 5,
+      "pairTitle": "PLACEHOLDER_base_177_1 ↔ PLACEHOLDER_synonym_177_1",
+      "baseWord": "PLACEHOLDER_base_177_1",
+      "synonym": "PLACEHOLDER_synonym_177_1",
+      "partOfSpeech": "Adjective",
+      "coreMeaning": "PLACEHOLDER_coreMeaning_177_1",
+      "whyDifferent": "PLACEHOLDER_whyDifferent_177_1",
+      "makeovers": [
+        {
+          "situationTag": "PLACEHOLDER_tag_177_1_1",
+          "beforeSentence": "PLACEHOLDER_sentence_177_1_1 ___.",
+          "targetSlotWord": "PLACEHOLDER_base_177_1",
+          "swappedWord": "PLACEHOLDER_synonym_177_1",
+          "isNaturalSwap": true,
+          "earVerdict": "PLACEHOLDER_naturalVerdict_177_1",
+          "spokenSentence": "PLACEHOLDER_spokenSentence_177_1_1"
+        },
+        {
+          "situationTag": "PLACEHOLDER_tag_177_1_2",
+          "beforeSentence": "PLACEHOLDER_sentence_177_1_2 ___.",
+          "targetSlotWord": "PLACEHOLDER_base_177_1",
+          "swappedWord": "PLACEHOLDER_synonym_177_1",
+          "isNaturalSwap": false,
+          "earVerdict": "PLACEHOLDER_awkwardVerdict_177_1",
+          "spokenSentence": "PLACEHOLDER_spokenSentence_177_1_2"
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "PLACEHOLDER_cousin_177_1_1",
+          "ipa": "/placeholder/",
+          "toneTag": "Neutral",
+          "miniContext": "PLACEHOLDER_cousinCtx_177_1_1"
+        },
+        {
+          "word": "PLACEHOLDER_cousin_177_1_2",
+          "ipa": "/placeholder/",
+          "toneTag": "Strong",
+          "miniContext": "PLACEHOLDER_cousinCtx_177_1_2"
+        },
+        {
+          "word": "PLACEHOLDER_cousin_177_1_3",
+          "ipa": "/placeholder/",
+          "toneTag": "Formal",
+          "miniContext": "PLACEHOLDER_cousinCtx_177_1_3"
+        }
+      ]
+    },
+    {
+      "id": "PLACEHOLDER_LEARN_L177_Q2",
+      "level": 177,
+      "cefr": "C2",
+      "difficulty": 5,
+      "pairTitle": "PLACEHOLDER_base_177_2 ↔ PLACEHOLDER_synonym_177_2",
+      "baseWord": "PLACEHOLDER_base_177_2",
+      "synonym": "PLACEHOLDER_synonym_177_2",
+      "partOfSpeech": "Adjective",
+      "coreMeaning": "PLACEHOLDER_coreMeaning_177_2",
+      "whyDifferent": "PLACEHOLDER_whyDifferent_177_2",
+      "makeovers": [
+        {
+          "situationTag": "PLACEHOLDER_tag_177_2_1",
+          "beforeSentence": "PLACEHOLDER_sentence_177_2_1 ___.",
+          "targetSlotWord": "PLACEHOLDER_base_177_2",
+          "swappedWord": "PLACEHOLDER_synonym_177_2",
+          "isNaturalSwap": true,
+          "earVerdict": "PLACEHOLDER_naturalVerdict_177_2",
+          "spokenSentence": "PLACEHOLDER_spokenSentence_177_2_1"
+        },
+        {
+          "situationTag": "PLACEHOLDER_tag_177_2_2",
+          "beforeSentence": "PLACEHOLDER_sentence_177_2_2 ___.",
+          "targetSlotWord": "PLACEHOLDER_base_177_2",
+          "swappedWord": "PLACEHOLDER_synonym_177_2",
+          "isNaturalSwap": false,
+          "earVerdict": "PLACEHOLDER_awkwardVerdict_177_2",
+          "spokenSentence": "PLACEHOLDER_spokenSentence_177_2_2"
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "PLACEHOLDER_cousin_177_2_1",
+          "ipa": "/placeholder/",
+          "toneTag": "Neutral",
+          "miniContext": "PLACEHOLDER_cousinCtx_177_2_1"
+        },
+        {
+          "word": "PLACEHOLDER_cousin_177_2_2",
+          "ipa": "/placeholder/",
+          "toneTag": "Strong",
+          "miniContext": "PLACEHOLDER_cousinCtx_177_2_2"
+        },
+        {
+          "word": "PLACEHOLDER_cousin_177_2_3",
+          "ipa": "/placeholder/",
+          "toneTag": "Formal",
+          "miniContext": "PLACEHOLDER_cousinCtx_177_2_3"
+        }
+      ]
+    },
+    {
+      "id": "PLACEHOLDER_LEARN_L177_Q3",
+      "level": 177,
+      "cefr": "C2",
+      "difficulty": 5,
+      "pairTitle": "PLACEHOLDER_base_177_3 ↔ PLACEHOLDER_synonym_177_3",
+      "baseWord": "PLACEHOLDER_base_177_3",
+      "synonym": "PLACEHOLDER_synonym_177_3",
+      "partOfSpeech": "Adjective",
+      "coreMeaning": "PLACEHOLDER_coreMeaning_177_3",
+      "whyDifferent": "PLACEHOLDER_whyDifferent_177_3",
+      "makeovers": [
+        {
+          "situationTag": "PLACEHOLDER_tag_177_3_1",
+          "beforeSentence": "PLACEHOLDER_sentence_177_3_1 ___.",
+          "targetSlotWord": "PLACEHOLDER_base_177_3",
+          "swappedWord": "PLACEHOLDER_synonym_177_3",
+          "isNaturalSwap": true,
+          "earVerdict": "PLACEHOLDER_naturalVerdict_177_3",
+          "spokenSentence": "PLACEHOLDER_spokenSentence_177_3_1"
+        },
+        {
+          "situationTag": "PLACEHOLDER_tag_177_3_2",
+          "beforeSentence": "PLACEHOLDER_sentence_177_3_2 ___.",
+          "targetSlotWord": "PLACEHOLDER_base_177_3",
+          "swappedWord": "PLACEHOLDER_synonym_177_3",
+          "isNaturalSwap": false,
+          "earVerdict": "PLACEHOLDER_awkwardVerdict_177_3",
+          "spokenSentence": "PLACEHOLDER_spokenSentence_177_3_2"
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "PLACEHOLDER_cousin_177_3_1",
+          "ipa": "/placeholder/",
+          "toneTag": "Neutral",
+          "miniContext": "PLACEHOLDER_cousinCtx_177_3_1"
+        },
+        {
+          "word": "PLACEHOLDER_cousin_177_3_2",
+          "ipa": "/placeholder/",
+          "toneTag": "Strong",
+          "miniContext": "PLACEHOLDER_cousinCtx_177_3_2"
+        },
+        {
+          "word": "PLACEHOLDER_cousin_177_3_3",
+          "ipa": "/placeholder/",
+          "toneTag": "Formal",
+          "miniContext": "PLACEHOLDER_cousinCtx_177_3_3"
+        }
+      ]
+    },
+    {
+      "id": "PLACEHOLDER_LEARN_L178_Q1",
+      "level": 178,
+      "cefr": "C2",
+      "difficulty": 5,
+      "pairTitle": "PLACEHOLDER_base_178_1 ↔ PLACEHOLDER_synonym_178_1",
+      "baseWord": "PLACEHOLDER_base_178_1",
+      "synonym": "PLACEHOLDER_synonym_178_1",
+      "partOfSpeech": "Adjective",
+      "coreMeaning": "PLACEHOLDER_coreMeaning_178_1",
+      "whyDifferent": "PLACEHOLDER_whyDifferent_178_1",
+      "makeovers": [
+        {
+          "situationTag": "PLACEHOLDER_tag_178_1_1",
+          "beforeSentence": "PLACEHOLDER_sentence_178_1_1 ___.",
+          "targetSlotWord": "PLACEHOLDER_base_178_1",
+          "swappedWord": "PLACEHOLDER_synonym_178_1",
+          "isNaturalSwap": true,
+          "earVerdict": "PLACEHOLDER_naturalVerdict_178_1",
+          "spokenSentence": "PLACEHOLDER_spokenSentence_178_1_1"
+        },
+        {
+          "situationTag": "PLACEHOLDER_tag_178_1_2",
+          "beforeSentence": "PLACEHOLDER_sentence_178_1_2 ___.",
+          "targetSlotWord": "PLACEHOLDER_base_178_1",
+          "swappedWord": "PLACEHOLDER_synonym_178_1",
+          "isNaturalSwap": false,
+          "earVerdict": "PLACEHOLDER_awkwardVerdict_178_1",
+          "spokenSentence": "PLACEHOLDER_spokenSentence_178_1_2"
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "PLACEHOLDER_cousin_178_1_1",
+          "ipa": "/placeholder/",
+          "toneTag": "Neutral",
+          "miniContext": "PLACEHOLDER_cousinCtx_178_1_1"
+        },
+        {
+          "word": "PLACEHOLDER_cousin_178_1_2",
+          "ipa": "/placeholder/",
+          "toneTag": "Strong",
+          "miniContext": "PLACEHOLDER_cousinCtx_178_1_2"
+        },
+        {
+          "word": "PLACEHOLDER_cousin_178_1_3",
+          "ipa": "/placeholder/",
+          "toneTag": "Formal",
+          "miniContext": "PLACEHOLDER_cousinCtx_178_1_3"
+        }
+      ]
+    },
+    {
+      "id": "PLACEHOLDER_LEARN_L178_Q2",
+      "level": 178,
+      "cefr": "C2",
+      "difficulty": 5,
+      "pairTitle": "PLACEHOLDER_base_178_2 ↔ PLACEHOLDER_synonym_178_2",
+      "baseWord": "PLACEHOLDER_base_178_2",
+      "synonym": "PLACEHOLDER_synonym_178_2",
+      "partOfSpeech": "Adjective",
+      "coreMeaning": "PLACEHOLDER_coreMeaning_178_2",
+      "whyDifferent": "PLACEHOLDER_whyDifferent_178_2",
+      "makeovers": [
+        {
+          "situationTag": "PLACEHOLDER_tag_178_2_1",
+          "beforeSentence": "PLACEHOLDER_sentence_178_2_1 ___.",
+          "targetSlotWord": "PLACEHOLDER_base_178_2",
+          "swappedWord": "PLACEHOLDER_synonym_178_2",
+          "isNaturalSwap": true,
+          "earVerdict": "PLACEHOLDER_naturalVerdict_178_2",
+          "spokenSentence": "PLACEHOLDER_spokenSentence_178_2_1"
+        },
+        {
+          "situationTag": "PLACEHOLDER_tag_178_2_2",
+          "beforeSentence": "PLACEHOLDER_sentence_178_2_2 ___.",
+          "targetSlotWord": "PLACEHOLDER_base_178_2",
+          "swappedWord": "PLACEHOLDER_synonym_178_2",
+          "isNaturalSwap": false,
+          "earVerdict": "PLACEHOLDER_awkwardVerdict_178_2",
+          "spokenSentence": "PLACEHOLDER_spokenSentence_178_2_2"
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "PLACEHOLDER_cousin_178_2_1",
+          "ipa": "/placeholder/",
+          "toneTag": "Neutral",
+          "miniContext": "PLACEHOLDER_cousinCtx_178_2_1"
+        },
+        {
+          "word": "PLACEHOLDER_cousin_178_2_2",
+          "ipa": "/placeholder/",
+          "toneTag": "Strong",
+          "miniContext": "PLACEHOLDER_cousinCtx_178_2_2"
+        },
+        {
+          "word": "PLACEHOLDER_cousin_178_2_3",
+          "ipa": "/placeholder/",
+          "toneTag": "Formal",
+          "miniContext": "PLACEHOLDER_cousinCtx_178_2_3"
+        }
+      ]
+    },
+    {
+      "id": "PLACEHOLDER_LEARN_L178_Q3",
+      "level": 178,
+      "cefr": "C2",
+      "difficulty": 5,
+      "pairTitle": "PLACEHOLDER_base_178_3 ↔ PLACEHOLDER_synonym_178_3",
+      "baseWord": "PLACEHOLDER_base_178_3",
+      "synonym": "PLACEHOLDER_synonym_178_3",
+      "partOfSpeech": "Adjective",
+      "coreMeaning": "PLACEHOLDER_coreMeaning_178_3",
+      "whyDifferent": "PLACEHOLDER_whyDifferent_178_3",
+      "makeovers": [
+        {
+          "situationTag": "PLACEHOLDER_tag_178_3_1",
+          "beforeSentence": "PLACEHOLDER_sentence_178_3_1 ___.",
+          "targetSlotWord": "PLACEHOLDER_base_178_3",
+          "swappedWord": "PLACEHOLDER_synonym_178_3",
+          "isNaturalSwap": true,
+          "earVerdict": "PLACEHOLDER_naturalVerdict_178_3",
+          "spokenSentence": "PLACEHOLDER_spokenSentence_178_3_1"
+        },
+        {
+          "situationTag": "PLACEHOLDER_tag_178_3_2",
+          "beforeSentence": "PLACEHOLDER_sentence_178_3_2 ___.",
+          "targetSlotWord": "PLACEHOLDER_base_178_3",
+          "swappedWord": "PLACEHOLDER_synonym_178_3",
+          "isNaturalSwap": false,
+          "earVerdict": "PLACEHOLDER_awkwardVerdict_178_3",
+          "spokenSentence": "PLACEHOLDER_spokenSentence_178_3_2"
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "PLACEHOLDER_cousin_178_3_1",
+          "ipa": "/placeholder/",
+          "toneTag": "Neutral",
+          "miniContext": "PLACEHOLDER_cousinCtx_178_3_1"
+        },
+        {
+          "word": "PLACEHOLDER_cousin_178_3_2",
+          "ipa": "/placeholder/",
+          "toneTag": "Strong",
+          "miniContext": "PLACEHOLDER_cousinCtx_178_3_2"
+        },
+        {
+          "word": "PLACEHOLDER_cousin_178_3_3",
+          "ipa": "/placeholder/",
+          "toneTag": "Formal",
+          "miniContext": "PLACEHOLDER_cousinCtx_178_3_3"
+        }
+      ]
+    },
+    {
+      "id": "PLACEHOLDER_LEARN_L179_Q1",
+      "level": 179,
+      "cefr": "C2",
+      "difficulty": 5,
+      "pairTitle": "PLACEHOLDER_base_179_1 ↔ PLACEHOLDER_synonym_179_1",
+      "baseWord": "PLACEHOLDER_base_179_1",
+      "synonym": "PLACEHOLDER_synonym_179_1",
+      "partOfSpeech": "Adjective",
+      "coreMeaning": "PLACEHOLDER_coreMeaning_179_1",
+      "whyDifferent": "PLACEHOLDER_whyDifferent_179_1",
+      "makeovers": [
+        {
+          "situationTag": "PLACEHOLDER_tag_179_1_1",
+          "beforeSentence": "PLACEHOLDER_sentence_179_1_1 ___.",
+          "targetSlotWord": "PLACEHOLDER_base_179_1",
+          "swappedWord": "PLACEHOLDER_synonym_179_1",
+          "isNaturalSwap": true,
+          "earVerdict": "PLACEHOLDER_naturalVerdict_179_1",
+          "spokenSentence": "PLACEHOLDER_spokenSentence_179_1_1"
+        },
+        {
+          "situationTag": "PLACEHOLDER_tag_179_1_2",
+          "beforeSentence": "PLACEHOLDER_sentence_179_1_2 ___.",
+          "targetSlotWord": "PLACEHOLDER_base_179_1",
+          "swappedWord": "PLACEHOLDER_synonym_179_1",
+          "isNaturalSwap": false,
+          "earVerdict": "PLACEHOLDER_awkwardVerdict_179_1",
+          "spokenSentence": "PLACEHOLDER_spokenSentence_179_1_2"
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "PLACEHOLDER_cousin_179_1_1",
+          "ipa": "/placeholder/",
+          "toneTag": "Neutral",
+          "miniContext": "PLACEHOLDER_cousinCtx_179_1_1"
+        },
+        {
+          "word": "PLACEHOLDER_cousin_179_1_2",
+          "ipa": "/placeholder/",
+          "toneTag": "Strong",
+          "miniContext": "PLACEHOLDER_cousinCtx_179_1_2"
+        },
+        {
+          "word": "PLACEHOLDER_cousin_179_1_3",
+          "ipa": "/placeholder/",
+          "toneTag": "Formal",
+          "miniContext": "PLACEHOLDER_cousinCtx_179_1_3"
+        }
+      ]
+    },
+    {
+      "id": "PLACEHOLDER_LEARN_L179_Q2",
+      "level": 179,
+      "cefr": "C2",
+      "difficulty": 5,
+      "pairTitle": "PLACEHOLDER_base_179_2 ↔ PLACEHOLDER_synonym_179_2",
+      "baseWord": "PLACEHOLDER_base_179_2",
+      "synonym": "PLACEHOLDER_synonym_179_2",
+      "partOfSpeech": "Adjective",
+      "coreMeaning": "PLACEHOLDER_coreMeaning_179_2",
+      "whyDifferent": "PLACEHOLDER_whyDifferent_179_2",
+      "makeovers": [
+        {
+          "situationTag": "PLACEHOLDER_tag_179_2_1",
+          "beforeSentence": "PLACEHOLDER_sentence_179_2_1 ___.",
+          "targetSlotWord": "PLACEHOLDER_base_179_2",
+          "swappedWord": "PLACEHOLDER_synonym_179_2",
+          "isNaturalSwap": true,
+          "earVerdict": "PLACEHOLDER_naturalVerdict_179_2",
+          "spokenSentence": "PLACEHOLDER_spokenSentence_179_2_1"
+        },
+        {
+          "situationTag": "PLACEHOLDER_tag_179_2_2",
+          "beforeSentence": "PLACEHOLDER_sentence_179_2_2 ___.",
+          "targetSlotWord": "PLACEHOLDER_base_179_2",
+          "swappedWord": "PLACEHOLDER_synonym_179_2",
+          "isNaturalSwap": false,
+          "earVerdict": "PLACEHOLDER_awkwardVerdict_179_2",
+          "spokenSentence": "PLACEHOLDER_spokenSentence_179_2_2"
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "PLACEHOLDER_cousin_179_2_1",
+          "ipa": "/placeholder/",
+          "toneTag": "Neutral",
+          "miniContext": "PLACEHOLDER_cousinCtx_179_2_1"
+        },
+        {
+          "word": "PLACEHOLDER_cousin_179_2_2",
+          "ipa": "/placeholder/",
+          "toneTag": "Strong",
+          "miniContext": "PLACEHOLDER_cousinCtx_179_2_2"
+        },
+        {
+          "word": "PLACEHOLDER_cousin_179_2_3",
+          "ipa": "/placeholder/",
+          "toneTag": "Formal",
+          "miniContext": "PLACEHOLDER_cousinCtx_179_2_3"
+        }
+      ]
+    },
+    {
+      "id": "PLACEHOLDER_LEARN_L179_Q3",
+      "level": 179,
+      "cefr": "C2",
+      "difficulty": 5,
+      "pairTitle": "PLACEHOLDER_base_179_3 ↔ PLACEHOLDER_synonym_179_3",
+      "baseWord": "PLACEHOLDER_base_179_3",
+      "synonym": "PLACEHOLDER_synonym_179_3",
+      "partOfSpeech": "Adjective",
+      "coreMeaning": "PLACEHOLDER_coreMeaning_179_3",
+      "whyDifferent": "PLACEHOLDER_whyDifferent_179_3",
+      "makeovers": [
+        {
+          "situationTag": "PLACEHOLDER_tag_179_3_1",
+          "beforeSentence": "PLACEHOLDER_sentence_179_3_1 ___.",
+          "targetSlotWord": "PLACEHOLDER_base_179_3",
+          "swappedWord": "PLACEHOLDER_synonym_179_3",
+          "isNaturalSwap": true,
+          "earVerdict": "PLACEHOLDER_naturalVerdict_179_3",
+          "spokenSentence": "PLACEHOLDER_spokenSentence_179_3_1"
+        },
+        {
+          "situationTag": "PLACEHOLDER_tag_179_3_2",
+          "beforeSentence": "PLACEHOLDER_sentence_179_3_2 ___.",
+          "targetSlotWord": "PLACEHOLDER_base_179_3",
+          "swappedWord": "PLACEHOLDER_synonym_179_3",
+          "isNaturalSwap": false,
+          "earVerdict": "PLACEHOLDER_awkwardVerdict_179_3",
+          "spokenSentence": "PLACEHOLDER_spokenSentence_179_3_2"
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "PLACEHOLDER_cousin_179_3_1",
+          "ipa": "/placeholder/",
+          "toneTag": "Neutral",
+          "miniContext": "PLACEHOLDER_cousinCtx_179_3_1"
+        },
+        {
+          "word": "PLACEHOLDER_cousin_179_3_2",
+          "ipa": "/placeholder/",
+          "toneTag": "Strong",
+          "miniContext": "PLACEHOLDER_cousinCtx_179_3_2"
+        },
+        {
+          "word": "PLACEHOLDER_cousin_179_3_3",
+          "ipa": "/placeholder/",
+          "toneTag": "Formal",
+          "miniContext": "PLACEHOLDER_cousinCtx_179_3_3"
+        }
+      ]
+    },
+    {
+      "id": "PLACEHOLDER_LEARN_L180_Q1",
+      "level": 180,
+      "cefr": "C2",
+      "difficulty": 5,
+      "pairTitle": "PLACEHOLDER_base_180_1 ↔ PLACEHOLDER_synonym_180_1",
+      "baseWord": "PLACEHOLDER_base_180_1",
+      "synonym": "PLACEHOLDER_synonym_180_1",
+      "partOfSpeech": "Adjective",
+      "coreMeaning": "PLACEHOLDER_coreMeaning_180_1",
+      "whyDifferent": "PLACEHOLDER_whyDifferent_180_1",
+      "makeovers": [
+        {
+          "situationTag": "PLACEHOLDER_tag_180_1_1",
+          "beforeSentence": "PLACEHOLDER_sentence_180_1_1 ___.",
+          "targetSlotWord": "PLACEHOLDER_base_180_1",
+          "swappedWord": "PLACEHOLDER_synonym_180_1",
+          "isNaturalSwap": true,
+          "earVerdict": "PLACEHOLDER_naturalVerdict_180_1",
+          "spokenSentence": "PLACEHOLDER_spokenSentence_180_1_1"
+        },
+        {
+          "situationTag": "PLACEHOLDER_tag_180_1_2",
+          "beforeSentence": "PLACEHOLDER_sentence_180_1_2 ___.",
+          "targetSlotWord": "PLACEHOLDER_base_180_1",
+          "swappedWord": "PLACEHOLDER_synonym_180_1",
+          "isNaturalSwap": false,
+          "earVerdict": "PLACEHOLDER_awkwardVerdict_180_1",
+          "spokenSentence": "PLACEHOLDER_spokenSentence_180_1_2"
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "PLACEHOLDER_cousin_180_1_1",
+          "ipa": "/placeholder/",
+          "toneTag": "Neutral",
+          "miniContext": "PLACEHOLDER_cousinCtx_180_1_1"
+        },
+        {
+          "word": "PLACEHOLDER_cousin_180_1_2",
+          "ipa": "/placeholder/",
+          "toneTag": "Strong",
+          "miniContext": "PLACEHOLDER_cousinCtx_180_1_2"
+        },
+        {
+          "word": "PLACEHOLDER_cousin_180_1_3",
+          "ipa": "/placeholder/",
+          "toneTag": "Formal",
+          "miniContext": "PLACEHOLDER_cousinCtx_180_1_3"
+        }
+      ]
+    },
+    {
+      "id": "PLACEHOLDER_LEARN_L180_Q2",
+      "level": 180,
+      "cefr": "C2",
+      "difficulty": 5,
+      "pairTitle": "PLACEHOLDER_base_180_2 ↔ PLACEHOLDER_synonym_180_2",
+      "baseWord": "PLACEHOLDER_base_180_2",
+      "synonym": "PLACEHOLDER_synonym_180_2",
+      "partOfSpeech": "Adjective",
+      "coreMeaning": "PLACEHOLDER_coreMeaning_180_2",
+      "whyDifferent": "PLACEHOLDER_whyDifferent_180_2",
+      "makeovers": [
+        {
+          "situationTag": "PLACEHOLDER_tag_180_2_1",
+          "beforeSentence": "PLACEHOLDER_sentence_180_2_1 ___.",
+          "targetSlotWord": "PLACEHOLDER_base_180_2",
+          "swappedWord": "PLACEHOLDER_synonym_180_2",
+          "isNaturalSwap": true,
+          "earVerdict": "PLACEHOLDER_naturalVerdict_180_2",
+          "spokenSentence": "PLACEHOLDER_spokenSentence_180_2_1"
+        },
+        {
+          "situationTag": "PLACEHOLDER_tag_180_2_2",
+          "beforeSentence": "PLACEHOLDER_sentence_180_2_2 ___.",
+          "targetSlotWord": "PLACEHOLDER_base_180_2",
+          "swappedWord": "PLACEHOLDER_synonym_180_2",
+          "isNaturalSwap": false,
+          "earVerdict": "PLACEHOLDER_awkwardVerdict_180_2",
+          "spokenSentence": "PLACEHOLDER_spokenSentence_180_2_2"
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "PLACEHOLDER_cousin_180_2_1",
+          "ipa": "/placeholder/",
+          "toneTag": "Neutral",
+          "miniContext": "PLACEHOLDER_cousinCtx_180_2_1"
+        },
+        {
+          "word": "PLACEHOLDER_cousin_180_2_2",
+          "ipa": "/placeholder/",
+          "toneTag": "Strong",
+          "miniContext": "PLACEHOLDER_cousinCtx_180_2_2"
+        },
+        {
+          "word": "PLACEHOLDER_cousin_180_2_3",
+          "ipa": "/placeholder/",
+          "toneTag": "Formal",
+          "miniContext": "PLACEHOLDER_cousinCtx_180_2_3"
+        }
+      ]
+    },
+    {
+      "id": "PLACEHOLDER_LEARN_L180_Q3",
+      "level": 180,
+      "cefr": "C2",
+      "difficulty": 5,
+      "pairTitle": "PLACEHOLDER_base_180_3 ↔ PLACEHOLDER_synonym_180_3",
+      "baseWord": "PLACEHOLDER_base_180_3",
+      "synonym": "PLACEHOLDER_synonym_180_3",
+      "partOfSpeech": "Adjective",
+      "coreMeaning": "PLACEHOLDER_coreMeaning_180_3",
+      "whyDifferent": "PLACEHOLDER_whyDifferent_180_3",
+      "makeovers": [
+        {
+          "situationTag": "PLACEHOLDER_tag_180_3_1",
+          "beforeSentence": "PLACEHOLDER_sentence_180_3_1 ___.",
+          "targetSlotWord": "PLACEHOLDER_base_180_3",
+          "swappedWord": "PLACEHOLDER_synonym_180_3",
+          "isNaturalSwap": true,
+          "earVerdict": "PLACEHOLDER_naturalVerdict_180_3",
+          "spokenSentence": "PLACEHOLDER_spokenSentence_180_3_1"
+        },
+        {
+          "situationTag": "PLACEHOLDER_tag_180_3_2",
+          "beforeSentence": "PLACEHOLDER_sentence_180_3_2 ___.",
+          "targetSlotWord": "PLACEHOLDER_base_180_3",
+          "swappedWord": "PLACEHOLDER_synonym_180_3",
+          "isNaturalSwap": false,
+          "earVerdict": "PLACEHOLDER_awkwardVerdict_180_3",
+          "spokenSentence": "PLACEHOLDER_spokenSentence_180_3_2"
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "PLACEHOLDER_cousin_180_3_1",
+          "ipa": "/placeholder/",
+          "toneTag": "Neutral",
+          "miniContext": "PLACEHOLDER_cousinCtx_180_3_1"
+        },
+        {
+          "word": "PLACEHOLDER_cousin_180_3_2",
+          "ipa": "/placeholder/",
+          "toneTag": "Strong",
+          "miniContext": "PLACEHOLDER_cousinCtx_180_3_2"
+        },
+        {
+          "word": "PLACEHOLDER_cousin_180_3_3",
+          "ipa": "/placeholder/",
+          "toneTag": "Formal",
+          "miniContext": "PLACEHOLDER_cousinCtx_180_3_3"
+        }
+      ]
+    }
+  ]
 }

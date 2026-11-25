@@ -1,23 +1,41 @@
 import 'dart:convert';
+
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-import 'package:vowl/core/data/models/phased_quest_model.dart';
 import 'package:vowl/core/presentation/phases/phase_progress_recorder.dart';
 import 'package:vowl/core/presentation/phases/practice_phase_scaffold.dart';
-import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
+import 'package:vowl/core/presentation/widgets/game_error_view.dart';
+import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
+import 'package:vowl/core/presentation/widgets/tts_speaker_button_widget.dart';
+import 'package:vowl/core/theme/app_spacing.dart';
+import 'package:vowl/core/utils/haptic_service.dart';
+import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/core/utils/tts_service.dart';
+import 'package:vowl/features/vocabulary/synonym_search/presentation/controllers/synonym_practice_controller.dart';
+import 'package:vowl/features/vocabulary/synonym_search/presentation/models/synonym_phase_models.dart';
+import 'package:vowl/features/vocabulary/synonym_search/presentation/widgets/synonym_contrast_swap_card.dart';
+import 'package:vowl/features/vocabulary/synonym_search/presentation/widgets/synonym_ladder_card.dart';
 
-/// Guided active practice screen for Synonym Search: "Nuance Gym".
+/// Practice Phase for Synonym Search ("Contrast Swap & Synonym Ladder").
 ///
-/// Implements interactive context selection and active recall typing
-/// with per-option explanatory feedback before entering the timed Test phase.
+/// Alternates Contrast Swap sentence pair drills and 3-rung Synonym Ladder
+/// nuance scaling across distinct word pairs with forgiving retries and guided reveal.
 class SynonymSearchPracticeScreen extends StatefulWidget {
   final int level;
+
+  @visibleForTesting
+  final List<SynonymPracticeExercise>? initialExercises;
+
+  @visibleForTesting
+  final AssetBundle? assetBundle;
 
   const SynonymSearchPracticeScreen({
     super.key,
     required this.level,
+    this.initialExercises,
+    this.assetBundle,
   });
 
   @override
@@ -27,550 +45,277 @@ class SynonymSearchPracticeScreen extends StatefulWidget {
 
 class _SynonymSearchPracticeScreenState
     extends State<SynonymSearchPracticeScreen> {
-  List<PracticeExercise> _exercises = [];
-  bool _isLoading = true;
-  int _currentExerciseIndex = 0;
+  late final SynonymPracticeController _controller;
+  final ScrollController _scrollController = ScrollController();
 
-  // Exercise interaction state
-  final TextEditingController _textController = TextEditingController();
-  int? _selectedOptionIndex;
-  bool _hasChecked = false;
-  bool _isAnswerCorrect = false;
-  String? _feedbackText;
-  bool _showHint = false;
+  bool _isLoading = true;
+  bool _hasStartedLoad = false;
+  String? _errorMessage;
 
   @override
   void initState() {
     super.initState();
-    _loadPracticeExercises();
+    _controller = SynonymPracticeController(hapticService: _tryHaptic());
+    try {
+      TtsService().preWarm();
+    } catch (_) {}
+
+    if (widget.initialExercises != null &&
+        widget.initialExercises!.isNotEmpty) {
+      _controller.setExercises(widget.initialExercises!);
+      _isLoading = false;
+      _hasStartedLoad = true;
+    }
   }
 
   @override
-  void dispose() {
-    _textController.dispose();
-    super.dispose();
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    if (!_hasStartedLoad) {
+      _hasStartedLoad = true;
+      _loadCurriculum();
+    }
   }
 
-  Future<void> _loadPracticeExercises() async {
+  HapticService? _tryHaptic() {
     try {
-      final batchIndex = ((widget.level - 1) ~/ 10) + 1;
-      final startLevel = (batchIndex - 1) * 10 + 1;
-      final endLevel = batchIndex * 10;
-      final path =
-          'assets/curriculum/vocabulary/synonymSearch_practice_${startLevel}_$endLevel.json';
-      final jsonStr = await rootBundle.loadString(path);
-      final data = jsonDecode(jsonStr) as Map<String, dynamic>;
-      final batch = PhasedQuestBatch.fromJson(data);
-
-      final levelQuests =
-          batch.quests.where((q) => q.level == widget.level).toList();
-      final allExercises = <PracticeExercise>[];
-      for (final q in (levelQuests.isNotEmpty ? levelQuests : batch.quests)) {
-        allExercises.addAll(q.exercises);
-      }
-
-      if (mounted) {
-        setState(() {
-          _exercises = allExercises;
-          _isLoading = false;
-        });
-      }
+      return di.sl<HapticService>();
     } catch (_) {
-      if (mounted) {
-        setState(() {
-          _exercises = [
-            const PracticeExercise(
-              exerciseType: 'contextPick',
-              interactionType: 'choice',
-              question: "Which sentence naturally calls for 'big' instead of 'large'?",
-              options: [
-                "The government surveyed a _____ parcel of land.",
-                "Winning that game was a _____ deal for our team!",
-                "The warehouse holds a _____ volume of goods.",
-              ],
-              correctAnswerIndex: 1,
-              feedbackPerOption: [
-                "For land surveys, 'large' is preferred because it is measurable and factual.",
-                "Spot on! 'Big deal' is an emotional idiom — never 'large deal'.",
-                "For warehouse volume, 'large' is the standard factual term.",
-              ],
-            ),
-            const PracticeExercise(
-              exerciseType: 'fillGap',
-              interactionType: 'typing',
-              sentence: "The elephant is a very _____ animal.",
-              correctAnswer: 'large',
-              hint: "Synonym of 'big' used in factual descriptions.",
-              feedbackIfWrong: "The factual synonym of 'big' is 'large'.",
-            ),
-          ];
-          _isLoading = false;
-        });
-      }
+      return null;
     }
   }
 
-  void _checkCurrentAnswer() {
-    if (_exercises.isEmpty) return;
-    final exercise = _exercises[_currentExerciseIndex];
+  Future<void> _loadCurriculum() async {
+    setState(() {
+      _isLoading = true;
+      _errorMessage = null;
+    });
 
-    if (exercise.interactionType == 'typing') {
-      final input = _textController.text.trim().toLowerCase();
-      final target = (exercise.correctAnswer ?? '').trim().toLowerCase();
-      final isCorrect = input == target;
+    final batchStart = ((widget.level - 1) ~/ 10) * 10 + 1;
+    final batchEnd = batchStart + 9;
+    final assetPath =
+        'assets/curriculum/vocabulary/synonymSearch_practice_${batchStart}_$batchEnd.json';
 
-      if (isCorrect) {
-        HapticFeedback.lightImpact();
-      } else {
-        HapticFeedback.mediumImpact();
-      }
+    try {
+      final bundle = widget.assetBundle ?? DefaultAssetBundle.of(context);
+      final rawJson = await bundle.loadString(assetPath);
+      final decoded = jsonDecode(rawJson) as Map<String, dynamic>;
+      final batch = SynonymPracticeBatch.fromJson(decoded);
+      final exercises = batch.buildInterleavedExercisesForLevel(widget.level);
 
+      if (!mounted) return;
+      _controller.setExercises(exercises);
       setState(() {
-        _hasChecked = true;
-        _isAnswerCorrect = isCorrect;
-        _feedbackText = isCorrect
-            ? 'Excellent! You mastered the native usage.'
-            : (exercise.feedbackIfWrong ??
-                'The correct word is "${exercise.correctAnswer}".');
+        _isLoading = false;
       });
-    } else {
-      // Choice interaction
-      if (_selectedOptionIndex == null) return;
-      final isCorrect =
-          _selectedOptionIndex == (exercise.correctAnswerIndex ?? 0);
-
-      if (isCorrect) {
-        HapticFeedback.lightImpact();
-      } else {
-        HapticFeedback.mediumImpact();
-      }
-
-      String feedback = isCorrect ? 'Correct!' : 'Not quite.';
-      if (exercise.feedbackPerOption.isNotEmpty &&
-          _selectedOptionIndex! < exercise.feedbackPerOption.length) {
-        feedback = exercise.feedbackPerOption[_selectedOptionIndex!];
-      }
-
+    } catch (_) {
+      if (!mounted) return;
       setState(() {
-        _hasChecked = true;
-        _isAnswerCorrect = isCorrect;
-        _feedbackText = feedback;
+        _isLoading = false;
+        _errorMessage =
+            'Unable to load Level ${widget.level} synonym practice drills.';
       });
     }
   }
 
-  void _advanceOrFinish() {
-    if (!_hasChecked) {
-      _checkCurrentAnswer();
+  void _stopAudioSafely() {
+    try {
+      TtsSpeakerButtonWidget.stopAll();
+      TtsService().stop();
+    } catch (_) {}
+  }
+
+  void _scrollToTop() {
+    if (_scrollController.hasClients) {
+      _scrollController.animateTo(
+        0,
+        duration: const Duration(milliseconds: 250),
+        curve: Curves.easeOutCubic,
+      );
+    }
+  }
+
+  void _handlePrimaryAction() {
+    final checked = _controller.hasChecked.value;
+    final correct = _controller.isCorrect.value;
+
+    if (!checked) {
+      _controller.checkAnswer();
       return;
     }
 
-    if (_currentExerciseIndex < _exercises.length - 1) {
-      setState(() {
-        _currentExerciseIndex++;
-        _selectedOptionIndex = null;
-        _hasChecked = false;
-        _isAnswerCorrect = false;
-        _feedbackText = null;
-        _showHint = false;
-        _textController.clear();
-      });
-    } else {
-      _finishPracticePhase();
+    if (!correct) {
+      if (_controller.wrongAttempts.value >= 2) {
+        _controller.revealGuidedSolution();
+      }
+      return;
     }
-  }
 
-  void _finishPracticePhase() {
+    _stopAudioSafely();
+    if (_controller.nextExercise()) {
+      _scrollToTop();
+      return;
+    }
+
     PhaseProgressRecorder.recordPhaseCompleted(
       context,
       gameType: 'synonymSearch',
       level: widget.level,
       phase: 'practice',
     );
-    // Navigate to Test Phase (existing screen via /game route)
-    final target =
-        '/game?category=vocabulary&gameType=synonymSearch&level=${widget.level}';
-    context.pushReplacement(target);
+    context.pushReplacement(
+      '/game?category=vocabulary&gameType=synonymSearch&level=${widget.level}',
+    );
+  }
+
+  @override
+  void dispose() {
+    _stopAudioSafely();
+    _scrollController.dispose();
+    _controller.dispose();
+    super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
-    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final theme = LevelThemeHelper.of(
+      context,
+      'synonymSearch',
+      level: widget.level,
+    );
 
     if (_isLoading) {
-      return Scaffold(
-        backgroundColor: isDark ? AppColors.slate950 : AppColors.slate50,
-        body: const Center(child: CircularProgressIndicator()),
-      );
-    }
-
-    final exercise =
-        _exercises.isNotEmpty ? _exercises[_currentExerciseIndex] : null;
-
-    if (exercise == null) {
       return PracticePhaseScaffold(
-        title: 'Nuance Gym',
+        title: 'Contrast & Ladder Gym',
         gameType: 'synonymSearch',
         level: widget.level,
         currentExerciseIndex: 0,
         totalExercises: 1,
-        onComplete: _finishPracticePhase,
-        child: const Center(child: Text('No practice exercises available.')),
+        isActionEnabled: false,
+        onComplete: () {},
+        child: Center(
+          child: Padding(
+            padding: EdgeInsets.all(AppSpacing.screen),
+            child: GameShimmerLoading(primaryColor: theme.primaryColor),
+          ),
+        ),
       );
     }
 
-    final isLast = _currentExerciseIndex == _exercises.length - 1;
-    final actionLabel = _hasChecked
-        ? (isLast ? 'Enter Mastery Phase 🏆' : 'Next Exercise ➔')
-        : 'Check Answer';
-
-    final canSubmit = exercise.interactionType == 'typing'
-        ? _textController.text.trim().isNotEmpty
-        : _selectedOptionIndex != null;
-
-    return PracticePhaseScaffold(
-      title: 'Nuance Gym (${_currentExerciseIndex + 1}/${_exercises.length})',
-      gameType: 'synonymSearch',
-      level: widget.level,
-      currentExerciseIndex: _currentExerciseIndex,
-      totalExercises: _exercises.length,
-      actionLabel: actionLabel,
-      isActionEnabled: _hasChecked || canSubmit,
-      onComplete: _advanceOrFinish,
-      isHintAvailable: exercise.hint != null,
-      onHint: exercise.hint != null
-          ? () {
-              setState(() {
-                _showHint = !_showHint;
-              });
-            }
-          : null,
-      child: SingleChildScrollView(
-        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            // ── Hint Panel ─────────────────────────────────────────
-            if (_showHint && exercise.hint != null) ...[
-              Container(
-                padding: EdgeInsets.all(12.w),
-                decoration: BoxDecoration(
-                  color: AppColors.amber500.withValues(alpha: 0.12),
-                  borderRadius: BorderRadius.circular(10.r),
-                  border: Border.all(
-                    color: AppColors.amber500.withValues(alpha: 0.3),
-                  ),
-                ),
-                child: Row(
-                  children: [
-                    Text('💡', style: TextStyle(fontSize: 18.sp)),
-                    SizedBox(width: 10.w),
-                    Expanded(
-                      child: Text(
-                        exercise.hint!,
-                        style: TextStyle(
-                          fontSize: 13.sp,
-                          fontWeight: FontWeight.w600,
-                          color: isDark ? AppColors.amber400 : AppColors.amber600,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              SizedBox(height: 14.h),
-            ],
-
-            // ── Exercise Header Capsule ────────────────────────────
-            Container(
-              padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
-              decoration: BoxDecoration(
-                color: AppColors.violet500.withValues(alpha: 0.1),
-                borderRadius: BorderRadius.circular(8.r),
-              ),
-              child: Text(
-                exercise.interactionType == 'typing'
-                    ? '✍️ ACTIVE RECALL — TYPE THE SYNONYM'
-                    : '🎯 NUANCE DIFFERENTIATION — WHICH FITS BEST?',
-                style: TextStyle(
-                  fontSize: 11.sp,
-                  fontWeight: FontWeight.w800,
-                  letterSpacing: 0.8,
-                  color: AppColors.violet500,
-                ),
-              ),
-            ),
-            SizedBox(height: 16.h),
-
-            // ── Interactive Body ───────────────────────────────────
-            if (exercise.interactionType == 'typing')
-              _buildTypingExercise(exercise, isDark)
-            else
-              _buildChoiceExercise(exercise, isDark),
-
-            // ── Feedback Panel ─────────────────────────────────────
-            if (_hasChecked && _feedbackText != null) ...[
-              SizedBox(height: 18.h),
-              Container(
-                padding: EdgeInsets.all(14.w),
-                decoration: BoxDecoration(
-                  color: _isAnswerCorrect
-                      ? AppColors.emerald500.withValues(alpha: 0.12)
-                      : AppColors.rose500.withValues(alpha: 0.12),
-                  borderRadius: BorderRadius.circular(12.r),
-                  border: Border.all(
-                    color: _isAnswerCorrect
-                        ? AppColors.emerald500
-                        : AppColors.rose500,
-                    width: 1.2,
-                  ),
-                ),
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Icon(
-                      _isAnswerCorrect
-                          ? Icons.check_circle_rounded
-                          : Icons.info_rounded,
-                      color: _isAnswerCorrect
-                          ? AppColors.emerald500
-                          : AppColors.rose500,
-                      size: 22.r,
-                    ),
-                    SizedBox(width: 10.w),
-                    Expanded(
-                      child: Text(
-                        _feedbackText!,
-                        style: TextStyle(
-                          fontSize: 13.5.sp,
-                          height: 1.45,
-                          fontWeight: FontWeight.w600,
-                          color: isDark ? Colors.white : AppColors.slate900,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ],
-          ],
-        ),
-      ),
-    );
-  }
-
-  Widget _buildTypingExercise(PracticeExercise exercise, bool isDark) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: [
-        Container(
-          padding: EdgeInsets.all(16.w),
-          decoration: BoxDecoration(
-            color: isDark ? AppColors.slate900 : Colors.white,
-            borderRadius: BorderRadius.circular(16.r),
-            border: Border.all(
-              color: isDark ? AppColors.slate800 : AppColors.slate200,
-            ),
-          ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                'Complete the sentence with the accurate native synonym:',
-                style: TextStyle(
-                  fontSize: 13.sp,
-                  fontWeight: FontWeight.w600,
-                  color: isDark ? AppColors.slate400 : AppColors.slate600,
-                ),
-              ),
-              SizedBox(height: 12.h),
-              Text(
-                exercise.sentence ?? '',
-                style: TextStyle(
-                  fontSize: 16.sp,
-                  fontWeight: FontWeight.w700,
-                  height: 1.5,
-                  color: isDark ? Colors.white : AppColors.slate900,
-                ),
-              ),
-            ],
-          ),
-        ),
-        SizedBox(height: 16.h),
-        TextField(
-          controller: _textController,
-          enabled: !_hasChecked,
-          onChanged: (_) => setState(() {}),
-          onSubmitted: (_) {
-            if (!_hasChecked) _checkCurrentAnswer();
-          },
-          style: TextStyle(
-            fontSize: 16.sp,
-            fontWeight: FontWeight.w700,
-            color: isDark ? Colors.white : AppColors.slate900,
-          ),
-          decoration: InputDecoration(
-            hintText: 'Type your answer here...',
-            hintStyle: TextStyle(
-              color: isDark ? AppColors.slate500 : AppColors.slate400,
-            ),
-            filled: true,
-            fillColor: isDark ? AppColors.slate900 : Colors.white,
-            border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(12.r),
-              borderSide: BorderSide(
-                color: isDark ? AppColors.slate800 : AppColors.slate300,
-              ),
-            ),
-            enabledBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(12.r),
-              borderSide: BorderSide(
-                color: isDark ? AppColors.slate800 : AppColors.slate300,
-              ),
-            ),
-            focusedBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(12.r),
-              borderSide: const BorderSide(
-                color: AppColors.violet500,
-                width: 2,
-              ),
-            ),
-          ),
-        ),
-      ],
-    );
-  }
-
-  Widget _buildChoiceExercise(PracticeExercise exercise, bool isDark) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: [
-        if (exercise.question != null) ...[
-          Text(
-            exercise.question!,
-            style: TextStyle(
-              fontSize: 16.sp,
-              fontWeight: FontWeight.w800,
-              height: 1.4,
-              color: isDark ? Colors.white : AppColors.slate900,
-            ),
-          ),
-          SizedBox(height: 16.h),
-        ],
-        ...List.generate(exercise.options.length, (idx) {
-          final isSelected = _selectedOptionIndex == idx;
-          final isCorrectOption = idx == exercise.correctAnswerIndex;
-
-          Color borderColor;
-          Color bgColor;
-
-          if (!_hasChecked) {
-            borderColor = isSelected
-                ? AppColors.violet500
-                : (isDark ? AppColors.slate800 : AppColors.slate200);
-            bgColor = isSelected
-                ? AppColors.violet500.withValues(alpha: 0.12)
-                : (isDark ? AppColors.slate900 : Colors.white);
-          } else {
-            if (isCorrectOption) {
-              borderColor = AppColors.emerald500;
-              bgColor = AppColors.emerald500.withValues(alpha: 0.15);
-            } else if (isSelected && !isCorrectOption) {
-              borderColor = AppColors.rose500;
-              bgColor = AppColors.rose500.withValues(alpha: 0.15);
-            } else {
-              borderColor = isDark ? AppColors.slate800 : AppColors.slate200;
-              bgColor = isDark ? AppColors.slate900 : Colors.white;
-            }
-          }
-
-          return Padding(
-            padding: EdgeInsets.only(bottom: 10.h),
-            child: InkWell(
-              onTap: _hasChecked
-                  ? null
-                  : () {
-                      HapticFeedback.selectionClick();
-                      setState(() {
-                        _selectedOptionIndex = idx;
-                      });
-                    },
-              borderRadius: BorderRadius.circular(12.r),
-              child: AnimatedContainer(
-                duration: const Duration(milliseconds: 200),
-                padding: EdgeInsets.symmetric(
-                  horizontal: 14.w,
-                  vertical: 14.h,
-                ),
-                decoration: BoxDecoration(
-                  color: bgColor,
-                  borderRadius: BorderRadius.circular(12.r),
-                  border: Border.all(
-                    color: borderColor,
-                    width: isSelected || (_hasChecked && isCorrectOption)
-                        ? 2
-                        : 1,
-                  ),
-                ),
-                child: Row(
-                  children: [
-                    Container(
-                      width: 26.w,
-                      height: 26.w,
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: isSelected
-                            ? AppColors.violet500
-                            : (isDark
-                                ? AppColors.slate800
-                                : AppColors.slate200),
-                      ),
-                      child: Center(
-                        child: Text(
-                          String.fromCharCode(65 + idx),
-                          style: TextStyle(
-                            fontSize: 12.sp,
-                            fontWeight: FontWeight.w800,
-                            color: isSelected
-                                ? Colors.white
-                                : (isDark
-                                    ? AppColors.slate400
-                                    : AppColors.slate600),
-                          ),
-                        ),
-                      ),
-                    ),
-                    SizedBox(width: 12.w),
-                    Expanded(
-                      child: Text(
-                        exercise.options[idx],
-                        style: TextStyle(
-                          fontSize: 14.sp,
-                          fontWeight: FontWeight.w600,
-                          height: 1.4,
-                          color: isDark ? Colors.white : AppColors.slate900,
-                        ),
-                      ),
-                    ),
-                    if (_hasChecked && isCorrectOption)
-                      Icon(
-                        Icons.check_circle_rounded,
-                        color: AppColors.emerald500,
-                        size: 20.r,
-                      )
-                    else if (_hasChecked && isSelected && !isCorrectOption)
-                      Icon(
-                        Icons.cancel_rounded,
-                        color: AppColors.rose500,
-                        size: 20.r,
-                      ),
-                  ],
-                ),
-              ),
-            ),
+    if (_errorMessage != null || _controller.exercises.isEmpty) {
+      return PracticePhaseScaffold(
+        title: 'Contrast & Ladder Gym',
+        gameType: 'synonymSearch',
+        level: widget.level,
+        currentExerciseIndex: 0,
+        totalExercises: 1,
+        isActionEnabled: true,
+        actionLabel: 'Practice Sample Drill',
+        onComplete: () {
+          _controller.setExercises(
+            SynonymPracticeQuest.fallbackExercises(widget.level),
           );
-        }),
-      ],
+          setState(() {
+            _errorMessage = null;
+          });
+        },
+        child: GameErrorView(
+          message: _errorMessage ?? 'No practice exercises found.',
+          primaryColor: theme.primaryColor,
+          onRetry: _loadCurriculum,
+          onExit: () => Navigator.of(context).maybePop(),
+        ),
+      );
+    }
+
+    return ListenableBuilder(
+      listenable: Listenable.merge([
+        _controller.currentIndex,
+        _controller.contrastAssignments,
+        _controller.focusedSlotIndex,
+        _controller.ladderPlacements,
+        _controller.focusedRungIndex,
+        _controller.hasChecked,
+        _controller.isCorrect,
+        _controller.feedbackMessage,
+        _controller.showHint,
+        _controller.wrongAttempts,
+        _controller.shakeCount,
+      ]),
+      builder: (context, _) {
+        final idx = _controller.currentIndex.value;
+        final total = _controller.exercises.length;
+        final ex = _controller.currentExercise ?? _controller.exercises.first;
+        final hasChecked = _controller.hasChecked.value;
+        final isCorrect = _controller.isCorrect.value;
+        final wrongCount = _controller.wrongAttempts.value;
+
+        final String ctaLabel;
+        final bool ctaEnabled;
+        if (!hasChecked) {
+          ctaLabel = 'Check Answer';
+          ctaEnabled = _controller.canCheck;
+        } else if (isCorrect) {
+          ctaLabel = idx < total - 1 ? 'Next Exercise' : 'Start Mastery Blitz';
+          ctaEnabled = true;
+        } else if (wrongCount >= 2) {
+          ctaLabel = 'Reveal Solution';
+          ctaEnabled = true;
+        } else {
+          ctaLabel = 'Tap Slot to Adjust';
+          ctaEnabled = false;
+        }
+
+        return PracticePhaseScaffold(
+          title: 'Contrast & Ladder Gym',
+          gameType: 'synonymSearch',
+          level: widget.level,
+          currentExerciseIndex: idx,
+          totalExercises: total,
+          isHintAvailable: !(hasChecked && isCorrect),
+          onHint: _controller.toggleHint,
+          actionLabel: ctaLabel,
+          isActionEnabled: ctaEnabled,
+          onComplete: _handlePrimaryAction,
+          child: SingleChildScrollView(
+            controller: _scrollController,
+            physics: const BouncingScrollPhysics(),
+            padding: EdgeInsets.fromLTRB(
+              AppSpacing.screen,
+              12.h,
+              AppSpacing.screen,
+              24.h,
+            ),
+            child: ex.type == SynonymPracticeExerciseType.contrastSwap
+                ? SynonymContrastSwapCard(
+                    exercise: ex,
+                    assignments: _controller.contrastAssignments.value,
+                    focusedSlotIndex: _controller.focusedSlotIndex.value,
+                    hasChecked: hasChecked,
+                    isCorrect: isCorrect,
+                    showHint: _controller.showHint.value,
+                    shakeCount: _controller.shakeCount.value,
+                    feedbackMessage: _controller.feedbackMessage.value,
+                    primaryColor: theme.primaryColor,
+                    onTapSlot: _controller.tapContrastSlot,
+                    onAssignWord: _controller.assignContrastWord,
+                  )
+                : SynonymLadderCard(
+                    exercise: ex,
+                    placements: _controller.ladderPlacements.value,
+                    focusedRungIndex: _controller.focusedRungIndex.value,
+                    hasChecked: hasChecked,
+                    isCorrect: isCorrect,
+                    showHint: _controller.showHint.value,
+                    shakeCount: _controller.shakeCount.value,
+                    feedbackMessage: _controller.feedbackMessage.value,
+                    primaryColor: theme.primaryColor,
+                    onTapRung: _controller.tapLadderRung,
+                    onPlaceWord: _controller.placeLadderWord,
+                  ),
+          ),
+        );
+      },
     );
   }
 }

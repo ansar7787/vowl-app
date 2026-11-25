@@ -1,518 +1,1510 @@
 {
-    "gameType": "synonymSearch",
-    "phase": "mastery",
-    "batchIndex": 12,
-    "levels": "111-120",
-    "quests": [
-        {
-            "id": "VOC_SYNONYMSEARCH_L111_Q1",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Discretion",
-            "hint": "The freedom to decide something based on your own judgment.",
-            "explanation": "\"Latitude\" describes the freedom given to someone to act according to their own judgment, closely related to discretion.",
-            "interactionType": "search",
-            "correctAnswer": "Latitude",
-            "options": [
-                "Restriction",
-                "Latitude",
-                "Constraint",
-                "Limitation"
-            ],
-            "nuanceDifference": "\"Latitude\" often refers to freedom granted within a role or task, while \"discretion\" more often refers to personal judgment about a specific choice.",
-            "contextSentence": "The editor gave the writer considerable latitude on the story's tone."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L111_Q2",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Pragmatic",
-            "hint": "Dealing with things in a realistic way, based on what actually works rather than fixed ideas or theories.",
-            "explanation": "\"Practical\" describes an approach focused on what works in reality, closely related to being pragmatic.",
-            "interactionType": "search",
-            "correctAnswer": "Practical",
-            "options": [
-                "Practical",
-                "Idealistic",
-                "Theoretical",
-                "Unrealistic"
-            ],
-            "nuanceDifference": "\"Practical\" is the everyday word, while \"pragmatic\" often carries a more deliberate, almost philosophical sense of favoring results over principle.",
-            "contextSentence": "The team took a practical approach to solving the budget shortfall."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L111_Q3",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Rigorous",
-            "hint": "Extremely thorough and exacting, allowing for no errors or shortcuts.",
-            "explanation": "\"Scrupulous\" describes being extremely careful and precise, especially about following rules correctly, much like a rigorous process leaves nothing to chance.",
-            "interactionType": "search",
-            "correctAnswer": "Scrupulous",
-            "options": [
-                "Careless",
-                "Negligent",
-                "Scrupulous",
-                "Sloppy"
-            ],
-            "nuanceDifference": "\"Scrupulous\" often carries an ethical dimension, like scrupulous honesty, while \"rigorous\" more often describes the strictness of a process or method.",
-            "contextSentence": "The auditor was scrupulous about following every regulation."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L112_Q1",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Coherent",
-            "hint": "Logical and consistent; easy to follow.",
-            "explanation": "\"Cohesive\" describes parts fitting together well as a unified whole, closely related to being coherent.",
-            "interactionType": "search",
-            "correctAnswer": "Cohesive",
-            "options": [
-                "Disjointed",
-                "Fragmented",
-                "Scattered",
-                "Cohesive"
-            ],
-            "nuanceDifference": "\"Cohesive\" often describes how well parts of a team or plan fit together, while \"coherent\" more often describes the logic of an argument or explanation.",
-            "contextSentence": "The new manager built a cohesive team out of scattered departments."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L112_Q2",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Articulate",
-            "hint": "Able to express thoughts and ideas clearly and effectively.",
-            "explanation": "\"Eloquent\" describes speaking or writing in a fluent, persuasive, and expressive way, closely related to being articulate.",
-            "interactionType": "search",
-            "correctAnswer": "Eloquent",
-            "options": [
-                "Inarticulate",
-                "Eloquent",
-                "Tongue-tied",
-                "Awkward"
-            ],
-            "nuanceDifference": "\"Eloquent\" often implies a graceful, persuasive style, while \"articulate\" more broadly emphasizes clarity of expression, without necessarily being elegant.",
-            "contextSentence": "The eloquent speaker held the audience's attention for an hour."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L112_Q3",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Concise",
-            "hint": "Giving a lot of information clearly and in a few words.",
-            "explanation": "\"Succinct\" describes expressing something briefly and clearly, closely related to being concise.",
-            "interactionType": "search",
-            "correctAnswer": "Succinct",
-            "options": [
-                "Succinct",
-                "Verbose",
-                "Wordy",
-                "Rambling"
-            ],
-            "nuanceDifference": "\"Succinct\" and \"concise\" are near-perfect synonyms; \"succinct\" is slightly more formal and literary in tone.",
-            "contextSentence": "Her succinct summary captured the report's key points in two sentences."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L113_Q1",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Skeptical",
-            "hint": "Having doubts about whether a claim or idea is true.",
-            "explanation": "\"Dubious\" describes feeling doubtful about the truth or quality of something, closely related to being skeptical.",
-            "interactionType": "search",
-            "correctAnswer": "Dubious",
-            "options": [
-                "Convinced",
-                "Certain",
-                "Dubious",
-                "Confident"
-            ],
-            "nuanceDifference": "\"Dubious\" can also describe the questionable thing itself, like a dubious claim, while \"skeptical\" specifically describes a person's doubting attitude.",
-            "contextSentence": "She remained dubious about the salesman's promises."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L113_Q2",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Indifferent",
-            "hint": "Having no particular interest or concern; not caring either way.",
-            "explanation": "\"Apathetic\" describes a lack of interest or motivation, often stronger and more concerning than being indifferent.",
-            "interactionType": "search",
-            "correctAnswer": "Apathetic",
-            "options": [
-                "Apathetic",
-                "Enthusiastic",
-                "Passionate",
-                "Engaged"
-            ],
-            "nuanceDifference": "\"Apathetic\" often implies a troubling lack of energy or concern, while \"indifferent\" can simply mean having no preference in a particular situation.",
-            "contextSentence": "Voter turnout dropped as many young people grew apathetic about politics."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L113_Q3",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Impartial",
-            "hint": "Not favoring one side over another; fair and neutral.",
-            "explanation": "\"Unbiased\" describes judgment or reporting free from personal opinion or favoritism, closely related to being impartial.",
-            "interactionType": "search",
-            "correctAnswer": "Unbiased",
-            "options": [
-                "Prejudiced",
-                "Partisan",
-                "One-sided",
-                "Unbiased"
-            ],
-            "nuanceDifference": "\"Unbiased\" often emphasizes the absence of personal opinion in judging facts, while \"impartial\" more often emphasizes fair treatment of people or sides.",
-            "contextSentence": "The committee sought an unbiased evaluation of both proposals."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L114_Q1",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Anomaly",
-            "hint": "Something that deviates from what is standard or expected.",
-            "explanation": "\"Irregularity\" describes something that departs from the usual pattern, closely related to being an anomaly.",
-            "interactionType": "search",
-            "correctAnswer": "Irregularity",
-            "options": [
-                "Norm",
-                "Irregularity",
-                "Pattern",
-                "Standard"
-            ],
-            "nuanceDifference": "\"Irregularity\" is often used for procedural or financial deviations, while \"anomaly\" is broader, applying to data, behavior, or events generally.",
-            "contextSentence": "Auditors flagged several irregularities in the quarterly report."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L114_Q2",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Consensus",
-            "hint": "A general agreement among a group of people.",
-            "explanation": "\"Unanimity\" describes complete agreement among everyone involved, a stronger version of consensus.",
-            "interactionType": "search",
-            "correctAnswer": "Unanimity",
-            "options": [
-                "Disagreement",
-                "Division",
-                "Unanimity",
-                "Discord"
-            ],
-            "nuanceDifference": "\"Unanimity\" specifically means everyone agrees without exception, while \"consensus\" can describe broad, though not necessarily total, agreement.",
-            "contextSentence": "The board reached near unanimity on the merger decision."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L114_Q3",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Discrepancy",
-            "hint": "A difference between two things that should be the same.",
-            "explanation": "\"Inconsistency\" describes a lack of agreement between facts or figures, closely related to a discrepancy.",
-            "interactionType": "search",
-            "correctAnswer": "Inconsistency",
-            "options": [
-                "Inconsistency",
-                "Alignment",
-                "Agreement",
-                "Match"
-            ],
-            "nuanceDifference": "\"Inconsistency\" can describe a pattern across many instances, while \"discrepancy\" often refers to a specific difference between two particular figures or accounts.",
-            "contextSentence": "The accountant noticed an inconsistency between the two invoices."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L115_Q1",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Prevalent",
-            "hint": "Common or frequently found in a particular place or at a particular time.",
-            "explanation": "\"Widespread\" describes something found across a large area or among many people, closely related to being prevalent.",
-            "interactionType": "search",
-            "correctAnswer": "Widespread",
-            "options": [
-                "Rare",
-                "Scarce",
-                "Uncommon",
-                "Widespread"
-            ],
-            "nuanceDifference": "\"Widespread\" emphasizes geographic or social breadth, while \"prevalent\" is often used specifically for conditions, attitudes, or diseases.",
-            "contextSentence": "Misinformation about the vaccine became widespread on social media."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L115_Q2",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Dwindle",
-            "hint": "To become gradually smaller or fewer.",
-            "explanation": "\"Diminish\" describes something becoming smaller or less over time, closely related to dwindling.",
-            "interactionType": "search",
-            "correctAnswer": "Diminish",
-            "options": [
-                "Grow",
-                "Diminish",
-                "Increase",
-                "Expand"
-            ],
-            "nuanceDifference": "\"Diminish\" is broader and can apply to importance, size, or intensity, while \"dwindle\" specifically emphasizes a slow, steady decline in quantity.",
-            "contextSentence": "Public interest in the campaign began to diminish after the scandal."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L115_Q3",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Proliferate",
-            "hint": "To increase rapidly in number.",
-            "explanation": "\"Multiply\" describes a rapid increase in number, closely related to proliferating.",
-            "interactionType": "search",
-            "correctAnswer": "Multiply",
-            "options": [
-                "Multiply",
-                "Diminish",
-                "Decline",
-                "Dwindle"
-            ],
-            "nuanceDifference": "\"Multiply\" is the more common everyday word, while \"proliferate\" is often used in formal or scientific writing about rapid, sometimes uncontrolled growth.",
-            "contextSentence": "Online scams have multiplied rapidly in the past few years."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L116_Q1",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Circumvent",
-            "hint": "To find a way around an obstacle or rule, often cleverly.",
-            "explanation": "\"Bypass\" describes avoiding an obstacle or rule by going around it, closely related to circumventing it.",
-            "interactionType": "search",
-            "correctAnswer": "Bypass",
-            "options": [
-                "Confront",
-                "Conform",
-                "Bypass",
-                "Follow"
-            ],
-            "nuanceDifference": "\"Bypass\" is the more common everyday word, especially for physical routes or processes, while \"circumvent\" often implies cleverness or slight deception.",
-            "contextSentence": "The app was designed to bypass the usual login process."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L116_Q2",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Perpetuate",
-            "hint": "To cause something, especially a negative situation, to continue for a long time.",
-            "explanation": "\"Prolong\" describes making something last longer than it otherwise would, closely related to perpetuating it.",
-            "interactionType": "search",
-            "correctAnswer": "Prolong",
-            "options": [
-                "End",
-                "Prolong",
-                "Halt",
-                "Terminate"
-            ],
-            "nuanceDifference": "\"Prolong\" is more neutral and can apply to positive or negative situations, while \"perpetuate\" typically implies continuing something harmful or unwanted.",
-            "contextSentence": "The delayed decision only prolonged the uncertainty for employees."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L116_Q3",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Reiterate",
-            "hint": "To say something again, usually to emphasize it.",
-            "explanation": "\"Repeat\" means to say something again, closely related to reiterating it.",
-            "interactionType": "search",
-            "correctAnswer": "Repeat",
-            "options": [
-                "Retract",
-                "Withdraw",
-                "Recant",
-                "Repeat"
-            ],
-            "nuanceDifference": "\"Repeat\" is the everyday, general word, while \"reiterate\" specifically implies repeating a point for the purpose of emphasis or clarity.",
-            "contextSentence": "The manager repeated the deadline to make sure everyone understood."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L117_Q1",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Exacerbate",
-            "hint": "To make a problem or bad situation worse.",
-            "explanation": "\"Aggravate\" describes making a situation worse, closely related to exacerbating it.",
-            "interactionType": "search",
-            "correctAnswer": "Aggravate",
-            "options": [
-                "Ease",
-                "Relieve",
-                "Alleviate",
-                "Aggravate"
-            ],
-            "nuanceDifference": "\"Aggravate\" is slightly more common in everyday speech, while \"exacerbate\" is more frequent in formal, medical, or academic writing.",
-            "contextSentence": "Skipping physical therapy can aggravate the injury."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L117_Q2",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Alleviate",
-            "hint": "To make pain, suffering, or a problem less severe.",
-            "explanation": "\"Ease\" describes making something less severe or difficult, closely related to alleviating it.",
-            "interactionType": "search",
-            "correctAnswer": "Ease",
-            "options": [
-                "Worsen",
-                "Intensify",
-                "Ease",
-                "Aggravate"
-            ],
-            "nuanceDifference": "\"Ease\" is the shorter, everyday word, while \"alleviate\" is more formal and common in medical or policy contexts.",
-            "contextSentence": "The new medication helped ease her chronic back pain."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L117_Q3",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Mitigate",
-            "hint": "To make something less severe, harmful, or serious.",
-            "explanation": "\"Lessen\" describes reducing the severity of something, closely related to mitigating it.",
-            "interactionType": "search",
-            "correctAnswer": "Lessen",
-            "options": [
-                "Lessen",
-                "Increase",
-                "Intensify",
-                "Heighten"
-            ],
-            "nuanceDifference": "\"Lessen\" is the everyday word, while \"mitigate\" is more formal and frequently used in risk, policy, and environmental contexts.",
-            "contextSentence": "The new safety measures helped lessen the risk of accidents on site."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L118_Q1",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Vindicate",
-            "hint": "To show that someone was right or justified after they had been doubted.",
-            "explanation": "\"Exonerate\" describes clearing someone of blame, especially after they were accused of wrongdoing.",
-            "interactionType": "search",
-            "correctAnswer": "Exonerate",
-            "options": [
-                "Incriminate",
-                "Exonerate",
-                "Convict",
-                "Implicate"
-            ],
-            "nuanceDifference": "\"Exonerate\" specifically applies to clearing someone of blame or guilt, while \"vindicate\" more broadly means proving someone right about anything, not just innocence.",
-            "contextSentence": "New evidence eventually exonerated the man after years in prison."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L118_Q2",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Denounce",
-            "hint": "To publicly criticize or condemn someone or something strongly.",
-            "explanation": "\"Decry\" describes publicly expressing strong disapproval, closely related to denouncing something.",
-            "interactionType": "search",
-            "correctAnswer": "Decry",
-            "options": [
-                "Decry",
-                "Praise",
-                "Endorse",
-                "Applaud"
-            ],
-            "nuanceDifference": "\"Decry\" is more formal and literary, often used in journalism, while \"denounce\" is used in both everyday and formal contexts.",
-            "contextSentence": "Activists decried the company's environmental record."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L118_Q3",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Endorse",
-            "hint": "To publicly declare support for someone or something.",
-            "explanation": "\"Sanction\" can mean to give official approval or support for something, closely related to endorsing it.",
-            "interactionType": "search",
-            "correctAnswer": "Sanction",
-            "options": [
-                "Oppose",
-                "Reject",
-                "Sanction",
-                "Denounce"
-            ],
-            "nuanceDifference": "\"Sanction\" is often used in formal or institutional approval, though it can also mean to penalize, so context is essential for choosing the right sense.",
-            "contextSentence": "The board voted to sanction the new safety guidelines."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L119_Q1",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Deference",
-            "hint": "Respectful submission to the wishes or judgment of another.",
-            "explanation": "\"Reverence\" describes deep respect and admiration, closely related to showing deference.",
-            "interactionType": "search",
-            "correctAnswer": "Reverence",
-            "options": [
-                "Disrespect",
-                "Contempt",
-                "Disdain",
-                "Reverence"
-            ],
-            "nuanceDifference": "\"Reverence\" often implies a deep, almost spiritual admiration, while \"deference\" more specifically means yielding to someone else's authority or judgment.",
-            "contextSentence": "The students showed great reverence for their retiring professor."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L119_Q2",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Audacity",
-            "hint": "A willingness to take bold risks, sometimes seen as disrespectful.",
-            "explanation": "\"Nerve\" can describe bold, sometimes shocking confidence, closely related to audacity.",
-            "interactionType": "search",
-            "correctAnswer": "Nerve",
-            "options": [
-                "Timidity",
-                "Nerve",
-                "Hesitation",
-                "Shyness"
-            ],
-            "nuanceDifference": "\"Nerve\" is informal and conversational, while \"audacity\" is more formal and often implies the boldness crosses a line others find inappropriate.",
-            "contextSentence": "It took real nerve to challenge the CEO in front of the whole board."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L119_Q3",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Prudence",
-            "hint": "Careful and sensible judgment, especially regarding practical matters.",
-            "explanation": "\"Discretion\" describes careful, sensible judgment about what to say or do, closely related to prudence.",
-            "interactionType": "search",
-            "correctAnswer": "Discretion",
-            "options": [
-                "Recklessness",
-                "Carelessness",
-                "Discretion",
-                "Impulsiveness"
-            ],
-            "nuanceDifference": "\"Discretion\" often focuses on judgment about what to reveal or keep private, while \"prudence\" more broadly covers careful decision-making of any kind.",
-            "contextSentence": "The lawyer handled the sensitive case with great discretion."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L120_Q1",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Paramount",
-            "hint": "More important than anything else; supreme.",
-            "explanation": "\"Foremost\" describes something ranked first in importance, closely related to being paramount.",
-            "interactionType": "search",
-            "correctAnswer": "Foremost",
-            "options": [
-                "Secondary",
-                "Foremost",
-                "Minor",
-                "Insignificant"
-            ],
-            "nuanceDifference": "\"Foremost\" often describes rank or order, like \"first and foremost,\" while \"paramount\" more strongly emphasizes that nothing else compares in importance.",
-            "contextSentence": "Safety remains the foremost concern in the design process."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L120_Q2",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Quintessential",
-            "hint": "Representing the most perfect or typical example of something.",
-            "explanation": "\"Archetypal\" describes the original or most typical example of a category, closely related to being quintessential.",
-            "interactionType": "search",
-            "correctAnswer": "Archetypal",
-            "options": [
-                "Archetypal",
-                "Atypical",
-                "Unusual",
-                "Uncharacteristic"
-            ],
-            "nuanceDifference": "\"Archetypal\" often refers to an original model others are based on, while \"quintessential\" emphasizes being the purest, most perfect representation.",
-            "contextSentence": "The small diner was archetypal of 1950s American roadside culture."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L120_Q3",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Indispensable",
-            "hint": "So important that a situation cannot function without it.",
-            "explanation": "\"Irreplaceable\" describes something so uniquely valuable that nothing else could take its place, closely related to being indispensable.",
-            "interactionType": "search",
-            "correctAnswer": "Irreplaceable",
-            "options": [
-                "Expendable",
-                "Dispensable",
-                "Optional",
-                "Irreplaceable"
-            ],
-            "nuanceDifference": "\"Irreplaceable\" emphasizes uniqueness, that nothing else could substitute for it, while \"indispensable\" emphasizes sheer necessity, regardless of uniqueness.",
-            "contextSentence": "Her decades of institutional knowledge made her feel irreplaceable."
-        }
-    ]
+  "gameType": "synonymSearch",
+  "phase": "mastery",
+  "cefr": "B2",
+  "difficulty": 3,
+  "batchIndex": 12,
+  "levels": "111-120",
+  "quests": [
+    {
+      "id": "VOC_SYNONYMSEARCH_L111_Q1",
+      "level": 111,
+      "cefr": "B2",
+      "subtype": "synonymSearch",
+      "difficulty": 3,
+      "interactionType": "search",
+      "instruction": "PLACEHOLDER_instruction_111_1",
+      "word": "PLACEHOLDER_word_111_1",
+      "definition": "PLACEHOLDER_definition_111_1",
+      "synonym": "PLACEHOLDER_syn_111_1",
+      "correctAnswer": "PLACEHOLDER_syn_111_1",
+      "correctAnswerIndex": 0,
+      "options": [
+        "PLACEHOLDER_syn_111_1",
+        "PLACEHOLDER_trapA_111_1",
+        "PLACEHOLDER_trapB_111_1",
+        "PLACEHOLDER_trapC_111_1"
+      ],
+      "synonyms": [
+        "PLACEHOLDER_syn_111_1",
+        "PLACEHOLDER_cousinA_111_1",
+        "PLACEHOLDER_cousinB_111_1"
+      ],
+      "antonyms": [
+        "PLACEHOLDER_trapA_111_1",
+        "PLACEHOLDER_trapB_111_1",
+        "PLACEHOLDER_trapC_111_1"
+      ],
+      "contextSentence": "PLACEHOLDER_context_111_1 ___.",
+      "usageExample": "PLACEHOLDER_usage_111_1",
+      "nuanceDifference": "PLACEHOLDER_nuance_111_1",
+      "explanation": "PLACEHOLDER_explanation_111_1",
+      "hint": "PLACEHOLDER_hint_111_1",
+      "gradientScale": [
+        "PLACEHOLDER_word_111_1",
+        "PLACEHOLDER_syn_111_1",
+        "PLACEHOLDER_cousinA_111_1",
+        "PLACEHOLDER_cousinB_111_1"
+      ],
+      "collocations": [
+        "PLACEHOLDER_collocA_111_1",
+        "PLACEHOLDER_collocB_111_1"
+      ],
+      "wrongCollocations": [
+        "PLACEHOLDER_wrongColloc_111_1"
+      ],
+      "registerLevel": 2,
+      "topicEmoji": "📝"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L111_Q2",
+      "level": 111,
+      "cefr": "B2",
+      "subtype": "synonymSearch",
+      "difficulty": 3,
+      "interactionType": "search",
+      "instruction": "PLACEHOLDER_instruction_111_2",
+      "word": "PLACEHOLDER_word_111_2",
+      "definition": "PLACEHOLDER_definition_111_2",
+      "synonym": "PLACEHOLDER_syn_111_2",
+      "correctAnswer": "PLACEHOLDER_syn_111_2",
+      "correctAnswerIndex": 0,
+      "options": [
+        "PLACEHOLDER_syn_111_2",
+        "PLACEHOLDER_trapA_111_2",
+        "PLACEHOLDER_trapB_111_2",
+        "PLACEHOLDER_trapC_111_2"
+      ],
+      "synonyms": [
+        "PLACEHOLDER_syn_111_2",
+        "PLACEHOLDER_cousinA_111_2",
+        "PLACEHOLDER_cousinB_111_2"
+      ],
+      "antonyms": [
+        "PLACEHOLDER_trapA_111_2",
+        "PLACEHOLDER_trapB_111_2",
+        "PLACEHOLDER_trapC_111_2"
+      ],
+      "contextSentence": "PLACEHOLDER_context_111_2 ___.",
+      "usageExample": "PLACEHOLDER_usage_111_2",
+      "nuanceDifference": "PLACEHOLDER_nuance_111_2",
+      "explanation": "PLACEHOLDER_explanation_111_2",
+      "hint": "PLACEHOLDER_hint_111_2",
+      "gradientScale": [
+        "PLACEHOLDER_word_111_2",
+        "PLACEHOLDER_syn_111_2",
+        "PLACEHOLDER_cousinA_111_2",
+        "PLACEHOLDER_cousinB_111_2"
+      ],
+      "collocations": [
+        "PLACEHOLDER_collocA_111_2",
+        "PLACEHOLDER_collocB_111_2"
+      ],
+      "wrongCollocations": [
+        "PLACEHOLDER_wrongColloc_111_2"
+      ],
+      "registerLevel": 2,
+      "topicEmoji": "📝"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L111_Q3",
+      "level": 111,
+      "cefr": "B2",
+      "subtype": "synonymSearch",
+      "difficulty": 3,
+      "interactionType": "search",
+      "instruction": "PLACEHOLDER_instruction_111_3",
+      "word": "PLACEHOLDER_word_111_3",
+      "definition": "PLACEHOLDER_definition_111_3",
+      "synonym": "PLACEHOLDER_syn_111_3",
+      "correctAnswer": "PLACEHOLDER_syn_111_3",
+      "correctAnswerIndex": 0,
+      "options": [
+        "PLACEHOLDER_syn_111_3",
+        "PLACEHOLDER_trapA_111_3",
+        "PLACEHOLDER_trapB_111_3",
+        "PLACEHOLDER_trapC_111_3"
+      ],
+      "synonyms": [
+        "PLACEHOLDER_syn_111_3",
+        "PLACEHOLDER_cousinA_111_3",
+        "PLACEHOLDER_cousinB_111_3"
+      ],
+      "antonyms": [
+        "PLACEHOLDER_trapA_111_3",
+        "PLACEHOLDER_trapB_111_3",
+        "PLACEHOLDER_trapC_111_3"
+      ],
+      "contextSentence": "PLACEHOLDER_context_111_3 ___.",
+      "usageExample": "PLACEHOLDER_usage_111_3",
+      "nuanceDifference": "PLACEHOLDER_nuance_111_3",
+      "explanation": "PLACEHOLDER_explanation_111_3",
+      "hint": "PLACEHOLDER_hint_111_3",
+      "gradientScale": [
+        "PLACEHOLDER_word_111_3",
+        "PLACEHOLDER_syn_111_3",
+        "PLACEHOLDER_cousinA_111_3",
+        "PLACEHOLDER_cousinB_111_3"
+      ],
+      "collocations": [
+        "PLACEHOLDER_collocA_111_3",
+        "PLACEHOLDER_collocB_111_3"
+      ],
+      "wrongCollocations": [
+        "PLACEHOLDER_wrongColloc_111_3"
+      ],
+      "registerLevel": 2,
+      "topicEmoji": "📝"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L112_Q1",
+      "level": 112,
+      "cefr": "B2",
+      "subtype": "synonymSearch",
+      "difficulty": 3,
+      "interactionType": "search",
+      "instruction": "PLACEHOLDER_instruction_112_1",
+      "word": "PLACEHOLDER_word_112_1",
+      "definition": "PLACEHOLDER_definition_112_1",
+      "synonym": "PLACEHOLDER_syn_112_1",
+      "correctAnswer": "PLACEHOLDER_syn_112_1",
+      "correctAnswerIndex": 0,
+      "options": [
+        "PLACEHOLDER_syn_112_1",
+        "PLACEHOLDER_trapA_112_1",
+        "PLACEHOLDER_trapB_112_1",
+        "PLACEHOLDER_trapC_112_1"
+      ],
+      "synonyms": [
+        "PLACEHOLDER_syn_112_1",
+        "PLACEHOLDER_cousinA_112_1",
+        "PLACEHOLDER_cousinB_112_1"
+      ],
+      "antonyms": [
+        "PLACEHOLDER_trapA_112_1",
+        "PLACEHOLDER_trapB_112_1",
+        "PLACEHOLDER_trapC_112_1"
+      ],
+      "contextSentence": "PLACEHOLDER_context_112_1 ___.",
+      "usageExample": "PLACEHOLDER_usage_112_1",
+      "nuanceDifference": "PLACEHOLDER_nuance_112_1",
+      "explanation": "PLACEHOLDER_explanation_112_1",
+      "hint": "PLACEHOLDER_hint_112_1",
+      "gradientScale": [
+        "PLACEHOLDER_word_112_1",
+        "PLACEHOLDER_syn_112_1",
+        "PLACEHOLDER_cousinA_112_1",
+        "PLACEHOLDER_cousinB_112_1"
+      ],
+      "collocations": [
+        "PLACEHOLDER_collocA_112_1",
+        "PLACEHOLDER_collocB_112_1"
+      ],
+      "wrongCollocations": [
+        "PLACEHOLDER_wrongColloc_112_1"
+      ],
+      "registerLevel": 2,
+      "topicEmoji": "📝"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L112_Q2",
+      "level": 112,
+      "cefr": "B2",
+      "subtype": "synonymSearch",
+      "difficulty": 3,
+      "interactionType": "search",
+      "instruction": "PLACEHOLDER_instruction_112_2",
+      "word": "PLACEHOLDER_word_112_2",
+      "definition": "PLACEHOLDER_definition_112_2",
+      "synonym": "PLACEHOLDER_syn_112_2",
+      "correctAnswer": "PLACEHOLDER_syn_112_2",
+      "correctAnswerIndex": 0,
+      "options": [
+        "PLACEHOLDER_syn_112_2",
+        "PLACEHOLDER_trapA_112_2",
+        "PLACEHOLDER_trapB_112_2",
+        "PLACEHOLDER_trapC_112_2"
+      ],
+      "synonyms": [
+        "PLACEHOLDER_syn_112_2",
+        "PLACEHOLDER_cousinA_112_2",
+        "PLACEHOLDER_cousinB_112_2"
+      ],
+      "antonyms": [
+        "PLACEHOLDER_trapA_112_2",
+        "PLACEHOLDER_trapB_112_2",
+        "PLACEHOLDER_trapC_112_2"
+      ],
+      "contextSentence": "PLACEHOLDER_context_112_2 ___.",
+      "usageExample": "PLACEHOLDER_usage_112_2",
+      "nuanceDifference": "PLACEHOLDER_nuance_112_2",
+      "explanation": "PLACEHOLDER_explanation_112_2",
+      "hint": "PLACEHOLDER_hint_112_2",
+      "gradientScale": [
+        "PLACEHOLDER_word_112_2",
+        "PLACEHOLDER_syn_112_2",
+        "PLACEHOLDER_cousinA_112_2",
+        "PLACEHOLDER_cousinB_112_2"
+      ],
+      "collocations": [
+        "PLACEHOLDER_collocA_112_2",
+        "PLACEHOLDER_collocB_112_2"
+      ],
+      "wrongCollocations": [
+        "PLACEHOLDER_wrongColloc_112_2"
+      ],
+      "registerLevel": 2,
+      "topicEmoji": "📝"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L112_Q3",
+      "level": 112,
+      "cefr": "B2",
+      "subtype": "synonymSearch",
+      "difficulty": 3,
+      "interactionType": "search",
+      "instruction": "PLACEHOLDER_instruction_112_3",
+      "word": "PLACEHOLDER_word_112_3",
+      "definition": "PLACEHOLDER_definition_112_3",
+      "synonym": "PLACEHOLDER_syn_112_3",
+      "correctAnswer": "PLACEHOLDER_syn_112_3",
+      "correctAnswerIndex": 0,
+      "options": [
+        "PLACEHOLDER_syn_112_3",
+        "PLACEHOLDER_trapA_112_3",
+        "PLACEHOLDER_trapB_112_3",
+        "PLACEHOLDER_trapC_112_3"
+      ],
+      "synonyms": [
+        "PLACEHOLDER_syn_112_3",
+        "PLACEHOLDER_cousinA_112_3",
+        "PLACEHOLDER_cousinB_112_3"
+      ],
+      "antonyms": [
+        "PLACEHOLDER_trapA_112_3",
+        "PLACEHOLDER_trapB_112_3",
+        "PLACEHOLDER_trapC_112_3"
+      ],
+      "contextSentence": "PLACEHOLDER_context_112_3 ___.",
+      "usageExample": "PLACEHOLDER_usage_112_3",
+      "nuanceDifference": "PLACEHOLDER_nuance_112_3",
+      "explanation": "PLACEHOLDER_explanation_112_3",
+      "hint": "PLACEHOLDER_hint_112_3",
+      "gradientScale": [
+        "PLACEHOLDER_word_112_3",
+        "PLACEHOLDER_syn_112_3",
+        "PLACEHOLDER_cousinA_112_3",
+        "PLACEHOLDER_cousinB_112_3"
+      ],
+      "collocations": [
+        "PLACEHOLDER_collocA_112_3",
+        "PLACEHOLDER_collocB_112_3"
+      ],
+      "wrongCollocations": [
+        "PLACEHOLDER_wrongColloc_112_3"
+      ],
+      "registerLevel": 2,
+      "topicEmoji": "📝"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L113_Q1",
+      "level": 113,
+      "cefr": "B2",
+      "subtype": "synonymSearch",
+      "difficulty": 3,
+      "interactionType": "search",
+      "instruction": "PLACEHOLDER_instruction_113_1",
+      "word": "PLACEHOLDER_word_113_1",
+      "definition": "PLACEHOLDER_definition_113_1",
+      "synonym": "PLACEHOLDER_syn_113_1",
+      "correctAnswer": "PLACEHOLDER_syn_113_1",
+      "correctAnswerIndex": 0,
+      "options": [
+        "PLACEHOLDER_syn_113_1",
+        "PLACEHOLDER_trapA_113_1",
+        "PLACEHOLDER_trapB_113_1",
+        "PLACEHOLDER_trapC_113_1"
+      ],
+      "synonyms": [
+        "PLACEHOLDER_syn_113_1",
+        "PLACEHOLDER_cousinA_113_1",
+        "PLACEHOLDER_cousinB_113_1"
+      ],
+      "antonyms": [
+        "PLACEHOLDER_trapA_113_1",
+        "PLACEHOLDER_trapB_113_1",
+        "PLACEHOLDER_trapC_113_1"
+      ],
+      "contextSentence": "PLACEHOLDER_context_113_1 ___.",
+      "usageExample": "PLACEHOLDER_usage_113_1",
+      "nuanceDifference": "PLACEHOLDER_nuance_113_1",
+      "explanation": "PLACEHOLDER_explanation_113_1",
+      "hint": "PLACEHOLDER_hint_113_1",
+      "gradientScale": [
+        "PLACEHOLDER_word_113_1",
+        "PLACEHOLDER_syn_113_1",
+        "PLACEHOLDER_cousinA_113_1",
+        "PLACEHOLDER_cousinB_113_1"
+      ],
+      "collocations": [
+        "PLACEHOLDER_collocA_113_1",
+        "PLACEHOLDER_collocB_113_1"
+      ],
+      "wrongCollocations": [
+        "PLACEHOLDER_wrongColloc_113_1"
+      ],
+      "registerLevel": 2,
+      "topicEmoji": "📝"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L113_Q2",
+      "level": 113,
+      "cefr": "B2",
+      "subtype": "synonymSearch",
+      "difficulty": 3,
+      "interactionType": "search",
+      "instruction": "PLACEHOLDER_instruction_113_2",
+      "word": "PLACEHOLDER_word_113_2",
+      "definition": "PLACEHOLDER_definition_113_2",
+      "synonym": "PLACEHOLDER_syn_113_2",
+      "correctAnswer": "PLACEHOLDER_syn_113_2",
+      "correctAnswerIndex": 0,
+      "options": [
+        "PLACEHOLDER_syn_113_2",
+        "PLACEHOLDER_trapA_113_2",
+        "PLACEHOLDER_trapB_113_2",
+        "PLACEHOLDER_trapC_113_2"
+      ],
+      "synonyms": [
+        "PLACEHOLDER_syn_113_2",
+        "PLACEHOLDER_cousinA_113_2",
+        "PLACEHOLDER_cousinB_113_2"
+      ],
+      "antonyms": [
+        "PLACEHOLDER_trapA_113_2",
+        "PLACEHOLDER_trapB_113_2",
+        "PLACEHOLDER_trapC_113_2"
+      ],
+      "contextSentence": "PLACEHOLDER_context_113_2 ___.",
+      "usageExample": "PLACEHOLDER_usage_113_2",
+      "nuanceDifference": "PLACEHOLDER_nuance_113_2",
+      "explanation": "PLACEHOLDER_explanation_113_2",
+      "hint": "PLACEHOLDER_hint_113_2",
+      "gradientScale": [
+        "PLACEHOLDER_word_113_2",
+        "PLACEHOLDER_syn_113_2",
+        "PLACEHOLDER_cousinA_113_2",
+        "PLACEHOLDER_cousinB_113_2"
+      ],
+      "collocations": [
+        "PLACEHOLDER_collocA_113_2",
+        "PLACEHOLDER_collocB_113_2"
+      ],
+      "wrongCollocations": [
+        "PLACEHOLDER_wrongColloc_113_2"
+      ],
+      "registerLevel": 2,
+      "topicEmoji": "📝"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L113_Q3",
+      "level": 113,
+      "cefr": "B2",
+      "subtype": "synonymSearch",
+      "difficulty": 3,
+      "interactionType": "search",
+      "instruction": "PLACEHOLDER_instruction_113_3",
+      "word": "PLACEHOLDER_word_113_3",
+      "definition": "PLACEHOLDER_definition_113_3",
+      "synonym": "PLACEHOLDER_syn_113_3",
+      "correctAnswer": "PLACEHOLDER_syn_113_3",
+      "correctAnswerIndex": 0,
+      "options": [
+        "PLACEHOLDER_syn_113_3",
+        "PLACEHOLDER_trapA_113_3",
+        "PLACEHOLDER_trapB_113_3",
+        "PLACEHOLDER_trapC_113_3"
+      ],
+      "synonyms": [
+        "PLACEHOLDER_syn_113_3",
+        "PLACEHOLDER_cousinA_113_3",
+        "PLACEHOLDER_cousinB_113_3"
+      ],
+      "antonyms": [
+        "PLACEHOLDER_trapA_113_3",
+        "PLACEHOLDER_trapB_113_3",
+        "PLACEHOLDER_trapC_113_3"
+      ],
+      "contextSentence": "PLACEHOLDER_context_113_3 ___.",
+      "usageExample": "PLACEHOLDER_usage_113_3",
+      "nuanceDifference": "PLACEHOLDER_nuance_113_3",
+      "explanation": "PLACEHOLDER_explanation_113_3",
+      "hint": "PLACEHOLDER_hint_113_3",
+      "gradientScale": [
+        "PLACEHOLDER_word_113_3",
+        "PLACEHOLDER_syn_113_3",
+        "PLACEHOLDER_cousinA_113_3",
+        "PLACEHOLDER_cousinB_113_3"
+      ],
+      "collocations": [
+        "PLACEHOLDER_collocA_113_3",
+        "PLACEHOLDER_collocB_113_3"
+      ],
+      "wrongCollocations": [
+        "PLACEHOLDER_wrongColloc_113_3"
+      ],
+      "registerLevel": 2,
+      "topicEmoji": "📝"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L114_Q1",
+      "level": 114,
+      "cefr": "B2",
+      "subtype": "synonymSearch",
+      "difficulty": 3,
+      "interactionType": "search",
+      "instruction": "PLACEHOLDER_instruction_114_1",
+      "word": "PLACEHOLDER_word_114_1",
+      "definition": "PLACEHOLDER_definition_114_1",
+      "synonym": "PLACEHOLDER_syn_114_1",
+      "correctAnswer": "PLACEHOLDER_syn_114_1",
+      "correctAnswerIndex": 0,
+      "options": [
+        "PLACEHOLDER_syn_114_1",
+        "PLACEHOLDER_trapA_114_1",
+        "PLACEHOLDER_trapB_114_1",
+        "PLACEHOLDER_trapC_114_1"
+      ],
+      "synonyms": [
+        "PLACEHOLDER_syn_114_1",
+        "PLACEHOLDER_cousinA_114_1",
+        "PLACEHOLDER_cousinB_114_1"
+      ],
+      "antonyms": [
+        "PLACEHOLDER_trapA_114_1",
+        "PLACEHOLDER_trapB_114_1",
+        "PLACEHOLDER_trapC_114_1"
+      ],
+      "contextSentence": "PLACEHOLDER_context_114_1 ___.",
+      "usageExample": "PLACEHOLDER_usage_114_1",
+      "nuanceDifference": "PLACEHOLDER_nuance_114_1",
+      "explanation": "PLACEHOLDER_explanation_114_1",
+      "hint": "PLACEHOLDER_hint_114_1",
+      "gradientScale": [
+        "PLACEHOLDER_word_114_1",
+        "PLACEHOLDER_syn_114_1",
+        "PLACEHOLDER_cousinA_114_1",
+        "PLACEHOLDER_cousinB_114_1"
+      ],
+      "collocations": [
+        "PLACEHOLDER_collocA_114_1",
+        "PLACEHOLDER_collocB_114_1"
+      ],
+      "wrongCollocations": [
+        "PLACEHOLDER_wrongColloc_114_1"
+      ],
+      "registerLevel": 2,
+      "topicEmoji": "📝"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L114_Q2",
+      "level": 114,
+      "cefr": "B2",
+      "subtype": "synonymSearch",
+      "difficulty": 3,
+      "interactionType": "search",
+      "instruction": "PLACEHOLDER_instruction_114_2",
+      "word": "PLACEHOLDER_word_114_2",
+      "definition": "PLACEHOLDER_definition_114_2",
+      "synonym": "PLACEHOLDER_syn_114_2",
+      "correctAnswer": "PLACEHOLDER_syn_114_2",
+      "correctAnswerIndex": 0,
+      "options": [
+        "PLACEHOLDER_syn_114_2",
+        "PLACEHOLDER_trapA_114_2",
+        "PLACEHOLDER_trapB_114_2",
+        "PLACEHOLDER_trapC_114_2"
+      ],
+      "synonyms": [
+        "PLACEHOLDER_syn_114_2",
+        "PLACEHOLDER_cousinA_114_2",
+        "PLACEHOLDER_cousinB_114_2"
+      ],
+      "antonyms": [
+        "PLACEHOLDER_trapA_114_2",
+        "PLACEHOLDER_trapB_114_2",
+        "PLACEHOLDER_trapC_114_2"
+      ],
+      "contextSentence": "PLACEHOLDER_context_114_2 ___.",
+      "usageExample": "PLACEHOLDER_usage_114_2",
+      "nuanceDifference": "PLACEHOLDER_nuance_114_2",
+      "explanation": "PLACEHOLDER_explanation_114_2",
+      "hint": "PLACEHOLDER_hint_114_2",
+      "gradientScale": [
+        "PLACEHOLDER_word_114_2",
+        "PLACEHOLDER_syn_114_2",
+        "PLACEHOLDER_cousinA_114_2",
+        "PLACEHOLDER_cousinB_114_2"
+      ],
+      "collocations": [
+        "PLACEHOLDER_collocA_114_2",
+        "PLACEHOLDER_collocB_114_2"
+      ],
+      "wrongCollocations": [
+        "PLACEHOLDER_wrongColloc_114_2"
+      ],
+      "registerLevel": 2,
+      "topicEmoji": "📝"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L114_Q3",
+      "level": 114,
+      "cefr": "B2",
+      "subtype": "synonymSearch",
+      "difficulty": 3,
+      "interactionType": "search",
+      "instruction": "PLACEHOLDER_instruction_114_3",
+      "word": "PLACEHOLDER_word_114_3",
+      "definition": "PLACEHOLDER_definition_114_3",
+      "synonym": "PLACEHOLDER_syn_114_3",
+      "correctAnswer": "PLACEHOLDER_syn_114_3",
+      "correctAnswerIndex": 0,
+      "options": [
+        "PLACEHOLDER_syn_114_3",
+        "PLACEHOLDER_trapA_114_3",
+        "PLACEHOLDER_trapB_114_3",
+        "PLACEHOLDER_trapC_114_3"
+      ],
+      "synonyms": [
+        "PLACEHOLDER_syn_114_3",
+        "PLACEHOLDER_cousinA_114_3",
+        "PLACEHOLDER_cousinB_114_3"
+      ],
+      "antonyms": [
+        "PLACEHOLDER_trapA_114_3",
+        "PLACEHOLDER_trapB_114_3",
+        "PLACEHOLDER_trapC_114_3"
+      ],
+      "contextSentence": "PLACEHOLDER_context_114_3 ___.",
+      "usageExample": "PLACEHOLDER_usage_114_3",
+      "nuanceDifference": "PLACEHOLDER_nuance_114_3",
+      "explanation": "PLACEHOLDER_explanation_114_3",
+      "hint": "PLACEHOLDER_hint_114_3",
+      "gradientScale": [
+        "PLACEHOLDER_word_114_3",
+        "PLACEHOLDER_syn_114_3",
+        "PLACEHOLDER_cousinA_114_3",
+        "PLACEHOLDER_cousinB_114_3"
+      ],
+      "collocations": [
+        "PLACEHOLDER_collocA_114_3",
+        "PLACEHOLDER_collocB_114_3"
+      ],
+      "wrongCollocations": [
+        "PLACEHOLDER_wrongColloc_114_3"
+      ],
+      "registerLevel": 2,
+      "topicEmoji": "📝"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L115_Q1",
+      "level": 115,
+      "cefr": "B2",
+      "subtype": "synonymSearch",
+      "difficulty": 3,
+      "interactionType": "search",
+      "instruction": "PLACEHOLDER_instruction_115_1",
+      "word": "PLACEHOLDER_word_115_1",
+      "definition": "PLACEHOLDER_definition_115_1",
+      "synonym": "PLACEHOLDER_syn_115_1",
+      "correctAnswer": "PLACEHOLDER_syn_115_1",
+      "correctAnswerIndex": 0,
+      "options": [
+        "PLACEHOLDER_syn_115_1",
+        "PLACEHOLDER_trapA_115_1",
+        "PLACEHOLDER_trapB_115_1",
+        "PLACEHOLDER_trapC_115_1"
+      ],
+      "synonyms": [
+        "PLACEHOLDER_syn_115_1",
+        "PLACEHOLDER_cousinA_115_1",
+        "PLACEHOLDER_cousinB_115_1"
+      ],
+      "antonyms": [
+        "PLACEHOLDER_trapA_115_1",
+        "PLACEHOLDER_trapB_115_1",
+        "PLACEHOLDER_trapC_115_1"
+      ],
+      "contextSentence": "PLACEHOLDER_context_115_1 ___.",
+      "usageExample": "PLACEHOLDER_usage_115_1",
+      "nuanceDifference": "PLACEHOLDER_nuance_115_1",
+      "explanation": "PLACEHOLDER_explanation_115_1",
+      "hint": "PLACEHOLDER_hint_115_1",
+      "gradientScale": [
+        "PLACEHOLDER_word_115_1",
+        "PLACEHOLDER_syn_115_1",
+        "PLACEHOLDER_cousinA_115_1",
+        "PLACEHOLDER_cousinB_115_1"
+      ],
+      "collocations": [
+        "PLACEHOLDER_collocA_115_1",
+        "PLACEHOLDER_collocB_115_1"
+      ],
+      "wrongCollocations": [
+        "PLACEHOLDER_wrongColloc_115_1"
+      ],
+      "registerLevel": 2,
+      "topicEmoji": "📝"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L115_Q2",
+      "level": 115,
+      "cefr": "B2",
+      "subtype": "synonymSearch",
+      "difficulty": 3,
+      "interactionType": "search",
+      "instruction": "PLACEHOLDER_instruction_115_2",
+      "word": "PLACEHOLDER_word_115_2",
+      "definition": "PLACEHOLDER_definition_115_2",
+      "synonym": "PLACEHOLDER_syn_115_2",
+      "correctAnswer": "PLACEHOLDER_syn_115_2",
+      "correctAnswerIndex": 0,
+      "options": [
+        "PLACEHOLDER_syn_115_2",
+        "PLACEHOLDER_trapA_115_2",
+        "PLACEHOLDER_trapB_115_2",
+        "PLACEHOLDER_trapC_115_2"
+      ],
+      "synonyms": [
+        "PLACEHOLDER_syn_115_2",
+        "PLACEHOLDER_cousinA_115_2",
+        "PLACEHOLDER_cousinB_115_2"
+      ],
+      "antonyms": [
+        "PLACEHOLDER_trapA_115_2",
+        "PLACEHOLDER_trapB_115_2",
+        "PLACEHOLDER_trapC_115_2"
+      ],
+      "contextSentence": "PLACEHOLDER_context_115_2 ___.",
+      "usageExample": "PLACEHOLDER_usage_115_2",
+      "nuanceDifference": "PLACEHOLDER_nuance_115_2",
+      "explanation": "PLACEHOLDER_explanation_115_2",
+      "hint": "PLACEHOLDER_hint_115_2",
+      "gradientScale": [
+        "PLACEHOLDER_word_115_2",
+        "PLACEHOLDER_syn_115_2",
+        "PLACEHOLDER_cousinA_115_2",
+        "PLACEHOLDER_cousinB_115_2"
+      ],
+      "collocations": [
+        "PLACEHOLDER_collocA_115_2",
+        "PLACEHOLDER_collocB_115_2"
+      ],
+      "wrongCollocations": [
+        "PLACEHOLDER_wrongColloc_115_2"
+      ],
+      "registerLevel": 2,
+      "topicEmoji": "📝"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L115_Q3",
+      "level": 115,
+      "cefr": "B2",
+      "subtype": "synonymSearch",
+      "difficulty": 3,
+      "interactionType": "search",
+      "instruction": "PLACEHOLDER_instruction_115_3",
+      "word": "PLACEHOLDER_word_115_3",
+      "definition": "PLACEHOLDER_definition_115_3",
+      "synonym": "PLACEHOLDER_syn_115_3",
+      "correctAnswer": "PLACEHOLDER_syn_115_3",
+      "correctAnswerIndex": 0,
+      "options": [
+        "PLACEHOLDER_syn_115_3",
+        "PLACEHOLDER_trapA_115_3",
+        "PLACEHOLDER_trapB_115_3",
+        "PLACEHOLDER_trapC_115_3"
+      ],
+      "synonyms": [
+        "PLACEHOLDER_syn_115_3",
+        "PLACEHOLDER_cousinA_115_3",
+        "PLACEHOLDER_cousinB_115_3"
+      ],
+      "antonyms": [
+        "PLACEHOLDER_trapA_115_3",
+        "PLACEHOLDER_trapB_115_3",
+        "PLACEHOLDER_trapC_115_3"
+      ],
+      "contextSentence": "PLACEHOLDER_context_115_3 ___.",
+      "usageExample": "PLACEHOLDER_usage_115_3",
+      "nuanceDifference": "PLACEHOLDER_nuance_115_3",
+      "explanation": "PLACEHOLDER_explanation_115_3",
+      "hint": "PLACEHOLDER_hint_115_3",
+      "gradientScale": [
+        "PLACEHOLDER_word_115_3",
+        "PLACEHOLDER_syn_115_3",
+        "PLACEHOLDER_cousinA_115_3",
+        "PLACEHOLDER_cousinB_115_3"
+      ],
+      "collocations": [
+        "PLACEHOLDER_collocA_115_3",
+        "PLACEHOLDER_collocB_115_3"
+      ],
+      "wrongCollocations": [
+        "PLACEHOLDER_wrongColloc_115_3"
+      ],
+      "registerLevel": 2,
+      "topicEmoji": "📝"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L116_Q1",
+      "level": 116,
+      "cefr": "B2",
+      "subtype": "synonymSearch",
+      "difficulty": 3,
+      "interactionType": "search",
+      "instruction": "PLACEHOLDER_instruction_116_1",
+      "word": "PLACEHOLDER_word_116_1",
+      "definition": "PLACEHOLDER_definition_116_1",
+      "synonym": "PLACEHOLDER_syn_116_1",
+      "correctAnswer": "PLACEHOLDER_syn_116_1",
+      "correctAnswerIndex": 0,
+      "options": [
+        "PLACEHOLDER_syn_116_1",
+        "PLACEHOLDER_trapA_116_1",
+        "PLACEHOLDER_trapB_116_1",
+        "PLACEHOLDER_trapC_116_1"
+      ],
+      "synonyms": [
+        "PLACEHOLDER_syn_116_1",
+        "PLACEHOLDER_cousinA_116_1",
+        "PLACEHOLDER_cousinB_116_1"
+      ],
+      "antonyms": [
+        "PLACEHOLDER_trapA_116_1",
+        "PLACEHOLDER_trapB_116_1",
+        "PLACEHOLDER_trapC_116_1"
+      ],
+      "contextSentence": "PLACEHOLDER_context_116_1 ___.",
+      "usageExample": "PLACEHOLDER_usage_116_1",
+      "nuanceDifference": "PLACEHOLDER_nuance_116_1",
+      "explanation": "PLACEHOLDER_explanation_116_1",
+      "hint": "PLACEHOLDER_hint_116_1",
+      "gradientScale": [
+        "PLACEHOLDER_word_116_1",
+        "PLACEHOLDER_syn_116_1",
+        "PLACEHOLDER_cousinA_116_1",
+        "PLACEHOLDER_cousinB_116_1"
+      ],
+      "collocations": [
+        "PLACEHOLDER_collocA_116_1",
+        "PLACEHOLDER_collocB_116_1"
+      ],
+      "wrongCollocations": [
+        "PLACEHOLDER_wrongColloc_116_1"
+      ],
+      "registerLevel": 2,
+      "topicEmoji": "📝"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L116_Q2",
+      "level": 116,
+      "cefr": "B2",
+      "subtype": "synonymSearch",
+      "difficulty": 3,
+      "interactionType": "search",
+      "instruction": "PLACEHOLDER_instruction_116_2",
+      "word": "PLACEHOLDER_word_116_2",
+      "definition": "PLACEHOLDER_definition_116_2",
+      "synonym": "PLACEHOLDER_syn_116_2",
+      "correctAnswer": "PLACEHOLDER_syn_116_2",
+      "correctAnswerIndex": 0,
+      "options": [
+        "PLACEHOLDER_syn_116_2",
+        "PLACEHOLDER_trapA_116_2",
+        "PLACEHOLDER_trapB_116_2",
+        "PLACEHOLDER_trapC_116_2"
+      ],
+      "synonyms": [
+        "PLACEHOLDER_syn_116_2",
+        "PLACEHOLDER_cousinA_116_2",
+        "PLACEHOLDER_cousinB_116_2"
+      ],
+      "antonyms": [
+        "PLACEHOLDER_trapA_116_2",
+        "PLACEHOLDER_trapB_116_2",
+        "PLACEHOLDER_trapC_116_2"
+      ],
+      "contextSentence": "PLACEHOLDER_context_116_2 ___.",
+      "usageExample": "PLACEHOLDER_usage_116_2",
+      "nuanceDifference": "PLACEHOLDER_nuance_116_2",
+      "explanation": "PLACEHOLDER_explanation_116_2",
+      "hint": "PLACEHOLDER_hint_116_2",
+      "gradientScale": [
+        "PLACEHOLDER_word_116_2",
+        "PLACEHOLDER_syn_116_2",
+        "PLACEHOLDER_cousinA_116_2",
+        "PLACEHOLDER_cousinB_116_2"
+      ],
+      "collocations": [
+        "PLACEHOLDER_collocA_116_2",
+        "PLACEHOLDER_collocB_116_2"
+      ],
+      "wrongCollocations": [
+        "PLACEHOLDER_wrongColloc_116_2"
+      ],
+      "registerLevel": 2,
+      "topicEmoji": "📝"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L116_Q3",
+      "level": 116,
+      "cefr": "B2",
+      "subtype": "synonymSearch",
+      "difficulty": 3,
+      "interactionType": "search",
+      "instruction": "PLACEHOLDER_instruction_116_3",
+      "word": "PLACEHOLDER_word_116_3",
+      "definition": "PLACEHOLDER_definition_116_3",
+      "synonym": "PLACEHOLDER_syn_116_3",
+      "correctAnswer": "PLACEHOLDER_syn_116_3",
+      "correctAnswerIndex": 0,
+      "options": [
+        "PLACEHOLDER_syn_116_3",
+        "PLACEHOLDER_trapA_116_3",
+        "PLACEHOLDER_trapB_116_3",
+        "PLACEHOLDER_trapC_116_3"
+      ],
+      "synonyms": [
+        "PLACEHOLDER_syn_116_3",
+        "PLACEHOLDER_cousinA_116_3",
+        "PLACEHOLDER_cousinB_116_3"
+      ],
+      "antonyms": [
+        "PLACEHOLDER_trapA_116_3",
+        "PLACEHOLDER_trapB_116_3",
+        "PLACEHOLDER_trapC_116_3"
+      ],
+      "contextSentence": "PLACEHOLDER_context_116_3 ___.",
+      "usageExample": "PLACEHOLDER_usage_116_3",
+      "nuanceDifference": "PLACEHOLDER_nuance_116_3",
+      "explanation": "PLACEHOLDER_explanation_116_3",
+      "hint": "PLACEHOLDER_hint_116_3",
+      "gradientScale": [
+        "PLACEHOLDER_word_116_3",
+        "PLACEHOLDER_syn_116_3",
+        "PLACEHOLDER_cousinA_116_3",
+        "PLACEHOLDER_cousinB_116_3"
+      ],
+      "collocations": [
+        "PLACEHOLDER_collocA_116_3",
+        "PLACEHOLDER_collocB_116_3"
+      ],
+      "wrongCollocations": [
+        "PLACEHOLDER_wrongColloc_116_3"
+      ],
+      "registerLevel": 2,
+      "topicEmoji": "📝"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L117_Q1",
+      "level": 117,
+      "cefr": "B2",
+      "subtype": "synonymSearch",
+      "difficulty": 3,
+      "interactionType": "search",
+      "instruction": "PLACEHOLDER_instruction_117_1",
+      "word": "PLACEHOLDER_word_117_1",
+      "definition": "PLACEHOLDER_definition_117_1",
+      "synonym": "PLACEHOLDER_syn_117_1",
+      "correctAnswer": "PLACEHOLDER_syn_117_1",
+      "correctAnswerIndex": 0,
+      "options": [
+        "PLACEHOLDER_syn_117_1",
+        "PLACEHOLDER_trapA_117_1",
+        "PLACEHOLDER_trapB_117_1",
+        "PLACEHOLDER_trapC_117_1"
+      ],
+      "synonyms": [
+        "PLACEHOLDER_syn_117_1",
+        "PLACEHOLDER_cousinA_117_1",
+        "PLACEHOLDER_cousinB_117_1"
+      ],
+      "antonyms": [
+        "PLACEHOLDER_trapA_117_1",
+        "PLACEHOLDER_trapB_117_1",
+        "PLACEHOLDER_trapC_117_1"
+      ],
+      "contextSentence": "PLACEHOLDER_context_117_1 ___.",
+      "usageExample": "PLACEHOLDER_usage_117_1",
+      "nuanceDifference": "PLACEHOLDER_nuance_117_1",
+      "explanation": "PLACEHOLDER_explanation_117_1",
+      "hint": "PLACEHOLDER_hint_117_1",
+      "gradientScale": [
+        "PLACEHOLDER_word_117_1",
+        "PLACEHOLDER_syn_117_1",
+        "PLACEHOLDER_cousinA_117_1",
+        "PLACEHOLDER_cousinB_117_1"
+      ],
+      "collocations": [
+        "PLACEHOLDER_collocA_117_1",
+        "PLACEHOLDER_collocB_117_1"
+      ],
+      "wrongCollocations": [
+        "PLACEHOLDER_wrongColloc_117_1"
+      ],
+      "registerLevel": 2,
+      "topicEmoji": "📝"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L117_Q2",
+      "level": 117,
+      "cefr": "B2",
+      "subtype": "synonymSearch",
+      "difficulty": 3,
+      "interactionType": "search",
+      "instruction": "PLACEHOLDER_instruction_117_2",
+      "word": "PLACEHOLDER_word_117_2",
+      "definition": "PLACEHOLDER_definition_117_2",
+      "synonym": "PLACEHOLDER_syn_117_2",
+      "correctAnswer": "PLACEHOLDER_syn_117_2",
+      "correctAnswerIndex": 0,
+      "options": [
+        "PLACEHOLDER_syn_117_2",
+        "PLACEHOLDER_trapA_117_2",
+        "PLACEHOLDER_trapB_117_2",
+        "PLACEHOLDER_trapC_117_2"
+      ],
+      "synonyms": [
+        "PLACEHOLDER_syn_117_2",
+        "PLACEHOLDER_cousinA_117_2",
+        "PLACEHOLDER_cousinB_117_2"
+      ],
+      "antonyms": [
+        "PLACEHOLDER_trapA_117_2",
+        "PLACEHOLDER_trapB_117_2",
+        "PLACEHOLDER_trapC_117_2"
+      ],
+      "contextSentence": "PLACEHOLDER_context_117_2 ___.",
+      "usageExample": "PLACEHOLDER_usage_117_2",
+      "nuanceDifference": "PLACEHOLDER_nuance_117_2",
+      "explanation": "PLACEHOLDER_explanation_117_2",
+      "hint": "PLACEHOLDER_hint_117_2",
+      "gradientScale": [
+        "PLACEHOLDER_word_117_2",
+        "PLACEHOLDER_syn_117_2",
+        "PLACEHOLDER_cousinA_117_2",
+        "PLACEHOLDER_cousinB_117_2"
+      ],
+      "collocations": [
+        "PLACEHOLDER_collocA_117_2",
+        "PLACEHOLDER_collocB_117_2"
+      ],
+      "wrongCollocations": [
+        "PLACEHOLDER_wrongColloc_117_2"
+      ],
+      "registerLevel": 2,
+      "topicEmoji": "📝"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L117_Q3",
+      "level": 117,
+      "cefr": "B2",
+      "subtype": "synonymSearch",
+      "difficulty": 3,
+      "interactionType": "search",
+      "instruction": "PLACEHOLDER_instruction_117_3",
+      "word": "PLACEHOLDER_word_117_3",
+      "definition": "PLACEHOLDER_definition_117_3",
+      "synonym": "PLACEHOLDER_syn_117_3",
+      "correctAnswer": "PLACEHOLDER_syn_117_3",
+      "correctAnswerIndex": 0,
+      "options": [
+        "PLACEHOLDER_syn_117_3",
+        "PLACEHOLDER_trapA_117_3",
+        "PLACEHOLDER_trapB_117_3",
+        "PLACEHOLDER_trapC_117_3"
+      ],
+      "synonyms": [
+        "PLACEHOLDER_syn_117_3",
+        "PLACEHOLDER_cousinA_117_3",
+        "PLACEHOLDER_cousinB_117_3"
+      ],
+      "antonyms": [
+        "PLACEHOLDER_trapA_117_3",
+        "PLACEHOLDER_trapB_117_3",
+        "PLACEHOLDER_trapC_117_3"
+      ],
+      "contextSentence": "PLACEHOLDER_context_117_3 ___.",
+      "usageExample": "PLACEHOLDER_usage_117_3",
+      "nuanceDifference": "PLACEHOLDER_nuance_117_3",
+      "explanation": "PLACEHOLDER_explanation_117_3",
+      "hint": "PLACEHOLDER_hint_117_3",
+      "gradientScale": [
+        "PLACEHOLDER_word_117_3",
+        "PLACEHOLDER_syn_117_3",
+        "PLACEHOLDER_cousinA_117_3",
+        "PLACEHOLDER_cousinB_117_3"
+      ],
+      "collocations": [
+        "PLACEHOLDER_collocA_117_3",
+        "PLACEHOLDER_collocB_117_3"
+      ],
+      "wrongCollocations": [
+        "PLACEHOLDER_wrongColloc_117_3"
+      ],
+      "registerLevel": 2,
+      "topicEmoji": "📝"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L118_Q1",
+      "level": 118,
+      "cefr": "B2",
+      "subtype": "synonymSearch",
+      "difficulty": 3,
+      "interactionType": "search",
+      "instruction": "PLACEHOLDER_instruction_118_1",
+      "word": "PLACEHOLDER_word_118_1",
+      "definition": "PLACEHOLDER_definition_118_1",
+      "synonym": "PLACEHOLDER_syn_118_1",
+      "correctAnswer": "PLACEHOLDER_syn_118_1",
+      "correctAnswerIndex": 0,
+      "options": [
+        "PLACEHOLDER_syn_118_1",
+        "PLACEHOLDER_trapA_118_1",
+        "PLACEHOLDER_trapB_118_1",
+        "PLACEHOLDER_trapC_118_1"
+      ],
+      "synonyms": [
+        "PLACEHOLDER_syn_118_1",
+        "PLACEHOLDER_cousinA_118_1",
+        "PLACEHOLDER_cousinB_118_1"
+      ],
+      "antonyms": [
+        "PLACEHOLDER_trapA_118_1",
+        "PLACEHOLDER_trapB_118_1",
+        "PLACEHOLDER_trapC_118_1"
+      ],
+      "contextSentence": "PLACEHOLDER_context_118_1 ___.",
+      "usageExample": "PLACEHOLDER_usage_118_1",
+      "nuanceDifference": "PLACEHOLDER_nuance_118_1",
+      "explanation": "PLACEHOLDER_explanation_118_1",
+      "hint": "PLACEHOLDER_hint_118_1",
+      "gradientScale": [
+        "PLACEHOLDER_word_118_1",
+        "PLACEHOLDER_syn_118_1",
+        "PLACEHOLDER_cousinA_118_1",
+        "PLACEHOLDER_cousinB_118_1"
+      ],
+      "collocations": [
+        "PLACEHOLDER_collocA_118_1",
+        "PLACEHOLDER_collocB_118_1"
+      ],
+      "wrongCollocations": [
+        "PLACEHOLDER_wrongColloc_118_1"
+      ],
+      "registerLevel": 2,
+      "topicEmoji": "📝"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L118_Q2",
+      "level": 118,
+      "cefr": "B2",
+      "subtype": "synonymSearch",
+      "difficulty": 3,
+      "interactionType": "search",
+      "instruction": "PLACEHOLDER_instruction_118_2",
+      "word": "PLACEHOLDER_word_118_2",
+      "definition": "PLACEHOLDER_definition_118_2",
+      "synonym": "PLACEHOLDER_syn_118_2",
+      "correctAnswer": "PLACEHOLDER_syn_118_2",
+      "correctAnswerIndex": 0,
+      "options": [
+        "PLACEHOLDER_syn_118_2",
+        "PLACEHOLDER_trapA_118_2",
+        "PLACEHOLDER_trapB_118_2",
+        "PLACEHOLDER_trapC_118_2"
+      ],
+      "synonyms": [
+        "PLACEHOLDER_syn_118_2",
+        "PLACEHOLDER_cousinA_118_2",
+        "PLACEHOLDER_cousinB_118_2"
+      ],
+      "antonyms": [
+        "PLACEHOLDER_trapA_118_2",
+        "PLACEHOLDER_trapB_118_2",
+        "PLACEHOLDER_trapC_118_2"
+      ],
+      "contextSentence": "PLACEHOLDER_context_118_2 ___.",
+      "usageExample": "PLACEHOLDER_usage_118_2",
+      "nuanceDifference": "PLACEHOLDER_nuance_118_2",
+      "explanation": "PLACEHOLDER_explanation_118_2",
+      "hint": "PLACEHOLDER_hint_118_2",
+      "gradientScale": [
+        "PLACEHOLDER_word_118_2",
+        "PLACEHOLDER_syn_118_2",
+        "PLACEHOLDER_cousinA_118_2",
+        "PLACEHOLDER_cousinB_118_2"
+      ],
+      "collocations": [
+        "PLACEHOLDER_collocA_118_2",
+        "PLACEHOLDER_collocB_118_2"
+      ],
+      "wrongCollocations": [
+        "PLACEHOLDER_wrongColloc_118_2"
+      ],
+      "registerLevel": 2,
+      "topicEmoji": "📝"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L118_Q3",
+      "level": 118,
+      "cefr": "B2",
+      "subtype": "synonymSearch",
+      "difficulty": 3,
+      "interactionType": "search",
+      "instruction": "PLACEHOLDER_instruction_118_3",
+      "word": "PLACEHOLDER_word_118_3",
+      "definition": "PLACEHOLDER_definition_118_3",
+      "synonym": "PLACEHOLDER_syn_118_3",
+      "correctAnswer": "PLACEHOLDER_syn_118_3",
+      "correctAnswerIndex": 0,
+      "options": [
+        "PLACEHOLDER_syn_118_3",
+        "PLACEHOLDER_trapA_118_3",
+        "PLACEHOLDER_trapB_118_3",
+        "PLACEHOLDER_trapC_118_3"
+      ],
+      "synonyms": [
+        "PLACEHOLDER_syn_118_3",
+        "PLACEHOLDER_cousinA_118_3",
+        "PLACEHOLDER_cousinB_118_3"
+      ],
+      "antonyms": [
+        "PLACEHOLDER_trapA_118_3",
+        "PLACEHOLDER_trapB_118_3",
+        "PLACEHOLDER_trapC_118_3"
+      ],
+      "contextSentence": "PLACEHOLDER_context_118_3 ___.",
+      "usageExample": "PLACEHOLDER_usage_118_3",
+      "nuanceDifference": "PLACEHOLDER_nuance_118_3",
+      "explanation": "PLACEHOLDER_explanation_118_3",
+      "hint": "PLACEHOLDER_hint_118_3",
+      "gradientScale": [
+        "PLACEHOLDER_word_118_3",
+        "PLACEHOLDER_syn_118_3",
+        "PLACEHOLDER_cousinA_118_3",
+        "PLACEHOLDER_cousinB_118_3"
+      ],
+      "collocations": [
+        "PLACEHOLDER_collocA_118_3",
+        "PLACEHOLDER_collocB_118_3"
+      ],
+      "wrongCollocations": [
+        "PLACEHOLDER_wrongColloc_118_3"
+      ],
+      "registerLevel": 2,
+      "topicEmoji": "📝"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L119_Q1",
+      "level": 119,
+      "cefr": "B2",
+      "subtype": "synonymSearch",
+      "difficulty": 3,
+      "interactionType": "search",
+      "instruction": "PLACEHOLDER_instruction_119_1",
+      "word": "PLACEHOLDER_word_119_1",
+      "definition": "PLACEHOLDER_definition_119_1",
+      "synonym": "PLACEHOLDER_syn_119_1",
+      "correctAnswer": "PLACEHOLDER_syn_119_1",
+      "correctAnswerIndex": 0,
+      "options": [
+        "PLACEHOLDER_syn_119_1",
+        "PLACEHOLDER_trapA_119_1",
+        "PLACEHOLDER_trapB_119_1",
+        "PLACEHOLDER_trapC_119_1"
+      ],
+      "synonyms": [
+        "PLACEHOLDER_syn_119_1",
+        "PLACEHOLDER_cousinA_119_1",
+        "PLACEHOLDER_cousinB_119_1"
+      ],
+      "antonyms": [
+        "PLACEHOLDER_trapA_119_1",
+        "PLACEHOLDER_trapB_119_1",
+        "PLACEHOLDER_trapC_119_1"
+      ],
+      "contextSentence": "PLACEHOLDER_context_119_1 ___.",
+      "usageExample": "PLACEHOLDER_usage_119_1",
+      "nuanceDifference": "PLACEHOLDER_nuance_119_1",
+      "explanation": "PLACEHOLDER_explanation_119_1",
+      "hint": "PLACEHOLDER_hint_119_1",
+      "gradientScale": [
+        "PLACEHOLDER_word_119_1",
+        "PLACEHOLDER_syn_119_1",
+        "PLACEHOLDER_cousinA_119_1",
+        "PLACEHOLDER_cousinB_119_1"
+      ],
+      "collocations": [
+        "PLACEHOLDER_collocA_119_1",
+        "PLACEHOLDER_collocB_119_1"
+      ],
+      "wrongCollocations": [
+        "PLACEHOLDER_wrongColloc_119_1"
+      ],
+      "registerLevel": 2,
+      "topicEmoji": "📝"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L119_Q2",
+      "level": 119,
+      "cefr": "B2",
+      "subtype": "synonymSearch",
+      "difficulty": 3,
+      "interactionType": "search",
+      "instruction": "PLACEHOLDER_instruction_119_2",
+      "word": "PLACEHOLDER_word_119_2",
+      "definition": "PLACEHOLDER_definition_119_2",
+      "synonym": "PLACEHOLDER_syn_119_2",
+      "correctAnswer": "PLACEHOLDER_syn_119_2",
+      "correctAnswerIndex": 0,
+      "options": [
+        "PLACEHOLDER_syn_119_2",
+        "PLACEHOLDER_trapA_119_2",
+        "PLACEHOLDER_trapB_119_2",
+        "PLACEHOLDER_trapC_119_2"
+      ],
+      "synonyms": [
+        "PLACEHOLDER_syn_119_2",
+        "PLACEHOLDER_cousinA_119_2",
+        "PLACEHOLDER_cousinB_119_2"
+      ],
+      "antonyms": [
+        "PLACEHOLDER_trapA_119_2",
+        "PLACEHOLDER_trapB_119_2",
+        "PLACEHOLDER_trapC_119_2"
+      ],
+      "contextSentence": "PLACEHOLDER_context_119_2 ___.",
+      "usageExample": "PLACEHOLDER_usage_119_2",
+      "nuanceDifference": "PLACEHOLDER_nuance_119_2",
+      "explanation": "PLACEHOLDER_explanation_119_2",
+      "hint": "PLACEHOLDER_hint_119_2",
+      "gradientScale": [
+        "PLACEHOLDER_word_119_2",
+        "PLACEHOLDER_syn_119_2",
+        "PLACEHOLDER_cousinA_119_2",
+        "PLACEHOLDER_cousinB_119_2"
+      ],
+      "collocations": [
+        "PLACEHOLDER_collocA_119_2",
+        "PLACEHOLDER_collocB_119_2"
+      ],
+      "wrongCollocations": [
+        "PLACEHOLDER_wrongColloc_119_2"
+      ],
+      "registerLevel": 2,
+      "topicEmoji": "📝"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L119_Q3",
+      "level": 119,
+      "cefr": "B2",
+      "subtype": "synonymSearch",
+      "difficulty": 3,
+      "interactionType": "search",
+      "instruction": "PLACEHOLDER_instruction_119_3",
+      "word": "PLACEHOLDER_word_119_3",
+      "definition": "PLACEHOLDER_definition_119_3",
+      "synonym": "PLACEHOLDER_syn_119_3",
+      "correctAnswer": "PLACEHOLDER_syn_119_3",
+      "correctAnswerIndex": 0,
+      "options": [
+        "PLACEHOLDER_syn_119_3",
+        "PLACEHOLDER_trapA_119_3",
+        "PLACEHOLDER_trapB_119_3",
+        "PLACEHOLDER_trapC_119_3"
+      ],
+      "synonyms": [
+        "PLACEHOLDER_syn_119_3",
+        "PLACEHOLDER_cousinA_119_3",
+        "PLACEHOLDER_cousinB_119_3"
+      ],
+      "antonyms": [
+        "PLACEHOLDER_trapA_119_3",
+        "PLACEHOLDER_trapB_119_3",
+        "PLACEHOLDER_trapC_119_3"
+      ],
+      "contextSentence": "PLACEHOLDER_context_119_3 ___.",
+      "usageExample": "PLACEHOLDER_usage_119_3",
+      "nuanceDifference": "PLACEHOLDER_nuance_119_3",
+      "explanation": "PLACEHOLDER_explanation_119_3",
+      "hint": "PLACEHOLDER_hint_119_3",
+      "gradientScale": [
+        "PLACEHOLDER_word_119_3",
+        "PLACEHOLDER_syn_119_3",
+        "PLACEHOLDER_cousinA_119_3",
+        "PLACEHOLDER_cousinB_119_3"
+      ],
+      "collocations": [
+        "PLACEHOLDER_collocA_119_3",
+        "PLACEHOLDER_collocB_119_3"
+      ],
+      "wrongCollocations": [
+        "PLACEHOLDER_wrongColloc_119_3"
+      ],
+      "registerLevel": 2,
+      "topicEmoji": "📝"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L120_Q1",
+      "level": 120,
+      "cefr": "B2",
+      "subtype": "synonymSearch",
+      "difficulty": 3,
+      "interactionType": "search",
+      "instruction": "PLACEHOLDER_instruction_120_1",
+      "word": "PLACEHOLDER_word_120_1",
+      "definition": "PLACEHOLDER_definition_120_1",
+      "synonym": "PLACEHOLDER_syn_120_1",
+      "correctAnswer": "PLACEHOLDER_syn_120_1",
+      "correctAnswerIndex": 0,
+      "options": [
+        "PLACEHOLDER_syn_120_1",
+        "PLACEHOLDER_trapA_120_1",
+        "PLACEHOLDER_trapB_120_1",
+        "PLACEHOLDER_trapC_120_1"
+      ],
+      "synonyms": [
+        "PLACEHOLDER_syn_120_1",
+        "PLACEHOLDER_cousinA_120_1",
+        "PLACEHOLDER_cousinB_120_1"
+      ],
+      "antonyms": [
+        "PLACEHOLDER_trapA_120_1",
+        "PLACEHOLDER_trapB_120_1",
+        "PLACEHOLDER_trapC_120_1"
+      ],
+      "contextSentence": "PLACEHOLDER_context_120_1 ___.",
+      "usageExample": "PLACEHOLDER_usage_120_1",
+      "nuanceDifference": "PLACEHOLDER_nuance_120_1",
+      "explanation": "PLACEHOLDER_explanation_120_1",
+      "hint": "PLACEHOLDER_hint_120_1",
+      "gradientScale": [
+        "PLACEHOLDER_word_120_1",
+        "PLACEHOLDER_syn_120_1",
+        "PLACEHOLDER_cousinA_120_1",
+        "PLACEHOLDER_cousinB_120_1"
+      ],
+      "collocations": [
+        "PLACEHOLDER_collocA_120_1",
+        "PLACEHOLDER_collocB_120_1"
+      ],
+      "wrongCollocations": [
+        "PLACEHOLDER_wrongColloc_120_1"
+      ],
+      "registerLevel": 2,
+      "topicEmoji": "📝"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L120_Q2",
+      "level": 120,
+      "cefr": "B2",
+      "subtype": "synonymSearch",
+      "difficulty": 3,
+      "interactionType": "search",
+      "instruction": "PLACEHOLDER_instruction_120_2",
+      "word": "PLACEHOLDER_word_120_2",
+      "definition": "PLACEHOLDER_definition_120_2",
+      "synonym": "PLACEHOLDER_syn_120_2",
+      "correctAnswer": "PLACEHOLDER_syn_120_2",
+      "correctAnswerIndex": 0,
+      "options": [
+        "PLACEHOLDER_syn_120_2",
+        "PLACEHOLDER_trapA_120_2",
+        "PLACEHOLDER_trapB_120_2",
+        "PLACEHOLDER_trapC_120_2"
+      ],
+      "synonyms": [
+        "PLACEHOLDER_syn_120_2",
+        "PLACEHOLDER_cousinA_120_2",
+        "PLACEHOLDER_cousinB_120_2"
+      ],
+      "antonyms": [
+        "PLACEHOLDER_trapA_120_2",
+        "PLACEHOLDER_trapB_120_2",
+        "PLACEHOLDER_trapC_120_2"
+      ],
+      "contextSentence": "PLACEHOLDER_context_120_2 ___.",
+      "usageExample": "PLACEHOLDER_usage_120_2",
+      "nuanceDifference": "PLACEHOLDER_nuance_120_2",
+      "explanation": "PLACEHOLDER_explanation_120_2",
+      "hint": "PLACEHOLDER_hint_120_2",
+      "gradientScale": [
+        "PLACEHOLDER_word_120_2",
+        "PLACEHOLDER_syn_120_2",
+        "PLACEHOLDER_cousinA_120_2",
+        "PLACEHOLDER_cousinB_120_2"
+      ],
+      "collocations": [
+        "PLACEHOLDER_collocA_120_2",
+        "PLACEHOLDER_collocB_120_2"
+      ],
+      "wrongCollocations": [
+        "PLACEHOLDER_wrongColloc_120_2"
+      ],
+      "registerLevel": 2,
+      "topicEmoji": "📝"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L120_Q3",
+      "level": 120,
+      "cefr": "B2",
+      "subtype": "synonymSearch",
+      "difficulty": 3,
+      "interactionType": "search",
+      "instruction": "PLACEHOLDER_instruction_120_3",
+      "word": "PLACEHOLDER_word_120_3",
+      "definition": "PLACEHOLDER_definition_120_3",
+      "synonym": "PLACEHOLDER_syn_120_3",
+      "correctAnswer": "PLACEHOLDER_syn_120_3",
+      "correctAnswerIndex": 0,
+      "options": [
+        "PLACEHOLDER_syn_120_3",
+        "PLACEHOLDER_trapA_120_3",
+        "PLACEHOLDER_trapB_120_3",
+        "PLACEHOLDER_trapC_120_3"
+      ],
+      "synonyms": [
+        "PLACEHOLDER_syn_120_3",
+        "PLACEHOLDER_cousinA_120_3",
+        "PLACEHOLDER_cousinB_120_3"
+      ],
+      "antonyms": [
+        "PLACEHOLDER_trapA_120_3",
+        "PLACEHOLDER_trapB_120_3",
+        "PLACEHOLDER_trapC_120_3"
+      ],
+      "contextSentence": "PLACEHOLDER_context_120_3 ___.",
+      "usageExample": "PLACEHOLDER_usage_120_3",
+      "nuanceDifference": "PLACEHOLDER_nuance_120_3",
+      "explanation": "PLACEHOLDER_explanation_120_3",
+      "hint": "PLACEHOLDER_hint_120_3",
+      "gradientScale": [
+        "PLACEHOLDER_word_120_3",
+        "PLACEHOLDER_syn_120_3",
+        "PLACEHOLDER_cousinA_120_3",
+        "PLACEHOLDER_cousinB_120_3"
+      ],
+      "collocations": [
+        "PLACEHOLDER_collocA_120_3",
+        "PLACEHOLDER_collocB_120_3"
+      ],
+      "wrongCollocations": [
+        "PLACEHOLDER_wrongColloc_120_3"
+      ],
+      "registerLevel": 2,
+      "topicEmoji": "📝"
+    }
+  ]
 }

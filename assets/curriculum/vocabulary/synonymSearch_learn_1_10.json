@@ -1,578 +1,1570 @@
 {
-    "gameType": "synonymSearch",
-    "phase": "learn",
-    "batchIndex": 1,
-    "levels": "1-10",
-    "quests": [
+  "gameType": "synonymSearch",
+  "phase": "learn",
+  "cefr": "A2",
+  "difficulty": 1,
+  "batchIndex": 1,
+  "levels": "1-10",
+  "quests": [
+    {
+      "id": "VOC_SYNONYMSEARCH_L1_LEARN_Q1",
+      "level": 1,
+      "cefr": "A2",
+      "difficulty": 1,
+      "pairTitle": "Big ↔ Large",
+      "baseWord": "Big",
+      "synonym": "Large",
+      "partOfSpeech": "Adjective",
+      "coreMeaning": "Greater than usual in size, scale, or importance.",
+      "whyDifferent": "'Big' carries emotional weight (big deal, big mistake). 'Large' is neutral, factual, and measurable.",
+      "makeovers": [
         {
-            "id": "VOC_SYNONYMSEARCH_L1_LEARN_Q1",
-            "level": 1,
-            "conceptTitle": "Nuance Explorer: Big ↔ Large",
-            "word": "Big",
-            "pronunciation": "/bɪɡ/ ↔ /lɑːrdʒ/",
-            "definition": "Both words describe large size, but large sounds more formal and factual.",
-            "example": "That is a big deal — we need to celebrate!",
-            "usageExample": "The elephant is a very large animal.",
-            "nativeTip": "'Big' carries emotional weight (big deal, big surprise). 'Large' is neutral, measurable, and factual (large area, large portion).",
-            "visualAnchor": "🎉 Big = Emotional | 📊 Large = Factual",
-            "familyWords": ["Huge", "Giant", "Massive"],
-            "commonMistake": "Don't say 'large mistake' — native speakers always say 'big mistake'.",
-            "rawExtra": {
-                "baseWord": "Big",
-                "synonym": "Large",
-                "nuanceDifference": "Both words are neutral and interchangeable in almost every situation; 'large' simply sounds a touch more polished in writing."
-            }
+          "situationTag": "Warehouse Note",
+          "beforeSentence": "The depot stores a ___ amount of winter stock.",
+          "targetSlotWord": "big",
+          "swappedWord": "large",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural & Factual — 'large' fits measurable amounts and quantities.",
+          "spokenSentence": "The depot stores a large amount of winter stock."
         },
         {
-            "id": "VOC_SYNONYMSEARCH_L1_LEARN_Q2",
-            "level": 1,
-            "conceptTitle": "Nuance Explorer: Happy ↔ Glad",
-            "word": "Happy",
-            "pronunciation": "/ˈhæpi/ ↔ /ɡlæd/",
-            "definition": "Both express joy, but glad is usually tied to a specific relief or event.",
-            "example": "She is a naturally happy person.",
-            "usageExample": "I am so glad you came to my party.",
-            "nativeTip": "'Glad' almost always needs a reason (glad that / glad you called). 'Happy' can stand alone as a state of being.",
-            "visualAnchor": "☀️ Happy = General state | 🤝 Glad = Specific reason/relief",
-            "familyWords": ["Joyful", "Cheerful", "Delighted"],
-            "commonMistake": "Don't say 'I am a glad person' — say 'I am a happy person'.",
-            "rawExtra": {
-                "baseWord": "Happy",
-                "synonym": "Glad",
-                "nuanceDifference": "'Glad' is usually followed by a reason (glad that/glad you came), while 'happy' can stand alone to describe a general mood."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L1_LEARN_Q3",
-            "level": 1,
-            "conceptTitle": "Nuance Explorer: Fast ↔ Quick",
-            "word": "Fast",
-            "pronunciation": "/fæst/ ↔ /kwɪk/",
-            "definition": "Both mean rapid, but quick emphasizes short duration or immediacy.",
-            "example": "Cheetahs are the fastest land animals.",
-            "usageExample": "He took a quick shower before work.",
-            "nativeTip": "'Fast' refers to speed of motion (fast runner, fast car). 'Quick' refers to an action taking very little time (quick look, quick call).",
-            "visualAnchor": "🏎️ Fast = High speed | ⏱️ Quick = Short duration",
-            "familyWords": ["Rapid", "Swift", "Brisk"],
-            "commonMistake": "Don't say 'a fast shower' — say 'a quick shower'.",
-            "rawExtra": {
-                "baseWord": "Fast",
-                "synonym": "Quick",
-                "nuanceDifference": "'Quick' leans toward brief actions, while 'fast' more often describes speed of movement itself, like a fast car."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L2_LEARN_Q1",
-            "level": 2,
-            "conceptTitle": "Nuance Explorer: Easy ↔ Simple",
-            "word": "Easy",
-            "pronunciation": "/ˈiːzi/ ↔ /ˈsɪmpəl/",
-            "definition": "Both mean not difficult, but simple highlights lack of complexity.",
-            "example": "Passing the quiz was easy after studying.",
-            "usageExample": "The instructions were simple to follow.",
-            "nativeTip": "'Simple' means uncomplicated with few parts. 'Easy' means requiring little effort. Something can be simple but not easy.",
-            "visualAnchor": "🧩 Simple = Uncomplicated | 😌 Easy = Low effort",
-            "familyWords": ["Effortless", "Straightforward", "Clear"],
-            "commonMistake": "Don't say 'a simple test' when you mean 'an easy test'.",
-            "rawExtra": {
-                "baseWord": "Easy",
-                "synonym": "Simple",
-                "nuanceDifference": "'Simple' often highlights a lack of unnecessary parts, while 'easy' focuses on how little effort something takes."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L2_LEARN_Q2",
-            "level": 2,
-            "conceptTitle": "Nuance Explorer: Begin ↔ Start",
-            "word": "Begin",
-            "pronunciation": "/bɪˈɡɪn/ ↔ /stɑːrt/",
-            "definition": "Both mean to commence, but start is conversational while begin is formal.",
-            "example": "The ceremony will begin promptly at noon.",
-            "usageExample": "We will start the meeting at 9 AM.",
-            "nativeTip": "'Start' is used for physical machines and conversational tasks (start a car, start a business). 'Begin' is preferred in formal or literary writing.",
-            "visualAnchor": "📜 Begin = Formal / Ceremony | 🚗 Start = Everyday / Mechanical",
-            "familyWords": ["Commence", "Initiate", "Launch"],
-            "commonMistake": "Never say 'begin the engine' — always say 'start the engine'.",
-            "rawExtra": {
-                "baseWord": "Begin",
-                "synonym": "Start",
-                "nuanceDifference": "'Start' is the more common, conversational choice; 'begin' tends to appear in slightly more formal or written English."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L2_LEARN_Q3",
-            "level": 2,
-            "conceptTitle": "Nuance Explorer: Small ↔ Little",
-            "word": "Small",
-            "pronunciation": "/smɔːl/ ↔ /ˈlɪtəl/",
-            "definition": "Both denote small size, but little carries warmth and affection.",
-            "example": "He lives in a small apartment downtown.",
-            "usageExample": "She adopted a little kitten from the shelter.",
-            "nativeTip": "'Small' is an objective physical measurement. 'Little' adds emotional affection, sympathy, or triviality (poor little thing).",
-            "visualAnchor": "📏 Small = Objective size | 🐶 Little = Affectionate / Cute",
-            "familyWords": ["Tiny", "Miniature", "Petite"],
-            "commonMistake": "Don't use 'little' when presenting formal data or dimensions.",
-            "rawExtra": {
-                "baseWord": "Small",
-                "synonym": "Little",
-                "nuanceDifference": "'Little' often carries a warmer, more personal tone than the more neutral 'small.'"
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L3_LEARN_Q1",
-            "level": 3,
-            "conceptTitle": "Nuance Explorer: Buy ↔ Purchase",
-            "word": "Buy",
-            "pronunciation": "/baɪ/ ↔ /ˈpɜːrtʃəs/",
-            "definition": "Both mean to acquire by paying money, but purchase is commercial and formal.",
-            "example": "I need to buy some groceries today.",
-            "usageExample": "I need to purchase a new laptop.",
-            "nativeTip": "'Buy' is standard daily speech. 'Purchase' is reserved for legal, corporate, or financial transactions.",
-            "visualAnchor": "🛒 Buy = Daily casual | 🧾 Purchase = Formal / Receipts",
-            "familyWords": ["Acquire", "Obtain", "Procure"],
-            "commonMistake": "Saying 'I purchased an apple for snack' sounds overly stiff and unnatural.",
-            "rawExtra": {
-                "baseWord": "Buy",
-                "synonym": "Purchase",
-                "nuanceDifference": "'Purchase' sounds more businesslike than 'buy,' which is why it appears in contracts and store policies rather than casual chat."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L3_LEARN_Q2",
-            "level": 3,
-            "conceptTitle": "Nuance Explorer: Cheap ↔ Inexpensive",
-            "word": "Cheap",
-            "pronunciation": "/tʃiːp/ ↔ /ˌɪnɪkˈspɛnsɪv/",
-            "definition": "Both mean low cost, but cheap often implies poor quality.",
-            "example": "These cheap headphones broke after two days.",
-            "usageExample": "We found an inexpensive restaurant for lunch.",
-            "nativeTip": "Calling something 'cheap' can insult its quality or person. Use 'inexpensive' or 'affordable' for good value without poor craftsmanship.",
-            "visualAnchor": "⚠️ Cheap = Low price + low quality | 💎 Inexpensive = Affordable + good",
-            "familyWords": ["Affordable", "Economical", "Budget"],
-            "commonMistake": "Don't tell a friend their gift was 'cheap' unless you mean it's flimsy.",
-            "rawExtra": {
-                "baseWord": "Cheap",
-                "synonym": "Inexpensive",
-                "nuanceDifference": "'Inexpensive' avoids the negative undertone 'cheap' can carry, which sometimes suggests poor quality."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L3_LEARN_Q3",
-            "level": 3,
-            "conceptTitle": "Nuance Explorer: Store ↔ Shop",
-            "word": "Store",
-            "pronunciation": "/stɔːr/ ↔ /ʃɑːp/",
-            "definition": "Both mean a retail venue; store is American, shop is British.",
-            "example": "I am heading to the grocery store.",
-            "usageExample": "She went to the shop to buy some milk.",
-            "nativeTip": "In US English, almost all retail places are 'stores'. In UK English, 'shop' is preferred for smaller neighborhood retailers.",
-            "visualAnchor": "🇺🇸 Store = American standard | 🇬🇧 Shop = British standard",
-            "familyWords": ["Market", "Outlet", "Boutique"],
-            "commonMistake": "Both are understood globally, but 'shop' in US English often refers to a workshop or boutique.",
-            "rawExtra": {
-                "baseWord": "Store",
-                "synonym": "Shop",
-                "nuanceDifference": "'Shop' is more common in British English, while 'store' is the everyday choice in American English; both mean the same place."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L4_LEARN_Q1",
-            "level": 4,
-            "conceptTitle": "Nuance Explorer: Tasty ↔ Delicious",
-            "word": "Tasty",
-            "pronunciation": "/ˈteɪsti/ ↔ /dɪˈlɪʃəs/",
-            "definition": "Both describe good flavor; delicious expresses far higher enthusiasm.",
-            "example": "This sandwich is quite tasty.",
-            "usageExample": "The cake was absolutely delicious.",
-            "nativeTip": "'Tasty' is a casual compliment (3 out of 5 stars). 'Delicious' is an emphatic 5-star praise used at high-end dining or dinner parties.",
-            "visualAnchor": "😋 Tasty = Good & pleasant | 🌟 Delicious = Outstanding flavor",
-            "familyWords": ["Scrumptious", "Flavorful", "Yummy"],
-            "commonMistake": "Avoid saying 'very delicious' — delicious is an absolute adjective; say 'absolutely delicious'.",
-            "rawExtra": {
-                "baseWord": "Tasty",
-                "synonym": "Delicious",
-                "nuanceDifference": "'Delicious' is slightly more enthusiastic than 'tasty,' which is why people reach for it when praising a great meal."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L4_LEARN_Q2",
-            "level": 4,
-            "conceptTitle": "Nuance Explorer: Meal ↔ Dish",
-            "word": "Meal",
-            "pronunciation": "/miːl/ ↔ /dɪʃ/",
-            "definition": "Meal is the entire sitting; dish is a specific prepared recipe item.",
-            "example": "Breakfast is the most important meal of the day.",
-            "usageExample": "The chef's signature dish is a spicy noodle soup.",
-            "nativeTip": "A 'meal' consists of multiple 'dishes' (e.g. appetizer dish, main dish, dessert dish).",
-            "visualAnchor": "🍽️ Meal = Complete sitting | 🍲 Dish = Specific recipe",
-            "familyWords": ["Course", "Cuisine", "Feast"],
-            "commonMistake": "Don't say 'My favorite meal is lasagna' — say 'My favorite dish is lasagna'.",
-            "rawExtra": {
-                "baseWord": "Meal",
-                "synonym": "Dish",
-                "nuanceDifference": "'Dish' often refers to one prepared item within a meal, while 'meal' covers the whole sitting, such as dinner."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L4_LEARN_Q3",
-            "level": 4,
-            "conceptTitle": "Nuance Explorer: Cook ↔ Prepare",
-            "word": "Cook",
-            "pronunciation": "/kʊk/ ↔ /prɪˈpɛər/",
-            "definition": "Cook involves heat; prepare encompasses assembling, chopping, and staging.",
-            "example": "He loves to cook steak on the grill.",
-            "usageExample": "She likes to prepare dinner for her family every night.",
-            "nativeTip": "You 'prepare' a salad (no heat applied). You 'cook' soup or roast chicken (heat applied).",
-            "visualAnchor": "🔥 Cook = Applying heat | 🥗 Prepare = Assembling & chopping",
-            "familyWords": ["Bake", "Whip up", "Assemble"],
-            "commonMistake": "Don't say 'I cooked a green salad' unless you actually heated the lettuce.",
-            "rawExtra": {
-                "baseWord": "Cook",
-                "synonym": "Prepare",
-                "nuanceDifference": "'Prepare' is broader and can include chopping and mixing, not just applying heat, but it's commonly used for cooking overall."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L5_LEARN_Q1",
-            "level": 5,
-            "conceptTitle": "Nuance Explorer: Family ↔ Relatives",
-            "word": "Family",
-            "pronunciation": "/ˈfæməli/ ↔ /ˈrɛlətɪvz/",
-            "definition": "Family usually means the nuclear household; relatives means extended kin.",
-            "example": "I have dinner with my immediate family every Sunday.",
-            "usageExample": "All my relatives are coming for Thanksgiving.",
-            "nativeTip": "'Family' evokes close emotional bonds. 'Relatives' is a factual designation for aunts, uncles, cousins, and distant kin.",
-            "visualAnchor": "👨‍👩‍👧 Family = Close household | 🌳 Relatives = Extended family tree",
-            "familyWords": ["Kin", "Ancestors", "Relations"],
-            "commonMistake": "Don't refer to your spouse as your 'relative'.",
-            "rawExtra": {
-                "baseWord": "Family",
-                "synonym": "Relatives",
-                "nuanceDifference": "'Relatives' is often used for extended family, while 'family' can also mean just parents and siblings."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L5_LEARN_Q2",
-            "level": 5,
-            "conceptTitle": "Nuance Explorer: Kid ↔ Child",
-            "word": "Kid",
-            "pronunciation": "/kɪd/ ↔ /tʃaɪld/",
-            "definition": "Kid is casual and conversational; child is formal and proper.",
-            "example": "The kids are playing soccer in the backyard.",
-            "usageExample": "The child was playing happily in the park.",
-            "nativeTip": "Use 'kid' in relaxed chats with friends. Always use 'child' in essays, legal forms, official reports, and news articles.",
-            "visualAnchor": "🎈 Kid = Casual & playful | 📚 Child = Formal & academic",
-            "familyWords": ["Youth", "Minor", "Youngster"],
-            "commonMistake": "Never write 'The kids in the survey' in an academic paper.",
-            "rawExtra": {
-                "baseWord": "Kid",
-                "synonym": "Child",
-                "nuanceDifference": "'Child' is the neutral, formal term you'd use in writing, while 'kid' is the relaxed version used in conversation."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L5_LEARN_Q3",
-            "level": 5,
-            "conceptTitle": "Nuance Explorer: Marry ↔ Wed",
-            "word": "Marry",
-            "pronunciation": "/ˈmæri/ ↔ /wɛd/",
-            "definition": "Marry is everyday speech; wed is poetic or headline journalistic shorthand.",
-            "example": "Will you marry me?",
-            "usageExample": "They plan to wed next spring.",
-            "nativeTip": "Nobody says 'I am going to wed John tomorrow' in casual conversation. 'Wed' is used almost exclusively in newspaper headlines and formal vows.",
-            "visualAnchor": "💍 Marry = Real life speech | 📰 Wed = Newspaper headline",
-            "familyWords": ["Tie the knot", "Unite", "Espouse"],
-            "commonMistake": "Don't propose by saying 'Will you wed me?' — say 'Will you marry me?'",
-            "rawExtra": {
-                "baseWord": "Marry",
-                "synonym": "Wed",
-                "nuanceDifference": "'Wed' is common in formal announcements and news headlines, while 'marry' is used in everyday speech."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L6_LEARN_Q1",
-            "level": 6,
-            "conceptTitle": "Nuance Explorer: Teach ↔ Instruct",
-            "word": "Teach",
-            "pronunciation": "/tiːtʃ/ ↔ /ɪnˈstrʌkt/",
-            "definition": "Teach is broad and pedagogical; instruct focuses on specific guidelines or drills.",
-            "example": "She taught me how to read and appreciate literature.",
-            "usageExample": "The coach will instruct the new players on the rules.",
-            "nativeTip": "'Teach' imparts deep understanding and values. 'Instruct' provides procedural orders or step-by-step directions.",
-            "visualAnchor": "📖 Teach = Imparting wisdom | 📋 Instruct = Giving clear orders",
-            "familyWords": ["Educate", "Tutor", "Guide"],
-            "commonMistake": "A pilot doesn't 'teach' passengers to buckle up — they 'instruct' them.",
-            "rawExtra": {
-                "baseWord": "Teach",
-                "synonym": "Instruct",
-                "nuanceDifference": "'Instruct' is more formal and often used for structured lessons, while 'teach' fits any situation, formal or casual."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L6_LEARN_Q2",
-            "level": 6,
-            "conceptTitle": "Nuance Explorer: Smart ↔ Clever",
-            "word": "Smart",
-            "pronunciation": "/smɑːrt/ ↔ /ˈklɛvər/",
-            "definition": "Smart means high general intelligence; clever implies wit or quick ingenuity.",
-            "example": "He is a smart student with top grades in physics.",
-            "usageExample": "The clever dog learned a new trick in minutes.",
-            "nativeTip": "In British English, 'clever' is the standard word for smart. In American English, 'clever' can sometimes imply being tricky or sly.",
-            "visualAnchor": "🧠 Smart = General brainpower | 💡 Clever = Ingenious trick / wit",
-            "familyWords": ["Intelligent", "Brilliant", "Sharp"],
-            "commonMistake": "Calling a business scheme 'too clever' in US English can sound like an accusation of cheating.",
-            "rawExtra": {
-                "baseWord": "Smart",
-                "synonym": "Clever",
-                "nuanceDifference": "'Clever' sometimes hints at quick, practical thinking or wit, while 'smart' is the more general, everyday word for intelligence."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L6_LEARN_Q3",
-            "level": 6,
-            "conceptTitle": "Nuance Explorer: Test ↔ Exam",
-            "word": "Test",
-            "pronunciation": "/tɛst/ ↔ /ɪɡˈzæm/",
-            "definition": "Test can be informal or short; exam is comprehensive and high-stakes.",
-            "example": "We have a quick spelling test every Friday.",
-            "usageExample": "She passed her final exam with flying colors.",
-            "nativeTip": "'Quiz' = tiny (10 mins). 'Test' = regular (1 hour). 'Exam' = milestone or final grade determinant (2-3 hours).",
-            "visualAnchor": "📝 Test = Regular evaluation | 🏛️ Exam = Major milestone",
-            "familyWords": ["Assessment", "Evaluation", "Quiz"],
-            "commonMistake": "Don't call a 3-question pop quiz an 'examination'.",
-            "rawExtra": {
-                "baseWord": "Test",
-                "synonym": "Exam",
-                "nuanceDifference": "'Exam' usually refers to a bigger, more official test, like a final exam, while 'test' can be small or large."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L7_LEARN_Q1",
-            "level": 7,
-            "conceptTitle": "Nuance Explorer: Job ↔ Work",
-            "word": "Job",
-            "pronunciation": "/dʒɑːb/ ↔ /wɜːrk/",
-            "definition": "Job is a countable occupation position; work is the uncountable activity.",
-            "example": "She applied for three different marketing jobs.",
-            "usageExample": "He goes to work every morning at eight.",
-            "nativeTip": "'Job' is a noun you can count (a job, two jobs). 'Work' is non-countable (you cannot say 'a work' for employment).",
-            "visualAnchor": "💼 Job = Specific position (countable) | ⚙️ Work = The effort/tasks (uncountable)",
-            "familyWords": ["Career", "Employment", "Occupation"],
-            "commonMistake": "Never say 'I have an important work to do' — say 'I have an important job' or 'important work'.",
-            "rawExtra": {
-                "baseWord": "Job",
-                "synonym": "Work",
-                "nuanceDifference": "'Work' can also mean the activity of doing tasks, while 'job' more specifically names the position you hold."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L7_LEARN_Q2",
-            "level": 7,
-            "conceptTitle": "Nuance Explorer: Boss ↔ Manager",
-            "word": "Boss",
-            "pronunciation": "/bɔːs/ ↔ /ˈmænədʒər/",
-            "definition": "Boss is informal and hierarchical; manager is the official professional title.",
-            "example": "My boss approved my Friday afternoon off.",
-            "usageExample": "The manager approved my vacation request.",
-            "nativeTip": "'Boss' emphasizes authority and power over you. 'Manager' emphasizes the responsibility of organizing teams and projects.",
-            "visualAnchor": "👔 Boss = Authority figure | 📊 Manager = Professional role",
-            "familyWords": ["Supervisor", "Director", "Executive"],
-            "commonMistake": "In a formal email or resume, refer to your 'manager' or 'supervisor', not your 'boss'.",
-            "rawExtra": {
-                "baseWord": "Boss",
-                "synonym": "Manager",
-                "nuanceDifference": "'Manager' is the official job title, while 'boss' is the informal word employees use in conversation."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L7_LEARN_Q3",
-            "level": 7,
-            "conceptTitle": "Nuance Explorer: Hire ↔ Employ",
-            "word": "Hire",
-            "pronunciation": "/ˈhaɪər/ ↔ /ɪmˈplɔɪ/",
-            "definition": "Hire is the initial act of taking someone on; employ is the ongoing state.",
-            "example": "We decided to hire two new graphic designers.",
-            "usageExample": "The company plans to employ ten new graduates this year.",
-            "nativeTip": "'Hire' is an event (to hire on Monday). 'Employ' is a continuous status (employed for five years).",
-            "visualAnchor": "🤝 Hire = The hiring event | 🏢 Employ = Continuous workforce",
-            "familyWords": ["Recruit", "Contract", "Onboard"],
-            "commonMistake": "Don't say 'The company hires 5,000 workers' when you mean they currently have them on payroll.",
-            "rawExtra": {
-                "baseWord": "Hire",
-                "synonym": "Employ",
-                "nuanceDifference": "'Employ' is often used to describe an ongoing arrangement, while 'hire' focuses on the moment someone joins."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L8_LEARN_Q1",
-            "level": 8,
-            "conceptTitle": "Nuance Explorer: Trip ↔ Journey",
-            "word": "Trip",
-            "pronunciation": "/trɪp/ ↔ /ˈdʒɜːrni/",
-            "definition": "Trip is the whole excursion out and back; journey is the passage or transit time.",
-            "example": "We went on a weekend camping trip to the mountains.",
-            "usageExample": "The journey across the desert was long and difficult.",
-            "nativeTip": "'Trip' includes going there, staying, and returning. 'Journey' focuses specifically on the travel distance and movement between points.",
-            "visualAnchor": "🎒 Trip = Whole vacation / getaway | 🚂 Journey = The transit route",
-            "familyWords": ["Expedition", "Voyage", "Excursion"],
-            "commonMistake": "Don't say 'How was your journey to Paris?' if you want to ask about their entire vacation.",
-            "rawExtra": {
-                "baseWord": "Trip",
-                "synonym": "Journey",
-                "nuanceDifference": "'Journey' often sounds longer or more meaningful, while 'trip' is the everyday word for any travel, short or long."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L8_LEARN_Q2",
-            "level": 8,
-            "conceptTitle": "Nuance Explorer: Holiday ↔ Vacation",
-            "word": "Holiday",
-            "pronunciation": "/ˈhɑːlədeɪ/ ↔ /veɪˈkeɪʃən/",
-            "definition": "Holiday is British for time off or public festivals; vacation is American for leisure trips.",
-            "example": "They are going on holiday to Spain next week.",
-            "usageExample": "We are planning a vacation to the coast this summer.",
-            "nativeTip": "In the US, 'holidays' strictly mean Thanksgiving, Christmas, etc. Time off from work is always 'vacation'.",
-            "visualAnchor": "🇬🇧 Holiday = UK time off / festive day | 🇺🇸 Vacation = US time off",
-            "familyWords": ["Break", "Getaway", "Recess"],
-            "commonMistake": "If you tell an American 'I went on holiday', they will think you celebrated New Year's or Christmas.",
-            "rawExtra": {
-                "baseWord": "Holiday",
-                "synonym": "Vacation",
-                "nuanceDifference": "'Vacation' is standard in American English, while 'holiday' is used the same way in British English."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L8_LEARN_Q3",
-            "level": 8,
-            "conceptTitle": "Nuance Explorer: Arrive ↔ Reach",
-            "word": "Arrive",
-            "pronunciation": "/əˈraɪv/ ↔ /riːtʃ/",
-            "definition": "Arrive uses prepositions (at/in); reach is transitive and takes a direct object.",
-            "example": "Flight 204 will arrive in London at 6:00 PM.",
-            "usageExample": "We will reach the hotel by noon.",
-            "nativeTip": "Grammar trap! 'Arrive at the hotel' or 'arrive in Paris' (requires at/in). 'Reach the hotel' or 'reach Paris' (NO preposition!).",
-            "visualAnchor": "🛬 Arrive at/in | 🎯 Reach [direct place]",
-            "familyWords": ["Get to", "Land", "Attain"],
-            "commonMistake": "Never say 'reach to the airport' or 'arrive the airport'.",
-            "rawExtra": {
-                "baseWord": "Arrive",
-                "synonym": "Reach",
-                "nuanceDifference": "'Reach' often emphasizes the effort of getting somewhere, while 'arrive' simply states that you got there."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L9_LEARN_Q1",
-            "level": 9,
-            "conceptTitle": "Nuance Explorer: Call ↔ Ring",
-            "word": "Call",
-            "pronunciation": "/kɔːl/ ↔ /rɪŋ/",
-            "definition": "Call is universal; ring is distinctively British/Commonwealth.",
-            "example": "I will call you as soon as the plane lands.",
-            "usageExample": "I'll ring you later this evening.",
-            "nativeTip": "'Ring' is extremely natural in the UK and Australia ('give me a ring', 'ring up the clinic'). 'Call' is standard everywhere.",
-            "visualAnchor": "📱 Call = Global standard | ☎️ Ring = British / Commonwealth",
-            "familyWords": ["Dial", "Phone", "Buzz"],
-            "commonMistake": "In the US, 'give me a ring' might sound like asking for jewelry (a wedding ring) to children!",
-            "rawExtra": {
-                "baseWord": "Call",
-                "synonym": "Ring",
-                "nuanceDifference": "'Ring' is used mainly in British English for phone calls, while 'call' is understood everywhere."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L9_LEARN_Q2",
-            "level": 9,
-            "conceptTitle": "Nuance Explorer: Message ↔ Text",
-            "word": "Message",
-            "pronunciation": "/ˈmɛsɪdʒ/ ↔ /tɛkst/",
-            "definition": "Message is any written or voice notice; text specifically denotes SMS/chat.",
-            "example": "Did you receive my voice message on WhatsApp?",
-            "usageExample": "She sent a quick text to confirm the plans.",
-            "nativeTip": "'Text' can be a noun or verb ('text me later'). 'Message' can be email, voice note, letter, or chat.",
-            "visualAnchor": "✉️ Message = General communication | 💬 Text = Instant SMS / chat",
-            "familyWords": ["SMS", "Ping", "Note"],
-            "commonMistake": "Don't say 'I texted you an audio memo' — say 'I messaged you a voice note'.",
-            "rawExtra": {
-                "baseWord": "Message",
-                "synonym": "Text",
-                "nuanceDifference": "'Text' specifically means a message sent by phone, while 'message' is the general word for any communication."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L9_LEARN_Q3",
-            "level": 9,
-            "conceptTitle": "Nuance Explorer: Fix ↔ Repair",
-            "word": "Fix",
-            "pronunciation": "/fɪks/ ↔ /rɪˈpɛər/",
-            "definition": "Fix is conversational; repair is formal and technical.",
-            "example": "Can you fix the loose cabinet handle?",
-            "usageExample": "The mechanic will repair my car today.",
-            "nativeTip": "'Fix' can also mean solve problems ('fix a schedule', 'fix a bug'). 'Repair' refers to restoring physical machinery or structures.",
-            "visualAnchor": "🔧 Fix = Casual / Problem-solving | ⚙️ Repair = Professional restoration",
-            "familyWords": ["Mend", "Patch", "Service"],
-            "commonMistake": "Don't say 'repair a misunderstanding' — say 'resolve' or 'fix a misunderstanding'.",
-            "rawExtra": {
-                "baseWord": "Fix",
-                "synonym": "Repair",
-                "nuanceDifference": "'Repair' sounds slightly more technical or professional, while 'fix' is the everyday word for the same action."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L10_LEARN_Q1",
-            "level": 10,
-            "conceptTitle": "Nuance Explorer: Sick ↔ Ill",
-            "word": "Sick",
-            "pronunciation": "/sɪk/ ↔ /ɪl/",
-            "definition": "Sick is common American usage; ill is formal and British.",
-            "example": "I caught the flu and felt sick all weekend.",
-            "usageExample": "He felt ill and went home early.",
-            "nativeTip": "In British English, 'feeling sick' often specifically means feeling nauseous or about to vomit! 'Ill' is used for having a disease.",
-            "visualAnchor": "🤒 Sick = American everyday (or nauseous UK) | 🏥 Ill = Formal & UK health",
-            "familyWords": ["Unwell", "Ailing", "Poorly"],
-            "commonMistake": "In London, telling someone 'I'm sick' might lead them to hand you a bucket!",
-            "rawExtra": {
-                "baseWord": "Sick",
-                "synonym": "Ill",
-                "nuanceDifference": "'Ill' is common in British English and formal writing, while 'sick' is the everyday word in American English."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L10_LEARN_Q2",
-            "level": 10,
-            "conceptTitle": "Nuance Explorer: Tired ↔ Weary",
-            "word": "Tired",
-            "pronunciation": "/ˈtaɪərd/ ↔ /ˈwɪəri/",
-            "definition": "Tired is standard low energy; weary implies deep, prolonged mental or physical exhaustion.",
-            "example": "I am tired after a long day at the desk.",
-            "usageExample": "After the long shift, the nurse felt weary.",
-            "nativeTip": "'Weary' describes deep weariness of body or soul (world-weary). 'Tired' can just mean you need an hour of sleep.",
-            "visualAnchor": "🥱 Tired = Need sleep | 🧗 Weary = Bone-deep exhaustion",
-            "familyWords": ["Exhausted", "Fatigued", "Drained"],
-            "commonMistake": "Don't say 'I am weary' just because you woke up 15 minutes early.",
-            "rawExtra": {
-                "baseWord": "Tired",
-                "synonym": "Weary",
-                "nuanceDifference": "'Weary' often implies exhaustion from something long or difficult, while 'tired' can describe any level of low energy."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L10_LEARN_Q3",
-            "level": 10,
-            "conceptTitle": "Nuance Explorer: Doctor ↔ Physician",
-            "word": "Doctor",
-            "pronunciation": "/ˈdɑːktər/ ↔ /fɪˈzɪʃən/",
-            "definition": "Doctor is the spoken title; physician is the medical profession designation.",
-            "example": "I have an appointment to see my doctor on Thursday.",
-            "usageExample": "The physician examined the patient carefully.",
-            "nativeTip": "'Doctor' can refer to PhD holders, dentists, veterinarians. 'Physician' specifically means an MD medical doctor.",
-            "visualAnchor": "🩺 Doctor = Conversational | 📜 Physician = Licensed medical MD",
-            "familyWords": ["Clinician", "Specialist", "Practitioner"],
-            "commonMistake": "Do not call a PhD professor a 'physician'.",
-            "rawExtra": {
-                "baseWord": "Doctor",
-                "synonym": "Physician",
-                "nuanceDifference": "'Physician' is used in official or medical contexts, while 'doctor' is the word people use in everyday conversation."
-            }
+          "situationTag": "Everyday Chat",
+          "beforeSentence": "That was a ___ mistake — we need to fix it now.",
+          "targetSlotWord": "big",
+          "swappedWord": "large",
+          "isNaturalSwap": false,
+          "earVerdict": "Awkward — native speakers always say 'big mistake', never 'large mistake'.",
+          "spokenSentence": "That was a big mistake — we need to fix it now."
         }
-    ]
+      ],
+      "cousinWords": [
+        {
+          "word": "Huge",
+          "ipa": "/hjuːdʒ/",
+          "toneTag": "Strong",
+          "miniContext": "A huge crowd cheered outside."
+        },
+        {
+          "word": "Massive",
+          "ipa": "/ˈmæsɪv/",
+          "toneTag": "Extreme",
+          "miniContext": "They faced a massive traffic delay."
+        },
+        {
+          "word": "Generous",
+          "ipa": "/ˈdʒɛnərəs/",
+          "toneTag": "Warm",
+          "miniContext": "She served a generous portion of pasta."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L1_LEARN_Q2",
+      "level": 1,
+      "cefr": "A2",
+      "difficulty": 1,
+      "pairTitle": "Happy ↔ Glad",
+      "baseWord": "Happy",
+      "synonym": "Glad",
+      "partOfSpeech": "Adjective",
+      "coreMeaning": "Feeling pleased, thankful, or full of joy.",
+      "whyDifferent": "'Happy' can describe your overall mood or life. 'Glad' almost always points to a specific event or relief.",
+      "makeovers": [
+        {
+          "situationTag": "Thankful Note",
+          "beforeSentence": "I am so ___ you made it safely to the airport.",
+          "targetSlotWord": "happy",
+          "swappedWord": "glad",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — 'glad' shines when reacting with relief to a specific event.",
+          "spokenSentence": "I am so glad you made it safely to the airport."
+        },
+        {
+          "situationTag": "General Trait",
+          "beforeSentence": "My grandmother is a naturally ___ person every day.",
+          "targetSlotWord": "happy",
+          "swappedWord": "glad",
+          "isNaturalSwap": false,
+          "earVerdict": "Awkward — 'glad' cannot describe someone's general personality trait.",
+          "spokenSentence": "My grandmother is a naturally happy person every day."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Cheerful",
+          "ipa": "/ˈtʃɪrfəl/",
+          "toneTag": "Upbeat",
+          "miniContext": "Her cheerful voice brightened the office."
+        },
+        {
+          "word": "Delighted",
+          "ipa": "/dɪˈlaɪtɪd/",
+          "toneTag": "Polite",
+          "miniContext": "We are delighted to accept your invite."
+        },
+        {
+          "word": "Ecstatic",
+          "ipa": "/ɪkˈstætɪk/",
+          "toneTag": "Peak Joy",
+          "miniContext": "Fans felt ecstatic after the winning goal."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L1_LEARN_Q3",
+      "level": 1,
+      "cefr": "A2",
+      "difficulty": 1,
+      "pairTitle": "Fast ↔ Quick",
+      "baseWord": "Fast",
+      "synonym": "Quick",
+      "partOfSpeech": "Adjective",
+      "coreMeaning": "Moving or happening in a very short amount of time.",
+      "whyDifferent": "'Fast' emphasizes high travel speed. 'Quick' emphasizes an action finished in brief duration.",
+      "makeovers": [
+        {
+          "situationTag": "Morning Routine",
+          "beforeSentence": "Let me grab a ___ shower before we leave.",
+          "targetSlotWord": "fast",
+          "swappedWord": "quick",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — 'quick' fits brief everyday actions like a quick shower or quick call.",
+          "spokenSentence": "Let me grab a quick shower before we leave."
+        },
+        {
+          "situationTag": "Highway Travel",
+          "beforeSentence": "The bullet train travels on a ___ rail line.",
+          "targetSlotWord": "fast",
+          "swappedWord": "quick",
+          "isNaturalSwap": false,
+          "earVerdict": "Awkward — vehicles and sustained speed take 'fast', not 'quick'.",
+          "spokenSentence": "The bullet train travels on a fast rail line."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Brisk",
+          "ipa": "/brɪsk/",
+          "toneTag": "Energetic",
+          "miniContext": "They took a brisk walk around the park."
+        },
+        {
+          "word": "Rapid",
+          "ipa": "/ˈræpɪd/",
+          "toneTag": "Formal",
+          "miniContext": "The city saw rapid growth this decade."
+        },
+        {
+          "word": "Swift",
+          "ipa": "/swɪft/",
+          "toneTag": "Crisp",
+          "miniContext": "The team gave a swift reply to the client."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L2_LEARN_Q1",
+      "level": 2,
+      "cefr": "A2",
+      "difficulty": 1,
+      "pairTitle": "Easy ↔ Simple",
+      "baseWord": "Easy",
+      "synonym": "Simple",
+      "partOfSpeech": "Adjective",
+      "coreMeaning": "Clear to follow without difficulty or extra steps.",
+      "whyDifferent": "'Easy' means requiring little effort. 'Simple' means plain, clear, and free of complex parts.",
+      "makeovers": [
+        {
+          "situationTag": "User Guide",
+          "beforeSentence": "The setup instructions were ___ to follow.",
+          "targetSlotWord": "easy",
+          "swappedWord": "simple",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — 'simple' highlights clear steps without confusing complexity.",
+          "spokenSentence": "The setup instructions were simple to follow."
+        },
+        {
+          "situationTag": "Workout Plan",
+          "beforeSentence": "Running five miles feels ___ after six months of training.",
+          "targetSlotWord": "easy",
+          "swappedWord": "simple",
+          "isNaturalSwap": false,
+          "earVerdict": "Awkward — physical effort feels 'easy', not 'simple'.",
+          "spokenSentence": "Running five miles feels easy after six months of training."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Clear",
+          "ipa": "/klɪər/",
+          "toneTag": "Readable",
+          "miniContext": "She gave clear directions to the station."
+        },
+        {
+          "word": "Effortless",
+          "ipa": "/ˈɛfərtləs/",
+          "toneTag": "Smooth",
+          "miniContext": "The pianist made the solo look effortless."
+        },
+        {
+          "word": "Straightforward",
+          "ipa": "/ˌstreɪtˈfɔːrwərd/",
+          "toneTag": "Direct",
+          "miniContext": "The refund form was straightforward."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L2_LEARN_Q2",
+      "level": 2,
+      "cefr": "A2",
+      "difficulty": 1,
+      "pairTitle": "Begin ↔ Start",
+      "baseWord": "Begin",
+      "synonym": "Start",
+      "partOfSpeech": "Verb",
+      "coreMeaning": "To take the very first step or set something in motion.",
+      "whyDifferent": "'Start' works for everyday chat and physical machines. 'Begin' suits formal events and written stories.",
+      "makeovers": [
+        {
+          "situationTag": "Car Trouble",
+          "beforeSentence": "Turn the key gently to ___ the cold engine.",
+          "targetSlotWord": "begin",
+          "swappedWord": "start",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — mechanical devices and engines always 'start', never 'begin'.",
+          "spokenSentence": "Turn the key gently to start the cold engine."
+        },
+        {
+          "situationTag": "Graduation Speech",
+          "beforeSentence": "The annual ceremony will ___ right at noon.",
+          "targetSlotWord": "start",
+          "swappedWord": "begin",
+          "isNaturalSwap": false,
+          "earVerdict": "Less formal — ceremonies, speeches, and chapters traditionally prefer 'begin'.",
+          "spokenSentence": "The annual ceremony will begin right at noon."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Launch",
+          "ipa": "/lɔːntʃ/",
+          "toneTag": "Public",
+          "miniContext": "They will launch the mobile app on Friday."
+        },
+        {
+          "word": "Commence",
+          "ipa": "/kəˈmɛns/",
+          "toneTag": "Official",
+          "miniContext": "Exams commence promptly at nine."
+        },
+        {
+          "word": "Open",
+          "ipa": "/ˈoʊpən/",
+          "toneTag": "Event",
+          "miniContext": "The host will open the panel with a story."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L2_LEARN_Q3",
+      "level": 2,
+      "cefr": "A2",
+      "difficulty": 1,
+      "pairTitle": "Small ↔ Little",
+      "baseWord": "Small",
+      "synonym": "Little",
+      "partOfSpeech": "Adjective",
+      "coreMeaning": "Not large in physical size, duration, or importance.",
+      "whyDifferent": "'Small' is neutral and objective. 'Little' carries warmth, affection, or casual charm.",
+      "makeovers": [
+        {
+          "situationTag": "Pet Adoption",
+          "beforeSentence": "She rescued a ___ puppy from the city shelter.",
+          "targetSlotWord": "small",
+          "swappedWord": "little",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — 'little' adds warmth and affection when talking about pets or children.",
+          "spokenSentence": "She rescued a little puppy from the city shelter."
+        },
+        {
+          "situationTag": "Tech Specs",
+          "beforeSentence": "The tablet has a very ___ battery capacity.",
+          "targetSlotWord": "small",
+          "swappedWord": "little",
+          "isNaturalSwap": false,
+          "earVerdict": "Awkward — technical specs and measurements sound much better with objective 'small'.",
+          "spokenSentence": "The tablet has a very small battery capacity."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Tiny",
+          "ipa": "/ˈtaɪni/",
+          "toneTag": "Very Small",
+          "miniContext": "A tiny bird landed on the balcony rail."
+        },
+        {
+          "word": "Compact",
+          "ipa": "/kəmˈpækt/",
+          "toneTag": "Practical",
+          "miniContext": "He bought a compact desk for his room."
+        },
+        {
+          "word": "Microscopic",
+          "ipa": "/ˌmaɪkrəˈskɑːpɪk/",
+          "toneTag": "Scientific",
+          "miniContext": "Lab staff checked microscopic cells."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L3_LEARN_Q1",
+      "level": 3,
+      "cefr": "A2",
+      "difficulty": 1,
+      "pairTitle": "Buy ↔ Purchase",
+      "baseWord": "Buy",
+      "synonym": "Purchase",
+      "partOfSpeech": "Verb",
+      "coreMeaning": "To obtain goods or services in exchange for money.",
+      "whyDifferent": "'Buy' is everyday conversation. 'Purchase' appears on receipts, invoices, and business policies.",
+      "makeovers": [
+        {
+          "situationTag": "Store Policy",
+          "beforeSentence": "Keep your receipt as official proof of ___.",
+          "targetSlotWord": "buy",
+          "swappedWord": "purchase",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — receipts, contracts, and retail policies use formal 'purchase'.",
+          "spokenSentence": "Keep your receipt as official proof of purchase."
+        },
+        {
+          "situationTag": "Corner Market",
+          "beforeSentence": "Wait here while I ___ two cold bottles of water.",
+          "targetSlotWord": "buy",
+          "swappedWord": "purchase",
+          "isNaturalSwap": false,
+          "earVerdict": "Stiff — casual errands with friends almost always use 'buy'.",
+          "spokenSentence": "Wait here while I buy two cold bottles of water."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Shop for",
+          "ipa": "/ʃɑːp fɔːr/",
+          "toneTag": "Browsing",
+          "miniContext": "We need to shop for winter coats soon."
+        },
+        {
+          "word": "Acquire",
+          "ipa": "/əˈkwaɪər/",
+          "toneTag": "Corporate",
+          "miniContext": "The firm hopes to acquire new software."
+        },
+        {
+          "word": "Order",
+          "ipa": "/ˈɔːrdər/",
+          "toneTag": "Delivery",
+          "miniContext": "Let us order fresh bread online."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L3_LEARN_Q2",
+      "level": 3,
+      "cefr": "A2",
+      "difficulty": 1,
+      "pairTitle": "Cheap ↔ Inexpensive",
+      "baseWord": "Cheap",
+      "synonym": "Inexpensive",
+      "partOfSpeech": "Adjective",
+      "coreMeaning": "Low in price and easy on your budget.",
+      "whyDifferent": "'Cheap' can insult quality as flimsy. 'Inexpensive' highlights fair value without insulting craft.",
+      "makeovers": [
+        {
+          "situationTag": "Gift Compliment",
+          "beforeSentence": "We found a cozy, ___ bistro with fresh homemade pasta.",
+          "targetSlotWord": "cheap",
+          "swappedWord": "inexpensive",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural & Polite — 'inexpensive' praises fair pricing while respecting quality.",
+          "spokenSentence": "We found a cozy, inexpensive bistro with fresh homemade pasta."
+        },
+        {
+          "situationTag": "Broken Gear",
+          "beforeSentence": "Those ___ plastic earbuds snapped in half yesterday.",
+          "targetSlotWord": "inexpensive",
+          "swappedWord": "cheap",
+          "isNaturalSwap": false,
+          "earVerdict": "Context cue — 'cheap' specifically implies low quality that breaks easily.",
+          "spokenSentence": "Those cheap plastic earbuds snapped in half yesterday."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Budget",
+          "ipa": "/ˈbʌdʒɪt/",
+          "toneTag": "Practical",
+          "miniContext": "They booked a budget hotel near the rail."
+        },
+        {
+          "word": "Affordable",
+          "ipa": "/əˈfɔːrdəbəl/",
+          "toneTag": "Positive",
+          "miniContext": "City buses remain affordable for students."
+        },
+        {
+          "word": "Economical",
+          "ipa": "/ˌɛkəˈnɑːmɪkəl/",
+          "toneTag": "Efficient",
+          "miniContext": "Hybrid cars are very economical to drive."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L3_LEARN_Q3",
+      "level": 3,
+      "cefr": "A2",
+      "difficulty": 1,
+      "pairTitle": "Store ↔ Shop",
+      "baseWord": "Store",
+      "synonym": "Shop",
+      "partOfSpeech": "Noun",
+      "coreMeaning": "A retail space where goods are sold to the public.",
+      "whyDifferent": "'Store' is the everyday American term. 'Shop' is the everyday British term, or a small boutique anywhere.",
+      "makeovers": [
+        {
+          "situationTag": "London Errand",
+          "beforeSentence": "I am popping down to the corner ___ for fresh bread.",
+          "targetSlotWord": "store",
+          "swappedWord": "shop",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural UK — British speakers naturally say 'corner shop' for local groceries.",
+          "spokenSentence": "I am popping down to the corner shop for fresh bread."
+        },
+        {
+          "situationTag": "Mobile Downloads",
+          "beforeSentence": "Download the latest update from the online app ___.",
+          "targetSlotWord": "shop",
+          "swappedWord": "store",
+          "isNaturalSwap": false,
+          "earVerdict": "Digital standard — software marketplaces are universally called 'app store', not 'app shop'.",
+          "spokenSentence": "Download the latest update from the online app store."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Stall",
+          "ipa": "/stɔːl/",
+          "toneTag": "Market Stand",
+          "miniContext": "She buys honey at a weekend market stall."
+        },
+        {
+          "word": "Boutique",
+          "ipa": "/buːˈtiːk/",
+          "toneTag": "Specialty",
+          "miniContext": "A quiet boutique sells vintage coats."
+        },
+        {
+          "word": "Market",
+          "ipa": "/ˈmɑːrkɪt/",
+          "toneTag": "Fresh Goods",
+          "miniContext": "Farmers bring apples to the Saturday market."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L4_LEARN_Q1",
+      "level": 4,
+      "cefr": "A2",
+      "difficulty": 1,
+      "pairTitle": "Tasty ↔ Delicious",
+      "baseWord": "Tasty",
+      "synonym": "Delicious",
+      "partOfSpeech": "Adjective",
+      "coreMeaning": "Having an appealing, pleasant flavor.",
+      "whyDifferent": "'Tasty' gives a casual, moderate compliment. 'Delicious' expresses strong enthusiasm for great food.",
+      "makeovers": [
+        {
+          "situationTag": "Dinner Party",
+          "beforeSentence": "Your homemade lemon tart was absolutely ___!",
+          "targetSlotWord": "tasty",
+          "swappedWord": "delicious",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — 'delicious' pairs with 'absolutely' for memorable five-star praise.",
+          "spokenSentence": "Your homemade lemon tart was absolutely delicious!"
+        },
+        {
+          "situationTag": "Quick Lunch",
+          "beforeSentence": "The station sandwich was fine and reasonably ___.",
+          "targetSlotWord": "delicious",
+          "swappedWord": "tasty",
+          "isNaturalSwap": false,
+          "earVerdict": "Better fit — modest everyday praise matches 'tasty' rather than over-dramatic 'delicious'.",
+          "spokenSentence": "The station sandwich was fine and reasonably tasty."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Flavorful",
+          "ipa": "/ˈfleɪvərfəl/",
+          "toneTag": "Rich",
+          "miniContext": "Fresh herbs make the broth flavorful."
+        },
+        {
+          "word": "Savory",
+          "ipa": "/ˈseɪvəri/",
+          "toneTag": "Salty/Rich",
+          "miniContext": "He prefers savory pies over sweet cakes."
+        },
+        {
+          "word": "Exquisite",
+          "ipa": "/ɪkˈskwɪzɪt/",
+          "toneTag": "Fine Dining",
+          "miniContext": "The chef plated an exquisite dessert."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L4_LEARN_Q2",
+      "level": 4,
+      "cefr": "A2",
+      "difficulty": 1,
+      "pairTitle": "Meal ↔ Dish",
+      "baseWord": "Meal",
+      "synonym": "Dish",
+      "partOfSpeech": "Noun",
+      "coreMeaning": "Food prepared and eaten during a sitting.",
+      "whyDifferent": "'Meal' covers the entire sitting (breakfast, dinner). 'Dish' names one specific prepared recipe item.",
+      "makeovers": [
+        {
+          "situationTag": "Menu Highlight",
+          "beforeSentence": "The chef's signature ___ is a roasted garlic risotto.",
+          "targetSlotWord": "meal",
+          "swappedWord": "dish",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — a single featured recipe on a menu is always a 'dish'.",
+          "spokenSentence": "The chef's signature dish is a roasted garlic risotto."
+        },
+        {
+          "situationTag": "Daily Routine",
+          "beforeSentence": "Breakfast is the first ___ of the morning.",
+          "targetSlotWord": "dish",
+          "swappedWord": "meal",
+          "isNaturalSwap": false,
+          "earVerdict": "Awkward — breakfast, lunch, and dinner as whole sittings are 'meals'.",
+          "spokenSentence": "Breakfast is the first meal of the morning."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Snack",
+          "ipa": "/snæk/",
+          "toneTag": "Light Bite",
+          "miniContext": "Pack a healthy snack for the train."
+        },
+        {
+          "word": "Course",
+          "ipa": "/kɔːrs/",
+          "toneTag": "Stage",
+          "miniContext": "Soup arrived as the first course."
+        },
+        {
+          "word": "Feast",
+          "ipa": "/fiːst/",
+          "toneTag": "Grand Spread",
+          "miniContext": "They cooked a feast for twenty guests."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L4_LEARN_Q3",
+      "level": 4,
+      "cefr": "A2",
+      "difficulty": 1,
+      "pairTitle": "Cook ↔ Prepare",
+      "baseWord": "Cook",
+      "synonym": "Prepare",
+      "partOfSpeech": "Verb",
+      "coreMeaning": "To make food ready for serving.",
+      "whyDifferent": "'Cook' requires applying heat. 'Prepare' covers washing, chopping, mixing, and planning with or without heat.",
+      "makeovers": [
+        {
+          "situationTag": "Fresh Salad",
+          "beforeSentence": "She loves to ___ a crisp spinach and berry salad.",
+          "targetSlotWord": "cook",
+          "swappedWord": "prepare",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — salads do not use heat, so you 'prepare' them rather than 'cook' them.",
+          "spokenSentence": "She loves to prepare a crisp spinach and berry salad."
+        },
+        {
+          "situationTag": "Grill Night",
+          "beforeSentence": "Let us ___ the salmon over medium charcoal heat.",
+          "targetSlotWord": "prepare",
+          "swappedWord": "cook",
+          "isNaturalSwap": false,
+          "earVerdict": "Less precise — applying direct flame or oven heat specifically means 'cook'.",
+          "spokenSentence": "Let us cook the salmon over medium charcoal heat."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Make",
+          "ipa": "/meɪk/",
+          "toneTag": "Casual",
+          "miniContext": "I can make sandwiches in five minutes."
+        },
+        {
+          "word": "Simmer",
+          "ipa": "/ˈsɪmər/",
+          "toneTag": "Gentle Heat",
+          "miniContext": "Simmer the tomato sauce for twenty minutes."
+        },
+        {
+          "word": "Bake",
+          "ipa": "/beɪk/",
+          "toneTag": "Oven",
+          "miniContext": "Let us bake warm rolls for dinner."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L5_LEARN_Q1",
+      "level": 5,
+      "cefr": "A2",
+      "difficulty": 1,
+      "pairTitle": "Family ↔ Relatives",
+      "baseWord": "Family",
+      "synonym": "Relatives",
+      "partOfSpeech": "Noun",
+      "coreMeaning": "People connected to you through home, blood, or marriage.",
+      "whyDifferent": "'Family' centers on your close household. 'Relatives' refers factually to extended aunts, uncles, and cousins.",
+      "makeovers": [
+        {
+          "situationTag": "Summer Reunion",
+          "beforeSentence": "Over forty distant ___ drove in for our July picnic.",
+          "targetSlotWord": "family",
+          "swappedWord": "relatives",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — 'relatives' clarifies the wider network of cousins, aunts, and uncles.",
+          "spokenSentence": "Over forty distant relatives drove in for our July picnic."
+        },
+        {
+          "situationTag": "Daily Dinner",
+          "beforeSentence": "I eat dinner with my immediate ___ at six.",
+          "targetSlotWord": "relatives",
+          "swappedWord": "family",
+          "isNaturalSwap": false,
+          "earVerdict": "Awkward — parents, partners, and children at home are always called 'family'.",
+          "spokenSentence": "I eat dinner with my immediate family at six."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Household",
+          "ipa": "/ˈhaʊshoʊld/",
+          "toneTag": "Same Roof",
+          "miniContext": "Everyone in the household shares chores."
+        },
+        {
+          "word": "Kin",
+          "ipa": "/kɪn/",
+          "toneTag": "Literary",
+          "miniContext": "Next of kin must sign emergency forms."
+        },
+        {
+          "word": "Relations",
+          "ipa": "/rɪˈleɪʃənz/",
+          "toneTag": "UK Extended",
+          "miniContext": "She visits her country relations every spring."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L5_LEARN_Q2",
+      "level": 5,
+      "cefr": "A2",
+      "difficulty": 1,
+      "pairTitle": "Kid ↔ Child",
+      "baseWord": "Kid",
+      "synonym": "Child",
+      "partOfSpeech": "Noun",
+      "coreMeaning": "A young person who has not yet reached adulthood.",
+      "whyDifferent": "'Kid' is playful, casual speech. 'Child' is neutral and required on school forms, news, and essays.",
+      "makeovers": [
+        {
+          "situationTag": "Museum Policy",
+          "beforeSentence": "Every ticket admits one adult and one ___ under twelve.",
+          "targetSlotWord": "kid",
+          "swappedWord": "child",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — official rules, school forms, and formal writing require 'child'.",
+          "spokenSentence": "Every ticket admits one adult and one child under twelve."
+        },
+        {
+          "situationTag": "Backyard Chat",
+          "beforeSentence": "Tell the ___ to grab their soccer shoes before noon.",
+          "targetSlotWord": "child",
+          "swappedWord": "kid",
+          "isNaturalSwap": false,
+          "earVerdict": "Stiff — casual chats between parents sound far more natural with 'kids' or 'kid'.",
+          "spokenSentence": "Tell the kids to grab their soccer shoes before noon."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Tot",
+          "ipa": "/tɑːt/",
+          "toneTag": "Toddler",
+          "miniContext": "Tiny tots splashed in the shallow pool."
+        },
+        {
+          "word": "Youth",
+          "ipa": "/juːθ/",
+          "toneTag": "Older",
+          "miniContext": "Local youth programs open in June."
+        },
+        {
+          "word": "Minor",
+          "ipa": "/ˈmaɪnər/",
+          "toneTag": "Legal",
+          "miniContext": "A minor needs a parent's signature here."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L5_LEARN_Q3",
+      "level": 5,
+      "cefr": "A2",
+      "difficulty": 1,
+      "pairTitle": "Marry ↔ Wed",
+      "baseWord": "Marry",
+      "synonym": "Wed",
+      "partOfSpeech": "Verb",
+      "coreMeaning": "To become legally united as spouses.",
+      "whyDifferent": "'Marry' is standard spoken English. 'Wed' is reserved for newspaper headlines and formal announcements.",
+      "makeovers": [
+        {
+          "situationTag": "News Headline",
+          "beforeSentence": "Royal Couple Set to ___ at Historic Cathedral.",
+          "targetSlotWord": "marry",
+          "swappedWord": "wed",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural Print — short headlines and formal announcements love crisp 'wed'.",
+          "spokenSentence": "Royal Couple Set to Wed at Historic Cathedral."
+        },
+        {
+          "situationTag": "Dinner Proposal",
+          "beforeSentence": "I knew right away I wanted to ___ my best friend.",
+          "targetSlotWord": "wed",
+          "swappedWord": "marry",
+          "isNaturalSwap": false,
+          "earVerdict": "Unnatural speech — real people always say 'marry', never 'wed', in conversation.",
+          "spokenSentence": "I knew right away I wanted to marry my best friend."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Elope",
+          "ipa": "/ɪˈloʊp/",
+          "toneTag": "Private",
+          "miniContext": "They decided to elope by the coast."
+        },
+        {
+          "word": "Unite",
+          "ipa": "/juːˈnaɪt/",
+          "toneTag": "Ceremonial",
+          "miniContext": "Music helped unite both families warmly."
+        },
+        {
+          "word": "Espouse",
+          "ipa": "/ɪˈspaʊz/",
+          "toneTag": "Archaic",
+          "miniContext": "Older poetry uses espouse for marriage."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L6_LEARN_Q1",
+      "level": 6,
+      "cefr": "A2",
+      "difficulty": 1,
+      "pairTitle": "Teach ↔ Instruct",
+      "baseWord": "Teach",
+      "synonym": "Instruct",
+      "partOfSpeech": "Verb",
+      "coreMeaning": "To guide someone to learn knowledge or follow a skill.",
+      "whyDifferent": "'Teach' nurtures broad understanding. 'Instruct' delivers structured rules, drills, or step-by-step orders.",
+      "makeovers": [
+        {
+          "situationTag": "Safety Briefing",
+          "beforeSentence": "Flight crew ___ passengers on seatbelts before takeoff.",
+          "targetSlotWord": "teach",
+          "swappedWord": "instruct",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — structured safety rules and procedural drills call for 'instruct'.",
+          "spokenSentence": "Flight crew instruct passengers on seatbelts before takeoff."
+        },
+        {
+          "situationTag": "Kindergarten",
+          "beforeSentence": "Ms. Patel loves to ___ kids how to read stories.",
+          "targetSlotWord": "instruct",
+          "swappedWord": "teach",
+          "isNaturalSwap": false,
+          "earVerdict": "Too rigid — nurturing curiosity and school subjects calls for 'teach'.",
+          "spokenSentence": "Ms. Patel loves to teach kids how to read stories."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Show",
+          "ipa": "/ʃoʊ/",
+          "toneTag": "Hands-On",
+          "miniContext": "Let me show you how this lock opens."
+        },
+        {
+          "word": "Coach",
+          "ipa": "/koʊtʃ/",
+          "toneTag": "Practice",
+          "miniContext": "She coaches youth swimmers after school."
+        },
+        {
+          "word": "Educate",
+          "ipa": "/ˈɛdʒukeɪt/",
+          "toneTag": "Academic",
+          "miniContext": "Museums help educate visitors on history."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L6_LEARN_Q2",
+      "level": 6,
+      "cefr": "A2",
+      "difficulty": 1,
+      "pairTitle": "Smart ↔ Clever",
+      "baseWord": "Smart",
+      "synonym": "Clever",
+      "partOfSpeech": "Adjective",
+      "coreMeaning": "Able to grasp ideas, solve problems, and adapt quickly.",
+      "whyDifferent": "'Smart' covers broad intelligence. 'Clever' highlights quick practical wit or an ingenious twist.",
+      "makeovers": [
+        {
+          "situationTag": "Puzzle Trick",
+          "beforeSentence": "That was a ___ shortcut around the heavy highway traffic.",
+          "targetSlotWord": "smart",
+          "swappedWord": "clever",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — ingenious shortcuts, witty jokes, and quick tricks shine with 'clever'.",
+          "spokenSentence": "That was a clever shortcut around the heavy highway traffic."
+        },
+        {
+          "situationTag": "Medical Career",
+          "beforeSentence": "You need to work hard and be ___ to pass medical boards.",
+          "targetSlotWord": "clever",
+          "swappedWord": "smart",
+          "isNaturalSwap": false,
+          "earVerdict": "Less standard US — general academic capability usually prefers 'smart' in American English.",
+          "spokenSentence": "You need to work hard and be smart to pass medical boards."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Sharp",
+          "ipa": "/ʃɑːrp/",
+          "toneTag": "Alert",
+          "miniContext": "Stay sharp during the morning Q&A."
+        },
+        {
+          "word": "Bright",
+          "ipa": "/braɪt/",
+          "toneTag": "Promising",
+          "miniContext": "A bright student asked a tough question."
+        },
+        {
+          "word": "Brilliant",
+          "ipa": "/ˈbrɪljənt/",
+          "toneTag": "Top Tier",
+          "miniContext": "Her brilliant design won first prize."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L6_LEARN_Q3",
+      "level": 6,
+      "cefr": "A2",
+      "difficulty": 1,
+      "pairTitle": "Test ↔ Exam",
+      "baseWord": "Test",
+      "synonym": "Exam",
+      "partOfSpeech": "Noun",
+      "coreMeaning": "A set of questions or tasks checking what someone knows.",
+      "whyDifferent": "'Test' fits quick checks or driving skills. 'Exam' designates major, high-stakes academic finals.",
+      "makeovers": [
+        {
+          "situationTag": "University Finals",
+          "beforeSentence": "She studied three weeks for her final biology ___.",
+          "targetSlotWord": "test",
+          "swappedWord": "exam",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — major school or licensing milestones are called 'exams'.",
+          "spokenSentence": "She studied three weeks for her final biology exam."
+        },
+        {
+          "situationTag": "Friday Routine",
+          "beforeSentence": "Our teacher gives a ten-word spelling ___ every Friday.",
+          "targetSlotWord": "exam",
+          "swappedWord": "test",
+          "isNaturalSwap": false,
+          "earVerdict": "Overstated — weekly 10-minute classroom checks are 'tests' or quizzes, not 'exams'.",
+          "spokenSentence": "Our teacher gives a ten-word spelling test every Friday."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Quiz",
+          "ipa": "/kwɪz/",
+          "toneTag": "Short Check",
+          "miniContext": "We had a five-minute pop quiz today."
+        },
+        {
+          "word": "Checkup",
+          "ipa": "/ˈtʃɛkʌp/",
+          "toneTag": "Review",
+          "miniContext": "An eye checkup takes fifteen minutes."
+        },
+        {
+          "word": "Assessment",
+          "ipa": "/əˈsɛsmənt/",
+          "toneTag": "Corporate",
+          "miniContext": "Candidates take a writing assessment."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L7_LEARN_Q1",
+      "level": 7,
+      "cefr": "A2",
+      "difficulty": 1,
+      "pairTitle": "Job ↔ Work",
+      "baseWord": "Job",
+      "synonym": "Work",
+      "partOfSpeech": "Noun",
+      "coreMeaning": "Paid tasks or employment you hold.",
+      "whyDifferent": "'Job' is a countable role ('a job, two jobs'). 'Work' is uncountable effort ('go to work', never 'a work').",
+      "makeovers": [
+        {
+          "situationTag": "Morning Commute",
+          "beforeSentence": "He leaves home at eight sharp to get to ___ on time.",
+          "targetSlotWord": "job",
+          "swappedWord": "work",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — uncountable phrases like 'go to work' or 'at work' require 'work'.",
+          "spokenSentence": "He leaves home at eight sharp to get to work on time."
+        },
+        {
+          "situationTag": "Resume Count",
+          "beforeSentence": "She interviewed for a new engineering ___ in Seattle.",
+          "targetSlotWord": "work",
+          "swappedWord": "job",
+          "isNaturalSwap": false,
+          "earVerdict": "Grammar trap — after 'a new', only countable 'job' works, never 'a work'.",
+          "spokenSentence": "She interviewed for a new engineering job in Seattle."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Task",
+          "ipa": "/tæsk/",
+          "toneTag": "Single Duty",
+          "miniContext": "Finish this spreadsheet task before noon."
+        },
+        {
+          "word": "Role",
+          "ipa": "/roʊl/",
+          "toneTag": "Team Title",
+          "miniContext": "He stepped into a new product role."
+        },
+        {
+          "word": "Career",
+          "ipa": "/kəˈrɪər/",
+          "toneTag": "Long Path",
+          "miniContext": "She built a twenty-year nursing career."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L7_LEARN_Q2",
+      "level": 7,
+      "cefr": "A2",
+      "difficulty": 1,
+      "pairTitle": "Boss ↔ Manager",
+      "baseWord": "Boss",
+      "synonym": "Manager",
+      "partOfSpeech": "Noun",
+      "coreMeaning": "The person overseeing staff and decisions at work.",
+      "whyDifferent": "'Boss' is casual spoken shorthand. 'Manager' is the polite official job title on resumes and emails.",
+      "makeovers": [
+        {
+          "situationTag": "HR Email",
+          "beforeSentence": "My hiring ___ approved my two-week vacation request.",
+          "targetSlotWord": "boss",
+          "swappedWord": "manager",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural Formal — official HR emails, resumes, and reviews use 'manager'.",
+          "spokenSentence": "My hiring manager approved my two-week vacation request."
+        },
+        {
+          "situationTag": "Coffee Chat",
+          "beforeSentence": "Wait — my ___ just called everyone back into the van!",
+          "targetSlotWord": "manager",
+          "swappedWord": "boss",
+          "isNaturalSwap": false,
+          "earVerdict": "Casual tone — informal spoken chatter among teammates often says 'boss'.",
+          "spokenSentence": "Wait — my boss just called everyone back into the van!"
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Lead",
+          "ipa": "/liːd/",
+          "toneTag": "Frontline",
+          "miniContext": "Check with the shift lead on schedule."
+        },
+        {
+          "word": "Supervisor",
+          "ipa": "/ˈsuːpərvaɪzər/",
+          "toneTag": "Oversight",
+          "miniContext": "Submit safety forms to your supervisor."
+        },
+        {
+          "word": "Executive",
+          "ipa": "/ɪɡˈzɛkjətɪv/",
+          "toneTag": "Senior",
+          "miniContext": "Two senior executives signed the contract."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L7_LEARN_Q3",
+      "level": 7,
+      "cefr": "A2",
+      "difficulty": 1,
+      "pairTitle": "Hire ↔ Employ",
+      "baseWord": "Hire",
+      "synonym": "Employ",
+      "partOfSpeech": "Verb",
+      "coreMeaning": "To bring someone onto a paid staff or keep them on payroll.",
+      "whyDifferent": "'Hire' focuses on the initial decision to add someone. 'Employ' describes formal or ongoing employment.",
+      "makeovers": [
+        {
+          "situationTag": "Company Profile",
+          "beforeSentence": "The local hospital plans to ___ forty new nurses.",
+          "targetSlotWord": "hire",
+          "swappedWord": "employ",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural Formal — business reports and corporate profiles favor 'employ'.",
+          "spokenSentence": "The local hospital plans to employ forty new nurses."
+        },
+        {
+          "situationTag": "Garage Help",
+          "beforeSentence": "We need to ___ someone this week to fix the roof.",
+          "targetSlotWord": "employ",
+          "swappedWord": "hire",
+          "isNaturalSwap": false,
+          "earVerdict": "Overly stiff — short-term services or everyday recruiting use 'hire'.",
+          "spokenSentence": "We need to hire someone this week to fix the roof."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Recruit",
+          "ipa": "/rɪˈkruːt/",
+          "toneTag": "Search",
+          "miniContext": "Universities recruit talented science fellows."
+        },
+        {
+          "word": "Staff",
+          "ipa": "/stæf/",
+          "toneTag": "Fill Team",
+          "miniContext": "They must staff the booth all weekend."
+        },
+        {
+          "word": "Contract",
+          "ipa": "/kənˈtrækt/",
+          "toneTag": "Project",
+          "miniContext": "The agency will contract outside editors."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L8_LEARN_Q1",
+      "level": 8,
+      "cefr": "A2",
+      "difficulty": 1,
+      "pairTitle": "Trip ↔ Journey",
+      "baseWord": "Trip",
+      "synonym": "Journey",
+      "partOfSpeech": "Noun",
+      "coreMeaning": "Movement from one place to another.",
+      "whyDifferent": "'Trip' covers the whole getaway out and back. 'Journey' highlights the long travel passage itself.",
+      "makeovers": [
+        {
+          "situationTag": "Desert Crossing",
+          "beforeSentence": "The three-day train ___ across the canyon was unforgettable.",
+          "targetSlotWord": "trip",
+          "swappedWord": "journey",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — long, scenic, or demanding transit legs feel richest with 'journey'.",
+          "spokenSentence": "The three-day train journey across the canyon was unforgettable."
+        },
+        {
+          "situationTag": "Weekend Plans",
+          "beforeSentence": "How was your quick weekend ___ to see your sister?",
+          "targetSlotWord": "journey",
+          "swappedWord": "trip",
+          "isNaturalSwap": false,
+          "earVerdict": "Awkward — short casual visits out and back are always 'trips'.",
+          "spokenSentence": "How was your quick weekend trip to see your sister?"
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Outing",
+          "ipa": "/ˈaʊtɪŋ/",
+          "toneTag": "Day Fun",
+          "miniContext": "The club planned a Saturday zoo outing."
+        },
+        {
+          "word": "Voyage",
+          "ipa": "/ˈvɔɪɪdʒ/",
+          "toneTag": "Sea / Space",
+          "miniContext": "Early sailors survived a rough ocean voyage."
+        },
+        {
+          "word": "Expedition",
+          "ipa": "/ˌɛkspəˈdɪʃən/",
+          "toneTag": "Mission",
+          "miniContext": "Scientists led a polar expedition."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L8_LEARN_Q2",
+      "level": 8,
+      "cefr": "A2",
+      "difficulty": 1,
+      "pairTitle": "Holiday ↔ Vacation",
+      "baseWord": "Holiday",
+      "synonym": "Vacation",
+      "partOfSpeech": "Noun",
+      "coreMeaning": "Time away from work or school for rest and travel.",
+      "whyDifferent": "'Holiday' is UK leisure time off (or a festival day in the US). 'Vacation' is the standard US word for travel leave.",
+      "makeovers": [
+        {
+          "situationTag": "US Workplace",
+          "beforeSentence": "I booked two weeks of summer ___ in Maine.",
+          "targetSlotWord": "holiday",
+          "swappedWord": "vacation",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural US — American workers take 'vacation' when taking time off to travel.",
+          "spokenSentence": "I booked two weeks of summer vacation in Maine."
+        },
+        {
+          "situationTag": "Festive Calendar",
+          "beforeSentence": "Thanksgiving is an autumn national ___ in North America.",
+          "targetSlotWord": "vacation",
+          "swappedWord": "holiday",
+          "isNaturalSwap": false,
+          "earVerdict": "Distinction — public festival days are 'holidays' even in the US, never 'vacations'.",
+          "spokenSentence": "Thanksgiving is an autumn national holiday in North America."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Break",
+          "ipa": "/breɪk/",
+          "toneTag": "Short Pause",
+          "miniContext": "Students enjoy a one-week spring break."
+        },
+        {
+          "word": "Leave",
+          "ipa": "/liːv/",
+          "toneTag": "HR Term",
+          "miniContext": "Employees earn paid annual leave."
+        },
+        {
+          "word": "Getaway",
+          "ipa": "/ˈɡɛtəweɪ/",
+          "toneTag": "Short Trip",
+          "miniContext": "They booked a quiet lakeside getaway."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L8_LEARN_Q3",
+      "level": 8,
+      "cefr": "A2",
+      "difficulty": 1,
+      "pairTitle": "Arrive ↔ Reach",
+      "baseWord": "Arrive",
+      "synonym": "Reach",
+      "partOfSpeech": "Verb",
+      "coreMeaning": "To get to a planned destination at the end of travel.",
+      "whyDifferent": "'Arrive' uses 'at' or 'in' ('arrive at school'). 'Reach' connects straight to the destination with zero preposition.",
+      "makeovers": [
+        {
+          "situationTag": "Direct Object",
+          "beforeSentence": "The climbers will ___ the mountain summit before sunset.",
+          "targetSlotWord": "arrive",
+          "swappedWord": "reach",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural Grammar — 'reach' connects directly to 'the summit' without 'at' or 'in'.",
+          "spokenSentence": "The climbers will reach the mountain summit before sunset."
+        },
+        {
+          "situationTag": "With Preposition",
+          "beforeSentence": "Flight 204 will ___ in Madrid at six o'clock.",
+          "targetSlotWord": "reach",
+          "swappedWord": "arrive",
+          "isNaturalSwap": false,
+          "earVerdict": "Grammar trap — never write 'reach in Madrid'; 'in' requires 'arrive'.",
+          "spokenSentence": "Flight 204 will arrive in Madrid at six o'clock."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Appear",
+          "ipa": "/əˈpɪər/",
+          "toneTag": "Come In",
+          "miniContext": "Guests began to appear around seven."
+        },
+        {
+          "word": "Land",
+          "ipa": "/lænd/",
+          "toneTag": "Flight",
+          "miniContext": "Our plane will land on runway two."
+        },
+        {
+          "word": "Enter",
+          "ipa": "/ˈɛntər/",
+          "toneTag": "Go Inside",
+          "miniContext": "Wait before you enter the studio."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L9_LEARN_Q1",
+      "level": 9,
+      "cefr": "A2",
+      "difficulty": 1,
+      "pairTitle": "Call ↔ Ring",
+      "baseWord": "Call",
+      "synonym": "Ring",
+      "partOfSpeech": "Verb",
+      "coreMeaning": "To contact someone by telephone.",
+      "whyDifferent": "'Call' is understood worldwide. 'Ring' is natural everyday British and Australian usage for telephoning.",
+      "makeovers": [
+        {
+          "situationTag": "London Office",
+          "beforeSentence": "Could you ___ reception when your taxi pulls up?",
+          "targetSlotWord": "call",
+          "swappedWord": "ring",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural UK — 'ring' is idiomatic across Britain and Australia for phone calls.",
+          "spokenSentence": "Could you ring reception when your taxi pulls up?"
+        },
+        {
+          "situationTag": "US Jewelry Confusion",
+          "beforeSentence": "Outside the UK, people say 'Give me a ___' on the phone.",
+          "targetSlotWord": "ring",
+          "swappedWord": "call",
+          "isNaturalSwap": false,
+          "earVerdict": "Cultural nuance — outside UK/Commonwealth speech, 'ring' sounds like jewelry.",
+          "spokenSentence": "Outside the UK, people say 'Give me a call' on the phone."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Ping",
+          "ipa": "/pɪŋ/",
+          "toneTag": "Quick App",
+          "miniContext": "Ping me on chat when you are free."
+        },
+        {
+          "word": "Dial",
+          "ipa": "/ˈdaɪəl/",
+          "toneTag": "Keypad",
+          "miniContext": "Dial zero for the front desk."
+        },
+        {
+          "word": "Telephone",
+          "ipa": "/ˈtɛlɪfoʊn/",
+          "toneTag": "Formal",
+          "miniContext": "Please telephone the clinic before noon."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L9_LEARN_Q2",
+      "level": 9,
+      "cefr": "A2",
+      "difficulty": 1,
+      "pairTitle": "Message ↔ Text",
+      "baseWord": "Message",
+      "synonym": "Text",
+      "partOfSpeech": "Noun",
+      "coreMeaning": "A written or spoken note sent to someone.",
+      "whyDifferent": "'Message' covers emails, voicemails, letters, or chats. 'Text' refers strictly to short phone SMS/chat notes.",
+      "makeovers": [
+        {
+          "situationTag": "Phone Ping",
+          "beforeSentence": "She sent a quick ___ saying the train was five minutes late.",
+          "targetSlotWord": "message",
+          "swappedWord": "text",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — short mobile chat updates are most concisely called a 'text'.",
+          "spokenSentence": "She sent a quick text saying the train was five minutes late."
+        },
+        {
+          "situationTag": "Voice Mail",
+          "beforeSentence": "I left a two-minute audio ___ on your voicemail.",
+          "targetSlotWord": "text",
+          "swappedWord": "message",
+          "isNaturalSwap": false,
+          "earVerdict": "Accuracy — spoken recordings are always 'messages', never written 'texts'.",
+          "spokenSentence": "I left a two-minute audio message on your voicemail."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Note",
+          "ipa": "/noʊt/",
+          "toneTag": "Brief",
+          "miniContext": "Leave a quick paper note on the fridge."
+        },
+        {
+          "word": "Memo",
+          "ipa": "/ˈmɛmoʊ/",
+          "toneTag": "Workplace",
+          "miniContext": "HR sent a policy memo to all staff."
+        },
+        {
+          "word": "Notice",
+          "ipa": "/ˈnoʊtɪs/",
+          "toneTag": "Official",
+          "miniContext": "Read the official building notice carefully."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L9_LEARN_Q3",
+      "level": 9,
+      "cefr": "A2",
+      "difficulty": 1,
+      "pairTitle": "Fix ↔ Repair",
+      "baseWord": "Fix",
+      "synonym": "Repair",
+      "partOfSpeech": "Verb",
+      "coreMeaning": "To make something broken work properly again.",
+      "whyDifferent": "'Fix' fits casual issues and abstract problems. 'Repair' fits professional restoration of cars, roofs, or gear.",
+      "makeovers": [
+        {
+          "situationTag": "Auto Shop",
+          "beforeSentence": "The certified mechanic will ___ the car brakes today.",
+          "targetSlotWord": "fix",
+          "swappedWord": "repair",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural Professional — mechanical, structural, and warranty work prefers 'repair'.",
+          "spokenSentence": "The certified mechanic will repair the car brakes today."
+        },
+        {
+          "situationTag": "Schedule Mixup",
+          "beforeSentence": "Let us ___ that billing typo before the client sees it.",
+          "targetSlotWord": "repair",
+          "swappedWord": "fix",
+          "isNaturalSwap": false,
+          "earVerdict": "Meaning rule — abstract typos, schedules, and mistakes are 'fixed', not physically 'repaired'.",
+          "spokenSentence": "Let us fix that billing typo before the client sees it."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Patch",
+          "ipa": "/pætʃ/",
+          "toneTag": "Quick Cover",
+          "miniContext": "We can patch the tent hole with tape."
+        },
+        {
+          "word": "Mend",
+          "ipa": "/mɛnd/",
+          "toneTag": "Fabric / Bond",
+          "miniContext": "He learned to mend torn wool socks."
+        },
+        {
+          "word": "Restore",
+          "ipa": "/rɪˈstɔːr/",
+          "toneTag": "Full Rebuild",
+          "miniContext": "Art crews restore historic stone bridges."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L10_LEARN_Q1",
+      "level": 10,
+      "cefr": "A2",
+      "difficulty": 1,
+      "pairTitle": "Sick ↔ Ill",
+      "baseWord": "Sick",
+      "synonym": "Ill",
+      "partOfSpeech": "Adjective",
+      "coreMeaning": "Not feeling healthy or suffering from an illness.",
+      "whyDifferent": "'Sick' is standard US speech (yet can mean nauseous in the UK). 'Ill' is formal and UK standard for disease.",
+      "makeovers": [
+        {
+          "situationTag": "Formal Report",
+          "beforeSentence": "He felt ___ after noon and went home to rest.",
+          "targetSlotWord": "sick",
+          "swappedWord": "ill",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural Formal/UK — 'ill' sounds polished in writing and clean in British English.",
+          "spokenSentence": "He felt ill after noon and went home to rest."
+        },
+        {
+          "situationTag": "Casual US Flu",
+          "beforeSentence": "Kids often stay home when they feel ___ with a cold.",
+          "targetSlotWord": "ill",
+          "swappedWord": "sick",
+          "isNaturalSwap": false,
+          "earVerdict": "Everyday tone — US spoken conversation naturally favors 'sick' for everyday colds.",
+          "spokenSentence": "Kids often stay home when they feel sick with a cold."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Queasy",
+          "ipa": "/ˈkwiːzi/",
+          "toneTag": "Stomach",
+          "miniContext": "Boat waves left a few passengers queasy."
+        },
+        {
+          "word": "Unwell",
+          "ipa": "/ʌnˈwɛl/",
+          "toneTag": "Polite",
+          "miniContext": "Please stay home if you feel unwell."
+        },
+        {
+          "word": "Ailing",
+          "ipa": "/ˈeɪlɪŋ/",
+          "toneTag": "Literary",
+          "miniContext": "She visited her ailing grandfather weekly."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L10_LEARN_Q2",
+      "level": 10,
+      "cefr": "A2",
+      "difficulty": 1,
+      "pairTitle": "Tired ↔ Weary",
+      "baseWord": "Tired",
+      "synonym": "Weary",
+      "partOfSpeech": "Adjective",
+      "coreMeaning": "Low on energy and needing rest.",
+      "whyDifferent": "'Tired' covers everyday sleepiness. 'Weary' evokes deep, worn-down exhaustion after long strain.",
+      "makeovers": [
+        {
+          "situationTag": "Long Shift",
+          "beforeSentence": "After a twelve-hour shift, the night nurse felt ___.",
+          "targetSlotWord": "tired",
+          "swappedWord": "weary",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural Depth — 'weary' captures heavy exhaustion from long, grueling effort.",
+          "spokenSentence": "After a twelve-hour shift, the night nurse felt weary."
+        },
+        {
+          "situationTag": "Short Nap",
+          "beforeSentence": "I woke up five minutes ago and still feel a bit ___.",
+          "targetSlotWord": "weary",
+          "swappedWord": "tired",
+          "isNaturalSwap": false,
+          "earVerdict": "Over-dramatic — light morning grogginess just calls for 'tired'.",
+          "spokenSentence": "I woke up five minutes ago and still feel a bit tired."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Sleepy",
+          "ipa": "/ˈsliːpi/",
+          "toneTag": "Drowsy",
+          "miniContext": "Warm tea made the toddler sleepy."
+        },
+        {
+          "word": "Drained",
+          "ipa": "/dreɪnd/",
+          "toneTag": "Empty",
+          "miniContext": "Back-to-back calls left me drained."
+        },
+        {
+          "word": "Exhausted",
+          "ipa": "/ɪɡˈzɔːstɪd/",
+          "toneTag": "Total",
+          "miniContext": "Marathon runners looked completely exhausted."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L10_LEARN_Q3",
+      "level": 10,
+      "cefr": "A2",
+      "difficulty": 1,
+      "pairTitle": "Doctor ↔ Physician",
+      "baseWord": "Doctor",
+      "synonym": "Physician",
+      "partOfSpeech": "Noun",
+      "coreMeaning": "A trained professional who diagnoses and treats patients.",
+      "whyDifferent": "'Doctor' covers everyday speech (plus PhDs and dentists). 'Physician' strictly means a licensed MD.",
+      "makeovers": [
+        {
+          "situationTag": "Medical Form",
+          "beforeSentence": "Your primary care ___ must sign this insurance clearance.",
+          "targetSlotWord": "doctor",
+          "swappedWord": "physician",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural Clinical — insurance forms and medical directories specify 'physician'.",
+          "spokenSentence": "Your primary care physician must sign this insurance clearance."
+        },
+        {
+          "situationTag": "Phone Booking",
+          "beforeSentence": "I am calling to see my ___ about a sore throat.",
+          "targetSlotWord": "physician",
+          "swappedWord": "doctor",
+          "isNaturalSwap": false,
+          "earVerdict": "Everyday speech — patients normally say 'see my doctor' when booking visits.",
+          "spokenSentence": "I am calling to see my doctor about a sore throat."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Medic",
+          "ipa": "/ˈmɛdɪk/",
+          "toneTag": "Field Aid",
+          "miniContext": "A stadium medic checked the runner's ankle."
+        },
+        {
+          "word": "Clinician",
+          "ipa": "/klɪˈnɪʃən/",
+          "toneTag": "Care Staff",
+          "miniContext": "Senior clinicians reviewed the chart."
+        },
+        {
+          "word": "Specialist",
+          "ipa": "/ˈspɛʃəlɪst/",
+          "toneTag": "Expert",
+          "miniContext": "We consulted a heart specialist downtown."
+        }
+      ]
+    }
+  ]
 }
