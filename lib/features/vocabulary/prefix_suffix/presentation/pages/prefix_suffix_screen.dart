@@ -281,9 +281,7 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen>
             state.currentIndex != _lastProcessedIndex) {
           _lastProcessedIndex = state.currentIndex;
           WidgetsBinding.instance.addPostFrameCallback((_) {
-            if (mounted) {
-              _onQuestLoaded(quest);
-            }
+            if (mounted) _onQuestLoaded(quest);
           });
         }
 
@@ -322,9 +320,7 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen>
                   isAnsweredNotifier.value = false;
                   isCorrectNotifier.value = null;
                   _controller.resetForNextQuest();
-                  if (_currentQuest != null) {
-                    _startTimer(_currentQuest!);
-                  }
+                  if (_currentQuest != null) _startTimer(_currentQuest!);
                 } else {
                   context.read<VocabularyBloc>().add(const NextQuestion());
                 }
@@ -341,7 +337,6 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen>
                 padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
                 child: Column(
                   children: [
-                    // Urgency Combo HUD
                     PrefixSuffixComboHud(
                       timeFraction: _controller.timeFraction,
                       secondsRemaining: _controller.secondsRemaining,
@@ -349,8 +344,6 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen>
                       currentStreak: _controller.streak,
                     ),
                     SizedBox(height: 16.h),
-
-                    // Instruction Prompt
                     Text(
                       quest.instruction,
                       textAlign: TextAlign.center,
@@ -363,8 +356,6 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen>
                       ),
                     ),
                     SizedBox(height: 16.h),
-
-                    // Precision Slicer Board
                     PrefixSuffixPrecisionSlicer(
                       word: word,
                       correctCutIndex: correctCutIndex,

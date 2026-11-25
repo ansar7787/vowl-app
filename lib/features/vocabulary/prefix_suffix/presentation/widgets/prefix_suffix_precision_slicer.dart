@@ -75,6 +75,7 @@ class _PrefixSuffixPrecisionSlicerState
   Widget _buildLetterTile(
     String letter,
     int index, {
+    required int lettersLength,
     required bool isHighlighted,
     required bool isWrong,
     required bool isDark,
@@ -111,7 +112,12 @@ class _PrefixSuffixPrecisionSlicerState
 
     return GestureDetector(
       onTap: () {
-        if (index > 0) _executeCut(index);
+        final targetSeam = index + 1;
+        if (targetSeam < lettersLength) _executeCut(targetSeam);
+      },
+      onVerticalDragEnd: (_) {
+        final targetSeam = index + 1;
+        if (targetSeam < lettersLength) _executeCut(targetSeam);
       },
       child: Container(
         width: 32.w,
@@ -145,18 +151,24 @@ class _PrefixSuffixPrecisionSlicerState
         (widget.secondaryCutIndex != null && seam == widget.secondaryCutIndex);
     final isUserPicked = widget.isWrongCut && _lastCut == seam;
     final isRevealedCorrect = widget.isWrongCut && isThisSeamCorrect;
-    final isCut =
-        widget.isSliced &&
-        (seam == widget.correctCutIndex ||
-            (widget.secondaryCutIndex != null &&
-                seam == widget.secondaryCutIndex) ||
-            seam == _lastCut);
+    final isCut = widget.isSliced && (isThisSeamCorrect || seam == _lastCut);
 
     Color color;
+    Widget? indicator;
     if (isCut || isRevealedCorrect) {
       color = AppColors.emerald500;
+      indicator = Icon(
+        Icons.content_cut_rounded,
+        size: 14.sp,
+        color: AppColors.emerald500,
+      );
     } else if (isUserPicked) {
       color = AppColors.red500;
+      indicator = Icon(
+        Icons.close_rounded,
+        size: 14.sp,
+        color: AppColors.red500,
+      );
     } else {
       color = isDark ? AppColors.slate600 : AppColors.slate300;
     }
@@ -164,27 +176,22 @@ class _PrefixSuffixPrecisionSlicerState
     return GestureDetector(
       behavior: HitTestBehavior.opaque,
       onTap: () => _executeCut(seam),
+      onVerticalDragEnd: (_) => _executeCut(seam),
       child: Container(
-        width: 12.w,
-        height: 48.h,
+        width: (isUserPicked || isRevealedCorrect) ? 22.w : 14.w,
+        height: 52.h,
         alignment: Alignment.center,
-        child: AnimatedContainer(
-          duration: const Duration(milliseconds: 200),
-          width: (isCut || isUserPicked || isRevealedCorrect) ? 3.0 : 1.5,
-          height: (isCut || isUserPicked || isRevealedCorrect) ? 42.h : 22.h,
-          decoration: BoxDecoration(
-            color: color,
-            borderRadius: BorderRadius.circular(2.r),
-            boxShadow: (isCut || isRevealedCorrect || isUserPicked)
-                ? [
-                    BoxShadow(
-                      color: color.withValues(alpha: 0.6),
-                      blurRadius: 6,
-                    ),
-                  ]
-                : null,
-          ),
-        ),
+        child:
+            indicator ??
+            AnimatedContainer(
+              duration: const Duration(milliseconds: 200),
+              width: 2.0,
+              height: 24.h,
+              decoration: BoxDecoration(
+                color: color,
+                borderRadius: BorderRadius.circular(2.r),
+              ),
+            ),
       ),
     );
   }
@@ -194,6 +201,7 @@ class _PrefixSuffixPrecisionSlicerState
     int startIndex,
     double shift,
     double angle, {
+    required int lettersLength,
     required bool isDark,
   }) => Transform.translate(
     offset: Offset(shift, 0),
@@ -206,6 +214,7 @@ class _PrefixSuffixPrecisionSlicerState
             _buildLetterTile(
               items[i],
               startIndex + i,
+              lettersLength: lettersLength,
               isHighlighted: widget.isSliced,
               isWrong: widget.isWrongCut,
               isDark: isDark,
@@ -230,7 +239,7 @@ class _PrefixSuffixPrecisionSlicerState
             Icon(Icons.touch_app_rounded, size: 13.sp, color: c),
             SizedBox(width: 4.w),
             Text(
-              'Tap between letters or pick an option to slice',
+              'Tap or swipe between letters, or pick an option',
               style: TextStyle(
                 fontFamily: 'Inter',
                 fontSize: 11.sp,
@@ -270,6 +279,61 @@ class _PrefixSuffixPrecisionSlicerState
         final splitShift = _splitAnimation.value * 14.w;
         final tiltAngle = _splitAnimation.value * 0.04;
 
+        Widget boardContent;
+        if (widget.isSliced && cutSeam > 0) {
+          boardContent = Row(
+            key: _lettersKey,
+            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              _buildLetterGroup(
+                letters.sublist(0, cutSeam),
+                0,
+                -splitShift,
+                -tiltAngle,
+                lettersLength: letters.length,
+                isDark: isDark,
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 6.w),
+                child: Icon(
+                  Icons.content_cut_rounded,
+                  size: 18.sp,
+                  color: AppColors.emerald500,
+                ),
+              ),
+              _buildLetterGroup(
+                letters.sublist(cutSeam),
+                cutSeam,
+                splitShift,
+                tiltAngle,
+                lettersLength: letters.length,
+                isDark: isDark,
+              ),
+            ],
+          );
+        } else {
+          boardContent = Row(
+            key: _lettersKey,
+            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              for (int i = 0; i < letters.length; i++) ...[
+                _buildLetterTile(
+                  letters[i],
+                  i,
+                  lettersLength: letters.length,
+                  isHighlighted: widget.isSliced,
+                  isWrong: widget.isWrongCut,
+                  isDark: isDark,
+                ),
+                if (i < letters.length - 1)
+                  _buildSeamCutter(i + 1, isDark: isDark),
+              ],
+            ],
+          );
+        }
+
         return Column(
           mainAxisSize: MainAxisSize.min,
           children: [
@@ -306,52 +370,7 @@ class _PrefixSuffixPrecisionSlicerState
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   _buildPrompt(isDark),
-                  FittedBox(
-                    fit: BoxFit.scaleDown,
-                    child: Row(
-                      key: _lettersKey,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        _buildLetterGroup(
-                          letters.sublist(0, cutSeam),
-                          0,
-                          -splitShift,
-                          -tiltAngle,
-                          isDark: isDark,
-                        ),
-                        if (widget.isSliced)
-                          Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 6.w),
-                            child: Icon(
-                              Icons.content_cut_rounded,
-                              size: 16.sp,
-                              color: AppColors.emerald500,
-                            ),
-                          )
-                        else if (widget.isWrongCut &&
-                            _lastCut != null &&
-                            _lastCut! > 0)
-                          Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 4.w),
-                            child: Icon(
-                              Icons.close_rounded,
-                              size: 16.sp,
-                              color: AppColors.red500,
-                            ),
-                          )
-                        else
-                          _buildSeamCutter(cutSeam, isDark: isDark),
-                        _buildLetterGroup(
-                          letters.sublist(cutSeam),
-                          cutSeam,
-                          splitShift,
-                          tiltAngle,
-                          isDark: isDark,
-                        ),
-                      ],
-                    ),
-                  ),
+                  FittedBox(fit: BoxFit.scaleDown, child: boardContent),
                 ],
               ),
             ),
