@@ -201,9 +201,31 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen>
     final isDark = Theme.of(context).brightness == Brightness.dark;
     return BlocConsumer<VocabularyBloc, VocabularyState>(
       listenWhen: vocabularyListenWhen,
-      listener: onVocabularyStateChanged,
+      listener: (context, state) {
+        onVocabularyStateChanged(context, state);
+        if (state is VocabularyGameOver) {
+          _controller.stopMasteryTimer();
+        } else if (state is VocabularyLoaded &&
+            isAnsweredNotifier.value &&
+            !state.answerStatus.isAnswered) {
+          isAnsweredNotifier.value = false;
+          isCorrectNotifier.value = null;
+          _controller.resetForNextQuest();
+          if (_currentQuest != null) {
+            _startTimer(_currentQuest!);
+          }
+        }
+      },
       builder: (context, state) {
-        if (state is! VocabularyLoaded) {
+        if (state is VocabularyLoaded) {
+          _currentQuest = state.currentQuestOrNull ?? _currentQuest;
+        }
+
+        final quest =
+            (state is VocabularyLoaded ? state.currentQuestOrNull : null) ??
+            _currentQuest;
+
+        if (quest == null) {
           return Scaffold(
             backgroundColor: isDark
                 ? AppColors.slate900
@@ -221,8 +243,9 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen>
           );
         }
 
-        final quest = state.currentQuest;
-        _onQuestLoaded(quest);
+        if (state is VocabularyLoaded) {
+          _onQuestLoaded(quest);
+        }
 
         final word = quest.word ?? 'PREVIEW';
         final correctCutIndex = _calculateCorrectCutIndex(quest);

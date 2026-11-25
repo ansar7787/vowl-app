@@ -133,12 +133,15 @@ void main() {
     when(() => mockHapticService.selection()).thenAnswer((_) async {});
     when(() => mockHapticService.error()).thenAnswer((_) async {});
     when(() => mockHapticService.success()).thenAnswer((_) async {});
+    when(() => mockHapticService.warning()).thenAnswer((_) async {});
 
     when(
       () => mockSoundService.playCorrect(comboStep: any(named: 'comboStep')),
     ).thenAnswer((_) async {});
     when(() => mockSoundService.playWrong()).thenAnswer((_) async {});
+    when(() => mockSoundService.playGameOver()).thenAnswer((_) async {});
     when(() => mockSoundService.stopAudio()).thenAnswer((_) async {});
+    when(() => mockSoundService.stopTts()).thenAnswer((_) async {});
     when(() => mockSoundService.playLevelComplete()).thenAnswer((_) async {});
 
     when(() => mockTtsService.stop()).thenAnswer((_) async {});
@@ -232,6 +235,45 @@ void main() {
         verify(
           () => mockVocabularyBloc.add(const SubmitAnswer(true)),
         ).called(1);
+
+        // Clean unmount
+        await tester.pumpWidget(const SizedBox());
+      },
+    );
+
+    testWidgets(
+      'maintains layout mounted during game over and handles give up cleanly',
+      (tester) async {
+        tester.view.physicalSize = const Size(390, 844) * 2.0;
+        tester.view.devicePixelRatio = 2.0;
+        addTearDown(() {
+          tester.view.resetPhysicalSize();
+          tester.view.resetDevicePixelRatio();
+        });
+
+        await tester.pumpWidget(
+          buildTestableWidget(
+            const PrefixSuffixMasteryScreen(level: 1, enableTimer: false),
+          ),
+        );
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+
+        // Emit game over
+        vocabularyStreamController.add(
+          VocabularyGameOver(quests: [testQuest], currentIndex: 0),
+        );
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+
+        // Screen remains mounted in tree (not unmounted to bare shimmer)
+        expect(find.byType(PrefixSuffixMasteryScreen), findsOneWidget);
+        expect(find.text('GIVE UP'), findsOneWidget);
+
+        // Tap GIVE UP button
+        await tester.tap(find.text('GIVE UP'));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
 
         // Clean unmount
         await tester.pumpWidget(const SizedBox());
