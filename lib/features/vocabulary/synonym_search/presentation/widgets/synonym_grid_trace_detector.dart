@@ -150,6 +150,7 @@ class SynonymGridControlPill extends StatelessWidget {
       enabled: enabled,
       label: label,
       child: ScaleButton(
+        debounceDuration: const Duration(milliseconds: 120),
         onTap: enabled ? onTap : null,
         child: ConstrainedBox(
           constraints: const BoxConstraints(minHeight: 48, minWidth: 48),

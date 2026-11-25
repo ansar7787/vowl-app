@@ -201,6 +201,11 @@ class _LadderRungTile extends StatelessWidget {
     final double strengthFraction = totalRungs <= 1
         ? 1.0
         : ((rungIndex + 1) / totalRungs).clamp(0.28, 1.0);
+    final Color rungAccent = Color.lerp(
+      primaryColor.withValues(alpha: 0.72),
+      primaryColor,
+      strengthFraction,
+    )!;
 
     return Semantics(
       button: true,
@@ -208,6 +213,7 @@ class _LadderRungTile extends StatelessWidget {
           ? 'Rung ${rungIndex + 1}, $poleHint, empty'
           : 'Rung ${rungIndex + 1}, $placedWord, tap to clear',
       child: ScaleButton(
+        debounceDuration: const Duration(milliseconds: 120),
         onTap: onTap,
         child: ConstrainedBox(
           constraints: const BoxConstraints(minHeight: 54),
@@ -218,9 +224,15 @@ class _LadderRungTile extends StatelessWidget {
               vertical: 10.h,
             ),
             decoration: BoxDecoration(
-              color: isDark
-                  ? AppColors.slate800.withValues(alpha: 0.92)
-                  : Colors.white,
+              color: placedWord != null
+                  ? primaryColor.withValues(
+                      alpha: isDark
+                          ? 0.08 + (rungIndex * 0.05)
+                          : 0.03 + (rungIndex * 0.025),
+                    )
+                  : (isDark
+                        ? AppColors.slate800.withValues(alpha: 0.92)
+                        : Colors.white),
               borderRadius: BorderRadius.circular(14.r),
               border: Border.all(
                 color: border,
@@ -237,8 +249,8 @@ class _LadderRungTile extends StatelessWidget {
                       height: 26.w,
                       alignment: Alignment.center,
                       decoration: BoxDecoration(
-                        color: primaryColor.withValues(
-                          alpha: isDark ? 0.25 : 0.14,
+                        color: rungAccent.withValues(
+                          alpha: isDark ? 0.30 : 0.16,
                         ),
                         borderRadius: BorderRadius.circular(8.r),
                       ),
@@ -248,7 +260,7 @@ class _LadderRungTile extends StatelessWidget {
                           fontFamily: 'Outfit',
                           fontSize: 13.sp,
                           fontWeight: FontWeight.w800,
-                          color: isDark ? AppColors.slate50 : primaryColor,
+                          color: isDark ? AppColors.slate50 : rungAccent,
                         ),
                       ),
                     ),
@@ -281,16 +293,29 @@ class _LadderRungTile extends StatelessWidget {
                         color: isDark ? AppColors.slate900 : AppColors.slate100,
                         borderRadius: BorderRadius.circular(8.r),
                       ),
-                      child: Text(
-                        poleHint,
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 11.5.sp,
-                          fontWeight: FontWeight.w700,
-                          color: isDark
-                              ? AppColors.slate300
-                              : AppColors.slate600,
-                        ),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          if (rungIndex == totalRungs - 1) ...[
+                            Icon(
+                              Icons.trending_up_rounded,
+                              size: 13.sp,
+                              color: isDark ? AppColors.slate200 : primaryColor,
+                            ),
+                            SizedBox(width: 3.w),
+                          ],
+                          Text(
+                            poleHint,
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 11.5.sp,
+                              fontWeight: FontWeight.w700,
+                              color: isDark
+                                  ? AppColors.slate300
+                                  : AppColors.slate600,
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                   ],
@@ -309,7 +334,7 @@ class _LadderRungTile extends StatelessWidget {
                           ? AppColors.emerald500
                           : isMiss
                           ? AppColors.rose500
-                          : primaryColor,
+                          : rungAccent,
                     ),
                   ),
                 ),

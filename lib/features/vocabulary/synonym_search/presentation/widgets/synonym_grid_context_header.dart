@@ -303,30 +303,51 @@ class _LiveLetterSlotsRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final slotCount = targetLength.clamp(1, 20);
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 3.h),
-      decoration: BoxDecoration(
-        color: primaryColor.withValues(alpha: isDark ? 0.22 : 0.10),
-        borderRadius: BorderRadius.circular(8.r),
-        border: Border.all(
-          color: primaryColor.withValues(
-            alpha: currentSpelled.isNotEmpty ? 0.75 : 0.35,
+    final compact = slotCount > 10;
+    final boxWidth = compact ? 17.w : 21.w;
+    final boxHeight = compact ? 22.h : 25.h;
+
+    return Wrap(
+      spacing: compact ? 3.w : 4.w,
+      runSpacing: 4.h,
+      children: List.generate(slotCount, (i) {
+        final hasLetter = i < currentSpelled.length;
+        final isCursor = i == currentSpelled.length;
+        final ch = hasLetter ? currentSpelled[i] : '_';
+
+        return Container(
+          width: boxWidth,
+          height: boxHeight,
+          alignment: Alignment.center,
+          decoration: BoxDecoration(
+            color: hasLetter
+                ? primaryColor.withValues(alpha: isDark ? 0.34 : 0.16)
+                : (isDark
+                      ? AppColors.slate900.withValues(alpha: 0.75)
+                      : AppColors.slate100),
+            borderRadius: BorderRadius.circular(6.r),
+            border: Border.all(
+              color: hasLetter
+                  ? primaryColor
+                  : (isCursor
+                        ? primaryColor.withValues(alpha: 0.70)
+                        : (isDark ? AppColors.slate700 : AppColors.slate300)),
+              width: (hasLetter || isCursor) ? 1.5 : 1.0,
+            ),
           ),
-        ),
-      ),
-      child: Text(
-        List.generate(
-          slotCount,
-          (i) => i < currentSpelled.length ? currentSpelled[i] : '_',
-        ).join(' '),
-        style: TextStyle(
-          fontFamily: 'Outfit',
-          fontSize: 14.sp,
-          fontWeight: FontWeight.w900,
-          letterSpacing: 1.2,
-          color: isDark ? AppColors.slate50 : primaryColor,
-        ),
-      ),
+          child: Text(
+            ch,
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: compact ? 12.sp : 13.5.sp,
+              fontWeight: FontWeight.w900,
+              color: hasLetter
+                  ? (isDark ? AppColors.slate50 : primaryColor)
+                  : (isDark ? AppColors.slate400 : AppColors.slate500),
+            ),
+          ),
+        );
+      }),
     );
   }
 }

@@ -50,33 +50,57 @@ class SynonymStreakTimerBar extends StatelessWidget {
                 : VowlMotion.fast,
             padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 6.h),
             decoration: BoxDecoration(
-              color: pillColor.withValues(alpha: isDark ? 0.24 : 0.14),
+              gradient: hasHotStreak
+                  ? LinearGradient(
+                      colors: [
+                        AppColors.amber500.withValues(
+                          alpha: isDark ? 0.34 : 0.22,
+                        ),
+                        AppColors.orange500.withValues(
+                          alpha: isDark ? 0.22 : 0.12,
+                        ),
+                      ],
+                    )
+                  : null,
+              color: hasHotStreak
+                  ? null
+                  : pillColor.withValues(alpha: isDark ? 0.24 : 0.14),
               borderRadius: BorderRadius.circular(12.r),
               border: Border.all(
-                color: pillColor.withValues(alpha: hasHotStreak ? 0.8 : 0.45),
+                color: pillColor.withValues(alpha: hasHotStreak ? 0.85 : 0.45),
               ),
             ),
-            child: Row(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Icon(
-                  hasHotStreak
-                      ? Icons.local_fire_department_rounded
-                      : Icons.bolt_rounded,
-                  size: 16.sp,
-                  color: isDark ? AppColors.slate50 : pillColor,
-                ),
-                SizedBox(width: 4.w),
-                Text(
-                  comboStreak > 0 ? 'x$comboStreak' : 'Ready',
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 13.sp,
-                    fontWeight: FontWeight.w800,
+            child: AnimatedSwitcher(
+              duration: VowlMotion.shouldReduceMotion(context)
+                  ? Duration.zero
+                  : VowlMotion.fast,
+              transitionBuilder: (child, anim) => ScaleTransition(
+                scale: Tween<double>(begin: 0.88, end: 1.0).animate(anim),
+                child: FadeTransition(opacity: anim, child: child),
+              ),
+              child: Row(
+                key: ValueKey<int>(comboStreak),
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Icon(
+                    hasHotStreak
+                        ? Icons.local_fire_department_rounded
+                        : Icons.bolt_rounded,
+                    size: 16.sp,
                     color: isDark ? AppColors.slate50 : pillColor,
                   ),
-                ),
-              ],
+                  SizedBox(width: 4.w),
+                  Text(
+                    comboStreak > 0 ? 'x$comboStreak' : 'Ready',
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 13.sp,
+                      fontWeight: FontWeight.w800,
+                      color: isDark ? AppColors.slate50 : pillColor,
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
           SizedBox(width: 10.w),

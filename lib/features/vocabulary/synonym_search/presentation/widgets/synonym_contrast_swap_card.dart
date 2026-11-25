@@ -25,6 +25,7 @@ class SynonymContrastSwapCard extends StatelessWidget {
   final Color primaryColor;
   final ValueChanged<int> onTapSlot;
   final ValueChanged<String> onAssignWord;
+  final VoidCallback? onSwapSlots;
 
   const SynonymContrastSwapCard({
     super.key,
@@ -39,6 +40,7 @@ class SynonymContrastSwapCard extends StatelessWidget {
     required this.primaryColor,
     required this.onTapSlot,
     required this.onAssignWord,
+    this.onSwapSlots,
   });
 
   @override
@@ -106,6 +108,16 @@ class SynonymContrastSwapCard extends StatelessWidget {
                     isDark: isDark,
                     minWidth: 96,
                     onTap: () => onAssignWord(exercise.pairWords[i]),
+                  ),
+                if (onSwapSlots != null &&
+                    assignments.length >= 2 &&
+                    assignments.every((a) => a != null) &&
+                    !(hasChecked && isCorrect))
+                  SynonymPracticeSwapButton(
+                    key: const Key('contrast_swap_both_btn'),
+                    primaryColor: primaryColor,
+                    isDark: isDark,
+                    onTap: onSwapSlots!,
                   ),
               ],
             ),
@@ -267,6 +279,7 @@ class _ContrastSlotCard extends StatelessWidget {
                     : 'Slot ${slotIndex + 1}, $assignedWord, tap to clear',
                 child: ScaleButton(
                   key: Key('contrast_slot_$slotIndex'),
+                  debounceDuration: const Duration(milliseconds: 120),
                   onTap: onTap,
                   child: ConstrainedBox(
                     constraints: const BoxConstraints(

@@ -70,6 +70,29 @@ class SynonymLearnSpotlightHeader extends StatelessWidget {
                 color: allTested ? AppColors.emerald600 : primaryColor,
                 isDark: isDark,
               ),
+              if (totalMakeovers > 0)
+                Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    for (int i = 0; i < totalMakeovers; i++) ...[
+                      Container(
+                        width: 9.w,
+                        height: 9.w,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: i < testedMakeovers
+                              ? (allTested
+                                    ? AppColors.emerald500
+                                    : primaryColor)
+                              : (isDark
+                                    ? AppColors.slate700
+                                    : AppColors.slate300),
+                        ),
+                      ),
+                      if (i < totalMakeovers - 1) SizedBox(width: 4.w),
+                    ],
+                  ],
+                ),
             ],
           ),
           SizedBox(height: 12.h),

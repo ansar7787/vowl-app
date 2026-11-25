@@ -122,31 +122,42 @@ class SynonymMakeoverCard extends StatelessWidget {
             onTapSlot: onToggleSwap,
           ),
           SizedBox(height: 10.h),
-          if (isSwapped)
-            SynonymMakeoverVerdictBanner(
-              isNatural: scenario.isNaturalSwap,
-              verdictText: scenario.earVerdict,
-              isDark: isDark,
-            )
-          else
-            Row(
-              children: [
-                Icon(Icons.touch_app_rounded, size: 16.sp, color: primaryColor),
-                SizedBox(width: 6.w),
-                Expanded(
-                  child: Text(
-                    'Tap "${scenario.targetSlotWord}" to swap in "${scenario.swappedWord}" and test how it sounds.',
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 13.sp,
-                      color: textMuted,
-                      fontWeight: FontWeight.w500,
-                      height: 1.35,
-                    ),
+          AnimatedSwitcher(
+            duration: VowlMotion.shouldReduceMotion(context)
+                ? Duration.zero
+                : VowlMotion.fast,
+            switchInCurve: VowlMotion.defaultCurve,
+            child: isSwapped
+                ? SynonymMakeoverVerdictBanner(
+                    key: ValueKey('verdict_$scenarioIndex'),
+                    isNatural: scenario.isNaturalSwap,
+                    verdictText: scenario.earVerdict,
+                    isDark: isDark,
+                  )
+                : Row(
+                    key: ValueKey('prompt_$scenarioIndex'),
+                    children: [
+                      Icon(
+                        Icons.touch_app_rounded,
+                        size: 16.sp,
+                        color: primaryColor,
+                      ),
+                      SizedBox(width: 6.w),
+                      Expanded(
+                        child: Text(
+                          'Tap "${scenario.targetSlotWord}" to swap in "${scenario.swappedWord}" and test how it sounds.',
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 13.sp,
+                            color: textMuted,
+                            fontWeight: FontWeight.w500,
+                            height: 1.35,
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
-                ),
-              ],
-            ),
+          ),
         ],
       ),
     );

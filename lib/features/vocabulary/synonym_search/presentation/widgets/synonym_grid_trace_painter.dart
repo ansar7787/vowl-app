@@ -3,8 +3,9 @@ import 'package:vowl/core/theme/app_colors.dart';
 
 /// Custom painter rendering the active connected drag/tap path across grid cells.
 ///
-/// Wrapped inside a [RepaintBoundary] in [SynonymWordGridBoard] so trace
-/// updates do not force expensive parent repaints.
+/// Supports both base aura under-layer ([isForegroundOverlay] = `false`) and a
+/// soft translucent connector overlay ([isForegroundOverlay] = `true`) so the
+/// connected swipe trail reads vividly across cells without masking letters.
 class SynonymGridTracePainter extends CustomPainter {
   final List<int> activePath;
   final int columns;
@@ -12,6 +13,7 @@ class SynonymGridTracePainter extends CustomPainter {
   final double spacing;
   final Color traceColor;
   final bool isSuccessFlash;
+  final bool isForegroundOverlay;
 
   const SynonymGridTracePainter({
     required this.activePath,
@@ -20,6 +22,7 @@ class SynonymGridTracePainter extends CustomPainter {
     required this.spacing,
     required this.traceColor,
     required this.isSuccessFlash,
+    this.isForegroundOverlay = false,
   });
 
   Offset _centerOf(int index) {
@@ -45,28 +48,41 @@ class SynonymGridTracePainter extends CustomPainter {
         path.lineTo(points[i].dx, points[i].dy);
       }
 
+      if (isForegroundOverlay) {
+        final overlayLine = Paint()
+          ..color = Colors.white.withValues(alpha: 0.28)
+          ..strokeWidth = cellSize * 0.12
+          ..strokeCap = StrokeCap.round
+          ..strokeJoin = StrokeJoin.round
+          ..style = PaintingStyle.stroke;
+        canvas.drawPath(path, overlayLine);
+        return;
+      }
+
       final glowPaint = Paint()
-        ..color = activeStroke.withValues(alpha: 0.24)
-        ..strokeWidth = cellSize * 0.42
+        ..color = activeStroke.withValues(alpha: 0.28)
+        ..strokeWidth = cellSize * 0.44
         ..strokeCap = StrokeCap.round
         ..strokeJoin = StrokeJoin.round
         ..style = PaintingStyle.stroke;
       canvas.drawPath(path, glowPaint);
 
       final linePaint = Paint()
-        ..color = activeStroke.withValues(alpha: 0.85)
-        ..strokeWidth = cellSize * 0.16
+        ..color = activeStroke.withValues(alpha: 0.90)
+        ..strokeWidth = cellSize * 0.18
         ..strokeCap = StrokeCap.round
         ..strokeJoin = StrokeJoin.round
         ..style = PaintingStyle.stroke;
       canvas.drawPath(path, linePaint);
     }
 
-    final nodePaint = Paint()
-      ..color = activeStroke.withValues(alpha: 0.90)
-      ..style = PaintingStyle.fill;
-    for (final pt in points) {
-      canvas.drawCircle(pt, cellSize * 0.10, nodePaint);
+    if (!isForegroundOverlay) {
+      final nodePaint = Paint()
+        ..color = activeStroke.withValues(alpha: 0.92)
+        ..style = PaintingStyle.fill;
+      for (final pt in points) {
+        canvas.drawCircle(pt, cellSize * 0.11, nodePaint);
+      }
     }
   }
 
@@ -77,6 +93,7 @@ class SynonymGridTracePainter extends CustomPainter {
         oldDelegate.cellSize != cellSize ||
         oldDelegate.spacing != spacing ||
         oldDelegate.traceColor != traceColor ||
-        oldDelegate.isSuccessFlash != isSuccessFlash;
+        oldDelegate.isSuccessFlash != isSuccessFlash ||
+        oldDelegate.isForegroundOverlay != isForegroundOverlay;
   }
 }

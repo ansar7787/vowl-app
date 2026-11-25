@@ -154,11 +154,19 @@ void main() {
         await tester.pump(const Duration(milliseconds: 300));
         expect(find.text('Tap Slot to Adjust'), findsOneWidget);
 
-        // Clear slot 0 & re-assign wrong word for Miss #2 -> unlocks Reveal Solution
+        // Clear slot 0 & re-assign wrong word for Miss #2 -> test 1-tap Swap button too
         await tapWithScroll(tester, find.byKey(const Key('contrast_slot_0')));
         await tapWithScroll(
           tester,
           find.byKey(const Key('contrast_bank_word_1')),
+        );
+        await tapWithScroll(
+          tester,
+          find.byKey(const Key('contrast_swap_both_btn')),
+        );
+        await tapWithScroll(
+          tester,
+          find.byKey(const Key('contrast_swap_both_btn')),
         );
         await tester.tap(find.text('Check Answer'));
         await tester.pump(const Duration(milliseconds: 300));

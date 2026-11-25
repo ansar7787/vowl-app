@@ -89,6 +89,12 @@ void main() {
     });
 
     test('completing 50 consecutive 5x5 grid builds takes under 100ms', () {
+      // One JIT warmup run before measuring steady-state generation cost.
+      SynonymGridBuilder.build(
+        questId: 'WARMUP',
+        correctAnswer: 'EXTRAORDINARY',
+        options: const ['COMMON', 'ORDINARY', 'PLAIN', 'EXTRAORDINARY'],
+      );
       final sw = Stopwatch()..start();
       for (int i = 0; i < 50; i++) {
         final grid = SynonymGridBuilder.build(
@@ -99,7 +105,7 @@ void main() {
         expect(grid.spellPath(grid.targetPathIndices), 'EXTRAORDINARY');
       }
       sw.stop();
-      // < 5ms per grid build even under debug/JIT VM overhead (target: 50 * 5ms = 250ms).
+      // < 5ms per grid build even under debug/JIT VM overhead (50 * 5ms = 250ms).
       expect(sw.elapsedMilliseconds, lessThan(250));
     });
 

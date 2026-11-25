@@ -195,14 +195,37 @@ class SynonymWordGridBoard extends StatelessWidget {
                           ),
                           for (int i = 0; i < grid.totalCells; i++)
                             _buildPositionedCell(
+                              context: context,
                               index: i,
                               cellSize: cellSize,
                               spacing: spacing,
-                              isSelected: activeSet.contains(i),
+                              pathStep: activePath.indexOf(i),
                               isHead:
                                   activePath.isNotEmpty && activePath.last == i,
+                              isAdjacentCandidate:
+                                  activePath.isNotEmpty &&
+                                  !activeSet.contains(i) &&
+                                  grid.isAdjacent(activePath.last, i),
                               isHinted: hintSpotlightIndices.contains(i),
                               isDark: isDark,
+                            ),
+                          if (activePath.length >= 2)
+                            Positioned.fill(
+                              child: IgnorePointer(
+                                child: RepaintBoundary(
+                                  child: CustomPaint(
+                                    painter: SynonymGridTracePainter(
+                                      activePath: activePath,
+                                      columns: grid.columns,
+                                      cellSize: cellSize,
+                                      spacing: spacing,
+                                      traceColor: primaryColor,
+                                      isSuccessFlash: showSuccessFlash,
+                                      isForegroundOverlay: true,
+                                    ),
+                                  ),
+                                ),
+                              ),
                             ),
                         ],
                       ),
@@ -246,17 +269,21 @@ class SynonymWordGridBoard extends StatelessWidget {
   }
 
   Widget _buildPositionedCell({
+    required BuildContext context,
     required int index,
     required double cellSize,
     required double spacing,
-    required bool isSelected,
+    required int pathStep,
     required bool isHead,
+    required bool isAdjacentCandidate,
     required bool isHinted,
     required bool isDark,
   }) {
     final row = index ~/ grid.columns;
     final col = index % grid.columns;
     final step = cellSize + spacing;
+    final isSelected = pathStep != -1;
+    final reduceMotion = VowlMotion.shouldReduceMotion(context);
 
     final Color bgColor;
     final Color borderColor;
@@ -267,13 +294,17 @@ class SynonymWordGridBoard extends StatelessWidget {
       borderColor = AppColors.emerald400;
       letterColor = Colors.white;
     } else if (isSelected) {
-      bgColor = primaryColor.withValues(alpha: isHead ? 0.92 : 0.78);
+      bgColor = primaryColor.withValues(alpha: isHead ? 0.96 : 0.80);
       borderColor = isHead ? Colors.white : primaryColor;
       letterColor = Colors.white;
     } else if (isHinted) {
       bgColor = AppColors.amber500.withValues(alpha: isDark ? 0.28 : 0.18);
       borderColor = AppColors.amber500;
       letterColor = isDark ? AppColors.amber200 : AppColors.amber900;
+    } else if (isAdjacentCandidate) {
+      bgColor = primaryColor.withValues(alpha: isDark ? 0.14 : 0.08);
+      borderColor = primaryColor.withValues(alpha: 0.45);
+      letterColor = isDark ? AppColors.slate50 : AppColors.slate900;
     } else {
       bgColor = isDark
           ? AppColors.slate800.withValues(alpha: 0.92)
@@ -292,33 +323,69 @@ class SynonymWordGridBoard extends StatelessWidget {
         selected: isSelected,
         label:
             'Letter ${grid.letters[index]}, row ${row + 1} column ${col + 1}',
-        child: Container(
-          key: Key('grid_cell_$index'),
-          alignment: Alignment.center,
-          decoration: BoxDecoration(
-            color: bgColor,
-            borderRadius: BorderRadius.circular(12.r),
-            border: Border.all(
-              color: borderColor,
-              width: (isSelected || isHinted) ? 2.0 : 1.0,
+        child: AnimatedScale(
+          scale: (!reduceMotion && isHead) ? 1.05 : 1.0,
+          duration: reduceMotion ? Duration.zero : VowlMotion.fast,
+          child: Container(
+            key: Key('grid_cell_$index'),
+            decoration: BoxDecoration(
+              color: bgColor,
+              borderRadius: BorderRadius.circular(14.r),
+              border: Border.all(
+                color: borderColor,
+                width: (isSelected || isHinted)
+                    ? 2.0
+                    : (isAdjacentCandidate ? 1.4 : 1.0),
+              ),
+              boxShadow: isSelected
+                  ? [
+                      BoxShadow(
+                        color: primaryColor.withValues(
+                          alpha: isHead ? 0.36 : 0.22,
+                        ),
+                        blurRadius: isHead ? 9 : 6,
+                        offset: const Offset(0, 2),
+                      ),
+                    ]
+                  : const [],
             ),
-            boxShadow: isSelected
-                ? [
-                    BoxShadow(
-                      color: primaryColor.withValues(alpha: 0.25),
-                      blurRadius: 6,
-                      offset: const Offset(0, 2),
+            child: Stack(
+              alignment: Alignment.center,
+              children: [
+                Text(
+                  grid.letters[index],
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: (cellSize * 0.42).clamp(16.0, 22.0),
+                    fontWeight: FontWeight.w900,
+                    color: letterColor,
+                  ),
+                ),
+                if (isSelected)
+                  Positioned(
+                    top: 3,
+                    right: 4,
+                    child: Text(
+                      '${pathStep + 1}',
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 9.sp,
+                        fontWeight: FontWeight.w900,
+                        color: Colors.white.withValues(alpha: 0.90),
+                      ),
                     ),
-                  ]
-                : const [],
-          ),
-          child: Text(
-            grid.letters[index],
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: (cellSize * 0.42).clamp(16.0, 22.0),
-              fontWeight: FontWeight.w900,
-              color: letterColor,
+                  )
+                else if (isHinted)
+                  Positioned(
+                    top: 3,
+                    right: 4,
+                    child: Icon(
+                      Icons.auto_awesome_rounded,
+                      size: 10.sp,
+                      color: AppColors.amber500,
+                    ),
+                  ),
+              ],
             ),
           ),
         ),

@@ -179,8 +179,10 @@ class SynonymGridBuilder {
     }
 
     int tries = 0;
+    final int maxTries = preferCorners ? _maxDfsTries : 6;
+    final int maxSteps = preferCorners ? _maxDfsStepsPerTry : 48;
     for (final start in emptyIndices) {
-      if (tries >= _maxDfsTries) break;
+      if (tries >= maxTries) break;
       tries++;
       final path = <int>[start];
       final visited = <int>{start};
@@ -196,6 +198,7 @@ class SynonymGridBuilder {
         path: path,
         rng: rng,
         stepBudget: stepBudget,
+        maxSteps: maxSteps,
       )) {
         for (int i = 0; i < word.length; i++) {
           grid[path[i]] = word[i];
@@ -234,9 +237,10 @@ class SynonymGridBuilder {
     required List<int> path,
     required math.Random rng,
     required List<int> stepBudget,
+    required int maxSteps,
   }) {
     if (depth >= word.length) return true;
-    if (++stepBudget[0] > _maxDfsStepsPerTry) return false;
+    if (++stepBudget[0] > maxSteps) return false;
 
     final neighbors = _freeNeighbors(
       index: current,
@@ -247,19 +251,21 @@ class SynonymGridBuilder {
     );
     if (neighbors.isEmpty) return false;
 
-    neighbors.shuffle(rng);
-    // Warnsdorff heuristic: sort by precomputed onward free-neighbor count (0 allocations).
-    final degrees = <int, int>{
-      for (final n in neighbors)
-        n: _freeNeighborCount(
-          index: n,
-          grid: grid,
-          visited: visited,
-          columns: columns,
-          rows: rows,
-        ),
-    };
-    neighbors.sort((a, b) => degrees[a]!.compareTo(degrees[b]!));
+    if (neighbors.length > 1) {
+      neighbors.shuffle(rng);
+      // Warnsdorff heuristic: sort by precomputed onward free-neighbor count.
+      final degrees = <int, int>{
+        for (final n in neighbors)
+          n: _freeNeighborCount(
+            index: n,
+            grid: grid,
+            visited: visited,
+            columns: columns,
+            rows: rows,
+          ),
+      };
+      neighbors.sort((a, b) => degrees[a]!.compareTo(degrees[b]!));
+    }
 
     for (final next in neighbors) {
       visited.add(next);
@@ -275,6 +281,7 @@ class SynonymGridBuilder {
         path: path,
         rng: rng,
         stepBudget: stepBudget,
+        maxSteps: maxSteps,
       )) {
         return true;
       }

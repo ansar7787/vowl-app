@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 
 /// Interactive wrapped sentence with an inline `>= 48dp` tappable word-swap slot.
 class SynonymMakeoverInlineSentence extends StatelessWidget {
@@ -114,6 +115,7 @@ class _SwapSlotButton extends StatelessWidget {
       button: true,
       label: 'Swap word $activeWord with $alternateWord',
       child: ScaleButton(
+        debounceDuration: const Duration(milliseconds: 120),
         onTap: onTap,
         child: ConstrainedBox(
           constraints: const BoxConstraints(minHeight: 48, minWidth: 68),
@@ -124,25 +126,35 @@ class _SwapSlotButton extends StatelessWidget {
               borderRadius: BorderRadius.circular(12.r),
               border: Border.all(color: accent, width: 1.6),
             ),
-            child: Row(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Text(
-                  activeWord,
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 16.sp,
-                    fontWeight: FontWeight.w800,
-                    color: isDark ? AppColors.slate50 : accent,
+            child: AnimatedSwitcher(
+              duration: VowlMotion.shouldReduceMotion(context)
+                  ? Duration.zero
+                  : VowlMotion.fast,
+              transitionBuilder: (child, anim) => ScaleTransition(
+                scale: Tween<double>(begin: 0.90, end: 1.0).animate(anim),
+                child: FadeTransition(opacity: anim, child: child),
+              ),
+              child: Row(
+                key: ValueKey<String>('$activeWord-$isSwapped'),
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Text(
+                    activeWord,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 16.sp,
+                      fontWeight: FontWeight.w800,
+                      color: isDark ? AppColors.slate50 : accent,
+                    ),
                   ),
-                ),
-                SizedBox(width: 6.w),
-                Icon(
-                  Icons.swap_horiz_rounded,
-                  size: 16.sp,
-                  color: isDark ? AppColors.slate200 : accent,
-                ),
-              ],
+                  SizedBox(width: 6.w),
+                  Icon(
+                    Icons.swap_horiz_rounded,
+                    size: 16.sp,
+                    color: isDark ? AppColors.slate200 : accent,
+                  ),
+                ],
+              ),
             ),
           ),
         ),

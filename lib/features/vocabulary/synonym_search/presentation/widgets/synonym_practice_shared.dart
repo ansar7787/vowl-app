@@ -67,6 +67,7 @@ class SynonymPracticeWordPill extends StatelessWidget {
       button: true,
       label: isUsed ? '$word, placed' : 'Place word $word',
       child: ScaleButton(
+        debounceDuration: const Duration(milliseconds: 120),
         onTap: onTap,
         child: ConstrainedBox(
           constraints: BoxConstraints(minHeight: 48, minWidth: minWidth),
@@ -183,6 +184,63 @@ class SynonymPracticeBanner extends StatelessWidget {
             ),
           ],
         ],
+      ),
+    );
+  }
+}
+
+/// 1-tap swap pill for reversing Contrast Swap placements cleanly.
+class SynonymPracticeSwapButton extends StatelessWidget {
+  final Color primaryColor;
+  final bool isDark;
+  final VoidCallback onTap;
+
+  const SynonymPracticeSwapButton({
+    super.key,
+    required this.primaryColor,
+    required this.isDark,
+    required this.onTap,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Semantics(
+      button: true,
+      label: 'Swap placed words between slots',
+      child: ScaleButton(
+        debounceDuration: const Duration(milliseconds: 120),
+        onTap: onTap,
+        child: ConstrainedBox(
+          constraints: const BoxConstraints(minHeight: 48, minWidth: 48),
+          child: Container(
+            padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 10.h),
+            decoration: BoxDecoration(
+              color: isDark ? AppColors.slate800 : AppColors.slate100,
+              borderRadius: BorderRadius.circular(14.r),
+              border: Border.all(color: primaryColor.withValues(alpha: 0.55)),
+            ),
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Icon(
+                  Icons.swap_vert_rounded,
+                  size: 18.sp,
+                  color: isDark ? AppColors.slate50 : primaryColor,
+                ),
+                SizedBox(width: 4.w),
+                Text(
+                  'Swap',
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 13.5.sp,
+                    fontWeight: FontWeight.w800,
+                    color: isDark ? AppColors.slate50 : primaryColor,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
       ),
     );
   }

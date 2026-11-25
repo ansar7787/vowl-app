@@ -110,6 +110,17 @@ class SynonymPracticeController {
     focusedSlotIndex.value = nextEmpty != -1 ? nextEmpty : null;
   }
 
+  /// Swaps both filled Contrast Swap slots in a single tap.
+  void swapContrastSlots() {
+    if (hasChecked.value && isCorrect.value) return;
+    final current = contrastAssignments.value;
+    if (current.length < 2) return;
+    hapticService?.selection();
+    _clearPendingWrongState();
+    contrastAssignments.value = [current[1], current[0], ...current.skip(2)];
+    focusedSlotIndex.value = null;
+  }
+
   // ── Synonym Ladder interactions ───────────────────────────────────────────
 
   void tapLadderRung(int rungIndex) {

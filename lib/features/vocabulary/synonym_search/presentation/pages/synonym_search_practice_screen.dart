@@ -299,6 +299,7 @@ class _SynonymSearchPracticeScreenState
                     primaryColor: theme.primaryColor,
                     onTapSlot: _controller.tapContrastSlot,
                     onAssignWord: _controller.assignContrastWord,
+                    onSwapSlots: _controller.swapContrastSlots,
                   )
                 : SynonymLadderCard(
                     exercise: ex,
