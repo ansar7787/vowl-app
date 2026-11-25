@@ -92,7 +92,7 @@ void main() {
         await tester.pump(const Duration(milliseconds: 120));
         await tester.pump(const Duration(milliseconds: 300));
 
-        expect(find.text('CONTRAST SWAP • A2'), findsOneWidget);
+        expect(find.text('Choose the word • A2'), findsOneWidget);
         expect(find.text('Big'), findsOneWidget);
         expect(find.text('Large'), findsOneWidget);
 
@@ -152,7 +152,7 @@ void main() {
 
         await tester.tap(find.text('Check Answer'));
         await tester.pump(const Duration(milliseconds: 300));
-        expect(find.text('Tap Slot to Adjust'), findsOneWidget);
+        expect(find.text('Tap a blank to change it'), findsOneWidget);
 
         // Clear slot 0 & re-assign wrong word for Miss #2 -> test 1-tap Swap button too
         await tapWithScroll(tester, find.byKey(const Key('contrast_slot_0')));
@@ -171,17 +171,17 @@ void main() {
         await tester.tap(find.text('Check Answer'));
         await tester.pump(const Duration(milliseconds: 300));
 
-        expect(find.text('Reveal Solution'), findsOneWidget);
+        expect(find.text('Show Answer'), findsOneWidget);
 
         // Reveal guided solution cleanly
-        await tester.tap(find.text('Reveal Solution'));
+        await tester.tap(find.text('Show Answer'));
         await tester.pump(const Duration(milliseconds: 300));
-        expect(find.text('Next Exercise'), findsOneWidget);
+        expect(find.text('Next Question'), findsOneWidget);
 
-        // Advance to Synonym Ladder exercise
-        await tester.tap(find.text('Next Exercise'));
+        // Advance to Word order exercise
+        await tester.tap(find.text('Next Question'));
         await tester.pump(const Duration(milliseconds: 300));
-        expect(find.text('SYNONYM LADDER • A2'), findsOneWidget);
+        expect(find.text('Word order • A2'), findsOneWidget);
 
         // Place ordered ladder: shuffledWords = ['Massive', 'Big', 'Huge']
         await tapWithScroll(
@@ -199,9 +199,9 @@ void main() {
 
         await tester.tap(find.text('Check Answer'));
         await tester.pump(const Duration(milliseconds: 300));
-        expect(find.text('Start Mastery Blitz'), findsOneWidget);
+        expect(find.text('Start Challenge'), findsOneWidget);
 
-        await tester.tap(find.text('Start Mastery Blitz'));
+        await tester.tap(find.text('Start Challenge'));
         await tester.pump();
         await tester.pump(const Duration(milliseconds: 300));
         expect(
@@ -227,11 +227,8 @@ void main() {
         await tester.pump();
         await tester.pump(const Duration(milliseconds: 300));
 
-        expect(
-          find.text('Unable to load Level 1 synonym practice drills.'),
-          findsOneWidget,
-        );
-        expect(find.text('Practice Sample Drill'), findsOneWidget);
+        expect(find.text('Could not load Level 1 practice.'), findsOneWidget);
+        expect(find.text('Use Sample Practice'), findsOneWidget);
       },
     );
   });

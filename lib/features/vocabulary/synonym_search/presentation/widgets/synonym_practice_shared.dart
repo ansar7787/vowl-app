@@ -4,8 +4,9 @@ import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/presentation/widgets/tts_speaker_button_widget.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
+import 'package:vowl/features/vocabulary/synonym_search/presentation/widgets/synonym_ui_tokens.dart';
 
-/// Shared CEFR + mechanic pill header for Practice drills.
+/// Shared CEFR + activity tag header for Practice exercises.
 class SynonymDrillBadge extends StatelessWidget {
   final String label;
   final String cefr;
@@ -23,26 +24,23 @@ class SynonymDrillBadge extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 5.h),
+      padding: SynonymUiTokens.badgePadding,
       decoration: BoxDecoration(
-        color: primaryColor.withValues(alpha: isDark ? 0.25 : 0.12),
-        borderRadius: BorderRadius.circular(10.r),
+        color: primaryColor.withValues(alpha: isDark ? 0.24 : 0.11),
+        borderRadius: BorderRadius.circular(SynonymUiTokens.badgeRadius),
       ),
       child: Text(
         '$label • $cefr',
-        style: TextStyle(
-          fontFamily: 'Outfit',
-          fontSize: 11.5.sp,
-          fontWeight: FontWeight.w800,
-          letterSpacing: 0.7,
+        style: SynonymUiTokens.badgeLabel(
           color: isDark ? AppColors.slate50 : primaryColor,
+          fontWeight: FontWeight.w600,
         ),
       ),
     );
   }
 }
 
-/// Shared word bank pill used by Contrast Swap and Synonym Ladder drills.
+/// Shared word bank button used by Contrast Swap and Word Order exercises.
 class SynonymPracticeWordPill extends StatelessWidget {
   final String word;
   final bool isUsed;
@@ -75,25 +73,27 @@ class SynonymPracticeWordPill extends StatelessWidget {
             duration: VowlMotion.shouldReduceMotion(context)
                 ? Duration.zero
                 : VowlMotion.fast,
-            padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 11.h),
+            padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 10.h),
             decoration: BoxDecoration(
               color: isUsed
                   ? (isDark ? AppColors.slate800 : AppColors.slate100)
                   : primaryColor,
-              borderRadius: BorderRadius.circular(14.r),
+              borderRadius: BorderRadius.circular(
+                SynonymUiTokens.controlRadius,
+              ),
               border: Border.all(
                 color: isUsed
                     ? (isDark ? AppColors.slate700 : AppColors.slate300)
                     : primaryColor,
-                width: 1.5,
+                width: 1.2,
               ),
               boxShadow: isUsed
                   ? const []
                   : [
                       BoxShadow(
-                        color: primaryColor.withValues(alpha: 0.28),
-                        blurRadius: 8,
-                        offset: const Offset(0, 3),
+                        color: primaryColor.withValues(alpha: 0.22),
+                        blurRadius: 6,
+                        offset: const Offset(0, 2),
                       ),
                     ],
             ),
@@ -103,12 +103,9 @@ class SynonymPracticeWordPill extends StatelessWidget {
               children: [
                 Text(
                   word,
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 15.5.sp,
-                    fontWeight: FontWeight.w800,
+                  style: SynonymUiTokens.interactiveWord(
                     color: isUsed
-                        ? (isDark ? AppColors.slate400 : AppColors.slate500)
+                        ? SynonymUiTokens.mutedText(isDark)
                         : Colors.white,
                   ),
                 ),
@@ -117,7 +114,7 @@ class SynonymPracticeWordPill extends StatelessWidget {
                   Icon(
                     Icons.check_rounded,
                     size: 16.sp,
-                    color: isDark ? AppColors.slate400 : AppColors.slate500,
+                    color: SynonymUiTokens.mutedText(isDark),
                   ),
                 ],
               ],
@@ -152,11 +149,11 @@ class SynonymPracticeBanner extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      padding: EdgeInsets.all(12.w),
+      padding: SynonymUiTokens.innerPanelPadding,
       decoration: BoxDecoration(
-        color: accent.withValues(alpha: isDark ? 0.22 : 0.10),
-        borderRadius: BorderRadius.circular(14.r),
-        border: Border.all(color: accent.withValues(alpha: 0.45)),
+        color: accent.withValues(alpha: isDark ? 0.20 : 0.09),
+        borderRadius: BorderRadius.circular(SynonymUiTokens.controlRadius),
+        border: Border.all(color: accent.withValues(alpha: 0.4)),
       ),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -166,12 +163,8 @@ class SynonymPracticeBanner extends StatelessWidget {
           Expanded(
             child: Text(
               text,
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 13.5.sp,
-                fontWeight: FontWeight.w600,
-                color: isDark ? AppColors.slate50 : AppColors.slate800,
-                height: 1.4,
+              style: SynonymUiTokens.supportBody(
+                color: SynonymUiTokens.primaryText(isDark),
               ),
             ),
           ),
@@ -189,7 +182,7 @@ class SynonymPracticeBanner extends StatelessWidget {
   }
 }
 
-/// 1-tap swap pill for reversing Contrast Swap placements cleanly.
+/// 1-tap swap button for reversing two placed words between blanks.
 class SynonymPracticeSwapButton extends StatelessWidget {
   final Color primaryColor;
   final bool isDark;
@@ -206,7 +199,7 @@ class SynonymPracticeSwapButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Semantics(
       button: true,
-      label: 'Swap placed words between slots',
+      label: 'Swap placed words between blanks',
       child: ScaleButton(
         debounceDuration: const Duration(milliseconds: 120),
         onTap: onTap,
@@ -216,8 +209,10 @@ class SynonymPracticeSwapButton extends StatelessWidget {
             padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 10.h),
             decoration: BoxDecoration(
               color: isDark ? AppColors.slate800 : AppColors.slate100,
-              borderRadius: BorderRadius.circular(14.r),
-              border: Border.all(color: primaryColor.withValues(alpha: 0.55)),
+              borderRadius: BorderRadius.circular(
+                SynonymUiTokens.controlRadius,
+              ),
+              border: Border.all(color: primaryColor.withValues(alpha: 0.50)),
             ),
             child: Row(
               mainAxisSize: MainAxisSize.min,
@@ -230,10 +225,7 @@ class SynonymPracticeSwapButton extends StatelessWidget {
                 SizedBox(width: 4.w),
                 Text(
                   'Swap',
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 13.5.sp,
-                    fontWeight: FontWeight.w800,
+                  style: SynonymUiTokens.controlLabel(
                     color: isDark ? AppColors.slate50 : primaryColor,
                   ),
                 ),

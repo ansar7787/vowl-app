@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/features/vocabulary/synonym_search/presentation/widgets/synonym_ui_tokens.dart';
 
 /// Unified tap + eager drag surface for the Mastery word grid.
 ///
@@ -158,7 +159,9 @@ class SynonymGridControlPill extends StatelessWidget {
             padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 6.h),
             decoration: BoxDecoration(
               color: isDark ? AppColors.slate800 : AppColors.slate100,
-              borderRadius: BorderRadius.circular(10.r),
+              borderRadius: BorderRadius.circular(
+                SynonymUiTokens.controlRadius,
+              ),
               border: Border.all(
                 color: isDark ? AppColors.slate700 : AppColors.slate300,
               ),
@@ -170,11 +173,9 @@ class SynonymGridControlPill extends StatelessWidget {
                 SizedBox(width: 4.w),
                 Text(
                   label,
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 12.sp,
-                    fontWeight: FontWeight.w700,
+                  style: SynonymUiTokens.controlLabel(
                     color: fg,
+                    fontWeight: FontWeight.w500,
                   ),
                 ),
               ],

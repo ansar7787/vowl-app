@@ -172,7 +172,7 @@ class SynonymMasteryController {
 
     // Forgiving drag-slip guard: incomplete non-trap traces reset with zero heart loss.
     if (activePath.value.length >= 2) {
-      _showSubtleHint('Trace a complete synonym or trap check cleanly.');
+      _showSubtleHint('Keep going until the full word is selected.');
     }
     activePath.value = const [];
   }

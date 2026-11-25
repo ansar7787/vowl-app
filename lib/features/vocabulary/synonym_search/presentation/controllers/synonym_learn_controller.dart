@@ -13,6 +13,7 @@ class SynonymLearnController {
       ValueNotifier<Map<int, Set<int>>>(const {});
   final ValueNotifier<Map<int, int?>> selectedCousinByQuest =
       ValueNotifier<Map<int, int?>>(const {});
+  final ValueNotifier<bool> autoSpeak = ValueNotifier<bool>(false);
 
   List<SynonymLearnItem> _items = const [];
 
@@ -81,9 +82,15 @@ class SynonymLearnController {
     }
   }
 
+  void toggleAutoSpeak() {
+    hapticService?.selection();
+    autoSpeak.value = !autoSpeak.value;
+  }
+
   void dispose() {
     currentIndex.dispose();
     swappedByQuest.dispose();
     selectedCousinByQuest.dispose();
+    autoSpeak.dispose();
   }
 }

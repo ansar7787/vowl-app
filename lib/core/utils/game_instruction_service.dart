@@ -1173,15 +1173,15 @@ class GameInstructionService {
       title: "Synonym Search",
       icon: Icons.compare_arrows_rounded,
       objective:
-          "Read the real-world sentence clue, then swipe or tap through the letter grid to connect the matching synonym before time runs out.",
+          "Read the sentence and find a word with a similar meaning. Connect the letters in the grid before time runs out.",
       rules: [
-        "Read the target word and sentence blank",
-        "Connect adjacent letters to spell the synonym",
-        "Dodge hidden trap words to protect your streak",
+        "Read the given word and sentence",
+        "Slide or tap connected letters to spell a matching word",
+        "Watch out for similar-looking wrong words in the grid",
       ],
       actionText: "Start Search",
       tip:
-          "Check the letter slots in the sentence and tap Hint to spotlight the first two letters on the board!",
+          "Tip: Count the blank spaces in the sentence, or tap Hint to highlight the first two letters.",
     ),
     GameSubtype.antonymSearch: GameBriefing(
       title: "Antonym Search",

@@ -3,14 +3,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/presentation/widgets/shakeable_wrapper.dart';
 import 'package:vowl/core/theme/app_colors.dart';
-import 'package:vowl/core/theme/app_spacing.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/models/synonym_phase_models.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/widgets/synonym_practice_shared.dart';
+import 'package:vowl/features/vocabulary/synonym_search/presentation/widgets/synonym_ui_tokens.dart';
 
-/// Synonym Ladder drill card in Practice Phase.
-///
-/// Builds nuance ordering across 3 rising intensity or formality rungs with
-/// tactile pill placement, progressive intensity meters, and spoken examples.
+/// Practice card that orders 3 related synonyms from mild to strong or formal.
 class SynonymLadderCard extends StatelessWidget {
   final SynonymPracticeExercise exercise;
   final List<String?> placements;
@@ -50,39 +47,36 @@ class SynonymLadderCard extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Row(
-            children: [
-              SynonymDrillBadge(
-                label: 'SYNONYM LADDER',
-                cefr: exercise.cefr,
-                primaryColor: primaryColor,
-                isDark: isDark,
-              ),
-              const Spacer(),
-              if (exercise.scaleAxis.isNotEmpty)
-                Flexible(
-                  child: Text(
+          SizedBox(
+            width: double.infinity,
+            child: Wrap(
+              alignment: WrapAlignment.spaceBetween,
+              crossAxisAlignment: WrapCrossAlignment.center,
+              spacing: 8.w,
+              runSpacing: 6.h,
+              children: [
+                SynonymDrillBadge(
+                  label: 'Word order',
+                  cefr: exercise.cefr,
+                  primaryColor: primaryColor,
+                  isDark: isDark,
+                ),
+                if (exercise.scaleAxis.isNotEmpty)
+                  Text(
                     exercise.scaleAxis,
-                    textAlign: TextAlign.end,
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 12.sp,
-                      fontWeight: FontWeight.w700,
-                      color: isDark ? AppColors.slate300 : AppColors.slate600,
+                    style: SynonymUiTokens.badgeLabel(
+                      color: SynonymUiTokens.mutedText(isDark),
+                      fontWeight: FontWeight.w500,
                     ),
                   ),
-                ),
-            ],
+              ],
+            ),
           ),
           SizedBox(height: 10.h),
           Text(
             exercise.prompt,
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: 17.sp,
-              fontWeight: FontWeight.w800,
-              color: isDark ? AppColors.slate50 : AppColors.slate900,
-              height: 1.35,
+            style: SynonymUiTokens.sectionHeading(
+              color: SynonymUiTokens.primaryText(isDark),
             ),
           ),
           SizedBox(height: 14.h),
@@ -196,7 +190,7 @@ class _LadderRungTile extends StatelessWidget {
         ? AppColors.rose500
         : isFocused
         ? primaryColor
-        : (isDark ? AppColors.slate700 : AppColors.slate200);
+        : SynonymUiTokens.subtleBorder(isDark);
 
     final double strengthFraction = totalRungs <= 1
         ? 1.0
@@ -210,19 +204,16 @@ class _LadderRungTile extends StatelessWidget {
     return Semantics(
       button: true,
       label: placedWord == null
-          ? 'Rung ${rungIndex + 1}, $poleHint, empty'
-          : 'Rung ${rungIndex + 1}, $placedWord, tap to clear',
+          ? 'Row ${rungIndex + 1}, $poleHint, empty'
+          : 'Row ${rungIndex + 1}, $placedWord, tap to clear',
       child: ScaleButton(
         debounceDuration: const Duration(milliseconds: 120),
         onTap: onTap,
         child: ConstrainedBox(
-          constraints: const BoxConstraints(minHeight: 54),
+          constraints: const BoxConstraints(minHeight: 56),
           child: Container(
             width: double.infinity,
-            padding: EdgeInsets.symmetric(
-              horizontal: AppSpacing.cardCompact,
-              vertical: 10.h,
-            ),
+            padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 12.h),
             decoration: BoxDecoration(
               color: placedWord != null
                   ? primaryColor.withValues(
@@ -230,13 +221,13 @@ class _LadderRungTile extends StatelessWidget {
                           ? 0.08 + (rungIndex * 0.05)
                           : 0.03 + (rungIndex * 0.025),
                     )
-                  : (isDark
-                        ? AppColors.slate800.withValues(alpha: 0.92)
-                        : Colors.white),
-              borderRadius: BorderRadius.circular(14.r),
+                  : SynonymUiTokens.cardSurface(isDark),
+              borderRadius: BorderRadius.circular(
+                SynonymUiTokens.controlRadius,
+              ),
               border: Border.all(
                 color: border,
-                width: (isFocused || hasChecked) ? 1.8 : 1.2,
+                width: (isFocused || hasChecked) ? 1.5 : 1.0,
               ),
             ),
             child: Column(
@@ -250,16 +241,15 @@ class _LadderRungTile extends StatelessWidget {
                       alignment: Alignment.center,
                       decoration: BoxDecoration(
                         color: rungAccent.withValues(
-                          alpha: isDark ? 0.30 : 0.16,
+                          alpha: isDark ? 0.28 : 0.14,
                         ),
-                        borderRadius: BorderRadius.circular(8.r),
+                        borderRadius: BorderRadius.circular(
+                          SynonymUiTokens.badgeRadius,
+                        ),
                       ),
                       child: Text(
                         '${rungIndex + 1}',
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 13.sp,
-                          fontWeight: FontWeight.w800,
+                        style: SynonymUiTokens.controlLabel(
                           color: isDark ? AppColors.slate50 : rungAccent,
                         ),
                       ),
@@ -267,31 +257,27 @@ class _LadderRungTile extends StatelessWidget {
                     SizedBox(width: 10.w),
                     Expanded(
                       child: Text(
-                        placedWord ?? 'Tap a word for "$poleHint"',
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 15.5.sp,
-                          fontWeight: placedWord == null
-                              ? FontWeight.w500
-                              : FontWeight.w800,
-                          color: placedWord == null
-                              ? (isDark
-                                    ? AppColors.slate400
-                                    : AppColors.slate500)
-                              : (isDark
-                                    ? AppColors.slate50
-                                    : AppColors.slate900),
-                        ),
+                        placedWord ?? 'Place word here ($poleHint)',
+                        style: placedWord == null
+                            ? SynonymUiTokens.sentenceBody(
+                                color: SynonymUiTokens.mutedText(isDark),
+                              )
+                            : SynonymUiTokens.interactiveWord(
+                                color: SynonymUiTokens.primaryText(isDark),
+                              ),
                       ),
                     ),
+                    SizedBox(width: 8.w),
                     Container(
                       padding: EdgeInsets.symmetric(
                         horizontal: 8.w,
-                        vertical: 3.h,
+                        vertical: 4.h,
                       ),
                       decoration: BoxDecoration(
                         color: isDark ? AppColors.slate900 : AppColors.slate100,
-                        borderRadius: BorderRadius.circular(8.r),
+                        borderRadius: BorderRadius.circular(
+                          SynonymUiTokens.badgeRadius,
+                        ),
                       ),
                       child: Row(
                         mainAxisSize: MainAxisSize.min,
@@ -306,13 +292,9 @@ class _LadderRungTile extends StatelessWidget {
                           ],
                           Text(
                             poleHint,
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 11.5.sp,
-                              fontWeight: FontWeight.w700,
-                              color: isDark
-                                  ? AppColors.slate300
-                                  : AppColors.slate600,
+                            style: SynonymUiTokens.badgeLabel(
+                              color: SynonymUiTokens.mutedText(isDark),
+                              fontWeight: FontWeight.w500,
                             ),
                           ),
                         ],

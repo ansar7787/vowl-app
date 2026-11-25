@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/tts_speaker_button_widget.dart';
 import 'package:vowl/core/theme/app_colors.dart';
-import 'package:vowl/core/theme/app_spacing.dart';
 import 'package:vowl/features/vocabulary/domain/entities/vocabulary_quest.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/models/synonym_phase_models.dart';
+import 'package:vowl/features/vocabulary/synonym_search/presentation/widgets/synonym_ui_tokens.dart';
 
-/// Compact Mastery target card with CEFR tier, non-spoiler audio, and live
-/// blank letter slots that fill dynamically as tiles are traced on the grid.
+/// Mastery target card with CEFR tier, non-spoiler audio, and live blank
+/// letter boxes that fill as letters are selected on the grid.
 class SynonymGridContextHeader extends StatelessWidget {
   final VocabularyQuest quest;
   final int level;
@@ -51,22 +51,12 @@ class SynonymGridContextHeader extends StatelessWidget {
 
     return Container(
       width: double.infinity,
-      padding: EdgeInsets.all(AppSpacing.cardCompact),
+      padding: SynonymUiTokens.cardPadding,
       decoration: BoxDecoration(
-        color: isDark
-            ? AppColors.slate800.withValues(alpha: 0.92)
-            : Colors.white,
-        borderRadius: BorderRadius.circular(18.r),
-        border: Border.all(
-          color: isDark ? AppColors.slate700 : AppColors.slate200,
-        ),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withValues(alpha: isDark ? 0.22 : 0.06),
-            blurRadius: 10,
-            offset: const Offset(0, 4),
-          ),
-        ],
+        color: SynonymUiTokens.cardSurface(isDark),
+        borderRadius: BorderRadius.circular(SynonymUiTokens.cardRadius),
+        border: Border.all(color: SynonymUiTokens.subtleBorder(isDark)),
+        boxShadow: SynonymUiTokens.softCardShadow(isDark),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -80,34 +70,27 @@ class SynonymGridContextHeader extends StatelessWidget {
                   crossAxisAlignment: WrapCrossAlignment.center,
                   children: [
                     Container(
-                      padding: EdgeInsets.symmetric(
-                        horizontal: 8.w,
-                        vertical: 3.h,
-                      ),
+                      padding: SynonymUiTokens.badgePadding,
                       decoration: BoxDecoration(
                         color: primaryColor.withValues(
-                          alpha: isDark ? 0.28 : 0.12,
+                          alpha: isDark ? 0.24 : 0.11,
                         ),
-                        borderRadius: BorderRadius.circular(8.r),
+                        borderRadius: BorderRadius.circular(
+                          SynonymUiTokens.badgeRadius,
+                        ),
                       ),
                       child: Text(
-                        'FIND SYNONYM • $cefr',
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 11.sp,
-                          fontWeight: FontWeight.w800,
-                          letterSpacing: 0.8,
+                        'Find synonym • $cefr',
+                        style: SynonymUiTokens.badgeLabel(
                           color: isDark ? AppColors.slate50 : primaryColor,
+                          fontWeight: FontWeight.w600,
                         ),
                       ),
                     ),
                     Text(
                       quest.word ?? '',
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 19.sp,
-                        fontWeight: FontWeight.w900,
-                        color: isDark ? AppColors.slate50 : AppColors.slate900,
+                      style: SynonymUiTokens.displayWord(
+                        color: SynonymUiTokens.primaryText(isDark),
                       ),
                     ),
                   ],
@@ -123,7 +106,7 @@ class SynonymGridContextHeader extends StatelessWidget {
             ],
           ),
           if (clueText.isNotEmpty) ...[
-            SizedBox(height: 8.h),
+            SizedBox(height: 10.h),
             _ContextClueWithLiveSlot(
               clueText: clueText,
               targetLength: normalizedTarget.length,
@@ -132,7 +115,7 @@ class SynonymGridContextHeader extends StatelessWidget {
               isDark: isDark,
             ),
           ] else ...[
-            SizedBox(height: 8.h),
+            SizedBox(height: 10.h),
             _LiveLetterSlotsRow(
               targetLength: normalizedTarget.length,
               currentSpelled: currentSpelledWord,
@@ -141,15 +124,17 @@ class SynonymGridContextHeader extends StatelessWidget {
             ),
           ],
           if (isHintActive && hintText.isNotEmpty) ...[
-            SizedBox(height: 8.h),
+            SizedBox(height: 10.h),
             Container(
               width: double.infinity,
-              padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 6.h),
+              padding: SynonymUiTokens.innerPanelPadding,
               decoration: BoxDecoration(
                 color: AppColors.amber500.withValues(
-                  alpha: isDark ? 0.20 : 0.12,
+                  alpha: isDark ? 0.20 : 0.10,
                 ),
-                borderRadius: BorderRadius.circular(10.r),
+                borderRadius: BorderRadius.circular(
+                  SynonymUiTokens.controlRadius,
+                ),
                 border: Border.all(
                   color: AppColors.amber500.withValues(alpha: 0.45),
                 ),
@@ -159,19 +144,15 @@ class SynonymGridContextHeader extends StatelessWidget {
                 children: [
                   Icon(
                     Icons.lightbulb_rounded,
-                    size: 15.sp,
+                    size: 16.sp,
                     color: isDark ? AppColors.amber400 : AppColors.amber600,
                   ),
-                  SizedBox(width: 6.w),
+                  SizedBox(width: 8.w),
                   Expanded(
                     child: Text(
                       hintText,
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 12.5.sp,
-                        fontWeight: FontWeight.w600,
-                        color: isDark ? AppColors.slate100 : AppColors.slate800,
-                        height: 1.3,
+                      style: SynonymUiTokens.supportBody(
+                        color: SynonymUiTokens.primaryText(isDark),
                       ),
                     ),
                   ),
@@ -202,24 +183,15 @@ class _ContextClueWithLiveSlot extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final textColor = isDark ? AppColors.slate200 : AppColors.slate700;
+    final textColor = SynonymUiTokens.secondaryText(isDark);
     final hasBlank = clueText.contains('___');
 
     if (!hasBlank) {
       return Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            clueText,
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: 14.5.sp,
-              fontWeight: FontWeight.w500,
-              color: textColor,
-              height: 1.35,
-            ),
-          ),
-          SizedBox(height: 8.h),
+          Text(clueText, style: SynonymUiTokens.sentenceBody(color: textColor)),
+          SizedBox(height: 10.h),
           _LiveLetterSlotsRow(
             targetLength: targetLength,
             currentSpelled: currentSpelled,
@@ -241,20 +213,11 @@ class _ContextClueWithLiveSlot extends StatelessWidget {
       children: [
         Wrap(
           crossAxisAlignment: WrapCrossAlignment.center,
-          spacing: 4.w,
-          runSpacing: 4.h,
+          spacing: 5.w,
+          runSpacing: 6.h,
           children: [
             for (final w in beforeWords)
-              Text(
-                w,
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 14.5.sp,
-                  fontWeight: FontWeight.w500,
-                  color: textColor,
-                  height: 1.35,
-                ),
-              ),
+              Text(w, style: SynonymUiTokens.sentenceBody(color: textColor)),
             _LiveLetterSlotsRow(
               targetLength: targetLength,
               currentSpelled: currentSpelled,
@@ -262,16 +225,7 @@ class _ContextClueWithLiveSlot extends StatelessWidget {
               isDark: isDark,
             ),
             for (final w in afterWords)
-              Text(
-                w,
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 14.5.sp,
-                  fontWeight: FontWeight.w500,
-                  color: textColor,
-                  height: 1.35,
-                ),
-              ),
+              Text(w, style: SynonymUiTokens.sentenceBody(color: textColor)),
           ],
         ),
       ],
@@ -304,8 +258,8 @@ class _LiveLetterSlotsRow extends StatelessWidget {
   Widget build(BuildContext context) {
     final slotCount = targetLength.clamp(1, 20);
     final compact = slotCount > 10;
-    final boxWidth = compact ? 17.w : 21.w;
-    final boxHeight = compact ? 22.h : 25.h;
+    final boxWidth = compact ? 19.w : 24.w;
+    final boxHeight = compact ? 24.h : 28.h;
 
     return Wrap(
       spacing: compact ? 3.w : 4.w,
@@ -321,29 +275,29 @@ class _LiveLetterSlotsRow extends StatelessWidget {
           alignment: Alignment.center,
           decoration: BoxDecoration(
             color: hasLetter
-                ? primaryColor.withValues(alpha: isDark ? 0.34 : 0.16)
+                ? primaryColor.withValues(alpha: isDark ? 0.30 : 0.14)
                 : (isDark
                       ? AppColors.slate900.withValues(alpha: 0.75)
                       : AppColors.slate100),
-            borderRadius: BorderRadius.circular(6.r),
+            borderRadius: BorderRadius.circular(SynonymUiTokens.badgeRadius),
             border: Border.all(
               color: hasLetter
                   ? primaryColor
                   : (isCursor
                         ? primaryColor.withValues(alpha: 0.70)
                         : (isDark ? AppColors.slate700 : AppColors.slate300)),
-              width: (hasLetter || isCursor) ? 1.5 : 1.0,
+              width: (hasLetter || isCursor) ? 1.4 : 1.0,
             ),
           ),
           child: Text(
             ch,
             style: TextStyle(
               fontFamily: 'Outfit',
-              fontSize: compact ? 12.sp : 13.5.sp,
-              fontWeight: FontWeight.w900,
+              fontSize: compact ? 12.sp : 14.sp,
+              fontWeight: FontWeight.w600,
               color: hasLetter
                   ? (isDark ? AppColors.slate50 : primaryColor)
-                  : (isDark ? AppColors.slate400 : AppColors.slate500),
+                  : SynonymUiTokens.mutedText(isDark),
             ),
           ),
         );

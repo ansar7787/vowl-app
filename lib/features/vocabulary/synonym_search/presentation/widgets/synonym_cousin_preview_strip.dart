@@ -3,14 +3,14 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/presentation/widgets/tts_speaker_button_widget.dart';
 import 'package:vowl/core/theme/app_colors.dart';
-import 'package:vowl/core/theme/app_spacing.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/models/synonym_phase_models.dart';
+import 'package:vowl/features/vocabulary/synonym_search/presentation/widgets/synonym_ui_tokens.dart';
 
-/// Related cousin word chip strip displayed below makeovers in Learn Phase.
+/// Related synonym chip strip displayed below sentence examples in Learn Phase.
 ///
-/// Selecting any cousin reveals its IPA, tone tag, real sentence context,
-/// and pronunciation audio without crowding initial load.
+/// Selecting any word reveals its pronunciation, tone tag, real sentence
+/// context, and audio without crowding initial load.
 class SynonymCousinPreviewStrip extends StatelessWidget {
   final List<SynonymCousinWord> cousins;
   final int? selectedIndex;
@@ -30,10 +30,8 @@ class SynonymCousinPreviewStrip extends StatelessWidget {
     if (cousins.isEmpty) return const SizedBox.shrink();
 
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final cardBg = isDark
-        ? AppColors.slate800.withValues(alpha: 0.85)
-        : Colors.white;
-    final labelColor = isDark ? AppColors.slate300 : AppColors.slate600;
+    final cardBg = SynonymUiTokens.cardSurface(isDark);
+    final labelColor = SynonymUiTokens.mutedText(isDark);
     final selectedCousin =
         (selectedIndex != null &&
             selectedIndex! >= 0 &&
@@ -43,38 +41,28 @@ class SynonymCousinPreviewStrip extends StatelessWidget {
 
     return Container(
       width: double.infinity,
-      padding: EdgeInsets.all(AppSpacing.card),
+      padding: SynonymUiTokens.cardPadding,
       decoration: BoxDecoration(
         color: cardBg,
-        borderRadius: BorderRadius.circular(18.r),
-        border: Border.all(
-          color: isDark ? AppColors.slate700 : AppColors.slate200,
-        ),
+        borderRadius: BorderRadius.circular(SynonymUiTokens.cardRadius),
+        border: Border.all(color: SynonymUiTokens.subtleBorder(isDark)),
+        boxShadow: SynonymUiTokens.softCardShadow(isDark),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'WORD FAMILY COUSINS',
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: 11.5.sp,
-              fontWeight: FontWeight.w800,
-              letterSpacing: 0.9,
-              color: isDark ? AppColors.indigo400 : primaryColor,
+            'Related words',
+            style: SynonymUiTokens.sectionHeading(
+              color: SynonymUiTokens.primaryText(isDark),
             ),
           ),
           SizedBox(height: 4.h),
           Text(
-            'Tap a related synonym to hear its tone and example.',
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: 13.sp,
-              color: labelColor,
-              height: 1.35,
-            ),
+            'Tap a word to see how it is used.',
+            style: SynonymUiTokens.supportBody(color: labelColor),
           ),
-          SizedBox(height: 10.h),
+          SizedBox(height: 12.h),
           Wrap(
             spacing: 8.w,
             runSpacing: 8.h,
@@ -123,7 +111,7 @@ class _CousinChip extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final bg = isSelected
-        ? primaryColor.withValues(alpha: isDark ? 0.30 : 0.14)
+        ? primaryColor.withValues(alpha: isDark ? 0.28 : 0.12)
         : (isDark ? AppColors.slate900 : AppColors.slate50);
     final border = isSelected
         ? primaryColor
@@ -144,43 +132,42 @@ class _CousinChip extends StatelessWidget {
             padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 8.h),
             decoration: BoxDecoration(
               color: bg,
-              borderRadius: BorderRadius.circular(12.r),
-              border: Border.all(color: border, width: isSelected ? 1.8 : 1.1),
+              borderRadius: BorderRadius.circular(
+                SynonymUiTokens.controlRadius,
+              ),
+              border: Border.all(color: border, width: isSelected ? 1.5 : 1.0),
             ),
-            child: Row(
-              mainAxisSize: MainAxisSize.min,
+            child: Wrap(
+              crossAxisAlignment: WrapCrossAlignment.center,
+              spacing: 6.w,
+              runSpacing: 4.h,
               children: [
                 Text(
                   cousin.word,
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 14.5.sp,
-                    fontWeight: FontWeight.w700,
-                    color: isDark ? AppColors.slate50 : AppColors.slate900,
+                  style: SynonymUiTokens.interactiveWord(
+                    color: SynonymUiTokens.primaryText(isDark),
                   ),
                 ),
-                if (cousin.toneTag.isNotEmpty) ...[
-                  SizedBox(width: 6.w),
+                if (cousin.toneTag.isNotEmpty)
                   Container(
                     padding: EdgeInsets.symmetric(
-                      horizontal: 6.w,
-                      vertical: 2.h,
+                      horizontal: 8.w,
+                      vertical: 3.h,
                     ),
                     decoration: BoxDecoration(
-                      color: primaryColor.withValues(alpha: 0.15),
-                      borderRadius: BorderRadius.circular(6.r),
+                      color: primaryColor.withValues(alpha: 0.14),
+                      borderRadius: BorderRadius.circular(
+                        SynonymUiTokens.badgeRadius,
+                      ),
                     ),
                     child: Text(
                       cousin.toneTag,
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 11.sp,
-                        fontWeight: FontWeight.w700,
+                      style: SynonymUiTokens.badgeLabel(
                         color: isDark ? AppColors.slate200 : primaryColor,
+                        fontWeight: FontWeight.w500,
                       ),
                     ),
                   ),
-                ],
               ],
             ),
           ),
@@ -205,10 +192,10 @@ class _CousinDetailPanel extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      padding: EdgeInsets.all(12.w),
+      padding: SynonymUiTokens.innerPanelPadding,
       decoration: BoxDecoration(
         color: primaryColor.withValues(alpha: isDark ? 0.16 : 0.08),
-        borderRadius: BorderRadius.circular(14.r),
+        borderRadius: BorderRadius.circular(SynonymUiTokens.controlRadius),
         border: Border.all(color: primaryColor.withValues(alpha: 0.35)),
       ),
       child: Row(
@@ -224,22 +211,16 @@ class _CousinDetailPanel extends StatelessWidget {
                   children: [
                     Text(
                       cousin.word,
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 16.sp,
-                        fontWeight: FontWeight.w800,
-                        color: isDark ? AppColors.slate50 : AppColors.slate900,
+                      style: SynonymUiTokens.sectionHeading(
+                        color: SynonymUiTokens.primaryText(isDark),
                       ),
                     ),
                     if (cousin.ipa.isNotEmpty)
                       Text(
                         cousin.ipa,
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 13.sp,
-                          color: isDark
-                              ? AppColors.slate300
-                              : AppColors.slate600,
+                        style: SynonymUiTokens.controlLabel(
+                          color: SynonymUiTokens.mutedText(isDark),
+                          fontWeight: FontWeight.w400,
                         ),
                       ),
                   ],
@@ -247,12 +228,8 @@ class _CousinDetailPanel extends StatelessWidget {
                 SizedBox(height: 6.h),
                 Text(
                   cousin.miniContext,
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 14.sp,
-                    fontWeight: FontWeight.w500,
-                    color: isDark ? AppColors.slate100 : AppColors.slate800,
-                    height: 1.4,
+                  style: SynonymUiTokens.supportBody(
+                    color: SynonymUiTokens.primaryText(isDark),
                   ),
                 ),
               ],

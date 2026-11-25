@@ -87,7 +87,7 @@ void main() {
 
         expect(find.text('Big'), findsWidgets);
         expect(find.text('Large'), findsWidgets);
-        expect(find.text('Tested 0/2'), findsOneWidget);
+        expect(find.text('Checked 0/2'), findsOneWidget);
 
         await tester.pumpWidget(const SizedBox.shrink());
         await tester.pump(const Duration(milliseconds: 300));
@@ -164,14 +164,24 @@ void main() {
         await tester.pump();
         await tester.pump(const Duration(milliseconds: 300));
 
+        // Toggle Read aloud chip
+        expect(find.text('Read aloud'), findsOneWidget);
+        await tester.ensureVisible(
+          find.byKey(const Key('learn_auto_speak_toggle')),
+        );
+        await tester.pump();
+        await tester.tap(find.byKey(const Key('learn_auto_speak_toggle')));
+        await tester.pump();
+        expect(find.text('Read aloud on'), findsOneWidget);
+
         // Tap first makeover slot to swap big -> large
         await tester.ensureVisible(find.byKey(const Key('makeover_slot_0')));
         await tester.pump();
         await tester.tap(find.byKey(const Key('makeover_slot_0')));
         await tester.pump(const Duration(milliseconds: 300));
 
-        expect(find.text('Natural Fit'), findsOneWidget);
-        expect(find.text('Tested 1/2'), findsOneWidget);
+        expect(find.text('Sounds natural'), findsOneWidget);
+        expect(find.text('Checked 1/2'), findsOneWidget);
 
         // Tap cousin chip
         await tester.ensureVisible(find.byKey(const Key('cousin_chip_0')));
@@ -185,7 +195,7 @@ void main() {
         await tester.pump(const Duration(milliseconds: 300));
         expect(find.text('Happy'), findsWidgets);
         expect(find.byIcon(Icons.arrow_back_rounded), findsOneWidget);
-        expect(find.text('Go to Practice'), findsOneWidget);
+        expect(find.text('Start Practice'), findsOneWidget);
 
         // Test Previous returns to Pair 1
         await tester.tap(find.byIcon(Icons.arrow_back_rounded));
@@ -195,7 +205,7 @@ void main() {
         // Advance back to final pair and pushReplacement to Practice
         await tester.tap(find.text('Next Pair'));
         await tester.pump(const Duration(milliseconds: 300));
-        await tester.tap(find.text('Go to Practice'));
+        await tester.tap(find.text('Start Practice'));
         await tester.pump();
         await tester.pump(const Duration(milliseconds: 300));
 
@@ -226,11 +236,8 @@ void main() {
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 300));
 
-      expect(
-        find.text('Unable to load Level 1 synonym studio data.'),
-        findsOneWidget,
-      );
-      expect(find.text('Continue with Sample'), findsOneWidget);
+      expect(find.text('Could not load Level 1 lessons.'), findsOneWidget);
+      expect(find.text('Use Sample Lesson'), findsOneWidget);
 
       await tester.pumpWidget(const SizedBox.shrink());
       await tester.pump(const Duration(milliseconds: 300));

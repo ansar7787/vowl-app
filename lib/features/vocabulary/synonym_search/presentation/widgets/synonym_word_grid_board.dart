@@ -8,6 +8,7 @@ import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/controllers/synonym_grid_builder.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/widgets/synonym_grid_trace_detector.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/widgets/synonym_grid_trace_painter.dart';
+import 'package:vowl/features/vocabulary/synonym_search/presentation/widgets/synonym_ui_tokens.dart';
 
 /// Responsive 5x5 (or 6x5) connected word-search grid supporting continuous
 /// drag-tracing, mid-drag backtracking undo, and accessible one-tap tracing.
@@ -62,19 +63,18 @@ class SynonymWordGridBoard extends StatelessWidget {
                 child: Text(
                   subtleStatusMessage ??
                       (spelled.isNotEmpty
-                          ? 'Tracing: $spelled'
-                          : 'Drag or tap adjacent letters'),
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 13.sp,
-                    fontWeight: FontWeight.w700,
+                          ? 'Word: $spelled'
+                          : 'Slide or tap nearby letters'),
+                  style: SynonymUiTokens.controlLabel(
                     color: subtleStatusMessage != null
                         ? (isDark ? AppColors.amber400 : AppColors.amber600)
                         : (spelled.isNotEmpty
                               ? (isDark ? AppColors.slate50 : primaryColor)
-                              : (isDark
-                                    ? AppColors.slate300
-                                    : AppColors.slate600)),
+                              : SynonymUiTokens.mutedText(isDark)),
+                    fontWeight:
+                        (subtleStatusMessage != null || spelled.isNotEmpty)
+                        ? FontWeight.w600
+                        : FontWeight.w500,
                   ),
                 ),
               ),
@@ -125,24 +125,19 @@ class SynonymWordGridBoard extends StatelessWidget {
                     color: isDark
                         ? AppColors.slate900.withValues(alpha: 0.92)
                         : Colors.white.withValues(alpha: 0.96),
-                    borderRadius: BorderRadius.circular(20.r),
+                    borderRadius: BorderRadius.circular(
+                      SynonymUiTokens.cardRadius,
+                    ),
                     border: Border.all(
                       color: showSuccessFlash
                           ? AppColors.emerald500
-                          : (isDark ? AppColors.slate700 : AppColors.slate200),
-                      width: showSuccessFlash ? 2.2 : 1.4,
+                          : SynonymUiTokens.subtleBorder(isDark),
+                      width: showSuccessFlash ? 1.8 : 1.0,
                     ),
-                    boxShadow: [
-                      BoxShadow(
-                        color:
-                            (showSuccessFlash
-                                    ? AppColors.emerald500
-                                    : primaryColor)
-                                .withValues(alpha: isDark ? 0.22 : 0.10),
-                        blurRadius: 16,
-                        offset: const Offset(0, 6),
-                      ),
-                    ],
+                    boxShadow: SynonymUiTokens.softCardShadow(
+                      isDark,
+                      tint: showSuccessFlash ? AppColors.emerald500 : null,
+                    ),
                   ),
                   child: SynonymGridTraceDetector(
                     onTapAt: (pos) {
@@ -330,20 +325,22 @@ class SynonymWordGridBoard extends StatelessWidget {
             key: Key('grid_cell_$index'),
             decoration: BoxDecoration(
               color: bgColor,
-              borderRadius: BorderRadius.circular(14.r),
+              borderRadius: BorderRadius.circular(
+                SynonymUiTokens.controlRadius,
+              ),
               border: Border.all(
                 color: borderColor,
                 width: (isSelected || isHinted)
-                    ? 2.0
-                    : (isAdjacentCandidate ? 1.4 : 1.0),
+                    ? 1.6
+                    : (isAdjacentCandidate ? 1.2 : 1.0),
               ),
               boxShadow: isSelected
                   ? [
                       BoxShadow(
                         color: primaryColor.withValues(
-                          alpha: isHead ? 0.36 : 0.22,
+                          alpha: isHead ? 0.28 : 0.18,
                         ),
-                        blurRadius: isHead ? 9 : 6,
+                        blurRadius: isHead ? 7 : 5,
                         offset: const Offset(0, 2),
                       ),
                     ]
@@ -356,21 +353,21 @@ class SynonymWordGridBoard extends StatelessWidget {
                   grid.letters[index],
                   style: TextStyle(
                     fontFamily: 'Outfit',
-                    fontSize: (cellSize * 0.42).clamp(16.0, 22.0),
-                    fontWeight: FontWeight.w900,
+                    fontSize: (cellSize * 0.40).clamp(16.0, 20.0),
+                    fontWeight: FontWeight.w700,
                     color: letterColor,
                   ),
                 ),
                 if (isSelected)
                   Positioned(
                     top: 3,
-                    right: 4,
+                    right: 5,
                     child: Text(
                       '${pathStep + 1}',
                       style: TextStyle(
                         fontFamily: 'Outfit',
-                        fontSize: 9.sp,
-                        fontWeight: FontWeight.w900,
+                        fontSize: 10.sp,
+                        fontWeight: FontWeight.w600,
                         color: Colors.white.withValues(alpha: 0.90),
                       ),
                     ),

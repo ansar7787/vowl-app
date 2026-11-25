@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
+import 'package:vowl/features/vocabulary/synonym_search/presentation/widgets/synonym_ui_tokens.dart';
 
 /// Interactive wrapped sentence with an inline `>= 48dp` tappable word-swap slot.
 class SynonymMakeoverInlineSentence extends StatelessWidget {
@@ -69,16 +70,7 @@ class SynonymMakeoverInlineSentence extends StatelessWidget {
   }
 
   Widget _wordText(String word) {
-    return Text(
-      word,
-      style: TextStyle(
-        fontFamily: 'Outfit',
-        fontSize: 16.sp,
-        fontWeight: FontWeight.w600,
-        color: textColor,
-        height: 1.4,
-      ),
-    );
+    return Text(word, style: SynonymUiTokens.sentenceBody(color: textColor));
   }
 }
 
@@ -108,12 +100,12 @@ class _SwapSlotButton extends StatelessWidget {
         ? primaryColor
         : (isNaturalSwap ? AppColors.emerald500 : AppColors.rose500);
     final Color fill = !isSwapped
-        ? primaryColor.withValues(alpha: isDark ? 0.25 : 0.14)
-        : accent.withValues(alpha: isDark ? 0.28 : 0.16);
+        ? primaryColor.withValues(alpha: isDark ? 0.24 : 0.12)
+        : accent.withValues(alpha: isDark ? 0.26 : 0.14);
 
     return Semantics(
       button: true,
-      label: 'Swap word $activeWord with $alternateWord',
+      label: 'Change word $activeWord to $alternateWord',
       child: ScaleButton(
         debounceDuration: const Duration(milliseconds: 120),
         onTap: onTap,
@@ -123,8 +115,10 @@ class _SwapSlotButton extends StatelessWidget {
             padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 8.h),
             decoration: BoxDecoration(
               color: fill,
-              borderRadius: BorderRadius.circular(12.r),
-              border: Border.all(color: accent, width: 1.6),
+              borderRadius: BorderRadius.circular(
+                SynonymUiTokens.controlRadius,
+              ),
+              border: Border.all(color: accent, width: 1.4),
             ),
             child: AnimatedSwitcher(
               duration: VowlMotion.shouldReduceMotion(context)
@@ -140,10 +134,7 @@ class _SwapSlotButton extends StatelessWidget {
                 children: [
                   Text(
                     activeWord,
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 16.sp,
-                      fontWeight: FontWeight.w800,
+                    style: SynonymUiTokens.interactiveWord(
                       color: isDark ? AppColors.slate50 : accent,
                     ),
                   ),
@@ -163,7 +154,7 @@ class _SwapSlotButton extends StatelessWidget {
   }
 }
 
-/// Native Ear Verdict callout rendered beneath swapped Learn sentences.
+/// Explanation callout rendered beneath swapped Learn sentences.
 class SynonymMakeoverVerdictBanner extends StatelessWidget {
   final bool isNatural;
   final String verdictText;
@@ -186,10 +177,10 @@ class SynonymMakeoverVerdictBanner extends StatelessWidget {
         : (isDark ? AppColors.red900.withValues(alpha: 0.45) : AppColors.red50);
     return Container(
       width: double.infinity,
-      padding: EdgeInsets.all(12.w),
+      padding: SynonymUiTokens.innerPanelPadding,
       decoration: BoxDecoration(
         color: bg,
-        borderRadius: BorderRadius.circular(12.r),
+        borderRadius: BorderRadius.circular(SynonymUiTokens.controlRadius),
         border: Border.all(color: accent.withValues(alpha: 0.4)),
       ),
       child: Row(
@@ -206,12 +197,8 @@ class SynonymMakeoverVerdictBanner extends StatelessWidget {
           Expanded(
             child: Text(
               verdictText,
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 13.5.sp,
-                fontWeight: FontWeight.w600,
-                color: isDark ? AppColors.slate100 : AppColors.slate800,
-                height: 1.4,
+              style: SynonymUiTokens.supportBody(
+                color: SynonymUiTokens.primaryText(isDark),
               ),
             ),
           ),

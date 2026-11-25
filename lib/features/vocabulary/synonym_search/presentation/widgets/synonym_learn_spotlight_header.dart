@@ -1,18 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/presentation/widgets/tts_speaker_button_widget.dart';
 import 'package:vowl/core/theme/app_colors.dart';
-import 'package:vowl/core/theme/app_spacing.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/models/synonym_phase_models.dart';
+import 'package:vowl/features/vocabulary/synonym_search/presentation/widgets/synonym_ui_tokens.dart';
 
-/// Spotlight banner at the top of Learn Phase displaying the base ↔ synonym pair,
-/// CEFR band, interactive makeover progress dots/meter, core meaning, and TTS audio.
+/// Spotlight banner at the top of Learn Phase displaying the base <-> synonym pair,
+/// CEFR band, interactive progress indicators, core meaning, and TTS audio.
 class SynonymLearnSpotlightHeader extends StatelessWidget {
   final SynonymLearnItem item;
   final int pairIndex;
   final int totalPairs;
   final int testedMakeovers;
   final Color primaryColor;
+  final bool autoSpeak;
+  final VoidCallback? onToggleAutoSpeak;
 
   const SynonymLearnSpotlightHeader({
     super.key,
@@ -21,6 +24,8 @@ class SynonymLearnSpotlightHeader extends StatelessWidget {
     required this.totalPairs,
     required this.testedMakeovers,
     required this.primaryColor,
+    this.autoSpeak = false,
+    this.onToggleAutoSpeak,
   });
 
   @override
@@ -31,18 +36,18 @@ class SynonymLearnSpotlightHeader extends StatelessWidget {
 
     return Container(
       width: double.infinity,
-      padding: EdgeInsets.all(AppSpacing.card),
+      padding: SynonymUiTokens.cardPadding,
       decoration: BoxDecoration(
         gradient: LinearGradient(
           colors: isDark
-              ? [primaryColor.withValues(alpha: 0.28), AppColors.slate800]
-              : [primaryColor.withValues(alpha: 0.14), Colors.white],
+              ? [primaryColor.withValues(alpha: 0.26), AppColors.slate800]
+              : [primaryColor.withValues(alpha: 0.12), Colors.white],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
         ),
-        borderRadius: BorderRadius.circular(20.r),
+        borderRadius: BorderRadius.circular(SynonymUiTokens.cardRadius),
         border: Border.all(
-          color: primaryColor.withValues(alpha: isDark ? 0.50 : 0.30),
+          color: primaryColor.withValues(alpha: isDark ? 0.45 : 0.25),
         ),
       ),
       child: Column(
@@ -60,13 +65,13 @@ class SynonymLearnSpotlightHeader extends StatelessWidget {
               ),
               _SpotlightChip(
                 text: 'Pair ${pairIndex + 1} of $totalPairs',
-                color: isDark ? AppColors.slate400 : AppColors.slate600,
+                color: isDark ? AppColors.slate300 : AppColors.slate700,
                 isDark: isDark,
               ),
               _SpotlightChip(
                 text: allTested
-                    ? 'Makeovers Tested ✓'
-                    : 'Tested $testedMakeovers/$totalMakeovers',
+                    ? 'All checked'
+                    : 'Checked $testedMakeovers/$totalMakeovers',
                 color: allTested ? AppColors.emerald600 : primaryColor,
                 isDark: isDark,
               ),
@@ -76,8 +81,8 @@ class SynonymLearnSpotlightHeader extends StatelessWidget {
                   children: [
                     for (int i = 0; i < totalMakeovers; i++) ...[
                       Container(
-                        width: 9.w,
-                        height: 9.w,
+                        width: 8.w,
+                        height: 8.w,
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
                           color: i < testedMakeovers
@@ -93,6 +98,13 @@ class SynonymLearnSpotlightHeader extends StatelessWidget {
                     ],
                   ],
                 ),
+              if (onToggleAutoSpeak != null)
+                _AutoSpeakChip(
+                  enabled: autoSpeak,
+                  primaryColor: primaryColor,
+                  isDark: isDark,
+                  onTap: onToggleAutoSpeak!,
+                ),
             ],
           ),
           SizedBox(height: 12.h),
@@ -106,11 +118,8 @@ class SynonymLearnSpotlightHeader extends StatelessWidget {
                   children: [
                     Text(
                       item.baseWord,
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 22.sp,
-                        fontWeight: FontWeight.w900,
-                        color: isDark ? AppColors.slate50 : AppColors.slate900,
+                      style: SynonymUiTokens.displayWord(
+                        color: SynonymUiTokens.primaryText(isDark),
                       ),
                     ),
                     Icon(
@@ -120,10 +129,7 @@ class SynonymLearnSpotlightHeader extends StatelessWidget {
                     ),
                     Text(
                       item.synonym,
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 22.sp,
-                        fontWeight: FontWeight.w900,
+                      style: SynonymUiTokens.displayWord(
                         color: isDark ? AppColors.indigo400 : primaryColor,
                       ),
                     ),
@@ -140,33 +146,28 @@ class SynonymLearnSpotlightHeader extends StatelessWidget {
           SizedBox(height: 8.h),
           Text(
             item.coreMeaning,
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: 14.5.sp,
-              fontWeight: FontWeight.w600,
-              color: isDark ? AppColors.slate100 : AppColors.slate800,
-              height: 1.4,
+            style: SynonymUiTokens.supportBody(
+              color: SynonymUiTokens.primaryText(isDark),
+              fontWeight: FontWeight.w500,
             ),
           ),
           if (item.whyDifferent.isNotEmpty) ...[
-            SizedBox(height: 8.h),
+            SizedBox(height: 10.h),
             Container(
               width: double.infinity,
-              padding: EdgeInsets.all(10.w),
+              padding: EdgeInsets.all(12.w),
               decoration: BoxDecoration(
                 color: isDark
                     ? AppColors.slate900.withValues(alpha: 0.72)
-                    : Colors.white.withValues(alpha: 0.85),
-                borderRadius: BorderRadius.circular(12.r),
+                    : Colors.white.withValues(alpha: 0.88),
+                borderRadius: BorderRadius.circular(
+                  SynonymUiTokens.controlRadius,
+                ),
               ),
               child: Text(
                 item.whyDifferent,
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 13.5.sp,
-                  fontWeight: FontWeight.w500,
-                  color: isDark ? AppColors.slate200 : AppColors.slate700,
-                  height: 1.4,
+                style: SynonymUiTokens.supportBody(
+                  color: SynonymUiTokens.secondaryText(isDark),
                 ),
               ),
             ),
@@ -191,18 +192,80 @@ class _SpotlightChip extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 9.w, vertical: 4.h),
+      padding: SynonymUiTokens.badgePadding,
       decoration: BoxDecoration(
-        color: color.withValues(alpha: isDark ? 0.24 : 0.12),
-        borderRadius: BorderRadius.circular(9.r),
+        color: color.withValues(alpha: isDark ? 0.22 : 0.11),
+        borderRadius: BorderRadius.circular(SynonymUiTokens.badgeRadius),
       ),
       child: Text(
         text,
-        style: TextStyle(
-          fontFamily: 'Outfit',
-          fontSize: 11.5.sp,
-          fontWeight: FontWeight.w700,
+        style: SynonymUiTokens.badgeLabel(
           color: isDark ? AppColors.slate50 : color,
+          fontWeight: FontWeight.w600,
+        ),
+      ),
+    );
+  }
+}
+
+class _AutoSpeakChip extends StatelessWidget {
+  final bool enabled;
+  final Color primaryColor;
+  final bool isDark;
+  final VoidCallback onTap;
+
+  const _AutoSpeakChip({
+    required this.enabled,
+    required this.primaryColor,
+    required this.isDark,
+    required this.onTap,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final activeBg = primaryColor.withValues(alpha: isDark ? 0.28 : 0.14);
+    final inactiveBg = isDark ? AppColors.slate800 : AppColors.slate100;
+    final fg = enabled
+        ? (isDark ? AppColors.slate50 : primaryColor)
+        : (isDark ? AppColors.slate200 : AppColors.slate700);
+
+    return Semantics(
+      button: true,
+      toggled: enabled,
+      label: enabled ? 'Read aloud on' : 'Read aloud off',
+      child: ScaleButton(
+        key: const Key('learn_auto_speak_toggle'),
+        debounceDuration: const Duration(milliseconds: 120),
+        onTap: onTap,
+        child: Container(
+          padding: SynonymUiTokens.badgePadding,
+          decoration: BoxDecoration(
+            color: enabled ? activeBg : inactiveBg,
+            borderRadius: BorderRadius.circular(SynonymUiTokens.badgeRadius),
+            border: Border.all(
+              color: enabled
+                  ? primaryColor.withValues(alpha: 0.55)
+                  : SynonymUiTokens.subtleBorder(isDark),
+            ),
+          ),
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Icon(
+                enabled ? Icons.volume_up_rounded : Icons.volume_off_rounded,
+                size: 14.sp,
+                color: fg,
+              ),
+              SizedBox(width: 4.w),
+              Text(
+                enabled ? 'Read aloud on' : 'Read aloud',
+                style: SynonymUiTokens.badgeLabel(
+                  color: fg,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

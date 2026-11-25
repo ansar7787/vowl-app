@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
@@ -13,16 +11,17 @@ import 'package:vowl/core/theme/app_spacing.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/tts_service.dart';
+import 'package:vowl/features/vocabulary/synonym_search/data/datasources/synonym_phase_local_data_source.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/controllers/synonym_learn_controller.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/models/synonym_phase_models.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/widgets/synonym_cousin_preview_strip.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/widgets/synonym_learn_spotlight_header.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/widgets/synonym_makeover_card.dart';
 
-/// Learn Phase for Synonym Search ("Sentence Makeover Studio").
+/// Learn Phase for Synonym Search.
 ///
-/// Teaches synonym nuance through live interactive in-sentence word swaps,
-/// native ear verdicts, spoken audio, and word-family cousin comparisons.
+/// Teaches synonym usage through live in-sentence word swaps, plain
+/// explanations, spoken audio, and related word examples.
 class SynonymSearchLearnScreen extends StatefulWidget {
   final int level;
 
@@ -90,22 +89,14 @@ class _SynonymSearchLearnScreenState extends State<SynonymSearchLearnScreen> {
       _errorMessage = null;
     });
 
-    final batchStart = ((widget.level - 1) ~/ 10) * 10 + 1;
-    final batchEnd = batchStart + 9;
-    final assetPath =
-        'assets/curriculum/vocabulary/synonymSearch_learn_${batchStart}_$batchEnd.json';
-
     try {
-      final bundle = widget.assetBundle ?? DefaultAssetBundle.of(context);
-      final rawJson = await bundle.loadString(assetPath);
-      final decoded = jsonDecode(rawJson) as Map<String, dynamic>;
-      final batch = SynonymLearnBatch.fromJson(decoded);
-      final items = batch.itemsForLevel(widget.level);
+      final dataSource = SynonymPhaseLocalDataSource(
+        bundle: widget.assetBundle ?? DefaultAssetBundle.of(context),
+      );
+      final items = await dataSource.loadLearnItems(widget.level);
 
       if (!mounted) return;
-      _controller.setItems(
-        items.isNotEmpty ? items : [SynonymLearnItem.fallback(widget.level)],
-      );
+      _controller.setItems(items);
       setState(() {
         _isLoading = false;
       });
@@ -113,8 +104,7 @@ class _SynonymSearchLearnScreenState extends State<SynonymSearchLearnScreen> {
       if (!mounted) return;
       setState(() {
         _isLoading = false;
-        _errorMessage =
-            'Unable to load Level ${widget.level} synonym studio data.';
+        _errorMessage = 'Could not load Level ${widget.level} lessons.';
       });
     }
   }
@@ -136,10 +126,31 @@ class _SynonymSearchLearnScreenState extends State<SynonymSearchLearnScreen> {
     } catch (_) {}
   }
 
+  void _speakCurrentIfEnabled() {
+    if (!_controller.autoSpeak.value) return;
+    final item = _controller.currentItem;
+    if (item == null) return;
+    try {
+      TtsService().speak(
+        '${item.baseWord}. ${item.synonym}. ${item.coreMeaning}',
+      );
+    } catch (_) {}
+  }
+
+  void _handleToggleAutoSpeak() {
+    _controller.toggleAutoSpeak();
+    if (_controller.autoSpeak.value) {
+      _speakCurrentIfEnabled();
+    } else {
+      _stopAudioSafely();
+    }
+  }
+
   void _handleCompleteOrNext() {
     _stopAudioSafely();
     if (_controller.nextPair()) {
       _scrollToTop();
+      _speakCurrentIfEnabled();
       return;
     }
     PhaseProgressRecorder.recordPhaseCompleted(
@@ -157,6 +168,7 @@ class _SynonymSearchLearnScreenState extends State<SynonymSearchLearnScreen> {
     _stopAudioSafely();
     _controller.previousPair();
     _scrollToTop();
+    _speakCurrentIfEnabled();
   }
 
   @override
@@ -177,7 +189,7 @@ class _SynonymSearchLearnScreenState extends State<SynonymSearchLearnScreen> {
 
     if (_isLoading) {
       return LearnPhaseScaffold(
-        title: 'Sentence Makeover Studio',
+        title: 'Word Examples',
         gameType: 'synonymSearch',
         level: widget.level,
         isActionEnabled: false,
@@ -193,11 +205,11 @@ class _SynonymSearchLearnScreenState extends State<SynonymSearchLearnScreen> {
 
     if (_errorMessage != null || _controller.items.isEmpty) {
       return LearnPhaseScaffold(
-        title: 'Sentence Makeover Studio',
+        title: 'Word Examples',
         gameType: 'synonymSearch',
         level: widget.level,
         isActionEnabled: true,
-        actionLabel: 'Continue with Sample',
+        actionLabel: 'Use Sample Lesson',
         onComplete: () {
           _controller.setItems([SynonymLearnItem.fallback(widget.level)]);
           setState(() {
@@ -218,6 +230,7 @@ class _SynonymSearchLearnScreenState extends State<SynonymSearchLearnScreen> {
         _controller.currentIndex,
         _controller.swappedByQuest,
         _controller.selectedCousinByQuest,
+        _controller.autoSpeak,
       ]),
       builder: (context, _) {
         final idx = _controller.currentIndex.value;
@@ -226,12 +239,12 @@ class _SynonymSearchLearnScreenState extends State<SynonymSearchLearnScreen> {
         final tested = _controller.testedCountForCurrent();
 
         return LearnPhaseScaffold(
-          title: 'Makeover Studio (${idx + 1}/$total)',
+          title: 'Word Examples (${idx + 1}/$total)',
           gameType: 'synonymSearch',
           level: widget.level,
           previousLabel: 'Previous',
           onPrevious: idx > 0 ? _handlePrevious : null,
-          actionLabel: idx < total - 1 ? 'Next Pair' : 'Go to Practice',
+          actionLabel: idx < total - 1 ? 'Next Pair' : 'Start Practice',
           isActionEnabled: true,
           onComplete: _handleCompleteOrNext,
           child: SingleChildScrollView(
@@ -252,6 +265,8 @@ class _SynonymSearchLearnScreenState extends State<SynonymSearchLearnScreen> {
                   totalPairs: total,
                   testedMakeovers: tested,
                   primaryColor: theme.primaryColor,
+                  autoSpeak: _controller.autoSpeak.value,
+                  onToggleAutoSpeak: _handleToggleAutoSpeak,
                 ),
                 SizedBox(height: 14.h),
                 for (int i = 0; i < item.makeovers.length; i++) ...[

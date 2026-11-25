@@ -2,17 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/tts_speaker_button_widget.dart';
 import 'package:vowl/core/theme/app_colors.dart';
-import 'package:vowl/core/theme/app_spacing.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/models/synonym_phase_models.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/widgets/synonym_makeover_inline_sentence.dart';
+import 'package:vowl/features/vocabulary/synonym_search/presentation/widgets/synonym_ui_tokens.dart';
 
-/// Interactive card for Learn Phase ("Sentence Makeover Studio").
-///
-/// Displays a real-world situation sentence with an inline tappable word slot
-/// that swaps live between [SynonymMakeoverScenario.targetSlotWord] and
-/// [SynonymMakeoverScenario.swappedWord], updating audio playback and revealing
-/// the Native Ear Verdict without passive slide reading.
+/// Interactive card for Learn Phase showing a real-world sentence where
+/// tapping the highlighted word swaps between everyday and synonym options.
 class SynonymMakeoverCard extends StatelessWidget {
   final SynonymMakeoverScenario scenario;
   final int scenarioIndex;
@@ -44,14 +40,12 @@ class SynonymMakeoverCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final cardBg = isDark
-        ? AppColors.slate800.withValues(alpha: 0.92)
-        : Colors.white;
+    final cardBg = SynonymUiTokens.cardSurface(isDark);
     final borderColor = !isSwapped
-        ? (isDark ? AppColors.slate700 : AppColors.slate200)
+        ? SynonymUiTokens.subtleBorder(isDark)
         : (scenario.isNaturalSwap ? AppColors.emerald500 : AppColors.rose500);
-    final textPrimary = isDark ? AppColors.slate50 : AppColors.slate900;
-    final textMuted = isDark ? AppColors.slate300 : AppColors.slate600;
+    final textPrimary = SynonymUiTokens.primaryText(isDark);
+    final textMuted = SynonymUiTokens.mutedText(isDark);
 
     return AnimatedContainer(
       duration: VowlMotion.shouldReduceMotion(context)
@@ -59,20 +53,15 @@ class SynonymMakeoverCard extends StatelessWidget {
           : VowlMotion.medium,
       curve: VowlMotion.defaultCurve,
       width: double.infinity,
-      padding: EdgeInsets.all(AppSpacing.card),
+      padding: SynonymUiTokens.cardPadding,
       decoration: BoxDecoration(
         color: cardBg,
-        borderRadius: BorderRadius.circular(18.r),
-        border: Border.all(color: borderColor, width: isSwapped ? 1.8 : 1.2),
-        boxShadow: [
-          BoxShadow(
-            color: (isSwapped ? borderColor : Colors.black).withValues(
-              alpha: isDark ? 0.22 : 0.08,
-            ),
-            blurRadius: 12,
-            offset: const Offset(0, 4),
-          ),
-        ],
+        borderRadius: BorderRadius.circular(SynonymUiTokens.cardRadius),
+        border: Border.all(color: borderColor, width: isSwapped ? 1.5 : 1.0),
+        boxShadow: SynonymUiTokens.softCardShadow(
+          isDark,
+          tint: isSwapped ? borderColor : null,
+        ),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -145,14 +134,8 @@ class SynonymMakeoverCard extends StatelessWidget {
                       SizedBox(width: 6.w),
                       Expanded(
                         child: Text(
-                          'Tap "${scenario.targetSlotWord}" to swap in "${scenario.swappedWord}" and test how it sounds.',
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 13.sp,
-                            color: textMuted,
-                            fontWeight: FontWeight.w500,
-                            height: 1.35,
-                          ),
+                          'Tap "${scenario.targetSlotWord}" to try "${scenario.swappedWord}" in this sentence.',
+                          style: SynonymUiTokens.supportBody(color: textMuted),
                         ),
                       ),
                     ],
@@ -178,18 +161,16 @@ class _TagPill extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 5.h),
+      padding: SynonymUiTokens.badgePadding,
       decoration: BoxDecoration(
-        color: color.withValues(alpha: isDark ? 0.22 : 0.12),
-        borderRadius: BorderRadius.circular(10.r),
+        color: color.withValues(alpha: isDark ? 0.22 : 0.11),
+        borderRadius: BorderRadius.circular(SynonymUiTokens.badgeRadius),
       ),
       child: Text(
         label,
-        style: TextStyle(
-          fontFamily: 'Outfit',
-          fontSize: 12.sp,
-          fontWeight: FontWeight.w700,
+        style: SynonymUiTokens.badgeLabel(
           color: isDark ? AppColors.slate50 : color,
+          fontWeight: FontWeight.w600,
         ),
       ),
     );
@@ -211,18 +192,16 @@ class _EarStatusBadge extends StatelessWidget {
   Widget build(BuildContext context) {
     if (!isSwapped) {
       return Container(
-        padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 5.h),
+        padding: SynonymUiTokens.badgePadding,
         decoration: BoxDecoration(
           color: isDark ? AppColors.slate700 : AppColors.slate100,
-          borderRadius: BorderRadius.circular(10.r),
+          borderRadius: BorderRadius.circular(SynonymUiTokens.badgeRadius),
         ),
         child: Text(
           'Original',
-          style: TextStyle(
-            fontFamily: 'Outfit',
-            fontSize: 12.sp,
-            fontWeight: FontWeight.w600,
+          style: SynonymUiTokens.badgeLabel(
             color: isDark ? AppColors.slate200 : AppColors.slate700,
+            fontWeight: FontWeight.w500,
           ),
         ),
       );
@@ -233,10 +212,10 @@ class _EarStatusBadge extends StatelessWidget {
         ? (isDark ? AppColors.emerald950 : AppColors.emerald50)
         : (isDark ? AppColors.red900.withValues(alpha: 0.65) : AppColors.red50);
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 5.h),
+      padding: SynonymUiTokens.badgePadding,
       decoration: BoxDecoration(
         color: bg,
-        borderRadius: BorderRadius.circular(10.r),
+        borderRadius: BorderRadius.circular(SynonymUiTokens.badgeRadius),
         border: Border.all(color: color.withValues(alpha: 0.45)),
       ),
       child: Row(
@@ -251,12 +230,10 @@ class _EarStatusBadge extends StatelessWidget {
           ),
           SizedBox(width: 4.w),
           Text(
-            isNaturalSwap ? 'Natural Fit' : 'Awkward Fit',
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: 12.sp,
-              fontWeight: FontWeight.w700,
+            isNaturalSwap ? 'Sounds natural' : "Doesn't fit",
+            style: SynonymUiTokens.badgeLabel(
               color: isDark ? AppColors.slate50 : color,
+              fontWeight: FontWeight.w600,
             ),
           ),
         ],

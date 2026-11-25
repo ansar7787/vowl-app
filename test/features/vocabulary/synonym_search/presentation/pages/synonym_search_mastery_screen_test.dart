@@ -412,7 +412,7 @@ void main() {
         await tester.tap(cellFinder);
         await tester.pump();
 
-        expect(find.textContaining('Tracing:'), findsOneWidget);
+        expect(find.textContaining('Word:'), findsOneWidget);
 
         // Simulate Pause -> Restart returning back to Quest 0
         when(
@@ -426,7 +426,7 @@ void main() {
         await tester.pump();
         await tester.pump(const Duration(milliseconds: 300));
 
-        expect(find.text('Drag or tap adjacent letters'), findsOneWidget);
+        expect(find.text('Slide or tap nearby letters'), findsOneWidget);
 
         await tester.pumpWidget(const SizedBox.shrink());
         await tester.pump(const Duration(milliseconds: 300));

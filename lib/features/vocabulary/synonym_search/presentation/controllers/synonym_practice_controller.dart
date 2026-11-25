@@ -231,7 +231,7 @@ class SynonymPracticeController {
       }
       fb = passed
           ? ex.explanation
-          : '${ex.hint.isNotEmpty ? ex.hint : ex.explanation} Tap a rung to adjust and try again.';
+          : '${ex.hint.isNotEmpty ? ex.hint : ex.explanation} Tap a row to adjust and try again.';
     }
 
     hasChecked.value = true;

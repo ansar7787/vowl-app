@@ -1,11 +1,34 @@
 import 'dart:convert';
 import 'dart:io';
 
+import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:vowl/features/vocabulary/data/models/vocabulary_quest_model.dart';
+import 'package:vowl/features/vocabulary/synonym_search/data/datasources/synonym_phase_local_data_source.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/controllers/synonym_learn_controller.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/controllers/synonym_practice_controller.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/models/synonym_phase_models.dart';
+
+class _MapAssetBundle extends CachingAssetBundle {
+  final Map<String, String> files;
+
+  _MapAssetBundle(this.files);
+
+  @override
+  Future<String> loadString(String key, {bool cache = true}) async {
+    final val = files[key];
+    if (val == null) {
+      throw StateError('Missing asset key: $key');
+    }
+    return val;
+  }
+
+  @override
+  Future<ByteData> load(String key) async {
+    final str = await loadString(key);
+    return ByteData.sublistView(Uint8List.fromList(utf8.encode(str)));
+  }
+}
 
 void main() {
   group('Synonym Search Curriculum JSONs & Phase Models', () {
@@ -176,6 +199,9 @@ void main() {
         final learn = SynonymLearnController();
         addTearDown(learn.dispose);
         learn.setItems([SynonymLearnItem.fallback(1)]);
+        expect(learn.autoSpeak.value, isFalse);
+        learn.toggleAutoSpeak();
+        expect(learn.autoSpeak.value, isTrue);
         expect(learn.testedCountForCurrent(), 0);
         learn.toggleMakeoverSwap(0);
         expect(learn.isMakeoverSwapped(0), isTrue);
@@ -204,6 +230,31 @@ void main() {
         expect(prac.isCorrect.value, isTrue);
         expect(prac.nextExercise(), isTrue);
         expect(prac.currentIndex.value, 1);
+      },
+    );
+
+    test(
+      'SynonymPhaseLocalDataSource resolves batch paths and parses Learn and Practice batches',
+      () async {
+        expect(SynonymPhaseLocalDataSource.batchSuffixForLevel(1), '1_10');
+        expect(SynonymPhaseLocalDataSource.batchSuffixForLevel(11), '11_20');
+        expect(SynonymPhaseLocalDataSource.batchSuffixForLevel(100), '91_100');
+
+        final bundle = _MapAssetBundle({
+          SynonymPhaseLocalDataSource.learnAssetPath(1): File(
+            'assets/curriculum/vocabulary/synonymSearch_learn_1_10.json',
+          ).readAsStringSync(),
+          SynonymPhaseLocalDataSource.practiceAssetPath(1): File(
+            'assets/curriculum/vocabulary/synonymSearch_practice_1_10.json',
+          ).readAsStringSync(),
+        });
+
+        final dataSource = SynonymPhaseLocalDataSource(bundle: bundle);
+        final learnItems = await dataSource.loadLearnItems(1);
+        final practiceItems = await dataSource.loadPracticeExercises(1);
+
+        expect(learnItems.length, 3);
+        expect(practiceItems.length, 6);
       },
     );
   });

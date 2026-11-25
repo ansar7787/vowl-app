@@ -5,8 +5,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/game_mechanics/shared/speed_challenge_timer.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
+import 'package:vowl/features/vocabulary/synonym_search/presentation/widgets/synonym_ui_tokens.dart';
 
-/// Top Mastery HUD combining the live combo flame pill and countdown timer.
+/// Top Mastery HUD combining the live streak badge and countdown timer.
 ///
 /// Reserves explicit right-edge clearance (`>= 56.w`) so [GameScaffold]'s
 /// floating peeking mascot never overlaps interactive or readable timer UI.
@@ -65,7 +66,9 @@ class SynonymStreakTimerBar extends StatelessWidget {
               color: hasHotStreak
                   ? null
                   : pillColor.withValues(alpha: isDark ? 0.24 : 0.14),
-              borderRadius: BorderRadius.circular(12.r),
+              borderRadius: BorderRadius.circular(
+                SynonymUiTokens.controlRadius,
+              ),
               border: Border.all(
                 color: pillColor.withValues(alpha: hasHotStreak ? 0.85 : 0.45),
               ),
@@ -92,10 +95,7 @@ class SynonymStreakTimerBar extends StatelessWidget {
                   SizedBox(width: 4.w),
                   Text(
                     comboStreak > 0 ? 'x$comboStreak' : 'Ready',
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 13.sp,
-                      fontWeight: FontWeight.w800,
+                    style: SynonymUiTokens.controlLabel(
                       color: isDark ? AppColors.slate50 : pillColor,
                     ),
                   ),

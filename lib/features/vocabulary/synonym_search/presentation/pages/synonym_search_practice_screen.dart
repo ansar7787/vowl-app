@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
@@ -13,15 +11,16 @@ import 'package:vowl/core/theme/app_spacing.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/tts_service.dart';
+import 'package:vowl/features/vocabulary/synonym_search/data/datasources/synonym_phase_local_data_source.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/controllers/synonym_practice_controller.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/models/synonym_phase_models.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/widgets/synonym_contrast_swap_card.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/widgets/synonym_ladder_card.dart';
 
-/// Practice Phase for Synonym Search ("Contrast Swap & Synonym Ladder").
+/// Practice Phase for Synonym Search.
 ///
-/// Alternates Contrast Swap sentence pair drills and 3-rung Synonym Ladder
-/// nuance scaling across distinct word pairs with forgiving retries and guided reveal.
+/// Alternates sentence blank matching and word-strength ordering exercises
+/// with forgiving retries and guided answers.
 class SynonymSearchPracticeScreen extends StatefulWidget {
   final int level;
 
@@ -91,17 +90,11 @@ class _SynonymSearchPracticeScreenState
       _errorMessage = null;
     });
 
-    final batchStart = ((widget.level - 1) ~/ 10) * 10 + 1;
-    final batchEnd = batchStart + 9;
-    final assetPath =
-        'assets/curriculum/vocabulary/synonymSearch_practice_${batchStart}_$batchEnd.json';
-
     try {
-      final bundle = widget.assetBundle ?? DefaultAssetBundle.of(context);
-      final rawJson = await bundle.loadString(assetPath);
-      final decoded = jsonDecode(rawJson) as Map<String, dynamic>;
-      final batch = SynonymPracticeBatch.fromJson(decoded);
-      final exercises = batch.buildInterleavedExercisesForLevel(widget.level);
+      final dataSource = SynonymPhaseLocalDataSource(
+        bundle: widget.assetBundle ?? DefaultAssetBundle.of(context),
+      );
+      final exercises = await dataSource.loadPracticeExercises(widget.level);
 
       if (!mounted) return;
       _controller.setExercises(exercises);
@@ -112,8 +105,7 @@ class _SynonymSearchPracticeScreenState
       if (!mounted) return;
       setState(() {
         _isLoading = false;
-        _errorMessage =
-            'Unable to load Level ${widget.level} synonym practice drills.';
+        _errorMessage = 'Could not load Level ${widget.level} practice.';
       });
     }
   }
@@ -186,7 +178,7 @@ class _SynonymSearchPracticeScreenState
 
     if (_isLoading) {
       return PracticePhaseScaffold(
-        title: 'Contrast & Ladder Gym',
+        title: 'Synonym Practice',
         gameType: 'synonymSearch',
         level: widget.level,
         currentExerciseIndex: 0,
@@ -204,13 +196,13 @@ class _SynonymSearchPracticeScreenState
 
     if (_errorMessage != null || _controller.exercises.isEmpty) {
       return PracticePhaseScaffold(
-        title: 'Contrast & Ladder Gym',
+        title: 'Synonym Practice',
         gameType: 'synonymSearch',
         level: widget.level,
         currentExerciseIndex: 0,
         totalExercises: 1,
         isActionEnabled: true,
-        actionLabel: 'Practice Sample Drill',
+        actionLabel: 'Use Sample Practice',
         onComplete: () {
           _controller.setExercises(
             SynonymPracticeQuest.fallbackExercises(widget.level),
@@ -220,7 +212,7 @@ class _SynonymSearchPracticeScreenState
           });
         },
         child: GameErrorView(
-          message: _errorMessage ?? 'No practice exercises found.',
+          message: _errorMessage ?? 'No practice questions found.',
           primaryColor: theme.primaryColor,
           onRetry: _loadCurriculum,
           onExit: () => Navigator.of(context).maybePop(),
@@ -256,18 +248,18 @@ class _SynonymSearchPracticeScreenState
           ctaLabel = 'Check Answer';
           ctaEnabled = _controller.canCheck;
         } else if (isCorrect) {
-          ctaLabel = idx < total - 1 ? 'Next Exercise' : 'Start Mastery Blitz';
+          ctaLabel = idx < total - 1 ? 'Next Question' : 'Start Challenge';
           ctaEnabled = true;
         } else if (wrongCount >= 2) {
-          ctaLabel = 'Reveal Solution';
+          ctaLabel = 'Show Answer';
           ctaEnabled = true;
         } else {
-          ctaLabel = 'Tap Slot to Adjust';
+          ctaLabel = 'Tap a blank to change it';
           ctaEnabled = false;
         }
 
         return PracticePhaseScaffold(
-          title: 'Contrast & Ladder Gym',
+          title: 'Synonym Practice',
           gameType: 'synonymSearch',
           level: widget.level,
           currentExerciseIndex: idx,

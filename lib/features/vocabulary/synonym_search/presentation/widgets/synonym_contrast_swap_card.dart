@@ -4,15 +4,12 @@ import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/presentation/widgets/shakeable_wrapper.dart';
 import 'package:vowl/core/presentation/widgets/tts_speaker_button_widget.dart';
 import 'package:vowl/core/theme/app_colors.dart';
-import 'package:vowl/core/theme/app_spacing.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/models/synonym_phase_models.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/widgets/synonym_practice_shared.dart';
+import 'package:vowl/features/vocabulary/synonym_search/presentation/widgets/synonym_ui_tokens.dart';
 
-/// Contrast Swap drill card in Practice Phase.
-///
-/// Challenges the learner to assign paired synonyms to two contrasting
-/// real-world sentence slots simultaneously, checking nuance precision rather
-/// than isolated dictionary recall.
+/// Practice card that asks the learner to place paired synonyms into the
+/// two matching everyday sentences.
 class SynonymContrastSwapCard extends StatelessWidget {
   final SynonymPracticeExercise exercise;
   final List<String?> assignments;
@@ -46,47 +43,41 @@ class SynonymContrastSwapCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final promptColor = isDark ? AppColors.slate100 : AppColors.slate900;
+    final promptColor = SynonymUiTokens.primaryText(isDark);
 
     return ShakeableWrapper(
       shakeCount: shakeCount,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Row(
-            children: [
-              SynonymDrillBadge(
-                label: 'CONTRAST SWAP',
-                cefr: exercise.cefr,
-                primaryColor: primaryColor,
-                isDark: isDark,
-              ),
-              const Spacer(),
-              if (!(hasChecked && isCorrect))
-                Flexible(
-                  child: Text(
-                    'Tap word to fill slot',
-                    textAlign: TextAlign.end,
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 12.sp,
-                      fontWeight: FontWeight.w600,
-                      color: isDark ? AppColors.slate300 : AppColors.slate500,
+          SizedBox(
+            width: double.infinity,
+            child: Wrap(
+              alignment: WrapAlignment.spaceBetween,
+              crossAxisAlignment: WrapCrossAlignment.center,
+              spacing: 8.w,
+              runSpacing: 6.h,
+              children: [
+                SynonymDrillBadge(
+                  label: 'Choose the word',
+                  cefr: exercise.cefr,
+                  primaryColor: primaryColor,
+                  isDark: isDark,
+                ),
+                if (!(hasChecked && isCorrect))
+                  Text(
+                    'Tap a word to place it',
+                    style: SynonymUiTokens.badgeLabel(
+                      color: SynonymUiTokens.mutedText(isDark),
                     ),
                   ),
-                ),
-            ],
+              ],
+            ),
           ),
           SizedBox(height: 10.h),
           Text(
             exercise.prompt,
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: 17.sp,
-              fontWeight: FontWeight.w800,
-              color: promptColor,
-              height: 1.35,
-            ),
+            style: SynonymUiTokens.sectionHeading(color: promptColor),
           ),
           SizedBox(height: 14.h),
           Center(
@@ -200,27 +191,26 @@ class _ContrastSlotCard extends StatelessWidget {
         ? AppColors.rose500
         : isFocused
         ? primaryColor
-        : (isDark ? AppColors.slate700 : AppColors.slate200);
+        : SynonymUiTokens.subtleBorder(isDark);
 
     final parts = slot.sentenceWithBlank.split('___');
     final beforeWords = _tokenize(parts.isNotEmpty ? parts.first : '');
     final afterWords = parts.length > 1
         ? _tokenize(parts.sublist(1).join(' '))
         : const [];
-    final textColor = isDark ? AppColors.slate100 : AppColors.slate900;
+    final textColor = SynonymUiTokens.primaryText(isDark);
 
     return Container(
       width: double.infinity,
-      padding: EdgeInsets.all(AppSpacing.card),
+      padding: SynonymUiTokens.cardPadding,
       decoration: BoxDecoration(
-        color: isDark
-            ? AppColors.slate800.withValues(alpha: 0.92)
-            : Colors.white,
-        borderRadius: BorderRadius.circular(18.r),
+        color: SynonymUiTokens.cardSurface(isDark),
+        borderRadius: BorderRadius.circular(SynonymUiTokens.cardRadius),
         border: Border.all(
           color: borderColor,
-          width: (isFocused || hasChecked) ? 1.8 : 1.2,
+          width: (isFocused || hasChecked) ? 1.5 : 1.0,
         ),
+        boxShadow: SynonymUiTokens.softCardShadow(isDark),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -228,18 +218,18 @@ class _ContrastSlotCard extends StatelessWidget {
           Row(
             children: [
               Container(
-                padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 4.h),
+                padding: SynonymUiTokens.badgePadding,
                 decoration: BoxDecoration(
                   color: primaryColor.withValues(alpha: isDark ? 0.22 : 0.10),
-                  borderRadius: BorderRadius.circular(8.r),
+                  borderRadius: BorderRadius.circular(
+                    SynonymUiTokens.badgeRadius,
+                  ),
                 ),
                 child: Text(
                   slot.contextTag,
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 12.sp,
-                    fontWeight: FontWeight.w700,
+                  style: SynonymUiTokens.badgeLabel(
                     color: isDark ? AppColors.slate100 : primaryColor,
+                    fontWeight: FontWeight.w600,
                   ),
                 ),
               ),
@@ -262,21 +252,12 @@ class _ContrastSlotCard extends StatelessWidget {
             runSpacing: 8.h,
             children: [
               for (final w in beforeWords)
-                Text(
-                  w,
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 15.5.sp,
-                    fontWeight: FontWeight.w600,
-                    color: textColor,
-                    height: 1.4,
-                  ),
-                ),
+                Text(w, style: SynonymUiTokens.sentenceBody(color: textColor)),
               Semantics(
                 button: true,
                 label: assignedWord == null
-                    ? 'Slot ${slotIndex + 1}, empty, tap to focus'
-                    : 'Slot ${slotIndex + 1}, $assignedWord, tap to clear',
+                    ? 'Blank ${slotIndex + 1}, empty, tap to select'
+                    : 'Blank ${slotIndex + 1}, $assignedWord, tap to clear',
                 child: ScaleButton(
                   key: Key('contrast_slot_$slotIndex'),
                   debounceDuration: const Duration(milliseconds: 120),
@@ -293,49 +274,39 @@ class _ContrastSlotCard extends StatelessWidget {
                       ),
                       decoration: BoxDecoration(
                         color: slotCorrect
-                            ? AppColors.emerald500.withValues(alpha: 0.16)
+                            ? AppColors.emerald500.withValues(alpha: 0.14)
                             : slotWrong
-                            ? AppColors.rose500.withValues(alpha: 0.16)
+                            ? AppColors.rose500.withValues(alpha: 0.14)
                             : primaryColor.withValues(
-                                alpha: isFocused ? 0.18 : 0.08,
+                                alpha: isFocused ? 0.16 : 0.08,
                               ),
-                        borderRadius: BorderRadius.circular(12.r),
+                        borderRadius: BorderRadius.circular(
+                          SynonymUiTokens.controlRadius,
+                        ),
                         border: Border.all(
                           color: borderColor,
-                          width: isFocused ? 1.8 : 1.2,
+                          width: isFocused ? 1.5 : 1.0,
                         ),
                       ),
                       child: Text(
                         assignedWord ?? '______',
                         textAlign: TextAlign.center,
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 15.5.sp,
-                          fontWeight: FontWeight.w800,
-                          color: assignedWord == null
-                              ? (isDark
+                        style: assignedWord == null
+                            ? SynonymUiTokens.sentenceBody(
+                                color: isDark
                                     ? AppColors.slate400
-                                    : AppColors.slate500)
-                              : (isDark
-                                    ? AppColors.slate50
-                                    : AppColors.slate900),
-                        ),
+                                    : AppColors.slate500,
+                              )
+                            : SynonymUiTokens.interactiveWord(
+                                color: SynonymUiTokens.primaryText(isDark),
+                              ),
                       ),
                     ),
                   ),
                 ),
               ),
               for (final w in afterWords)
-                Text(
-                  w,
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 15.5.sp,
-                    fontWeight: FontWeight.w600,
-                    color: textColor,
-                    height: 1.4,
-                  ),
-                ),
+                Text(w, style: SynonymUiTokens.sentenceBody(color: textColor)),
             ],
           ),
         ],
