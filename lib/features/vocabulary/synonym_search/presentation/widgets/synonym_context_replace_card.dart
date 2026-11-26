@@ -5,6 +5,7 @@ import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/features/vocabulary/domain/entities/vocabulary_quest.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/models/synonym_phase_models.dart';
+import 'package:vowl/features/vocabulary/synonym_search/presentation/widgets/synonym_translatable_block.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/widgets/synonym_ui_tokens.dart';
 
 /// Timed context-replacement round used mid-level in Mastery Phase to break
@@ -55,141 +56,152 @@ class SynonymContextReplaceCard extends StatelessWidget {
     final eliminatedIdx = _eliminatedOptionIndex(options, correctAnswer);
     final clueText = (quest.contextSentence ?? '').trim();
     final hintText = (quest.hint ?? '').trim();
+    final translatableClue = clueText.isNotEmpty
+        ? '$_nonSpoilerAudioText\n$clueText'
+        : _nonSpoilerAudioText;
 
-    return Container(
-      key: const Key('synonym_context_replace_card'),
-      width: double.infinity,
-      padding: SynonymUiTokens.cardPadding,
-      decoration: BoxDecoration(
-        color: SynonymUiTokens.cardSurface(isDark),
-        borderRadius: BorderRadius.circular(SynonymUiTokens.cardRadius),
-        border: Border.all(color: SynonymUiTokens.subtleBorder(isDark)),
-        boxShadow: SynonymUiTokens.softCardShadow(isDark),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Row(
-            children: [
-              Expanded(
-                child: Wrap(
-                  spacing: 8.w,
-                  runSpacing: 6.h,
-                  crossAxisAlignment: WrapCrossAlignment.center,
+    return SynonymTranslatableArea(
+      textToTranslate: translatableClue,
+      primaryColor: primaryColor,
+      buttonSize: 18,
+      builder: (context, translateAction, translatedBanner) => Container(
+        key: const Key('synonym_context_replace_card'),
+        width: double.infinity,
+        padding: SynonymUiTokens.cardPadding,
+        decoration: BoxDecoration(
+          color: SynonymUiTokens.cardSurface(isDark),
+          borderRadius: BorderRadius.circular(SynonymUiTokens.cardRadius),
+          border: Border.all(color: SynonymUiTokens.subtleBorder(isDark)),
+          boxShadow: SynonymUiTokens.softCardShadow(isDark),
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              children: [
+                Expanded(
+                  child: Wrap(
+                    spacing: 8.w,
+                    runSpacing: 6.h,
+                    crossAxisAlignment: WrapCrossAlignment.center,
+                    children: [
+                      Container(
+                        padding: SynonymUiTokens.badgePadding,
+                        decoration: BoxDecoration(
+                          color: primaryColor.withValues(
+                            alpha: isDark ? 0.24 : 0.11,
+                          ),
+                          borderRadius: BorderRadius.circular(
+                            SynonymUiTokens.badgeRadius,
+                          ),
+                        ),
+                        child: Text(
+                          'Context match • $cefr',
+                          style: SynonymUiTokens.badgeLabel(
+                            color: isDark ? AppColors.slate50 : primaryColor,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                      ),
+                      Text(
+                        quest.word ?? '',
+                        style: SynonymUiTokens.displayWord(
+                          color: SynonymUiTokens.primaryText(isDark),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(width: 8.w),
+                translateAction,
+                SizedBox(width: 6.w),
+                TtsSpeakerButtonWidget(
+                  key: const Key('context_replace_tts'),
+                  text: _nonSpoilerAudioText,
+                  color: primaryColor,
+                  size: 20,
+                ),
+              ],
+            ),
+            SizedBox(height: 10.h),
+            Text(
+              'Pick the word that fits "${quest.word ?? ''}" naturally in this sentence:',
+              style: SynonymUiTokens.supportBody(
+                color: SynonymUiTokens.mutedText(isDark),
+              ),
+            ),
+            SizedBox(height: 10.h),
+            _ContextPromptSentence(
+              sentence: clueText,
+              filledWord: selectedOption,
+              isCorrect:
+                  selectedOption != null &&
+                  selectedOption!.trim().toLowerCase() ==
+                      correctAnswer.toLowerCase(),
+              primaryColor: primaryColor,
+              isDark: isDark,
+            ),
+            if (isHintActive && hintText.isNotEmpty) ...[
+              SizedBox(height: 10.h),
+              Container(
+                width: double.infinity,
+                padding: SynonymUiTokens.innerPanelPadding,
+                decoration: BoxDecoration(
+                  color: AppColors.amber500.withValues(
+                    alpha: isDark ? 0.20 : 0.10,
+                  ),
+                  borderRadius: BorderRadius.circular(
+                    SynonymUiTokens.controlRadius,
+                  ),
+                  border: Border.all(
+                    color: AppColors.amber500.withValues(alpha: 0.45),
+                  ),
+                ),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Container(
-                      padding: SynonymUiTokens.badgePadding,
-                      decoration: BoxDecoration(
-                        color: primaryColor.withValues(
-                          alpha: isDark ? 0.24 : 0.11,
-                        ),
-                        borderRadius: BorderRadius.circular(
-                          SynonymUiTokens.badgeRadius,
-                        ),
-                      ),
-                      child: Text(
-                        'Context match • $cefr',
-                        style: SynonymUiTokens.badgeLabel(
-                          color: isDark ? AppColors.slate50 : primaryColor,
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
+                    Icon(
+                      Icons.lightbulb_rounded,
+                      size: 16.sp,
+                      color: isDark ? AppColors.amber400 : AppColors.amber600,
                     ),
-                    Text(
-                      quest.word ?? '',
-                      style: SynonymUiTokens.displayWord(
-                        color: SynonymUiTokens.primaryText(isDark),
+                    SizedBox(width: 8.w),
+                    Expanded(
+                      child: Text(
+                        hintText,
+                        style: SynonymUiTokens.supportBody(
+                          color: SynonymUiTokens.primaryText(isDark),
+                        ),
                       ),
                     ),
                   ],
                 ),
               ),
-              SizedBox(width: 8.w),
-              TtsSpeakerButtonWidget(
-                key: const Key('context_replace_tts'),
-                text: _nonSpoilerAudioText,
-                color: primaryColor,
-                size: 20,
-              ),
             ],
-          ),
-          SizedBox(height: 10.h),
-          Text(
-            'Pick the word that fits "${quest.word ?? ''}" naturally in this sentence:',
-            style: SynonymUiTokens.supportBody(
-              color: SynonymUiTokens.mutedText(isDark),
-            ),
-          ),
-          SizedBox(height: 10.h),
-          _ContextPromptSentence(
-            sentence: clueText,
-            filledWord: selectedOption,
-            isCorrect:
-                selectedOption != null &&
-                selectedOption!.trim().toLowerCase() ==
+            SizedBox(height: 14.h),
+            for (int i = 0; i < options.length; i++) ...[
+              _ContextOptionTile(
+                key: Key('context_replace_opt_$i'),
+                label: options[i],
+                isEliminated: i == eliminatedIdx,
+                isSelected:
+                    selectedOption != null &&
+                    selectedOption!.toLowerCase() == options[i].toLowerCase(),
+                isCorrectOption:
+                    options[i].trim().toLowerCase() ==
                     correctAnswer.toLowerCase(),
-            primaryColor: primaryColor,
-            isDark: isDark,
-          ),
-          if (isHintActive && hintText.isNotEmpty) ...[
-            SizedBox(height: 10.h),
-            Container(
-              width: double.infinity,
-              padding: SynonymUiTokens.innerPanelPadding,
-              decoration: BoxDecoration(
-                color: AppColors.amber500.withValues(
-                  alpha: isDark ? 0.20 : 0.10,
-                ),
-                borderRadius: BorderRadius.circular(
-                  SynonymUiTokens.controlRadius,
-                ),
-                border: Border.all(
-                  color: AppColors.amber500.withValues(alpha: 0.45),
-                ),
+                hasAnswered: selectedOption != null,
+                primaryColor: primaryColor,
+                isDark: isDark,
+                onTap: (selectedOption != null || i == eliminatedIdx)
+                    ? null
+                    : () => onSelectOption(options[i]),
               ),
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Icon(
-                    Icons.lightbulb_rounded,
-                    size: 16.sp,
-                    color: isDark ? AppColors.amber400 : AppColors.amber600,
-                  ),
-                  SizedBox(width: 8.w),
-                  Expanded(
-                    child: Text(
-                      hintText,
-                      style: SynonymUiTokens.supportBody(
-                        color: SynonymUiTokens.primaryText(isDark),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
+              if (i < options.length - 1) SizedBox(height: 8.h),
+            ],
+            ?translatedBanner,
           ],
-          SizedBox(height: 14.h),
-          for (int i = 0; i < options.length; i++) ...[
-            _ContextOptionTile(
-              key: Key('context_replace_opt_$i'),
-              label: options[i],
-              isEliminated: i == eliminatedIdx,
-              isSelected:
-                  selectedOption != null &&
-                  selectedOption!.toLowerCase() == options[i].toLowerCase(),
-              isCorrectOption:
-                  options[i].trim().toLowerCase() ==
-                  correctAnswer.toLowerCase(),
-              hasAnswered: selectedOption != null,
-              primaryColor: primaryColor,
-              isDark: isDark,
-              onTap: (selectedOption != null || i == eliminatedIdx)
-                  ? null
-                  : () => onSelectOption(options[i]),
-            ),
-            if (i < options.length - 1) SizedBox(height: 8.h),
-          ],
-        ],
+        ),
       ),
     );
   }

@@ -5,6 +5,7 @@ import 'package:vowl/core/presentation/widgets/shakeable_wrapper.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/models/synonym_phase_models.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/widgets/synonym_practice_shared.dart';
+import 'package:vowl/features/vocabulary/synonym_search/presentation/widgets/synonym_translatable_block.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/widgets/synonym_ui_tokens.dart';
 
 /// Practice card that orders 3 related synonyms from mild to strong or formal.
@@ -73,10 +74,32 @@ class SynonymLadderCard extends StatelessWidget {
             ),
           ),
           SizedBox(height: 10.h),
-          Text(
-            exercise.prompt,
-            style: SynonymUiTokens.sectionHeading(
-              color: SynonymUiTokens.primaryText(isDark),
+          SynonymTranslatableArea(
+            textToTranslate: exercise.scaleAxis.isNotEmpty
+                ? '${exercise.prompt} (${exercise.scaleAxis})'
+                : exercise.prompt,
+            primaryColor: primaryColor,
+            buttonSize: 16,
+            builder: (context, translateAction, translatedBanner) => Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Expanded(
+                      child: Text(
+                        exercise.prompt,
+                        style: SynonymUiTokens.sectionHeading(
+                          color: SynonymUiTokens.primaryText(isDark),
+                        ),
+                      ),
+                    ),
+                    SizedBox(width: 6.w),
+                    translateAction,
+                  ],
+                ),
+                ?translatedBanner,
+              ],
             ),
           ),
           SizedBox(height: 14.h),

@@ -5,6 +5,7 @@ import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/models/synonym_phase_models.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/widgets/synonym_makeover_inline_sentence.dart';
+import 'package:vowl/features/vocabulary/synonym_search/presentation/widgets/synonym_translatable_block.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/widgets/synonym_ui_tokens.dart';
 
 /// Interactive card for Learn Phase showing a real-world sentence where
@@ -57,143 +58,158 @@ class SynonymMakeoverCard extends StatelessWidget {
         : (scenario.isNaturalSwap ? AppColors.emerald500 : AppColors.rose500);
     final textPrimary = SynonymUiTokens.primaryText(isDark);
     final textMuted = SynonymUiTokens.mutedText(isDark);
+    final translateSource = isSwapped
+        ? '$_liveSpokenSentence\n${scenario.earVerdict}'
+        : _liveSpokenSentence;
 
-    return AnimatedContainer(
-      duration: VowlMotion.shouldReduceMotion(context)
-          ? Duration.zero
-          : VowlMotion.medium,
-      curve: VowlMotion.defaultCurve,
-      width: double.infinity,
-      padding: SynonymUiTokens.cardPadding,
-      decoration: BoxDecoration(
-        color: cardBg,
-        borderRadius: BorderRadius.circular(SynonymUiTokens.cardRadius),
-        border: Border.all(color: borderColor, width: isSwapped ? 1.5 : 1.0),
-        boxShadow: SynonymUiTokens.softCardShadow(
-          isDark,
-          tint: isSwapped ? borderColor : null,
+    return SynonymTranslatableArea(
+      textToTranslate: translateSource,
+      primaryColor: primaryColor,
+      buttonSize: 18,
+      builder: (context, translateAction, translatedBanner) => AnimatedContainer(
+        duration: VowlMotion.shouldReduceMotion(context)
+            ? Duration.zero
+            : VowlMotion.medium,
+        curve: VowlMotion.defaultCurve,
+        width: double.infinity,
+        padding: SynonymUiTokens.cardPadding,
+        decoration: BoxDecoration(
+          color: cardBg,
+          borderRadius: BorderRadius.circular(SynonymUiTokens.cardRadius),
+          border: Border.all(color: borderColor, width: isSwapped ? 1.5 : 1.0),
+          boxShadow: SynonymUiTokens.softCardShadow(
+            isDark,
+            tint: isSwapped ? borderColor : null,
+          ),
         ),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Row(
-            children: [
-              Expanded(
-                child: Wrap(
-                  spacing: 8.w,
-                  runSpacing: 6.h,
-                  crossAxisAlignment: WrapCrossAlignment.center,
-                  children: [
-                    _TagPill(
-                      label: scenario.situationTag,
-                      color: primaryColor,
-                      isDark: isDark,
-                    ),
-                    _EarStatusBadge(
-                      isSwapped: isSwapped,
-                      isNaturalSwap: scenario.isNaturalSwap,
-                      isDark: isDark,
-                    ),
-                  ],
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              children: [
+                Expanded(
+                  child: Wrap(
+                    spacing: 8.w,
+                    runSpacing: 6.h,
+                    crossAxisAlignment: WrapCrossAlignment.center,
+                    children: [
+                      _TagPill(
+                        label: scenario.situationTag,
+                        color: primaryColor,
+                        isDark: isDark,
+                      ),
+                      _EarStatusBadge(
+                        isSwapped: isSwapped,
+                        isNaturalSwap: scenario.isNaturalSwap,
+                        isDark: isDark,
+                      ),
+                    ],
+                  ),
                 ),
-              ),
-              SizedBox(width: 8.w),
-              TtsSpeakerButtonWidget(
-                text: _liveSpokenSentence,
-                color: primaryColor,
-                size: 20,
-              ),
-            ],
-          ),
-          SizedBox(height: 12.h),
-          SynonymMakeoverInlineSentence(
-            beforeSentence: scenario.beforeSentence,
-            activeWord: _activeWord,
-            alternateWord: isSwapped
-                ? scenario.targetSlotWord
-                : scenario.swappedWord,
-            isSwapped: isSwapped,
-            isNaturalSwap: scenario.isNaturalSwap,
-            primaryColor: primaryColor,
-            textColor: textPrimary,
-            isDark: isDark,
-            slotKey: Key('makeover_slot_$scenarioIndex'),
-            onTapSlot: onToggleSwap,
-          ),
-          SizedBox(height: 10.h),
-          AnimatedSwitcher(
-            duration: VowlMotion.shouldReduceMotion(context)
-                ? Duration.zero
-                : VowlMotion.fast,
-            switchInCurve: VowlMotion.defaultCurve,
-            child: isSwapped
-                ? SynonymMakeoverVerdictBanner(
-                    key: ValueKey('verdict_$scenarioIndex'),
-                    isNatural: scenario.isNaturalSwap,
-                    verdictText: _verdictText,
-                    isDark: isDark,
-                  )
-                : (onPredict != null
-                      ? Column(
-                          key: ValueKey('prompt_$scenarioIndex'),
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              'Would "${scenario.swappedWord}" fit naturally here?',
-                              style: SynonymUiTokens.supportBody(
-                                color: textMuted,
-                              ),
-                            ),
-                            SizedBox(height: 8.h),
-                            Row(
-                              children: [
-                                Expanded(
-                                  child: _PredictChoiceButton(
-                                    key: Key('predict_natural_$scenarioIndex'),
-                                    label: 'Sounds natural',
-                                    icon: Icons.check_circle_outline_rounded,
-                                    color: AppColors.emerald600,
-                                    isDark: isDark,
-                                    onTap: () => onPredict!(true),
-                                  ),
-                                ),
-                                SizedBox(width: 8.w),
-                                Expanded(
-                                  child: _PredictChoiceButton(
-                                    key: Key('predict_awkward_$scenarioIndex'),
-                                    label: "Doesn't fit",
-                                    icon: Icons.highlight_off_rounded,
-                                    color: AppColors.rose500,
-                                    isDark: isDark,
-                                    onTap: () => onPredict!(false),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ],
-                        )
-                      : Row(
-                          key: ValueKey('prompt_$scenarioIndex'),
-                          children: [
-                            Icon(
-                              Icons.touch_app_rounded,
-                              size: 16.sp,
-                              color: primaryColor,
-                            ),
-                            SizedBox(width: 6.w),
-                            Expanded(
-                              child: Text(
-                                'Tap "${scenario.targetSlotWord}" to try "${scenario.swappedWord}" in this sentence.',
+                SizedBox(width: 8.w),
+                translateAction,
+                SizedBox(width: 8.w),
+                TtsSpeakerButtonWidget(
+                  text: _liveSpokenSentence,
+                  color: primaryColor,
+                  size: 20,
+                ),
+              ],
+            ),
+            SizedBox(height: 12.h),
+            SynonymMakeoverInlineSentence(
+              beforeSentence: scenario.beforeSentence,
+              activeWord: _activeWord,
+              alternateWord: isSwapped
+                  ? scenario.targetSlotWord
+                  : scenario.swappedWord,
+              isSwapped: isSwapped,
+              isNaturalSwap: scenario.isNaturalSwap,
+              primaryColor: primaryColor,
+              textColor: textPrimary,
+              isDark: isDark,
+              slotKey: Key('makeover_slot_$scenarioIndex'),
+              onTapSlot: onToggleSwap,
+            ),
+            ?translatedBanner,
+            SizedBox(height: 10.h),
+            AnimatedSwitcher(
+              duration: VowlMotion.shouldReduceMotion(context)
+                  ? Duration.zero
+                  : VowlMotion.fast,
+              switchInCurve: VowlMotion.defaultCurve,
+              child: isSwapped
+                  ? SynonymMakeoverVerdictBanner(
+                      key: ValueKey('verdict_$scenarioIndex'),
+                      isNatural: scenario.isNaturalSwap,
+                      verdictText: _verdictText,
+                      isDark: isDark,
+                    )
+                  : (onPredict != null
+                        ? Column(
+                            key: ValueKey('prompt_$scenarioIndex'),
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                'Would "${scenario.swappedWord}" fit naturally here?',
                                 style: SynonymUiTokens.supportBody(
                                   color: textMuted,
                                 ),
                               ),
-                            ),
-                          ],
-                        )),
-          ),
-        ],
+                              SizedBox(height: 8.h),
+                              Row(
+                                children: [
+                                  Expanded(
+                                    child: _PredictChoiceButton(
+                                      key: Key(
+                                        'predict_natural_$scenarioIndex',
+                                      ),
+                                      label: 'Sounds natural',
+                                      icon: Icons.check_circle_outline_rounded,
+                                      color: AppColors.emerald600,
+                                      isDark: isDark,
+                                      onTap: () => onPredict!(true),
+                                    ),
+                                  ),
+                                  SizedBox(width: 8.w),
+                                  Expanded(
+                                    child: _PredictChoiceButton(
+                                      key: Key(
+                                        'predict_awkward_$scenarioIndex',
+                                      ),
+                                      label: "Doesn't fit",
+                                      icon: Icons.highlight_off_rounded,
+                                      color: AppColors.rose500,
+                                      isDark: isDark,
+                                      onTap: () => onPredict!(false),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          )
+                        : Row(
+                            key: ValueKey('prompt_$scenarioIndex'),
+                            children: [
+                              Icon(
+                                Icons.touch_app_rounded,
+                                size: 16.sp,
+                                color: primaryColor,
+                              ),
+                              SizedBox(width: 6.w),
+                              Expanded(
+                                child: Text(
+                                  'Tap "${scenario.targetSlotWord}" to try "${scenario.swappedWord}" in this sentence.',
+                                  style: SynonymUiTokens.supportBody(
+                                    color: textMuted,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          )),
+            ),
+          ],
+        ),
       ),
     );
   }

@@ -4,6 +4,7 @@ import 'package:vowl/core/presentation/widgets/tts_speaker_button_widget.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/features/vocabulary/domain/entities/vocabulary_quest.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/models/synonym_phase_models.dart';
+import 'package:vowl/features/vocabulary/synonym_search/presentation/widgets/synonym_translatable_block.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/widgets/synonym_ui_tokens.dart';
 
 /// Mastery target card with CEFR tier, non-spoiler audio, and live blank
@@ -50,131 +51,143 @@ class SynonymGridContextHeader extends StatelessWidget {
         : (quest.collocations?.isNotEmpty == true
               ? 'Commonly paired with: ${quest.collocations!.first}'
               : '');
+    final translatableClue =
+        _nonSpoilerAudioText != clueText && clueText.isNotEmpty
+        ? '$_nonSpoilerAudioText\n$clueText'
+        : _nonSpoilerAudioText;
 
-    return Container(
-      width: double.infinity,
-      padding: SynonymUiTokens.cardPadding,
-      decoration: BoxDecoration(
-        color: SynonymUiTokens.cardSurface(isDark),
-        borderRadius: BorderRadius.circular(SynonymUiTokens.cardRadius),
-        border: Border.all(color: SynonymUiTokens.subtleBorder(isDark)),
-        boxShadow: SynonymUiTokens.softCardShadow(isDark),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Row(
-            children: [
-              Expanded(
-                child: Wrap(
-                  spacing: 8.w,
-                  runSpacing: 6.h,
-                  crossAxisAlignment: WrapCrossAlignment.center,
+    return SynonymTranslatableArea(
+      textToTranslate: translatableClue,
+      primaryColor: primaryColor,
+      buttonSize: 18,
+      builder: (context, translateAction, translatedBanner) => Container(
+        width: double.infinity,
+        padding: SynonymUiTokens.cardPadding,
+        decoration: BoxDecoration(
+          color: SynonymUiTokens.cardSurface(isDark),
+          borderRadius: BorderRadius.circular(SynonymUiTokens.cardRadius),
+          border: Border.all(color: SynonymUiTokens.subtleBorder(isDark)),
+          boxShadow: SynonymUiTokens.softCardShadow(isDark),
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              children: [
+                Expanded(
+                  child: Wrap(
+                    spacing: 8.w,
+                    runSpacing: 6.h,
+                    crossAxisAlignment: WrapCrossAlignment.center,
+                    children: [
+                      Container(
+                        padding: SynonymUiTokens.badgePadding,
+                        decoration: BoxDecoration(
+                          color: primaryColor.withValues(
+                            alpha: isDark ? 0.24 : 0.11,
+                          ),
+                          borderRadius: BorderRadius.circular(
+                            SynonymUiTokens.badgeRadius,
+                          ),
+                        ),
+                        child: Text(
+                          'Find synonym • $cefr',
+                          style: SynonymUiTokens.badgeLabel(
+                            color: isDark ? AppColors.slate50 : primaryColor,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                      ),
+                      Text(
+                        quest.word ?? '',
+                        style: SynonymUiTokens.displayWord(
+                          color: SynonymUiTokens.primaryText(isDark),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(width: 8.w),
+                translateAction,
+                SizedBox(width: 6.w),
+                TtsSpeakerButtonWidget(
+                  key: const Key('mastery_nonspoiler_tts'),
+                  text: _nonSpoilerAudioText,
+                  color: primaryColor,
+                  size: 20,
+                ),
+              ],
+            ),
+            if (clueText.isNotEmpty) ...[
+              SizedBox(height: 10.h),
+              _ContextClueWithLiveSlot(
+                clueText: clueText,
+                targetLength: normalizedTarget.length,
+                currentSpelled: currentSpelledWord,
+                hideLength:
+                    hideLengthUntilHint &&
+                    !isHintActive &&
+                    currentSpelledWord.isEmpty,
+                primaryColor: primaryColor,
+                isDark: isDark,
+              ),
+            ] else ...[
+              SizedBox(height: 10.h),
+              if (hideLengthUntilHint &&
+                  !isHintActive &&
+                  currentSpelledWord.isEmpty)
+                _RecallLengthHiddenPill(
+                  primaryColor: primaryColor,
+                  isDark: isDark,
+                )
+              else
+                _LiveLetterSlotsRow(
+                  targetLength: normalizedTarget.length,
+                  currentSpelled: currentSpelledWord,
+                  primaryColor: primaryColor,
+                  isDark: isDark,
+                ),
+            ],
+            if (isHintActive && hintText.isNotEmpty) ...[
+              SizedBox(height: 10.h),
+              Container(
+                width: double.infinity,
+                padding: SynonymUiTokens.innerPanelPadding,
+                decoration: BoxDecoration(
+                  color: AppColors.amber500.withValues(
+                    alpha: isDark ? 0.20 : 0.10,
+                  ),
+                  borderRadius: BorderRadius.circular(
+                    SynonymUiTokens.controlRadius,
+                  ),
+                  border: Border.all(
+                    color: AppColors.amber500.withValues(alpha: 0.45),
+                  ),
+                ),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Container(
-                      padding: SynonymUiTokens.badgePadding,
-                      decoration: BoxDecoration(
-                        color: primaryColor.withValues(
-                          alpha: isDark ? 0.24 : 0.11,
-                        ),
-                        borderRadius: BorderRadius.circular(
-                          SynonymUiTokens.badgeRadius,
-                        ),
-                      ),
-                      child: Text(
-                        'Find synonym • $cefr',
-                        style: SynonymUiTokens.badgeLabel(
-                          color: isDark ? AppColors.slate50 : primaryColor,
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
+                    Icon(
+                      Icons.lightbulb_rounded,
+                      size: 16.sp,
+                      color: isDark ? AppColors.amber400 : AppColors.amber600,
                     ),
-                    Text(
-                      quest.word ?? '',
-                      style: SynonymUiTokens.displayWord(
-                        color: SynonymUiTokens.primaryText(isDark),
+                    SizedBox(width: 8.w),
+                    Expanded(
+                      child: Text(
+                        hintText,
+                        style: SynonymUiTokens.supportBody(
+                          color: SynonymUiTokens.primaryText(isDark),
+                        ),
                       ),
                     ),
                   ],
                 ),
               ),
-              SizedBox(width: 8.w),
-              TtsSpeakerButtonWidget(
-                key: const Key('mastery_nonspoiler_tts'),
-                text: _nonSpoilerAudioText,
-                color: primaryColor,
-                size: 20,
-              ),
             ],
-          ),
-          if (clueText.isNotEmpty) ...[
-            SizedBox(height: 10.h),
-            _ContextClueWithLiveSlot(
-              clueText: clueText,
-              targetLength: normalizedTarget.length,
-              currentSpelled: currentSpelledWord,
-              hideLength:
-                  hideLengthUntilHint &&
-                  !isHintActive &&
-                  currentSpelledWord.isEmpty,
-              primaryColor: primaryColor,
-              isDark: isDark,
-            ),
-          ] else ...[
-            SizedBox(height: 10.h),
-            if (hideLengthUntilHint &&
-                !isHintActive &&
-                currentSpelledWord.isEmpty)
-              _RecallLengthHiddenPill(
-                primaryColor: primaryColor,
-                isDark: isDark,
-              )
-            else
-              _LiveLetterSlotsRow(
-                targetLength: normalizedTarget.length,
-                currentSpelled: currentSpelledWord,
-                primaryColor: primaryColor,
-                isDark: isDark,
-              ),
+            ?translatedBanner,
           ],
-          if (isHintActive && hintText.isNotEmpty) ...[
-            SizedBox(height: 10.h),
-            Container(
-              width: double.infinity,
-              padding: SynonymUiTokens.innerPanelPadding,
-              decoration: BoxDecoration(
-                color: AppColors.amber500.withValues(
-                  alpha: isDark ? 0.20 : 0.10,
-                ),
-                borderRadius: BorderRadius.circular(
-                  SynonymUiTokens.controlRadius,
-                ),
-                border: Border.all(
-                  color: AppColors.amber500.withValues(alpha: 0.45),
-                ),
-              ),
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Icon(
-                    Icons.lightbulb_rounded,
-                    size: 16.sp,
-                    color: isDark ? AppColors.amber400 : AppColors.amber600,
-                  ),
-                  SizedBox(width: 8.w),
-                  Expanded(
-                    child: Text(
-                      hintText,
-                      style: SynonymUiTokens.supportBody(
-                        color: SynonymUiTokens.primaryText(isDark),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ],
-        ],
+        ),
       ),
     );
   }

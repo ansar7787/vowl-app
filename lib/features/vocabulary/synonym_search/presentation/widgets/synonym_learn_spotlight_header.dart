@@ -4,6 +4,7 @@ import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/presentation/widgets/tts_speaker_button_widget.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/models/synonym_phase_models.dart';
+import 'package:vowl/features/vocabulary/synonym_search/presentation/widgets/synonym_translatable_block.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/widgets/synonym_ui_tokens.dart';
 
 /// Spotlight banner at the top of Learn Phase displaying the base <-> synonym pair,
@@ -33,146 +34,158 @@ class SynonymLearnSpotlightHeader extends StatelessWidget {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final totalMakeovers = item.makeovers.length;
     final allTested = totalMakeovers > 0 && testedMakeovers >= totalMakeovers;
+    final meaningAndNuance = item.whyDifferent.isNotEmpty
+        ? '${item.coreMeaning}\n\n${item.whyDifferent}'
+        : item.coreMeaning;
 
-    return Container(
-      width: double.infinity,
-      padding: SynonymUiTokens.cardPadding,
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-          colors: isDark
-              ? [primaryColor.withValues(alpha: 0.26), AppColors.slate800]
-              : [primaryColor.withValues(alpha: 0.12), Colors.white],
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
+    return SynonymTranslatableArea(
+      textToTranslate: meaningAndNuance,
+      primaryColor: primaryColor,
+      buttonSize: 20,
+      builder: (context, translateAction, translatedBanner) => Container(
+        width: double.infinity,
+        padding: SynonymUiTokens.cardPadding,
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            colors: isDark
+                ? [primaryColor.withValues(alpha: 0.26), AppColors.slate800]
+                : [primaryColor.withValues(alpha: 0.12), Colors.white],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+          ),
+          borderRadius: BorderRadius.circular(SynonymUiTokens.cardRadius),
+          border: Border.all(
+            color: primaryColor.withValues(alpha: isDark ? 0.45 : 0.25),
+          ),
         ),
-        borderRadius: BorderRadius.circular(SynonymUiTokens.cardRadius),
-        border: Border.all(
-          color: primaryColor.withValues(alpha: isDark ? 0.45 : 0.25),
-        ),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Wrap(
-            spacing: 8.w,
-            runSpacing: 6.h,
-            crossAxisAlignment: WrapCrossAlignment.center,
-            children: [
-              _SpotlightChip(
-                text: '${item.cefr} • ${item.partOfSpeech}',
-                color: primaryColor,
-                isDark: isDark,
-              ),
-              _SpotlightChip(
-                text: 'Pair ${pairIndex + 1} of $totalPairs',
-                color: isDark ? AppColors.slate300 : AppColors.slate700,
-                isDark: isDark,
-              ),
-              _SpotlightChip(
-                text: allTested
-                    ? 'All checked'
-                    : 'Checked $testedMakeovers/$totalMakeovers',
-                color: allTested ? AppColors.emerald600 : primaryColor,
-                isDark: isDark,
-              ),
-              if (totalMakeovers > 0)
-                Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    for (int i = 0; i < totalMakeovers; i++) ...[
-                      Container(
-                        width: 8.w,
-                        height: 8.w,
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          color: i < testedMakeovers
-                              ? (allTested
-                                    ? AppColors.emerald500
-                                    : primaryColor)
-                              : (isDark
-                                    ? AppColors.slate700
-                                    : AppColors.slate300),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Wrap(
+              spacing: 8.w,
+              runSpacing: 6.h,
+              crossAxisAlignment: WrapCrossAlignment.center,
+              children: [
+                _SpotlightChip(
+                  text: '${item.cefr} • ${item.partOfSpeech}',
+                  color: primaryColor,
+                  isDark: isDark,
+                ),
+                _SpotlightChip(
+                  text: 'Pair ${pairIndex + 1} of $totalPairs',
+                  color: isDark ? AppColors.slate300 : AppColors.slate700,
+                  isDark: isDark,
+                ),
+                _SpotlightChip(
+                  text: allTested
+                      ? 'All checked'
+                      : 'Checked $testedMakeovers/$totalMakeovers',
+                  color: allTested ? AppColors.emerald600 : primaryColor,
+                  isDark: isDark,
+                ),
+                if (totalMakeovers > 0)
+                  Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      for (int i = 0; i < totalMakeovers; i++) ...[
+                        Container(
+                          width: 8.w,
+                          height: 8.w,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: i < testedMakeovers
+                                ? (allTested
+                                      ? AppColors.emerald500
+                                      : primaryColor)
+                                : (isDark
+                                      ? AppColors.slate700
+                                      : AppColors.slate300),
+                          ),
+                        ),
+                        if (i < totalMakeovers - 1) SizedBox(width: 4.w),
+                      ],
+                    ],
+                  ),
+                if (onToggleAutoSpeak != null)
+                  _AutoSpeakChip(
+                    enabled: autoSpeak,
+                    primaryColor: primaryColor,
+                    isDark: isDark,
+                    onTap: onToggleAutoSpeak!,
+                  ),
+              ],
+            ),
+            SizedBox(height: 12.h),
+            Row(
+              children: [
+                Expanded(
+                  child: Wrap(
+                    spacing: 8.w,
+                    runSpacing: 4.h,
+                    crossAxisAlignment: WrapCrossAlignment.center,
+                    children: [
+                      Text(
+                        item.baseWord,
+                        style: SynonymUiTokens.displayWord(
+                          color: SynonymUiTokens.primaryText(isDark),
                         ),
                       ),
-                      if (i < totalMakeovers - 1) SizedBox(width: 4.w),
+                      Icon(
+                        Icons.compare_arrows_rounded,
+                        size: 20.sp,
+                        color: primaryColor,
+                      ),
+                      Text(
+                        item.synonym,
+                        style: SynonymUiTokens.displayWord(
+                          color: isDark ? AppColors.indigo400 : primaryColor,
+                        ),
+                      ),
                     ],
-                  ],
+                  ),
                 ),
-              if (onToggleAutoSpeak != null)
-                _AutoSpeakChip(
-                  enabled: autoSpeak,
-                  primaryColor: primaryColor,
-                  isDark: isDark,
-                  onTap: onToggleAutoSpeak!,
+                translateAction,
+                SizedBox(width: 8.w),
+                TtsSpeakerButtonWidget(
+                  text:
+                      '${item.baseWord}. ${item.synonym}. ${item.coreMeaning}',
+                  color: primaryColor,
+                  size: 22,
                 ),
-            ],
-          ),
-          SizedBox(height: 12.h),
-          Row(
-            children: [
-              Expanded(
-                child: Wrap(
-                  spacing: 8.w,
-                  runSpacing: 4.h,
-                  crossAxisAlignment: WrapCrossAlignment.center,
-                  children: [
-                    Text(
-                      item.baseWord,
-                      style: SynonymUiTokens.displayWord(
-                        color: SynonymUiTokens.primaryText(isDark),
-                      ),
-                    ),
-                    Icon(
-                      Icons.compare_arrows_rounded,
-                      size: 20.sp,
-                      color: primaryColor,
-                    ),
-                    Text(
-                      item.synonym,
-                      style: SynonymUiTokens.displayWord(
-                        color: isDark ? AppColors.indigo400 : primaryColor,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              TtsSpeakerButtonWidget(
-                text: '${item.baseWord}. ${item.synonym}. ${item.coreMeaning}',
-                color: primaryColor,
-                size: 22,
-              ),
-            ],
-          ),
-          SizedBox(height: 8.h),
-          Text(
-            item.coreMeaning,
-            style: SynonymUiTokens.supportBody(
-              color: SynonymUiTokens.primaryText(isDark),
-              fontWeight: FontWeight.w500,
+              ],
             ),
-          ),
-          if (item.whyDifferent.isNotEmpty) ...[
-            SizedBox(height: 10.h),
-            Container(
-              width: double.infinity,
-              padding: EdgeInsets.all(12.w),
-              decoration: BoxDecoration(
-                color: isDark
-                    ? AppColors.slate900.withValues(alpha: 0.72)
-                    : Colors.white.withValues(alpha: 0.88),
-                borderRadius: BorderRadius.circular(
-                  SynonymUiTokens.controlRadius,
-                ),
-              ),
-              child: Text(
-                item.whyDifferent,
-                style: SynonymUiTokens.supportBody(
-                  color: SynonymUiTokens.secondaryText(isDark),
-                ),
+            SizedBox(height: 8.h),
+            Text(
+              item.coreMeaning,
+              style: SynonymUiTokens.supportBody(
+                color: SynonymUiTokens.primaryText(isDark),
+                fontWeight: FontWeight.w500,
               ),
             ),
+            if (item.whyDifferent.isNotEmpty) ...[
+              SizedBox(height: 10.h),
+              Container(
+                width: double.infinity,
+                padding: EdgeInsets.all(12.w),
+                decoration: BoxDecoration(
+                  color: isDark
+                      ? AppColors.slate900.withValues(alpha: 0.72)
+                      : Colors.white.withValues(alpha: 0.88),
+                  borderRadius: BorderRadius.circular(
+                    SynonymUiTokens.controlRadius,
+                  ),
+                ),
+                child: Text(
+                  item.whyDifferent,
+                  style: SynonymUiTokens.supportBody(
+                    color: SynonymUiTokens.secondaryText(isDark),
+                  ),
+                ),
+              ),
+            ],
+            ?translatedBanner,
           ],
-        ],
+        ),
       ),
     );
   }

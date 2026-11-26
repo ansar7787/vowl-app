@@ -4,6 +4,7 @@ import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/presentation/widgets/tts_speaker_button_widget.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
+import 'package:vowl/features/vocabulary/synonym_search/presentation/widgets/synonym_translatable_block.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/widgets/synonym_ui_tokens.dart';
 
 /// Shared CEFR + activity tag header for Practice exercises.
@@ -147,36 +148,54 @@ class SynonymPracticeBanner extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: double.infinity,
-      padding: SynonymUiTokens.innerPanelPadding,
-      decoration: BoxDecoration(
-        color: accent.withValues(alpha: isDark ? 0.20 : 0.09),
-        borderRadius: BorderRadius.circular(SynonymUiTokens.controlRadius),
-        border: Border.all(color: accent.withValues(alpha: 0.4)),
-      ),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Icon(icon, size: 18.sp, color: isDark ? AppColors.slate50 : accent),
-          SizedBox(width: 8.w),
-          Expanded(
-            child: Text(
-              text,
-              style: SynonymUiTokens.supportBody(
-                color: SynonymUiTokens.primaryText(isDark),
-              ),
+    final activeAccent = primaryColor ?? accent;
+    return SynonymTranslatableArea(
+      textToTranslate: text,
+      primaryColor: activeAccent,
+      buttonSize: 16,
+      builder: (context, translateAction, translatedBanner) => Container(
+        width: double.infinity,
+        padding: SynonymUiTokens.innerPanelPadding,
+        decoration: BoxDecoration(
+          color: accent.withValues(alpha: isDark ? 0.20 : 0.09),
+          borderRadius: BorderRadius.circular(SynonymUiTokens.controlRadius),
+          border: Border.all(color: accent.withValues(alpha: 0.4)),
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Icon(
+                  icon,
+                  size: 18.sp,
+                  color: isDark ? AppColors.slate50 : accent,
+                ),
+                SizedBox(width: 8.w),
+                Expanded(
+                  child: Text(
+                    text,
+                    style: SynonymUiTokens.supportBody(
+                      color: SynonymUiTokens.primaryText(isDark),
+                    ),
+                  ),
+                ),
+                SizedBox(width: 6.w),
+                translateAction,
+                if (ttsText != null && primaryColor != null) ...[
+                  SizedBox(width: 6.w),
+                  TtsSpeakerButtonWidget(
+                    text: ttsText!,
+                    color: primaryColor!,
+                    size: 18,
+                  ),
+                ],
+              ],
             ),
-          ),
-          if (ttsText != null && primaryColor != null) ...[
-            SizedBox(width: 8.w),
-            TtsSpeakerButtonWidget(
-              text: ttsText!,
-              color: primaryColor!,
-              size: 18,
-            ),
+            ?translatedBanner,
           ],
-        ],
+        ),
       ),
     );
   }

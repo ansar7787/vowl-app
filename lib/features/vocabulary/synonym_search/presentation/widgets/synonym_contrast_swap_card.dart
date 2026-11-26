@@ -6,6 +6,7 @@ import 'package:vowl/core/presentation/widgets/tts_speaker_button_widget.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/models/synonym_phase_models.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/widgets/synonym_practice_shared.dart';
+import 'package:vowl/features/vocabulary/synonym_search/presentation/widgets/synonym_translatable_block.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/widgets/synonym_ui_tokens.dart';
 
 /// Practice card that asks the learner to place paired synonyms into the
@@ -75,9 +76,31 @@ class SynonymContrastSwapCard extends StatelessWidget {
             ),
           ),
           SizedBox(height: 10.h),
-          Text(
-            exercise.prompt,
-            style: SynonymUiTokens.sectionHeading(color: promptColor),
+          SynonymTranslatableArea(
+            textToTranslate: exercise.prompt,
+            primaryColor: primaryColor,
+            buttonSize: 16,
+            builder: (context, translateAction, translatedBanner) => Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Expanded(
+                      child: Text(
+                        exercise.prompt,
+                        style: SynonymUiTokens.sectionHeading(
+                          color: promptColor,
+                        ),
+                      ),
+                    ),
+                    SizedBox(width: 6.w),
+                    translateAction,
+                  ],
+                ),
+                ?translatedBanner,
+              ],
+            ),
           ),
           SizedBox(height: 14.h),
           Center(
@@ -199,117 +222,142 @@ class _ContrastSlotCard extends StatelessWidget {
         ? _tokenize(parts.sublist(1).join(' '))
         : const [];
     final textColor = SynonymUiTokens.primaryText(isDark);
+    final translatableSentence = isSolved
+        ? slot.sentenceWithBlank.replaceAll('___', slot.correctWord)
+        : slot.sentenceWithBlank;
 
-    return Container(
-      width: double.infinity,
-      padding: SynonymUiTokens.cardPadding,
-      decoration: BoxDecoration(
-        color: SynonymUiTokens.cardSurface(isDark),
-        borderRadius: BorderRadius.circular(SynonymUiTokens.cardRadius),
-        border: Border.all(
-          color: borderColor,
-          width: (isFocused || hasChecked) ? 1.5 : 1.0,
-        ),
-        boxShadow: SynonymUiTokens.softCardShadow(isDark),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Row(
-            children: [
-              Container(
-                padding: SynonymUiTokens.badgePadding,
-                decoration: BoxDecoration(
-                  color: primaryColor.withValues(alpha: isDark ? 0.22 : 0.10),
-                  borderRadius: BorderRadius.circular(
-                    SynonymUiTokens.badgeRadius,
-                  ),
-                ),
-                child: Text(
-                  slot.contextTag,
-                  style: SynonymUiTokens.badgeLabel(
-                    color: isDark ? AppColors.slate100 : primaryColor,
-                    fontWeight: FontWeight.w600,
-                  ),
-                ),
-              ),
-              const Spacer(),
-              if (isSolved)
-                TtsSpeakerButtonWidget(
-                  text: slot.sentenceWithBlank.replaceAll(
-                    '___',
-                    slot.correctWord,
-                  ),
-                  color: primaryColor,
-                  size: 18,
-                ),
-            ],
+    return SynonymTranslatableArea(
+      textToTranslate: translatableSentence,
+      primaryColor: primaryColor,
+      buttonSize: 16,
+      builder: (context, translateAction, translatedBanner) => Container(
+        width: double.infinity,
+        padding: SynonymUiTokens.cardPadding,
+        decoration: BoxDecoration(
+          color: SynonymUiTokens.cardSurface(isDark),
+          borderRadius: BorderRadius.circular(SynonymUiTokens.cardRadius),
+          border: Border.all(
+            color: borderColor,
+            width: (isFocused || hasChecked) ? 1.5 : 1.0,
           ),
-          SizedBox(height: 10.h),
-          Wrap(
-            crossAxisAlignment: WrapCrossAlignment.center,
-            spacing: 5.w,
-            runSpacing: 8.h,
-            children: [
-              for (final w in beforeWords)
-                Text(w, style: SynonymUiTokens.sentenceBody(color: textColor)),
-              Semantics(
-                button: true,
-                label: assignedWord == null
-                    ? 'Blank ${slotIndex + 1}, empty, tap to select'
-                    : 'Blank ${slotIndex + 1}, $assignedWord, tap to clear',
-                child: ScaleButton(
-                  key: Key('contrast_slot_$slotIndex'),
-                  debounceDuration: const Duration(milliseconds: 120),
-                  onTap: onTap,
-                  child: ConstrainedBox(
-                    constraints: const BoxConstraints(
-                      minHeight: 48,
-                      minWidth: 78,
-                    ),
+          boxShadow: SynonymUiTokens.softCardShadow(isDark),
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              children: [
+                Expanded(
+                  child: Align(
+                    alignment: Alignment.centerLeft,
                     child: Container(
-                      padding: EdgeInsets.symmetric(
-                        horizontal: 14.w,
-                        vertical: 10.h,
-                      ),
+                      padding: SynonymUiTokens.badgePadding,
                       decoration: BoxDecoration(
-                        color: slotCorrect
-                            ? AppColors.emerald500.withValues(alpha: 0.14)
-                            : slotWrong
-                            ? AppColors.rose500.withValues(alpha: 0.14)
-                            : primaryColor.withValues(
-                                alpha: isFocused ? 0.16 : 0.08,
-                              ),
-                        borderRadius: BorderRadius.circular(
-                          SynonymUiTokens.controlRadius,
+                        color: primaryColor.withValues(
+                          alpha: isDark ? 0.22 : 0.10,
                         ),
-                        border: Border.all(
-                          color: borderColor,
-                          width: isFocused ? 1.5 : 1.0,
+                        borderRadius: BorderRadius.circular(
+                          SynonymUiTokens.badgeRadius,
                         ),
                       ),
                       child: Text(
-                        assignedWord ?? '______',
-                        textAlign: TextAlign.center,
-                        style: assignedWord == null
-                            ? SynonymUiTokens.sentenceBody(
-                                color: isDark
-                                    ? AppColors.slate400
-                                    : AppColors.slate500,
-                              )
-                            : SynonymUiTokens.interactiveWord(
-                                color: SynonymUiTokens.primaryText(isDark),
-                              ),
+                        slot.contextTag,
+                        style: SynonymUiTokens.badgeLabel(
+                          color: isDark ? AppColors.slate100 : primaryColor,
+                          fontWeight: FontWeight.w600,
+                        ),
                       ),
                     ),
                   ),
                 ),
-              ),
-              for (final w in afterWords)
-                Text(w, style: SynonymUiTokens.sentenceBody(color: textColor)),
-            ],
-          ),
-        ],
+                SizedBox(width: 8.w),
+                translateAction,
+                if (isSolved) ...[
+                  SizedBox(width: 6.w),
+                  TtsSpeakerButtonWidget(
+                    text: slot.sentenceWithBlank.replaceAll(
+                      '___',
+                      slot.correctWord,
+                    ),
+                    color: primaryColor,
+                    size: 18,
+                  ),
+                ],
+              ],
+            ),
+            SizedBox(height: 10.h),
+            Wrap(
+              crossAxisAlignment: WrapCrossAlignment.center,
+              spacing: 5.w,
+              runSpacing: 8.h,
+              children: [
+                for (final w in beforeWords)
+                  Text(
+                    w,
+                    style: SynonymUiTokens.sentenceBody(color: textColor),
+                  ),
+                Semantics(
+                  button: true,
+                  label: assignedWord == null
+                      ? 'Blank ${slotIndex + 1}, empty, tap to select'
+                      : 'Blank ${slotIndex + 1}, $assignedWord, tap to clear',
+                  child: ScaleButton(
+                    key: Key('contrast_slot_$slotIndex'),
+                    debounceDuration: const Duration(milliseconds: 120),
+                    onTap: onTap,
+                    child: ConstrainedBox(
+                      constraints: const BoxConstraints(
+                        minHeight: 48,
+                        minWidth: 78,
+                      ),
+                      child: Container(
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 14.w,
+                          vertical: 10.h,
+                        ),
+                        decoration: BoxDecoration(
+                          color: slotCorrect
+                              ? AppColors.emerald500.withValues(alpha: 0.14)
+                              : slotWrong
+                              ? AppColors.rose500.withValues(alpha: 0.14)
+                              : primaryColor.withValues(
+                                  alpha: isFocused ? 0.16 : 0.08,
+                                ),
+                          borderRadius: BorderRadius.circular(
+                            SynonymUiTokens.controlRadius,
+                          ),
+                          border: Border.all(
+                            color: borderColor,
+                            width: isFocused ? 1.5 : 1.0,
+                          ),
+                        ),
+                        child: Text(
+                          assignedWord ?? '______',
+                          textAlign: TextAlign.center,
+                          style: assignedWord == null
+                              ? SynonymUiTokens.sentenceBody(
+                                  color: isDark
+                                      ? AppColors.slate400
+                                      : AppColors.slate500,
+                                )
+                              : SynonymUiTokens.interactiveWord(
+                                  color: SynonymUiTokens.primaryText(isDark),
+                                ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                for (final w in afterWords)
+                  Text(
+                    w,
+                    style: SynonymUiTokens.sentenceBody(color: textColor),
+                  ),
+              ],
+            ),
+            ?translatedBanner,
+          ],
+        ),
       ),
     );
   }

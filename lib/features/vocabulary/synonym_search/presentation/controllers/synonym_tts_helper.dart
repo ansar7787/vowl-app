@@ -1,12 +1,13 @@
+import 'dart:async';
+
 import 'package:vowl/core/presentation/widgets/tts_speaker_button_widget.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/tts_service.dart';
 
 /// Defensive wrapper around the DI-registered [TtsService] singleton.
 ///
-/// Ensures Learn, Practice, and Mastery screens share the app's configured
-/// [TtsService] instance (instead of spawning new native engines) and stops
-/// any active [TtsSpeakerButtonWidget] session cleanly before speaking or leaving.
+/// Pre-warms both the default English voice and any translated native-language
+/// locale asynchronously so budget devices avoid first-tap synthesis stalls.
 class SynonymTtsHelper {
   const SynonymTtsHelper._();
 
@@ -18,9 +19,19 @@ class SynonymTtsHelper {
     }
   }
 
-  static void preWarm() {
+  /// Pre-warms the native TTS engine non-blockingly for [locale].
+  static void preWarm({String? locale = 'en-US'}) {
     try {
-      _resolve()?.preWarm();
+      final service = _resolve();
+      if (service == null) return;
+      final normalized = locale?.trim();
+      unawaited(
+        service.preWarm(
+          locale: (normalized != null && normalized.isNotEmpty)
+              ? normalized
+              : 'en-US',
+        ),
+      );
     } catch (_) {}
   }
 
@@ -31,12 +42,12 @@ class SynonymTtsHelper {
     } catch (_) {}
   }
 
-  static void speak(String text) {
+  static void speak(String text, {String? locale}) {
     final trimmed = text.trim();
     if (trimmed.isEmpty) return;
     try {
       TtsSpeakerButtonWidget.stopAll();
-      _resolve()?.speak(trimmed);
+      _resolve()?.speak(trimmed, locale: locale);
     } catch (_) {}
   }
 }

@@ -5,6 +5,7 @@ import 'package:vowl/core/presentation/widgets/tts_speaker_button_widget.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/models/synonym_phase_models.dart';
+import 'package:vowl/features/vocabulary/synonym_search/presentation/widgets/synonym_translatable_block.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/widgets/synonym_ui_tokens.dart';
 
 /// Related synonym chip strip displayed below sentence examples in Learn Phase.
@@ -190,58 +191,71 @@ class _CousinDetailPanel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: double.infinity,
-      padding: SynonymUiTokens.innerPanelPadding,
-      decoration: BoxDecoration(
-        color: primaryColor.withValues(alpha: isDark ? 0.16 : 0.08),
-        borderRadius: BorderRadius.circular(SynonymUiTokens.controlRadius),
-        border: Border.all(color: primaryColor.withValues(alpha: 0.35)),
-      ),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Expanded(
-            child: Column(
+    return SynonymTranslatableArea(
+      textToTranslate: '${cousin.word}. ${cousin.miniContext}',
+      primaryColor: primaryColor,
+      buttonSize: 18,
+      builder: (context, translateAction, translatedBanner) => Container(
+        width: double.infinity,
+        padding: SynonymUiTokens.innerPanelPadding,
+        decoration: BoxDecoration(
+          color: primaryColor.withValues(alpha: isDark ? 0.16 : 0.08),
+          borderRadius: BorderRadius.circular(SynonymUiTokens.controlRadius),
+          border: Border.all(color: primaryColor.withValues(alpha: 0.35)),
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Wrap(
-                  spacing: 8.w,
-                  crossAxisAlignment: WrapCrossAlignment.center,
-                  children: [
-                    Text(
-                      cousin.word,
-                      style: SynonymUiTokens.sectionHeading(
-                        color: SynonymUiTokens.primaryText(isDark),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Wrap(
+                        spacing: 8.w,
+                        crossAxisAlignment: WrapCrossAlignment.center,
+                        children: [
+                          Text(
+                            cousin.word,
+                            style: SynonymUiTokens.sectionHeading(
+                              color: SynonymUiTokens.primaryText(isDark),
+                            ),
+                          ),
+                          if (cousin.ipa.isNotEmpty)
+                            Text(
+                              cousin.ipa,
+                              style: SynonymUiTokens.controlLabel(
+                                color: SynonymUiTokens.mutedText(isDark),
+                                fontWeight: FontWeight.w400,
+                              ),
+                            ),
+                        ],
                       ),
-                    ),
-                    if (cousin.ipa.isNotEmpty)
+                      SizedBox(height: 6.h),
                       Text(
-                        cousin.ipa,
-                        style: SynonymUiTokens.controlLabel(
-                          color: SynonymUiTokens.mutedText(isDark),
-                          fontWeight: FontWeight.w400,
+                        cousin.miniContext,
+                        style: SynonymUiTokens.supportBody(
+                          color: SynonymUiTokens.primaryText(isDark),
                         ),
                       ),
-                  ],
-                ),
-                SizedBox(height: 6.h),
-                Text(
-                  cousin.miniContext,
-                  style: SynonymUiTokens.supportBody(
-                    color: SynonymUiTokens.primaryText(isDark),
+                    ],
                   ),
+                ),
+                SizedBox(width: 8.w),
+                translateAction,
+                SizedBox(width: 6.w),
+                TtsSpeakerButtonWidget(
+                  text: '${cousin.word}. ${cousin.miniContext}',
+                  color: primaryColor,
+                  size: 20,
                 ),
               ],
             ),
-          ),
-          SizedBox(width: 8.w),
-          TtsSpeakerButtonWidget(
-            text: '${cousin.word}. ${cousin.miniContext}',
-            color: primaryColor,
-            size: 20,
-          ),
-        ],
+            ?translatedBanner,
+          ],
+        ),
       ),
     );
   }
