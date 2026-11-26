@@ -17,8 +17,8 @@ import 'package:vowl/features/vocabulary/synonym_search/presentation/controllers
 import 'package:vowl/features/vocabulary/synonym_search/presentation/models/synonym_phase_models.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/widgets/synonym_cousin_preview_strip.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/widgets/synonym_learn_spotlight_header.dart';
+import 'package:vowl/features/vocabulary/synonym_search/presentation/widgets/synonym_learn_status_banner.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/widgets/synonym_makeover_card.dart';
-import 'package:vowl/features/vocabulary/synonym_search/presentation/widgets/synonym_ui_tokens.dart';
 
 /// Learn Phase for Synonym Search.
 ///
@@ -51,6 +51,7 @@ class _SynonymSearchLearnScreenState extends State<SynonymSearchLearnScreen> {
 
   bool _isLoading = true;
   bool _hasStartedLoad = false;
+  bool _showGateReminder = false;
   String? _errorMessage;
   Map<String, int> _reviewLevelsById = const {};
 
@@ -95,7 +96,7 @@ class _SynonymSearchLearnScreenState extends State<SynonymSearchLearnScreen> {
         bundle: widget.assetBundle ?? DefaultAssetBundle.of(context),
       );
       final items = await dataSource.loadLearnItems(widget.level);
-      final weakPairs = await SynonymWeakWordsStore.loadWeakPairs(
+      final weakPairs = await SynonymWeakWordsStore.loadDueWeakPairs(
         excludeLevel: widget.level,
         limit: 1,
       );
@@ -165,6 +166,7 @@ class _SynonymSearchLearnScreenState extends State<SynonymSearchLearnScreen> {
 
   void _handleToggleMakeover(int scenarioIndex) {
     _controller.toggleMakeoverSwap(scenarioIndex);
+    if (_showGateReminder) setState(() => _showGateReminder = false);
     _maybeSpeakMakeover(scenarioIndex);
   }
 
@@ -173,6 +175,7 @@ class _SynonymSearchLearnScreenState extends State<SynonymSearchLearnScreen> {
       scenarioIndex,
       predictedNatural: predictedNatural,
     );
+    if (_showGateReminder) setState(() => _showGateReminder = false);
     _maybeSpeakMakeover(scenarioIndex);
   }
 
@@ -319,6 +322,12 @@ class _SynonymSearchLearnScreenState extends State<SynonymSearchLearnScreen> {
               ? 'Check 1 Example'
               : (idx < total - 1 ? 'Next Pair' : 'Start Practice'),
           isActionEnabled: canContinue,
+          onDisabledActionTap: () {
+            if (!_showGateReminder) {
+              setState(() => _showGateReminder = true);
+            }
+            _scrollToTop();
+          },
           onComplete: _handleCompleteOrNext,
           child: SingleChildScrollView(
             controller: _scrollController,
@@ -333,21 +342,20 @@ class _SynonymSearchLearnScreenState extends State<SynonymSearchLearnScreen> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 if (reviewLevel != null) ...[
-                  Container(
-                    padding: SynonymUiTokens.badgePadding,
-                    decoration: BoxDecoration(
-                      color: theme.primaryColor.withValues(alpha: 0.12),
-                      borderRadius: BorderRadius.circular(
-                        SynonymUiTokens.badgeRadius,
-                      ),
-                    ),
-                    child: Text(
-                      'Review from Level $reviewLevel',
-                      style: SynonymUiTokens.badgeLabel(
-                        color: theme.primaryColor,
-                        fontWeight: FontWeight.w600,
-                      ),
-                    ),
+                  SynonymLearnStatusBanner(
+                    icon: Icons.history_rounded,
+                    message: 'Review from Level $reviewLevel',
+                    color: theme.primaryColor,
+                  ),
+                  SizedBox(height: 8.h),
+                ],
+                if (_showGateReminder && !canContinue) ...[
+                  SynonymLearnStatusBanner(
+                    key: const Key('learn_gate_helper_cue'),
+                    icon: Icons.touch_app_rounded,
+                    message:
+                        'Tap "Sounds natural" or "Doesn\'t fit" on one sentence first.',
+                    color: theme.primaryColor,
                   ),
                   SizedBox(height: 8.h),
                 ],

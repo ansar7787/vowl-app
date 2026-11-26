@@ -520,5 +520,57 @@ void main() {
         await tester.pump(const Duration(milliseconds: 300));
       },
     );
+
+    testWidgets(
+      'displays collocation pairings and word scale inside feedback card',
+      (tester) async {
+        const richQuest = VocabularyQuest(
+          id: 'VOC_SYNONYMSEARCH_L1_Q1_RICH',
+          type: QuestType.vocabulary,
+          subtype: GameSubtype.synonymSearch,
+          instruction: 'Find and trace the synonym.',
+          word: 'Big',
+          definition: 'Of considerable size, amount, or scale.',
+          synonym: 'Large',
+          correctAnswer: 'Large',
+          correctAnswerIndex: 0,
+          options: ['Large', 'Grand', 'Wide', 'Heavy'],
+          contextSentence: 'The elephant is a very ___ animal.',
+          explanation: "'Large' fits measurable scale cleanly.",
+          gradientScale: ['Big', 'Large', 'Huge', 'Massive'],
+          collocations: ['large amount', 'large crowd'],
+          wrongCollocations: ['large mistake'],
+          difficulty: 1,
+        );
+        const answeredState = VocabularyLoaded(
+          quests: [richQuest],
+          currentIndex: 0,
+          livesRemaining: 3,
+          wrongCount: 0,
+          hintUsed: false,
+          hintsAvailable: 2,
+          answerStatus: AnswerStatus.correct,
+        );
+        when(() => mockVocabularyBloc.state).thenReturn(answeredState);
+        whenListen(
+          mockVocabularyBloc,
+          streamController.stream,
+          initialState: answeredState,
+        );
+
+        await pumpMastery(tester, level: 1);
+
+        expect(
+          find.byKey(const Key('synonym_mastery_feedback_content')),
+          findsOneWidget,
+        );
+        expect(find.text('large amount'), findsOneWidget);
+        expect(find.text('Not: large mistake'), findsOneWidget);
+        expect(find.text('Huge'), findsOneWidget);
+
+        await tester.pumpWidget(const SizedBox.shrink());
+        await tester.pump(const Duration(milliseconds: 300));
+      },
+    );
   });
 }

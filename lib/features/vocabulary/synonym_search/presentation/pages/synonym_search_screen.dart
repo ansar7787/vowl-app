@@ -18,6 +18,7 @@ import 'package:vowl/features/vocabulary/synonym_search/presentation/controllers
 import 'package:vowl/features/vocabulary/synonym_search/presentation/controllers/synonym_tts_helper.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/widgets/synonym_context_replace_card.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/widgets/synonym_grid_context_header.dart';
+import 'package:vowl/features/vocabulary/synonym_search/presentation/widgets/synonym_mastery_feedback_content.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/widgets/synonym_streak_timer_bar.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/widgets/synonym_word_grid_board.dart';
 
@@ -242,6 +243,11 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
               hasStage2: false,
               useScrolling: true,
               customHintText: quest?.hint,
+              customFeedbackBuilder: (_, feedbackQuest, _) =>
+                  SynonymMasteryFeedbackContent(
+                    quest: feedbackQuest,
+                    primaryColor: theme.primaryColor,
+                  ),
               onContinue: () {
                 SynonymTtsHelper.stopAll();
                 dispatchNextQuestion();

@@ -46,6 +46,9 @@ class LearnPhaseScaffold extends StatelessWidget {
   /// Optional label for the previous button. Defaults to null (renders back icon).
   final String? previousLabel;
 
+  /// Optional callback invoked if the user taps the footer CTA while gated.
+  final VoidCallback? onDisabledActionTap;
+
   const LearnPhaseScaffold({
     super.key,
     required this.title,
@@ -59,6 +62,7 @@ class LearnPhaseScaffold extends StatelessWidget {
     this.actions,
     this.onPrevious,
     this.previousLabel,
+    this.onDisabledActionTap,
   });
 
   @override
@@ -109,157 +113,180 @@ class LearnPhaseScaffold extends StatelessWidget {
             ),
             onPressed: handleExit,
           ),
-        title: Column(
-          children: [
-            Container(
-              padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 2.h),
-              decoration: BoxDecoration(
-                color: AppColors.indigo500.withValues(alpha: 0.15),
-                borderRadius: BorderRadius.circular(12.r),
-                border: Border.all(
-                  color: AppColors.indigo500.withValues(alpha: 0.3),
-                  width: 1,
-                ),
-              ),
-              child: FittedBox(
-                fit: BoxFit.scaleDown,
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Text('🧠', style: TextStyle(fontSize: 11.sp)),
-                    SizedBox(width: 4.w),
-                    Text(
-                      'LEARN PHASE • LEVEL $level • $cefr',
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 10.sp,
-                        fontWeight: FontWeight.w800,
-                        color: AppColors.indigo500,
-                        letterSpacing: 1.0,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            SizedBox(height: 2.h),
-            Text(
-              title,
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 15.sp,
-                fontWeight: FontWeight.w700,
-                color: isDark ? Colors.white : AppColors.slate900,
-              ),
-              maxLines: 1,
-              overflow: TextOverflow.ellipsis,
-            ),
-          ],
-        ),
-        centerTitle: true,
-      ),
-      body: SafeArea(
-        child: Column(
-          children: [
-            Expanded(child: child),
-            // Bottom Action Bar
-            Container(
-              padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 12.h),
-              decoration: BoxDecoration(
-                color: isDark ? AppColors.slate900 : Colors.white,
-                border: Border(
-                  top: BorderSide(
-                    color: isDark ? AppColors.slate800 : AppColors.slate200,
+          title: Column(
+            children: [
+              Container(
+                padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 2.h),
+                decoration: BoxDecoration(
+                  color: AppColors.indigo500.withValues(alpha: 0.15),
+                  borderRadius: BorderRadius.circular(12.r),
+                  border: Border.all(
+                    color: AppColors.indigo500.withValues(alpha: 0.3),
                     width: 1,
                   ),
                 ),
-              ),
-              child: SizedBox(
-                width: double.infinity,
-                height: 52.h,
-                child: onPrevious != null
-                    ? Row(
-                        children: [
-                          SizedBox(
-                            width: 52.h,
-                            height: 52.h,
-                            child: OutlinedButton(
-                              onPressed: onPrevious,
-                              style: OutlinedButton.styleFrom(
-                                padding: EdgeInsets.zero,
-                                foregroundColor: isDark
-                                    ? AppColors.slate300
-                                    : AppColors.slate700,
-                                side: BorderSide(
-                                  color: isDark
-                                      ? AppColors.slate700
-                                      : AppColors.slate300,
-                                  width: 1.5,
-                                ),
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(16.r),
-                                ),
-                              ),
-                              child: Icon(Icons.arrow_back_rounded, size: 22.r),
-                            ),
-                          ),
-                          SizedBox(width: 12.w),
-                          Expanded(
-                            child: ElevatedButton(
-                              onPressed: isActionEnabled ? onComplete : null,
-                              style: ElevatedButton.styleFrom(
-                                backgroundColor: AppColors.indigo500,
-                                foregroundColor: Colors.white,
-                                disabledBackgroundColor: isDark
-                                    ? AppColors.slate800
-                                    : AppColors.slate200,
-                                elevation: 0,
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(16.r),
-                                ),
-                              ),
-                              child: Text(
-                                actionLabel,
-                                style: TextStyle(
-                                  fontFamily: 'Outfit',
-                                  fontSize: 16.sp,
-                                  fontWeight: FontWeight.w700,
-                                  letterSpacing: 0.5,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ],
-                      )
-                    : ElevatedButton(
-                        onPressed: isActionEnabled ? onComplete : null,
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: AppColors.indigo500,
-                          foregroundColor: Colors.white,
-                          disabledBackgroundColor: isDark
-                              ? AppColors.slate800
-                              : AppColors.slate200,
-                          elevation: 0,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(16.r),
-                          ),
-                        ),
-                        child: Text(
-                          actionLabel,
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 16.sp,
-                            fontWeight: FontWeight.w700,
-                            letterSpacing: 0.5,
-                          ),
+                child: FittedBox(
+                  fit: BoxFit.scaleDown,
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Text('🧠', style: TextStyle(fontSize: 11.sp)),
+                      SizedBox(width: 4.w),
+                      Text(
+                        'LEARN PHASE • LEVEL $level • $cefr',
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 10.sp,
+                          fontWeight: FontWeight.w800,
+                          color: AppColors.indigo500,
+                          letterSpacing: 1.0,
                         ),
                       ),
+                    ],
+                  ),
+                ),
               ),
-            ),
-          ],
+              SizedBox(height: 2.h),
+              Text(
+                title,
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 15.sp,
+                  fontWeight: FontWeight.w700,
+                  color: isDark ? Colors.white : AppColors.slate900,
+                ),
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+              ),
+            ],
+          ),
+          centerTitle: true,
+        ),
+        body: SafeArea(
+          child: Column(
+            children: [
+              Expanded(child: child),
+              // Bottom Action Bar
+              Container(
+                padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 12.h),
+                decoration: BoxDecoration(
+                  color: isDark ? AppColors.slate900 : Colors.white,
+                  border: Border(
+                    top: BorderSide(
+                      color: isDark ? AppColors.slate800 : AppColors.slate200,
+                      width: 1,
+                    ),
+                  ),
+                ),
+                child: SizedBox(
+                  width: double.infinity,
+                  height: 52.h,
+                  child: onPrevious != null
+                      ? Row(
+                          children: [
+                            SizedBox(
+                              width: 52.h,
+                              height: 52.h,
+                              child: OutlinedButton(
+                                onPressed: onPrevious,
+                                style: OutlinedButton.styleFrom(
+                                  padding: EdgeInsets.zero,
+                                  foregroundColor: isDark
+                                      ? AppColors.slate300
+                                      : AppColors.slate700,
+                                  side: BorderSide(
+                                    color: isDark
+                                        ? AppColors.slate700
+                                        : AppColors.slate300,
+                                    width: 1.5,
+                                  ),
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(16.r),
+                                  ),
+                                ),
+                                child: Icon(
+                                  Icons.arrow_back_rounded,
+                                  size: 22.r,
+                                ),
+                              ),
+                            ),
+                            SizedBox(width: 12.w),
+                            Expanded(
+                              child: ElevatedButton(
+                                onPressed: isActionEnabled
+                                    ? onComplete
+                                    : onDisabledActionTap,
+                                style: ElevatedButton.styleFrom(
+                                  backgroundColor: isActionEnabled
+                                      ? AppColors.indigo500
+                                      : (isDark
+                                            ? AppColors.slate800
+                                            : AppColors.slate200),
+                                  foregroundColor: isActionEnabled
+                                      ? Colors.white
+                                      : (isDark
+                                            ? AppColors.slate300
+                                            : AppColors.slate600),
+                                  disabledBackgroundColor: isDark
+                                      ? AppColors.slate800
+                                      : AppColors.slate200,
+                                  elevation: 0,
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(16.r),
+                                  ),
+                                ),
+                                child: Text(
+                                  actionLabel,
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 16.sp,
+                                    fontWeight: FontWeight.w700,
+                                    letterSpacing: 0.5,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        )
+                      : ElevatedButton(
+                          onPressed: isActionEnabled
+                              ? onComplete
+                              : onDisabledActionTap,
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: isActionEnabled
+                                ? AppColors.indigo500
+                                : (isDark
+                                      ? AppColors.slate800
+                                      : AppColors.slate200),
+                            foregroundColor: isActionEnabled
+                                ? Colors.white
+                                : (isDark
+                                      ? AppColors.slate300
+                                      : AppColors.slate600),
+                            disabledBackgroundColor: isDark
+                                ? AppColors.slate800
+                                : AppColors.slate200,
+                            elevation: 0,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(16.r),
+                            ),
+                          ),
+                          child: Text(
+                            actionLabel,
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 16.sp,
+                              fontWeight: FontWeight.w700,
+                              letterSpacing: 0.5,
+                            ),
+                          ),
+                        ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
-    ),
-  );
-}
+    );
+  }
 }

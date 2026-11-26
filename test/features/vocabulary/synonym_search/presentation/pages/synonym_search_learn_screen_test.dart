@@ -354,6 +354,19 @@ void main() {
         // Level 2 has 3 pairs + 1 injected weak review pair from Level 1 -> (1/4)
         expect(find.text('Word Examples (1/4)'), findsOneWidget);
 
+        // Tapping gated CTA scrolls cleanly and reveals inline helper cue
+        await tester.tap(find.text('Check 1 Example'));
+        await tester.pump();
+        expect(find.byKey(const Key('learn_gate_helper_cue')), findsOneWidget);
+
+        // Answering 1 prediction dismisses the reminder and unlocks progression
+        await tester.ensureVisible(find.byKey(const Key('predict_natural_0')));
+        await tester.pump();
+        await tester.tap(find.byKey(const Key('predict_natural_0')));
+        await tester.pump(const Duration(milliseconds: 200));
+        expect(find.byKey(const Key('learn_gate_helper_cue')), findsNothing);
+        expect(find.text('Next Pair'), findsOneWidget);
+
         await tester.pumpWidget(const SizedBox.shrink());
         await tester.pump(const Duration(milliseconds: 300));
       },

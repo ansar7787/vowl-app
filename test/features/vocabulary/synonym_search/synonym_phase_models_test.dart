@@ -73,6 +73,11 @@ void main() {
             isFalse,
             reason: learnFile.path,
           );
+          expect(
+            learnRaw.contains('marks the strongest tone in'),
+            isFalse,
+            reason: learnFile.path,
+          );
           final learnMap = jsonDecode(learnRaw) as Map<String, dynamic>;
           expect(learnMap['cefr'], expectedCefr);
           expect(learnMap['difficulty'], expectedDiff);
@@ -322,6 +327,23 @@ void main() {
         expect(due.length, 2);
         expect(due.first.synonym, 'Wed');
         expect(due.first.misses, 2);
+
+        // First clean review on a 2-miss pair pushes nextReviewAtMs out by 12h
+        await SynonymWeakWordsStore.markReviewed(
+          baseWord: 'Marry',
+          synonym: 'Wed',
+          nowMs: 1000,
+        );
+        final notDueYet = await SynonymWeakWordsStore.loadDueWeakPairs(
+          excludeLevel: 1,
+          nowMs: 2000,
+        );
+        expect(notDueYet.any((e) => e.synonym == 'Wed'), isFalse);
+        final dueLater = await SynonymWeakWordsStore.loadDueWeakPairs(
+          excludeLevel: 1,
+          nowMs: 1000 + const Duration(hours: 13).inMilliseconds,
+        );
+        expect(dueLater.any((e) => e.synonym == 'Wed'), isTrue);
 
         final excluded = await SynonymWeakWordsStore.loadWeakPairs(
           excludeLevel: 5,

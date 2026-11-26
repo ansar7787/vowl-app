@@ -11,6 +11,7 @@ class SynonymWeakWordEntry {
   final String synonym;
   final int misses;
   final int updatedAtMs;
+  final int nextReviewAtMs;
 
   const SynonymWeakWordEntry({
     required this.level,
@@ -18,10 +19,13 @@ class SynonymWeakWordEntry {
     required this.synonym,
     required this.misses,
     required this.updatedAtMs,
+    this.nextReviewAtMs = 0,
   });
 
   String get pairKey =>
       '${baseWord.trim().toLowerCase()}__${synonym.trim().toLowerCase()}';
+
+  bool isDueAt(int nowMs) => nextReviewAtMs <= nowMs;
 
   factory SynonymWeakWordEntry.fromJson(Map<String, dynamic> json) =>
       SynonymWeakWordEntry(
@@ -30,6 +34,7 @@ class SynonymWeakWordEntry {
         synonym: json['synonym'] as String? ?? '',
         misses: json['misses'] as int? ?? 1,
         updatedAtMs: json['updatedAtMs'] as int? ?? 0,
+        nextReviewAtMs: json['nextReviewAtMs'] as int? ?? 0,
       );
 
   Map<String, dynamic> toJson() => {
@@ -38,10 +43,11 @@ class SynonymWeakWordEntry {
     'synonym': synonym,
     'misses': misses,
     'updatedAtMs': updatedAtMs,
+    'nextReviewAtMs': nextReviewAtMs,
   };
 }
 
-/// Lightweight local persistence for tricky synonym pairs across sessions.
+/// Lightweight local persistence & spaced scheduling for tricky synonym pairs.
 class SynonymWeakWordsStore {
   const SynonymWeakWordsStore._();
 
@@ -73,18 +79,33 @@ class SynonymWeakWordsStore {
     return filtered.take(limit).toList();
   }
 
-  /// Records a struggle/miss for a pair so future Learn sessions can reinforce it.
+  /// Loads pairs whose spaced-review timestamp has elapsed cleanly.
+  static Future<List<SynonymWeakWordEntry>> loadDueWeakPairs({
+    int? excludeLevel,
+    int limit = 3,
+    int? nowMs,
+  }) async {
+    final cutoff = nowMs ?? DateTime.now().millisecondsSinceEpoch;
+    final entries = await loadWeakPairs(
+      excludeLevel: excludeLevel,
+      limit: _maxEntries,
+    );
+    return entries.where((e) => e.isDueAt(cutoff)).take(limit).toList();
+  }
+
+  /// Records a struggle/miss for a pair so future sessions reinforce it right away.
   static Future<void> recordWeakPair({
     required int level,
     required String baseWord,
     required String synonym,
+    int? nowMs,
   }) async {
     final cleanBase = baseWord.trim();
     final cleanSyn = synonym.trim();
     if (cleanBase.isEmpty || cleanSyn.isEmpty) return;
 
     final entries = List<SynonymWeakWordEntry>.from(await _readAll());
-    final now = DateTime.now().millisecondsSinceEpoch;
+    final now = nowMs ?? DateTime.now().millisecondsSinceEpoch;
     final key = '${cleanBase.toLowerCase()}__${cleanSyn.toLowerCase()}';
     final idx = entries.indexWhere((e) => e.pairKey == key);
     if (idx >= 0) {
@@ -95,6 +116,7 @@ class SynonymWeakWordsStore {
         synonym: cleanSyn,
         misses: existing.misses + 1,
         updatedAtMs: now,
+        nextReviewAtMs: now,
       );
     } else {
       entries.add(
@@ -104,6 +126,7 @@ class SynonymWeakWordsStore {
           synonym: cleanSyn,
           misses: 1,
           updatedAtMs: now,
+          nextReviewAtMs: now,
         ),
       );
     }
@@ -116,10 +139,11 @@ class SynonymWeakWordsStore {
     await _writeAll(entries.take(_maxEntries).toList());
   }
 
-  /// Reduces or clears weakness weight once the learner reviews a pair cleanly.
+  /// Pushes the next spaced review forward or clears once misses reach zero.
   static Future<void> markReviewed({
     required String baseWord,
     required String synonym,
+    int? nowMs,
   }) async {
     final key =
         '${baseWord.trim().toLowerCase()}__${synonym.trim().toLowerCase()}';
@@ -131,12 +155,16 @@ class SynonymWeakWordsStore {
     if (existing.misses <= 1) {
       entries.removeAt(idx);
     } else {
+      final now = nowMs ?? DateTime.now().millisecondsSinceEpoch;
+      final remainingMisses = existing.misses - 1;
+      const twelveHoursMs = 12 * 60 * 60 * 1000;
       entries[idx] = SynonymWeakWordEntry(
         level: existing.level,
         baseWord: existing.baseWord,
         synonym: existing.synonym,
-        misses: existing.misses - 1,
-        updatedAtMs: existing.updatedAtMs,
+        misses: remainingMisses,
+        updatedAtMs: now,
+        nextReviewAtMs: now + twelveHoursMs,
       );
     }
     await _writeAll(entries);

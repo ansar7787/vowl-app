@@ -2,6 +2,7 @@ import 'package:vowl/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
+import 'package:vowl/features/vocabulary/domain/entities/vocabulary_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/presentation/widgets/games/headers/vowl_universal_game_header.dart';
 import 'package:vowl/core/presentation/widgets/games/dialogs/vowl_pause_bottom_sheet.dart';
@@ -63,6 +64,14 @@ class VocabularyBaseLayout extends StatelessWidget {
   /// Optional callback invoked when resuming the game.
   final VoidCallback? onResume;
 
+  /// Optional game-specific builder for supplemental feedback content.
+  final Widget? Function(
+    BuildContext context,
+    VocabularyQuest quest,
+    bool? isCorrect,
+  )?
+  customFeedbackBuilder;
+
   /// Creates a [VocabularyBaseLayout] instance.
   const VocabularyBaseLayout({
     super.key,
@@ -81,6 +90,7 @@ class VocabularyBaseLayout extends StatelessWidget {
     this.hasStage2 = false,
     this.onPause,
     this.onResume,
+    this.customFeedbackBuilder,
   });
 
   @override
@@ -237,6 +247,11 @@ class VocabularyBaseLayout extends StatelessWidget {
           ruleContent = null;
           finalExplanation = quest.explanation ?? quest.definition;
         }
+        customContent ??= customFeedbackBuilder?.call(
+          context,
+          quest,
+          isCorrect,
+        );
 
         return GameFeedbackCard(
           isCorrect: isCorrect,

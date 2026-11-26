@@ -17,6 +17,7 @@ import 'package:vowl/features/vocabulary/synonym_search/presentation/controllers
 import 'package:vowl/features/vocabulary/synonym_search/presentation/models/synonym_phase_models.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/widgets/synonym_contrast_swap_card.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/widgets/synonym_ladder_card.dart';
+import 'package:vowl/features/vocabulary/synonym_search/presentation/widgets/synonym_learn_status_banner.dart';
 
 /// Practice Phase for Synonym Search.
 ///
@@ -51,6 +52,7 @@ class _SynonymSearchPracticeScreenState
   bool _isLoading = true;
   bool _hasStartedLoad = false;
   String? _errorMessage;
+  Map<String, int> _reviewLevelsByParentId = const {};
 
   @override
   void initState() {
@@ -94,10 +96,32 @@ class _SynonymSearchPracticeScreenState
         bundle: widget.assetBundle ?? DefaultAssetBundle.of(context),
       );
       final exercises = await dataSource.loadPracticeExercises(widget.level);
+      final weakPairs = await SynonymWeakWordsStore.loadDueWeakPairs(
+        excludeLevel: widget.level,
+        limit: 1,
+      );
+      final combined = List<SynonymPracticeExercise>.from(exercises);
+      final reviewMap = <String, int>{};
+      for (final weak in weakPairs) {
+        try {
+          final prior = await dataSource.loadPracticeExercises(weak.level);
+          final match = prior.where(
+            (ex) =>
+                ex.type == SynonymPracticeExerciseType.contrastSwap &&
+                ex.baseWord.toLowerCase() == weak.baseWord.toLowerCase() &&
+                ex.targetSynonym.toLowerCase() == weak.synonym.toLowerCase(),
+          );
+          if (match.isNotEmpty) {
+            combined.add(match.first);
+            reviewMap[match.first.parentId] = weak.level;
+          }
+        } catch (_) {}
+      }
 
       if (!mounted) return;
-      _controller.setExercises(exercises);
+      _controller.setExercises(combined);
       setState(() {
+        _reviewLevelsByParentId = reviewMap;
         _isLoading = false;
       });
     } catch (_) {
@@ -257,6 +281,7 @@ class _SynonymSearchPracticeScreenState
         final idx = _controller.currentIndex.value;
         final total = _controller.exercises.length;
         final ex = _controller.currentExercise ?? _controller.exercises.first;
+        final reviewLevel = _reviewLevelsByParentId[ex.parentId];
         final hasChecked = _controller.hasChecked.value;
         final isCorrect = _controller.isCorrect.value;
         final wrongCount = _controller.wrongAttempts.value;
@@ -298,34 +323,48 @@ class _SynonymSearchPracticeScreenState
               AppSpacing.screen,
               24.h,
             ),
-            child: ex.type == SynonymPracticeExerciseType.contrastSwap
-                ? SynonymContrastSwapCard(
-                    exercise: ex,
-                    assignments: _controller.contrastAssignments.value,
-                    focusedSlotIndex: _controller.focusedSlotIndex.value,
-                    hasChecked: hasChecked,
-                    isCorrect: isCorrect,
-                    showHint: _controller.showHint.value,
-                    shakeCount: _controller.shakeCount.value,
-                    feedbackMessage: _controller.feedbackMessage.value,
-                    primaryColor: theme.primaryColor,
-                    onTapSlot: _controller.tapContrastSlot,
-                    onAssignWord: _controller.assignContrastWord,
-                    onSwapSlots: _controller.swapContrastSlots,
-                  )
-                : SynonymLadderCard(
-                    exercise: ex,
-                    placements: _controller.ladderPlacements.value,
-                    focusedRungIndex: _controller.focusedRungIndex.value,
-                    hasChecked: hasChecked,
-                    isCorrect: isCorrect,
-                    showHint: _controller.showHint.value,
-                    shakeCount: _controller.shakeCount.value,
-                    feedbackMessage: _controller.feedbackMessage.value,
-                    primaryColor: theme.primaryColor,
-                    onTapRung: _controller.tapLadderRung,
-                    onPlaceWord: _controller.placeLadderWord,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                if (reviewLevel != null) ...[
+                  SynonymLearnStatusBanner(
+                    key: const Key('practice_review_origin_banner'),
+                    icon: Icons.history_rounded,
+                    message: 'Review from Level $reviewLevel',
+                    color: theme.primaryColor,
                   ),
+                  SizedBox(height: 10.h),
+                ],
+                ex.type == SynonymPracticeExerciseType.contrastSwap
+                    ? SynonymContrastSwapCard(
+                        exercise: ex,
+                        assignments: _controller.contrastAssignments.value,
+                        focusedSlotIndex: _controller.focusedSlotIndex.value,
+                        hasChecked: hasChecked,
+                        isCorrect: isCorrect,
+                        showHint: _controller.showHint.value,
+                        shakeCount: _controller.shakeCount.value,
+                        feedbackMessage: _controller.feedbackMessage.value,
+                        primaryColor: theme.primaryColor,
+                        onTapSlot: _controller.tapContrastSlot,
+                        onAssignWord: _controller.assignContrastWord,
+                        onSwapSlots: _controller.swapContrastSlots,
+                      )
+                    : SynonymLadderCard(
+                        exercise: ex,
+                        placements: _controller.ladderPlacements.value,
+                        focusedRungIndex: _controller.focusedRungIndex.value,
+                        hasChecked: hasChecked,
+                        isCorrect: isCorrect,
+                        showHint: _controller.showHint.value,
+                        shakeCount: _controller.shakeCount.value,
+                        feedbackMessage: _controller.feedbackMessage.value,
+                        primaryColor: theme.primaryColor,
+                        onTapRung: _controller.tapLadderRung,
+                        onPlaceWord: _controller.placeLadderWord,
+                      ),
+              ],
+            ),
           ),
         );
       },

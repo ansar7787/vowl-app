@@ -6,9 +6,12 @@ import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:go_router/go_router.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:vowl/core/presentation/phases/practice_phase_scaffold.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:vowl/core/theme/app_theme.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
+import 'package:vowl/features/vocabulary/synonym_search/data/datasources/synonym_weak_words_store.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/models/synonym_phase_models.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/pages/synonym_search_practice_screen.dart';
 
@@ -43,8 +46,10 @@ class _TestPracticeBundle extends CachingAssetBundle {
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
 
-  setUp(() {
+  setUp(() async {
     VowlMotion.lowAnimationModeOverride.value = true;
+    SharedPreferences.setMockInitialValues({});
+    await SynonymWeakWordsStore.resetForTest();
   });
 
   tearDown(() {
@@ -290,6 +295,39 @@ void main() {
           ),
           findsOneWidget,
         );
+      },
+    );
+
+    testWidgets(
+      'appends due weak-word contrast review drill from prior levels when stored',
+      (tester) async {
+        await SynonymWeakWordsStore.recordWeakPair(
+          level: 1,
+          baseWord: 'Big',
+          synonym: 'Large',
+        );
+        final raw1_10 = File(
+          'assets/curriculum/vocabulary/synonymSearch_practice_1_10.json',
+        ).readAsStringSync();
+        final bundle = _TestPracticeBundle(payload: raw1_10);
+
+        await tester.pumpWidget(
+          wrapScreen(
+            SynonymSearchPracticeScreen(level: 2, assetBundle: bundle),
+          ),
+        );
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+
+        // 6 drills for Level 2 + 1 due review drill from Level 1 = 7 total steps (1/7)
+        final scaffold = tester.widget<PracticePhaseScaffold>(
+          find.byType(PracticePhaseScaffold),
+        );
+        expect(scaffold.totalExercises, 7);
+        final indicator = tester.widget<LinearProgressIndicator>(
+          find.byType(LinearProgressIndicator),
+        );
+        expect(indicator.value, closeTo(1 / 7, 0.001));
       },
     );
   });
