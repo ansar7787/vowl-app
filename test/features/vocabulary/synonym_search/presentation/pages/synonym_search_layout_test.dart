@@ -317,6 +317,25 @@ void main() {
             expect(optRect.height, greaterThanOrEqualTo(48.0));
           }
 
+          // 5. Mastery Phase (Recall-First Mode - Level 45 questIndex 2)
+          activeStage = 'MasteryRecallFirst';
+          const recallState = VocabularyLoaded(
+            quests: [masteryQuest, masteryQuest, masteryQuest],
+            currentIndex: 2,
+            livesRemaining: 3,
+            answerStatus: AnswerStatus.unanswered,
+          );
+          when(() => mockVocabularyBloc.state).thenReturn(recallState);
+          streamController.add(recallState);
+          await tester.pumpWidget(host(const SynonymSearchScreen(level: 45)));
+          await tester.pump();
+          await tester.pump(const Duration(milliseconds: 300));
+          expect(
+            find.byKey(const Key('recall_length_hidden_badge')),
+            findsOneWidget,
+          );
+          assertZeroEllipsisOnGameWidgets(tester);
+
           // Reset BLoC state cleanly for next viewport
           when(() => mockVocabularyBloc.state).thenReturn(loadedState);
           streamController.add(loadedState);

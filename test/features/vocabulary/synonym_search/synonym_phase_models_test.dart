@@ -138,6 +138,23 @@ void main() {
               model.options!.map((e) => e.toLowerCase()),
               contains(model.correctAnswer!.toLowerCase()),
             );
+            final decoysLower = model.options!
+                .where(
+                  (o) => o.toLowerCase() != model.correctAnswer!.toLowerCase(),
+                )
+                .map((e) => e.toLowerCase())
+                .toSet();
+            final cousinLower = (model.synonyms ?? const <String>[])
+                .where(
+                  (s) => s.toLowerCase() != model.correctAnswer!.toLowerCase(),
+                )
+                .map((e) => e.toLowerCase())
+                .toSet();
+            expect(
+              decoysLower.intersection(cousinLower),
+              isEmpty,
+              reason: '${model.id} decoy overlapped listed synonym',
+            );
             expect(
               (model.definition ?? '').trim(),
               isNot(equals((model.explanation ?? '').trim())),
