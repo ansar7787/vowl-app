@@ -1,3 +1,5 @@
+import 'dart:math' as math;
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/data/models/phased_quest_model.dart';
@@ -70,6 +72,10 @@ class LearnPhaseScaffold extends StatelessWidget {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final bgColor = isDark ? AppColors.slate950 : AppColors.slate50;
     final cefr = PhasedQuest.getCefrForLevel(level);
+    final mediaQuery = MediaQuery.of(context);
+    final bottomInset = mediaQuery.viewPadding.bottom > 0
+        ? mediaQuery.viewPadding.bottom
+        : mediaQuery.padding.bottom;
 
     void handleExit() {
       if (di.sl.isRegistered<TtsService>()) {
@@ -163,12 +169,18 @@ class LearnPhaseScaffold extends StatelessWidget {
           centerTitle: true,
         ),
         body: SafeArea(
+          bottom: false,
           child: Column(
             children: [
               Expanded(child: child),
               // Bottom Action Bar
               Container(
-                padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 12.h),
+                padding: EdgeInsets.fromLTRB(
+                  20.w,
+                  12.h,
+                  20.w,
+                  math.max(12.0, 12.h) + bottomInset,
+                ),
                 decoration: BoxDecoration(
                   color: isDark ? AppColors.slate900 : Colors.white,
                   border: Border(

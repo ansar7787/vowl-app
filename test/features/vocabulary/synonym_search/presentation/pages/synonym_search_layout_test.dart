@@ -455,4 +455,107 @@ void main() {
       expect(errors, isEmpty, reason: errors.join('\n'));
     },
   );
+
+  testWidgets(
+    'bottom CTA and Mastery feedback sheet clear old 3-button (56dp) and gesture (24dp) nav bars',
+    (tester) async {
+      final errors = <String>[];
+      final prevOnError = FlutterError.onError;
+      FlutterError.onError = (details) {
+        errors.add(details.exceptionAsString());
+      };
+
+      const size = Size(360, 640);
+      tester.view.physicalSize = size;
+      tester.view.devicePixelRatio = 1.0;
+
+      try {
+        for (final navHeight in [56.0, 24.0]) {
+          Widget navHost(Widget child) {
+            return MultiBlocProvider(
+              providers: [
+                BlocProvider<VocabularyBloc>.value(value: mockVocabularyBloc),
+                BlocProvider<AuthBloc>.value(value: mockAuthBloc),
+                BlocProvider<EconomyBloc>.value(value: mockEconomyBloc),
+              ],
+              child: ScreenUtilInit(
+                designSize: const Size(390, 844),
+                minTextAdapt: true,
+                builder: (context, _) => MaterialApp(
+                  theme: AppTheme.lightTheme,
+                  home: MediaQuery(
+                    data: MediaQueryData(
+                      size: size,
+                      viewPadding: EdgeInsets.only(bottom: navHeight),
+                      padding: EdgeInsets.only(bottom: navHeight),
+                      disableAnimations: true,
+                    ),
+                    child: child,
+                  ),
+                ),
+              ),
+            );
+          }
+
+          await tester.pumpWidget(
+            navHost(
+              SynonymSearchLearnScreen(
+                level: 1,
+                initialItems: [SynonymLearnItem.fallback(1)],
+              ),
+            ),
+          );
+          await tester.pump();
+          await tester.pump(const Duration(milliseconds: 250));
+          final learnCtaRect = tester.getRect(find.text('Check 1 Example'));
+          expect(
+            learnCtaRect.bottom,
+            lessThanOrEqualTo(size.height - navHeight),
+          );
+
+          await tester.pumpWidget(
+            navHost(
+              SynonymSearchPracticeScreen(
+                level: 1,
+                initialExercises: SynonymPracticeQuest.fallbackExercises(1),
+              ),
+            ),
+          );
+          await tester.pump();
+          await tester.pump(const Duration(milliseconds: 250));
+          final practiceCtaRect = tester.getRect(find.text('Check Answer'));
+          expect(
+            practiceCtaRect.bottom,
+            lessThanOrEqualTo(size.height - navHeight),
+          );
+
+          const feedbackState = VocabularyLoaded(
+            quests: [masteryQuest],
+            currentIndex: 0,
+            livesRemaining: 3,
+            answerStatus: AnswerStatus.correct,
+          );
+          when(() => mockVocabularyBloc.state).thenReturn(feedbackState);
+          streamController.add(feedbackState);
+          await tester.pumpWidget(navHost(const SynonymSearchScreen(level: 1)));
+          await tester.pump();
+          await tester.pump(const Duration(milliseconds: 300));
+          final continueRect = tester.getRect(find.text('CONTINUE'));
+          expect(
+            continueRect.bottom,
+            lessThanOrEqualTo(size.height - navHeight),
+          );
+        }
+
+        await tester.pumpWidget(const SizedBox.shrink());
+        await tester.pump(const Duration(milliseconds: 300));
+      } finally {
+        FlutterError.onError = prevOnError;
+        tester.view.resetPhysicalSize();
+        tester.view.resetDevicePixelRatio();
+      }
+
+      expect(errors, isEmpty, reason: errors.join('\n'));
+    },
+  );
 }
