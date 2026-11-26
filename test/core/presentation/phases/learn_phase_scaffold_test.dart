@@ -59,7 +59,7 @@ void main() {
       await tester.pumpAndSettle();
 
       expect(find.text('Word Discovery'), findsOneWidget);
-      expect(find.text('LEARN PHASE • LEVEL 1'), findsOneWidget);
+      expect(find.text('LEARN PHASE • LEVEL 1 • A2'), findsOneWidget);
       expect(find.text('Educational Content Body'), findsOneWidget);
 
       final button = find.byType(ElevatedButton);

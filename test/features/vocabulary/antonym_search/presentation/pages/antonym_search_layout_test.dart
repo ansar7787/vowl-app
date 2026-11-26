@@ -387,17 +387,22 @@ void main() {
     });
 
     testWidgets(
-      '1.6 displays briefing dialog on level 1 and dismisses on BEGIN SEARCH tap',
+      '1.6 displays briefing dialog on info button tap and dismisses on RESUME PLAYING tap',
       (tester) async {
         await pumpScreen(tester, level: 1);
-        final startBtn = find.text('BEGIN SEARCH');
+        final infoBtn = find.byIcon(Icons.info_outline_rounded);
+        expect(infoBtn, findsOneWidget);
+        await tester.tap(infoBtn);
+        await tester.pumpAndSettle();
+
+        final startBtn = find.text('RESUME PLAYING');
         expect(startBtn, findsOneWidget);
         await tester.ensureVisible(startBtn);
         await tester.pumpAndSettle();
         await tester.tap(startBtn);
         await tester.pump(const Duration(milliseconds: 300));
         await tester.pump(const Duration(milliseconds: 300));
-        expect(find.text('BEGIN SEARCH'), findsNothing);
+        expect(find.text('RESUME PLAYING'), findsNothing);
       },
     );
   });
