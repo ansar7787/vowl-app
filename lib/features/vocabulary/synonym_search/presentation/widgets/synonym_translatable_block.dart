@@ -48,8 +48,12 @@ class _SynonymTranslatableAreaState extends State<SynonymTranslatableArea> {
     }
   }
 
-  void _applyTranslation(String translated, [String? langCode]) {
-    if (!mounted) return;
+  void _applyTranslation(
+    String expectedSource,
+    String translated, [
+    String? langCode,
+  ]) {
+    if (!mounted || expectedSource != widget.textToTranslate.trim()) return;
     final cleanCode = langCode?.trim();
     if (cleanCode != null && cleanCode.isNotEmpty) {
       SynonymTtsHelper.preWarm(locale: cleanCode);
@@ -86,13 +90,15 @@ class _SynonymTranslatableAreaState extends State<SynonymTranslatableArea> {
 
     final Widget translateAction = _translatedText == null
         ? TranslateButtonWidget(
+            key: ValueKey<String>(cleanSource),
             originalText: cleanSource,
             iconSize: widget.buttonSize,
             iconColor: isDark ? AppColors.slate300 : widget.primaryColor,
             padding: EdgeInsets.all(2.r),
-            onTranslationComplete: _applyTranslation,
+            onTranslationComplete: (translated) =>
+                _applyTranslation(cleanSource, translated),
             onTranslationWithLanguage: (translated, code) =>
-                _applyTranslation(translated, code),
+                _applyTranslation(cleanSource, translated, code),
           )
         : Semantics(
             button: true,

@@ -157,11 +157,14 @@ void main() {
           findsOneWidget,
         );
 
-        // Changing sourceText resets translation state cleanly.
+        // Changing sourceText resets translation state and drops stale callbacks.
         outerSetState(() {
           sourceText = 'Another pair explanation sentence.';
         });
         await tester.pump();
+        btn.onTranslationWithLanguage?.call('Stale text', 'es-ES');
+        await tester.pump();
+        expect(find.text('Stale text'), findsNothing);
         expect(find.byType(TranslateButtonWidget), findsOneWidget);
         expect(find.text('Original (EN)'), findsNothing);
       },
