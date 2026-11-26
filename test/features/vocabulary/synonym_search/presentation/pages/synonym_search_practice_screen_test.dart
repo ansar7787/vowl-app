@@ -328,6 +328,81 @@ void main() {
           find.byType(LinearProgressIndicator),
         );
         expect(indicator.value, closeTo(1 / 7, 0.001));
+
+        await tester.pumpWidget(const SizedBox.shrink());
+        await tester.pump(const Duration(milliseconds: 300));
+      },
+    );
+
+    testWidgets(
+      'displays Review from Level 1 banner and preserves origin level when missed',
+      (tester) async {
+        await SynonymWeakWordsStore.recordWeakPair(
+          level: 1,
+          baseWord: 'Big',
+          synonym: 'Large',
+        );
+        final decoded =
+            jsonDecode(
+                  File(
+                    'assets/curriculum/vocabulary/synonymSearch_practice_1_10.json',
+                  ).readAsStringSync(),
+                )
+                as Map<String, dynamic>;
+        final quests = (decoded['quests'] as List).cast<Map<String, dynamic>>();
+        final l1q1 = quests.firstWhere((q) => q['level'] == 1);
+        final l2q1 = Map<String, dynamic>.from(
+          quests.firstWhere((q) => q['level'] == 2),
+        );
+        l2q1['exercises'] = [(l2q1['exercises'] as List).first];
+        decoded['quests'] = [l1q1, l2q1];
+
+        final bundle = _TestPracticeBundle(payload: jsonEncode(decoded));
+        await tester.pumpWidget(
+          wrapScreen(
+            SynonymSearchPracticeScreen(level: 2, assetBundle: bundle),
+          ),
+        );
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+
+        // Solve L2 Q1 contrastSwap cleanly using its correct slot order.
+        final l2Slots = ((l2q1['exercises'] as List).first['slots'] as List)
+            .cast<Map<String, dynamic>>();
+        for (final slot in l2Slots) {
+          final target = slot['correctWord'] as String;
+          await tapWithScroll(tester, find.text(target).last);
+        }
+        await tester.tap(find.text('Check Answer'));
+        await tester.pump(const Duration(milliseconds: 300));
+        await tester.tap(find.text('Next Question'));
+        await tester.pump(const Duration(milliseconds: 300));
+
+        expect(
+          find.byKey(const Key('practice_review_origin_banner')),
+          findsOneWidget,
+        );
+        expect(find.text('Review from Level 1'), findsOneWidget);
+
+        // Miss the injected L1 Big/Large review drill intentionally.
+        await tapWithScroll(
+          tester,
+          find.byKey(const Key('contrast_bank_word_1')),
+        );
+        await tapWithScroll(
+          tester,
+          find.byKey(const Key('contrast_bank_word_0')),
+        );
+        await tester.tap(find.text('Check Answer'));
+        await tester.pump(const Duration(milliseconds: 300));
+
+        final stored = await SynonymWeakWordsStore.loadWeakPairs();
+        final bigEntry = stored.firstWhere((e) => e.synonym == 'Large');
+        expect(bigEntry.level, 1);
+        expect(bigEntry.misses, 2);
+
+        await tester.pumpWidget(const SizedBox.shrink());
+        await tester.pump(const Duration(milliseconds: 300));
       },
     );
   });

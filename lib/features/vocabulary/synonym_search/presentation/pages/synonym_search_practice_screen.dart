@@ -157,7 +157,7 @@ class _SynonymSearchPracticeScreenState
       if (ex != null) {
         if (!passed) {
           SynonymWeakWordsStore.recordWeakPair(
-            level: widget.level,
+            level: _reviewLevelsByParentId[ex.parentId] ?? widget.level,
             baseWord: ex.baseWord,
             synonym: ex.targetSynonym,
           );

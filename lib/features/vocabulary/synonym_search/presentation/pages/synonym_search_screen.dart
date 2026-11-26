@@ -53,6 +53,7 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
 
   late final SynonymMasteryController _controller;
   final ValueNotifier<int> _roundResetNonce = ValueNotifier<int>(0);
+  final Set<String> _missedQuestIds = <String>{};
   String? _lastLoadedQuestId;
   bool _pendingRoundReset = false;
 
@@ -108,7 +109,7 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
       if (base.isNotEmpty &&
           syn.isNotEmpty &&
           !_controller.isHintActive.value &&
-          _controller.shakeCount.value == 0) {
+          !_missedQuestIds.contains(q.id)) {
         SynonymWeakWordsStore.markReviewed(baseWord: base, synonym: syn);
       }
     }
@@ -122,6 +123,7 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
     final state = context.read<VocabularyBloc>().state;
     if (state is VocabularyLoaded && state.currentQuestOrNull != null) {
       final q = state.currentQuestOrNull!;
+      _missedQuestIds.add(q.id);
       final base = (q.word ?? '').trim();
       final syn = (q.correctAnswer ?? q.synonym ?? '').trim();
       if (base.isNotEmpty && syn.isNotEmpty) {
@@ -201,6 +203,7 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
             if (_pendingRoundReset) {
               _pendingRoundReset = false;
               if (state.currentIndex == 0 && !state.answerStatus.isAnswered) {
+                _missedQuestIds.clear();
                 _controller.resetForRetryOrNext(keepComboOnNext: false);
                 timerKey = GlobalKey<SpeedChallengeTimerState>();
                 _roundResetNonce.value = _roundResetNonce.value + 1;

@@ -572,5 +572,48 @@ void main() {
         await tester.pump(const Duration(milliseconds: 300));
       },
     );
+
+    testWidgets(
+      'miss on Quest 1 does not prevent markReviewed on clean solve of Quest 2',
+      (tester) async {
+        await SynonymWeakWordsStore.recordWeakPair(
+          level: 1,
+          baseWord: 'Happy',
+          synonym: 'Glad',
+        );
+        await pumpMastery(tester, level: 2);
+
+        // Expire Quest 1 timer to trigger a miss (adds Q1 to _missedQuestIds).
+        await tester.pump(const Duration(seconds: 28));
+        await tester.pump(const Duration(milliseconds: 200));
+
+        // Advance cleanly to Quest 2 (Context Replace round for Happy -> Glad).
+        final q2State = VocabularyLoaded(
+          quests: const [quest1, quest2],
+          currentIndex: 1,
+          livesRemaining: 2,
+          wrongCount: 0,
+          hintUsed: false,
+          hintsAvailable: 2,
+          answerStatus: AnswerStatus.unanswered,
+        );
+        when(() => mockVocabularyBloc.state).thenReturn(q2State);
+        streamController.add(q2State);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 250));
+
+        final gladFinder = find.text('Glad');
+        await tester.ensureVisible(gladFinder);
+        await tester.pump();
+        await tester.tap(gladFinder);
+        await tester.pump(const Duration(milliseconds: 300));
+
+        final remaining = await SynonymWeakWordsStore.loadWeakPairs();
+        expect(remaining.where((e) => e.synonym == 'Glad'), isEmpty);
+
+        await tester.pumpWidget(const SizedBox.shrink());
+        await tester.pump(const Duration(milliseconds: 300));
+      },
+    );
   });
 }

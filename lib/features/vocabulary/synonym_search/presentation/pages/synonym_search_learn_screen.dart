@@ -211,14 +211,6 @@ class _SynonymSearchLearnScreenState extends State<SynonymSearchLearnScreen> {
 
   void _handleCompleteOrNext() {
     SynonymTtsHelper.stopAll();
-    final finishedItem = _controller.currentItem;
-    if (finishedItem != null &&
-        _reviewLevelsById.containsKey(finishedItem.id)) {
-      SynonymWeakWordsStore.markReviewed(
-        baseWord: finishedItem.baseWord,
-        synonym: finishedItem.synonym,
-      );
-    }
     if (_controller.nextPair()) {
       _scrollToTop();
       _speakCurrentIfEnabled();
