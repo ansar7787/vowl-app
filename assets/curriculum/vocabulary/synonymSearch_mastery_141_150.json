@@ -1,518 +1,1510 @@
 {
-    "gameType": "synonymSearch",
-    "phase": "mastery",
-    "batchIndex": 15,
-    "levels": "141-150",
-    "quests": [
-        {
-            "id": "VOC_SYNONYMSEARCH_L141_Q1",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Report",
-            "hint": "To give an account of an event, especially in the news.",
-            "explanation": "\"Cover\" describes reporting on an event as a journalist, closely related to reporting it for the news.",
-            "interactionType": "search",
-            "correctAnswer": "Cover",
-            "options": [
-                "Suppress",
-                "Ignore",
-                "Bury",
-                "Cover"
-            ],
-            "nuanceDifference": "\"Cover\" is standard media terminology for reporting on a story, while \"report\" is the more general word for giving any account of events.",
-            "contextSentence": "Three networks sent crews to cover the election results."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L141_Q2",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Leak",
-            "hint": "To release secret information without authorization.",
-            "explanation": "\"Divulge\" describes revealing secret or private information, closely related to leaking it.",
-            "interactionType": "search",
-            "correctAnswer": "Divulge",
-            "options": [
-                "Divulge",
-                "Withhold",
-                "Conceal",
-                "Suppress"
-            ],
-            "nuanceDifference": "\"Divulge\" is more formal and can describe any reveal, authorized or not, while \"leak\" specifically implies an unauthorized release of secret information.",
-            "contextSentence": "The employee was fired for divulging trade secrets to a competitor."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L141_Q3",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Retract",
-            "hint": "To formally withdraw or take back a previous statement.",
-            "explanation": "\"Rescind\" describes formally canceling or withdrawing something previously stated or agreed, closely related to retracting it.",
-            "interactionType": "search",
-            "correctAnswer": "Rescind",
-            "options": [
-                "Reaffirm",
-                "Rescind",
-                "Confirm",
-                "Uphold"
-            ],
-            "nuanceDifference": "\"Rescind\" is often used for formal agreements, offers, or laws, while \"retract\" is more commonly used for statements or claims.",
-            "contextSentence": "The company rescinded its job offer after the background check."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L142_Q1",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Advocate",
-            "hint": "To publicly support or argue in favor of a cause or policy.",
-            "explanation": "\"Champion\" describes strongly supporting and promoting a cause, closely related to advocating for it.",
-            "interactionType": "search",
-            "correctAnswer": "Champion",
-            "options": [
-                "Oppose",
-                "Undermine",
-                "Champion",
-                "Resist"
-            ],
-            "nuanceDifference": "\"Champion\" often implies visible, energetic leadership of a cause, while \"advocate\" can describe support of any intensity, public or private.",
-            "contextSentence": "She has spent her career championing education reform."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L142_Q2",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Oppose",
-            "hint": "To disagree with and act against a plan, policy, or idea.",
-            "explanation": "\"Resist\" describes actively working against something, closely related to opposing it.",
-            "interactionType": "search",
-            "correctAnswer": "Resist",
-            "options": [
-                "Resist",
-                "Support",
-                "Endorse",
-                "Champion"
-            ],
-            "nuanceDifference": "\"Resist\" often implies active pushback against pressure or change, while \"oppose\" can describe disagreement expressed in words as well as action.",
-            "contextSentence": "Local residents resisted the plan to build a highway through the park."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L142_Q3",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Cave",
-            "hint": "To stop resisting and give in to another side's demands, often after prolonged pressure.",
-            "explanation": "\"Yield\" describes giving in to another side's position, closely related to what it means to cave under pressure.",
-            "interactionType": "search",
-            "correctAnswer": "Yield",
-            "options": [
-                "Insist",
-                "Yield",
-                "Demand",
-                "Refuse"
-            ],
-            "nuanceDifference": "\"Cave\" is informal and vivid, often used in casual writing, while \"yield\" is more neutral and appears in both formal and everyday contexts.",
-            "contextSentence": "After hours of debate, the union agreed to yield on the wage increase."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L143_Q1",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Testify",
-            "hint": "To give evidence, especially in a court of law.",
-            "explanation": "\"Attest\" means to affirm that something is true, often formally, closely related to testifying.",
-            "interactionType": "search",
-            "correctAnswer": "Attest",
-            "options": [
-                "Deny",
-                "Contradict",
-                "Attest",
-                "Refute"
-            ],
-            "nuanceDifference": "\"Attest\" can be used more broadly, including signing a document to confirm facts, while \"testify\" specifically applies to giving evidence, often in court.",
-            "contextSentence": "Her longtime neighbor attested to her good character in the letter."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L143_Q2",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Comply",
-            "hint": "To act in accordance with a rule, request, or command.",
-            "explanation": "\"Adhere\" describes sticking closely to a rule or set of principles, closely related to complying with it.",
-            "interactionType": "search",
-            "correctAnswer": "Adhere",
-            "options": [
-                "Violate",
-                "Disregard",
-                "Breach",
-                "Adhere"
-            ],
-            "nuanceDifference": "\"Adhere\" often applies to following principles or standards over time, while \"comply\" can describe a single instance of following a specific rule.",
-            "contextSentence": "All contractors must adhere to the updated safety codes."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L143_Q3",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Breach",
-            "hint": "To break or fail to follow a rule, agreement, or law.",
-            "explanation": "\"Violate\" describes breaking a rule or law, closely related to breaching an agreement.",
-            "interactionType": "search",
-            "correctAnswer": "Violate",
-            "options": [
-                "Uphold",
-                "Honor",
-                "Violate",
-                "Fulfill"
-            ],
-            "nuanceDifference": "\"Violate\" is the broader, more common word, while \"breach\" is often used specifically for contracts, agreements, or security.",
-            "contextSentence": "The company was accused of violating several safety regulations."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L144_Q1",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Recession",
-            "hint": "A period of temporary economic decline during which trade and industrial activity are reduced.",
-            "explanation": "\"Downturn\" describes a period of economic decline, closely related to a recession though sometimes milder.",
-            "interactionType": "search",
-            "correctAnswer": "Downturn",
-            "options": [
-                "Boom",
-                "Downturn",
-                "Upturn",
-                "Expansion"
-            ],
-            "nuanceDifference": "\"Downturn\" can describe any decline, mild or severe, while \"recession\" specifically refers to a sustained, more serious economic decline.",
-            "contextSentence": "The industry experienced a sharp downturn during the crisis."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L144_Q2",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Surplus",
-            "hint": "An amount of something left over when requirements have been met.",
-            "explanation": "\"Excess\" describes an amount beyond what is needed, closely related to a surplus.",
-            "interactionType": "search",
-            "correctAnswer": "Excess",
-            "options": [
-                "Shortage",
-                "Deficit",
-                "Scarcity",
-                "Excess"
-            ],
-            "nuanceDifference": "\"Excess\" is a more general word for any extra amount, while \"surplus\" is often used specifically in financial or budgetary contexts.",
-            "contextSentence": "The farm donated its excess produce to local food banks."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L144_Q3",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Deficit",
-            "hint": "The amount by which something, especially money, is too small.",
-            "explanation": "\"Shortfall\" describes an amount by which something falls short of what is needed, closely related to a deficit.",
-            "interactionType": "search",
-            "correctAnswer": "Shortfall",
-            "options": [
-                "Shortfall",
-                "Surplus",
-                "Excess",
-                "Abundance"
-            ],
-            "nuanceDifference": "\"Shortfall\" is common across many contexts, like a shortfall in donations, while \"deficit\" is more often used specifically in financial and budgetary discussions.",
-            "contextSentence": "The charity faced a significant shortfall in its annual fundraising goal."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L145_Q1",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Hypothesis",
-            "hint": "An idea or explanation for something that has not yet been proven.",
-            "explanation": "In everyday speech, \"theory\" is often used the way scientists use \"hypothesis\" — an untested explanation — even though in formal science a theory is actually a far more thoroughly tested and supported idea.",
-            "interactionType": "search",
-            "correctAnswer": "Theory",
-            "options": [
-                "Fact",
-                "Certainty",
-                "Proof",
-                "Theory"
-            ],
-            "nuanceDifference": "In casual conversation, \"theory\" and \"hypothesis\" are often used interchangeably for an untested idea, though scientists reserve \"theory\" for explanations backed by extensive evidence.",
-            "contextSentence": "Her theory about the extinction event gained wide acceptance after new fossil evidence emerged."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L145_Q2",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Empirical",
-            "hint": "Based on observation or experiment rather than theory alone.",
-            "explanation": "\"Observed\" describes evidence gathered directly through observation, closely related to being empirical.",
-            "interactionType": "search",
-            "correctAnswer": "Observed",
-            "options": [
-                "Observed",
-                "Theoretical",
-                "Speculative",
-                "Hypothetical"
-            ],
-            "nuanceDifference": "\"Observed\" specifically emphasizes direct observation, while \"empirical\" more broadly covers evidence gathered through any systematic experiment or measurement.",
-            "contextSentence": "The observed data contradicted the researchers' initial predictions."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L145_Q3",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Synthesize",
-            "hint": "To combine different ideas or substances to form a coherent whole.",
-            "explanation": "\"Integrate\" describes combining separate parts into a unified whole, closely related to synthesizing them.",
-            "interactionType": "search",
-            "correctAnswer": "Integrate",
-            "options": [
-                "Separate",
-                "Divide",
-                "Integrate",
-                "Fragment"
-            ],
-            "nuanceDifference": "\"Integrate\" often emphasizes blending parts smoothly into an existing system, while \"synthesize\" more often emphasizes creating something new from combined elements.",
-            "contextSentence": "The final chapter integrates findings from all three earlier studies."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L146_Q1",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Constructive",
-            "hint": "Intended to be helpful, especially when pointing out problems.",
-            "explanation": "\"Actionable\" describes feedback specific enough to be acted upon, closely related to being constructive.",
-            "interactionType": "search",
-            "correctAnswer": "Actionable",
-            "options": [
-                "Vague",
-                "Actionable",
-                "Unhelpful",
-                "Discouraging"
-            ],
-            "nuanceDifference": "\"Actionable\" specifically emphasizes that feedback includes clear next steps, while \"constructive\" more broadly means helpful and well-intentioned.",
-            "contextSentence": "Her manager gave actionable feedback on how to improve the presentation."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L146_Q2",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Blunt",
-            "hint": "Very direct and honest, without softening the message.",
-            "explanation": "\"Curt\" describes speech that is short and abrupt, sometimes seeming rude, closely related to bluntness.",
-            "interactionType": "search",
-            "correctAnswer": "Curt",
-            "options": [
-                "Diplomatic",
-                "Tactful",
-                "Curt",
-                "Gentle"
-            ],
-            "nuanceDifference": "\"Curt\" often implies an unpleasantly short or dismissive tone, while \"blunt\" can simply mean direct and honest without necessarily being rude.",
-            "contextSentence": "His curt reply left no room for further discussion."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L146_Q3",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Diplomatic",
-            "hint": "Handling a sensitive topic in a way that avoids upsetting anyone.",
-            "explanation": "\"Tactful\" describes handling a sensitive topic carefully to avoid causing offense, closely related to being diplomatic.",
-            "interactionType": "search",
-            "correctAnswer": "Tactful",
-            "options": [
-                "Blunt",
-                "Tactful",
-                "Rude",
-                "Abrasive"
-            ],
-            "nuanceDifference": "\"Tactful\" and \"diplomatic\" are near-perfect synonyms; \"diplomatic\" is slightly more common when describing formal or professional situations.",
-            "contextSentence": "She found a tactful way to point out the error without embarrassing him."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L147_Q1",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Concur",
-            "hint": "To agree with an opinion or decision.",
-            "explanation": "\"Assent\" means to formally agree with a proposal or opinion, closely matching what it means to concur.",
-            "interactionType": "search",
-            "correctAnswer": "Assent",
-            "options": [
-                "Assent",
-                "Object",
-                "Dissent",
-                "Refuse"
-            ],
-            "nuanceDifference": "\"Assent\" is common in formal or official contexts, like assenting to a proposal, while \"concur\" is used more broadly, including in everyday professional agreement.",
-            "contextSentence": "The committee assented to the proposed changes without objection."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L147_Q2",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Dissent",
-            "hint": "To hold or express opinions that differ from those officially held.",
-            "explanation": "\"Object\" describes expressing disagreement, closely related to dissenting from a majority opinion.",
-            "interactionType": "search",
-            "correctAnswer": "Object",
-            "options": [
-                "Concur",
-                "Agree",
-                "Consent",
-                "Object"
-            ],
-            "nuanceDifference": "\"Object\" is the everyday, general word for disagreement, while \"dissent\" specifically implies disagreeing with an official or majority position.",
-            "contextSentence": "Two board members objected to the proposed merger."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L147_Q3",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Contentious",
-            "hint": "Likely to cause disagreement or argument.",
-            "explanation": "\"Controversial\" describes a topic likely to provoke strong disagreement, closely related to being contentious.",
-            "interactionType": "search",
-            "correctAnswer": "Controversial",
-            "options": [
-                "Uncontroversial",
-                "Agreeable",
-                "Controversial",
-                "Uncontested"
-            ],
-            "nuanceDifference": "\"Controversial\" is the more common everyday word, while \"contentious\" is slightly more formal and often used to describe ongoing disputes.",
-            "contextSentence": "The zoning proposal became the most controversial item on the agenda."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L148_Q1",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Revamp",
-            "hint": "To improve or update something, especially by giving it a new appearance or structure.",
-            "explanation": "\"Overhaul\" describes a thorough, comprehensive change to something, closely related to revamping it.",
-            "interactionType": "search",
-            "correctAnswer": "Overhaul",
-            "options": [
-                "Preserve",
-                "Maintain",
-                "Freeze",
-                "Overhaul"
-            ],
-            "nuanceDifference": "\"Overhaul\" often implies a more complete, systematic change, while \"revamp\" can describe smaller updates as well as major redesigns.",
-            "contextSentence": "The airline announced a complete overhaul of its loyalty program."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L148_Q2",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Transition",
-            "hint": "The process of changing from one state or condition to another.",
-            "explanation": "\"Shift\" describes a change from one state or position to another, closely related to a transition.",
-            "interactionType": "search",
-            "correctAnswer": "Shift",
-            "options": [
-                "Shift",
-                "Stagnation",
-                "Constancy",
-                "Continuity"
-            ],
-            "nuanceDifference": "\"Shift\" often describes a quicker or smaller change, while \"transition\" more often implies a longer, more gradual process with defined stages.",
-            "contextSentence": "The company is undergoing a major shift toward remote work."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L148_Q3",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Evolve",
-            "hint": "To develop gradually, especially from a simpler to a more complex form.",
-            "explanation": "\"Progress\" describes gradual development or improvement over time, closely related to evolving.",
-            "interactionType": "search",
-            "correctAnswer": "Progress",
-            "options": [
-                "Regress",
-                "Progress",
-                "Decline",
-                "Deteriorate"
-            ],
-            "nuanceDifference": "\"Progress\" often implies improvement or advancement specifically, while \"evolve\" more neutrally describes gradual change, which may or may not be an improvement.",
-            "contextSentence": "The software has progressed significantly since its first release."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L149_Q1",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Deceive",
-            "hint": "To make someone believe something that is not true.",
-            "explanation": "\"Mislead\" describes causing someone to have a false impression, closely related to deceiving them, though sometimes less deliberately.",
-            "interactionType": "search",
-            "correctAnswer": "Mislead",
-            "options": [
-                "Enlighten",
-                "Inform",
-                "Clarify",
-                "Mislead"
-            ],
-            "nuanceDifference": "\"Mislead\" can describe an accidental false impression as well as a deliberate one, while \"deceive\" almost always implies clear intent to trick someone.",
-            "contextSentence": "The vague advertising misled customers about the product's actual price."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L149_Q2",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Manipulate",
-            "hint": "To control or influence someone unfairly or dishonestly.",
-            "explanation": "\"Exploit\" describes taking unfair advantage of someone, often for personal benefit, closely related to manipulating them.",
-            "interactionType": "search",
-            "correctAnswer": "Exploit",
-            "options": [
-                "Respect",
-                "Exploit",
-                "Support",
-                "Assist"
-            ],
-            "nuanceDifference": "\"Exploit\" often emphasizes taking advantage of someone's weakness for personal gain, while \"manipulate\" more broadly emphasizes controlling their thoughts or actions.",
-            "contextSentence": "The scheme exploited elderly victims' trust to steal their savings."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L149_Q3",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Betray",
-            "hint": "To be disloyal to someone who trusted you.",
-            "explanation": "\"Double-cross\" is an informal way of describing betraying someone, especially in a planned scheme.",
-            "interactionType": "search",
-            "correctAnswer": "Double-cross",
-            "options": [
-                "Double-cross",
-                "Support",
-                "Protect",
-                "Defend"
-            ],
-            "nuanceDifference": "\"Double-cross\" is casual and often used in stories about crime or rivalry, while \"betray\" applies to any serious breach of trust, personal or professional.",
-            "contextSentence": "His partner double-crossed him just before the deal closed."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L150_Q1",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Exacting",
-            "hint": "Demanding great care, precision, and effort, allowing no room for error.",
-            "explanation": "\"Rigorous\" describes a process or standard carried out with strict, exacting precision.",
-            "interactionType": "search",
-            "correctAnswer": "Rigorous",
-            "options": [
-                "Careless",
-                "Sloppy",
-                "Rigorous",
-                "Lax"
-            ],
-            "nuanceDifference": "\"Rigorous\" often describes the strictness of a method or system, while \"exacting\" more often describes the high standard expected of the person doing the work.",
-            "contextSentence": "The lab followed rigorous protocols to avoid contamination."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L150_Q2",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Robust",
-            "hint": "Strong and unlikely to fail or break down.",
-            "explanation": "\"Resilient\" describes the ability to withstand stress and recover from setbacks, closely related to being robust.",
-            "interactionType": "search",
-            "correctAnswer": "Resilient",
-            "options": [
-                "Resilient",
-                "Fragile",
-                "Vulnerable",
-                "Weak"
-            ],
-            "nuanceDifference": "\"Resilient\" emphasizes recovery after damage or stress, while \"robust\" more often emphasizes strength that prevents damage from occurring in the first place.",
-            "contextSentence": "The bridge was designed to be resilient against strong earthquakes."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L150_Q3",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Scalable",
-            "hint": "Able to be adjusted in size or amount to meet changing needs.",
-            "explanation": "\"Adaptable\" can describe a system capable of adjusting to new demands, closely related to being scalable.",
-            "interactionType": "search",
-            "correctAnswer": "Adaptable",
-            "options": [
-                "Rigid",
-                "Fixed",
-                "Adaptable",
-                "Inflexible"
-            ],
-            "nuanceDifference": "\"Adaptable\" more broadly describes adjusting to any kind of change, while \"scalable\" specifically refers to handling growth in size or demand.",
-            "contextSentence": "The startup built an adaptable platform that could serve ten users or ten million."
-        }
-    ]
+  "gameType": "synonymSearch",
+  "phase": "mastery",
+  "cefr": "C1",
+  "difficulty": 4,
+  "batchIndex": 15,
+  "levels": "141-150",
+  "quests": [
+    {
+      "id": "VOC_SYNONYMSEARCH_L141_Q1",
+      "level": 141,
+      "cefr": "C1",
+      "subtype": "synonymSearch",
+      "difficulty": 4,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Take' in the sentence.",
+      "word": "Take",
+      "definition": "To assign public money officially or take without permission.",
+      "synonym": "Appropriate",
+      "correctAnswer": "Appropriate",
+      "correctAnswerIndex": 2,
+      "options": [
+        "Keep",
+        "Hold",
+        "Appropriate",
+        "Carry"
+      ],
+      "synonyms": [
+        "Appropriate",
+        "Allocate",
+        "Seize"
+      ],
+      "antonyms": [
+        "Keep",
+        "Hold",
+        "Carry"
+      ],
+      "contextSentence": "Firms must never ___ a designer’s artwork without giving clear credit.",
+      "usageExample": "Firms must never appropriate a designer’s artwork without giving clear credit.",
+      "nuanceDifference": "'Take' lifts mugs (`take a seat`). 'Appropriate' designates city relief funds formally OR takes creative ideas without credit.",
+      "explanation": "Natural — formally allocating public funds takes 'appropriate'.",
+      "hint": "'Take' lifts mugs (`take a seat`) — think of the 'City Funds' sense starting with 'A'.",
+      "gradientScale": [
+        "Take",
+        "Appropriate",
+        "Seize",
+        "Claim"
+      ],
+      "collocations": [
+        "to appropriate relief",
+        "never appropriate a"
+      ],
+      "wrongCollocations": [
+        "to appropriate a"
+      ],
+      "registerLevel": 4,
+      "topicEmoji": "⚡"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L141_Q2",
+      "level": 141,
+      "cefr": "C1",
+      "subtype": "synonymSearch",
+      "difficulty": 4,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Buy' in the sentence.",
+      "word": "Buy",
+      "definition": "To gain companies, rare art, or lasting skills.",
+      "synonym": "Acquire",
+      "correctAnswer": "Acquire",
+      "correctAnswerIndex": 3,
+      "options": [
+        "Shop",
+        "Earn",
+        "Get",
+        "Acquire"
+      ],
+      "synonyms": [
+        "Acquire",
+        "Obtain",
+        "Procure"
+      ],
+      "antonyms": [
+        "Shop",
+        "Earn",
+        "Get"
+      ],
+      "contextSentence": "Museum curators hope to ___ two rare landscape watercolors.",
+      "usageExample": "Museum curators hope to acquire two rare landscape watercolors.",
+      "nuanceDifference": "'Buy' gets apples (`buy milk`). 'Acquire' builds serious collections, real estate, companies, or fluent accents (`acquire fluency`).",
+      "explanation": "Natural — gaining companies, museum pieces, or fluent skills takes 'acquire'.",
+      "hint": "Fits expressions like \"___ fluency\" — starts with 'A'.",
+      "gradientScale": [
+        "Buy",
+        "Acquire",
+        "Procure",
+        "Secure"
+      ],
+      "collocations": [
+        "acquire fluency",
+        "quickly acquire natural"
+      ],
+      "wrongCollocations": [
+        "to acquire half"
+      ],
+      "registerLevel": 4,
+      "topicEmoji": "🛠️"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L141_Q3",
+      "level": 141,
+      "cefr": "C1",
+      "subtype": "synonymSearch",
+      "difficulty": 4,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Sell' in the sentence.",
+      "word": "Sell",
+      "definition": "To promote and offer goods cleanly to buyers.",
+      "synonym": "Market",
+      "correctAnswer": "Market",
+      "correctAnswerIndex": 0,
+      "options": [
+        "Market",
+        "Offer",
+        "Deal",
+        "Pass"
+      ],
+      "synonyms": [
+        "Market",
+        "Promote",
+        "Trade"
+      ],
+      "antonyms": [
+        "Offer",
+        "Deal",
+        "Pass"
+      ],
+      "contextSentence": "Small farms ___ organic berries directly to pastry chefs.",
+      "usageExample": "Small farms market organic berries directly to pastry chefs.",
+      "nuanceDifference": "'Sell' hands over tickets (`sell hats`). 'Market' crafts brand packaging, ads, and pricing strategy (`market cleanly`).",
+      "explanation": "Natural — positioning and promoting products takes 'market'.",
+      "hint": "Fits expressions like \"___ cleanly\" — starts with 'M'.",
+      "gradientScale": [
+        "Sell",
+        "Market",
+        "Trade",
+        "Merchandise"
+      ],
+      "collocations": [
+        "market cleanly",
+        "creatively market local"
+      ],
+      "wrongCollocations": [
+        "to market Grandpa’s"
+      ],
+      "registerLevel": 4,
+      "topicEmoji": "🏃"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L142_Q1",
+      "level": 142,
+      "cefr": "C1",
+      "subtype": "synonymSearch",
+      "difficulty": 4,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Build' in the sentence.",
+      "word": "Build",
+      "definition": "To form strong lasting bonds or tools through effort.",
+      "synonym": "Forge",
+      "correctAnswer": "Forge",
+      "correctAnswerIndex": 3,
+      "options": [
+        "Make",
+        "Form",
+        "Create",
+        "Forge"
+      ],
+      "synonyms": [
+        "Forge",
+        "Craft",
+        "Shape"
+      ],
+      "antonyms": [
+        "Make",
+        "Form",
+        "Create"
+      ],
+      "contextSentence": "Neighbors worked patiently to ___ a calm trade alliance.",
+      "usageExample": "Neighbors worked patiently to forge a calm trade alliance.",
+      "nuanceDifference": "'Build' raises wooden decks (`build walls`). 'Forge' hammers hot iron OR shapes unbreakable alliances and lifelong trust (`forge bonds`).",
+      "explanation": "Natural — hammering unbreakable ties takes 'forge'.",
+      "hint": "Fits expressions like \"___ bonds\" — starts with 'F'.",
+      "gradientScale": [
+        "Build",
+        "Forge",
+        "Shape",
+        "Mold"
+      ],
+      "collocations": [
+        "forge bonds",
+        "quickly forge deep"
+      ],
+      "wrongCollocations": [
+        "to forge tall"
+      ],
+      "registerLevel": 4,
+      "topicEmoji": "🗣️"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L142_Q2",
+      "level": 142,
+      "cefr": "C1",
+      "subtype": "synonymSearch",
+      "difficulty": 4,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Fix' in the sentence.",
+      "word": "Fix",
+      "definition": "To cure an unfair systemic problem or illness.",
+      "synonym": "Remedy",
+      "correctAnswer": "Remedy",
+      "correctAnswerIndex": 0,
+      "options": [
+        "Remedy",
+        "Mend",
+        "Patch",
+        "Clean"
+      ],
+      "synonyms": [
+        "Remedy",
+        "Resolve",
+        "Correct"
+      ],
+      "antonyms": [
+        "Mend",
+        "Patch",
+        "Clean"
+      ],
+      "contextSentence": "Fresh compost helps ___ depleted mineral soil organically.",
+      "usageExample": "Fresh compost helps remedy depleted mineral soil organically.",
+      "nuanceDifference": "'Fix' turns bolts (`fix bikes`). 'Remedy' cures long-standing gaps in pay, sleep habits, or soil health (`remedy shortage`).",
+      "explanation": "Natural — curing systemic flaws takes 'remedy'.",
+      "hint": "Fits expressions like \"___ shortage\" — starts with 'R'.",
+      "gradientScale": [
+        "Fix",
+        "Remedy",
+        "Correct",
+        "Heal"
+      ],
+      "collocations": [
+        "remedy shortage",
+        "help remedy regional"
+      ],
+      "wrongCollocations": [
+        "to remedy that"
+      ],
+      "registerLevel": 4,
+      "topicEmoji": "🧭"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L142_Q3",
+      "level": 142,
+      "cefr": "C1",
+      "subtype": "synonymSearch",
+      "difficulty": 4,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Wait' in the sentence.",
+      "word": "Wait",
+      "definition": "To stay longer unwilling to leave or fade away.",
+      "synonym": "Linger",
+      "correctAnswer": "Linger",
+      "correctAnswerIndex": 1,
+      "options": [
+        "Pause",
+        "Linger",
+        "Hold",
+        "Rest"
+      ],
+      "synonyms": [
+        "Linger",
+        "Remain",
+        "Stay"
+      ],
+      "antonyms": [
+        "Pause",
+        "Hold",
+        "Rest"
+      ],
+      "contextSentence": "Friendly dinner guests tend to ___ by the doorway chatting.",
+      "usageExample": "Friendly dinner guests tend to linger by the doorway chatting.",
+      "nuanceDifference": "'Wait' checks clocks (`wait in line`). 'Linger' drifts pleasantly longer over tea, scents, or memories (`coffee aroma lingers`).",
+      "explanation": "Natural — scents, guests, and melodies 'linger' happily.",
+      "hint": "Fits expressions like \"coffee aroma ___s\" — starts with 'L'.",
+      "gradientScale": [
+        "Wait",
+        "Linger",
+        "Stay",
+        "Loiter"
+      ],
+      "collocations": [
+        "coffee aroma lingers",
+        "to linger down"
+      ],
+      "wrongCollocations": [
+        "must linger quietly"
+      ],
+      "registerLevel": 4,
+      "topicEmoji": "✨"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L143_Q1",
+      "level": 143,
+      "cefr": "C1",
+      "subtype": "synonymSearch",
+      "difficulty": 4,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Walk' in the sentence.",
+      "word": "Walk",
+      "definition": "To walk freely across wide areas without fixed plan.",
+      "synonym": "Roam",
+      "correctAnswer": "Roam",
+      "correctAnswerIndex": 0,
+      "options": [
+        "Roam",
+        "Stroll",
+        "Move",
+        "Step"
+      ],
+      "synonyms": [
+        "Roam",
+        "Wander",
+        "Meander"
+      ],
+      "antonyms": [
+        "Stroll",
+        "Move",
+        "Step"
+      ],
+      "contextSentence": "Summer travelers love to ___ coastal cobblestone alleys aimlessly.",
+      "usageExample": "Summer travelers love to roam coastal cobblestone alleys aimlessly.",
+      "nuanceDifference": "'Walk' moves cleanly (`walk to school`). 'Roam' wanders open pastures, streets, or thoughts freely without rushing (`herds roam`).",
+      "explanation": "Natural — wide open wandering takes 'roam'.",
+      "hint": "Fits expressions like \"herds ___\" — starts with 'R'.",
+      "gradientScale": [
+        "Walk",
+        "Roam",
+        "Meander",
+        "Drift"
+      ],
+      "collocations": [
+        "herds roam",
+        "freely roam wide"
+      ],
+      "wrongCollocations": [
+        "must roam slowly"
+      ],
+      "registerLevel": 4,
+      "topicEmoji": "⚡"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L143_Q2",
+      "level": 143,
+      "cefr": "C1",
+      "subtype": "synonymSearch",
+      "difficulty": 4,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Run' in the sentence.",
+      "word": "Run",
+      "definition": "To dash away with sudden explosive fright.",
+      "synonym": "Bolt",
+      "correctAnswer": "Bolt",
+      "correctAnswerIndex": 1,
+      "options": [
+        "Dash",
+        "Bolt",
+        "Race",
+        "Rush"
+      ],
+      "synonyms": [
+        "Bolt",
+        "Sprint",
+        "Flee"
+      ],
+      "antonyms": [
+        "Dash",
+        "Race",
+        "Rush"
+      ],
+      "contextSentence": "Frightened rabbits ___ underneath cedar hedges at twilight.",
+      "usageExample": "Frightened rabbits bolt underneath cedar hedges at twilight.",
+      "nuanceDifference": "'Run' jogs laps (`run daily`). 'Bolt' shoots away instantaneously when startled (`horses bolt`) or locks steel latches (`bolt doors`).",
+      "explanation": "Natural — sudden frightened fleeing uses 'bolt'.",
+      "hint": "Fits expressions like \"horses ___\" — starts with 'B'.",
+      "gradientScale": [
+        "Run",
+        "Bolt",
+        "Flee",
+        "Dart"
+      ],
+      "collocations": [
+        "horses bolt",
+        "bolt doors"
+      ],
+      "wrongCollocations": [
+        "to bolt smooth"
+      ],
+      "registerLevel": 4,
+      "topicEmoji": "🛠️"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L143_Q3",
+      "level": 143,
+      "cefr": "C1",
+      "subtype": "synonymSearch",
+      "difficulty": 4,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Look' in the sentence.",
+      "word": "Look",
+      "definition": "To look intensely through mist, tiny gaps, or darkness.",
+      "synonym": "Peer",
+      "correctAnswer": "Peer",
+      "correctAnswerIndex": 2,
+      "options": [
+        "Watch",
+        "Glance",
+        "Peer",
+        "View"
+      ],
+      "synonyms": [
+        "Peer",
+        "Squint",
+        "Gaze"
+      ],
+      "antonyms": [
+        "Watch",
+        "Glance",
+        "View"
+      ],
+      "contextSentence": "Curiously, owls ___ out from high oak tree hollows.",
+      "usageExample": "Curiously, owls peer out from high oak tree hollows.",
+      "nuanceDifference": "'Look' glances casually (`look here`). 'Peer' squints forward carefully trying hard to make out shapes (`peer through fog`).",
+      "explanation": "Natural — straining eyes in fog or dim corners takes 'peer'.",
+      "hint": "Fits expressions like \"___ through fog\" — starts with 'P'.",
+      "gradientScale": [
+        "Look",
+        "Peer",
+        "Gaze",
+        "Scrutinize"
+      ],
+      "collocations": [
+        "peer through fog",
+        "to peer closely"
+      ],
+      "wrongCollocations": [
+        "to peer at"
+      ],
+      "registerLevel": 4,
+      "topicEmoji": "🏃"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L144_Q1",
+      "level": 144,
+      "cefr": "C1",
+      "subtype": "synonymSearch",
+      "difficulty": 4,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Hear' in the sentence.",
+      "word": "Hear",
+      "definition": "To secretly listen in on others’ private talks.",
+      "synonym": "Eavesdrop",
+      "correctAnswer": "Eavesdrop",
+      "correctAnswerIndex": 1,
+      "options": [
+        "Whisper",
+        "Eavesdrop",
+        "Notice",
+        "Catch"
+      ],
+      "synonyms": [
+        "Eavesdrop",
+        "Listen",
+        "Overhear"
+      ],
+      "antonyms": [
+        "Whisper",
+        "Notice",
+        "Catch"
+      ],
+      "contextSentence": "Tourists pretend to read menus while trying to ___ nearby.",
+      "usageExample": "Tourists pretend to read menus while trying to eavesdrop nearby.",
+      "nuanceDifference": "'Hear' picks up ambient noise (`hear birds`). 'Eavesdrop' intentionally leans close to spy on private whispers (`eavesdrop politely`).",
+      "explanation": "Natural — secretly spying on talk requires 'eavesdrop'.",
+      "hint": "Fits expressions like \"___ politely\" — starts with 'E'.",
+      "gradientScale": [
+        "Hear",
+        "Eavesdrop",
+        "Overhear",
+        "Spy"
+      ],
+      "collocations": [
+        "eavesdrop politely",
+        "not eavesdrop when"
+      ],
+      "wrongCollocations": [
+        "anyone eavesdrop that"
+      ],
+      "registerLevel": 4,
+      "topicEmoji": "🗣️"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L144_Q2",
+      "level": 144,
+      "cefr": "C1",
+      "subtype": "synonymSearch",
+      "difficulty": 4,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Fear' in the sentence.",
+      "word": "Fear",
+      "definition": "To feel deep heavy anxiety ahead of an upcoming event.",
+      "synonym": "Dread",
+      "correctAnswer": "Dread",
+      "correctAnswerIndex": 2,
+      "options": [
+        "Worry",
+        "Panic",
+        "Dread",
+        "Doubt"
+      ],
+      "synonyms": [
+        "Dread",
+        "Apprehend",
+        "Shrink"
+      ],
+      "antonyms": [
+        "Worry",
+        "Panic",
+        "Doubt"
+      ],
+      "contextSentence": "Shopkeepers rarely ___ sunny holiday weekends.",
+      "usageExample": "Shopkeepers rarely dread sunny holiday weekends.",
+      "nuanceDifference": "'Fear' avoids danger (`fear heights`). 'Dread' specifically hates facing an upcoming Monday exam, dentist visit, or long flight (`dread winter bills`).",
+      "explanation": "Natural — dreading scheduled future tasks takes 'dread'.",
+      "hint": "Fits expressions like \"___ winter bills\" — starts with 'D'.",
+      "gradientScale": [
+        "Fear",
+        "Dread",
+        "Shrink",
+        "Recoil"
+      ],
+      "collocations": [
+        "dread winter bills",
+        "often dread giving"
+      ],
+      "wrongCollocations": [
+        "instinctively dread steep"
+      ],
+      "registerLevel": 4,
+      "topicEmoji": "🧭"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L144_Q3",
+      "level": 144,
+      "cefr": "C1",
+      "subtype": "synonymSearch",
+      "difficulty": 4,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Love' in the sentence.",
+      "word": "Love",
+      "definition": "To feel warm playful delight and deep fondness.",
+      "synonym": "Adore",
+      "correctAnswer": "Adore",
+      "correctAnswerIndex": 3,
+      "options": [
+        "Like",
+        "Enjoy",
+        "Care",
+        "Adore"
+      ],
+      "synonyms": [
+        "Adore",
+        "Cherish",
+        "Idolize"
+      ],
+      "antonyms": [
+        "Like",
+        "Enjoy",
+        "Care"
+      ],
+      "contextSentence": "Young readers simply ___ playful illustrations inside storybooks.",
+      "usageExample": "Young readers simply adore playful illustrations inside storybooks.",
+      "nuanceDifference": "'Love' carries serious lifelong commitment (`love family`). 'Adore' overflows with bright warmth for pets, babies, and art (`adore kittens`).",
+      "explanation": "Natural — charming warm delight takes 'adore'.",
+      "hint": "Fits expressions like \"___ kittens\" — starts with 'A'.",
+      "gradientScale": [
+        "Love",
+        "Adore",
+        "Idolize",
+        "Treasure"
+      ],
+      "collocations": [
+        "adore kittens",
+        "to adore the"
+      ],
+      "wrongCollocations": [
+        "deeply adore their"
+      ],
+      "registerLevel": 4,
+      "topicEmoji": "✨"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L145_Q1",
+      "level": 145,
+      "cefr": "C1",
+      "subtype": "synonymSearch",
+      "difficulty": 4,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Hate' in the sentence.",
+      "word": "Hate",
+      "definition": "To feel deep moral scorn or intense disgust.",
+      "synonym": "Despise",
+      "correctAnswer": "Despise",
+      "correctAnswerIndex": 2,
+      "options": [
+        "Dislike",
+        "Reject",
+        "Despise",
+        "Avoid"
+      ],
+      "synonyms": [
+        "Despise",
+        "Loathe",
+        "Detest"
+      ],
+      "antonyms": [
+        "Dislike",
+        "Reject",
+        "Avoid"
+      ],
+      "contextSentence": "Villagers came to ___ greedy landlords who neglected roofs.",
+      "usageExample": "Villagers came to despise greedy landlords who neglected roofs.",
+      "nuanceDifference": "'Hate' exaggerates broccoli (`I hate traffic`). 'Despise' feels cold, bitter moral contempt toward cruelty, bullies, or cheating (`despise deceit`).",
+      "explanation": "Natural — deep moral contempt requires 'despise'.",
+      "hint": "Fits expressions like \"___ deceit\" — starts with 'D'.",
+      "gradientScale": [
+        "Hate",
+        "Despise",
+        "Detest",
+        "Abhor"
+      ],
+      "collocations": [
+        "despise deceit",
+        "umpires despise blatant"
+      ],
+      "wrongCollocations": [
+        "really despise stepping"
+      ],
+      "registerLevel": 4,
+      "topicEmoji": "⚡"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L145_Q2",
+      "level": 145,
+      "cefr": "C1",
+      "subtype": "synonymSearch",
+      "difficulty": 4,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Win' in the sentence.",
+      "word": "Win",
+      "definition": "To triumph after long hard struggle.",
+      "synonym": "Prevail",
+      "correctAnswer": "Prevail",
+      "correctAnswerIndex": 3,
+      "options": [
+        "Beat",
+        "Earn",
+        "Gain",
+        "Prevail"
+      ],
+      "synonyms": [
+        "Prevail",
+        "Triumph",
+        "Overcome"
+      ],
+      "antonyms": [
+        "Beat",
+        "Earn",
+        "Gain"
+      ],
+      "contextSentence": "Steadfast hikers managed to ___ over freezing gale winds.",
+      "usageExample": "Steadfast hikers managed to prevail over freezing gale winds.",
+      "nuanceDifference": "'Win' scores games (`win 3-1`). 'Prevail' sees justice, calm truth, or patience win slowly over fierce tough resistance (`truth prevails`).",
+      "explanation": "Natural — overcoming long resistance earns 'prevail'.",
+      "hint": "Fits expressions like \"truth ___s\" — starts with 'P'.",
+      "gradientScale": [
+        "Win",
+        "Prevail",
+        "Overcome",
+        "Succeed"
+      ],
+      "collocations": [
+        "truth prevails",
+        "eventually prevail"
+      ],
+      "wrongCollocations": [
+        "to prevail Tuesday’s"
+      ],
+      "registerLevel": 4,
+      "topicEmoji": "🛠️"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L145_Q3",
+      "level": 145,
+      "cefr": "C1",
+      "subtype": "synonymSearch",
+      "difficulty": 4,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Lose' in the sentence.",
+      "word": "Lose",
+      "definition": "To give up a prize or spot by breaking rules or missing deadline.",
+      "synonym": "Forfeit",
+      "correctAnswer": "Forfeit",
+      "correctAnswerIndex": 0,
+      "options": [
+        "Forfeit",
+        "Miss",
+        "Drop",
+        "Fail"
+      ],
+      "synonyms": [
+        "Forfeit",
+        "Surrender",
+        "Relinquish"
+      ],
+      "antonyms": [
+        "Miss",
+        "Drop",
+        "Fail"
+      ],
+      "contextSentence": "Arriving fifteen minutes late means teams ___ opening matches.",
+      "usageExample": "Arriving fifteen minutes late means teams forfeit opening matches.",
+      "nuanceDifference": "'Lose' drops keys (`lose matches`). 'Forfeit' automatically hands away deposits, games, or licenses through no-shows or fouls (`forfeit deposit`).",
+      "explanation": "Natural — rule/deadline penalty losses use 'forfeit'.",
+      "hint": "Fits expressions like \"___ deposit\" — starts with 'F'.",
+      "gradientScale": [
+        "Lose",
+        "Forfeit",
+        "Relinquish",
+        "Sacrifice"
+      ],
+      "collocations": [
+        "forfeit deposit",
+        "to forfeit advance"
+      ],
+      "wrongCollocations": [
+        "to forfeit after"
+      ],
+      "registerLevel": 4,
+      "topicEmoji": "🏃"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L146_Q1",
+      "level": 146,
+      "cefr": "C1",
+      "subtype": "synonymSearch",
+      "difficulty": 4,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Clear' in the sentence.",
+      "word": "Clear",
+      "definition": "Completely open with zero clouds blocking sight.",
+      "synonym": "Cloudless",
+      "correctAnswer": "Cloudless",
+      "correctAnswerIndex": 3,
+      "options": [
+        "Fair",
+        "Plain",
+        "Clean",
+        "Cloudless"
+      ],
+      "synonyms": [
+        "Cloudless",
+        "Bright",
+        "Azure"
+      ],
+      "antonyms": [
+        "Fair",
+        "Plain",
+        "Clean"
+      ],
+      "contextSentence": "Solar balloons drifted smoothly across the ___ morning sky.",
+      "usageExample": "Solar balloons drifted smoothly across the cloudless morning sky.",
+      "nuanceDifference": "'Clear' fits glass (`clear glass`) and voices. 'Cloudless' paints bright blue open skies from horizon to horizon.",
+      "explanation": "Natural — completely unobstructed outdoor skies take 'cloudless'.",
+      "hint": "'Clear' fits glass (`clear glass`) and voices — think of the 'Observatory' sense starting with 'C'.",
+      "gradientScale": [
+        "Clear",
+        "Cloudless",
+        "Azure",
+        "Unclouded"
+      ],
+      "collocations": [
+        "a cloudless night",
+        "the cloudless morning"
+      ],
+      "wrongCollocations": [
+        "and cloudless"
+      ],
+      "registerLevel": 4,
+      "topicEmoji": "🌿"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L146_Q2",
+      "level": 146,
+      "cefr": "C1",
+      "subtype": "synonymSearch",
+      "difficulty": 4,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Heavy' in the sentence.",
+      "word": "Heavy",
+      "definition": "Weighed down deeply by duties or worry.",
+      "synonym": "Burdened",
+      "correctAnswer": "Burdened",
+      "correctAnswerIndex": 0,
+      "options": [
+        "Burdened",
+        "Hard",
+        "Thick",
+        "Deep"
+      ],
+      "synonyms": [
+        "Burdened",
+        "Weighted",
+        "Overloaded"
+      ],
+      "antonyms": [
+        "Hard",
+        "Thick",
+        "Deep"
+      ],
+      "contextSentence": "Carrying two jobs left commuters deeply ___ by Friday.",
+      "usageExample": "Carrying two jobs left commuters deeply burdened by Friday.",
+      "nuanceDifference": "'Heavy' lifts crates (`heavy luggage`). 'Burdened' highlights shoulders or minds loaded down by heavy debts, duties, or secrets.",
+      "explanation": "Natural — weighed down by duties or debt takes 'burdened'.",
+      "hint": "'Heavy' lifts crates (`heavy luggage`) — think of the 'Small Firm' sense starting with 'B'.",
+      "gradientScale": [
+        "Heavy",
+        "Burdened",
+        "Overloaded",
+        "Oppressed"
+      ],
+      "collocations": [
+        "felt burdened by",
+        "deeply burdened by"
+      ],
+      "wrongCollocations": [
+        "a burdened iron"
+      ],
+      "registerLevel": 4,
+      "topicEmoji": "⚖️"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L146_Q3",
+      "level": 146,
+      "cefr": "C1",
+      "subtype": "synonymSearch",
+      "difficulty": 4,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Light' in the sentence.",
+      "word": "Light",
+      "definition": "Warmly teasing and full of harmless humor.",
+      "synonym": "Playful",
+      "correctAnswer": "Playful",
+      "correctAnswerIndex": 1,
+      "options": [
+        "Bright",
+        "Playful",
+        "Sweet",
+        "Soft"
+      ],
+      "synonyms": [
+        "Playful",
+        "Cheeky",
+        "Teasing"
+      ],
+      "antonyms": [
+        "Bright",
+        "Sweet",
+        "Soft"
+      ],
+      "contextSentence": "Museum tiles added a ___ swirl near the kids’ wing.",
+      "usageExample": "Museum tiles added a playful swirl near the kids’ wing.",
+      "nuanceDifference": "'Light' trims calories (`light soup`). 'Playful' captures lighthearted banter, puppy leaps, or bright cheerful design (`playful tone`).",
+      "explanation": "Natural — gentle cheerful humor takes 'playful'.",
+      "hint": "Fits expressions like \"___ tone\" — starts with 'P'.",
+      "gradientScale": [
+        "Light",
+        "Playful",
+        "Teasing",
+        "Jocular"
+      ],
+      "collocations": [
+        "playful tone",
+        "Her playful grin"
+      ],
+      "wrongCollocations": [
+        "a playful green"
+      ],
+      "registerLevel": 4,
+      "topicEmoji": "💬"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L147_Q1",
+      "level": 147,
+      "cefr": "C1",
+      "subtype": "synonymSearch",
+      "difficulty": 4,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Hard' in the sentence.",
+      "word": "Hard",
+      "definition": "Real, specific, and solidly proven.",
+      "synonym": "Concrete",
+      "correctAnswer": "Concrete",
+      "correctAnswerIndex": 0,
+      "options": [
+        "Concrete",
+        "Exact",
+        "Firm",
+        "Strict"
+      ],
+      "synonyms": [
+        "Concrete",
+        "Tangible",
+        "Specific"
+      ],
+      "antonyms": [
+        "Exact",
+        "Firm",
+        "Strict"
+      ],
+      "contextSentence": "Mentors share ___ next steps instead of broad advice.",
+      "usageExample": "Mentors share concrete next steps instead of broad advice.",
+      "nuanceDifference": "'Hard' tests diamonds (`hard rock`). 'Concrete' demands specific real examples, figures, or proof rather than vague wishes (`concrete proof`).",
+      "explanation": "Natural — tangible verifiable evidence uses 'concrete'.",
+      "hint": "Fits expressions like \"___ proof\" — starts with 'C'.",
+      "gradientScale": [
+        "Hard",
+        "Concrete",
+        "Specific",
+        "Solid"
+      ],
+      "collocations": [
+        "concrete proof",
+        "for concrete survey"
+      ],
+      "wrongCollocations": [
+        "lumpy concrete cushions"
+      ],
+      "registerLevel": 4,
+      "topicEmoji": "🎯"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L147_Q2",
+      "level": 147,
+      "cefr": "C1",
+      "subtype": "synonymSearch",
+      "difficulty": 4,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Soft' in the sentence.",
+      "word": "Soft",
+      "definition": "Forgiving and gentle when applying rules.",
+      "synonym": "Lenient",
+      "correctAnswer": "Lenient",
+      "correctAnswerIndex": 1,
+      "options": [
+        "Easy",
+        "Lenient",
+        "Calm",
+        "Kind"
+      ],
+      "synonyms": [
+        "Lenient",
+        "Mild",
+        "Tolerant"
+      ],
+      "antonyms": [
+        "Easy",
+        "Calm",
+        "Kind"
+      ],
+      "contextSentence": "Librarians stayed ___ about one-day overdue snowstorm returns.",
+      "usageExample": "Librarians stayed lenient about one-day overdue snowstorm returns.",
+      "nuanceDifference": "'Soft' feels velvet (`soft wool`). 'Lenient' praises or critiques judges, teachers, or return rules forgiving mistakes easily.",
+      "explanation": "Natural — mild rule enforcement uses 'lenient'.",
+      "hint": "'Soft' feels velvet (`soft wool`) — think of the 'Late Policy' sense starting with 'L'.",
+      "gradientScale": [
+        "Soft",
+        "Lenient",
+        "Tolerant",
+        "Permissive"
+      ],
+      "collocations": [
+        "remained lenient toward",
+        "stayed lenient about"
+      ],
+      "wrongCollocations": [
+        "the lenient cashmere"
+      ],
+      "registerLevel": 4,
+      "topicEmoji": "🌤️"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L147_Q3",
+      "level": 147,
+      "cefr": "C1",
+      "subtype": "synonymSearch",
+      "difficulty": 4,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Sharp' in the sentence.",
+      "word": "Sharp",
+      "definition": "Vigorous, biting, and cutting straight to truth.",
+      "synonym": "Trenchant",
+      "correctAnswer": "Trenchant",
+      "correctAnswerIndex": 2,
+      "options": [
+        "Keen",
+        "Crisp",
+        "Trenchant",
+        "Harsh"
+      ],
+      "synonyms": [
+        "Trenchant",
+        "Incisive",
+        "Cutting"
+      ],
+      "antonyms": [
+        "Keen",
+        "Crisp",
+        "Harsh"
+      ],
+      "contextSentence": "His ___ closing summary settled thirty minutes of debate.",
+      "usageExample": "His trenchant closing summary settled thirty minutes of debate.",
+      "nuanceDifference": "'Sharp' stings nails (`sharp tack`). 'Trenchant' applauds razor-clear essays or commentary slicing straight through excuses.",
+      "explanation": "Natural — incisive analytical insight earns 'trenchant'.",
+      "hint": "'Sharp' stings nails (`sharp tack`) — think of the 'Column Review' sense starting with 'T'.",
+      "gradientScale": [
+        "Sharp",
+        "Trenchant",
+        "Cutting",
+        "Penetrating"
+      ],
+      "collocations": [
+        "her trenchant essay",
+        "His trenchant closing"
+      ],
+      "wrongCollocations": [
+        "every trenchant paring"
+      ],
+      "registerLevel": 4,
+      "topicEmoji": "🔍"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L148_Q1",
+      "level": 148,
+      "cefr": "C1",
+      "subtype": "synonymSearch",
+      "difficulty": 4,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Deep' in the sentence.",
+      "word": "Deep",
+      "definition": "Quiet down to total absence of sound.",
+      "synonym": "Soundless",
+      "correctAnswer": "Soundless",
+      "correctAnswerIndex": 1,
+      "options": [
+        "Calm",
+        "Soundless",
+        "Silent",
+        "Dim"
+      ],
+      "synonyms": [
+        "Soundless",
+        "Mute",
+        "Hushed"
+      ],
+      "antonyms": [
+        "Calm",
+        "Silent",
+        "Dim"
+      ],
+      "contextSentence": "Owls swooped across moonlit hayfields in ___ glide.",
+      "usageExample": "Owls swooped across moonlit hayfields in soundless glide.",
+      "nuanceDifference": "'Deep' sinks pools (`deep bay`). 'Soundless' evokes silent snowfalls, velvet wings, or electric gliders passing silently (`soundless flight`).",
+      "explanation": "Natural — quiet hushed motion earns 'soundless'.",
+      "hint": "Fits expressions like \"___ flight\" — starts with 'S'.",
+      "gradientScale": [
+        "Deep",
+        "Soundless",
+        "Hushed",
+        "Noiseless"
+      ],
+      "collocations": [
+        "soundless flight",
+        "gentle, soundless calm"
+      ],
+      "wrongCollocations": [
+        "the soundless brick"
+      ],
+      "registerLevel": 4,
+      "topicEmoji": "🌿"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L148_Q2",
+      "level": 148,
+      "cefr": "C1",
+      "subtype": "synonymSearch",
+      "difficulty": 4,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Broad' in the sentence.",
+      "word": "Broad",
+      "definition": "Covering wide ground thoroughly in depth.",
+      "synonym": "Extensive",
+      "correctAnswer": "Extensive",
+      "correctAnswerIndex": 2,
+      "options": [
+        "Full",
+        "Deep",
+        "Extensive",
+        "Large"
+      ],
+      "synonyms": [
+        "Extensive",
+        "Comprehensive",
+        "Sweeping"
+      ],
+      "antonyms": [
+        "Full",
+        "Deep",
+        "Large"
+      ],
+      "contextSentence": "Museum curators hold ___ expertise in medieval pottery.",
+      "usageExample": "Museum curators hold extensive expertise in medieval pottery.",
+      "nuanceDifference": "'Broad' opens streets (`broad avenue`). 'Extensive' details large collections, thorough renovations, or deep field study (`extensive repairs`).",
+      "explanation": "Natural — thorough wide-scale effort takes 'extensive'.",
+      "hint": "Fits expressions like \"___ repairs\" — starts with 'E'.",
+      "gradientScale": [
+        "Broad",
+        "Extensive",
+        "Sweeping",
+        "Vast"
+      ],
+      "collocations": [
+        "extensive repairs",
+        "forced extensive repairs"
+      ],
+      "wrongCollocations": [
+        "an extensive welcoming"
+      ],
+      "registerLevel": 4,
+      "topicEmoji": "⚖️"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L148_Q3",
+      "level": 148,
+      "cefr": "C1",
+      "subtype": "synonymSearch",
+      "difficulty": 4,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Plain' in the sentence.",
+      "word": "Plain",
+      "definition": "Uncomfortably bare, harsh, and impossible to soften.",
+      "synonym": "Stark",
+      "correctAnswer": "Stark",
+      "correctAnswerIndex": 3,
+      "options": [
+        "Clear",
+        "Raw",
+        "Hard",
+        "Stark"
+      ],
+      "synonyms": [
+        "Stark",
+        "Bare",
+        "Bleak"
+      ],
+      "antonyms": [
+        "Clear",
+        "Raw",
+        "Hard"
+      ],
+      "contextSentence": "Water gauges painted a ___ reminder to conserve rain.",
+      "usageExample": "Water gauges painted a stark reminder to conserve rain.",
+      "nuanceDifference": "'Plain' serves toast (`plain oatcakes`). 'Stark' highlights bare snowy trees or blunt sobering facts (`stark warning`).",
+      "explanation": "Natural — bare stripped visual or sobering contrast takes 'stark'.",
+      "hint": "Fits expressions like \"___ warning\" — starts with 'S'.",
+      "gradientScale": [
+        "Plain",
+        "Stark",
+        "Bleak",
+        "Blunt"
+      ],
+      "collocations": [
+        "stark warning",
+        "in stark contrast"
+      ],
+      "wrongCollocations": [
+        "prefer stark sesame"
+      ],
+      "registerLevel": 4,
+      "topicEmoji": "💬"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L149_Q1",
+      "level": 149,
+      "cefr": "C1",
+      "subtype": "synonymSearch",
+      "difficulty": 4,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Dry' in the sentence.",
+      "word": "Dry",
+      "definition": "Showing quiet ironic humor with a straight face.",
+      "synonym": "Wry",
+      "correctAnswer": "Wry",
+      "correctAnswerIndex": 2,
+      "options": [
+        "Sharp",
+        "Quick",
+        "Wry",
+        "Brief"
+      ],
+      "synonyms": [
+        "Wry",
+        "Ironic",
+        "Sardonic"
+      ],
+      "antonyms": [
+        "Sharp",
+        "Quick",
+        "Brief"
+      ],
+      "contextSentence": "Tour guides slip ___ historical jokes into quiet walks.",
+      "usageExample": "Tour guides slip wry historical jokes into quiet walks.",
+      "nuanceDifference": "'Dry' wipes dishes (`dry cloth`). 'Wry' spots a tiny crooked smile mocking life’s ironic twists (`wry comment`).",
+      "explanation": "Natural — understated ironic humor earns 'wry'.",
+      "hint": "Fits expressions like \"___ comment\" — starts with 'W'.",
+      "gradientScale": [
+        "Dry",
+        "Wry",
+        "Sardonic",
+        "Droll"
+      ],
+      "collocations": [
+        "wry comment",
+        "a wry smile"
+      ],
+      "wrongCollocations": [
+        "turn wry fast"
+      ],
+      "registerLevel": 4,
+      "topicEmoji": "🎯"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L149_Q2",
+      "level": 149,
+      "cefr": "C1",
+      "subtype": "synonymSearch",
+      "difficulty": 4,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Tight' in the sentence.",
+      "word": "Tight",
+      "definition": "Filled up tightly with almost zero open room.",
+      "synonym": "Packed",
+      "correctAnswer": "Packed",
+      "correctAnswerIndex": 3,
+      "options": [
+        "Fast",
+        "Dense",
+        "Short",
+        "Packed"
+      ],
+      "synonyms": [
+        "Packed",
+        "Crammed",
+        "Full"
+      ],
+      "antonyms": [
+        "Fast",
+        "Dense",
+        "Short"
+      ],
+      "contextSentence": "Auditors worked through a ___ schedule before Tuesday flights.",
+      "usageExample": "Auditors worked through a packed schedule before Tuesday flights.",
+      "nuanceDifference": "'Tight' pulls knots (`tight shoes`). 'Packed' shows stadiums, suitcases, or Monday calendars jammed end to end (`packed agenda`).",
+      "explanation": "Natural — jammed calendars and buses use 'packed'.",
+      "hint": "Fits expressions like \"___ agenda\" — starts with 'P'.",
+      "gradientScale": [
+        "Tight",
+        "Packed",
+        "Full",
+        "Busy"
+      ],
+      "collocations": [
+        "packed agenda",
+        "stayed packed with"
+      ],
+      "wrongCollocations": [
+        "a packed metal"
+      ],
+      "registerLevel": 4,
+      "topicEmoji": "🌤️"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L149_Q3",
+      "level": 149,
+      "cefr": "C1",
+      "subtype": "synonymSearch",
+      "difficulty": 4,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'High' in the sentence.",
+      "word": "High",
+      "definition": "Cheerfully optimistic and bouncing cleanly back.",
+      "synonym": "Buoyant",
+      "correctAnswer": "Buoyant",
+      "correctAnswerIndex": 0,
+      "options": [
+        "Buoyant",
+        "Glad",
+        "Bright",
+        "Quick"
+      ],
+      "synonyms": [
+        "Buoyant",
+        "Upbeat",
+        "Resilient"
+      ],
+      "antonyms": [
+        "Glad",
+        "Bright",
+        "Quick"
+      ],
+      "contextSentence": "Early harvest gains kept regional growers surprisingly ___.",
+      "usageExample": "Early harvest gains kept regional growers surprisingly buoyant.",
+      "nuanceDifference": "'High' climbs peaks (`high cliff`). 'Buoyant' floats ships, buoyant sales, or hopeful moods bouncing back above setbacks (`buoyant mood`).",
+      "explanation": "Natural — resilient cheerful bounce uses 'buoyant'.",
+      "hint": "Fits expressions like \"___ mood\" — starts with 'B'.",
+      "gradientScale": [
+        "High",
+        "Buoyant",
+        "Resilient",
+        "Sprightly"
+      ],
+      "collocations": [
+        "buoyant mood",
+        "a buoyant holiday"
+      ],
+      "wrongCollocations": [
+        "spans buoyant above"
+      ],
+      "registerLevel": 4,
+      "topicEmoji": "🔍"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L150_Q1",
+      "level": 150,
+      "cefr": "C1",
+      "subtype": "synonymSearch",
+      "difficulty": 4,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Tight' in the sentence.",
+      "word": "Tight",
+      "definition": "Sensibly small rather than lavish or flashy.",
+      "synonym": "Modest",
+      "correctAnswer": "Modest",
+      "correctAnswerIndex": 3,
+      "options": [
+        "Fair",
+        "Plain",
+        "Small",
+        "Modest"
+      ],
+      "synonyms": [
+        "Modest",
+        "Humble",
+        "Moderate"
+      ],
+      "antonyms": [
+        "Fair",
+        "Plain",
+        "Small"
+      ],
+      "contextSentence": "Careful insulation yielded a ___ yet welcome winter drop.",
+      "usageExample": "Careful insulation yielded a modest yet welcome winter drop.",
+      "nuanceDifference": "'Tight' squeezes pennies (`tight cash`). 'Modest' gracefully praises unpretentious homes, salaries, or steady gains (`modest gain`).",
+      "explanation": "Natural — respectful small scale uses 'modest'.",
+      "hint": "Fits expressions like \"___ gain\" — starts with 'M'.",
+      "gradientScale": [
+        "Tight",
+        "Modest",
+        "Moderate",
+        "Measured"
+      ],
+      "collocations": [
+        "modest gain",
+        "a modest neighborhood"
+      ],
+      "wrongCollocations": [
+        "painfully modest across"
+      ],
+      "registerLevel": 4,
+      "topicEmoji": "🌿"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L150_Q2",
+      "level": 150,
+      "cefr": "C1",
+      "subtype": "synonymSearch",
+      "difficulty": 4,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Low' in the sentence.",
+      "word": "Low",
+      "definition": "Dark, quiet, and seriously solemn.",
+      "synonym": "Somber",
+      "correctAnswer": "Somber",
+      "correctAnswerIndex": 0,
+      "options": [
+        "Somber",
+        "Dim",
+        "Quiet",
+        "Calm"
+      ],
+      "synonyms": [
+        "Somber",
+        "Grave",
+        "Mournful"
+      ],
+      "antonyms": [
+        "Dim",
+        "Quiet",
+        "Calm"
+      ],
+      "contextSentence": "Dark overcast skies cast a ___ mood over autumn fields.",
+      "usageExample": "Dark overcast skies cast a somber mood over autumn fields.",
+      "nuanceDifference": "'Low' sits beneath shelves (`low chair`). 'Somber' captures solemn ceremonies, muted gray suits, and quiet reflection (`somber tone`).",
+      "explanation": "Natural — solemn dignified mood uses 'somber'.",
+      "hint": "Fits expressions like \"___ tone\" — starts with 'S'.",
+      "gradientScale": [
+        "Low",
+        "Somber",
+        "Mournful",
+        "Solemn"
+      ],
+      "collocations": [
+        "somber tone",
+        "in somber reflection"
+      ],
+      "wrongCollocations": [
+        "dips somber tonight"
+      ],
+      "registerLevel": 4,
+      "topicEmoji": "⚖️"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L150_Q3",
+      "level": 150,
+      "cefr": "C1",
+      "subtype": "synonymSearch",
+      "difficulty": 4,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Open' in the sentence.",
+      "word": "Open",
+      "definition": "Ready and willing to welcome fresh suggestions.",
+      "synonym": "Receptive",
+      "correctAnswer": "Receptive",
+      "correctAnswerIndex": 1,
+      "options": [
+        "Kind",
+        "Receptive",
+        "Fair",
+        "Ready"
+      ],
+      "synonyms": [
+        "Receptive",
+        "Receptive",
+        "Welcoming"
+      ],
+      "antonyms": [
+        "Kind",
+        "Fair",
+        "Ready"
+      ],
+      "contextSentence": "Young audiences are often deeply ___ to visual stories.",
+      "usageExample": "Young audiences are often deeply receptive to visual stories.",
+      "nuanceDifference": "'Open' unlocks gates (`open doors`). 'Receptive' shows listeners actually eager to test or accept new ideas (`receptive team`).",
+      "explanation": "Natural — open-minded listening ears take 'receptive'.",
+      "hint": "Fits expressions like \"___ team\" — starts with 'R'.",
+      "gradientScale": [
+        "Open",
+        "Receptive",
+        "Welcoming",
+        "Responsive"
+      ],
+      "collocations": [
+        "receptive team",
+        "warmly receptive to"
+      ],
+      "wrongCollocations": [
+        "gates receptive while"
+      ],
+      "registerLevel": 4,
+      "topicEmoji": "💬"
+    }
+  ]
 }

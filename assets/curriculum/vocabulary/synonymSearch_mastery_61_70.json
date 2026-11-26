@@ -1,518 +1,1510 @@
 {
-    "gameType": "synonymSearch",
-    "phase": "mastery",
-    "batchIndex": 7,
-    "levels": "61-70",
-    "quests": [
-        {
-            "id": "VOC_SYNONYMSEARCH_L61_Q1",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Run",
-            "hint": "To be in charge of the daily workings of a business or organization.",
-            "explanation": "In a business sense, to \"run\" a company means to \"operate\" it — the two describe the same responsibility.",
-            "interactionType": "search",
-            "correctAnswer": "Operate",
-            "options": [
-                "Sprint",
-                "Jog",
-                "Race",
-                "Operate"
-            ],
-            "nuanceDifference": "\"Run\" has many meanings, but in the context of a business, \"operate\" captures the managerial sense, not the physical act of running.",
-            "contextSentence": "Her parents have operated the family bakery for thirty years."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L61_Q2",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Light",
-            "hint": "Not heavy; easy to lift or carry.",
-            "explanation": "When describing weight, \"light\" means \"weightless\" in comparison to something else — a light bag is easy to carry.",
-            "interactionType": "search",
-            "correctAnswer": "Weightless",
-            "options": [
-                "Illuminated",
-                "Weightless",
-                "Glowing",
-                "Bright"
-            ],
-            "nuanceDifference": "\"Light\" can describe brightness or low weight; here the context of carrying something points clearly to the weight-related meaning.",
-            "contextSentence": "The backpack felt almost weightless once she removed the books."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L61_Q3",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Book",
-            "hint": "To arrange to use or have something at a future time.",
-            "explanation": "To \"reserve\" a table or a room means the same as to \"book\" it in advance.",
-            "interactionType": "search",
-            "correctAnswer": "Reserve",
-            "options": [
-                "Reserve",
-                "Cancel",
-                "Release",
-                "Return"
-            ],
-            "nuanceDifference": "\"Book\" as a verb means to arrange something in advance, the same meaning carried by \"reserve\" for tables, flights, or rooms.",
-            "contextSentence": "We need to reserve a table for six before Friday night."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L62_Q1",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Fair",
-            "hint": "Treating people equally and in a way that is right or reasonable.",
-            "explanation": "\"Just\" describes decisions or treatment based on what is morally right, much like being fair.",
-            "interactionType": "search",
-            "correctAnswer": "Just",
-            "options": [
-                "Biased",
-                "Unfair",
-                "Just",
-                "Corrupt"
-            ],
-            "nuanceDifference": "\"Just\" often carries a stronger moral or legal weight, while \"fair\" is the everyday word for equal, reasonable treatment.",
-            "contextSentence": "The judge was known for handing down just decisions."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L62_Q2",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Firm",
-            "hint": "Not likely to change; steady and determined.",
-            "explanation": "\"Resolute\" describes a strong, unwavering determination, similar to being firm about a decision.",
-            "interactionType": "search",
-            "correctAnswer": "Resolute",
-            "options": [
-                "Resolute",
-                "Uncertain",
-                "Hesitant",
-                "Wavering"
-            ],
-            "nuanceDifference": "\"Resolute\" specifically emphasizes determination in the face of difficulty, while \"firm\" is broader and applies to physical steadiness too.",
-            "contextSentence": "Despite the criticism, she remained resolute in her decision."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L62_Q3",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Mild",
-            "hint": "Not strong or severe; gentle.",
-            "explanation": "\"Moderate\" describes something in the middle range, neither too strong nor too weak, much like \"mild.\"",
-            "interactionType": "search",
-            "correctAnswer": "Moderate",
-            "options": [
-                "Extreme",
-                "Moderate",
-                "Intense",
-                "Severe"
-            ],
-            "nuanceDifference": "\"Moderate\" often describes a measured, balanced amount, while \"mild\" more specifically suggests gentleness or lack of intensity.",
-            "contextSentence": "The forecast predicts moderate temperatures for the weekend."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L63_Q1",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Sharp",
-            "hint": "Having an edge that can cut; describing someone's mind, it means fast and clever.",
-            "explanation": "When describing someone's mind, \"sharp\" means \"quick-witted\" — able to think and respond fast.",
-            "interactionType": "search",
-            "correctAnswer": "Quick-witted",
-            "options": [
-                "Dull",
-                "Slow-thinking",
-                "Forgetful",
-                "Quick-witted"
-            ],
-            "nuanceDifference": "\"Sharp\" can describe a physical edge or a mental quality; here the context of thinking points to the mental meaning, not a blade.",
-            "contextSentence": "The lawyer was known for her quick-witted responses in court."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L63_Q2",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Cool",
-            "hint": "Slightly cold; describing behavior, it means staying calm and controlled under pressure.",
-            "explanation": "In describing behavior under pressure, \"cool\" means \"composed\" — staying calm rather than panicking.",
-            "interactionType": "search",
-            "correctAnswer": "Composed",
-            "options": [
-                "Frantic",
-                "Nervous",
-                "Composed",
-                "Panicked"
-            ],
-            "nuanceDifference": "\"Cool\" shifts meaning with context — here it describes emotional steadiness, not temperature.",
-            "contextSentence": "She stayed remarkably composed during the emergency landing."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L63_Q3",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Dry",
-            "hint": "Without moisture; describing humor, it means delivered in a flat, serious tone that's still funny.",
-            "explanation": "\"Dry\" humor is delivered in a flat, serious tone that's still funny — often described as \"deadpan.\"",
-            "interactionType": "search",
-            "correctAnswer": "Deadpan",
-            "options": [
-                "Emotional",
-                "Exaggerated",
-                "Deadpan",
-                "Silly"
-            ],
-            "nuanceDifference": "\"Dry\" describes a subtle, understated kind of humor here, not the absence of moisture — context makes the intended sense clear.",
-            "contextSentence": "His deadpan delivery made the joke even funnier."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L64_Q1",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Address",
-            "hint": "To deal with or discuss a problem or topic directly.",
-            "explanation": "To \"tackle\" a problem means to confront and work on solving it, the same idea as addressing it.",
-            "interactionType": "search",
-            "correctAnswer": "Tackle",
-            "options": [
-                "Ignore",
-                "Avoid",
-                "Postpone",
-                "Tackle"
-            ],
-            "nuanceDifference": "\"Tackle\" suggests an active, sometimes difficult effort to deal with something, similar to how \"address\" is used for problems, not locations.",
-            "contextSentence": "The new policy aims to tackle rising unemployment."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L64_Q2",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Cover",
-            "hint": "To include or deal with a particular subject or area.",
-            "explanation": "In a lesson or report, to \"cover\" a topic means to \"encompass\" it — including everything relevant within that subject.",
-            "interactionType": "search",
-            "correctAnswer": "Encompass",
-            "options": [
-                "Encompass",
-                "Exclude",
-                "Omit",
-                "Skip"
-            ],
-            "nuanceDifference": "\"Cover\" often describes a topic being included in a discussion, a meaning captured well by \"encompass,\" rather than covering a physical object.",
-            "contextSentence": "The training program encompasses everything from safety to customer service."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L64_Q3",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Draw",
-            "hint": "To pull people's interest or attention toward something; also, to sketch with a pencil.",
-            "explanation": "When used with attention or crowds, \"draw\" means to \"attract\" them — pulling people's interest toward something.",
-            "interactionType": "search",
-            "correctAnswer": "Attract",
-            "options": [
-                "Repel",
-                "Attract",
-                "Discourage",
-                "Bore"
-            ],
-            "nuanceDifference": "\"Draw\" changes meaning depending on context; here it refers to attracting attention, not creating a picture.",
-            "contextSentence": "The festival attracts thousands of visitors every summer."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L65_Q1",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Handle",
-            "hint": "To deal with a situation, problem, or responsibility.",
-            "explanation": "To \"manage\" a situation means to \"handle\" it — taking responsibility for keeping it under control.",
-            "interactionType": "search",
-            "correctAnswer": "Manage",
-            "options": [
-                "Ignore",
-                "Neglect",
-                "Abandon",
-                "Manage"
-            ],
-            "nuanceDifference": "\"Manage\" often implies ongoing responsibility, while \"handle\" can describe dealing with something briefly or once.",
-            "contextSentence": "She manages customer complaints with patience and skill."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L65_Q2",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Deliver",
-            "hint": "To bring something to a place, or to carry out a promise or expectation.",
-            "explanation": "When talking about promises or results, to \"deliver\" means to \"fulfill\" them, not to physically carry an item.",
-            "interactionType": "search",
-            "correctAnswer": "Fulfill",
-            "options": [
-                "Break",
-                "Fulfill",
-                "Abandon",
-                "Ignore"
-            ],
-            "nuanceDifference": "\"Deliver\" refers to a physical drop-off in some contexts, but here it means completing what was promised, matching \"fulfill.\"",
-            "contextSentence": "The team worked overtime to fulfill the client's expectations."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L65_Q3",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Handle",
-            "hint": "A part of an object designed to be held by the hand.",
-            "explanation": "In this physical sense, the \"handle\" of a tool is its \"grip\" — the part made for holding.",
-            "interactionType": "search",
-            "correctAnswer": "Grip",
-            "options": [
-                "Grip",
-                "Blade",
-                "Switch",
-                "Frame"
-            ],
-            "nuanceDifference": "Unlike the earlier meaning of \"handle\" as managing a situation, this sense refers to a physical part designed for holding something.",
-            "contextSentence": "The knife's grip was made of smooth polished wood."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L66_Q1",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Sound",
-            "hint": "Based on good judgment; reasonable and reliable.",
-            "explanation": "A \"sound\" argument is a \"valid\" one — logically strong and well-supported.",
-            "interactionType": "search",
-            "correctAnswer": "Valid",
-            "options": [
-                "Weak",
-                "Flawed",
-                "Valid",
-                "Baseless"
-            ],
-            "nuanceDifference": "\"Sound\" here describes logical strength, not an audible noise — the context of an argument makes the intended sense clear.",
-            "contextSentence": "The lawyer presented a valid argument backed by solid evidence."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L66_Q2",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Plain",
-            "hint": "Simple and easy to understand; also, without decoration.",
-            "explanation": "When describing meaning, \"plain\" language is \"clear\" language — easy to understand without confusion.",
-            "interactionType": "search",
-            "correctAnswer": "Clear",
-            "options": [
-                "Confusing",
-                "Vague",
-                "Complicated",
-                "Clear"
-            ],
-            "nuanceDifference": "\"Plain\" can describe simple decoration or, as here, clarity of meaning — the surrounding words point to the second sense.",
-            "contextSentence": "The instructions were written in clear, easy-to-follow language."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L66_Q3",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Level",
-            "hint": "Staying constant and unwavering; also, having a flat, even surface.",
-            "explanation": "A \"level\" tone of voice is a \"steady\" one — calm and unchanging, without sudden shifts.",
-            "interactionType": "search",
-            "correctAnswer": "Steady",
-            "options": [
-                "Erratic",
-                "Shaky",
-                "Steady",
-                "Unpredictable"
-            ],
-            "nuanceDifference": "\"Level\" describes emotional or vocal steadiness here, distinct from its meaning describing a flat physical surface.",
-            "contextSentence": "He kept a steady tone even while delivering the bad news."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L67_Q1",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Figure",
-            "hint": "To work out or understand something after thought.",
-            "explanation": "To \"figure out\" a problem means to \"solve\" it through reasoning, distinct from a numerical figure.",
-            "interactionType": "search",
-            "correctAnswer": "Solve",
-            "options": [
-                "Solve",
-                "Create",
-                "Cause",
-                "Ignore"
-            ],
-            "nuanceDifference": "\"Figure\" can mean a number or shape, but paired with \"out,\" it means working through a problem, matching \"solve.\"",
-            "contextSentence": "It took her an hour to solve the puzzle."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L67_Q2",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Table",
-            "hint": "To set aside a proposal for later discussion.",
-            "explanation": "In a meeting, to \"table\" a topic means to \"postpone\" discussing it until a later time.",
-            "interactionType": "search",
-            "correctAnswer": "Postpone",
-            "options": [
-                "Approve",
-                "Postpone",
-                "Discuss",
-                "Finalize"
-            ],
-            "nuanceDifference": "\"Table\" usually names a piece of furniture, but as a verb in meetings, it means delaying discussion, matching \"postpone.\"",
-            "contextSentence": "The board decided to postpone the budget proposal until next month."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L67_Q3",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Charge",
-            "hint": "To ask someone to pay a particular amount for goods or services.",
-            "explanation": "A store that \"charges\" you for an item is \"billing\" you for its cost.",
-            "interactionType": "search",
-            "correctAnswer": "Bill",
-            "options": [
-                "Bill",
-                "Refund",
-                "Discount",
-                "Waive"
-            ],
-            "nuanceDifference": "\"Charge\" has several meanings, but in a shopping context, it refers to requesting payment, the same sense as \"bill.\"",
-            "contextSentence": "The hotel will bill guests for any damages to the room."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L68_Q1",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Novel",
-            "hint": "New and not seen or done before.",
-            "explanation": "As an adjective, \"novel\" means \"original\" — a fresh idea unlike anything tried before.",
-            "interactionType": "search",
-            "correctAnswer": "Original",
-            "options": [
-                "Familiar",
-                "Original",
-                "Common",
-                "Traditional"
-            ],
-            "nuanceDifference": "\"Novel\" can be a noun meaning a book, but as an adjective here, it means original and new, matching \"original.\"",
-            "contextSentence": "The scientists proposed an original solution to the water crisis."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L68_Q2",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Mint",
-            "hint": "In excellent, unused condition.",
-            "explanation": "Describing an object's condition, \"mint\" means \"pristine\" — as good as new, without flaws.",
-            "interactionType": "search",
-            "correctAnswer": "Pristine",
-            "options": [
-                "Damaged",
-                "Worn",
-                "Pristine",
-                "Faded"
-            ],
-            "nuanceDifference": "\"Mint\" can refer to the herb or the place where coins are made, but describing condition, it means flawless, matching \"pristine.\"",
-            "contextSentence": "The vintage car was kept in pristine condition for decades."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L68_Q3",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Fine",
-            "hint": "Of high quality; also, describing weather that is pleasant.",
-            "explanation": "When describing craftsmanship, \"fine\" means \"exquisite\" — made with exceptional skill and quality.",
-            "interactionType": "search",
-            "correctAnswer": "Exquisite",
-            "options": [
-                "Crude",
-                "Shoddy",
-                "Sloppy",
-                "Exquisite"
-            ],
-            "nuanceDifference": "\"Fine\" can mean acceptable or pleasant weather, but describing craftsmanship here, it points to exceptional quality, matching \"exquisite.\"",
-            "contextSentence": "The museum displayed an exquisite collection of antique jewelry."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L69_Q1",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Bright",
-            "hint": "Quick to learn and understand new things.",
-            "explanation": "Describing a person's mind, \"bright\" means \"intelligent\" — quick to learn and understand new things.",
-            "interactionType": "search",
-            "correctAnswer": "Intelligent",
-            "options": [
-                "Intelligent",
-                "Dim",
-                "Slow",
-                "Dull"
-            ],
-            "nuanceDifference": "\"Bright\" describes light in some contexts, but describing a student's mind here, it means intelligent, not glowing.",
-            "contextSentence": "The intelligent young student solved the equation in seconds."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L69_Q2",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Solid",
-            "hint": "Reliable and well-founded; also, not liquid or gas.",
-            "explanation": "Describing evidence or reasoning, \"solid\" means \"substantial\" — strong enough to be trusted.",
-            "interactionType": "search",
-            "correctAnswer": "Substantial",
-            "options": [
-                "Flimsy",
-                "Substantial",
-                "Weak",
-                "Shaky"
-            ],
-            "nuanceDifference": "\"Solid\" can describe physical matter, but describing evidence here, it means well-supported and convincing, matching \"substantial.\"",
-            "contextSentence": "The prosecution presented substantial evidence against the defendant."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L69_Q3",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Green",
-            "hint": "Lacking experience; also, the color of grass.",
-            "explanation": "Describing a new employee, \"green\" means \"inexperienced\" — new to the job and still learning.",
-            "interactionType": "search",
-            "correctAnswer": "Inexperienced",
-            "options": [
-                "Seasoned",
-                "Skilled",
-                "Inexperienced",
-                "Expert"
-            ],
-            "nuanceDifference": "\"Green\" usually names a color, but describing a new hire here, it means inexperienced, a common idiom in workplaces.",
-            "contextSentence": "The inexperienced intern needed extra guidance during his first week."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L70_Q1",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Sound",
-            "hint": "Something that can be heard.",
-            "explanation": "In its most common sense, \"sound\" refers to a \"noise\" — anything that can be heard.",
-            "interactionType": "search",
-            "correctAnswer": "Noise",
-            "options": [
-                "Silence",
-                "Stillness",
-                "Calm",
-                "Noise"
-            ],
-            "nuanceDifference": "Unlike its earlier meaning describing reasonable judgment, here \"sound\" refers to an audible noise, matched by the general word \"noise.\"",
-            "contextSentence": "A strange noise came from the basement late at night."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L70_Q2",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Table",
-            "hint": "A piece of furniture with a flat top, used for eating or working.",
-            "explanation": "As a physical object, a \"table\" is a type of \"stand\" — furniture with a flat surface for placing things on.",
-            "interactionType": "search",
-            "correctAnswer": "Stand",
-            "options": [
-                "Chair",
-                "Shelf",
-                "Cabinet",
-                "Stand"
-            ],
-            "nuanceDifference": "Unlike its earlier meaning of postponing discussion, here \"table\" refers to the physical piece of furniture.",
-            "contextSentence": "They set up a folding stand for the outdoor market."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L70_Q3",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Book",
-            "hint": "A written or printed work consisting of pages bound together.",
-            "explanation": "In its most familiar sense, a \"book\" is a \"volume\" — a collection of pages bound and printed for reading.",
-            "interactionType": "search",
-            "correctAnswer": "Volume",
-            "options": [
-                "Chapter",
-                "Volume",
-                "Page",
-                "Cover"
-            ],
-            "nuanceDifference": "Unlike its earlier meaning of reserving something in advance, here \"book\" refers to the physical object you read.",
-            "contextSentence": "She kept every volume of the encyclopedia set on the shelf."
-        }
-    ]
+  "gameType": "synonymSearch",
+  "phase": "mastery",
+  "cefr": "B1",
+  "difficulty": 2,
+  "batchIndex": 7,
+  "levels": "61-70",
+  "quests": [
+    {
+      "id": "VOC_SYNONYMSEARCH_L61_Q1",
+      "level": 61,
+      "cefr": "B1",
+      "subtype": "synonymSearch",
+      "difficulty": 2,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Empty' in the sentence.",
+      "word": "Empty",
+      "definition": "Containing nothing or nobody.",
+      "synonym": "Vacant",
+      "correctAnswer": "Vacant",
+      "correctAnswerIndex": 2,
+      "options": [
+        "Open",
+        "Clear",
+        "Vacant",
+        "Void"
+      ],
+      "synonyms": [
+        "Vacant",
+        "Bare",
+        "Hollow"
+      ],
+      "antonyms": [
+        "Open",
+        "Clear",
+        "Void"
+      ],
+      "contextSentence": "Waiters led visitors to one ___ booth by the window.",
+      "usageExample": "Waiters led visitors to a vacant booth by the window.",
+      "nuanceDifference": "'Empty' describes cups, boxes, and feelings. 'Vacant' officially marks unrented hotel rooms, seats, or open jobs.",
+      "explanation": "Natural — available rooms, lots, and job posts take 'vacant'.",
+      "hint": "'Empty' describes cups, boxes, and feelings — think of the 'Hotel Sign' sense starting with 'V'.",
+      "gradientScale": [
+        "Empty",
+        "Vacant",
+        "Hollow",
+        "Unoccupied"
+      ],
+      "collocations": [
+        "two vacant rooms",
+        "a vacant booth"
+      ],
+      "wrongCollocations": [
+        "is vacant"
+      ],
+      "registerLevel": 2,
+      "topicEmoji": "🎯"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L61_Q2",
+      "level": 61,
+      "cefr": "B1",
+      "subtype": "synonymSearch",
+      "difficulty": 2,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Open' in the sentence.",
+      "word": "Open",
+      "definition": "Available for people to use.",
+      "synonym": "Public",
+      "correctAnswer": "Public",
+      "correctAnswerIndex": 3,
+      "options": [
+        "Clear",
+        "Wide",
+        "Fair",
+        "Public"
+      ],
+      "synonyms": [
+        "Public",
+        "Free",
+        "Civic"
+      ],
+      "antonyms": [
+        "Clear",
+        "Wide",
+        "Fair"
+      ],
+      "contextSentence": "Neighbors gathered in the ___ square to hear live music.",
+      "usageExample": "Neighbors gathered in the public square to hear live music.",
+      "nuanceDifference": "'Open' means unlocked or welcoming (`open shop`). 'Public' specifically means funded by/open to the whole community rather than private.",
+      "explanation": "Natural — community services and parks take 'public'.",
+      "hint": "'Open' means unlocked or welcoming (`open shop`) — think of the 'City Transit' sense starting with 'P'.",
+      "gradientScale": [
+        "Open",
+        "Public",
+        "Civic",
+        "Accessible"
+      ],
+      "collocations": [
+        "Reliable public buses",
+        "the public square"
+      ],
+      "wrongCollocations": [
+        "still public past"
+      ],
+      "registerLevel": 2,
+      "topicEmoji": "🌤️"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L61_Q3",
+      "level": 61,
+      "cefr": "B1",
+      "subtype": "synonymSearch",
+      "difficulty": 2,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Clean' in the sentence.",
+      "word": "Clean",
+      "definition": "Completely free of specks, dust, or marks.",
+      "synonym": "Spotless",
+      "correctAnswer": "Spotless",
+      "correctAnswerIndex": 0,
+      "options": [
+        "Spotless",
+        "New",
+        "Cool",
+        "Dry"
+      ],
+      "synonyms": [
+        "Spotless",
+        "Pure",
+        "Immaculate"
+      ],
+      "antonyms": [
+        "New",
+        "Cool",
+        "Dry"
+      ],
+      "contextSentence": "Inspectors praised the bakery’s ___ steel prep tables.",
+      "usageExample": "Inspectors praised the bakery’s spotless steel prep tables.",
+      "nuanceDifference": "'Clean' rinses soap (`clean socks`). 'Spotless' amazes guests with gleaming kitchen counters, guest suites, or driving records.",
+      "explanation": "Natural — gleaming zero-dust polish earns 'spotless'.",
+      "hint": "'Clean' rinses soap (`clean socks`) — think of the 'Lobby Desk' sense starting with 'S'.",
+      "gradientScale": [
+        "Clean",
+        "Spotless",
+        "Immaculate",
+        "Gleaming"
+      ],
+      "collocations": [
+        "counter spotless before",
+        "bakery’s spotless steel"
+      ],
+      "wrongCollocations": [
+        "of spotless socks"
+      ],
+      "registerLevel": 2,
+      "topicEmoji": "🔍"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L62_Q1",
+      "level": 62,
+      "cefr": "B1",
+      "subtype": "synonymSearch",
+      "difficulty": 2,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Habit' in the sentence.",
+      "word": "Habit",
+      "definition": "Actions repeated regularly.",
+      "synonym": "Routine",
+      "correctAnswer": "Routine",
+      "correctAnswerIndex": 3,
+      "options": [
+        "Way",
+        "Rule",
+        "Plan",
+        "Routine"
+      ],
+      "synonyms": [
+        "Routine",
+        "Custom",
+        "Pattern"
+      ],
+      "antonyms": [
+        "Way",
+        "Rule",
+        "Plan"
+      ],
+      "contextSentence": "Keep a calm evening ___ to fall asleep smoothly.",
+      "usageExample": "Keep a calm evening routine to fall asleep smoothly.",
+      "nuanceDifference": "'Habit' covers tiny automatic quirks (`bite nails`). 'Routine' is an organized daily sequence (`morning routine`).",
+      "explanation": "Natural — planned daily sequences are a 'routine'.",
+      "hint": "Fits expressions like \"morning ___\" — starts with 'R'.",
+      "gradientScale": [
+        "Habit",
+        "Routine",
+        "Pattern",
+        "Ritual"
+      ],
+      "collocations": [
+        "morning routine",
+        "evening routine to"
+      ],
+      "wrongCollocations": [
+        "bad routine"
+      ],
+      "registerLevel": 2,
+      "topicEmoji": "🧩"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L62_Q2",
+      "level": 62,
+      "cefr": "B1",
+      "subtype": "synonymSearch",
+      "difficulty": 2,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Plan' in the sentence.",
+      "word": "Plan",
+      "definition": "What you organize or hope to reach.",
+      "synonym": "Goal",
+      "correctAnswer": "Goal",
+      "correctAnswerIndex": 0,
+      "options": [
+        "Goal",
+        "Rule",
+        "Way",
+        "Hope"
+      ],
+      "synonyms": [
+        "Goal",
+        "Aim",
+        "Target"
+      ],
+      "antonyms": [
+        "Rule",
+        "Way",
+        "Hope"
+      ],
+      "contextSentence": "Scoring twice gave the striker his personal ___ for the season.",
+      "usageExample": "Scoring twice gave the striker his personal goal for the season.",
+      "nuanceDifference": "'Plan' lists steps (`step-by-step plan`). 'Goal' states the final finish target (`reach a goal`).",
+      "explanation": "Natural — the end destination you work toward is your 'goal'.",
+      "hint": "Fits expressions like \"reach a ___\" — starts with 'G'.",
+      "gradientScale": [
+        "Plan",
+        "Goal",
+        "Target",
+        "Dream"
+      ],
+      "collocations": [
+        "reach a goal",
+        "savings goal"
+      ],
+      "wrongCollocations": [
+        "floor goal for"
+      ],
+      "registerLevel": 2,
+      "topicEmoji": "📘"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L62_Q3",
+      "level": 62,
+      "cefr": "B1",
+      "subtype": "synonymSearch",
+      "difficulty": 2,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Choice' in the sentence.",
+      "word": "Choice",
+      "definition": "Something you are able to pick.",
+      "synonym": "Option",
+      "correctAnswer": "Option",
+      "correctAnswerIndex": 1,
+      "options": [
+        "Plan",
+        "Option",
+        "Way",
+        "Chance"
+      ],
+      "synonyms": [
+        "Option",
+        "Pick",
+        "Alternative"
+      ],
+      "antonyms": [
+        "Plan",
+        "Way",
+        "Chance"
+      ],
+      "contextSentence": "Vegetarians appreciated having a warm soup ___ on the menu.",
+      "usageExample": "Vegetarians appreciated having a warm soup option on the menu.",
+      "nuanceDifference": "'Choice' can mean your freedom or final selection (`good choice`). 'Option' highlights each listed menu alternative (`three options`).",
+      "explanation": "Natural — listed alternatives and settings are 'options'.",
+      "hint": "Fits expressions like \"three ___s\" — starts with 'O'.",
+      "gradientScale": [
+        "Choice",
+        "Option",
+        "Alternative",
+        "Selection"
+      ],
+      "collocations": [
+        "three options",
+        "travel option"
+      ],
+      "wrongCollocations": [
+        "personal option"
+      ],
+      "registerLevel": 2,
+      "topicEmoji": "🛎️"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L63_Q1",
+      "level": 63,
+      "cefr": "B1",
+      "subtype": "synonymSearch",
+      "difficulty": 2,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Wind' in the sentence.",
+      "word": "Wind",
+      "definition": "Moving air outdoors.",
+      "synonym": "Breeze",
+      "correctAnswer": "Breeze",
+      "correctAnswerIndex": 0,
+      "options": [
+        "Breeze",
+        "Air",
+        "Blow",
+        "Cool"
+      ],
+      "synonyms": [
+        "Breeze",
+        "Gust",
+        "Draft"
+      ],
+      "antonyms": [
+        "Air",
+        "Blow",
+        "Cool"
+      ],
+      "contextSentence": "Sailboats drifted steadily with a light afternoon ___.",
+      "usageExample": "Sailboats drifted steadily with a light afternoon breeze.",
+      "nuanceDifference": "'Wind' covers light gusts to strong gales. 'Breeze' always means a pleasant, gentle refreshing wind.",
+      "explanation": "Natural — pleasant light winds earn 'breeze'.",
+      "hint": "'Wind' covers light gusts to strong gales — think of the 'Beach Porch' sense starting with 'B'.",
+      "gradientScale": [
+        "Wind",
+        "Breeze",
+        "Draft",
+        "Gale"
+      ],
+      "collocations": [
+        "ocean breeze cooled",
+        "afternoon breeze"
+      ],
+      "wrongCollocations": [
+        "Fierce breeze knocked"
+      ],
+      "registerLevel": 2,
+      "topicEmoji": "🏛️"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L63_Q2",
+      "level": 63,
+      "cefr": "B1",
+      "subtype": "synonymSearch",
+      "difficulty": 2,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Rain' in the sentence.",
+      "word": "Rain",
+      "definition": "Water falling from clouds.",
+      "synonym": "Shower",
+      "correctAnswer": "Shower",
+      "correctAnswerIndex": 1,
+      "options": [
+        "Drop",
+        "Shower",
+        "Mist",
+        "Cloud"
+      ],
+      "synonyms": [
+        "Shower",
+        "Drizzle",
+        "Downpour"
+      ],
+      "antonyms": [
+        "Drop",
+        "Mist",
+        "Cloud"
+      ],
+      "contextSentence": "Walkers sheltered under awnings during the quick summer ___.",
+      "usageExample": "Walkers sheltered under awnings during the quick summer shower.",
+      "nuanceDifference": "'Rain' covers steady rainfalls. 'Shower' means a brief passing burst of rain that stops quickly.",
+      "explanation": "Natural — short passing bursts of rain take 'shower'.",
+      "hint": "'Rain' covers steady rainfalls — think of the 'April Forecast' sense starting with 'S'.",
+      "gradientScale": [
+        "Rain",
+        "Shower",
+        "Downpour",
+        "Storm"
+      ],
+      "collocations": [
+        "afternoon shower followed",
+        "summer shower"
+      ],
+      "wrongCollocations": [
+        "heavy shower flooded"
+      ],
+      "registerLevel": 2,
+      "topicEmoji": "📦"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L63_Q3",
+      "level": 63,
+      "cefr": "B1",
+      "subtype": "synonymSearch",
+      "difficulty": 2,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Cold' in the sentence.",
+      "word": "Cold",
+      "definition": "Very low in temperature.",
+      "synonym": "Freezing",
+      "correctAnswer": "Freezing",
+      "correctAnswerIndex": 2,
+      "options": [
+        "Hard",
+        "Cool",
+        "Freezing",
+        "Sharp"
+      ],
+      "synonyms": [
+        "Freezing",
+        "Chilly",
+        "Icy"
+      ],
+      "antonyms": [
+        "Hard",
+        "Cool",
+        "Sharp"
+      ],
+      "contextSentence": "Pipes wrapped in foam stayed safe during ___ nights.",
+      "usageExample": "Pipes wrapped in foam stayed safe during freezing nights.",
+      "nuanceDifference": "'Cold' stays comfortable to chilly. 'Freezing' means 0°C/ice temperature or bitterly icy air.",
+      "explanation": "Natural — bitter ice-level cold takes 'freezing'.",
+      "hint": "'Cold' stays comfortable to chilly — think of the 'Winter Frost' sense starting with 'F'.",
+      "gradientScale": [
+        "Cold",
+        "Freezing",
+        "Icy",
+        "Frigid"
+      ],
+      "collocations": [
+        "into freezing wind",
+        "during freezing nights"
+      ],
+      "wrongCollocations": [
+        "poured freezing milk"
+      ],
+      "registerLevel": 2,
+      "topicEmoji": "🔍"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L64_Q1",
+      "level": 64,
+      "cefr": "B1",
+      "subtype": "synonymSearch",
+      "difficulty": 2,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Ask' in the sentence.",
+      "word": "Ask",
+      "definition": "To request information.",
+      "synonym": "Inquire",
+      "correctAnswer": "Inquire",
+      "correctAnswerIndex": 1,
+      "options": [
+        "Tell",
+        "Inquire",
+        "Call",
+        "Seek"
+      ],
+      "synonyms": [
+        "Inquire",
+        "Question",
+        "Query"
+      ],
+      "antonyms": [
+        "Tell",
+        "Call",
+        "Seek"
+      ],
+      "contextSentence": "Customers may ___ inside regarding custom sizing options.",
+      "usageExample": "Customers may inquire inside regarding custom sizing options.",
+      "nuanceDifference": "'Ask' fits daily questions (`ask a friend`). 'Inquire' sounds formal and polished, especially for offices and travel desks.",
+      "explanation": "Natural — polite official inquiries take 'inquire'.",
+      "hint": "'Ask' fits daily questions (`ask a friend`) — think of the 'Reception Desk' sense starting with 'I'.",
+      "gradientScale": [
+        "Ask",
+        "Inquire",
+        "Query",
+        "Investigate"
+      ],
+      "collocations": [
+        "to inquire about",
+        "may inquire inside"
+      ],
+      "wrongCollocations": [
+        "you inquire Sam"
+      ],
+      "registerLevel": 2,
+      "topicEmoji": "🗣️"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L64_Q2",
+      "level": 64,
+      "cefr": "B1",
+      "subtype": "synonymSearch",
+      "difficulty": 2,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Explain' in the sentence.",
+      "word": "Explain",
+      "definition": "To make meaning easier to grasp.",
+      "synonym": "Clarify",
+      "correctAnswer": "Clarify",
+      "correctAnswerIndex": 2,
+      "options": [
+        "Show",
+        "Tell",
+        "Clarify",
+        "Note"
+      ],
+      "synonyms": [
+        "Clarify",
+        "Define",
+        "Detail"
+      ],
+      "antonyms": [
+        "Show",
+        "Tell",
+        "Note"
+      ],
+      "contextSentence": "Managers sent a brief memo to ___ the new start time.",
+      "usageExample": "Managers sent a brief memo to clarify the new start time.",
+      "nuanceDifference": "'Explain' teaches an idea from scratch. 'Clarify' clears up one confusing point or misunderstanding.",
+      "explanation": "Natural — resolving confusion on a specific detail takes 'clarify'.",
+      "hint": "'Explain' teaches an idea from scratch — think of the 'Rule Mix-up' sense starting with 'C'.",
+      "gradientScale": [
+        "Explain",
+        "Clarify",
+        "Detail",
+        "Elaborate"
+      ],
+      "collocations": [
+        "me clarify that",
+        "to clarify the"
+      ],
+      "wrongCollocations": [
+        "help clarify how"
+      ],
+      "registerLevel": 2,
+      "topicEmoji": "🧭"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L64_Q3",
+      "level": 64,
+      "cefr": "B1",
+      "subtype": "synonymSearch",
+      "difficulty": 2,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Repeat' in the sentence.",
+      "word": "Repeat",
+      "definition": "To say or sound again.",
+      "synonym": "Echo",
+      "correctAnswer": "Echo",
+      "correctAnswerIndex": 3,
+      "options": [
+        "Copy",
+        "Read",
+        "Call",
+        "Echo"
+      ],
+      "synonyms": [
+        "Echo",
+        "Restate",
+        "Reiterate"
+      ],
+      "antonyms": [
+        "Copy",
+        "Read",
+        "Call"
+      ],
+      "contextSentence": "Several board members rose to ___ her smart proposal.",
+      "usageExample": "Several board members rose to echo her smart proposal.",
+      "nuanceDifference": "'Repeat' intentionally says words twice (`repeat the rule`). 'Echo' bounces sound off canyon walls or agrees smoothly.",
+      "explanation": "Natural — bouncing acoustic sounds and shared views 'echo'.",
+      "hint": "'Repeat' intentionally says words twice (`repeat the rule`) — think of the 'Stone Cave' sense starting with 'E'.",
+      "gradientScale": [
+        "Repeat",
+        "Echo",
+        "Reiterate",
+        "Recap"
+      ],
+      "collocations": [
+        "Footsteps echo down",
+        "to echo her"
+      ],
+      "wrongCollocations": [
+        "kindly echo that"
+      ],
+      "registerLevel": 2,
+      "topicEmoji": "✨"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L65_Q1",
+      "level": 65,
+      "cefr": "B1",
+      "subtype": "synonymSearch",
+      "difficulty": 2,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Memory' in the sentence.",
+      "word": "Memory",
+      "definition": "Ability to keep and bring back past facts.",
+      "synonym": "Recall",
+      "correctAnswer": "Recall",
+      "correctAnswerIndex": 2,
+      "options": [
+        "Mind",
+        "Thought",
+        "Recall",
+        "Past"
+      ],
+      "synonyms": [
+        "Recall",
+        "Recollection",
+        "Retention"
+      ],
+      "antonyms": [
+        "Mind",
+        "Thought",
+        "Past"
+      ],
+      "contextSentence": "Practice strengthens fast vocabulary ___ during live talks.",
+      "usageExample": "Practice strengthens fast vocabulary recall during live talks.",
+      "nuanceDifference": "'Memory' covers childhood stories and device RAM. 'Recall' highlights active mental retrieval under test pressure.",
+      "explanation": "Natural — fast active mental retrieval takes 'recall'.",
+      "hint": "'Memory' covers childhood stories and device RAM — think of the 'Quiz Skill' sense starting with 'R'.",
+      "gradientScale": [
+        "Memory",
+        "Recall",
+        "Retention",
+        "Remembrance"
+      ],
+      "collocations": [
+        "word recall before",
+        "vocabulary recall during"
+      ],
+      "wrongCollocations": [
+        "phone recall quickly"
+      ],
+      "registerLevel": 2,
+      "topicEmoji": "🏛️"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L65_Q2",
+      "level": 65,
+      "cefr": "B1",
+      "subtype": "synonymSearch",
+      "difficulty": 2,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Idea' in the sentence.",
+      "word": "Idea",
+      "definition": "A thought formed in the mind.",
+      "synonym": "Concept",
+      "correctAnswer": "Concept",
+      "correctAnswerIndex": 3,
+      "options": [
+        "Plan",
+        "Mind",
+        "Fact",
+        "Concept"
+      ],
+      "synonyms": [
+        "Concept",
+        "Notion",
+        "Theory"
+      ],
+      "antonyms": [
+        "Plan",
+        "Mind",
+        "Fact"
+      ],
+      "contextSentence": "Sketches help explain the new product ___ to investors.",
+      "usageExample": "Sketches help explain the new product concept to investors.",
+      "nuanceDifference": "'Idea' can be sudden and playful (`great idea!`). 'Concept' describes an abstract principle or structured design theory.",
+      "explanation": "Natural — foundational abstract theories use 'concept'.",
+      "hint": "'Idea' can be sudden and playful (`great idea!`) — think of the 'Physics Class' sense starting with 'C'.",
+      "gradientScale": [
+        "Idea",
+        "Concept",
+        "Theory",
+        "Thought"
+      ],
+      "collocations": [
+        "science concept taught",
+        "product concept to"
+      ],
+      "wrongCollocations": [
+        "fun concept"
+      ],
+      "registerLevel": 2,
+      "topicEmoji": "📦"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L65_Q3",
+      "level": 65,
+      "cefr": "B1",
+      "subtype": "synonymSearch",
+      "difficulty": 2,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Reason' in the sentence.",
+      "word": "Reason",
+      "definition": "Why something happens.",
+      "synonym": "Cause",
+      "correctAnswer": "Cause",
+      "correctAnswerIndex": 0,
+      "options": [
+        "Cause",
+        "Fact",
+        "Point",
+        "Result"
+      ],
+      "synonyms": [
+        "Cause",
+        "Motive",
+        "Origin"
+      ],
+      "antonyms": [
+        "Fact",
+        "Point",
+        "Result"
+      ],
+      "contextSentence": "Doctors studied the main ___ behind seasonal allergies.",
+      "usageExample": "Doctors studied the main cause behind seasonal allergies.",
+      "nuanceDifference": "'Reason' explains human motives or logical thinking (`for no good reason`). 'Cause' points to the direct physical or scientific trigger (`cause of fire`).",
+      "explanation": "Natural — physical triggers of events or disease use 'cause'.",
+      "hint": "Fits expressions like \"___ of fire\" — starts with 'C'.",
+      "gradientScale": [
+        "Reason",
+        "Cause",
+        "Origin",
+        "Source"
+      ],
+      "collocations": [
+        "cause of fire",
+        "exact cause of"
+      ],
+      "wrongCollocations": [
+        "to cause before"
+      ],
+      "registerLevel": 2,
+      "topicEmoji": "🗺️"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L66_Q1",
+      "level": 66,
+      "cefr": "B1",
+      "subtype": "synonymSearch",
+      "difficulty": 2,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Allow' in the sentence.",
+      "word": "Allow",
+      "definition": "To make it possible for someone to do something.",
+      "synonym": "Permit",
+      "correctAnswer": "Permit",
+      "correctAnswerIndex": 3,
+      "options": [
+        "Pass",
+        "Give",
+        "Agree",
+        "Permit"
+      ],
+      "synonyms": [
+        "Permit",
+        "Let",
+        "Approve"
+      ],
+      "antonyms": [
+        "Pass",
+        "Give",
+        "Agree"
+      ],
+      "contextSentence": "New badges ___ staff to enter the science wing safely.",
+      "usageExample": "New badges permit staff to enter the science wing safely.",
+      "nuanceDifference": "'Allow' fits family and polite consent (`allow dogs`). 'Permit' stresses formal written rules or law (`no parking permitted`).",
+      "explanation": "Natural — official legal allowances favor 'permit'.",
+      "hint": "Fits expressions like \"no parking ___ted\" — starts with 'P'.",
+      "gradientScale": [
+        "Allow",
+        "Permit",
+        "Approve",
+        "Authorize"
+      ],
+      "collocations": [
+        "no parking permitted",
+        "only permit fishing"
+      ],
+      "wrongCollocations": [
+        "to permit for"
+      ],
+      "registerLevel": 2,
+      "topicEmoji": "🗣️"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L66_Q2",
+      "level": 66,
+      "cefr": "B1",
+      "subtype": "synonymSearch",
+      "difficulty": 2,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Stop' in the sentence.",
+      "word": "Stop",
+      "definition": "To keep something from happening.",
+      "synonym": "Prevent",
+      "correctAnswer": "Prevent",
+      "correctAnswerIndex": 0,
+      "options": [
+        "Prevent",
+        "End",
+        "Quit",
+        "Check"
+      ],
+      "synonyms": [
+        "Prevent",
+        "Halt",
+        "Block"
+      ],
+      "antonyms": [
+        "End",
+        "Quit",
+        "Check"
+      ],
+      "contextSentence": "Steel barriers help ___ coastal erosion during storms.",
+      "usageExample": "Steel barriers help prevent coastal erosion during storms.",
+      "nuanceDifference": "'Stop' halts ongoing action (`stop talking`). 'Prevent' takes early steps BEFORE trouble starts (`prevent rust`).",
+      "explanation": "Natural — blocking trouble before it begins uses 'prevent'.",
+      "hint": "Fits expressions like \"___ rust\" — starts with 'P'.",
+      "gradientScale": [
+        "Stop",
+        "Prevent",
+        "Block",
+        "Avoid"
+      ],
+      "collocations": [
+        "prevent rust",
+        "helps prevent winter"
+      ],
+      "wrongCollocations": [
+        "to prevent at"
+      ],
+      "registerLevel": 2,
+      "topicEmoji": "🧭"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L66_Q3",
+      "level": 66,
+      "cefr": "B1",
+      "subtype": "synonymSearch",
+      "difficulty": 2,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Protect' in the sentence.",
+      "word": "Protect",
+      "definition": "To keep someone or something from harm.",
+      "synonym": "Guard",
+      "correctAnswer": "Guard",
+      "correctAnswerIndex": 1,
+      "options": [
+        "Save",
+        "Guard",
+        "Keep",
+        "Hold"
+      ],
+      "synonyms": [
+        "Guard",
+        "Shield",
+        "Defend"
+      ],
+      "antonyms": [
+        "Save",
+        "Keep",
+        "Hold"
+      ],
+      "contextSentence": "Security dogs help ___ the farm gate overnight.",
+      "usageExample": "Security dogs help guard the farm gate overnight.",
+      "nuanceDifference": "'Protect' shields broadly (`sunscreen protects skin`). 'Guard' actively watches closely like a soldier or goalkeeper.",
+      "explanation": "Natural — standing watch at a gate or goal takes 'guard'.",
+      "hint": "'Protect' shields broadly (`sunscreen protects skin`) — think of the 'Net Goal' sense starting with 'G'.",
+      "gradientScale": [
+        "Protect",
+        "Guard",
+        "Defend",
+        "Watch"
+      ],
+      "collocations": [
+        "keepers guard the",
+        "help guard the"
+      ],
+      "wrongCollocations": [
+        "to guard your"
+      ],
+      "registerLevel": 2,
+      "topicEmoji": "✨"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L67_Q1",
+      "level": 67,
+      "cefr": "B1",
+      "subtype": "synonymSearch",
+      "difficulty": 2,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Kind' in the sentence.",
+      "word": "Kind",
+      "definition": "Caring and soft toward others.",
+      "synonym": "Gentle",
+      "correctAnswer": "Gentle",
+      "correctAnswerIndex": 0,
+      "options": [
+        "Gentle",
+        "Nice",
+        "Soft",
+        "Mild"
+      ],
+      "synonyms": [
+        "Gentle",
+        "Warm",
+        "Tender"
+      ],
+      "antonyms": [
+        "Nice",
+        "Soft",
+        "Mild"
+      ],
+      "contextSentence": "Physiotherapists recommend ___ stretching after runs.",
+      "usageExample": "Physiotherapists recommend gentle stretching after runs.",
+      "nuanceDifference": "'Kind' stresses generous actions (`kind helper`). 'Gentle' describes soft touch, calm tones, and zero roughness (`gentle breeze`).",
+      "explanation": "Natural — soft physical pressure or soft wind uses 'gentle'.",
+      "hint": "Fits expressions like \"___ breeze\" — starts with 'G'.",
+      "gradientScale": [
+        "Kind",
+        "Gentle",
+        "Tender",
+        "Compassionate"
+      ],
+      "collocations": [
+        "gentle breeze",
+        "a gentle hand"
+      ],
+      "wrongCollocations": [
+        "truly gentle surprise"
+      ],
+      "registerLevel": 2,
+      "topicEmoji": "🎯"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L67_Q2",
+      "level": 67,
+      "cefr": "B1",
+      "subtype": "synonymSearch",
+      "difficulty": 2,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Strict' in the sentence.",
+      "word": "Strict",
+      "definition": "Holding clear rules without bending easily.",
+      "synonym": "Firm",
+      "correctAnswer": "Firm",
+      "correctAnswerIndex": 1,
+      "options": [
+        "Hard",
+        "Firm",
+        "Tight",
+        "Clear"
+      ],
+      "synonyms": [
+        "Firm",
+        "Tough",
+        "Rigid"
+      ],
+      "antonyms": [
+        "Hard",
+        "Tight",
+        "Clear"
+      ],
+      "contextSentence": "Speak in a calm yet ___ voice so the puppy listens.",
+      "usageExample": "Speak in a calm yet firm voice so the puppy listens.",
+      "nuanceDifference": "'Strict' enforces harsh or detailed rules (`strict diet`). 'Firm' combines calm strength with steady resolve (`firm grip`, `firm voice`).",
+      "explanation": "Natural — steady physical pressure or calm boundaries use 'firm'.",
+      "hint": "Fits expressions like \"___ grip\" — starts with 'F'.",
+      "gradientScale": [
+        "Strict",
+        "Firm",
+        "Rigid",
+        "Resolute"
+      ],
+      "collocations": [
+        "firm grip",
+        "firm voice"
+      ],
+      "wrongCollocations": [
+        "follows firm timing"
+      ],
+      "registerLevel": 2,
+      "topicEmoji": "🌤️"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L67_Q3",
+      "level": 67,
+      "cefr": "B1",
+      "subtype": "synonymSearch",
+      "difficulty": 2,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Funny' in the sentence.",
+      "word": "Funny",
+      "definition": "Making people smile or laugh.",
+      "synonym": "Amusing",
+      "correctAnswer": "Amusing",
+      "correctAnswerIndex": 2,
+      "options": [
+        "Odd",
+        "Glad",
+        "Amusing",
+        "Light"
+      ],
+      "synonyms": [
+        "Amusing",
+        "Comical",
+        "Witty"
+      ],
+      "antonyms": [
+        "Odd",
+        "Glad",
+        "Light"
+      ],
+      "contextSentence": "Children watched the ___ puppet show on the lawn.",
+      "usageExample": "Children watched the amusing puppet show on the lawn.",
+      "nuanceDifference": "'Funny' causes big laughs OR means strange (`funny smell`). 'Amusing' brings light, witty entertainment or charming smiles.",
+      "explanation": "Natural — charming, witty anecdotes earn 'amusing'.",
+      "hint": "'Funny' causes big laughs OR means strange (`funny smell`) — think of the 'Dinner Story' sense starting with 'A'.",
+      "gradientScale": [
+        "Funny",
+        "Amusing",
+        "Witty",
+        "Hilarious"
+      ],
+      "collocations": [
+        "an amusing story",
+        "the amusing puppet"
+      ],
+      "wrongCollocations": [
+        "bit amusing —"
+      ],
+      "registerLevel": 2,
+      "topicEmoji": "🔍"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L68_Q1",
+      "level": 68,
+      "cefr": "B1",
+      "subtype": "synonymSearch",
+      "difficulty": 2,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Middle' in the sentence.",
+      "word": "Middle",
+      "definition": "Equal distance from outer edges.",
+      "synonym": "Center",
+      "correctAnswer": "Center",
+      "correctAnswerIndex": 1,
+      "options": [
+        "Half",
+        "Center",
+        "Part",
+        "Inside"
+      ],
+      "synonyms": [
+        "Center",
+        "Core",
+        "Heart"
+      ],
+      "antonyms": [
+        "Half",
+        "Part",
+        "Inside"
+      ],
+      "contextSentence": "Shoppers walked toward the ___ of the lively market.",
+      "usageExample": "Shoppers walked toward the center of the lively market.",
+      "nuanceDifference": "'Middle' fits casual space/time (`middle of night`). 'Center' fits exact geometry, hubs, and British/US public buildings (`city center`).",
+      "explanation": "Natural — exact focal hubs and geometry take 'center'.",
+      "hint": "Fits expressions like \"city ___\" — starts with 'C'.",
+      "gradientScale": [
+        "Middle",
+        "Center",
+        "Heart",
+        "Midpoint"
+      ],
+      "collocations": [
+        "city center",
+        "the center of"
+      ],
+      "wrongCollocations": [
+        "the center of"
+      ],
+      "registerLevel": 2,
+      "topicEmoji": "🧩"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L68_Q2",
+      "level": 68,
+      "cefr": "B1",
+      "subtype": "synonymSearch",
+      "difficulty": 2,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Side' in the sentence.",
+      "word": "Side",
+      "definition": "Part near the outer limit of something.",
+      "synonym": "Edge",
+      "correctAnswer": "Edge",
+      "correctAnswerIndex": 2,
+      "options": [
+        "End",
+        "Part",
+        "Edge",
+        "Line"
+      ],
+      "synonyms": [
+        "Edge",
+        "Border",
+        "Rim"
+      ],
+      "antonyms": [
+        "End",
+        "Part",
+        "Line"
+      ],
+      "contextSentence": "Hikers rested safely back from the steep canyon ___.",
+      "usageExample": "Hikers rested safely back from the steep canyon edge.",
+      "nuanceDifference": "'Side' names left, right, or team viewpoint (`my side`). 'Edge' focuses on the sharp outer rim or cliff border (`cliff edge`).",
+      "explanation": "Natural — narrow outer borders and blades use 'edge'.",
+      "hint": "Fits expressions like \"cliff ___\" — starts with 'E'.",
+      "gradientScale": [
+        "Side",
+        "Edge",
+        "Rim",
+        "Margin"
+      ],
+      "collocations": [
+        "cliff edge",
+        "the edge of"
+      ],
+      "wrongCollocations": [
+        "people’s edge of"
+      ],
+      "registerLevel": 2,
+      "topicEmoji": "📘"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L68_Q3",
+      "level": 68,
+      "cefr": "B1",
+      "subtype": "synonymSearch",
+      "difficulty": 2,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Top' in the sentence.",
+      "word": "Top",
+      "definition": "The highest point of something.",
+      "synonym": "Peak",
+      "correctAnswer": "Peak",
+      "correctAnswerIndex": 3,
+      "options": [
+        "High",
+        "End",
+        "Roof",
+        "Peak"
+      ],
+      "synonyms": [
+        "Peak",
+        "Summit",
+        "Crest"
+      ],
+      "antonyms": [
+        "High",
+        "End",
+        "Roof"
+      ],
+      "contextSentence": "Climbers celebrated reaching the snowy mountain ___.",
+      "usageExample": "Climbers celebrated reaching the snowy mountain peak.",
+      "nuanceDifference": "'Top' fits boxes, pages, and stairs (`top shelf`). 'Peak' marks sharp mountain summits or highest business/traffic rush (`peak hour`).",
+      "explanation": "Natural — maximum spikes and mountain tips use 'peak'.",
+      "hint": "Fits expressions like \"___ hour\" — starts with 'P'.",
+      "gradientScale": [
+        "Top",
+        "Peak",
+        "Crest",
+        "Apex"
+      ],
+      "collocations": [
+        "peak hour",
+        "during peak morning"
+      ],
+      "wrongCollocations": [
+        "plastic peak tightly"
+      ],
+      "registerLevel": 2,
+      "topicEmoji": "🛎️"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L69_Q1",
+      "level": 69,
+      "cefr": "B1",
+      "subtype": "synonymSearch",
+      "difficulty": 2,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Fresh' in the sentence.",
+      "word": "Fresh",
+      "definition": "Wide awake and quick to notice things.",
+      "synonym": "Alert",
+      "correctAnswer": "Alert",
+      "correctAnswerIndex": 2,
+      "options": [
+        "New",
+        "Fast",
+        "Alert",
+        "Ready"
+      ],
+      "synonyms": [
+        "Alert",
+        "Awake",
+        "Sharp"
+      ],
+      "antonyms": [
+        "New",
+        "Fast",
+        "Ready"
+      ],
+      "contextSentence": "Crosswalks flash lights so drivers stay ___ near schools.",
+      "usageExample": "Crosswalks flash lights so drivers stay alert near schools.",
+      "nuanceDifference": "'Fresh' feels rested (`fresh start`). 'Alert' stays sharply watchful against sudden changes (`stay alert`).",
+      "explanation": "Natural — focused readiness against danger uses 'alert'.",
+      "hint": "Fits expressions like \"stay ___\" — starts with 'A'.",
+      "gradientScale": [
+        "Fresh",
+        "Alert",
+        "Sharp",
+        "Vigilant"
+      ],
+      "collocations": [
+        "stay alert",
+        "stay alert until"
+      ],
+      "wrongCollocations": [
+        "Buy alert rolls"
+      ],
+      "registerLevel": 2,
+      "topicEmoji": "🎯"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L69_Q2",
+      "level": 69,
+      "cefr": "B1",
+      "subtype": "synonymSearch",
+      "difficulty": 2,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Firm' in the sentence.",
+      "word": "Firm",
+      "definition": "Hard and stable beneath you.",
+      "synonym": "Solid",
+      "correctAnswer": "Solid",
+      "correctAnswerIndex": 3,
+      "options": [
+        "Hard",
+        "Strong",
+        "Flat",
+        "Solid"
+      ],
+      "synonyms": [
+        "Solid",
+        "Steady",
+        "Dense"
+      ],
+      "antonyms": [
+        "Hard",
+        "Strong",
+        "Flat"
+      ],
+      "contextSentence": "Build the garden deck over ___ concrete blocks.",
+      "usageExample": "Build the garden deck over solid concrete blocks.",
+      "nuanceDifference": "'Firm' gives steady resistance (`firm mattress`). 'Solid' means completely filled through, rock-steady, or dependable (`solid proof`).",
+      "explanation": "Natural — completely hard through without gaps uses 'solid'.",
+      "hint": "Fits expressions like \"___ proof\" — starts with 'S'.",
+      "gradientScale": [
+        "Firm",
+        "Solid",
+        "Dense",
+        "Unbreakable"
+      ],
+      "collocations": [
+        "solid proof",
+        "is solid and"
+      ],
+      "wrongCollocations": [
+        "slightly solid"
+      ],
+      "registerLevel": 2,
+      "topicEmoji": "🌤️"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L69_Q3",
+      "level": 69,
+      "cefr": "B1",
+      "subtype": "synonymSearch",
+      "difficulty": 2,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Sound' in the sentence.",
+      "word": "Sound",
+      "definition": "Strong and working properly without fault.",
+      "synonym": "Healthy",
+      "correctAnswer": "Healthy",
+      "correctAnswerIndex": 0,
+      "options": [
+        "Healthy",
+        "Good",
+        "Strong",
+        "Fine"
+      ],
+      "synonyms": [
+        "Healthy",
+        "Fit",
+        "Whole"
+      ],
+      "antonyms": [
+        "Good",
+        "Strong",
+        "Fine"
+      ],
+      "contextSentence": "Daily walks and clean water keep our bodies ___.",
+      "usageExample": "Daily walks and clean water keep our bodies healthy.",
+      "nuanceDifference": "'Sound' describes solid judgment (`sound advice`) or deep sleep (`sound sleep`). 'Healthy' describes living bodies, diets, and economies.",
+      "explanation": "Natural — physical nutrition and fitness use 'healthy'.",
+      "hint": "'Sound' describes solid judgment (`sound advice`) or deep sleep (`sound sleep`) — think of the 'Meal Habit' sense starting with 'H'.",
+      "gradientScale": [
+        "Sound",
+        "Healthy",
+        "Whole",
+        "Robust"
+      ],
+      "collocations": [
+        "balanced, healthy supper",
+        "bodies healthy"
+      ],
+      "wrongCollocations": [
+        "deep, healthy sleep"
+      ],
+      "registerLevel": 2,
+      "topicEmoji": "🔍"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L70_Q1",
+      "level": 70,
+      "cefr": "B1",
+      "subtype": "synonymSearch",
+      "difficulty": 2,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Deep' in the sentence.",
+      "word": "Deep",
+      "definition": "Reaching far below the surface.",
+      "synonym": "Profound",
+      "correctAnswer": "Profound",
+      "correctAnswerIndex": 3,
+      "options": [
+        "Wide",
+        "High",
+        "Dark",
+        "Profound"
+      ],
+      "synonyms": [
+        "Profound",
+        "Intense",
+        "Thoughtful"
+      ],
+      "antonyms": [
+        "Wide",
+        "High",
+        "Dark"
+      ],
+      "contextSentence": "Teachers thanked donors with ___ gratitude after the fire.",
+      "usageExample": "Teachers thanked donors with profound gratitude after the fire.",
+      "nuanceDifference": "'Deep' measures physical depth (`deep pool`, `deep blue`). 'Profound' describes powerful thoughts, gratitude, or lasting change.",
+      "explanation": "Natural — weighty emotional or intellectual depth uses 'profound'.",
+      "hint": "'Deep' measures physical depth (`deep pool`, `deep blue`) — think of the 'Book Impact' sense starting with 'P'.",
+      "gradientScale": [
+        "Deep",
+        "Profound",
+        "Thoughtful",
+        "Enduring"
+      ],
+      "collocations": [
+        "a profound effect",
+        "with profound gratitude"
+      ],
+      "wrongCollocations": [
+        "the profound underwater"
+      ],
+      "registerLevel": 2,
+      "topicEmoji": "🌿"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L70_Q2",
+      "level": 70,
+      "cefr": "B1",
+      "subtype": "synonymSearch",
+      "difficulty": 2,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Wide' in the sentence.",
+      "word": "Wide",
+      "definition": "Measuring far from side to side.",
+      "synonym": "Broad",
+      "correctAnswer": "Broad",
+      "correctAnswerIndex": 0,
+      "options": [
+        "Broad",
+        "Big",
+        "Long",
+        "Full"
+      ],
+      "synonyms": [
+        "Broad",
+        "Spacious",
+        "Expansive"
+      ],
+      "antonyms": [
+        "Big",
+        "Long",
+        "Full"
+      ],
+      "contextSentence": "Waiters greeted guests with one ___ welcoming smile.",
+      "usageExample": "Waiters greeted guests with a broad welcoming smile.",
+      "nuanceDifference": "'Wide' fits physical spans (`wide door`, `wide river`). 'Broad' pairs with shoulders, daylight, smiles, and general summaries.",
+      "explanation": "Natural — wide-ranging concepts and 'broad smile' take 'broad'.",
+      "hint": "'Wide' fits physical spans (`wide door`, `wide river`) — think of the 'Summary Topic' sense starting with 'B'.",
+      "gradientScale": [
+        "Wide",
+        "Broad",
+        "Expansive",
+        "Sweeping"
+      ],
+      "collocations": [
+        "a broad range",
+        "a broad welcoming"
+      ],
+      "wrongCollocations": [
+        "how broad the"
+      ],
+      "registerLevel": 2,
+      "topicEmoji": "⚖️"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L70_Q3",
+      "level": 70,
+      "cefr": "B1",
+      "subtype": "synonymSearch",
+      "difficulty": 2,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Short' in the sentence.",
+      "word": "Short",
+      "definition": "Lasting only a small amount of time.",
+      "synonym": "Brief",
+      "correctAnswer": "Brief",
+      "correctAnswerIndex": 1,
+      "options": [
+        "Small",
+        "Brief",
+        "Fast",
+        "Tiny"
+      ],
+      "synonyms": [
+        "Brief",
+        "Quick",
+        "Fleeting"
+      ],
+      "antonyms": [
+        "Small",
+        "Fast",
+        "Tiny"
+      ],
+      "contextSentence": "Take a ___ break between chapters to stretch your legs.",
+      "usageExample": "Take a brief break between chapters to stretch your legs.",
+      "nuanceDifference": "'Short' covers both physical height (`short rope`) and time. 'Brief' strictly describes short duration or concise notes.",
+      "explanation": "Natural — concise time periods and summaries use 'brief'.",
+      "hint": "'Short' covers both physical height (`short rope`) and time — think of the 'Morning Call' sense starting with 'B'.",
+      "gradientScale": [
+        "Short",
+        "Brief",
+        "Fleeting",
+        "Concise"
+      ],
+      "collocations": [
+        "a brief update",
+        "a brief break"
+      ],
+      "wrongCollocations": [
+        "a brief summer"
+      ],
+      "registerLevel": 2,
+      "topicEmoji": "💬"
+    }
+  ]
 }

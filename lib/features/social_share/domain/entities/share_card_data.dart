@@ -1,6 +1,14 @@
 import 'package:flutter/foundation.dart';
 
-enum ShareCardType { rank, streak, arenaVictory, arenaInvite, referral }
+enum ShareCardType {
+  rank,
+  streak,
+  arenaVictory,
+  arenaDefeat,
+  arenaDraw,
+  arenaInvite,
+  referral,
+}
 
 @immutable
 class ShareCardData {
@@ -14,6 +22,7 @@ class ShareCardData {
   final String title;
   final String subtitle;
   final String? referralCode;
+  final bool isWeeklyRank;
 
   // 1v1 Arena Duel details
   final int? myScore;
@@ -34,6 +43,7 @@ class ShareCardData {
     required this.title,
     required this.subtitle,
     this.referralCode,
+    this.isWeeklyRank = false,
     this.myScore,
     this.rivalScore,
     this.rivalName,
@@ -80,7 +90,7 @@ class ShareCardData {
     bool isAiRival = false,
   }) {
     return ShareCardData(
-      type: ShareCardType.arenaVictory,
+      type: ShareCardType.arenaDefeat,
       userName: userName,
       userPhotoUrl: userPhotoUrl,
       myScore: myScore,
@@ -93,6 +103,33 @@ class ShareCardData {
       subtitle: rivalName.isNotEmpty
           ? 'Battled $rivalName in a 1v1 English Duel — rematch incoming!'
           : '1v1 English Duel Contender',
+    );
+  }
+
+  factory ShareCardData.fromArenaDraw({
+    required String userName,
+    String? userPhotoUrl,
+    required int myScore,
+    required int rivalScore,
+    required String rivalName,
+    required String roomCode,
+    required int payoutCoins,
+    bool isAiRival = false,
+  }) {
+    return ShareCardData(
+      type: ShareCardType.arenaDraw,
+      userName: userName,
+      userPhotoUrl: userPhotoUrl,
+      myScore: myScore,
+      rivalScore: rivalScore,
+      rivalName: rivalName,
+      roomCode: roomCode,
+      payoutCoins: payoutCoins,
+      isAiRival: isAiRival,
+      title: '1v1 DUEL DRAW',
+      subtitle: rivalName.isNotEmpty
+          ? 'Tied $rivalName in a 1v1 English Duel'
+          : '1v1 English Duel Draw',
     );
   }
 
@@ -134,6 +171,7 @@ class ShareCardData {
     required int totalXp,
     required int streak,
     String? referralCode,
+    bool isWeekly = false,
   }) {
     return ShareCardData(
       type: ShareCardType.rank,
@@ -142,8 +180,10 @@ class ShareCardData {
       rank: rank,
       totalXp: totalXp,
       streak: streak,
+      isWeeklyRank: isWeekly,
       title: 'Rank #$rank on Vowl',
-      subtitle: '$totalXp Total XP · $streak-Day Streak',
+      subtitle:
+          '$totalXp ${isWeekly ? 'Weekly' : 'Total'} XP · $streak-Day Streak',
       referralCode: referralCode,
     );
   }

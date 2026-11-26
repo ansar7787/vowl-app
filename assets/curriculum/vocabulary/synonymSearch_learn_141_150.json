@@ -1,1058 +1,1570 @@
 {
-    "gameType": "synonymSearch",
-    "phase": "learn",
-    "batchIndex": 15,
-    "levels": "141-150",
-    "quests": [
+  "gameType": "synonymSearch",
+  "phase": "learn",
+  "cefr": "C1",
+  "difficulty": 4,
+  "batchIndex": 15,
+  "levels": "141-150",
+  "quests": [
+    {
+      "id": "VOC_SYNONYMSEARCH_L141_LEARN_Q1",
+      "level": 141,
+      "cefr": "C1",
+      "difficulty": 4,
+      "pairTitle": "Take ↔ Appropriate",
+      "baseWord": "Take",
+      "synonym": "Appropriate",
+      "partOfSpeech": "Verb",
+      "coreMeaning": "To assign public money officially or take without permission.",
+      "whyDifferent": "'Take' lifts mugs (`take a seat`). 'Appropriate' designates city relief funds formally OR takes creative ideas without credit.",
+      "makeovers": [
         {
-            "id": "VOC_SYNONYMSEARCH_L141_LEARN_Q1",
-            "level": 141,
-            "conceptTitle": "Concept Exploration: REPORT",
-            "word": "REPORT",
-            "definition": "\"Cover\" describes reporting on an event as a journalist, closely related to reporting it for the news.",
-            "example": "Example sentence",
-            "nativeTip": "To give an account of an event, especially in the news.",
-            "visualAnchor": "💡 REPORT = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "\"Cover\" describes reporting on an event as a journalist, closely related to reporting it for the news.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "To give an account of an event, especially in the news."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L141_Q1",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Report",
-                "hint": "To give an account of an event, especially in the news.",
-                "explanation": "\"Cover\" describes reporting on an event as a journalist, closely related to reporting it for the news.",
-                "interactionType": "search",
-                "correctAnswer": "Cover",
-                "options": [
-                    "Suppress",
-                    "Ignore",
-                    "Bury",
-                    "Cover"
-                ],
-                "nuanceDifference": "\"Cover\" is standard media terminology for reporting on a story, while \"report\" is the more general word for giving any account of events.",
-                "contextSentence": "Three networks sent crews to cover the election results."
-            }
+          "situationTag": "City Funds",
+          "beforeSentence": "Lawmakers voted to ___ relief cash for flooded farmland.",
+          "targetSlotWord": "take",
+          "swappedWord": "appropriate",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — formally allocating public funds takes 'appropriate'.",
+          "spokenSentence": "Lawmakers voted to appropriate relief cash for flooded farmland."
         },
         {
-            "id": "VOC_SYNONYMSEARCH_L141_LEARN_Q2",
-            "level": 141,
-            "conceptTitle": "Concept Exploration: LEAK",
-            "word": "LEAK",
-            "definition": "\"Divulge\" describes revealing secret or private information, closely related to leaking it.",
-            "example": "Example sentence",
-            "nativeTip": "To release secret information without authorization.",
-            "visualAnchor": "💡 LEAK = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "\"Divulge\" describes revealing secret or private information, closely related to leaking it.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "To release secret information without authorization."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L141_Q2",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Leak",
-                "hint": "To release secret information without authorization.",
-                "explanation": "\"Divulge\" describes revealing secret or private information, closely related to leaking it.",
-                "interactionType": "search",
-                "correctAnswer": "Divulge",
-                "options": [
-                    "Divulge",
-                    "Withhold",
-                    "Conceal",
-                    "Suppress"
-                ],
-                "nuanceDifference": "\"Divulge\" is more formal and can describe any reveal, authorized or not, while \"leak\" specifically implies an unauthorized release of secret information.",
-                "contextSentence": "The employee was fired for divulging trade secrets to a competitor."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L141_LEARN_Q3",
-            "level": 141,
-            "conceptTitle": "Concept Exploration: RETRACT",
-            "word": "RETRACT",
-            "definition": "\"Rescind\" describes formally canceling or withdrawing something previously stated or agreed, closely related to retracting it.",
-            "example": "Example sentence",
-            "nativeTip": "To formally withdraw or take back a previous statement.",
-            "visualAnchor": "💡 RETRACT = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "\"Rescind\" describes formally canceling or withdrawing something previously stated or agreed, closely related to retracting it.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "To formally withdraw or take back a previous statement."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L141_Q3",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Retract",
-                "hint": "To formally withdraw or take back a previous statement.",
-                "explanation": "\"Rescind\" describes formally canceling or withdrawing something previously stated or agreed, closely related to retracting it.",
-                "interactionType": "search",
-                "correctAnswer": "Rescind",
-                "options": [
-                    "Reaffirm",
-                    "Rescind",
-                    "Confirm",
-                    "Uphold"
-                ],
-                "nuanceDifference": "\"Rescind\" is often used for formal agreements, offers, or laws, while \"retract\" is more commonly used for statements or claims.",
-                "contextSentence": "The company rescinded its job offer after the background check."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L142_LEARN_Q1",
-            "level": 142,
-            "conceptTitle": "Concept Exploration: ADVOCATE",
-            "word": "ADVOCATE",
-            "definition": "\"Champion\" describes strongly supporting and promoting a cause, closely related to advocating for it.",
-            "example": "Example sentence",
-            "nativeTip": "To publicly support or argue in favor of a cause or policy.",
-            "visualAnchor": "💡 ADVOCATE = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "\"Champion\" describes strongly supporting and promoting a cause, closely related to advocating for it.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "To publicly support or argue in favor of a cause or policy."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L142_Q1",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Advocate",
-                "hint": "To publicly support or argue in favor of a cause or policy.",
-                "explanation": "\"Champion\" describes strongly supporting and promoting a cause, closely related to advocating for it.",
-                "interactionType": "search",
-                "correctAnswer": "Champion",
-                "options": [
-                    "Oppose",
-                    "Undermine",
-                    "Champion",
-                    "Resist"
-                ],
-                "nuanceDifference": "\"Champion\" often implies visible, energetic leadership of a cause, while \"advocate\" can describe support of any intensity, public or private.",
-                "contextSentence": "She has spent her career championing education reform."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L142_LEARN_Q2",
-            "level": 142,
-            "conceptTitle": "Concept Exploration: OPPOSE",
-            "word": "OPPOSE",
-            "definition": "\"Resist\" describes actively working against something, closely related to opposing it.",
-            "example": "Example sentence",
-            "nativeTip": "To disagree with and act against a plan, policy, or idea.",
-            "visualAnchor": "💡 OPPOSE = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "\"Resist\" describes actively working against something, closely related to opposing it.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "To disagree with and act against a plan, policy, or idea."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L142_Q2",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Oppose",
-                "hint": "To disagree with and act against a plan, policy, or idea.",
-                "explanation": "\"Resist\" describes actively working against something, closely related to opposing it.",
-                "interactionType": "search",
-                "correctAnswer": "Resist",
-                "options": [
-                    "Resist",
-                    "Support",
-                    "Endorse",
-                    "Champion"
-                ],
-                "nuanceDifference": "\"Resist\" often implies active pushback against pressure or change, while \"oppose\" can describe disagreement expressed in words as well as action.",
-                "contextSentence": "Local residents resisted the plan to build a highway through the park."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L142_LEARN_Q3",
-            "level": 142,
-            "conceptTitle": "Concept Exploration: CAVE",
-            "word": "CAVE",
-            "definition": "\"Yield\" describes giving in to another side's position, closely related to what it means to cave under pressure.",
-            "example": "Example sentence",
-            "nativeTip": "To stop resisting and give in to another side's demands, often after prolonged pressure.",
-            "visualAnchor": "💡 CAVE = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "\"Yield\" describes giving in to another side's position, closely related to what it means to cave under pressure.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "To stop resisting and give in to another side's demands, often after prolonged pressure."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L142_Q3",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Cave",
-                "hint": "To stop resisting and give in to another side's demands, often after prolonged pressure.",
-                "explanation": "\"Yield\" describes giving in to another side's position, closely related to what it means to cave under pressure.",
-                "interactionType": "search",
-                "correctAnswer": "Yield",
-                "options": [
-                    "Insist",
-                    "Yield",
-                    "Demand",
-                    "Refuse"
-                ],
-                "nuanceDifference": "\"Cave\" is informal and vivid, often used in casual writing, while \"yield\" is more neutral and appears in both formal and everyday contexts.",
-                "contextSentence": "After hours of debate, the union agreed to yield on the wage increase."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L143_LEARN_Q1",
-            "level": 143,
-            "conceptTitle": "Concept Exploration: TESTIFY",
-            "word": "TESTIFY",
-            "definition": "\"Attest\" means to affirm that something is true, often formally, closely related to testifying.",
-            "example": "Example sentence",
-            "nativeTip": "To give evidence, especially in a court of law.",
-            "visualAnchor": "💡 TESTIFY = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "\"Attest\" means to affirm that something is true, often formally, closely related to testifying.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "To give evidence, especially in a court of law."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L143_Q1",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Testify",
-                "hint": "To give evidence, especially in a court of law.",
-                "explanation": "\"Attest\" means to affirm that something is true, often formally, closely related to testifying.",
-                "interactionType": "search",
-                "correctAnswer": "Attest",
-                "options": [
-                    "Deny",
-                    "Contradict",
-                    "Attest",
-                    "Refute"
-                ],
-                "nuanceDifference": "\"Attest\" can be used more broadly, including signing a document to confirm facts, while \"testify\" specifically applies to giving evidence, often in court.",
-                "contextSentence": "Her longtime neighbor attested to her good character in the letter."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L143_LEARN_Q2",
-            "level": 143,
-            "conceptTitle": "Concept Exploration: COMPLY",
-            "word": "COMPLY",
-            "definition": "\"Adhere\" describes sticking closely to a rule or set of principles, closely related to complying with it.",
-            "example": "Example sentence",
-            "nativeTip": "To act in accordance with a rule, request, or command.",
-            "visualAnchor": "💡 COMPLY = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "\"Adhere\" describes sticking closely to a rule or set of principles, closely related to complying with it.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "To act in accordance with a rule, request, or command."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L143_Q2",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Comply",
-                "hint": "To act in accordance with a rule, request, or command.",
-                "explanation": "\"Adhere\" describes sticking closely to a rule or set of principles, closely related to complying with it.",
-                "interactionType": "search",
-                "correctAnswer": "Adhere",
-                "options": [
-                    "Violate",
-                    "Disregard",
-                    "Breach",
-                    "Adhere"
-                ],
-                "nuanceDifference": "\"Adhere\" often applies to following principles or standards over time, while \"comply\" can describe a single instance of following a specific rule.",
-                "contextSentence": "All contractors must adhere to the updated safety codes."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L143_LEARN_Q3",
-            "level": 143,
-            "conceptTitle": "Concept Exploration: BREACH",
-            "word": "BREACH",
-            "definition": "\"Violate\" describes breaking a rule or law, closely related to breaching an agreement.",
-            "example": "Example sentence",
-            "nativeTip": "To break or fail to follow a rule, agreement, or law.",
-            "visualAnchor": "💡 BREACH = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "\"Violate\" describes breaking a rule or law, closely related to breaching an agreement.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "To break or fail to follow a rule, agreement, or law."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L143_Q3",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Breach",
-                "hint": "To break or fail to follow a rule, agreement, or law.",
-                "explanation": "\"Violate\" describes breaking a rule or law, closely related to breaching an agreement.",
-                "interactionType": "search",
-                "correctAnswer": "Violate",
-                "options": [
-                    "Uphold",
-                    "Honor",
-                    "Violate",
-                    "Fulfill"
-                ],
-                "nuanceDifference": "\"Violate\" is the broader, more common word, while \"breach\" is often used specifically for contracts, agreements, or security.",
-                "contextSentence": "The company was accused of violating several safety regulations."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L144_LEARN_Q1",
-            "level": 144,
-            "conceptTitle": "Concept Exploration: RECESSION",
-            "word": "RECESSION",
-            "definition": "\"Downturn\" describes a period of economic decline, closely related to a recession though sometimes milder.",
-            "example": "Example sentence",
-            "nativeTip": "A period of temporary economic decline during which trade and industrial activity are reduced.",
-            "visualAnchor": "💡 RECESSION = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "\"Downturn\" describes a period of economic decline, closely related to a recession though sometimes milder.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "A period of temporary economic decline during which trade and industrial activity are reduced."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L144_Q1",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Recession",
-                "hint": "A period of temporary economic decline during which trade and industrial activity are reduced.",
-                "explanation": "\"Downturn\" describes a period of economic decline, closely related to a recession though sometimes milder.",
-                "interactionType": "search",
-                "correctAnswer": "Downturn",
-                "options": [
-                    "Boom",
-                    "Downturn",
-                    "Upturn",
-                    "Expansion"
-                ],
-                "nuanceDifference": "\"Downturn\" can describe any decline, mild or severe, while \"recession\" specifically refers to a sustained, more serious economic decline.",
-                "contextSentence": "The industry experienced a sharp downturn during the crisis."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L144_LEARN_Q2",
-            "level": 144,
-            "conceptTitle": "Concept Exploration: SURPLUS",
-            "word": "SURPLUS",
-            "definition": "\"Excess\" describes an amount beyond what is needed, closely related to a surplus.",
-            "example": "Example sentence",
-            "nativeTip": "An amount of something left over when requirements have been met.",
-            "visualAnchor": "💡 SURPLUS = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "\"Excess\" describes an amount beyond what is needed, closely related to a surplus.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "An amount of something left over when requirements have been met."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L144_Q2",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Surplus",
-                "hint": "An amount of something left over when requirements have been met.",
-                "explanation": "\"Excess\" describes an amount beyond what is needed, closely related to a surplus.",
-                "interactionType": "search",
-                "correctAnswer": "Excess",
-                "options": [
-                    "Shortage",
-                    "Deficit",
-                    "Scarcity",
-                    "Excess"
-                ],
-                "nuanceDifference": "\"Excess\" is a more general word for any extra amount, while \"surplus\" is often used specifically in financial or budgetary contexts.",
-                "contextSentence": "The farm donated its excess produce to local food banks."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L144_LEARN_Q3",
-            "level": 144,
-            "conceptTitle": "Concept Exploration: DEFICIT",
-            "word": "DEFICIT",
-            "definition": "\"Shortfall\" describes an amount by which something falls short of what is needed, closely related to a deficit.",
-            "example": "Example sentence",
-            "nativeTip": "The amount by which something, especially money, is too small.",
-            "visualAnchor": "💡 DEFICIT = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "\"Shortfall\" describes an amount by which something falls short of what is needed, closely related to a deficit.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "The amount by which something, especially money, is too small."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L144_Q3",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Deficit",
-                "hint": "The amount by which something, especially money, is too small.",
-                "explanation": "\"Shortfall\" describes an amount by which something falls short of what is needed, closely related to a deficit.",
-                "interactionType": "search",
-                "correctAnswer": "Shortfall",
-                "options": [
-                    "Shortfall",
-                    "Surplus",
-                    "Excess",
-                    "Abundance"
-                ],
-                "nuanceDifference": "\"Shortfall\" is common across many contexts, like a shortfall in donations, while \"deficit\" is more often used specifically in financial and budgetary discussions.",
-                "contextSentence": "The charity faced a significant shortfall in its annual fundraising goal."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L145_LEARN_Q1",
-            "level": 145,
-            "conceptTitle": "Concept Exploration: HYPOTHESIS",
-            "word": "HYPOTHESIS",
-            "definition": "In everyday speech, \"theory\" is often used the way scientists use \"hypothesis\" — an untested explanation — even though in formal science a theory is actually a far more thoroughly tested and supported idea.",
-            "example": "Example sentence",
-            "nativeTip": "An idea or explanation for something that has not yet been proven.",
-            "visualAnchor": "💡 HYPOTHESIS = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "In everyday speech, \"theory\" is often used the way scientists use \"hypothesis\" — an untested explanation — even though in formal science a theory is actually a far more thoroughly tested and supported idea.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "An idea or explanation for something that has not yet been proven."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L145_Q1",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Hypothesis",
-                "hint": "An idea or explanation for something that has not yet been proven.",
-                "explanation": "In everyday speech, \"theory\" is often used the way scientists use \"hypothesis\" — an untested explanation — even though in formal science a theory is actually a far more thoroughly tested and supported idea.",
-                "interactionType": "search",
-                "correctAnswer": "Theory",
-                "options": [
-                    "Fact",
-                    "Certainty",
-                    "Proof",
-                    "Theory"
-                ],
-                "nuanceDifference": "In casual conversation, \"theory\" and \"hypothesis\" are often used interchangeably for an untested idea, though scientists reserve \"theory\" for explanations backed by extensive evidence.",
-                "contextSentence": "Her theory about the extinction event gained wide acceptance after new fossil evidence emerged."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L145_LEARN_Q2",
-            "level": 145,
-            "conceptTitle": "Concept Exploration: EMPIRICAL",
-            "word": "EMPIRICAL",
-            "definition": "\"Observed\" describes evidence gathered directly through observation, closely related to being empirical.",
-            "example": "Example sentence",
-            "nativeTip": "Based on observation or experiment rather than theory alone.",
-            "visualAnchor": "💡 EMPIRICAL = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "\"Observed\" describes evidence gathered directly through observation, closely related to being empirical.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "Based on observation or experiment rather than theory alone."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L145_Q2",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Empirical",
-                "hint": "Based on observation or experiment rather than theory alone.",
-                "explanation": "\"Observed\" describes evidence gathered directly through observation, closely related to being empirical.",
-                "interactionType": "search",
-                "correctAnswer": "Observed",
-                "options": [
-                    "Observed",
-                    "Theoretical",
-                    "Speculative",
-                    "Hypothetical"
-                ],
-                "nuanceDifference": "\"Observed\" specifically emphasizes direct observation, while \"empirical\" more broadly covers evidence gathered through any systematic experiment or measurement.",
-                "contextSentence": "The observed data contradicted the researchers' initial predictions."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L145_LEARN_Q3",
-            "level": 145,
-            "conceptTitle": "Concept Exploration: SYNTHESIZE",
-            "word": "SYNTHESIZE",
-            "definition": "\"Integrate\" describes combining separate parts into a unified whole, closely related to synthesizing them.",
-            "example": "Example sentence",
-            "nativeTip": "To combine different ideas or substances to form a coherent whole.",
-            "visualAnchor": "💡 SYNTHESIZE = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "\"Integrate\" describes combining separate parts into a unified whole, closely related to synthesizing them.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "To combine different ideas or substances to form a coherent whole."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L145_Q3",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Synthesize",
-                "hint": "To combine different ideas or substances to form a coherent whole.",
-                "explanation": "\"Integrate\" describes combining separate parts into a unified whole, closely related to synthesizing them.",
-                "interactionType": "search",
-                "correctAnswer": "Integrate",
-                "options": [
-                    "Separate",
-                    "Divide",
-                    "Integrate",
-                    "Fragment"
-                ],
-                "nuanceDifference": "\"Integrate\" often emphasizes blending parts smoothly into an existing system, while \"synthesize\" more often emphasizes creating something new from combined elements.",
-                "contextSentence": "The final chapter integrates findings from all three earlier studies."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L146_LEARN_Q1",
-            "level": 146,
-            "conceptTitle": "Concept Exploration: CONSTRUCTIVE",
-            "word": "CONSTRUCTIVE",
-            "definition": "\"Actionable\" describes feedback specific enough to be acted upon, closely related to being constructive.",
-            "example": "Example sentence",
-            "nativeTip": "Intended to be helpful, especially when pointing out problems.",
-            "visualAnchor": "💡 CONSTRUCTIVE = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "\"Actionable\" describes feedback specific enough to be acted upon, closely related to being constructive.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "Intended to be helpful, especially when pointing out problems."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L146_Q1",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Constructive",
-                "hint": "Intended to be helpful, especially when pointing out problems.",
-                "explanation": "\"Actionable\" describes feedback specific enough to be acted upon, closely related to being constructive.",
-                "interactionType": "search",
-                "correctAnswer": "Actionable",
-                "options": [
-                    "Vague",
-                    "Actionable",
-                    "Unhelpful",
-                    "Discouraging"
-                ],
-                "nuanceDifference": "\"Actionable\" specifically emphasizes that feedback includes clear next steps, while \"constructive\" more broadly means helpful and well-intentioned.",
-                "contextSentence": "Her manager gave actionable feedback on how to improve the presentation."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L146_LEARN_Q2",
-            "level": 146,
-            "conceptTitle": "Concept Exploration: BLUNT",
-            "word": "BLUNT",
-            "definition": "\"Curt\" describes speech that is short and abrupt, sometimes seeming rude, closely related to bluntness.",
-            "example": "Example sentence",
-            "nativeTip": "Very direct and honest, without softening the message.",
-            "visualAnchor": "💡 BLUNT = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "\"Curt\" describes speech that is short and abrupt, sometimes seeming rude, closely related to bluntness.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "Very direct and honest, without softening the message."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L146_Q2",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Blunt",
-                "hint": "Very direct and honest, without softening the message.",
-                "explanation": "\"Curt\" describes speech that is short and abrupt, sometimes seeming rude, closely related to bluntness.",
-                "interactionType": "search",
-                "correctAnswer": "Curt",
-                "options": [
-                    "Diplomatic",
-                    "Tactful",
-                    "Curt",
-                    "Gentle"
-                ],
-                "nuanceDifference": "\"Curt\" often implies an unpleasantly short or dismissive tone, while \"blunt\" can simply mean direct and honest without necessarily being rude.",
-                "contextSentence": "His curt reply left no room for further discussion."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L146_LEARN_Q3",
-            "level": 146,
-            "conceptTitle": "Concept Exploration: DIPLOMATIC",
-            "word": "DIPLOMATIC",
-            "definition": "\"Tactful\" describes handling a sensitive topic carefully to avoid causing offense, closely related to being diplomatic.",
-            "example": "Example sentence",
-            "nativeTip": "Handling a sensitive topic in a way that avoids upsetting anyone.",
-            "visualAnchor": "💡 DIPLOMATIC = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "\"Tactful\" describes handling a sensitive topic carefully to avoid causing offense, closely related to being diplomatic.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "Handling a sensitive topic in a way that avoids upsetting anyone."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L146_Q3",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Diplomatic",
-                "hint": "Handling a sensitive topic in a way that avoids upsetting anyone.",
-                "explanation": "\"Tactful\" describes handling a sensitive topic carefully to avoid causing offense, closely related to being diplomatic.",
-                "interactionType": "search",
-                "correctAnswer": "Tactful",
-                "options": [
-                    "Blunt",
-                    "Tactful",
-                    "Rude",
-                    "Abrasive"
-                ],
-                "nuanceDifference": "\"Tactful\" and \"diplomatic\" are near-perfect synonyms; \"diplomatic\" is slightly more common when describing formal or professional situations.",
-                "contextSentence": "She found a tactful way to point out the error without embarrassing him."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L147_LEARN_Q1",
-            "level": 147,
-            "conceptTitle": "Concept Exploration: CONCUR",
-            "word": "CONCUR",
-            "definition": "\"Assent\" means to formally agree with a proposal or opinion, closely matching what it means to concur.",
-            "example": "Example sentence",
-            "nativeTip": "To agree with an opinion or decision.",
-            "visualAnchor": "💡 CONCUR = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "\"Assent\" means to formally agree with a proposal or opinion, closely matching what it means to concur.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "To agree with an opinion or decision."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L147_Q1",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Concur",
-                "hint": "To agree with an opinion or decision.",
-                "explanation": "\"Assent\" means to formally agree with a proposal or opinion, closely matching what it means to concur.",
-                "interactionType": "search",
-                "correctAnswer": "Assent",
-                "options": [
-                    "Assent",
-                    "Object",
-                    "Dissent",
-                    "Refuse"
-                ],
-                "nuanceDifference": "\"Assent\" is common in formal or official contexts, like assenting to a proposal, while \"concur\" is used more broadly, including in everyday professional agreement.",
-                "contextSentence": "The committee assented to the proposed changes without objection."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L147_LEARN_Q2",
-            "level": 147,
-            "conceptTitle": "Concept Exploration: DISSENT",
-            "word": "DISSENT",
-            "definition": "\"Object\" describes expressing disagreement, closely related to dissenting from a majority opinion.",
-            "example": "Example sentence",
-            "nativeTip": "To hold or express opinions that differ from those officially held.",
-            "visualAnchor": "💡 DISSENT = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "\"Object\" describes expressing disagreement, closely related to dissenting from a majority opinion.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "To hold or express opinions that differ from those officially held."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L147_Q2",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Dissent",
-                "hint": "To hold or express opinions that differ from those officially held.",
-                "explanation": "\"Object\" describes expressing disagreement, closely related to dissenting from a majority opinion.",
-                "interactionType": "search",
-                "correctAnswer": "Object",
-                "options": [
-                    "Concur",
-                    "Agree",
-                    "Consent",
-                    "Object"
-                ],
-                "nuanceDifference": "\"Object\" is the everyday, general word for disagreement, while \"dissent\" specifically implies disagreeing with an official or majority position.",
-                "contextSentence": "Two board members objected to the proposed merger."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L147_LEARN_Q3",
-            "level": 147,
-            "conceptTitle": "Concept Exploration: CONTENTIOUS",
-            "word": "CONTENTIOUS",
-            "definition": "\"Controversial\" describes a topic likely to provoke strong disagreement, closely related to being contentious.",
-            "example": "Example sentence",
-            "nativeTip": "Likely to cause disagreement or argument.",
-            "visualAnchor": "💡 CONTENTIOUS = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "\"Controversial\" describes a topic likely to provoke strong disagreement, closely related to being contentious.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "Likely to cause disagreement or argument."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L147_Q3",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Contentious",
-                "hint": "Likely to cause disagreement or argument.",
-                "explanation": "\"Controversial\" describes a topic likely to provoke strong disagreement, closely related to being contentious.",
-                "interactionType": "search",
-                "correctAnswer": "Controversial",
-                "options": [
-                    "Uncontroversial",
-                    "Agreeable",
-                    "Controversial",
-                    "Uncontested"
-                ],
-                "nuanceDifference": "\"Controversial\" is the more common everyday word, while \"contentious\" is slightly more formal and often used to describe ongoing disputes.",
-                "contextSentence": "The zoning proposal became the most controversial item on the agenda."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L148_LEARN_Q1",
-            "level": 148,
-            "conceptTitle": "Concept Exploration: REVAMP",
-            "word": "REVAMP",
-            "definition": "\"Overhaul\" describes a thorough, comprehensive change to something, closely related to revamping it.",
-            "example": "Example sentence",
-            "nativeTip": "To improve or update something, especially by giving it a new appearance or structure.",
-            "visualAnchor": "💡 REVAMP = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "\"Overhaul\" describes a thorough, comprehensive change to something, closely related to revamping it.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "To improve or update something, especially by giving it a new appearance or structure."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L148_Q1",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Revamp",
-                "hint": "To improve or update something, especially by giving it a new appearance or structure.",
-                "explanation": "\"Overhaul\" describes a thorough, comprehensive change to something, closely related to revamping it.",
-                "interactionType": "search",
-                "correctAnswer": "Overhaul",
-                "options": [
-                    "Preserve",
-                    "Maintain",
-                    "Freeze",
-                    "Overhaul"
-                ],
-                "nuanceDifference": "\"Overhaul\" often implies a more complete, systematic change, while \"revamp\" can describe smaller updates as well as major redesigns.",
-                "contextSentence": "The airline announced a complete overhaul of its loyalty program."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L148_LEARN_Q2",
-            "level": 148,
-            "conceptTitle": "Concept Exploration: TRANSITION",
-            "word": "TRANSITION",
-            "definition": "\"Shift\" describes a change from one state or position to another, closely related to a transition.",
-            "example": "Example sentence",
-            "nativeTip": "The process of changing from one state or condition to another.",
-            "visualAnchor": "💡 TRANSITION = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "\"Shift\" describes a change from one state or position to another, closely related to a transition.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "The process of changing from one state or condition to another."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L148_Q2",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Transition",
-                "hint": "The process of changing from one state or condition to another.",
-                "explanation": "\"Shift\" describes a change from one state or position to another, closely related to a transition.",
-                "interactionType": "search",
-                "correctAnswer": "Shift",
-                "options": [
-                    "Shift",
-                    "Stagnation",
-                    "Constancy",
-                    "Continuity"
-                ],
-                "nuanceDifference": "\"Shift\" often describes a quicker or smaller change, while \"transition\" more often implies a longer, more gradual process with defined stages.",
-                "contextSentence": "The company is undergoing a major shift toward remote work."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L148_LEARN_Q3",
-            "level": 148,
-            "conceptTitle": "Concept Exploration: EVOLVE",
-            "word": "EVOLVE",
-            "definition": "\"Progress\" describes gradual development or improvement over time, closely related to evolving.",
-            "example": "Example sentence",
-            "nativeTip": "To develop gradually, especially from a simpler to a more complex form.",
-            "visualAnchor": "💡 EVOLVE = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "\"Progress\" describes gradual development or improvement over time, closely related to evolving.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "To develop gradually, especially from a simpler to a more complex form."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L148_Q3",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Evolve",
-                "hint": "To develop gradually, especially from a simpler to a more complex form.",
-                "explanation": "\"Progress\" describes gradual development or improvement over time, closely related to evolving.",
-                "interactionType": "search",
-                "correctAnswer": "Progress",
-                "options": [
-                    "Regress",
-                    "Progress",
-                    "Decline",
-                    "Deteriorate"
-                ],
-                "nuanceDifference": "\"Progress\" often implies improvement or advancement specifically, while \"evolve\" more neutrally describes gradual change, which may or may not be an improvement.",
-                "contextSentence": "The software has progressed significantly since its first release."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L149_LEARN_Q1",
-            "level": 149,
-            "conceptTitle": "Concept Exploration: DECEIVE",
-            "word": "DECEIVE",
-            "definition": "\"Mislead\" describes causing someone to have a false impression, closely related to deceiving them, though sometimes less deliberately.",
-            "example": "Example sentence",
-            "nativeTip": "To make someone believe something that is not true.",
-            "visualAnchor": "💡 DECEIVE = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "\"Mislead\" describes causing someone to have a false impression, closely related to deceiving them, though sometimes less deliberately.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "To make someone believe something that is not true."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L149_Q1",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Deceive",
-                "hint": "To make someone believe something that is not true.",
-                "explanation": "\"Mislead\" describes causing someone to have a false impression, closely related to deceiving them, though sometimes less deliberately.",
-                "interactionType": "search",
-                "correctAnswer": "Mislead",
-                "options": [
-                    "Enlighten",
-                    "Inform",
-                    "Clarify",
-                    "Mislead"
-                ],
-                "nuanceDifference": "\"Mislead\" can describe an accidental false impression as well as a deliberate one, while \"deceive\" almost always implies clear intent to trick someone.",
-                "contextSentence": "The vague advertising misled customers about the product's actual price."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L149_LEARN_Q2",
-            "level": 149,
-            "conceptTitle": "Concept Exploration: MANIPULATE",
-            "word": "MANIPULATE",
-            "definition": "\"Exploit\" describes taking unfair advantage of someone, often for personal benefit, closely related to manipulating them.",
-            "example": "Example sentence",
-            "nativeTip": "To control or influence someone unfairly or dishonestly.",
-            "visualAnchor": "💡 MANIPULATE = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "\"Exploit\" describes taking unfair advantage of someone, often for personal benefit, closely related to manipulating them.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "To control or influence someone unfairly or dishonestly."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L149_Q2",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Manipulate",
-                "hint": "To control or influence someone unfairly or dishonestly.",
-                "explanation": "\"Exploit\" describes taking unfair advantage of someone, often for personal benefit, closely related to manipulating them.",
-                "interactionType": "search",
-                "correctAnswer": "Exploit",
-                "options": [
-                    "Respect",
-                    "Exploit",
-                    "Support",
-                    "Assist"
-                ],
-                "nuanceDifference": "\"Exploit\" often emphasizes taking advantage of someone's weakness for personal gain, while \"manipulate\" more broadly emphasizes controlling their thoughts or actions.",
-                "contextSentence": "The scheme exploited elderly victims' trust to steal their savings."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L149_LEARN_Q3",
-            "level": 149,
-            "conceptTitle": "Concept Exploration: BETRAY",
-            "word": "BETRAY",
-            "definition": "\"Double-cross\" is an informal way of describing betraying someone, especially in a planned scheme.",
-            "example": "Example sentence",
-            "nativeTip": "To be disloyal to someone who trusted you.",
-            "visualAnchor": "💡 BETRAY = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "\"Double-cross\" is an informal way of describing betraying someone, especially in a planned scheme.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "To be disloyal to someone who trusted you."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L149_Q3",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Betray",
-                "hint": "To be disloyal to someone who trusted you.",
-                "explanation": "\"Double-cross\" is an informal way of describing betraying someone, especially in a planned scheme.",
-                "interactionType": "search",
-                "correctAnswer": "Double-cross",
-                "options": [
-                    "Double-cross",
-                    "Support",
-                    "Protect",
-                    "Defend"
-                ],
-                "nuanceDifference": "\"Double-cross\" is casual and often used in stories about crime or rivalry, while \"betray\" applies to any serious breach of trust, personal or professional.",
-                "contextSentence": "His partner double-crossed him just before the deal closed."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L150_LEARN_Q1",
-            "level": 150,
-            "conceptTitle": "Concept Exploration: EXACTING",
-            "word": "EXACTING",
-            "definition": "\"Rigorous\" describes a process or standard carried out with strict, exacting precision.",
-            "example": "Example sentence",
-            "nativeTip": "Demanding great care, precision, and effort, allowing no room for error.",
-            "visualAnchor": "💡 EXACTING = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "\"Rigorous\" describes a process or standard carried out with strict, exacting precision.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "Demanding great care, precision, and effort, allowing no room for error."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L150_Q1",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Exacting",
-                "hint": "Demanding great care, precision, and effort, allowing no room for error.",
-                "explanation": "\"Rigorous\" describes a process or standard carried out with strict, exacting precision.",
-                "interactionType": "search",
-                "correctAnswer": "Rigorous",
-                "options": [
-                    "Careless",
-                    "Sloppy",
-                    "Rigorous",
-                    "Lax"
-                ],
-                "nuanceDifference": "\"Rigorous\" often describes the strictness of a method or system, while \"exacting\" more often describes the high standard expected of the person doing the work.",
-                "contextSentence": "The lab followed rigorous protocols to avoid contamination."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L150_LEARN_Q2",
-            "level": 150,
-            "conceptTitle": "Concept Exploration: ROBUST",
-            "word": "ROBUST",
-            "definition": "\"Resilient\" describes the ability to withstand stress and recover from setbacks, closely related to being robust.",
-            "example": "Example sentence",
-            "nativeTip": "Strong and unlikely to fail or break down.",
-            "visualAnchor": "💡 ROBUST = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "\"Resilient\" describes the ability to withstand stress and recover from setbacks, closely related to being robust.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "Strong and unlikely to fail or break down."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L150_Q2",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Robust",
-                "hint": "Strong and unlikely to fail or break down.",
-                "explanation": "\"Resilient\" describes the ability to withstand stress and recover from setbacks, closely related to being robust.",
-                "interactionType": "search",
-                "correctAnswer": "Resilient",
-                "options": [
-                    "Resilient",
-                    "Fragile",
-                    "Vulnerable",
-                    "Weak"
-                ],
-                "nuanceDifference": "\"Resilient\" emphasizes recovery after damage or stress, while \"robust\" more often emphasizes strength that prevents damage from occurring in the first place.",
-                "contextSentence": "The bridge was designed to be resilient against strong earthquakes."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L150_LEARN_Q3",
-            "level": 150,
-            "conceptTitle": "Concept Exploration: SCALABLE",
-            "word": "SCALABLE",
-            "definition": "\"Adaptable\" can describe a system capable of adjusting to new demands, closely related to being scalable.",
-            "example": "Example sentence",
-            "nativeTip": "Able to be adjusted in size or amount to meet changing needs.",
-            "visualAnchor": "💡 SCALABLE = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "\"Adaptable\" can describe a system capable of adjusting to new demands, closely related to being scalable.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "Able to be adjusted in size or amount to meet changing needs."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L150_Q3",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Scalable",
-                "hint": "Able to be adjusted in size or amount to meet changing needs.",
-                "explanation": "\"Adaptable\" can describe a system capable of adjusting to new demands, closely related to being scalable.",
-                "interactionType": "search",
-                "correctAnswer": "Adaptable",
-                "options": [
-                    "Rigid",
-                    "Fixed",
-                    "Adaptable",
-                    "Inflexible"
-                ],
-                "nuanceDifference": "\"Adaptable\" more broadly describes adjusting to any kind of change, while \"scalable\" specifically refers to handling growth in size or demand.",
-                "contextSentence": "The startup built an adaptable platform that could serve ten users or ten million."
-            }
+          "situationTag": "Rain Gear",
+          "beforeSentence": "Do not forget to ___ a folding umbrella outdoors!",
+          "targetSlotWord": "take",
+          "swappedWord": "appropriate",
+          "isNaturalSwap": false,
+          "earVerdict": "Doesn't fit — carrying personal umbrellas takes 'take', never legal 'appropriate'.",
+          "spokenSentence": "Do not forget to take a folding umbrella outdoors!"
         }
-    ]
+      ],
+      "cousinWords": [
+        {
+          "word": "Allocate",
+          "ipa": "",
+          "toneTag": "Grab",
+          "miniContext": "Firms must never allocate a designer’s artwork without giving clear credit."
+        },
+        {
+          "word": "Seize",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "Lawmakers voted to seize relief cash for flooded farmland."
+        },
+        {
+          "word": "Claim",
+          "ipa": "",
+          "toneTag": "Allocate / Seize",
+          "miniContext": "Verify luggage tags when picking items at claim."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L141_LEARN_Q2",
+      "level": 141,
+      "cefr": "C1",
+      "difficulty": 4,
+      "pairTitle": "Buy ↔ Acquire",
+      "baseWord": "Buy",
+      "synonym": "Acquire",
+      "partOfSpeech": "Verb",
+      "coreMeaning": "To gain companies, rare art, or lasting skills.",
+      "whyDifferent": "'Buy' gets apples (`buy milk`). 'Acquire' builds serious collections, real estate, companies, or fluent accents (`acquire fluency`).",
+      "makeovers": [
+        {
+          "situationTag": "Skill Gain",
+          "beforeSentence": "Living abroad helps students quickly ___ natural street idioms.",
+          "targetSlotWord": "buy",
+          "swappedWord": "acquire",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — gaining companies, museum pieces, or fluent skills takes 'acquire'.",
+          "spokenSentence": "Living abroad helps students quickly acquire natural street idioms."
+        },
+        {
+          "situationTag": "Corner Deli",
+          "beforeSentence": "Run downstairs to ___ half a loaf of rye bread!",
+          "targetSlotWord": "buy",
+          "swappedWord": "acquire",
+          "isNaturalSwap": false,
+          "earVerdict": "Doesn't fit — corner bakery groceries use 'buy', not formal 'acquire'.",
+          "spokenSentence": "Run downstairs to buy half a loaf of rye bread!"
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Obtain",
+          "ipa": "",
+          "toneTag": "Groceries",
+          "miniContext": "Museum curators hope to obtain two rare landscape watercolors."
+        },
+        {
+          "word": "Procure",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "Living abroad helps students quickly procure natural street idioms."
+        },
+        {
+          "word": "Secure",
+          "ipa": "",
+          "toneTag": "Assets / Mastery",
+          "miniContext": "Double locks keep bicycles secure outside."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L141_LEARN_Q3",
+      "level": 141,
+      "cefr": "C1",
+      "difficulty": 4,
+      "pairTitle": "Sell ↔ Market",
+      "baseWord": "Sell",
+      "synonym": "Market",
+      "partOfSpeech": "Verb",
+      "coreMeaning": "To promote and offer goods cleanly to buyers.",
+      "whyDifferent": "'Sell' hands over tickets (`sell hats`). 'Market' crafts brand packaging, ads, and pricing strategy (`market cleanly`).",
+      "makeovers": [
+        {
+          "situationTag": "Green Brand",
+          "beforeSentence": "Co-ops creatively ___ local honey at regional craft fairs.",
+          "targetSlotWord": "sell",
+          "swappedWord": "market",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — positioning and promoting products takes 'market'.",
+          "spokenSentence": "Co-ops creatively market local honey at regional craft fairs."
+        },
+        {
+          "situationTag": "Yard Bike",
+          "beforeSentence": "We decided to ___ Grandpa’s spare bike on Saturday.",
+          "targetSlotWord": "sell",
+          "swappedWord": "market",
+          "isNaturalSwap": false,
+          "earVerdict": "Doesn't fit — handing one bike to a neighbor uses 'sell'.",
+          "spokenSentence": "We decided to sell Grandpa’s spare bike on Saturday."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Promote",
+          "ipa": "",
+          "toneTag": "Hand Cash",
+          "miniContext": "Small farms promote organic berries directly to pastry chefs."
+        },
+        {
+          "word": "Trade",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "Co-ops creatively trade local honey at regional craft fairs."
+        },
+        {
+          "word": "Merchandise",
+          "ipa": "",
+          "toneTag": "Promote Brand",
+          "miniContext": "Shops display bright wool merchandise outdoors."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L142_LEARN_Q1",
+      "level": 142,
+      "cefr": "C1",
+      "difficulty": 4,
+      "pairTitle": "Build ↔ Forge",
+      "baseWord": "Build",
+      "synonym": "Forge",
+      "partOfSpeech": "Verb",
+      "coreMeaning": "To form strong lasting bonds or tools through effort.",
+      "whyDifferent": "'Build' raises wooden decks (`build walls`). 'Forge' hammers hot iron OR shapes unbreakable alliances and lifelong trust (`forge bonds`).",
+      "makeovers": [
+        {
+          "situationTag": "Team Trust",
+          "beforeSentence": "Shared alpine climbs quickly ___ deep loyalty among strangers.",
+          "targetSlotWord": "build",
+          "swappedWord": "forge",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — hammering unbreakable ties takes 'forge'.",
+          "spokenSentence": "Shared alpine climbs quickly forge deep loyalty among strangers."
+        },
+        {
+          "situationTag": "Card Tower",
+          "beforeSentence": "Children love to ___ tall paper towers on rainy days.",
+          "targetSlotWord": "build",
+          "swappedWord": "forge",
+          "isNaturalSwap": false,
+          "earVerdict": "Doesn't fit — light paper play takes 'build', never heavy 'forge'.",
+          "spokenSentence": "Children love to build tall paper towers on rainy days."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Craft",
+          "ipa": "",
+          "toneTag": "Assemble",
+          "miniContext": "Neighbors worked patiently to craft a calm trade alliance."
+        },
+        {
+          "word": "Shape",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "Shared alpine climbs quickly shape deep loyalty among strangers."
+        },
+        {
+          "word": "Mold",
+          "ipa": "",
+          "toneTag": "Hammer Strong",
+          "miniContext": "Potters carefully mold wet clay on spinning wheels."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L142_LEARN_Q2",
+      "level": 142,
+      "cefr": "C1",
+      "difficulty": 4,
+      "pairTitle": "Fix ↔ Remedy",
+      "baseWord": "Fix",
+      "synonym": "Remedy",
+      "partOfSpeech": "Verb",
+      "coreMeaning": "To cure an unfair systemic problem or illness.",
+      "whyDifferent": "'Fix' turns bolts (`fix bikes`). 'Remedy' cures long-standing gaps in pay, sleep habits, or soil health (`remedy shortage`).",
+      "makeovers": [
+        {
+          "situationTag": "Staff Gap",
+          "beforeSentence": "Night training programs help ___ regional nursing shortages cleanly.",
+          "targetSlotWord": "fix",
+          "swappedWord": "remedy",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — curing systemic flaws takes 'remedy'.",
+          "spokenSentence": "Night training programs help remedy regional nursing shortages cleanly."
+        },
+        {
+          "situationTag": "Door Hinge",
+          "beforeSentence": "Spray oil carefully to ___ that squeaky closet hinge.",
+          "targetSlotWord": "fix",
+          "swappedWord": "remedy",
+          "isNaturalSwap": false,
+          "earVerdict": "Doesn't fit — noisy home hinges take 'fix', never sweeping 'remedy'.",
+          "spokenSentence": "Spray oil carefully to fix that squeaky closet hinge."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Resolve",
+          "ipa": "",
+          "toneTag": "Tighten",
+          "miniContext": "Fresh compost helps resolve depleted mineral soil organically."
+        },
+        {
+          "word": "Correct",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "Night training programs help correct regional nursing shortages cleanly."
+        },
+        {
+          "word": "Heal",
+          "ipa": "",
+          "toneTag": "Cure Defect",
+          "miniContext": "Calm rest helps sprained ankles heal evenly."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L142_LEARN_Q3",
+      "level": 142,
+      "cefr": "C1",
+      "difficulty": 4,
+      "pairTitle": "Wait ↔ Linger",
+      "baseWord": "Wait",
+      "synonym": "Linger",
+      "partOfSpeech": "Verb",
+      "coreMeaning": "To stay longer unwilling to leave or fade away.",
+      "whyDifferent": "'Wait' checks clocks (`wait in line`). 'Linger' drifts pleasantly longer over tea, scents, or memories (`coffee aroma lingers`).",
+      "makeovers": [
+        {
+          "situationTag": "Bakery Air",
+          "beforeSentence": "Warm cinnamon scent continues to ___ down the quiet street.",
+          "targetSlotWord": "wait",
+          "swappedWord": "linger",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — scents, guests, and melodies 'linger' happily.",
+          "spokenSentence": "Warm cinnamon scent continues to linger down the quiet street."
+        },
+        {
+          "situationTag": "Bus Curb",
+          "beforeSentence": "Travelers must ___ quietly behind the yellow platform line.",
+          "targetSlotWord": "wait",
+          "swappedWord": "linger",
+          "isNaturalSwap": false,
+          "earVerdict": "Doesn't fit — orderly transit queues use 'wait', never dreamy 'linger'.",
+          "spokenSentence": "Travelers must wait quietly behind the yellow platform line."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Remain",
+          "ipa": "",
+          "toneTag": "Await Arrival",
+          "miniContext": "Friendly dinner guests tend to remain by the doorway chatting."
+        },
+        {
+          "word": "Stay",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "Warm cinnamon scent continues to stay down the quiet street."
+        },
+        {
+          "word": "Loiter",
+          "ipa": "",
+          "toneTag": "Hang On",
+          "miniContext": "Security asked crowds not to loiter by exits."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L143_LEARN_Q1",
+      "level": 143,
+      "cefr": "C1",
+      "difficulty": 4,
+      "pairTitle": "Walk ↔ Roam",
+      "baseWord": "Walk",
+      "synonym": "Roam",
+      "partOfSpeech": "Verb",
+      "coreMeaning": "To walk freely across wide areas without fixed plan.",
+      "whyDifferent": "'Walk' moves cleanly (`walk to school`). 'Roam' wanders open pastures, streets, or thoughts freely without rushing (`herds roam`).",
+      "makeovers": [
+        {
+          "situationTag": "Wild Herd",
+          "beforeSentence": "Wild ponies freely ___ wide grassy moors in Wales.",
+          "targetSlotWord": "walk",
+          "swappedWord": "roam",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — wide open wandering takes 'roam'.",
+          "spokenSentence": "Wild ponies freely roam wide grassy moors in Wales."
+        },
+        {
+          "situationTag": "Clinic Hall",
+          "beforeSentence": "Patients must ___ slowly down the therapy corridor.",
+          "targetSlotWord": "walk",
+          "swappedWord": "roam",
+          "isNaturalSwap": false,
+          "earVerdict": "Doesn't fit — narrow medical corridors take 'walk', never free-range 'roam'.",
+          "spokenSentence": "Patients must walk slowly down the therapy corridor."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Wander",
+          "ipa": "",
+          "toneTag": "Planned",
+          "miniContext": "Summer travelers love to wander coastal cobblestone alleys aimlessly."
+        },
+        {
+          "word": "Meander",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "Wild ponies freely meander wide grassy moors in Wales."
+        },
+        {
+          "word": "Drift",
+          "ipa": "",
+          "toneTag": "Free Range",
+          "miniContext": "Autumn leaves drift gently onto quiet lawns."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L143_LEARN_Q2",
+      "level": 143,
+      "cefr": "C1",
+      "difficulty": 4,
+      "pairTitle": "Run ↔ Bolt",
+      "baseWord": "Run",
+      "synonym": "Bolt",
+      "partOfSpeech": "Verb",
+      "coreMeaning": "To dash away with sudden explosive fright.",
+      "whyDifferent": "'Run' jogs laps (`run daily`). 'Bolt' shoots away instantaneously when startled (`horses bolt`) or locks steel latches (`bolt doors`).",
+      "makeovers": [
+        {
+          "situationTag": "Noise Jump",
+          "beforeSentence": "Startled deer often ___ deep into brush after loud claps.",
+          "targetSlotWord": "run",
+          "swappedWord": "bolt",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — sudden frightened fleeing uses 'bolt'.",
+          "spokenSentence": "Startled deer often bolt deep into brush after loud claps."
+        },
+        {
+          "situationTag": "Morning Park",
+          "beforeSentence": "She loves to ___ smooth morning loops beside the lake.",
+          "targetSlotWord": "run",
+          "swappedWord": "bolt",
+          "isNaturalSwap": false,
+          "earVerdict": "Doesn't fit — calm steady fitness laps take 'run', never panicked 'bolt'.",
+          "spokenSentence": "She loves to run smooth morning loops beside the lake."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Sprint",
+          "ipa": "",
+          "toneTag": "Steady Jog",
+          "miniContext": "Frightened rabbits sprint underneath cedar hedges at twilight."
+        },
+        {
+          "word": "Flee",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "Startled deer often flee deep into brush after loud claps."
+        },
+        {
+          "word": "Dart",
+          "ipa": "",
+          "toneTag": "Panicked Dash",
+          "miniContext": "Silver minnows dart quickly under willow roots."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L143_LEARN_Q3",
+      "level": 143,
+      "cefr": "C1",
+      "difficulty": 4,
+      "pairTitle": "Look ↔ Peer",
+      "baseWord": "Look",
+      "synonym": "Peer",
+      "partOfSpeech": "Verb",
+      "coreMeaning": "To look intensely through mist, tiny gaps, or darkness.",
+      "whyDifferent": "'Look' glances casually (`look here`). 'Peer' squints forward carefully trying hard to make out shapes (`peer through fog`).",
+      "makeovers": [
+        {
+          "situationTag": "Keyhole Fog",
+          "beforeSentence": "Captains leaned forward to ___ closely through dense harbor mist.",
+          "targetSlotWord": "look",
+          "swappedWord": "peer",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — straining eyes in fog or dim corners takes 'peer'.",
+          "spokenSentence": "Captains leaned forward to peer closely through dense harbor mist."
+        },
+        {
+          "situationTag": "Mirror Smile",
+          "beforeSentence": "Kids love to ___ at funny stickers on mirrors.",
+          "targetSlotWord": "look",
+          "swappedWord": "peer",
+          "isNaturalSwap": false,
+          "earVerdict": "Doesn't fit — easy playful looking takes 'look', not straining 'peer'.",
+          "spokenSentence": "Kids love to look at funny stickers on mirrors."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Squint",
+          "ipa": "",
+          "toneTag": "Casual",
+          "miniContext": "Curiously, owls squint out from high oak tree hollows."
+        },
+        {
+          "word": "Gaze",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "Captains leaned forward to gaze closely through dense harbor mist."
+        },
+        {
+          "word": "Scrutinize",
+          "ipa": "",
+          "toneTag": "Strain Eyes",
+          "miniContext": "Law clerks scrutinize signed leases word by word."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L144_LEARN_Q1",
+      "level": 144,
+      "cefr": "C1",
+      "difficulty": 4,
+      "pairTitle": "Hear ↔ Eavesdrop",
+      "baseWord": "Hear",
+      "synonym": "Eavesdrop",
+      "partOfSpeech": "Verb",
+      "coreMeaning": "To secretly listen in on others’ private talks.",
+      "whyDifferent": "'Hear' picks up ambient noise (`hear birds`). 'Eavesdrop' intentionally leans close to spy on private whispers (`eavesdrop politely`).",
+      "makeovers": [
+        {
+          "situationTag": "Thin Wall",
+          "beforeSentence": "Do not ___ when neighbors discuss private family finances.",
+          "targetSlotWord": "hear",
+          "swappedWord": "eavesdrop",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — secretly spying on talk requires 'eavesdrop'.",
+          "spokenSentence": "Do not eavesdrop when neighbors discuss private family finances."
+        },
+        {
+          "situationTag": "Alarm Beep",
+          "beforeSentence": "Did anyone ___ that low battery chirp upstairs?",
+          "targetSlotWord": "hear",
+          "swappedWord": "eavesdrop",
+          "isNaturalSwap": false,
+          "earVerdict": "Doesn't fit — noticing accidental alarm sounds takes 'hear', never 'eavesdrop'.",
+          "spokenSentence": "Did anyone hear that low battery chirp upstairs?"
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Listen",
+          "ipa": "",
+          "toneTag": "Accidental",
+          "miniContext": "Tourists pretend to read menus while trying to listen nearby."
+        },
+        {
+          "word": "Overhear",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "Do not overhear when neighbors discuss private family finances."
+        },
+        {
+          "word": "Spy",
+          "ipa": "",
+          "toneTag": "Secret Spy",
+          "miniContext": "Keep passwords hidden so nobody can spy."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L144_LEARN_Q2",
+      "level": 144,
+      "cefr": "C1",
+      "difficulty": 4,
+      "pairTitle": "Fear ↔ Dread",
+      "baseWord": "Fear",
+      "synonym": "Dread",
+      "partOfSpeech": "Verb",
+      "coreMeaning": "To feel deep heavy anxiety ahead of an upcoming event.",
+      "whyDifferent": "'Fear' avoids danger (`fear heights`). 'Dread' specifically hates facing an upcoming Monday exam, dentist visit, or long flight (`dread winter bills`).",
+      "makeovers": [
+        {
+          "situationTag": "Monday Exam",
+          "beforeSentence": "Students often ___ giving five-minute solo speeches.",
+          "targetSlotWord": "fear",
+          "swappedWord": "dread",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — dreading scheduled future tasks takes 'dread'.",
+          "spokenSentence": "Students often dread giving five-minute solo speeches."
+        },
+        {
+          "situationTag": "Dark Alley",
+          "beforeSentence": "Timid squirrels instinctively ___ steep rocky cliff edges yearly.",
+          "targetSlotWord": "fear",
+          "swappedWord": "dread",
+          "isNaturalSwap": false,
+          "earVerdict": "Doesn't fit — permanent animal fears take 'fear', while upcoming calendar deadlines or duties use 'dread'.",
+          "spokenSentence": "Timid squirrels instinctively fear steep rocky cliff edges yearly."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Apprehend",
+          "ipa": "",
+          "toneTag": "Phobia",
+          "miniContext": "Shopkeepers rarely apprehend sunny holiday weekends."
+        },
+        {
+          "word": "Shrink",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "Students often shrink giving five-minute solo speeches."
+        },
+        {
+          "word": "Recoil",
+          "ipa": "",
+          "toneTag": "Upcoming Event",
+          "miniContext": "Walkers recoil fast when hot steam hisses."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L144_LEARN_Q3",
+      "level": 144,
+      "cefr": "C1",
+      "difficulty": 4,
+      "pairTitle": "Love ↔ Adore",
+      "baseWord": "Love",
+      "synonym": "Adore",
+      "partOfSpeech": "Verb",
+      "coreMeaning": "To feel warm playful delight and deep fondness.",
+      "whyDifferent": "'Love' carries serious lifelong commitment (`love family`). 'Adore' overflows with bright warmth for pets, babies, and art (`adore kittens`).",
+      "makeovers": [
+        {
+          "situationTag": "Pet Pup",
+          "beforeSentence": "Everyone in the family seems to ___ the clumsy puppy!",
+          "targetSlotWord": "love",
+          "swappedWord": "adore",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — charming warm delight takes 'adore'.",
+          "spokenSentence": "Everyone in the family seems to adore the clumsy puppy!"
+        },
+        {
+          "situationTag": "Civic Duty",
+          "beforeSentence": "Soldiers deeply ___ their quiet homeland mountains.",
+          "targetSlotWord": "love",
+          "swappedWord": "adore",
+          "isNaturalSwap": false,
+          "earVerdict": "Doesn't fit — solemn patriotic devotion takes 'love' or cherish, not bubbly 'adore'.",
+          "spokenSentence": "Soldiers deeply love their quiet homeland mountains."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Cherish",
+          "ipa": "",
+          "toneTag": "Solemn",
+          "miniContext": "Young readers simply cherish playful illustrations inside storybooks."
+        },
+        {
+          "word": "Idolize",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "Everyone in the family seems to idolize the clumsy puppy!"
+        },
+        {
+          "word": "Treasure",
+          "ipa": "",
+          "toneTag": "Bright Delight",
+          "miniContext": "Grandparents treasure faded family photo albums."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L145_LEARN_Q1",
+      "level": 145,
+      "cefr": "C1",
+      "difficulty": 4,
+      "pairTitle": "Hate ↔ Despise",
+      "baseWord": "Hate",
+      "synonym": "Despise",
+      "partOfSpeech": "Verb",
+      "coreMeaning": "To feel deep moral scorn or intense disgust.",
+      "whyDifferent": "'Hate' exaggerates broccoli (`I hate traffic`). 'Despise' feels cold, bitter moral contempt toward cruelty, bullies, or cheating (`despise deceit`).",
+      "makeovers": [
+        {
+          "situationTag": "Fraud Scorn",
+          "beforeSentence": "Honest umpires ___ blatant cheating on fair courts.",
+          "targetSlotWord": "hate",
+          "swappedWord": "despise",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — deep moral contempt requires 'despise'.",
+          "spokenSentence": "Honest umpires despise blatant cheating on fair courts."
+        },
+        {
+          "situationTag": "Wet Socks",
+          "beforeSentence": "I really ___ stepping into deep icy puddles before work!",
+          "targetSlotWord": "hate",
+          "swappedWord": "despise",
+          "isNaturalSwap": false,
+          "earVerdict": "Doesn't fit — minor wet socks take casual 'hate', never solemn 'despise'.",
+          "spokenSentence": "I really hate stepping into deep icy puddles before work!"
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Loathe",
+          "ipa": "",
+          "toneTag": "Annoyed",
+          "miniContext": "Villagers came to loathe greedy landlords who neglected roofs."
+        },
+        {
+          "word": "Detest",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "Honest umpires detest blatant cheating on fair courts."
+        },
+        {
+          "word": "Abhor",
+          "ipa": "",
+          "toneTag": "Moral Contempt",
+          "miniContext": "Decent sports leagues abhor dangerous plays."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L145_LEARN_Q2",
+      "level": 145,
+      "cefr": "C1",
+      "difficulty": 4,
+      "pairTitle": "Win ↔ Prevail",
+      "baseWord": "Win",
+      "synonym": "Prevail",
+      "partOfSpeech": "Verb",
+      "coreMeaning": "To triumph after long hard struggle.",
+      "whyDifferent": "'Win' scores games (`win 3-1`). 'Prevail' sees justice, calm truth, or patience win slowly over fierce tough resistance (`truth prevails`).",
+      "makeovers": [
+        {
+          "situationTag": "Court Truth",
+          "beforeSentence": "With patient proof, calm fairness will eventually ___.",
+          "targetSlotWord": "win",
+          "swappedWord": "prevail",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — overcoming long resistance earns 'prevail'.",
+          "spokenSentence": "With patient proof, calm fairness will eventually prevail."
+        },
+        {
+          "situationTag": "Chess Match",
+          "beforeSentence": "Did Marco manage to ___ Tuesday’s rapid chess board?",
+          "targetSlotWord": "win",
+          "swappedWord": "prevail",
+          "isNaturalSwap": false,
+          "earVerdict": "Doesn't fit — short board matches use 'win', never epic 'prevail'.",
+          "spokenSentence": "Did Marco manage to win Tuesday’s rapid chess board?"
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Triumph",
+          "ipa": "",
+          "toneTag": "Score",
+          "miniContext": "Steadfast hikers managed to triumph over freezing gale winds."
+        },
+        {
+          "word": "Overcome",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "With patient proof, calm fairness will eventually overcome."
+        },
+        {
+          "word": "Succeed",
+          "ipa": "",
+          "toneTag": "Lasting Victory",
+          "miniContext": "Patient learners succeed by practicing daily."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L145_LEARN_Q3",
+      "level": 145,
+      "cefr": "C1",
+      "difficulty": 4,
+      "pairTitle": "Lose ↔ Forfeit",
+      "baseWord": "Lose",
+      "synonym": "Forfeit",
+      "partOfSpeech": "Verb",
+      "coreMeaning": "To give up a prize or spot by breaking rules or missing deadline.",
+      "whyDifferent": "'Lose' drops keys (`lose matches`). 'Forfeit' automatically hands away deposits, games, or licenses through no-shows or fouls (`forfeit deposit`).",
+      "makeovers": [
+        {
+          "situationTag": "No-Show",
+          "beforeSentence": "Missing check-in times forces guests to ___ advance deposits.",
+          "targetSlotWord": "lose",
+          "swappedWord": "forfeit",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — rule/deadline penalty losses use 'forfeit'.",
+          "spokenSentence": "Missing check-in times forces guests to forfeit advance deposits."
+        },
+        {
+          "situationTag": "Bad Game",
+          "beforeSentence": "Players felt sad to ___ after scoring ninety minutes hard.",
+          "targetSlotWord": "lose",
+          "swappedWord": "forfeit",
+          "isNaturalSwap": false,
+          "earVerdict": "Doesn't fit — honest field defeats take 'lose', never penalty 'forfeit'.",
+          "spokenSentence": "Players felt sad to lose after scoring ninety minutes hard."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Surrender",
+          "ipa": "",
+          "toneTag": "Played & Lost",
+          "miniContext": "Arriving fifteen minutes late means teams surrender opening matches."
+        },
+        {
+          "word": "Relinquish",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "Missing check-in times forces guests to relinquish advance deposits."
+        },
+        {
+          "word": "Sacrifice",
+          "ipa": "",
+          "toneTag": "Penalty Loss",
+          "miniContext": "Never sacrifice safety rules for tiny speedups."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L146_LEARN_Q1",
+      "level": 146,
+      "cefr": "C1",
+      "difficulty": 4,
+      "pairTitle": "Clear (Sky) ↔ Cloudless",
+      "baseWord": "Clear",
+      "synonym": "Cloudless",
+      "partOfSpeech": "Adjective",
+      "coreMeaning": "Completely open with zero clouds blocking sight.",
+      "whyDifferent": "'Clear' fits glass (`clear glass`) and voices. 'Cloudless' paints bright blue open skies from horizon to horizon.",
+      "makeovers": [
+        {
+          "situationTag": "Observatory",
+          "beforeSentence": "Stargazers drove uphill hoping for a ___ night sky.",
+          "targetSlotWord": "clear",
+          "swappedWord": "cloudless",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — completely unobstructed outdoor skies take 'cloudless'.",
+          "spokenSentence": "Stargazers drove uphill hoping for a cloudless night sky."
+        },
+        {
+          "situationTag": "Reading Glass",
+          "beforeSentence": "Polish reading spectacles until lenses stay crisp and ___.",
+          "targetSlotWord": "clear",
+          "swappedWord": "cloudless",
+          "isNaturalSwap": false,
+          "earVerdict": "Doesn't fit — glass and water use 'clear', never sky-only 'cloudless'.",
+          "spokenSentence": "Polish reading spectacles until lenses stay crisp and clear."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Bright",
+          "ipa": "",
+          "toneTag": "Glass",
+          "miniContext": "Solar balloons drifted smoothly across the bright morning sky."
+        },
+        {
+          "word": "Azure",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "Stargazers drove uphill hoping for an azure night sky."
+        },
+        {
+          "word": "Unclouded",
+          "ipa": "",
+          "toneTag": "Open Sky",
+          "miniContext": "Morning stargazing shines under unclouded skies."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L146_LEARN_Q2",
+      "level": 146,
+      "cefr": "C1",
+      "difficulty": 4,
+      "pairTitle": "Heavy (Heart) ↔ Burdened",
+      "baseWord": "Heavy",
+      "synonym": "Burdened",
+      "partOfSpeech": "Adjective",
+      "coreMeaning": "Weighed down deeply by duties or worry.",
+      "whyDifferent": "'Heavy' lifts crates (`heavy luggage`). 'Burdened' highlights shoulders or minds loaded down by heavy debts, duties, or secrets.",
+      "makeovers": [
+        {
+          "situationTag": "Small Firm",
+          "beforeSentence": "Shop owners felt ___ by complicated winter tax rules.",
+          "targetSlotWord": "heavy",
+          "swappedWord": "burdened",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — weighed down by duties or debt takes 'burdened'.",
+          "spokenSentence": "Shop owners felt burdened by complicated winter tax rules."
+        },
+        {
+          "situationTag": "Cast Pan",
+          "beforeSentence": "Chefs preheated a ___ iron skillet over medium flames.",
+          "targetSlotWord": "heavy",
+          "swappedWord": "burdened",
+          "isNaturalSwap": false,
+          "earVerdict": "Doesn't fit — metal weight takes 'heavy', never mental 'burdened'.",
+          "spokenSentence": "Chefs preheated a heavy iron skillet over medium flames."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Weighted",
+          "ipa": "",
+          "toneTag": "Weight",
+          "miniContext": "Carrying two jobs left commuters deeply weighted by Friday."
+        },
+        {
+          "word": "Overloaded",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "Shop owners felt overloaded by complicated winter tax rules."
+        },
+        {
+          "word": "Oppressed",
+          "ipa": "",
+          "toneTag": "Duty Strain",
+          "miniContext": "Fair laws defend oppressed workers cleanly."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L146_LEARN_Q3",
+      "level": 146,
+      "cefr": "C1",
+      "difficulty": 4,
+      "pairTitle": "Light (Joke) ↔ Playful",
+      "baseWord": "Light",
+      "synonym": "Playful",
+      "partOfSpeech": "Adjective",
+      "coreMeaning": "Warmly teasing and full of harmless humor.",
+      "whyDifferent": "'Light' trims calories (`light soup`). 'Playful' captures lighthearted banter, puppy leaps, or bright cheerful design (`playful tone`).",
+      "makeovers": [
+        {
+          "situationTag": "Sibling Tease",
+          "beforeSentence": "Her ___ grin softened the teasing note about burnt toast.",
+          "targetSlotWord": "light",
+          "swappedWord": "playful",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — gentle cheerful humor takes 'playful'.",
+          "spokenSentence": "Her playful grin softened the teasing note about burnt toast."
+        },
+        {
+          "situationTag": "Summer Salad",
+          "beforeSentence": "Order a ___ green salad when hungry after long swims.",
+          "targetSlotWord": "light",
+          "swappedWord": "playful",
+          "isNaturalSwap": false,
+          "earVerdict": "Doesn't fit — meal lightness uses 'light', never 'playful'.",
+          "spokenSentence": "Order a light green salad when hungry after long swims."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Cheeky",
+          "ipa": "",
+          "toneTag": "Mild",
+          "miniContext": "Museum tiles added a cheeky swirl near the kids’ wing."
+        },
+        {
+          "word": "Teasing",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "Her teasing grin softened the teasing note about burnt toast."
+        },
+        {
+          "word": "Jocular",
+          "ipa": "",
+          "toneTag": "Lighthearted Fun",
+          "miniContext": "His jocular welcome put shy newcomers at ease."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L147_LEARN_Q1",
+      "level": 147,
+      "cefr": "C1",
+      "difficulty": 4,
+      "pairTitle": "Hard (Proof) ↔ Concrete",
+      "baseWord": "Hard",
+      "synonym": "Concrete",
+      "partOfSpeech": "Adjective",
+      "coreMeaning": "Real, specific, and solidly proven.",
+      "whyDifferent": "'Hard' tests diamonds (`hard rock`). 'Concrete' demands specific real examples, figures, or proof rather than vague wishes (`concrete proof`).",
+      "makeovers": [
+        {
+          "situationTag": "Grant Pitch",
+          "beforeSentence": "Reviewers asked for ___ survey numbers backing claims.",
+          "targetSlotWord": "hard",
+          "swappedWord": "concrete",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — tangible verifiable evidence uses 'concrete'.",
+          "spokenSentence": "Reviewers asked for concrete survey numbers backing claims."
+        },
+        {
+          "situationTag": "Pillow Bed",
+          "beforeSentence": "Hotels replaced lumpy ___ cushions with plush foam pillows.",
+          "targetSlotWord": "hard",
+          "swappedWord": "concrete",
+          "isNaturalSwap": false,
+          "earVerdict": "Doesn't fit — firm mattress foam takes 'hard'/firm, not 'concrete'.",
+          "spokenSentence": "Hotels replaced lumpy hard cushions with plush foam pillows."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Tangible",
+          "ipa": "",
+          "toneTag": "Stiff",
+          "miniContext": "Mentors share tangible next steps instead of broad advice."
+        },
+        {
+          "word": "Specific",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "Reviewers asked for specific survey numbers backing claims."
+        },
+        {
+          "word": "Solid",
+          "ipa": "",
+          "toneTag": "Specific Proof",
+          "miniContext": "Build backyard sheds over solid stone slabs."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L147_LEARN_Q2",
+      "level": 147,
+      "cefr": "C1",
+      "difficulty": 4,
+      "pairTitle": "Soft (Rule) ↔ Lenient",
+      "baseWord": "Soft",
+      "synonym": "Lenient",
+      "partOfSpeech": "Adjective",
+      "coreMeaning": "Forgiving and gentle when applying rules.",
+      "whyDifferent": "'Soft' feels velvet (`soft wool`). 'Lenient' praises or critiques judges, teachers, or return rules forgiving mistakes easily.",
+      "makeovers": [
+        {
+          "situationTag": "Late Policy",
+          "beforeSentence": "Umpires remained ___ toward tired rookies in opening sets.",
+          "targetSlotWord": "soft",
+          "swappedWord": "lenient",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — mild rule enforcement uses 'lenient'.",
+          "spokenSentence": "Umpires remained lenient toward tired rookies in opening sets."
+        },
+        {
+          "situationTag": "Wool Coat",
+          "beforeSentence": "Brush the ___ cashmere scarf cleanly before winter storage.",
+          "targetSlotWord": "soft",
+          "swappedWord": "lenient",
+          "isNaturalSwap": false,
+          "earVerdict": "Doesn't fit — fabric texture uses 'soft', never judicial 'lenient'.",
+          "spokenSentence": "Brush the soft cashmere scarf cleanly before winter storage."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Mild",
+          "ipa": "",
+          "toneTag": "Gentle",
+          "miniContext": "Librarians stayed mild about one-day overdue snowstorm returns."
+        },
+        {
+          "word": "Tolerant",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "Umpires remained tolerant toward tired rookies in opening sets."
+        },
+        {
+          "word": "Permissive",
+          "ipa": "",
+          "toneTag": "Mild Rule",
+          "miniContext": "Permissive rules rarely settle rowdy rooms."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L147_LEARN_Q3",
+      "level": 147,
+      "cefr": "C1",
+      "difficulty": 4,
+      "pairTitle": "Sharp (Critique) ↔ Trenchant",
+      "baseWord": "Sharp",
+      "synonym": "Trenchant",
+      "partOfSpeech": "Adjective",
+      "coreMeaning": "Vigorous, biting, and cutting straight to truth.",
+      "whyDifferent": "'Sharp' stings nails (`sharp tack`). 'Trenchant' applauds razor-clear essays or commentary slicing straight through excuses.",
+      "makeovers": [
+        {
+          "situationTag": "Column Review",
+          "beforeSentence": "Economists praised her ___ essay on coastal housing costs.",
+          "targetSlotWord": "sharp",
+          "swappedWord": "trenchant",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — incisive analytical insight earns 'trenchant'.",
+          "spokenSentence": "Economists praised her trenchant essay on coastal housing costs."
+        },
+        {
+          "situationTag": "Cheese Knife",
+          "beforeSentence": "Store every ___ paring blade safely away from kids.",
+          "targetSlotWord": "sharp",
+          "swappedWord": "trenchant",
+          "isNaturalSwap": false,
+          "earVerdict": "Doesn't fit — physical cutting metal takes 'sharp', never 'trenchant'.",
+          "spokenSentence": "Store every sharp paring blade safely away from kids."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Incisive",
+          "ipa": "",
+          "toneTag": "Pointed",
+          "miniContext": "His incisive closing summary settled thirty minutes of debate."
+        },
+        {
+          "word": "Cutting",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "Economists praised her cutting essay on coastal housing costs."
+        },
+        {
+          "word": "Penetrating",
+          "ipa": "",
+          "toneTag": "Cutting Insight",
+          "miniContext": "Owls watch fields with keen, penetrating eyes."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L148_LEARN_Q1",
+      "level": 148,
+      "cefr": "C1",
+      "difficulty": 4,
+      "pairTitle": "Deep (Sleep) ↔ Soundless",
+      "baseWord": "Deep",
+      "synonym": "Soundless",
+      "partOfSpeech": "Adjective",
+      "coreMeaning": "Quiet down to total absence of sound.",
+      "whyDifferent": "'Deep' sinks pools (`deep bay`). 'Soundless' evokes silent snowfalls, velvet wings, or electric gliders passing silently (`soundless flight`).",
+      "makeovers": [
+        {
+          "situationTag": "Snow Fall",
+          "beforeSentence": "Thick snow blanketed lanes in a gentle, ___ calm.",
+          "targetSlotWord": "deep",
+          "swappedWord": "soundless",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — quiet hushed motion earns 'soundless'.",
+          "spokenSentence": "Thick snow blanketed lanes in a gentle, soundless calm."
+        },
+        {
+          "situationTag": "Well Water",
+          "beforeSentence": "Drop buckets carefully down the ___ brick garden well.",
+          "targetSlotWord": "deep",
+          "swappedWord": "soundless",
+          "isNaturalSwap": false,
+          "earVerdict": "Doesn't fit — deep vertical wells take 'deep', never acoustic 'soundless'.",
+          "spokenSentence": "Drop buckets carefully down the deep brick garden well."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Mute",
+          "ipa": "",
+          "toneTag": "Abyss",
+          "miniContext": "Owls swooped across moonlit hayfields in mute glide."
+        },
+        {
+          "word": "Hushed",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "Thick snow blanketed lanes in a gentle, hushed calm."
+        },
+        {
+          "word": "Noiseless",
+          "ipa": "",
+          "toneTag": "Pure Quiet",
+          "miniContext": "Electric buses glide smoothly with noiseless hum."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L148_LEARN_Q2",
+      "level": 148,
+      "cefr": "C1",
+      "difficulty": 4,
+      "pairTitle": "Broad (Knowledge) ↔ Extensive",
+      "baseWord": "Broad",
+      "synonym": "Extensive",
+      "partOfSpeech": "Adjective",
+      "coreMeaning": "Covering wide ground thoroughly in depth.",
+      "whyDifferent": "'Broad' opens streets (`broad avenue`). 'Extensive' details large collections, thorough renovations, or deep field study (`extensive repairs`).",
+      "makeovers": [
+        {
+          "situationTag": "Bridge Work",
+          "beforeSentence": "Spring storms forced ___ repairs along six miles of pier.",
+          "targetSlotWord": "broad",
+          "swappedWord": "extensive",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — thorough wide-scale effort takes 'extensive'.",
+          "spokenSentence": "Spring storms forced extensive repairs along six miles of pier."
+        },
+        {
+          "situationTag": "Warm Smile",
+          "beforeSentence": "Greet newcomers with your ___ welcoming smile at check-in.",
+          "targetSlotWord": "broad",
+          "swappedWord": "extensive",
+          "isNaturalSwap": false,
+          "earVerdict": "Doesn't fit — smiles and shoulders take 'broad', never 'extensive'.",
+          "spokenSentence": "Greet newcomers with your broad welcoming smile at check-in."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Comprehensive",
+          "ipa": "",
+          "toneTag": "Wide",
+          "miniContext": "Museum curators hold comprehensive expertise in medieval pottery."
+        },
+        {
+          "word": "Sweeping",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "Spring storms forced sweeping repairs along six miles of pier."
+        },
+        {
+          "word": "Vast",
+          "ipa": "",
+          "toneTag": "Thorough Scope",
+          "miniContext": "Prairie skies stretch vast from east to west."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L148_LEARN_Q3",
+      "level": 148,
+      "cefr": "C1",
+      "difficulty": 4,
+      "pairTitle": "Plain (Truth) ↔ Stark",
+      "baseWord": "Plain",
+      "synonym": "Stark",
+      "partOfSpeech": "Adjective",
+      "coreMeaning": "Uncomfortably bare, harsh, and impossible to soften.",
+      "whyDifferent": "'Plain' serves toast (`plain oatcakes`). 'Stark' highlights bare snowy trees or blunt sobering facts (`stark warning`).",
+      "makeovers": [
+        {
+          "situationTag": "Frost Tree",
+          "beforeSentence": "Bare branches stood in ___ contrast against snowy hills.",
+          "targetSlotWord": "plain",
+          "swappedWord": "stark",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — bare stripped visual or sobering contrast takes 'stark'.",
+          "spokenSentence": "Bare branches stood in stark contrast against snowy hills."
+        },
+        {
+          "situationTag": "Lunch Bagel",
+          "beforeSentence": "Kids prefer ___ sesame bagels toasted lightly with honey.",
+          "targetSlotWord": "plain",
+          "swappedWord": "stark",
+          "isNaturalSwap": false,
+          "earVerdict": "Doesn't fit — simple food orders take 'plain', never bleak 'stark'.",
+          "spokenSentence": "Kids prefer plain sesame bagels toasted lightly with honey."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Bare",
+          "ipa": "",
+          "toneTag": "Simple",
+          "miniContext": "Water gauges painted a bare reminder to conserve rain."
+        },
+        {
+          "word": "Bleak",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "Bare branches stood in bleak contrast against snowy hills."
+        },
+        {
+          "word": "Blunt",
+          "ipa": "",
+          "toneTag": "Sobering Bare",
+          "miniContext": "Be honest yet gentle rather than coldly blunt."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L149_LEARN_Q1",
+      "level": 149,
+      "cefr": "C1",
+      "difficulty": 4,
+      "pairTitle": "Dry (Wit) ↔ Wry",
+      "baseWord": "Dry",
+      "synonym": "Wry",
+      "partOfSpeech": "Adjective",
+      "coreMeaning": "Showing quiet ironic humor with a straight face.",
+      "whyDifferent": "'Dry' wipes dishes (`dry cloth`). 'Wry' spots a tiny crooked smile mocking life’s ironic twists (`wry comment`).",
+      "makeovers": [
+        {
+          "situationTag": "Rain Laugh",
+          "beforeSentence": "She gave a ___ smile seeing snow right after buying sandals.",
+          "targetSlotWord": "dry",
+          "swappedWord": "wry",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — understated ironic humor earns 'wry'.",
+          "spokenSentence": "She gave a wry smile seeing snow right after buying sandals."
+        },
+        {
+          "situationTag": "Towel Hook",
+          "beforeSentence": "Hang damp coats near radiators so sleeves turn ___ fast.",
+          "targetSlotWord": "dry",
+          "swappedWord": "wry",
+          "isNaturalSwap": false,
+          "earVerdict": "Doesn't fit — removing wetness uses 'dry', never ironic 'wry'.",
+          "spokenSentence": "Hang damp coats near radiators so sleeves turn dry fast."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Ironic",
+          "ipa": "",
+          "toneTag": "Thirsty",
+          "miniContext": "Tour guides slip ironic historical jokes into quiet walks."
+        },
+        {
+          "word": "Sardonic",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "She gave a sardonic smile seeing snow right after buying sandals."
+        },
+        {
+          "word": "Droll",
+          "ipa": "",
+          "toneTag": "Straight-Faced Wit",
+          "miniContext": "His droll remarks made solemn guides grin softly."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L149_LEARN_Q2",
+      "level": 149,
+      "cefr": "C1",
+      "difficulty": 4,
+      "pairTitle": "Tight (Schedule) ↔ Packed",
+      "baseWord": "Tight",
+      "synonym": "Packed",
+      "partOfSpeech": "Adjective",
+      "coreMeaning": "Filled up tightly with almost zero open room.",
+      "whyDifferent": "'Tight' pulls knots (`tight shoes`). 'Packed' shows stadiums, suitcases, or Monday calendars jammed end to end (`packed agenda`).",
+      "makeovers": [
+        {
+          "situationTag": "Monday Desk",
+          "beforeSentence": "Morning calendars stayed ___ with back-to-back client demos.",
+          "targetSlotWord": "tight",
+          "swappedWord": "packed",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — jammed calendars and buses use 'packed'.",
+          "spokenSentence": "Morning calendars stayed packed with back-to-back client demos."
+        },
+        {
+          "situationTag": "Jar Lid",
+          "beforeSentence": "Run hot tap water over a ___ metal pickle jar lid.",
+          "targetSlotWord": "tight",
+          "swappedWord": "packed",
+          "isNaturalSwap": false,
+          "earVerdict": "Doesn't fit — stuck jar lids are 'tight', never crowded 'packed'.",
+          "spokenSentence": "Run hot tap water over a tight metal pickle jar lid."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Crammed",
+          "ipa": "",
+          "toneTag": "Snug Grip",
+          "miniContext": "Auditors worked through a crammed schedule before Tuesday flights."
+        },
+        {
+          "word": "Full",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "Morning calendars stayed full with back-to-back client demos."
+        },
+        {
+          "word": "Busy",
+          "ipa": "",
+          "toneTag": "Jammed Full",
+          "miniContext": "Checklists keep busy kitchens running calmly on time."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L149_LEARN_Q3",
+      "level": 149,
+      "cefr": "C1",
+      "difficulty": 4,
+      "pairTitle": "High (Spirit) ↔ Buoyant",
+      "baseWord": "High",
+      "synonym": "Buoyant",
+      "partOfSpeech": "Adjective",
+      "coreMeaning": "Cheerfully optimistic and bouncing cleanly back.",
+      "whyDifferent": "'High' climbs peaks (`high cliff`). 'Buoyant' floats ships, buoyant sales, or hopeful moods bouncing back above setbacks (`buoyant mood`).",
+      "makeovers": [
+        {
+          "situationTag": "Shop Mood",
+          "beforeSentence": "Festival crowds lifted shop owners into a ___ holiday mood.",
+          "targetSlotWord": "high",
+          "swappedWord": "buoyant",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — resilient cheerful bounce uses 'buoyant'.",
+          "spokenSentence": "Festival crowds lifted shop owners into a buoyant holiday mood."
+        },
+        {
+          "situationTag": "Tower Bridge",
+          "beforeSentence": "Cranes lifted iron spans ___ above foggy river traffic.",
+          "targetSlotWord": "high",
+          "swappedWord": "buoyant",
+          "isNaturalSwap": false,
+          "earVerdict": "Doesn't fit — tall physical elevation takes 'high', never emotional 'buoyant'.",
+          "spokenSentence": "Cranes lifted iron spans high above foggy river traffic."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Upbeat",
+          "ipa": "",
+          "toneTag": "Tall",
+          "miniContext": "Early harvest gains kept regional growers surprisingly upbeat."
+        },
+        {
+          "word": "Resilient",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "Festival crowds lifted shop owners into a resilient holiday mood."
+        },
+        {
+          "word": "Sprightly",
+          "ipa": "",
+          "toneTag": "Bouncing Cheer",
+          "miniContext": "Our sprightly dog bounded over park logs."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L150_LEARN_Q1",
+      "level": 150,
+      "cefr": "C1",
+      "difficulty": 4,
+      "pairTitle": "Tight (Budget) ↔ Modest",
+      "baseWord": "Tight",
+      "synonym": "Modest",
+      "partOfSpeech": "Adjective",
+      "coreMeaning": "Sensibly small rather than lavish or flashy.",
+      "whyDifferent": "'Tight' squeezes pennies (`tight cash`). 'Modest' gracefully praises unpretentious homes, salaries, or steady gains (`modest gain`).",
+      "makeovers": [
+        {
+          "situationTag": "Quiet Cafe",
+          "beforeSentence": "They built a charming bakery on a ___ neighborhood loan.",
+          "targetSlotWord": "tight",
+          "swappedWord": "modest",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — respectful small scale uses 'modest'.",
+          "spokenSentence": "They built a charming bakery on a modest neighborhood loan."
+        },
+        {
+          "situationTag": "Boot Fit",
+          "beforeSentence": "Half-size smaller leather boots felt painfully ___ across toes.",
+          "targetSlotWord": "tight",
+          "swappedWord": "modest",
+          "isNaturalSwap": false,
+          "earVerdict": "Doesn't fit — squeezing shoe widths use 'tight', never graceful 'modest'.",
+          "spokenSentence": "Half-size smaller leather boots felt painfully tight across toes."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Humble",
+          "ipa": "",
+          "toneTag": "Pinched",
+          "miniContext": "Careful insulation yielded a humble yet welcome winter drop."
+        },
+        {
+          "word": "Moderate",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "They built a charming bakery on a moderate neighborhood loan."
+        },
+        {
+          "word": "Measured",
+          "ipa": "",
+          "toneTag": "Respectfully Small",
+          "miniContext": "She gave a calm, measured reply during debate."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L150_LEARN_Q2",
+      "level": 150,
+      "cefr": "C1",
+      "difficulty": 4,
+      "pairTitle": "Low (Mood) ↔ Somber",
+      "baseWord": "Low",
+      "synonym": "Somber",
+      "partOfSpeech": "Adjective",
+      "coreMeaning": "Dark, quiet, and seriously solemn.",
+      "whyDifferent": "'Low' sits beneath shelves (`low chair`). 'Somber' captures solemn ceremonies, muted gray suits, and quiet reflection (`somber tone`).",
+      "makeovers": [
+        {
+          "situationTag": "Memorial",
+          "beforeSentence": "Crowds stood in ___ reflection beside granite flower beds.",
+          "targetSlotWord": "low",
+          "swappedWord": "somber",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — solemn dignified mood uses 'somber'.",
+          "spokenSentence": "Crowds stood in somber reflection beside granite flower beds."
+        },
+        {
+          "situationTag": "Battery Bar",
+          "beforeSentence": "Plug chargers in soon when phone power dips ___ tonight.",
+          "targetSlotWord": "low",
+          "swappedWord": "somber",
+          "isNaturalSwap": false,
+          "earVerdict": "Doesn't fit — battery readings take 'low', never dignified 'somber'.",
+          "spokenSentence": "Plug chargers in soon when phone power dips low tonight."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Grave",
+          "ipa": "",
+          "toneTag": "Small Number",
+          "miniContext": "Dark overcast skies cast a grave mood over autumn fields."
+        },
+        {
+          "word": "Mournful",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "Crowds stood in mournful reflection beside granite flower beds."
+        },
+        {
+          "word": "Solemn",
+          "ipa": "",
+          "toneTag": "Solemn Tone",
+          "miniContext": "Crowds stood in solemn silence at dawn ceremonies."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L150_LEARN_Q3",
+      "level": 150,
+      "cefr": "C1",
+      "difficulty": 4,
+      "pairTitle": "Open (Mind) ↔ Receptive",
+      "baseWord": "Open",
+      "synonym": "Receptive",
+      "partOfSpeech": "Adjective",
+      "coreMeaning": "Ready and willing to welcome fresh suggestions.",
+      "whyDifferent": "'Open' unlocks gates (`open doors`). 'Receptive' shows listeners actually eager to test or accept new ideas (`receptive team`).",
+      "makeovers": [
+        {
+          "situationTag": "Design Review",
+          "beforeSentence": "Veterinarians proved warmly ___ to softer clinic lighting.",
+          "targetSlotWord": "open",
+          "swappedWord": "receptive",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — open-minded listening ears take 'receptive'.",
+          "spokenSentence": "Veterinarians proved warmly receptive to softer clinic lighting."
+        },
+        {
+          "situationTag": "Gate Latch",
+          "beforeSentence": "Leave backyard gates ___ while moving garden wheelbarrows.",
+          "targetSlotWord": "open",
+          "swappedWord": "receptive",
+          "isNaturalSwap": false,
+          "earVerdict": "Doesn't fit — physical gates are 'open', never mental 'receptive'.",
+          "spokenSentence": "Leave backyard gates open while moving garden wheelbarrows."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Receptive",
+          "ipa": "",
+          "toneTag": "Unlocked",
+          "miniContext": "Young audiences are often deeply receptive to visual stories."
+        },
+        {
+          "word": "Welcoming",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "Veterinarians proved warmly welcoming to softer clinic lighting."
+        },
+        {
+          "word": "Responsive",
+          "ipa": "",
+          "toneTag": "Eager Listener",
+          "miniContext": "Responsive support desks solve bugs in hours."
+        }
+      ]
+    }
+  ]
 }

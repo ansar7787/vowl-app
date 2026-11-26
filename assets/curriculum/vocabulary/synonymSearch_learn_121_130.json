@@ -1,1058 +1,1570 @@
 {
-    "gameType": "synonymSearch",
-    "phase": "learn",
-    "batchIndex": 13,
-    "levels": "121-130",
-    "quests": [
+  "gameType": "synonymSearch",
+  "phase": "learn",
+  "cefr": "C1",
+  "difficulty": 4,
+  "batchIndex": 13,
+  "levels": "121-130",
+  "quests": [
+    {
+      "id": "VOC_SYNONYMSEARCH_L121_LEARN_Q1",
+      "level": 121,
+      "cefr": "C1",
+      "difficulty": 4,
+      "pairTitle": "Reduce ↔ Mitigate",
+      "baseWord": "Reduce",
+      "synonym": "Mitigate",
+      "partOfSpeech": "Verb",
+      "coreMeaning": "To make something harmful less severe.",
+      "whyDifferent": "'Reduce' lowers counts (`reduce costs`). 'Mitigate' lowers harm or risk without curing its root cause (`mitigate flood risk`).",
+      "makeovers": [
         {
-            "id": "VOC_SYNONYMSEARCH_L121_LEARN_Q1",
-            "level": 121,
-            "conceptTitle": "Concept Exploration: IRRITATED",
-            "word": "IRRITATED",
-            "definition": "\"Annoyed\" describes a similar mild displeasure as \"irritated,\" often caused by small, repeated frustrations.",
-            "example": "Example sentence",
-            "nativeTip": "Feeling a mild sense of displeasure about something small.",
-            "visualAnchor": "💡 IRRITATED = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "\"Annoyed\" describes a similar mild displeasure as \"irritated,\" often caused by small, repeated frustrations.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "Feeling a mild sense of displeasure about something small."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L121_Q1",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Irritated",
-                "hint": "Feeling a mild sense of displeasure about something small.",
-                "explanation": "\"Annoyed\" describes a similar mild displeasure as \"irritated,\" often caused by small, repeated frustrations.",
-                "interactionType": "search",
-                "correctAnswer": "Annoyed",
-                "options": [
-                    "Annoyed",
-                    "Delighted",
-                    "Thrilled",
-                    "Pleased"
-                ],
-                "nuanceDifference": "\"Annoyed\" and \"irritated\" sit at a similar, relatively mild level of anger, well below words like \"furious\" or \"livid.\"",
-                "contextSentence": "She was mildly annoyed by the constant background noise."
-            }
+          "situationTag": "Coast Barrier",
+          "beforeSentence": "New wetlands help ___ storm surge along low homes.",
+          "targetSlotWord": "reduce",
+          "swappedWord": "mitigate",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — softening inevitable danger takes 'mitigate'.",
+          "spokenSentence": "New wetlands help mitigate storm surge along low homes."
         },
         {
-            "id": "VOC_SYNONYMSEARCH_L121_LEARN_Q2",
-            "level": 121,
-            "conceptTitle": "Concept Exploration: LIVID",
-            "word": "LIVID",
-            "definition": "\"Incensed\" describes intense anger, close to the extreme end of the anger scale alongside \"livid.\"",
-            "example": "Example sentence",
-            "nativeTip": "Extremely angry, often to the point of losing composure.",
-            "visualAnchor": "💡 LIVID = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "\"Incensed\" describes intense anger, close to the extreme end of the anger scale alongside \"livid.\"",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "Extremely angry, often to the point of losing composure."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L121_Q2",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Livid",
-                "hint": "Extremely angry, often to the point of losing composure.",
-                "explanation": "\"Incensed\" describes intense anger, close to the extreme end of the anger scale alongside \"livid.\"",
-                "interactionType": "search",
-                "correctAnswer": "Incensed",
-                "options": [
-                    "Content",
-                    "Incensed",
-                    "Satisfied",
-                    "Pleased"
-                ],
-                "nuanceDifference": "\"Incensed\" and \"livid\" both describe anger far beyond ordinary annoyance, closer to \"furious\" than to \"irritated.\"",
-                "contextSentence": "Shareholders were incensed after learning about the hidden losses."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L121_LEARN_Q3",
-            "level": 121,
-            "conceptTitle": "Concept Exploration: EXASPERATED",
-            "word": "EXASPERATED",
-            "definition": "\"Frustrated\" describes a similar buildup of irritation as \"exasperated,\" often from repeated setbacks.",
-            "example": "Example sentence",
-            "nativeTip": "Feeling a strong buildup of impatience, especially from something happening again and again.",
-            "visualAnchor": "💡 EXASPERATED = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "\"Frustrated\" describes a similar buildup of irritation as \"exasperated,\" often from repeated setbacks.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "Feeling a strong buildup of impatience, especially from something happening again and again."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L121_Q3",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Exasperated",
-                "hint": "Feeling a strong buildup of impatience, especially from something happening again and again.",
-                "explanation": "\"Frustrated\" describes a similar buildup of irritation as \"exasperated,\" often from repeated setbacks.",
-                "interactionType": "search",
-                "correctAnswer": "Frustrated",
-                "options": [
-                    "Satisfied",
-                    "Relieved",
-                    "Frustrated",
-                    "Content"
-                ],
-                "nuanceDifference": "\"Exasperated\" sits a step above \"frustrated\" on the intensity scale, often the result of frustration that has built up over time.",
-                "contextSentence": "The frustrated teacher repeated the instructions for the third time."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L122_LEARN_Q1",
-            "level": 122,
-            "conceptTitle": "Concept Exploration: UNEASY",
-            "word": "UNEASY",
-            "definition": "\"Apprehensive\" describes a similar low-level unease, often about something upcoming or uncertain.",
-            "example": "Example sentence",
-            "nativeTip": "Feeling slightly worried or uncomfortable, without a specific clear cause.",
-            "visualAnchor": "💡 UNEASY = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "\"Apprehensive\" describes a similar low-level unease, often about something upcoming or uncertain.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "Feeling slightly worried or uncomfortable, without a specific clear cause."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L122_Q1",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Uneasy",
-                "hint": "Feeling slightly worried or uncomfortable, without a specific clear cause.",
-                "explanation": "\"Apprehensive\" describes a similar low-level unease, often about something upcoming or uncertain.",
-                "interactionType": "search",
-                "correctAnswer": "Apprehensive",
-                "options": [
-                    "Fearless",
-                    "Confident",
-                    "Assured",
-                    "Apprehensive"
-                ],
-                "nuanceDifference": "\"Uneasy\" and \"apprehensive\" both describe mild, background worry, well short of stronger fear words like \"terrified\" or \"petrified.\"",
-                "contextSentence": "He felt apprehensive walking home alone that night."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L122_LEARN_Q2",
-            "level": 122,
-            "conceptTitle": "Concept Exploration: PETRIFIED",
-            "word": "PETRIFIED",
-            "definition": "\"Paralyzed\" describes being unable to act because of overwhelming fear, similar to being petrified.",
-            "example": "Example sentence",
-            "nativeTip": "So afraid that you are unable to move or think clearly.",
-            "visualAnchor": "💡 PETRIFIED = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "\"Paralyzed\" describes being unable to act because of overwhelming fear, similar to being petrified.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "So afraid that you are unable to move or think clearly."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L122_Q2",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Petrified",
-                "hint": "So afraid that you are unable to move or think clearly.",
-                "explanation": "\"Paralyzed\" describes being unable to act because of overwhelming fear, similar to being petrified.",
-                "interactionType": "search",
-                "correctAnswer": "Paralyzed",
-                "options": [
-                    "Relaxed",
-                    "Composed",
-                    "Calm",
-                    "Paralyzed"
-                ],
-                "nuanceDifference": "\"Paralyzed\" and \"petrified\" both describe fear so intense it stops a person from acting, well beyond simple nervousness.",
-                "contextSentence": "She stood paralyzed with fear as the car skidded toward her."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L122_LEARN_Q3",
-            "level": 122,
-            "conceptTitle": "Concept Exploration: ALARMED",
-            "word": "ALARMED",
-            "definition": "\"Startled\" describes a sudden shock, often the immediate reaction that leads to feeling alarmed.",
-            "example": "Example sentence",
-            "nativeTip": "Feeling sudden worry or fear because of a perceived danger.",
-            "visualAnchor": "💡 ALARMED = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "\"Startled\" describes a sudden shock, often the immediate reaction that leads to feeling alarmed.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "Feeling sudden worry or fear because of a perceived danger."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L122_Q3",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Alarmed",
-                "hint": "Feeling sudden worry or fear because of a perceived danger.",
-                "explanation": "\"Startled\" describes a sudden shock, often the immediate reaction that leads to feeling alarmed.",
-                "interactionType": "search",
-                "correctAnswer": "Startled",
-                "options": [
-                    "Unfazed",
-                    "Startled",
-                    "Unbothered",
-                    "Indifferent"
-                ],
-                "nuanceDifference": "\"Startled\" often describes the brief, immediate jolt of surprise, while \"alarmed\" can describe the more lasting worry that follows.",
-                "contextSentence": "The loud crash startled everyone in the room."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L123_LEARN_Q1",
-            "level": 123,
-            "conceptTitle": "Concept Exploration: ASK FOR",
-            "word": "ASK FOR",
-            "definition": "\"Solicit\" is a formal, often official way of asking for something, such as feedback, donations, or advice.",
-            "example": "Example sentence",
-            "nativeTip": "To request something from someone.",
-            "visualAnchor": "💡 ASK FOR = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "\"Solicit\" is a formal, often official way of asking for something, such as feedback, donations, or advice.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "To request something from someone."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L123_Q1",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Ask for",
-                "hint": "To request something from someone.",
-                "explanation": "\"Solicit\" is a formal, often official way of asking for something, such as feedback, donations, or advice.",
-                "interactionType": "search",
-                "correctAnswer": "Solicit",
-                "options": [
-                    "Refuse",
-                    "Decline",
-                    "Solicit",
-                    "Reject"
-                ],
-                "nuanceDifference": "\"Solicit\" is used in formal or professional contexts, like soliciting donations, while \"ask for\" is used in everyday conversation.",
-                "contextSentence": "The charity solicited donations from local businesses."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L123_LEARN_Q2",
-            "level": 123,
-            "conceptTitle": "Concept Exploration: GIVE UP",
-            "word": "GIVE UP",
-            "definition": "\"Relinquish\" is a formal word for giving something up, often a right, position, or possession.",
-            "example": "Example sentence",
-            "nativeTip": "To stop doing something before it's finished, especially something difficult.",
-            "visualAnchor": "💡 GIVE UP = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "\"Relinquish\" is a formal word for giving something up, often a right, position, or possession.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "To stop doing something before it's finished, especially something difficult."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L123_Q2",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Give up",
-                "hint": "To stop doing something before it's finished, especially something difficult.",
-                "explanation": "\"Relinquish\" is a formal word for giving something up, often a right, position, or possession.",
-                "interactionType": "search",
-                "correctAnswer": "Relinquish",
-                "options": [
-                    "Relinquish",
-                    "Retain",
-                    "Keep",
-                    "Preserve"
-                ],
-                "nuanceDifference": "\"Relinquish\" is formal and often used for giving up rights, control, or possessions, while \"give up\" fits everyday effort and casual situations too.",
-                "contextSentence": "The king was forced to relinquish his throne."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L123_LEARN_Q3",
-            "level": 123,
-            "conceptTitle": "Concept Exploration: PUT OFF",
-            "word": "PUT OFF",
-            "definition": "\"Procrastinate\" specifically describes delaying a task unnecessarily, often out of avoidance rather than necessity.",
-            "example": "Example sentence",
-            "nativeTip": "To delay doing something until later.",
-            "visualAnchor": "💡 PUT OFF = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "\"Procrastinate\" specifically describes delaying a task unnecessarily, often out of avoidance rather than necessity.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "To delay doing something until later."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L123_Q3",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Put off",
-                "hint": "To delay doing something until later.",
-                "explanation": "\"Procrastinate\" specifically describes delaying a task unnecessarily, often out of avoidance rather than necessity.",
-                "interactionType": "search",
-                "correctAnswer": "Procrastinate",
-                "options": [
-                    "Procrastinate",
-                    "Expedite",
-                    "Hasten",
-                    "Accelerate"
-                ],
-                "nuanceDifference": "\"Procrastinate\" carries a critical tone, implying avoidance, while \"put off\" is neutral and can describe any reasonable delay.",
-                "contextSentence": "He tends to procrastinate until the deadline is nearly here."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L124_LEARN_Q1",
-            "level": 124,
-            "conceptTitle": "Concept Exploration: COMPLIMENT",
-            "word": "COMPLIMENT",
-            "definition": "\"Tribute\" can describe a public expression of admiration or respect, often more formal and significant than a compliment.",
-            "example": "Example sentence",
-            "nativeTip": "A polite expression of praise or admiration.",
-            "visualAnchor": "💡 COMPLIMENT = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "\"Tribute\" can describe a public expression of admiration or respect, often more formal and significant than a compliment.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "A polite expression of praise or admiration."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L124_Q1",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Compliment",
-                "hint": "A polite expression of praise or admiration.",
-                "explanation": "\"Tribute\" can describe a public expression of admiration or respect, often more formal and significant than a compliment.",
-                "interactionType": "search",
-                "correctAnswer": "Tribute",
-                "options": [
-                    "Insult",
-                    "Criticism",
-                    "Complaint",
-                    "Tribute"
-                ],
-                "nuanceDifference": "\"Tribute\" often implies public, formal recognition, like a tribute at a memorial, while \"compliment\" fits everyday, casual praise.",
-                "contextSentence": "The concert was organized as a tribute to the late musician."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L124_LEARN_Q2",
-            "level": 124,
-            "conceptTitle": "Concept Exploration: FLATTER",
-            "word": "FLATTER",
-            "definition": "\"Toady\" describes someone who flatters excessively and insincerely to gain favor, closely related to what it means to flatter someone.",
-            "example": "Example sentence",
-            "nativeTip": "To praise someone excessively, sometimes insincerely, in order to please them.",
-            "visualAnchor": "💡 FLATTER = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "\"Toady\" describes someone who flatters excessively and insincerely to gain favor, closely related to what it means to flatter someone.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "To praise someone excessively, sometimes insincerely, in order to please them."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L124_Q2",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Flatter",
-                "hint": "To praise someone excessively, sometimes insincerely, in order to please them.",
-                "explanation": "\"Toady\" describes someone who flatters excessively and insincerely to gain favor, closely related to what it means to flatter someone.",
-                "interactionType": "search",
-                "correctAnswer": "Toady",
-                "options": [
-                    "Criticize",
-                    "Toady",
-                    "Insult",
-                    "Disparage"
-                ],
-                "nuanceDifference": "\"Toady\" carries a stronger negative connotation of insincerity than \"flatter,\" which can sometimes be harmless or even sincere.",
-                "contextSentence": "New employees often toady to the CEO during meetings."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L124_LEARN_Q3",
-            "level": 124,
-            "conceptTitle": "Concept Exploration: ADMIRE",
-            "word": "ADMIRE",
-            "definition": "\"Esteem\" describes deep respect and admiration, often for someone's character or achievements.",
-            "example": "Example sentence",
-            "nativeTip": "To respect and approve of someone or something.",
-            "visualAnchor": "💡 ADMIRE = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "\"Esteem\" describes deep respect and admiration, often for someone's character or achievements.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "To respect and approve of someone or something."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L124_Q3",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Admire",
-                "hint": "To respect and approve of someone or something.",
-                "explanation": "\"Esteem\" describes deep respect and admiration, often for someone's character or achievements.",
-                "interactionType": "search",
-                "correctAnswer": "Esteem",
-                "options": [
-                    "Despise",
-                    "Scorn",
-                    "Esteem",
-                    "Disdain"
-                ],
-                "nuanceDifference": "\"Esteem\" often sounds more formal and enduring, while \"admire\" can describe both brief appreciation and long-term respect.",
-                "contextSentence": "Colleagues held her in high esteem for her integrity."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L125_LEARN_Q1",
-            "level": 125,
-            "conceptTitle": "Concept Exploration: MOCK",
-            "word": "MOCK",
-            "definition": "\"Ridicule\" describes making fun of someone in a way meant to humiliate them, closely related to mocking.",
-            "example": "Example sentence",
-            "nativeTip": "To make fun of someone in a cruel or unkind way.",
-            "visualAnchor": "💡 MOCK = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "\"Ridicule\" describes making fun of someone in a way meant to humiliate them, closely related to mocking.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "To make fun of someone in a cruel or unkind way."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L125_Q1",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Mock",
-                "hint": "To make fun of someone in a cruel or unkind way.",
-                "explanation": "\"Ridicule\" describes making fun of someone in a way meant to humiliate them, closely related to mocking.",
-                "interactionType": "search",
-                "correctAnswer": "Ridicule",
-                "options": [
-                    "Praise",
-                    "Ridicule",
-                    "Compliment",
-                    "Honor"
-                ],
-                "nuanceDifference": "\"Ridicule\" often implies public humiliation, while \"mock\" can range from lighthearted teasing to genuinely cruel behavior.",
-                "contextSentence": "The comedian's routine ridiculed several well-known politicians."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L125_LEARN_Q2",
-            "level": 125,
-            "conceptTitle": "Concept Exploration: TEASE",
-            "word": "TEASE",
-            "definition": "\"Rib\" is an informal word for teasing someone playfully, often among friends.",
-            "example": "Example sentence",
-            "nativeTip": "To make fun of someone in a playful, usually harmless way.",
-            "visualAnchor": "💡 TEASE = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "\"Rib\" is an informal word for teasing someone playfully, often among friends.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "To make fun of someone in a playful, usually harmless way."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L125_Q2",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Tease",
-                "hint": "To make fun of someone in a playful, usually harmless way.",
-                "explanation": "\"Rib\" is an informal word for teasing someone playfully, often among friends.",
-                "interactionType": "search",
-                "correctAnswer": "Rib",
-                "options": [
-                    "Insult",
-                    "Humiliate",
-                    "Rib",
-                    "Belittle"
-                ],
-                "nuanceDifference": "\"Rib\" and \"tease\" both carry a light, friendly tone, unlike harsher words like \"mock\" or \"ridicule,\" which imply real unkindness.",
-                "contextSentence": "His friends ribbed him for missing the easy shot."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L125_LEARN_Q3",
-            "level": 125,
-            "conceptTitle": "Concept Exploration: BELITTLE",
-            "word": "BELITTLE",
-            "definition": "\"Disparage\" describes speaking about someone or something in a way that diminishes its value, closely related to belittling.",
-            "example": "Example sentence",
-            "nativeTip": "To make someone or something seem unimportant or of little value.",
-            "visualAnchor": "💡 BELITTLE = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "\"Disparage\" describes speaking about someone or something in a way that diminishes its value, closely related to belittling.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "To make someone or something seem unimportant or of little value."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L125_Q3",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Belittle",
-                "hint": "To make someone or something seem unimportant or of little value.",
-                "explanation": "\"Disparage\" describes speaking about someone or something in a way that diminishes its value, closely related to belittling.",
-                "interactionType": "search",
-                "correctAnswer": "Disparage",
-                "options": [
-                    "Praise",
-                    "Elevate",
-                    "Compliment",
-                    "Disparage"
-                ],
-                "nuanceDifference": "\"Disparage\" often applies to criticizing something's quality or worth publicly, while \"belittle\" more often targets a person's abilities or feelings directly.",
-                "contextSentence": "He was careful never to disparage a competitor in public."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L126_LEARN_Q1",
-            "level": 126,
-            "conceptTitle": "Concept Exploration: POSSIBLE",
-            "word": "POSSIBLE",
-            "definition": "\"Feasible\" describes something that is possible and realistic to accomplish, closely related to being possible.",
-            "example": "Example sentence",
-            "nativeTip": "Able to happen or exist, though not guaranteed.",
-            "visualAnchor": "💡 POSSIBLE = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "\"Feasible\" describes something that is possible and realistic to accomplish, closely related to being possible.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "Able to happen or exist, though not guaranteed."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L126_Q1",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Possible",
-                "hint": "Able to happen or exist, though not guaranteed.",
-                "explanation": "\"Feasible\" describes something that is possible and realistic to accomplish, closely related to being possible.",
-                "interactionType": "search",
-                "correctAnswer": "Feasible",
-                "options": [
-                    "Feasible",
-                    "Impossible",
-                    "Unattainable",
-                    "Unrealistic"
-                ],
-                "nuanceDifference": "\"Feasible\" often emphasizes practicality, whether something can realistically be done, while \"possible\" simply means it could happen at all.",
-                "contextSentence": "Engineers confirmed the design was technically feasible."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L126_LEARN_Q2",
-            "level": 126,
-            "conceptTitle": "Concept Exploration: LIKELY",
-            "word": "LIKELY",
-            "definition": "\"Probable\" describes something more likely than not to happen, closely related to being likely.",
-            "example": "Example sentence",
-            "nativeTip": "Probably going to happen or be true.",
-            "visualAnchor": "💡 LIKELY = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "\"Probable\" describes something more likely than not to happen, closely related to being likely.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "Probably going to happen or be true."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L126_Q2",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Likely",
-                "hint": "Probably going to happen or be true.",
-                "explanation": "\"Probable\" describes something more likely than not to happen, closely related to being likely.",
-                "interactionType": "search",
-                "correctAnswer": "Probable",
-                "options": [
-                    "Unlikely",
-                    "Improbable",
-                    "Probable",
-                    "Doubtful"
-                ],
-                "nuanceDifference": "\"Probable\" is slightly more formal and often used in statistical or scientific contexts, while \"likely\" is the everyday equivalent.",
-                "contextSentence": "Rain is probable later this afternoon, according to the forecast."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L126_LEARN_Q3",
-            "level": 126,
-            "conceptTitle": "Concept Exploration: CERTAIN",
-            "word": "CERTAIN",
-            "definition": "\"Definite\" describes something clearly established without ambiguity, closely related to being certain.",
-            "example": "Example sentence",
-            "nativeTip": "Completely sure about something, without any doubt.",
-            "visualAnchor": "💡 CERTAIN = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "\"Definite\" describes something clearly established without ambiguity, closely related to being certain.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "Completely sure about something, without any doubt."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L126_Q3",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Certain",
-                "hint": "Completely sure about something, without any doubt.",
-                "explanation": "\"Definite\" describes something clearly established without ambiguity, closely related to being certain.",
-                "interactionType": "search",
-                "correctAnswer": "Definite",
-                "options": [
-                    "Uncertain",
-                    "Doubtful",
-                    "Ambiguous",
-                    "Definite"
-                ],
-                "nuanceDifference": "\"Definite\" often describes facts or plans that are firmly settled, while \"certain\" more often describes a person's confident state of mind.",
-                "contextSentence": "They have a definite start date for the new project."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L127_LEARN_Q1",
-            "level": 127,
-            "conceptTitle": "Concept Exploration: MASSIVE",
-            "word": "MASSIVE",
-            "definition": "\"Immense\" describes something enormous in scale, similarly extreme to \"massive.\"",
-            "example": "Example sentence",
-            "nativeTip": "Extremely large in size, extent, or degree.",
-            "visualAnchor": "💡 MASSIVE = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "\"Immense\" describes something enormous in scale, similarly extreme to \"massive.\"",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "Extremely large in size, extent, or degree."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L127_Q1",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Massive",
-                "hint": "Extremely large in size, extent, or degree.",
-                "explanation": "\"Immense\" describes something enormous in scale, similarly extreme to \"massive.\"",
-                "interactionType": "search",
-                "correctAnswer": "Immense",
-                "options": [
-                    "Immense",
-                    "Tiny",
-                    "Minuscule",
-                    "Negligible"
-                ],
-                "nuanceDifference": "\"Immense\" and \"massive\" both describe extreme size; \"immense\" often applies to abstract things too, like immense pressure or relief.",
-                "contextSentence": "The company faced immense pressure to cut costs."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L127_LEARN_Q2",
-            "level": 127,
-            "conceptTitle": "Concept Exploration: MINUSCULE",
-            "word": "MINUSCULE",
-            "definition": "\"Negligible\" describes an amount so small it can practically be ignored, closely related to being minuscule.",
-            "example": "Example sentence",
-            "nativeTip": "Extremely small; tiny.",
-            "visualAnchor": "💡 MINUSCULE = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "\"Negligible\" describes an amount so small it can practically be ignored, closely related to being minuscule.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "Extremely small; tiny."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L127_Q2",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Minuscule",
-                "hint": "Extremely small; tiny.",
-                "explanation": "\"Negligible\" describes an amount so small it can practically be ignored, closely related to being minuscule.",
-                "interactionType": "search",
-                "correctAnswer": "Negligible",
-                "options": [
-                    "Substantial",
-                    "Negligible",
-                    "Significant",
-                    "Considerable"
-                ],
-                "nuanceDifference": "\"Negligible\" specifically emphasizes an amount too small to matter, while \"minuscule\" simply describes small physical or numerical size.",
-                "contextSentence": "The medication's side effects were found to be negligible."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L127_LEARN_Q3",
-            "level": 127,
-            "conceptTitle": "Concept Exploration: VAST",
-            "word": "VAST",
-            "definition": "\"Expansive\" describes something covering a very wide area or range, closely related to being vast.",
-            "example": "Example sentence",
-            "nativeTip": "Extremely great in area, size, or scope.",
-            "visualAnchor": "💡 VAST = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "\"Expansive\" describes something covering a very wide area or range, closely related to being vast.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "Extremely great in area, size, or scope."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L127_Q3",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Vast",
-                "hint": "Extremely great in area, size, or scope.",
-                "explanation": "\"Expansive\" describes something covering a very wide area or range, closely related to being vast.",
-                "interactionType": "search",
-                "correctAnswer": "Expansive",
-                "options": [
-                    "Confined",
-                    "Cramped",
-                    "Limited",
-                    "Expansive"
-                ],
-                "nuanceDifference": "\"Expansive\" often emphasizes an open, spreading quality, while \"vast\" more strongly emphasizes overwhelming scale or magnitude.",
-                "contextSentence": "The ranch covered an expansive stretch of open prairie."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L128_LEARN_Q1",
-            "level": 128,
-            "conceptTitle": "Concept Exploration: AXE",
-            "word": "AXE",
-            "definition": "\"Sack\" is an informal, blunt British word for firing someone from a job, closely related to what it means to axe their position.",
-            "example": "Example sentence",
-            "nativeTip": "To abruptly get rid of someone's job, program, or position.",
-            "visualAnchor": "💡 AXE = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "\"Sack\" is an informal, blunt British word for firing someone from a job, closely related to what it means to axe their position.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "To abruptly get rid of someone's job, program, or position."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L128_Q1",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Axe",
-                "hint": "To abruptly get rid of someone's job, program, or position.",
-                "explanation": "\"Sack\" is an informal, blunt British word for firing someone from a job, closely related to what it means to axe their position.",
-                "interactionType": "search",
-                "correctAnswer": "Sack",
-                "options": [
-                    "Sack",
-                    "Promote",
-                    "Reinstate",
-                    "Retain"
-                ],
-                "nuanceDifference": "\"Sack\" is casual and mainly British, while \"axe\" is used more broadly, including for cutting programs, budgets, or jobs abruptly.",
-                "contextSentence": "He was sacked after the second serious mistake."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L128_LEARN_Q2",
-            "level": 128,
-            "conceptTitle": "Concept Exploration: DOWNSIZE",
-            "word": "DOWNSIZE",
-            "definition": "\"Streamline\" can describe reducing a workforce or process to make it more efficient, though it can also apply to non-staffing changes.",
-            "example": "Example sentence",
-            "nativeTip": "To reduce the number of employees at a company, often to save money.",
-            "visualAnchor": "💡 DOWNSIZE = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "\"Streamline\" can describe reducing a workforce or process to make it more efficient, though it can also apply to non-staffing changes.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "To reduce the number of employees at a company, often to save money."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L128_Q2",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Downsize",
-                "hint": "To reduce the number of employees at a company, often to save money.",
-                "explanation": "\"Streamline\" can describe reducing a workforce or process to make it more efficient, though it can also apply to non-staffing changes.",
-                "interactionType": "search",
-                "correctAnswer": "Streamline",
-                "options": [
-                    "Expand",
-                    "Enlarge",
-                    "Streamline",
-                    "Grow"
-                ],
-                "nuanceDifference": "\"Streamline\" is a softer, more diplomatic word often used in official announcements, while \"downsize\" more directly signals job losses.",
-                "contextSentence": "The company announced plans to streamline operations across three departments."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L128_LEARN_Q3",
-            "level": 128,
-            "conceptTitle": "Concept Exploration: RESTRUCTURE",
-            "word": "RESTRUCTURE",
-            "definition": "\"Reorganize\" describes changing how something is arranged or structured, closely related to restructuring it.",
-            "example": "Example sentence",
-            "nativeTip": "To change the way an organization or system is set up and arranged.",
-            "visualAnchor": "💡 RESTRUCTURE = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "\"Reorganize\" describes changing how something is arranged or structured, closely related to restructuring it.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "To change the way an organization or system is set up and arranged."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L128_Q3",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Restructure",
-                "hint": "To change the way an organization or system is set up and arranged.",
-                "explanation": "\"Reorganize\" describes changing how something is arranged or structured, closely related to restructuring it.",
-                "interactionType": "search",
-                "correctAnswer": "Reorganize",
-                "options": [
-                    "Maintain",
-                    "Reorganize",
-                    "Preserve",
-                    "Freeze"
-                ],
-                "nuanceDifference": "\"Reorganize\" is the more general, everyday word, while \"restructure\" is often used specifically for significant organizational or financial changes.",
-                "contextSentence": "The new CEO decided to reorganize the entire sales division."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L129_LEARN_Q1",
-            "level": 129,
-            "conceptTitle": "Concept Exploration: STUDY",
-            "word": "STUDY",
-            "definition": "\"Explore\" can describe investigating a topic in an open-ended, curious way, closely related to studying it.",
-            "example": "Example sentence",
-            "nativeTip": "To examine a subject in order to understand it better.",
-            "visualAnchor": "💡 STUDY = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "\"Explore\" can describe investigating a topic in an open-ended, curious way, closely related to studying it.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "To examine a subject in order to understand it better."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L129_Q1",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Study",
-                "hint": "To examine a subject in order to understand it better.",
-                "explanation": "\"Explore\" can describe investigating a topic in an open-ended, curious way, closely related to studying it.",
-                "interactionType": "search",
-                "correctAnswer": "Explore",
-                "options": [
-                    "Ignore",
-                    "Dismiss",
-                    "Overlook",
-                    "Explore"
-                ],
-                "nuanceDifference": "\"Explore\" often implies an open-ended, early-stage investigation, while \"study\" can describe deeper, more structured research over time.",
-                "contextSentence": "The paper explores the relationship between sleep and memory."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L129_LEARN_Q2",
-            "level": 129,
-            "conceptTitle": "Concept Exploration: SUPPORT",
-            "word": "SUPPORT",
-            "definition": "\"Bolster\" describes strengthening an argument with additional evidence, closely related to supporting it.",
-            "example": "Example sentence",
-            "nativeTip": "To provide evidence or reasons that back up a claim.",
-            "visualAnchor": "💡 SUPPORT = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "\"Bolster\" describes strengthening an argument with additional evidence, closely related to supporting it.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "To provide evidence or reasons that back up a claim."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L129_Q2",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Support",
-                "hint": "To provide evidence or reasons that back up a claim.",
-                "explanation": "\"Bolster\" describes strengthening an argument with additional evidence, closely related to supporting it.",
-                "interactionType": "search",
-                "correctAnswer": "Bolster",
-                "options": [
-                    "Undermine",
-                    "Bolster",
-                    "Weaken",
-                    "Contradict"
-                ],
-                "nuanceDifference": "\"Bolster\" implies adding strength to something already present, while \"support\" is the broader, more general word for backing up a claim.",
-                "contextSentence": "New data bolstered the researchers' original hypothesis."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L129_LEARN_Q3",
-            "level": 129,
-            "conceptTitle": "Concept Exploration: QUESTION",
-            "word": "QUESTION",
-            "definition": "\"Challenge\" describes actively questioning or disputing an idea, closely related to questioning it.",
-            "example": "Example sentence",
-            "nativeTip": "To express doubt about whether an idea or claim is correct.",
-            "visualAnchor": "💡 QUESTION = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "\"Challenge\" describes actively questioning or disputing an idea, closely related to questioning it.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "To express doubt about whether an idea or claim is correct."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L129_Q3",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Question",
-                "hint": "To express doubt about whether an idea or claim is correct.",
-                "explanation": "\"Challenge\" describes actively questioning or disputing an idea, closely related to questioning it.",
-                "interactionType": "search",
-                "correctAnswer": "Challenge",
-                "options": [
-                    "Challenge",
-                    "Accept",
-                    "Endorse",
-                    "Confirm"
-                ],
-                "nuanceDifference": "\"Challenge\" often implies a more active, sometimes confrontational disagreement, while \"question\" can simply mean expressing uncertainty.",
-                "contextSentence": "Several economists challenged the report's central assumption."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L130_LEARN_Q1",
-            "level": 130,
-            "conceptTitle": "Concept Exploration: GENUINE",
-            "word": "GENUINE",
-            "definition": "\"Heartfelt\" describes an emotion expressed with real sincerity, closely related to being genuine.",
-            "example": "Example sentence",
-            "nativeTip": "Real and sincere, coming from true feeling rather than performance.",
-            "visualAnchor": "💡 GENUINE = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "\"Heartfelt\" describes an emotion expressed with real sincerity, closely related to being genuine.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "Real and sincere, coming from true feeling rather than performance."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L130_Q1",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Genuine",
-                "hint": "Real and sincere, coming from true feeling rather than performance.",
-                "explanation": "\"Heartfelt\" describes an emotion expressed with real sincerity, closely related to being genuine.",
-                "interactionType": "search",
-                "correctAnswer": "Heartfelt",
-                "options": [
-                    "Insincere",
-                    "Hollow",
-                    "Heartfelt",
-                    "Fake"
-                ],
-                "nuanceDifference": "\"Heartfelt\" specifically emphasizes deep emotional sincerity, often in an apology or thank-you, while \"genuine\" is broader and applies to facts as well as feelings.",
-                "contextSentence": "She wrote a heartfelt letter thanking her mentor."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L130_LEARN_Q2",
-            "level": 130,
-            "conceptTitle": "Concept Exploration: PASSIONATE",
-            "word": "PASSIONATE",
-            "definition": "\"Fervent\" describes intense, deeply felt enthusiasm, similarly strong to being passionate.",
-            "example": "Example sentence",
-            "nativeTip": "Showing strong feelings or enthusiasm about something.",
-            "visualAnchor": "💡 PASSIONATE = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "\"Fervent\" describes intense, deeply felt enthusiasm, similarly strong to being passionate.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "Showing strong feelings or enthusiasm about something."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L130_Q2",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Passionate",
-                "hint": "Showing strong feelings or enthusiasm about something.",
-                "explanation": "\"Fervent\" describes intense, deeply felt enthusiasm, similarly strong to being passionate.",
-                "interactionType": "search",
-                "correctAnswer": "Fervent",
-                "options": [
-                    "Indifferent",
-                    "Apathetic",
-                    "Fervent",
-                    "Lukewarm"
-                ],
-                "nuanceDifference": "\"Fervent\" is more formal and literary, often describing belief or devotion, while \"passionate\" is used more broadly, including for hobbies and interests.",
-                "contextSentence": "She remained a fervent supporter of the local arts program."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L130_LEARN_Q3",
-            "level": 130,
-            "conceptTitle": "Concept Exploration: DEVOTED",
-            "word": "DEVOTED",
-            "definition": "\"Dedicated\" describes committing significant time and energy to something, closely related to being devoted.",
-            "example": "Example sentence",
-            "nativeTip": "Very loving and loyal to someone or something.",
-            "visualAnchor": "💡 DEVOTED = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "\"Dedicated\" describes committing significant time and energy to something, closely related to being devoted.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "Very loving and loyal to someone or something."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L130_Q3",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Devoted",
-                "hint": "Very loving and loyal to someone or something.",
-                "explanation": "\"Dedicated\" describes committing significant time and energy to something, closely related to being devoted.",
-                "interactionType": "search",
-                "correctAnswer": "Dedicated",
-                "options": [
-                    "Indifferent",
-                    "Uncommitted",
-                    "Disloyal",
-                    "Dedicated"
-                ],
-                "nuanceDifference": "\"Dedicated\" often emphasizes consistent effort toward a goal or cause, while \"devoted\" more strongly emphasizes emotional loyalty and love.",
-                "contextSentence": "He was a dedicated volunteer at the animal shelter for over a decade."
-            }
+          "situationTag": "Cake Sugar",
+          "beforeSentence": "Bakers can ___ added honey slightly in berry muffins.",
+          "targetSlotWord": "reduce",
+          "swappedWord": "mitigate",
+          "isNaturalSwap": false,
+          "earVerdict": "Doesn't fit — kitchen recipe amounts use 'reduce', never 'mitigate'.",
+          "spokenSentence": "Bakers can reduce added honey slightly in berry muffins."
         }
-    ]
+      ],
+      "cousinWords": [
+        {
+          "word": "Ease",
+          "ipa": "",
+          "toneTag": "Lower",
+          "miniContext": "Diversified energy grids help ease regional outage risks."
+        },
+        {
+          "word": "Alleviate",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "New wetlands help alleviate storm surge along low homes."
+        },
+        {
+          "word": "Diminish",
+          "ipa": "",
+          "toneTag": "Soften Harm",
+          "miniContext": "Quiet music helped diminish hallway noise."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L121_LEARN_Q2",
+      "level": 121,
+      "cefr": "C1",
+      "difficulty": 4,
+      "pairTitle": "Worsen ↔ Exacerbate",
+      "baseWord": "Worsen",
+      "synonym": "Exacerbate",
+      "partOfSpeech": "Verb",
+      "coreMeaning": "To make an existing problem sharply worse.",
+      "whyDifferent": "'Worsen' covers weather or grades (`symptoms worsen`). 'Exacerbate' shows how one bad choice inflames tense social or medical trouble.",
+      "makeovers": [
+        {
+          "situationTag": "Dry Cough",
+          "beforeSentence": "Dusty desert air may ___ chronic winter asthma.",
+          "targetSlotWord": "worsen",
+          "swappedWord": "exacerbate",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — aggravating an ongoing issue takes 'exacerbate'.",
+          "spokenSentence": "Dusty desert air may exacerbate chronic winter asthma."
+        },
+        {
+          "situationTag": "Storm Rain",
+          "beforeSentence": "Heavy fog will quickly ___ gray evening visibility near piers.",
+          "targetSlotWord": "worsen",
+          "swappedWord": "exacerbate",
+          "isNaturalSwap": false,
+          "earVerdict": "Doesn't fit — simple rain or visibility drops take 'worsen', whereas complex ongoing crises take 'exacerbate'.",
+          "spokenSentence": "Heavy fog will quickly worsen gray evening visibility near piers."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Aggravate",
+          "ipa": "",
+          "toneTag": "Slip",
+          "miniContext": "Rushed cuts often aggravate hidden software quality issues."
+        },
+        {
+          "word": "Intensify",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "Dusty desert air may intensify chronic winter asthma."
+        },
+        {
+          "word": "Compound",
+          "ipa": "",
+          "toneTag": "Inflame Trouble",
+          "miniContext": "Late delays only compound travel stress before dusk."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L121_LEARN_Q3",
+      "level": 121,
+      "cefr": "C1",
+      "difficulty": 4,
+      "pairTitle": "Check ↔ Scrutinize",
+      "baseWord": "Check",
+      "synonym": "Scrutinize",
+      "partOfSpeech": "Verb",
+      "coreMeaning": "To examine closely line by line.",
+      "whyDifferent": "'Check' confirms normal status (`check bags`). 'Scrutinize' inspects documents, budgets, or motives with skeptical magnifying detail.",
+      "makeovers": [
+        {
+          "situationTag": "Audit Line",
+          "beforeSentence": "Accountants had to ___ every travel receipt from June.",
+          "targetSlotWord": "check",
+          "swappedWord": "scrutinize",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — critical suspicious review requires 'scrutinize'.",
+          "spokenSentence": "Accountants had to scrutinize every travel receipt from June."
+        },
+        {
+          "situationTag": "Door Lock",
+          "beforeSentence": "Just ___ the back latch quickly before bed.",
+          "targetSlotWord": "check",
+          "swappedWord": "scrutinize",
+          "isNaturalSwap": false,
+          "earVerdict": "Doesn't fit — quick casual checks use 'check', never intense 'scrutinize'.",
+          "spokenSentence": "Just check the back latch quickly before bed."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Inspect",
+          "ipa": "",
+          "toneTag": "Quick Look",
+          "miniContext": "Safety boards inspect aircraft logs following minor glitches."
+        },
+        {
+          "word": "Dissect",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "Accountants had to dissect every travel receipt from June."
+        },
+        {
+          "word": "Examine",
+          "ipa": "",
+          "toneTag": "Critical Audit",
+          "miniContext": "Mechanics examine worn brake pads during autumn tune-ups."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L122_LEARN_Q1",
+      "level": 122,
+      "cefr": "C1",
+      "difficulty": 4,
+      "pairTitle": "Practical ↔ Pragmatic",
+      "baseWord": "Practical",
+      "synonym": "Pragmatic",
+      "partOfSpeech": "Adjective",
+      "coreMeaning": "Focused cleanly on real results rather than ideals.",
+      "whyDifferent": "'Practical' honors handy shoes or kitchens (`practical bag`). 'Pragmatic' praises level-headed leadership balancing compromises smoothly.",
+      "makeovers": [
+        {
+          "situationTag": "City Plan",
+          "beforeSentence": "The mayor took a ___ approach to phasing out diesel buses.",
+          "targetSlotWord": "practical",
+          "swappedWord": "pragmatic",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — realistic policy compromise earns 'pragmatic'.",
+          "spokenSentence": "The mayor took a pragmatic approach to phasing out diesel buses."
+        },
+        {
+          "situationTag": "Rain Boots",
+          "beforeSentence": "Rubber clogs are wonderfully ___ for muddy gardening.",
+          "targetSlotWord": "practical",
+          "swappedWord": "pragmatic",
+          "isNaturalSwap": false,
+          "earVerdict": "Doesn't fit — sturdy work gear uses 'practical', never political 'pragmatic'.",
+          "spokenSentence": "Rubber clogs are wonderfully practical for muddy gardening."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Realistic",
+          "ipa": "",
+          "toneTag": "Handy",
+          "miniContext": "Teams reached a realistic schedule agreement despite tight cash."
+        },
+        {
+          "word": "Sensible",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "The mayor took a sensible approach to phasing out diesel buses."
+        },
+        {
+          "word": "Utilitarian",
+          "ipa": "",
+          "toneTag": "Realist Strategy",
+          "miniContext": "Plain tin mugs stay sturdy and utilitarian."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L122_LEARN_Q2",
+      "level": 122,
+      "cefr": "C1",
+      "difficulty": 4,
+      "pairTitle": "Common ↔ Ubiquitous",
+      "baseWord": "Common",
+      "synonym": "Ubiquitous",
+      "partOfSpeech": "Adjective",
+      "coreMeaning": "Seeming to appear everywhere at once.",
+      "whyDifferent": "'Common' counts frequent occurrences (`common cold`). 'Ubiquitous' marvels at modern objects visible on every street corner (`ubiquitous QR codes`).",
+      "makeovers": [
+        {
+          "situationTag": "Phone Culture",
+          "beforeSentence": "Charging cafés have become ___ across major train hubs.",
+          "targetSlotWord": "common",
+          "swappedWord": "ubiquitous",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — literally visible everywhere takes 'ubiquitous'.",
+          "spokenSentence": "Charging cafés have become ubiquitous across major train hubs."
+        },
+        {
+          "situationTag": "Flu Season",
+          "beforeSentence": "Runny noses remain one ___ complaint during January.",
+          "targetSlotWord": "common",
+          "swappedWord": "ubiquitous",
+          "isNaturalSwap": false,
+          "earVerdict": "Doesn't fit — ordinary seasonal colds use 'common', not omnipresent 'ubiquitous'.",
+          "spokenSentence": "Runny noses remain one common complaint during January."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Everywhere",
+          "ipa": "",
+          "toneTag": "Usual",
+          "miniContext": "Contactless transit cards are now everywhere across downtown lines."
+        },
+        {
+          "word": "Pervasive",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "Charging cafés have become pervasive across major train hubs."
+        },
+        {
+          "word": "Omnipresent",
+          "ipa": "",
+          "toneTag": "Everywhere",
+          "miniContext": "Coffee shops feel omnipresent near stations."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L122_LEARN_Q3",
+      "level": 122,
+      "cefr": "C1",
+      "difficulty": 4,
+      "pairTitle": "Unclear ↔ Ambiguous",
+      "baseWord": "Unclear",
+      "synonym": "Ambiguous",
+      "partOfSpeech": "Adjective",
+      "coreMeaning": "Open to more than one possible interpretation.",
+      "whyDifferent": "'Unclear' covers blurry photos or mumbled speech. 'Ambiguous' warns of double-meaning wording that legally or socially causes dispute.",
+      "makeovers": [
+        {
+          "situationTag": "Contract Line",
+          "beforeSentence": "Lawyers rewrote the ___ fee clause to prevent disputes.",
+          "targetSlotWord": "unclear",
+          "swappedWord": "ambiguous",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — two-meaning phrasing risks earn 'ambiguous'.",
+          "spokenSentence": "Lawyers rewrote the ambiguous fee clause to prevent disputes."
+        },
+        {
+          "situationTag": "Windy Photo",
+          "beforeSentence": "Wind blurred the street sign into an ___ streak.",
+          "targetSlotWord": "unclear",
+          "swappedWord": "ambiguous",
+          "isNaturalSwap": false,
+          "earVerdict": "Doesn't fit — blurry images are 'unclear', not double-meaning 'ambiguous'.",
+          "spokenSentence": "Wind blurred the street sign into an unclear streak."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Vague",
+          "ipa": "",
+          "toneTag": "Blurry",
+          "miniContext": "Her vague reply left both teams guessing her preference."
+        },
+        {
+          "word": "Cryptic",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "Lawyers rewrote the cryptic fee clause to prevent disputes."
+        },
+        {
+          "word": "Equivocal",
+          "ipa": "",
+          "toneTag": "Double Meaning",
+          "miniContext": "Critics disliked the equivocal press reply."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L123_LEARN_Q1",
+      "level": 123,
+      "cefr": "C1",
+      "difficulty": 4,
+      "pairTitle": "Confirm ↔ Corroborate",
+      "baseWord": "Confirm",
+      "synonym": "Corroborate",
+      "partOfSpeech": "Verb",
+      "coreMeaning": "To back up a claim with independent proof.",
+      "whyDifferent": "'Confirm' verifies flights or dates (`confirm Tuesday`). 'Corroborate' matches separate witness facts or lab data independently (`corroborate testimony`).",
+      "makeovers": [
+        {
+          "situationTag": "Trial Proof",
+          "beforeSentence": "Security camera timestamps helped ___ the driver’s timeline.",
+          "targetSlotWord": "confirm",
+          "swappedWord": "corroborate",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — independent matching evidence uses 'corroborate'.",
+          "spokenSentence": "Security camera timestamps helped corroborate the driver’s timeline."
+        },
+        {
+          "situationTag": "Dinner Slot",
+          "beforeSentence": "Tap the button below to ___ your dentist appointment.",
+          "targetSlotWord": "confirm",
+          "swappedWord": "corroborate",
+          "isNaturalSwap": false,
+          "earVerdict": "Doesn't fit — booking clicks take 'confirm', never detective 'corroborate'.",
+          "spokenSentence": "Tap the button below to confirm your dentist appointment."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Verify",
+          "ipa": "",
+          "toneTag": "Check Booking",
+          "miniContext": "Ice cores verify tree-ring evidence of cooler centuries."
+        },
+        {
+          "word": "Substantiate",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "Security camera timestamps helped substantiate the driver’s timeline."
+        },
+        {
+          "word": "Validate",
+          "ipa": "",
+          "toneTag": "Prove Claim",
+          "miniContext": "Ticket scanners validate mobile boarding passes."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L123_LEARN_Q2",
+      "level": 123,
+      "cefr": "C1",
+      "difficulty": 4,
+      "pairTitle": "Honest ↔ Candid",
+      "baseWord": "Honest",
+      "synonym": "Candid",
+      "partOfSpeech": "Adjective",
+      "coreMeaning": "Speaking openly without filtered politeness.",
+      "whyDifferent": "'Honest' honors overall truthfulness (`honest cashiers`). 'Candid' prizes refreshingly unguarded interviews, photos, or feedback (`candid chat`).",
+      "makeovers": [
+        {
+          "situationTag": "Interview",
+          "beforeSentence": "She gave a surprisingly ___ talk about early failures.",
+          "targetSlotWord": "honest",
+          "swappedWord": "candid",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — refreshingly unguarded openness earns 'candid'.",
+          "spokenSentence": "She gave a surprisingly candid talk about early failures."
+        },
+        {
+          "situationTag": "Tax Filing",
+          "beforeSentence": "Keep your ___ record of every household receipt.",
+          "targetSlotWord": "honest",
+          "swappedWord": "candid",
+          "isNaturalSwap": false,
+          "earVerdict": "Doesn't fit — legal compliance takes 'honest', not casual 'candid'.",
+          "spokenSentence": "Keep your honest record of every household receipt."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Frank",
+          "ipa": "",
+          "toneTag": "Truthful",
+          "miniContext": "Reviewers shared frank feedback during private design critiques."
+        },
+        {
+          "word": "Direct",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "She gave a surprisingly direct talk about early failures."
+        },
+        {
+          "word": "Unfiltered",
+          "ipa": "",
+          "toneTag": "Unguarded",
+          "miniContext": "Morning sunlight poured unfiltered through glass."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L123_LEARN_Q3",
+      "level": 123,
+      "cefr": "C1",
+      "difficulty": 4,
+      "pairTitle": "Reluctant ↔ Reticent",
+      "baseWord": "Reluctant",
+      "synonym": "Reticent",
+      "partOfSpeech": "Adjective",
+      "coreMeaning": "Preferring silence and keeping thoughts private.",
+      "whyDifferent": "'Reluctant' resists doing favors (`reluctant to sign`). 'Reticent' stays tightly quiet about private feelings or sensitive news.",
+      "makeovers": [
+        {
+          "situationTag": "Press Briefing",
+          "beforeSentence": "Officials stayed ___ about exact merger numbers yesterday.",
+          "targetSlotWord": "reluctant",
+          "swappedWord": "reticent",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — guarded silence on sensitive topics fits 'reticent'.",
+          "spokenSentence": "Officials stayed reticent about exact merger numbers yesterday."
+        },
+        {
+          "situationTag": "Early Swim",
+          "beforeSentence": "He looked ___ to leap into cold mountain pools.",
+          "targetSlotWord": "reluctant",
+          "swappedWord": "reticent",
+          "isNaturalSwap": false,
+          "earVerdict": "Doesn't fit — physical hesitation takes 'reluctant', not quiet 'reticent'.",
+          "spokenSentence": "He looked reluctant to leap into cold mountain pools."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Reserved",
+          "ipa": "",
+          "toneTag": "Unwilling",
+          "miniContext": "Witnesses are often reserved when questioned in unfamiliar halls."
+        },
+        {
+          "word": "Guarded",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "Officials stayed guarded about exact merger numbers yesterday."
+        },
+        {
+          "word": "Private",
+          "ipa": "",
+          "toneTag": "Guarded Silence",
+          "miniContext": "Locks keep private patient charts confidential."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L124_LEARN_Q1",
+      "level": 124,
+      "cefr": "C1",
+      "difficulty": 4,
+      "pairTitle": "Calm ↔ Placid",
+      "baseWord": "Calm",
+      "synonym": "Placid",
+      "partOfSpeech": "Adjective",
+      "coreMeaning": "Deeply still and unbothered on the surface.",
+      "whyDifferent": "'Calm' settles voices and crowds (`stay calm`). 'Placid' paints glassy undisturbed ponds OR cows and dogs with peaceful temperaments.",
+      "makeovers": [
+        {
+          "situationTag": "Harbor Dawn",
+          "beforeSentence": "Swans glided across the ___ surface before boats stirred.",
+          "targetSlotWord": "calm",
+          "swappedWord": "placid",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — mirror-still water and gentle animals suit 'placid'.",
+          "spokenSentence": "Swans glided across the placid surface before boats stirred."
+        },
+        {
+          "situationTag": "Coach Talk",
+          "beforeSentence": "Team leaders urge rookies to stay ___ under loud boos.",
+          "targetSlotWord": "calm",
+          "swappedWord": "placid",
+          "isNaturalSwap": false,
+          "earVerdict": "Doesn't fit — courage under stadium stress takes 'calm', not sleepy 'placid'.",
+          "spokenSentence": "Team leaders urge rookies to stay calm under loud boos."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Tranquil",
+          "ipa": "",
+          "toneTag": "Steady",
+          "miniContext": "A tranquil golden retriever greeted patients quietly every Tuesday."
+        },
+        {
+          "word": "Serene",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "Swans glided across the serene surface before boats stirred."
+        },
+        {
+          "word": "Unruffled",
+          "ipa": "",
+          "toneTag": "Glass-Still",
+          "miniContext": "Veteran clerks stayed unruffled during rushes."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L124_LEARN_Q2",
+      "level": 124,
+      "cefr": "C1",
+      "difficulty": 4,
+      "pairTitle": "Encourage ↔ Foster",
+      "baseWord": "Encourage",
+      "synonym": "Foster",
+      "partOfSpeech": "Verb",
+      "coreMeaning": "To help something grow thoughtfully over time.",
+      "whyDifferent": "'Encourage' cheers someone right now (`encourage runners`). 'Foster' nurtures cultures, habits, or trust carefully over years (`foster innovation`).",
+      "makeovers": [
+        {
+          "situationTag": "Studio Culture",
+          "beforeSentence": "Open critiques ___ lively creative trust across young teams.",
+          "targetSlotWord": "encourage",
+          "swappedWord": "foster",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — cultivating long-term environments uses 'foster'.",
+          "spokenSentence": "Open critiques foster lively creative trust across young teams."
+        },
+        {
+          "situationTag": "Track Finish",
+          "beforeSentence": "Spectators shouted loudly to ___ tired marathon runners.",
+          "targetSlotWord": "encourage",
+          "swappedWord": "foster",
+          "isNaturalSwap": false,
+          "earVerdict": "Doesn't fit — shouting encouragement on sidelines takes 'encourage', not slow 'foster'.",
+          "spokenSentence": "Spectators shouted loudly to encourage tired marathon runners."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Nurture",
+          "ipa": "",
+          "toneTag": "Cheer Now",
+          "miniContext": "Mentors nurture curiosity by rewarding bold questions."
+        },
+        {
+          "word": "Cultivate",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "Open critiques cultivate lively creative trust across young teams."
+        },
+        {
+          "word": "Promote",
+          "ipa": "",
+          "toneTag": "Grow Culture",
+          "miniContext": "Posters promote wearing bright bike helmets."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L124_LEARN_Q3",
+      "level": 124,
+      "cefr": "C1",
+      "difficulty": 4,
+      "pairTitle": "Restrict ↔ Curb",
+      "baseWord": "Restrict",
+      "synonym": "Curb",
+      "partOfSpeech": "Verb",
+      "coreMeaning": "To hold something excessive neatly in check.",
+      "whyDifferent": "'Restrict' sets hard legal gates (`restrict highway speed`). 'Curb' reins back rising urges, clutter, spam, or emissions smoothly (`curb inflation`).",
+      "makeovers": [
+        {
+          "situationTag": "City Air",
+          "beforeSentence": "Congestion fees helped ___ downtown peak-hour smog.",
+          "targetSlotWord": "restrict",
+          "swappedWord": "curb",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — reining back growing excess takes 'curb'.",
+          "spokenSentence": "Congestion fees helped curb downtown peak-hour smog."
+        },
+        {
+          "situationTag": "Lab Room",
+          "beforeSentence": "Badges ___ visitor entry strictly to ground galleries.",
+          "targetSlotWord": "restrict",
+          "swappedWord": "curb",
+          "isNaturalSwap": false,
+          "earVerdict": "Doesn't fit — door access rules use 'restrict', never policy 'curb'.",
+          "spokenSentence": "Badges restrict visitor entry strictly to ground galleries."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Limit",
+          "ipa": "",
+          "toneTag": "Block Access",
+          "miniContext": "Simple timers help teenagers limit late-night screen scrolling."
+        },
+        {
+          "word": "Restrain",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "Congestion fees helped restrain downtown peak-hour smog."
+        },
+        {
+          "word": "Contain",
+          "ipa": "",
+          "toneTag": "Rein Back",
+          "miniContext": "Stone walls help contain dry autumn brush fires."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L125_LEARN_Q1",
+      "level": 125,
+      "cefr": "C1",
+      "difficulty": 4,
+      "pairTitle": "Trigger ↔ Provoke",
+      "baseWord": "Trigger",
+      "synonym": "Provoke",
+      "partOfSpeech": "Verb",
+      "coreMeaning": "To stir up strong emotion or reaction.",
+      "whyDifferent": "'Trigger' flips alarms or allergies neutrally (`trigger sneeze`). 'Provoke' pokes anger, debate, or thought intensely (`provoke outrage`).",
+      "makeovers": [
+        {
+          "situationTag": "Town Hall",
+          "beforeSentence": "That abrupt tax hike may ___ heated debate tonight.",
+          "targetSlotWord": "trigger",
+          "swappedWord": "provoke",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — sparking strong debate or anger uses 'provoke'.",
+          "spokenSentence": "That abrupt tax hike may provoke heated debate tonight."
+        },
+        {
+          "situationTag": "Dust Allergy",
+          "beforeSentence": "Spring ragweed pollen can ___ sudden asthma coughs.",
+          "targetSlotWord": "trigger",
+          "swappedWord": "provoke",
+          "isNaturalSwap": false,
+          "earVerdict": "Doesn't fit — automatic medical switches take 'trigger', not 'provoke'.",
+          "spokenSentence": "Spring ragweed pollen can trigger sudden asthma coughs."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Spark",
+          "ipa": "",
+          "toneTag": "Switch On",
+          "miniContext": "Thoughtful posters can spark lively conversation about design."
+        },
+        {
+          "word": "Incite",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "That abrupt tax hike may incite heated debate tonight."
+        },
+        {
+          "word": "Ignite",
+          "ipa": "",
+          "toneTag": "Stir Emotion",
+          "miniContext": "Dry pine needles ignite too easily in summer."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L125_LEARN_Q2",
+      "level": 125,
+      "cefr": "C1",
+      "difficulty": 4,
+      "pairTitle": "Gather ↔ Amass",
+      "baseWord": "Gather",
+      "synonym": "Amass",
+      "partOfSpeech": "Verb",
+      "coreMeaning": "To collect large quantities over long periods.",
+      "whyDifferent": "'Gather' collects berries or classmates (`gather leaves`). 'Amass' piles huge fortunes, evidence, points, or book collections impressively.",
+      "makeovers": [
+        {
+          "situationTag": "Archive Vault",
+          "beforeSentence": "Researchers spent decades helping ___ rare jazz recordings.",
+          "targetSlotWord": "gather",
+          "swappedWord": "amass",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — accumulating impressive volume takes 'amass'.",
+          "spokenSentence": "Researchers spent decades helping amass rare jazz recordings."
+        },
+        {
+          "situationTag": "Tea Break",
+          "beforeSentence": "Waiters asked wedding guests to ___ beneath the pergola.",
+          "targetSlotWord": "gather",
+          "swappedWord": "amass",
+          "isNaturalSwap": false,
+          "earVerdict": "Doesn't fit — grouping people together takes 'gather', never 'amass'.",
+          "spokenSentence": "Waiters asked wedding guests to gather beneath the pergola."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Accumulate",
+          "ipa": "",
+          "toneTag": "Collect",
+          "miniContext": "Consistent savings allowed the museum to accumulate folk textiles."
+        },
+        {
+          "word": "Stockpile",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "Researchers spent decades helping stockpile rare jazz recordings."
+        },
+        {
+          "word": "Hoard",
+          "ipa": "",
+          "toneTag": "Pile Vastly",
+          "miniContext": "Squirrels hoard acorns inside hollow oaks."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L125_LEARN_Q3",
+      "level": 125,
+      "cefr": "C1",
+      "difficulty": 4,
+      "pairTitle": "Weaken ↔ Erode",
+      "baseWord": "Weaken",
+      "synonym": "Erode",
+      "partOfSpeech": "Verb",
+      "coreMeaning": "To wear away gradually bit by bit.",
+      "whyDifferent": "'Weaken' softens tea, signal, or knees (`weaken resolve`). 'Erode' grinds stone cliffs, coastlines, or public trust down imperceptibly slowly.",
+      "makeovers": [
+        {
+          "situationTag": "Public Trust",
+          "beforeSentence": "Repeated hidden fees can steadily ___ buyer confidence.",
+          "targetSlotWord": "weaken",
+          "swappedWord": "erode",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — slowly grinding away soil or trust uses 'erode'.",
+          "spokenSentence": "Repeated hidden fees can steadily erode buyer confidence."
+        },
+        {
+          "situationTag": "Soup Broth",
+          "beforeSentence": "Adding too much hot water will ___ savory broth flavor.",
+          "targetSlotWord": "weaken",
+          "swappedWord": "erode",
+          "isNaturalSwap": false,
+          "earVerdict": "Doesn't fit — diluting soup flavor uses 'weaken', never geological 'erode'.",
+          "spokenSentence": "Adding too much hot water will weaken savory broth flavor."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Dim",
+          "ipa": "",
+          "toneTag": "Soften",
+          "miniContext": "Crashing winter waves slowly dim limestone harbor cliffs."
+        },
+        {
+          "word": "Undermine",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "Repeated hidden fees can steadily undermine buyer confidence."
+        },
+        {
+          "word": "Decay",
+          "ipa": "",
+          "toneTag": "Grind Down",
+          "miniContext": "Fallen logs slowly decay back into rich forest soil."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L126_LEARN_Q1",
+      "level": 126,
+      "cefr": "C1",
+      "difficulty": 4,
+      "pairTitle": "Brief ↔ Fleeting",
+      "baseWord": "Brief",
+      "synonym": "Fleeting",
+      "partOfSpeech": "Adjective",
+      "coreMeaning": "Lasting only a passing moment.",
+      "whyDifferent": "'Brief' marks concise talks (`brief summary`). 'Fleeting' poetically captures beauty, glances, or smiles vanishing fast (`fleeting glimpse`).",
+      "makeovers": [
+        {
+          "situationTag": "Trail Mist",
+          "beforeSentence": "Hikers caught a ___ glimpse of wild elk at sunrise.",
+          "targetSlotWord": "brief",
+          "swappedWord": "fleeting",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — magic passing moments earn 'fleeting'.",
+          "spokenSentence": "Hikers caught a fleeting glimpse of wild elk at sunrise."
+        },
+        {
+          "situationTag": "Staff Memo",
+          "beforeSentence": "Send a ___ four-line status summary by four.",
+          "targetSlotWord": "brief",
+          "swappedWord": "fleeting",
+          "isNaturalSwap": false,
+          "earVerdict": "Doesn't fit — deliberate short emails use 'brief', never poetic 'fleeting'.",
+          "spokenSentence": "Send a brief four-line status summary by four."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Momentary",
+          "ipa": "",
+          "toneTag": "Short",
+          "miniContext": "Childhood summers always seem strangely momentary looking back."
+        },
+        {
+          "word": "Transient",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "Hikers caught a transient glimpse of wild elk at sunrise."
+        },
+        {
+          "word": "Ephemeral",
+          "ipa": "",
+          "toneTag": "Slipping Fast",
+          "miniContext": "Morning rainbows stay bright yet ephemeral."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L126_LEARN_Q2",
+      "level": 126,
+      "cefr": "C1",
+      "difficulty": 4,
+      "pairTitle": "Stubborn ↔ Tenacious",
+      "baseWord": "Stubborn",
+      "synonym": "Tenacious",
+      "partOfSpeech": "Adjective",
+      "coreMeaning": "Refusing to let go or quit.",
+      "whyDifferent": "'Stubborn' criticizes blind refusal to change (`stubborn stain`). 'Tenacious' admires fierce, gripping persistence in runners, reporters, or vines.",
+      "makeovers": [
+        {
+          "situationTag": "Reporter",
+          "beforeSentence": "Her ___ fact-checking uncovered documents others skipped.",
+          "targetSlotWord": "stubborn",
+          "swappedWord": "tenacious",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — admiring grit under pressure earns 'tenacious'.",
+          "spokenSentence": "Her tenacious fact-checking uncovered documents others skipped."
+        },
+        {
+          "situationTag": "Ink Mark",
+          "beforeSentence": "Rub cold soda into that ___ berry stain gently.",
+          "targetSlotWord": "stubborn",
+          "swappedWord": "tenacious",
+          "isNaturalSwap": false,
+          "earVerdict": "Doesn't fit — laundry stains are 'stubborn', never admiring 'tenacious'.",
+          "spokenSentence": "Rub cold soda into that stubborn berry stain gently."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Persistent",
+          "ipa": "",
+          "toneTag": "Pigheaded",
+          "miniContext": "A persistent midfielder chased down every loose pass."
+        },
+        {
+          "word": "Relentless",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "Her relentless fact-checking uncovered documents others skipped."
+        },
+        {
+          "word": "Dogged",
+          "ipa": "",
+          "toneTag": "Admirable Grit",
+          "miniContext": "Her dogged effort kept the project moving."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L126_LEARN_Q3",
+      "level": 126,
+      "cefr": "C1",
+      "difficulty": 4,
+      "pairTitle": "Flexible ↔ Versatile",
+      "baseWord": "Flexible",
+      "synonym": "Versatile",
+      "partOfSpeech": "Adjective",
+      "coreMeaning": "Able to handle many different roles skillfully.",
+      "whyDifferent": "'Flexible' bends physically (`flexible hose`) or schedules. 'Versatile' praises multi-talented tools, actors, or ingredients (`versatile garlic`).",
+      "makeovers": [
+        {
+          "situationTag": "Chef Pantry",
+          "beforeSentence": "Lemons are a ___ staple used from pastry to salad.",
+          "targetSlotWord": "flexible",
+          "swappedWord": "versatile",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — multi-purpose talent or cooking range earns 'versatile'.",
+          "spokenSentence": "Lemons are a versatile staple used from pastry to salad."
+        },
+        {
+          "situationTag": "Yoga Band",
+          "beforeSentence": "Stretch rubber straps feel surprisingly ___ when warmed.",
+          "targetSlotWord": "flexible",
+          "swappedWord": "versatile",
+          "isNaturalSwap": false,
+          "earVerdict": "Doesn't fit — bending rubber straps physically uses 'flexible', not 'versatile'.",
+          "spokenSentence": "Stretch rubber straps feel surprisingly flexible when warmed."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Adaptable",
+          "ipa": "",
+          "toneTag": "Bendable",
+          "miniContext": "Nylon coats offer an adaptable outer shell across seasons."
+        },
+        {
+          "word": "Multifaceted",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "Lemons are a multifaceted staple used from pastry to salad."
+        },
+        {
+          "word": "Resourceful",
+          "ipa": "",
+          "toneTag": "Multi-Role",
+          "miniContext": "A resourceful scout lit stoves with dry bark."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L127_LEARN_Q1",
+      "level": 127,
+      "cefr": "C1",
+      "difficulty": 4,
+      "pairTitle": "Clear ↔ Lucid",
+      "baseWord": "Clear",
+      "synonym": "Lucid",
+      "partOfSpeech": "Adjective",
+      "coreMeaning": "Remarkably crisp and easy to understand.",
+      "whyDifferent": "'Clear' cleans windshields (`clear glass`). 'Lucid' praises complex law, medical minds, or dense science explained with glowing clarity.",
+      "makeovers": [
+        {
+          "situationTag": "Book Review",
+          "beforeSentence": "Her textbook offers a strikingly ___ tour of cell biology.",
+          "targetSlotWord": "clear",
+          "swappedWord": "lucid",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — crystal mental clarity on complex ideas earns 'lucid'.",
+          "spokenSentence": "Her textbook offers a strikingly lucid tour of cell biology."
+        },
+        {
+          "situationTag": "Spring Creek",
+          "beforeSentence": "Minnows darted inside the ___ mountain brook.",
+          "targetSlotWord": "clear",
+          "swappedWord": "lucid",
+          "isNaturalSwap": false,
+          "earVerdict": "Doesn't fit — clean physical water takes 'clear', never intellectual 'lucid'.",
+          "spokenSentence": "Minnows darted inside the clear mountain brook."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Coherent",
+          "ipa": "",
+          "toneTag": "Clean",
+          "miniContext": "Even after long surgery, Grandpa stayed calm and coherent."
+        },
+        {
+          "word": "Transparent",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "Her textbook offers a strikingly transparent tour of cell biology."
+        },
+        {
+          "word": "Articulate",
+          "ipa": "",
+          "toneTag": "Luminous Mind",
+          "miniContext": "Debate captains articulate clear counterpoints under timers."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L127_LEARN_Q2",
+      "level": 127,
+      "cefr": "C1",
+      "difficulty": 4,
+      "pairTitle": "Careless ↔ Negligent",
+      "baseWord": "Careless",
+      "synonym": "Negligent",
+      "partOfSpeech": "Adjective",
+      "coreMeaning": "Failing dangerously to take proper duty care.",
+      "whyDifferent": "'Careless' spills juice (`careless typo`). 'Negligent' charges serious legal or safety failure against duty (`negligent maintenance`).",
+      "makeovers": [
+        {
+          "situationTag": "Safety Court",
+          "beforeSentence": "Inspectors cited the landlord for ___ boiler upkeep.",
+          "targetSlotWord": "careless",
+          "swappedWord": "negligent",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — serious legal duty failures require 'negligent'.",
+          "spokenSentence": "Inspectors cited the landlord for negligent boiler upkeep."
+        },
+        {
+          "situationTag": "Desk Spill",
+          "beforeSentence": "Oops — a ___ elbow knocked over empty water cups.",
+          "targetSlotWord": "careless",
+          "swappedWord": "negligent",
+          "isNaturalSwap": false,
+          "earVerdict": "Doesn't fit — tiny innocent clumsiness uses 'careless', not criminal 'negligent'.",
+          "spokenSentence": "Oops — a careless elbow knocked over empty water cups."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Reckless",
+          "ipa": "",
+          "toneTag": "Clumsy",
+          "miniContext": "Companies face steep fines when safety checks prove reckless."
+        },
+        {
+          "word": "Sloppy",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "Inspectors cited the landlord for sloppy boiler upkeep."
+        },
+        {
+          "word": "Derelict",
+          "ipa": "",
+          "toneTag": "Legal Failure",
+          "miniContext": "Artists turned a derelict mill into sunlit lofts."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L127_LEARN_Q3",
+      "level": 127,
+      "cefr": "C1",
+      "difficulty": 4,
+      "pairTitle": "Praise ↔ Extol",
+      "baseWord": "Praise",
+      "synonym": "Extol",
+      "partOfSpeech": "Verb",
+      "coreMeaning": "To praise enthusiastically and publicly.",
+      "whyDifferent": "'Praise' says well done (`praise students`). 'Extol' writes or speaks grand admiration (`extol virtues`).",
+      "makeovers": [
+        {
+          "situationTag": "Travel Essay",
+          "beforeSentence": "Food writers often ___ the warmth of small family bakeries.",
+          "targetSlotWord": "praise",
+          "swappedWord": "extol",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — formal lyrical praise uses 'extol'.",
+          "spokenSentence": "Food writers often extol the warmth of small family bakeries."
+        },
+        {
+          "situationTag": "Dog Trick",
+          "beforeSentence": "Tap gently and ___ your puppy when he sits.",
+          "targetSlotWord": "praise",
+          "swappedWord": "extol",
+          "isNaturalSwap": false,
+          "earVerdict": "Doesn't fit — casual puppy training takes 'praise', not grand 'extol'.",
+          "spokenSentence": "Tap gently and praise your puppy when he sits."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Laud",
+          "ipa": "",
+          "toneTag": "Warm",
+          "miniContext": "Wellness columns routinely laud the value of eight hours’ sleep."
+        },
+        {
+          "word": "Glorify",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "Food writers often glorify the warmth of small family bakeries."
+        },
+        {
+          "word": "Celebrate",
+          "ipa": "",
+          "toneTag": "Literary Praise",
+          "miniContext": "Towns celebrate harvest season with lantern parades."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L128_LEARN_Q1",
+      "level": 128,
+      "cefr": "C1",
+      "difficulty": 4,
+      "pairTitle": "Reveal ↔ Divulge",
+      "baseWord": "Reveal",
+      "synonym": "Divulge",
+      "partOfSpeech": "Verb",
+      "coreMeaning": "To let slip sensitive or private facts.",
+      "whyDifferent": "'Reveal' shares gifts or results (`reveal scores`). 'Divulge' specifically discloses confidential secrets, recipes, or passwords.",
+      "makeovers": [
+        {
+          "situationTag": "Privacy Policy",
+          "beforeSentence": "Clinics strictly refuse to ___ patient records without consent.",
+          "targetSlotWord": "reveal",
+          "swappedWord": "divulge",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — releasing private confidential data uses 'divulge'.",
+          "spokenSentence": "Clinics strictly refuse to divulge patient records without consent."
+        },
+        {
+          "situationTag": "Box Ribbon",
+          "beforeSentence": "Open the parcel lid to ___ fresh cinnamon cookies!",
+          "targetSlotWord": "reveal",
+          "swappedWord": "divulge",
+          "isNaturalSwap": false,
+          "earVerdict": "Doesn't fit — uncovering cookies or stages takes 'reveal', never secret 'divulge'.",
+          "spokenSentence": "Open the parcel lid to reveal fresh cinnamon cookies!"
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Disclose",
+          "ipa": "",
+          "toneTag": "Show",
+          "miniContext": "Chefs refused to disclose the secret spice blend inside their sauce."
+        },
+        {
+          "word": "Confide",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "Clinics strictly refuse to confide patient records without consent."
+        },
+        {
+          "word": "Leak",
+          "ipa": "",
+          "toneTag": "Leak Secret",
+          "miniContext": "Never leak private test keys inside public posts."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L128_LEARN_Q2",
+      "level": 128,
+      "cefr": "C1",
+      "difficulty": 4,
+      "pairTitle": "Stop ↔ Cease",
+      "baseWord": "Stop",
+      "synonym": "Cease",
+      "partOfSpeech": "Verb",
+      "coreMeaning": "To bring action cleanly to a complete end.",
+      "whyDifferent": "'Stop' brakes bikes (`stop now`). 'Cease' handles formal rules, wars, noises, or operations (`cease operations`).",
+      "makeovers": [
+        {
+          "situationTag": "Border Pact",
+          "beforeSentence": "Both factories agreed to ___ night blasting during nesting.",
+          "targetSlotWord": "stop",
+          "swappedWord": "cease",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — formal policy halts use 'cease'.",
+          "spokenSentence": "Both factories agreed to cease night blasting during nesting."
+        },
+        {
+          "situationTag": "Kitchen Stove",
+          "beforeSentence": "Press cancel so the microwave beeps ___ right away.",
+          "targetSlotWord": "stop",
+          "swappedWord": "cease",
+          "isNaturalSwap": false,
+          "earVerdict": "Doesn't fit — casual household appliances take 'stop', not stiff 'cease'.",
+          "spokenSentence": "Press cancel so the microwave beeps stop right away."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Halt",
+          "ipa": "",
+          "toneTag": "Brake",
+          "miniContext": "Old ferry routes may halt permanently once the bridge opens."
+        },
+        {
+          "word": "Terminate",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "Both factories agreed to terminate night blasting during nesting."
+        },
+        {
+          "word": "Discontinue",
+          "ipa": "",
+          "toneTag": "Formal Halt",
+          "miniContext": "Cafés sometimes discontinue slow winter drinks."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L128_LEARN_Q3",
+      "level": 128,
+      "cefr": "C1",
+      "difficulty": 4,
+      "pairTitle": "Fix ↔ Rectify",
+      "baseWord": "Fix",
+      "synonym": "Rectify",
+      "partOfSpeech": "Verb",
+      "coreMeaning": "To set right an official error or injustice.",
+      "whyDifferent": "'Fix' glues broken chairs (`fix wheels`). 'Rectify' formally corrects unfair payroll slips, legal mistakes, or policy gaps (`rectify error`).",
+      "makeovers": [
+        {
+          "situationTag": "Bank Audit",
+          "beforeSentence": "Payrolls moved rapidly to ___ missed holiday overtime pay.",
+          "targetSlotWord": "fix",
+          "swappedWord": "rectify",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — putting formal wrongs right uses 'rectify'.",
+          "spokenSentence": "Payrolls moved rapidly to rectify missed holiday overtime pay."
+        },
+        {
+          "situationTag": "Shoe Heel",
+          "beforeSentence": "Cobblers need glue to ___ that loose leather heel.",
+          "targetSlotWord": "fix",
+          "swappedWord": "rectify",
+          "isNaturalSwap": false,
+          "earVerdict": "Doesn't fit — broken physical heels take 'fix', never formal 'rectify'.",
+          "spokenSentence": "Cobblers need glue to fix that loose leather heel."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Correct",
+          "ipa": "",
+          "toneTag": "Glue",
+          "miniContext": "Town clerks promised to correct the misprinted street signs swiftly."
+        },
+        {
+          "word": "Amend",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "Payrolls moved rapidly to amend missed holiday overtime pay."
+        },
+        {
+          "word": "Redress",
+          "ipa": "",
+          "toneTag": "Set Right Officially",
+          "miniContext": "Town clerks moved fast to redress billing errors."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L129_LEARN_Q1",
+      "level": 129,
+      "cefr": "C1",
+      "difficulty": 4,
+      "pairTitle": "Help ↔ Facilitate",
+      "baseWord": "Help",
+      "synonym": "Facilitate",
+      "partOfSpeech": "Verb",
+      "coreMeaning": "To make a smooth process easier for groups.",
+      "whyDifferent": "'Help' lifts boxes (`help friends`). 'Facilitate' smoothly guides meetings, software setups, or trade agreements (`facilitate talks`).",
+      "makeovers": [
+        {
+          "situationTag": "Team Sync",
+          "beforeSentence": "Visual agendas ___ smoother discussions among busy teams.",
+          "targetSlotWord": "help",
+          "swappedWord": "facilitate",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — clearing process friction takes 'facilitate'.",
+          "spokenSentence": "Visual agendas facilitate smoother discussions among busy teams."
+        },
+        {
+          "situationTag": "Grocery Bag",
+          "beforeSentence": "Can someone kindly ___ carry these wet melons upstairs?",
+          "targetSlotWord": "help",
+          "swappedWord": "facilitate",
+          "isNaturalSwap": false,
+          "earVerdict": "Doesn't fit — carrying heavy groceries takes 'help', never corporate 'facilitate'.",
+          "spokenSentence": "Can someone kindly help carry these wet melons upstairs?"
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Assist",
+          "ipa": "",
+          "toneTag": "Hand On",
+          "miniContext": "Trained mediators assist respectful agreement between disputing sides."
+        },
+        {
+          "word": "Streamline",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "Visual agendas streamline smoother discussions among busy teams."
+        },
+        {
+          "word": "Expedite",
+          "ipa": "",
+          "toneTag": "Smooth Process",
+          "miniContext": "Digital stamps expedite customs cargo checks."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L129_LEARN_Q2",
+      "level": 129,
+      "cefr": "C1",
+      "difficulty": 4,
+      "pairTitle": "Spread ↔ Propagate",
+      "baseWord": "Spread",
+      "synonym": "Propagate",
+      "partOfSpeech": "Verb",
+      "coreMeaning": "To multiply plants, sound waves, or ideas.",
+      "whyDifferent": "'Spread' smears jam or rumors (`spread seeds`). 'Propagate' carefully multiplies stem cuttings OR passes waves/signals technically.",
+      "makeovers": [
+        {
+          "situationTag": "Plant Care",
+          "beforeSentence": "Gardeners can easily ___ rosemary stems inside moist sand.",
+          "targetSlotWord": "spread",
+          "swappedWord": "propagate",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — cloning herbs or transmitting waves uses 'propagate'.",
+          "spokenSentence": "Gardeners can easily propagate rosemary stems inside moist sand."
+        },
+        {
+          "situationTag": "Cream Cheese",
+          "beforeSentence": "Warm bagels let butter ___ evenly to the crust.",
+          "targetSlotWord": "spread",
+          "swappedWord": "propagate",
+          "isNaturalSwap": false,
+          "earVerdict": "Doesn't fit — breakfast spreads take 'spread', never scientific 'propagate'.",
+          "spokenSentence": "Warm bagels let butter spread evenly to the crust."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Multiply",
+          "ipa": "",
+          "toneTag": "Smear",
+          "miniContext": "Glass fibers smoothly multiply laser signals across oceans."
+        },
+        {
+          "word": "Transmit",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "Gardeners can easily transmit rosemary stems inside moist sand."
+        },
+        {
+          "word": "Broadcast",
+          "ipa": "",
+          "toneTag": "Multiply/Wave",
+          "miniContext": "Local stations broadcast storm alerts every hour."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L129_LEARN_Q3",
+      "level": 129,
+      "cefr": "C1",
+      "difficulty": 4,
+      "pairTitle": "Enough ↔ Sufficient",
+      "baseWord": "Enough",
+      "synonym": "Sufficient",
+      "partOfSpeech": "Adjective",
+      "coreMeaning": "Exactly meeting required standard without lack.",
+      "whyDifferent": "'Enough' fits daily tables (`enough soup`). 'Sufficient' fills safety codes, lab proofs, or budgets (`sufficient evidence`).",
+      "makeovers": [
+        {
+          "situationTag": "Court Check",
+          "beforeSentence": "Judges asked whether police held ___ proof for search.",
+          "targetSlotWord": "enough",
+          "swappedWord": "sufficient",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — legal and technical minimums use 'sufficient'.",
+          "spokenSentence": "Judges asked whether police held sufficient proof for search."
+        },
+        {
+          "situationTag": "Cookie Plate",
+          "beforeSentence": "Grab ___ napkins so nobody drops chocolate outdoors.",
+          "targetSlotWord": "enough",
+          "swappedWord": "sufficient",
+          "isNaturalSwap": false,
+          "earVerdict": "Doesn't fit — casual picnics sound stiff using 'sufficient' instead of 'enough'.",
+          "spokenSentence": "Grab enough napkins so nobody drops chocolate outdoors."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Adequate",
+          "ipa": "",
+          "toneTag": "Casual",
+          "miniContext": "Wait for adequate rainfall before easing reservoir restrictions."
+        },
+        {
+          "word": "Ample",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "Judges asked whether police held ample proof for search."
+        },
+        {
+          "word": "Abundant",
+          "ipa": "",
+          "toneTag": "Standard Met",
+          "miniContext": "Riverside meadows grow abundant purple clover each June."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L130_LEARN_Q1",
+      "level": 130,
+      "cefr": "C1",
+      "difficulty": 4,
+      "pairTitle": "Friendly ↔ Cordial",
+      "baseWord": "Friendly",
+      "synonym": "Cordial",
+      "partOfSpeech": "Adjective",
+      "coreMeaning": "Warmly polite in social or diplomatic ties.",
+      "whyDifferent": "'Friendly' hugs dogs and classmates (`friendly puppy`). 'Cordial' signals polite diplomatic respect even between rivals (`cordial summit`).",
+      "makeovers": [
+        {
+          "situationTag": "Trade Summit",
+          "beforeSentence": "Despite tight tariffs, talks remained calm and ___.",
+          "targetSlotWord": "friendly",
+          "swappedWord": "cordial",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — polite diplomatic respect takes 'cordial'.",
+          "spokenSentence": "Despite tight tariffs, talks remained calm and cordial."
+        },
+        {
+          "situationTag": "Wagging Pup",
+          "beforeSentence": "That ___ spaniel greets every mail carrier happily!",
+          "targetSlotWord": "friendly",
+          "swappedWord": "cordial",
+          "isNaturalSwap": false,
+          "earVerdict": "Doesn't fit — wagging dogs are 'friendly', never diplomatic 'cordial'.",
+          "spokenSentence": "That friendly spaniel greets every mail carrier happily!"
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Warm",
+          "ipa": "",
+          "toneTag": "Playful",
+          "miniContext": "Neighbors maintained a warm greeting despite fence disputes."
+        },
+        {
+          "word": "Affable",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "Despite tight tariffs, talks remained calm and affable."
+        },
+        {
+          "word": "Amiable",
+          "ipa": "",
+          "toneTag": "Diplomatic",
+          "miniContext": "Our amiable baker remembers every neighbor’s order."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L130_LEARN_Q2",
+      "level": 130,
+      "cefr": "C1",
+      "difficulty": 4,
+      "pairTitle": "Strict ↔ Stringent",
+      "baseWord": "Strict",
+      "synonym": "Stringent",
+      "partOfSpeech": "Adjective",
+      "coreMeaning": "Imposing rigorous safety or quality standards.",
+      "whyDifferent": "'Strict' enforces school bells (`strict teacher`). 'Stringent' locks clinical, aviation, or clean-water testing codes tightly.",
+      "makeovers": [
+        {
+          "situationTag": "Water Test",
+          "beforeSentence": "Municipal filters must meet ___ purity thresholds daily.",
+          "targetSlotWord": "strict",
+          "swappedWord": "stringent",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — technical laboratory rules require 'stringent'.",
+          "spokenSentence": "Municipal filters must meet stringent purity thresholds daily."
+        },
+        {
+          "situationTag": "Bedtime Rule",
+          "beforeSentence": "Parents stayed ___ about shutting games off by nine.",
+          "targetSlotWord": "strict",
+          "swappedWord": "stringent",
+          "isNaturalSwap": false,
+          "earVerdict": "Doesn't fit — family bedtimes use 'strict', not clinical 'stringent'.",
+          "spokenSentence": "Parents stayed strict about shutting games off by nine."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Rigorous",
+          "ipa": "",
+          "toneTag": "Firm",
+          "miniContext": "Airline mechanics enforce rigorous engine checks before every haul."
+        },
+        {
+          "word": "Rigid",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "Municipal filters must meet rigid purity thresholds daily."
+        },
+        {
+          "word": "Draconian",
+          "ipa": "",
+          "toneTag": "Technical Standard",
+          "miniContext": "Protesters overturned draconian parking fines."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L130_LEARN_Q3",
+      "level": 130,
+      "cefr": "C1",
+      "difficulty": 4,
+      "pairTitle": "Simple ↔ Rudimentary",
+      "baseWord": "Simple",
+      "synonym": "Rudimentary",
+      "partOfSpeech": "Adjective",
+      "coreMeaning": "Involving only bare earliest first steps.",
+      "whyDifferent": "'Simple' praises sleek ease (`simple design`). 'Rudimentary' points out rough early basics (`rudimentary Spanish`, `rudimentary shelter`).",
+      "makeovers": [
+        {
+          "situationTag": "Travel Skill",
+          "beforeSentence": "Waiters smiled warmly at my ___ Italian menu ordering.",
+          "targetSlotWord": "simple",
+          "swappedWord": "rudimentary",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — rough early beginner grasp uses 'rudimentary'.",
+          "spokenSentence": "Waiters smiled warmly at my rudimentary Italian menu ordering."
+        },
+        {
+          "situationTag": "Sleek Lamp",
+          "beforeSentence": "Designers adored the ___ elegance of the brass lamp.",
+          "targetSlotWord": "simple",
+          "swappedWord": "rudimentary",
+          "isNaturalSwap": false,
+          "earVerdict": "Doesn't fit — polished minimalism uses 'simple', never rough 'rudimentary'.",
+          "spokenSentence": "Designers adored the simple elegance of the brass lamp."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Basic",
+          "ipa": "",
+          "toneTag": "Sleek",
+          "miniContext": "Early weather stations relied on basic wind-vane charts."
+        },
+        {
+          "word": "Elementary",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "Waiters smiled warmly at my elementary Italian menu ordering."
+        },
+        {
+          "word": "Crude",
+          "ipa": "",
+          "toneTag": "Rough Basics",
+          "miniContext": "Early campers built a crude brush shelter fast."
+        }
+      ]
+    }
+  ]
 }

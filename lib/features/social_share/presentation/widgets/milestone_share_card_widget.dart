@@ -45,13 +45,23 @@ class MilestoneShareCardWidget extends StatelessWidget {
         tagIcon = LucideIcons.trophy;
         tagColor = AppColors.amber500;
         break;
+      case ShareCardType.arenaDefeat:
+        tagLabel = '#1v1 DUEL';
+        tagIcon = LucideIcons.swords;
+        tagColor = AppColors.indigo500;
+        break;
+      case ShareCardType.arenaDraw:
+        tagLabel = '#1v1 DRAW';
+        tagIcon = LucideIcons.scale;
+        tagColor = AppColors.indigo500;
+        break;
       case ShareCardType.referral:
         tagLabel = '#AMBASSADOR';
         tagIcon = LucideIcons.gift;
         tagColor = AppColors.violet500;
         break;
       case ShareCardType.rank:
-        tagLabel = '#LEAGUE RANK';
+        tagLabel = data.isWeeklyRank ? '#WEEKLY LEAGUE' : '#LEAGUE RANK';
         tagIcon = LucideIcons.medal;
         tagColor = AppColors.amber500;
         break;
@@ -196,7 +206,7 @@ class MilestoneShareCardWidget extends StatelessWidget {
               fontSize: 12.sp,
               fontWeight: FontWeight.w700,
               letterSpacing: 0.6,
-              color: AppColors.indigo500,
+              color: tagColor,
             ),
           ),
 
@@ -258,14 +268,18 @@ class MilestoneShareCardWidget extends StatelessWidget {
                         color: AppColors.indigo500.withValues(alpha: 0.3),
                       ),
                     ),
-                    child: Text(
-                      data.roomCode ?? 'VOWL-DUEL',
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 22.sp,
-                        fontWeight: FontWeight.w900,
-                        letterSpacing: 2.0,
-                        color: isDark ? Colors.white : AppColors.indigo600,
+                    child: FittedBox(
+                      fit: BoxFit.scaleDown,
+                      child: Text(
+                        data.roomCode ?? 'VOWL-DUEL',
+                        maxLines: 1,
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 22.sp,
+                          fontWeight: FontWeight.w900,
+                          letterSpacing: 2.0,
+                          color: isDark ? Colors.white : AppColors.indigo600,
+                        ),
                       ),
                     ),
                   ),
@@ -293,68 +307,36 @@ class MilestoneShareCardWidget extends StatelessWidget {
                     ),
                   ),
                 ]
-                // Case B: 1v1 Arena Victory
+                // Case B: 1v1 Arena Match Recap (Victory / Defeat / Draw)
                 else if (data.type == ShareCardType.arenaVictory) ...[
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Icon(
-                        LucideIcons.trophy,
-                        size: 20.sp,
-                        color: AppColors.amber500,
-                      ),
-                      SizedBox(width: 8.w),
-                      Text(
-                        'DUEL VICTORY',
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 11.sp,
-                          letterSpacing: 1.2,
-                          fontWeight: FontWeight.w800,
-                          color: AppColors.amber500,
-                        ),
-                      ),
-                    ],
+                  ..._buildArenaRecapMetric(
+                    icon: LucideIcons.trophy,
+                    headerLabel: 'DUEL VICTORY',
+                    accentColor: AppColors.amber500,
+                    rewardText:
+                        '${data.payoutCoins ?? 50} Coins 🪙 + 5 XP ⚡ Won',
+                    textPrimary: textPrimary,
+                    textSecondary: textSecondary,
                   ),
-                  SizedBox(height: 6.h),
-                  Text(
-                    '${data.myScore ?? 0} PTS',
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 32.sp,
-                      fontWeight: FontWeight.w900,
-                      color: textPrimary,
-                    ),
+                ] else if (data.type == ShareCardType.arenaDefeat) ...[
+                  ..._buildArenaRecapMetric(
+                    icon: LucideIcons.swords,
+                    headerLabel: 'DUEL RECAP',
+                    accentColor: AppColors.indigo500,
+                    rewardText:
+                        '${data.payoutCoins ?? 10} Coins 🪙 Returned • +0 XP',
+                    textPrimary: textPrimary,
+                    textSecondary: textSecondary,
                   ),
-                  SizedBox(height: 2.h),
-                  Text(
-                    'vs ${data.rivalName ?? 'Rival'} (${data.rivalScore ?? 0} pts)',
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 12.sp,
-                      fontWeight: FontWeight.w600,
-                      color: textSecondary,
-                    ),
-                  ),
-                  SizedBox(height: 6.h),
-                  Container(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 10.w,
-                      vertical: 3.h,
-                    ),
-                    decoration: BoxDecoration(
-                      color: AppColors.amber500.withValues(alpha: 0.15),
-                      borderRadius: BorderRadius.circular(10.r),
-                    ),
-                    child: Text(
-                      '${data.payoutCoins ?? 50} Coins 🪙 + 5 XP ⚡ Won',
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 10.sp,
-                        fontWeight: FontWeight.w800,
-                        color: AppColors.amber500,
-                      ),
-                    ),
+                ] else if (data.type == ShareCardType.arenaDraw) ...[
+                  ..._buildArenaRecapMetric(
+                    icon: LucideIcons.scale,
+                    headerLabel: 'DUEL DRAW',
+                    accentColor: AppColors.indigo500,
+                    rewardText:
+                        '${data.payoutCoins ?? 30} Coins 🪙 Refunded • +0 XP',
+                    textPrimary: textPrimary,
+                    textSecondary: textSecondary,
                   ),
                 ]
                 // Case C: Referral & Ambassador Program
@@ -365,13 +347,17 @@ class MilestoneShareCardWidget extends StatelessWidget {
                     color: AppColors.violet500,
                   ),
                   SizedBox(height: 6.h),
-                  Text(
-                    '+100 COINS & VIP ACCESS',
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 17.sp,
-                      fontWeight: FontWeight.w900,
-                      color: textPrimary,
+                  FittedBox(
+                    fit: BoxFit.scaleDown,
+                    child: Text(
+                      '+100 COINS & VIP ACCESS',
+                      maxLines: 1,
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 17.sp,
+                        fontWeight: FontWeight.w900,
+                        color: textPrimary,
+                      ),
                     ),
                   ),
                   SizedBox(height: 4.h),
@@ -384,10 +370,10 @@ class MilestoneShareCardWidget extends StatelessWidget {
                     ),
                   ),
                 ]
-                // Case D: Global Rank
+                // Case D: Global / Weekly Rank
                 else if (data.rank != null) ...[
                   Text(
-                    'GLOBAL LEAGUE',
+                    data.isWeeklyRank ? 'WEEKLY LEAGUE' : 'GLOBAL LEAGUE',
                     style: TextStyle(
                       fontFamily: 'Outfit',
                       fontSize: 10.sp,
@@ -469,212 +455,200 @@ class MilestoneShareCardWidget extends StatelessWidget {
 
           // 4. Footer Code Section (Clean 2-tier coupon layout)
           if (data.type == ShareCardType.arenaInvite) ...[
-            Container(
-              width: double.infinity,
-              padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 10.h),
-              decoration: BoxDecoration(
-                color: AppColors.indigo500.withValues(alpha: 0.10),
-                borderRadius: BorderRadius.circular(12.r),
-                border: Border.all(
-                  color: AppColors.indigo500.withValues(alpha: 0.25),
-                  width: 1.r,
-                ),
-              ),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Icon(
-                        LucideIcons.swords,
-                        size: 14.sp,
-                        color: AppColors.indigo500,
-                      ),
-                      SizedBox(width: 6.w),
-                      Text(
-                        'DUEL CODE: ${data.roomCode ?? "VOWL"}',
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 13.sp,
-                          fontWeight: FontWeight.w900,
-                          letterSpacing: 1.2,
-                          color: isDark ? Colors.white : AppColors.indigo600,
-                        ),
-                      ),
-                    ],
-                  ),
-                  SizedBox(height: 4.h),
-                  Text(
-                    'Enter code in Vowl app to accept duel',
-                    textAlign: TextAlign.center,
-                    softWrap: true,
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 10.5.sp,
-                      fontWeight: FontWeight.w600,
-                      color: textSecondary,
-                    ),
-                  ),
-                ],
-              ),
+            _buildFooterBanner(
+              accentColor: AppColors.indigo500,
+              icon: LucideIcons.swords,
+              headline: 'DUEL CODE: ${data.roomCode ?? "VOWL"}',
+              headlineColor: isDark ? Colors.white : AppColors.indigo600,
+              caption: 'Enter code in Vowl app to accept duel',
+              textSecondary: textSecondary,
             ),
           ] else if (data.type == ShareCardType.arenaVictory) ...[
-            Container(
-              width: double.infinity,
-              padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 10.h),
-              decoration: BoxDecoration(
-                color: AppColors.amber500.withValues(alpha: 0.10),
-                borderRadius: BorderRadius.circular(12.r),
-                border: Border.all(
-                  color: AppColors.amber500.withValues(alpha: 0.25),
-                  width: 1.r,
-                ),
-              ),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Icon(
-                        LucideIcons.zap,
-                        size: 14.sp,
-                        color: AppColors.amber500,
-                      ),
-                      SizedBox(width: 6.w),
-                      Text(
-                        '1v1 DUEL WINNER',
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 13.sp,
-                          fontWeight: FontWeight.w900,
-                          letterSpacing: 1.2,
-                          color: AppColors.amber500,
-                        ),
-                      ),
-                    ],
-                  ),
-                  SizedBox(height: 4.h),
-                  Text(
-                    'Play 1v1 English duels on Vowl',
-                    textAlign: TextAlign.center,
-                    softWrap: true,
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 10.5.sp,
-                      fontWeight: FontWeight.w600,
-                      color: textSecondary,
-                    ),
-                  ),
-                ],
-              ),
+            _buildFooterBanner(
+              accentColor: AppColors.amber500,
+              icon: LucideIcons.zap,
+              headline: '1v1 DUEL WINNER',
+              headlineColor: AppColors.amber500,
+              caption: 'Play 1v1 English duels on Vowl',
+              textSecondary: textSecondary,
             ),
-          ] else if (data.referralCode != null) ...[
-            Container(
-              width: double.infinity,
-              padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 10.h),
-              decoration: BoxDecoration(
-                color: AppColors.violet500.withValues(alpha: 0.10),
-                borderRadius: BorderRadius.circular(12.r),
-                border: Border.all(
-                  color: AppColors.violet500.withValues(alpha: 0.25),
-                  width: 1.r,
-                ),
-              ),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Icon(
-                        LucideIcons.gift,
-                        size: 14.sp,
-                        color: AppColors.violet500,
-                      ),
-                      SizedBox(width: 6.w),
-                      Text(
-                        'CODE: ${data.referralCode}',
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 13.sp,
-                          fontWeight: FontWeight.w900,
-                          letterSpacing: 1.2,
-                          color: isDark
-                              ? Colors.white
-                              : const Color(0xFF7C3AED),
-                        ),
-                      ),
-                    ],
-                  ),
-                  SizedBox(height: 4.h),
-                  Text(
-                    'Enter code in Vowl app for 100 free coins',
-                    textAlign: TextAlign.center,
-                    softWrap: true,
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 10.5.sp,
-                      fontWeight: FontWeight.w600,
-                      color: textSecondary,
-                    ),
-                  ),
-                ],
-              ),
+          ] else if (data.type == ShareCardType.arenaDefeat) ...[
+            _buildFooterBanner(
+              accentColor: AppColors.indigo500,
+              icon: LucideIcons.swords,
+              headline: '1v1 ARENA CONTENDER',
+              headlineColor: isDark ? Colors.white : AppColors.indigo600,
+              caption: 'Challenge me to a rematch on Vowl',
+              textSecondary: textSecondary,
+            ),
+          ] else if (data.type == ShareCardType.arenaDraw) ...[
+            _buildFooterBanner(
+              accentColor: AppColors.indigo500,
+              icon: LucideIcons.scale,
+              headline: 'DEAD EVEN DUEL',
+              headlineColor: isDark ? Colors.white : AppColors.indigo600,
+              caption: 'Play 1v1 English duels on Vowl',
+              textSecondary: textSecondary,
+            ),
+          ] else if (data.referralCode != null &&
+              data.referralCode!.trim().isNotEmpty) ...[
+            _buildFooterBanner(
+              accentColor: AppColors.violet500,
+              icon: LucideIcons.gift,
+              headline: 'CODE: ${data.referralCode}',
+              headlineColor: isDark ? Colors.white : const Color(0xFF7C3AED),
+              caption: 'Enter code in Vowl app for 100 free coins',
+              textSecondary: textSecondary,
             ),
           ] else ...[
-            Container(
-              width: double.infinity,
-              padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 10.h),
-              decoration: BoxDecoration(
-                color: AppColors.indigo500.withValues(alpha: 0.08),
-                borderRadius: BorderRadius.circular(12.r),
-                border: Border.all(
-                  color: AppColors.indigo500.withValues(alpha: 0.20),
-                  width: 1.r,
-                ),
-              ),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Icon(
-                        LucideIcons.sparkles,
-                        size: 14.sp,
-                        color: AppColors.indigo500,
-                      ),
-                      SizedBox(width: 6.w),
-                      Text(
-                        'JOIN THE LEAGUE',
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 12.sp,
-                          fontWeight: FontWeight.w900,
-                          letterSpacing: 1.2,
-                          color: isDark ? Colors.white : AppColors.indigo600,
-                        ),
-                      ),
-                    ],
-                  ),
-                  SizedBox(height: 4.h),
-                  Text(
-                    'Learn English vocabulary & grammar on Vowl',
-                    textAlign: TextAlign.center,
-                    softWrap: true,
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 10.5.sp,
-                      fontWeight: FontWeight.w600,
-                      color: textSecondary,
-                    ),
-                  ),
-                ],
-              ),
+            _buildFooterBanner(
+              accentColor: AppColors.indigo500,
+              icon: LucideIcons.sparkles,
+              headline: 'JOIN THE LEAGUE',
+              headlineColor: isDark ? Colors.white : AppColors.indigo600,
+              caption: 'Learn English vocabulary & grammar on Vowl',
+              textSecondary: textSecondary,
+              bgAlpha: 0.08,
+              borderAlpha: 0.20,
+              headlineSize: 12.sp,
             ),
           ],
+        ],
+      ),
+    );
+  }
+
+  List<Widget> _buildArenaRecapMetric({
+    required IconData icon,
+    required String headerLabel,
+    required Color accentColor,
+    required String rewardText,
+    required Color textPrimary,
+    required Color textSecondary,
+  }) {
+    return [
+      Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Icon(icon, size: 20.sp, color: accentColor),
+          SizedBox(width: 8.w),
+          Text(
+            headerLabel,
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: 11.sp,
+              letterSpacing: 1.2,
+              fontWeight: FontWeight.w800,
+              color: accentColor,
+            ),
+          ),
+        ],
+      ),
+      SizedBox(height: 6.h),
+      Text(
+        '${data.myScore ?? 0} PTS',
+        style: TextStyle(
+          fontFamily: 'Outfit',
+          fontSize: 32.sp,
+          fontWeight: FontWeight.w900,
+          color: textPrimary,
+        ),
+      ),
+      SizedBox(height: 2.h),
+      Text(
+        'vs ${data.rivalName ?? 'Rival'} (${data.rivalScore ?? 0} pts)',
+        textAlign: TextAlign.center,
+        style: TextStyle(
+          fontFamily: 'Outfit',
+          fontSize: 12.sp,
+          fontWeight: FontWeight.w600,
+          color: textSecondary,
+        ),
+      ),
+      SizedBox(height: 6.h),
+      Container(
+        padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 3.h),
+        decoration: BoxDecoration(
+          color: accentColor.withValues(alpha: 0.15),
+          borderRadius: BorderRadius.circular(10.r),
+        ),
+        child: FittedBox(
+          fit: BoxFit.scaleDown,
+          child: Text(
+            rewardText,
+            maxLines: 1,
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: 10.sp,
+              fontWeight: FontWeight.w800,
+              color: accentColor,
+            ),
+          ),
+        ),
+      ),
+    ];
+  }
+
+  Widget _buildFooterBanner({
+    required Color accentColor,
+    required IconData icon,
+    required String headline,
+    required Color headlineColor,
+    required String caption,
+    required Color textSecondary,
+    double bgAlpha = 0.10,
+    double borderAlpha = 0.25,
+    double? headlineSize,
+  }) {
+    return Container(
+      width: double.infinity,
+      padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 10.h),
+      decoration: BoxDecoration(
+        color: accentColor.withValues(alpha: bgAlpha),
+        borderRadius: BorderRadius.circular(12.r),
+        border: Border.all(
+          color: accentColor.withValues(alpha: borderAlpha),
+          width: 1.r,
+        ),
+      ),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Icon(icon, size: 14.sp, color: accentColor),
+              SizedBox(width: 6.w),
+              Flexible(
+                child: FittedBox(
+                  fit: BoxFit.scaleDown,
+                  child: Text(
+                    headline,
+                    maxLines: 1,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: headlineSize ?? 13.sp,
+                      fontWeight: FontWeight.w900,
+                      letterSpacing: 1.2,
+                      color: headlineColor,
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+          SizedBox(height: 4.h),
+          Text(
+            caption,
+            textAlign: TextAlign.center,
+            softWrap: true,
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: 10.5.sp,
+              fontWeight: FontWeight.w600,
+              color: textSecondary,
+            ),
+          ),
         ],
       ),
     );

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/theme/app_colors.dart';
-import 'package:vowl/features/vocabulary/prefix_suffix/presentation/widgets/prefix_suffix_laser_painter.dart';
 import 'package:vowl/features/vocabulary/prefix_suffix/presentation/widgets/prefix_suffix_scissor_pad.dart';
 
 /// Laser Seam Slicer Widget for Prefix & Suffix Mastery Phase ("Morpheme Precision Slicer").
@@ -34,11 +33,7 @@ class PrefixSuffixPrecisionSlicer extends StatefulWidget {
 class _PrefixSuffixPrecisionSlicerState
     extends State<PrefixSuffixPrecisionSlicer>
     with SingleTickerProviderStateMixin {
-  Offset? _dragStartGlobal;
-  Offset? _dragCurrentGlobal;
-  final ValueNotifier<List<Offset?>?> _dragNotifier = ValueNotifier(null);
   int? _lastCut;
-  final GlobalKey _wordContainerKey = GlobalKey();
   final GlobalKey _lettersKey = GlobalKey();
 
   late final _splitController = AnimationController(
@@ -67,142 +62,141 @@ class _PrefixSuffixPrecisionSlicerState
   @override
   void dispose() {
     _splitController.dispose();
-    _dragNotifier.dispose();
     super.dispose();
   }
 
-  void _onPanStart(DragStartDetails d) {
-    if (!widget.isAnswered) {
-      _dragStartGlobal = _dragCurrentGlobal = d.globalPosition;
-      _dragNotifier.value = [d.localPosition, d.localPosition];
-    }
-  }
-
-  void _onPanUpdate(DragUpdateDetails d) {
-    if (!widget.isAnswered && _dragNotifier.value != null) {
-      _dragCurrentGlobal = d.globalPosition;
-      _dragNotifier.value = [_dragNotifier.value![0], d.localPosition];
-    }
-  }
-
-  void _onPanEnd(DragEndDetails d) {
-    final s = _dragNotifier.value?[0];
-    final c = _dragNotifier.value?[1];
-    if (!widget.isAnswered && s != null && c != null) {
-      final dy = (c.dy - s.dy).abs();
-      final dx = (c.dx - s.dx).abs();
-      if (dy >= 18 || (dy < 18 && dx < 18)) {
-        final g = (_dragStartGlobal != null && _dragCurrentGlobal != null)
-            ? (_dragStartGlobal! + _dragCurrentGlobal!) / 2.0
-            : _dragStartGlobal;
-        _detectAndExecuteCut(midGlobal: g, fallbackLocalX: (s.dx + c.dx) / 2.0);
-      }
-    }
-    _clearDrag();
-  }
-
-  void _onPanCancel() => _clearDrag();
-
-  void _clearDrag() {
-    _dragNotifier.value = null;
-    _dragStartGlobal = _dragCurrentGlobal = null;
-  }
-
-  void _onTapUp(TapUpDetails d) {
-    if (!widget.isAnswered) {
-      _detectAndExecuteCut(
-        midGlobal: d.globalPosition,
-        fallbackLocalX: d.localPosition.dx,
-      );
-    }
-  }
-
-  void _detectAndExecuteCut({
-    required Offset? midGlobal,
-    required double fallbackLocalX,
-  }) {
-    if (widget.word.length < 2) return;
-    final lBox = _lettersKey.currentContext?.findRenderObject() as RenderBox?;
-    final cBox =
-        _wordContainerKey.currentContext?.findRenderObject() as RenderBox?;
-    final localX = (lBox != null && midGlobal != null)
-        ? lBox.globalToLocal(midGlobal).dx
-        : fallbackLocalX;
-    final totalWidth = lBox?.size.width ?? cBox?.size.width;
-    if (totalWidth == null) return;
-
-    final letterWidth = totalWidth / widget.word.length;
-    int targetSeam = (localX / letterWidth).round();
-    final isSec =
-        widget.secondaryCutIndex != null && widget.secondaryCutIndex! > 0;
-    if (widget.correctCutIndex > 0 &&
-        (localX - widget.correctCutIndex * letterWidth).abs() <=
-            letterWidth * 0.42) {
-      targetSeam = widget.correctCutIndex;
-    } else if (isSec &&
-        (localX - widget.secondaryCutIndex! * letterWidth).abs() <=
-            letterWidth * 0.42) {
-      targetSeam = widget.secondaryCutIndex!;
-    }
-
-    final clamped = targetSeam.clamp(1, widget.word.length - 1);
+  void _executeCut(int seam) {
+    if (widget.isAnswered) return;
     HapticFeedback.mediumImpact();
-    setState(() => _lastCut = clamped);
-    widget.onSlice(clamped);
+    setState(() => _lastCut = seam);
+    widget.onSlice(seam);
   }
 
   Widget _buildLetterTile(
-    String letter, {
+    String letter,
+    int index, {
+    required int lettersLength,
     required bool isHighlighted,
+    required bool isWrong,
     required bool isDark,
   }) {
     final border = isHighlighted
-        ? (isDark ? AppColors.indigo400 : AppColors.indigo500)
-        : (isDark ? AppColors.slate700 : AppColors.slate300);
+        ? AppColors.emerald500
+        : (isWrong
+              ? AppColors.red500
+              : (isDark ? AppColors.slate700 : AppColors.slate300));
     final bg = isHighlighted
         ? (isDark
-              ? AppColors.indigo500.withValues(alpha: 0.18)
-              : AppColors.indigo50.withValues(alpha: 0.8))
-        : (isDark ? AppColors.slate800 : const Color(0xFFF1F5F9));
+              ? AppColors.emerald500.withValues(alpha: 0.22)
+              : AppColors.emerald50.withValues(alpha: 0.85))
+        : (isWrong
+              ? (isDark
+                    ? AppColors.red500.withValues(alpha: 0.18)
+                    : AppColors.red50.withValues(alpha: 0.85))
+              : (isDark ? AppColors.slate800 : const Color(0xFFF1F5F9)));
     final fg = isHighlighted
-        ? (isDark ? AppColors.indigo400 : AppColors.indigo600)
-        : (isDark ? AppColors.slate50 : AppColors.slate900);
+        ? (isDark ? AppColors.emerald400 : AppColors.emerald600)
+        : (isWrong
+              ? (isDark ? AppColors.red500 : AppColors.red900)
+              : (isDark ? AppColors.slate50 : AppColors.slate900));
 
-    final shadow = isHighlighted
+    final shadow = (isHighlighted || isWrong)
         ? [
             BoxShadow(
-              color: AppColors.indigo500.withValues(alpha: isDark ? 0.3 : 0.2),
+              color: (isHighlighted ? AppColors.emerald500 : AppColors.red500)
+                  .withValues(alpha: isDark ? 0.35 : 0.22),
               blurRadius: 8,
             ),
           ]
         : null;
 
-    return Container(
-      width: 32.w,
-      height: 48.h,
-      alignment: Alignment.center,
-      decoration: BoxDecoration(
-        color: bg,
-        borderRadius: BorderRadius.circular(10.r),
-        border: Border.all(color: border, width: 1.5),
-        boxShadow: shadow,
-      ),
-      child: Text(
-        letter,
-        style: TextStyle(
-          fontFamily: 'Inter',
-          fontSize: 20.sp,
-          fontWeight: FontWeight.w700,
-          color: fg,
+    return GestureDetector(
+      onTap: () {
+        final targetSeam = index + 1;
+        if (targetSeam < lettersLength) _executeCut(targetSeam);
+      },
+      child: Container(
+        width: 32.w,
+        height: 48.h,
+        alignment: Alignment.center,
+        decoration: BoxDecoration(
+          color: bg,
+          borderRadius: BorderRadius.circular(10.r),
+          border: Border.all(
+            color: border,
+            width: (isHighlighted || isWrong) ? 1.8 : 1.5,
+          ),
+          boxShadow: shadow,
         ),
+        child: Text(
+          letter,
+          style: TextStyle(
+            fontFamily: 'Inter',
+            fontSize: 20.sp,
+            fontWeight: FontWeight.w700,
+            color: fg,
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildSeamCutter(int seam, {required bool isDark}) {
+    final isThisSeamCorrect =
+        seam == widget.correctCutIndex ||
+        (widget.secondaryCutIndex != null && seam == widget.secondaryCutIndex);
+    final isUserPicked = widget.isWrongCut && _lastCut == seam;
+    final isRevealedCorrect = widget.isWrongCut && isThisSeamCorrect;
+    final isCut = widget.isSliced && (isThisSeamCorrect || seam == _lastCut);
+
+    Color color;
+    Widget? indicator;
+    if (isCut || isRevealedCorrect) {
+      color = AppColors.emerald500;
+      indicator = Icon(
+        Icons.content_cut_rounded,
+        size: 14.sp,
+        color: AppColors.emerald500,
+      );
+    } else if (isUserPicked) {
+      color = AppColors.red500;
+      indicator = Icon(
+        Icons.close_rounded,
+        size: 14.sp,
+        color: AppColors.red500,
+      );
+    } else {
+      color = isDark ? AppColors.slate600 : AppColors.slate300;
+    }
+
+    return GestureDetector(
+      behavior: HitTestBehavior.opaque,
+      onTap: () => _executeCut(seam),
+      child: Container(
+        width: (isUserPicked || isRevealedCorrect) ? 22.w : 18.w,
+        height: 52.h,
+        alignment: Alignment.center,
+        child:
+            indicator ??
+            AnimatedContainer(
+              duration: const Duration(milliseconds: 200),
+              width: 2.5,
+              height: 26.h,
+              decoration: BoxDecoration(
+                color: color,
+                borderRadius: BorderRadius.circular(2.r),
+              ),
+            ),
       ),
     );
   }
 
   Widget _buildLetterGroup(
     List<String> items,
+    int startIndex,
     double shift,
     double angle, {
+    required int lettersLength,
     required bool isDark,
   }) => Transform.translate(
     offset: Offset(shift, 0),
@@ -211,15 +205,18 @@ class _PrefixSuffixPrecisionSlicerState
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          for (final l in items)
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 2.w),
-              child: _buildLetterTile(
-                l,
-                isHighlighted: widget.isSliced,
-                isDark: isDark,
-              ),
+          for (int i = 0; i < items.length; i++) ...[
+            _buildLetterTile(
+              items[i],
+              startIndex + i,
+              lettersLength: lettersLength,
+              isHighlighted: widget.isSliced,
+              isWrong: widget.isWrongCut,
+              isDark: isDark,
             ),
+            if (i < items.length - 1)
+              _buildSeamCutter(startIndex + i + 1, isDark: isDark),
+          ],
         ],
       ),
     ),
@@ -227,12 +224,6 @@ class _PrefixSuffixPrecisionSlicerState
 
   Widget _buildPrompt(bool isDark) {
     final c = isDark ? AppColors.slate400 : AppColors.slate600;
-    final st = TextStyle(
-      fontFamily: 'Inter',
-      fontSize: 11.sp,
-      fontWeight: FontWeight.w600,
-      color: c,
-    );
     return Padding(
       padding: EdgeInsets.only(bottom: 8.h),
       child: FittedBox(
@@ -242,7 +233,15 @@ class _PrefixSuffixPrecisionSlicerState
           children: [
             Icon(Icons.touch_app_rounded, size: 13.sp, color: c),
             SizedBox(width: 4.w),
-            Text('Swipe up/down or tap between letters to slice', style: st),
+            Text(
+              'Tap between letters or pick an option to slice',
+              style: TextStyle(
+                fontFamily: 'Inter',
+                fontSize: 11.sp,
+                fontWeight: FontWeight.w600,
+                color: c,
+              ),
+            ),
           ],
         ),
       ),
@@ -253,10 +252,11 @@ class _PrefixSuffixPrecisionSlicerState
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final letters = widget.word.split('');
-    final targetSeam =
-        (_lastCut != null &&
-            widget.secondaryCutIndex != null &&
-            _lastCut == widget.secondaryCutIndex)
+    final isSec =
+        _lastCut != null &&
+        widget.secondaryCutIndex != null &&
+        _lastCut == widget.secondaryCutIndex;
+    final targetSeam = isSec
         ? widget.secondaryCutIndex!
         : widget.correctCutIndex;
     final cutSeam = letters.length < 2
@@ -274,6 +274,61 @@ class _PrefixSuffixPrecisionSlicerState
         final splitShift = _splitAnimation.value * 14.w;
         final tiltAngle = _splitAnimation.value * 0.04;
 
+        Widget boardContent;
+        if (widget.isSliced && cutSeam > 0) {
+          boardContent = Row(
+            key: _lettersKey,
+            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              _buildLetterGroup(
+                letters.sublist(0, cutSeam),
+                0,
+                -splitShift,
+                -tiltAngle,
+                lettersLength: letters.length,
+                isDark: isDark,
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 6.w),
+                child: Icon(
+                  Icons.content_cut_rounded,
+                  size: 18.sp,
+                  color: AppColors.emerald500,
+                ),
+              ),
+              _buildLetterGroup(
+                letters.sublist(cutSeam),
+                cutSeam,
+                splitShift,
+                tiltAngle,
+                lettersLength: letters.length,
+                isDark: isDark,
+              ),
+            ],
+          );
+        } else {
+          boardContent = Row(
+            key: _lettersKey,
+            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              for (int i = 0; i < letters.length; i++) ...[
+                _buildLetterTile(
+                  letters[i],
+                  i,
+                  lettersLength: letters.length,
+                  isHighlighted: widget.isSliced,
+                  isWrong: widget.isWrongCut,
+                  isDark: isDark,
+                ),
+                if (i < letters.length - 1)
+                  _buildSeamCutter(i + 1, isDark: isDark),
+              ],
+            ],
+          );
+        }
+
         return Column(
           mainAxisSize: MainAxisSize.min,
           children: [
@@ -285,93 +340,33 @@ class _PrefixSuffixPrecisionSlicerState
               isSliced: widget.isSliced,
               isWrongCut: widget.isWrongCut,
               isAnswered: widget.isAnswered,
-              onSlice: (seam) {
-                setState(() => _lastCut = seam);
-                widget.onSlice(seam);
-              },
+              onSlice: _executeCut,
             ),
             SizedBox(height: 12.h),
-            GestureDetector(
-              onTapUp: _onTapUp,
-              onPanStart: _onPanStart,
-              onPanUpdate: _onPanUpdate,
-              onPanEnd: _onPanEnd,
-              onPanCancel: _onPanCancel,
-              behavior: HitTestBehavior.opaque,
-              child: ValueListenableBuilder<List<Offset?>?>(
-                valueListenable: _dragNotifier,
-                builder: (context, drag, child) {
-                  return RepaintBoundary(
-                    child: CustomPaint(
-                      foregroundPainter: PrefixSuffixLaserPainter(
-                        start: drag?[0],
-                        current: drag?[1],
-                        isWrong: widget.isWrongCut,
-                      ),
-                      child: child,
-                    ),
-                  );
-                },
-                child: Container(
-                  key: _wordContainerKey,
-                  padding: EdgeInsets.symmetric(
-                    horizontal: 10.w,
-                    vertical: 16.h,
-                  ),
-                  decoration: BoxDecoration(
-                    color: isDark
-                        ? AppColors.slate900.withValues(alpha: 0.5)
-                        : Colors.white,
-                    borderRadius: BorderRadius.circular(20.r),
-                    border: Border.all(color: boardBorder, width: 2.0),
-                    boxShadow: isDark
-                        ? null
-                        : [
-                            BoxShadow(
-                              color: Colors.black.withValues(alpha: 0.04),
-                              blurRadius: 10,
-                              offset: const Offset(0, 4),
-                            ),
-                          ],
-                  ),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      _buildPrompt(isDark),
-                      FittedBox(
-                        fit: BoxFit.scaleDown,
-                        child: Row(
-                          key: _lettersKey,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            _buildLetterGroup(
-                              letters.sublist(0, cutSeam),
-                              -splitShift,
-                              -tiltAngle,
-                              isDark: isDark,
-                            ),
-                            if (widget.isSliced) ...[
-                              SizedBox(width: 6.w),
-                              Icon(
-                                Icons.content_cut_rounded,
-                                size: 16.sp,
-                                color: AppColors.emerald500,
-                              ),
-                              SizedBox(width: 6.w),
-                            ],
-                            _buildLetterGroup(
-                              letters.sublist(cutSeam),
-                              splitShift,
-                              tiltAngle,
-                              isDark: isDark,
-                            ),
-                          ],
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 16.h),
+              decoration: BoxDecoration(
+                color: isDark
+                    ? AppColors.slate900.withValues(alpha: 0.5)
+                    : Colors.white,
+                borderRadius: BorderRadius.circular(20.r),
+                border: Border.all(color: boardBorder, width: 2.0),
+                boxShadow: isDark
+                    ? null
+                    : [
+                        BoxShadow(
+                          color: Colors.black.withValues(alpha: 0.04),
+                          blurRadius: 10,
+                          offset: const Offset(0, 4),
                         ),
-                      ),
-                    ],
-                  ),
-                ),
+                      ],
+              ),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  _buildPrompt(isDark),
+                  FittedBox(fit: BoxFit.scaleDown, child: boardContent),
+                ],
               ),
             ),
           ],

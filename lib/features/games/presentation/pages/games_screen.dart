@@ -845,6 +845,25 @@ class _PvPArenaCardState extends State<_PvPArenaCard> {
     ).push(ArenaMatchmakingScreen.route(user: liveUser));
   }
 
+  String _extractDuelRoomCode(String raw) {
+    var code = raw.trim().toUpperCase();
+    if (code.contains('/DUEL/')) {
+      code = code
+          .split('/DUEL/')
+          .last
+          .split('?')
+          .first
+          .split('#')
+          .first
+          .split('/')
+          .first
+          .trim();
+    } else if (code.contains('CODE=')) {
+      code = code.split('CODE=').last.split('&').first.split('#').first.trim();
+    }
+    return code;
+  }
+
   Future<void> _showJoinRoomDialog() async {
     if (!await ArenaNetworkHelper.ensureOnline(context)) return;
     if (!mounted) return;
@@ -857,28 +876,20 @@ class _PvPArenaCardState extends State<_PvPArenaCard> {
 
     final controller = TextEditingController();
     bool isJoining = false;
-    String? clipboardCandidate;
+    final clipboardCandidateNotifier = ValueNotifier<String?>(null);
+    bool isDialogDisposed = false;
 
     // Check clipboard for potential duel code
     Clipboard.getData(Clipboard.kTextPlain)
         .then((clip) {
-          final text = clip?.text?.trim().toUpperCase();
-          if (text != null && text.isNotEmpty) {
-            String extracted = text;
-            if (extracted.contains('/DUEL/')) {
-              extracted = extracted
-                  .split('/DUEL/')
-                  .last
-                  .split('?')
-                  .first
-                  .trim();
-            } else if (extracted.contains('CODE=')) {
-              extracted = extracted.split('CODE=').last.split('&').first.trim();
-            }
+          if (isDialogDisposed) return;
+          final text = clip?.text;
+          if (text != null && text.trim().isNotEmpty) {
+            final extracted = _extractDuelRoomCode(text);
             if (extracted.length >= 4 &&
                 extracted.length <= 16 &&
                 !extracted.contains(' ')) {
-              clipboardCandidate = extracted;
+              clipboardCandidateNotifier.value = extracted;
             }
           }
         })
@@ -1006,54 +1017,62 @@ class _PvPArenaCardState extends State<_PvPArenaCard> {
                   SizedBox(height: 10.h),
 
                   // Smart Clipboard Paste Chip (if detected)
-                  if (clipboardCandidate != null &&
-                      controller.text.isEmpty) ...[
-                    Align(
-                      alignment: Alignment.centerLeft,
-                      child: GestureDetector(
-                        onTap: () {
-                          controller.text = clipboardCandidate!;
-                          setDialogState(() {});
-                        },
-                        child: Container(
-                          padding: EdgeInsets.symmetric(
-                            horizontal: 10.w,
-                            vertical: 4.h,
-                          ),
-                          margin: EdgeInsets.only(bottom: 8.h),
-                          decoration: BoxDecoration(
-                            color: AppColors.indigo500.withValues(alpha: 0.12),
-                            borderRadius: BorderRadius.circular(8.r),
-                            border: Border.all(
-                              color: AppColors.indigo500.withValues(
-                                alpha: 0.25,
-                              ),
+                  ValueListenableBuilder<String?>(
+                    valueListenable: clipboardCandidateNotifier,
+                    builder: (context, clipboardCandidate, _) {
+                      if (clipboardCandidate == null ||
+                          controller.text.isNotEmpty) {
+                        return const SizedBox.shrink();
+                      }
+                      return Align(
+                        alignment: Alignment.centerLeft,
+                        child: GestureDetector(
+                          onTap: () {
+                            controller.text = clipboardCandidate;
+                            setDialogState(() {});
+                          },
+                          child: Container(
+                            padding: EdgeInsets.symmetric(
+                              horizontal: 10.w,
+                              vertical: 4.h,
                             ),
-                          ),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              Icon(
-                                LucideIcons.clipboardPaste,
-                                size: 12.r,
-                                color: AppColors.indigo500,
+                            margin: EdgeInsets.only(bottom: 8.h),
+                            decoration: BoxDecoration(
+                              color: AppColors.indigo500.withValues(
+                                alpha: 0.12,
                               ),
-                              SizedBox(width: 4.w),
-                              Text(
-                                'Paste "$clipboardCandidate"',
-                                style: TextStyle(
-                                  fontFamily: 'Outfit',
-                                  fontSize: 11.sp,
-                                  fontWeight: FontWeight.w700,
-                                  color: AppColors.indigo500,
+                              borderRadius: BorderRadius.circular(8.r),
+                              border: Border.all(
+                                color: AppColors.indigo500.withValues(
+                                  alpha: 0.25,
                                 ),
                               ),
-                            ],
+                            ),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Icon(
+                                  LucideIcons.clipboardPaste,
+                                  size: 12.r,
+                                  color: AppColors.indigo500,
+                                ),
+                                SizedBox(width: 4.w),
+                                Text(
+                                  'Paste "$clipboardCandidate"',
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 11.sp,
+                                    fontWeight: FontWeight.w700,
+                                    color: AppColors.indigo500,
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
-                      ),
-                    ),
-                  ],
+                      );
+                    },
+                  ),
 
                   // Input Box
                   TextField(
@@ -1068,7 +1087,7 @@ class _PvPArenaCardState extends State<_PvPArenaCard> {
                     ),
                     onChanged: (_) => setDialogState(() {}),
                     decoration: InputDecoration(
-                      hintText: 'e.g. VOWL-DUEL-882',
+                      hintText: 'e.g. VOWL-DUEL-482913',
                       hintStyle: TextStyle(
                         fontFamily: 'Outfit',
                         fontSize: 13.sp,
@@ -1129,22 +1148,7 @@ class _PvPArenaCardState extends State<_PvPArenaCard> {
                     onPressed: isJoining
                         ? null
                         : () async {
-                            String code = controller.text.trim().toUpperCase();
-                            if (code.contains('/DUEL/')) {
-                              code = code
-                                  .split('/DUEL/')
-                                  .last
-                                  .split('?')
-                                  .first
-                                  .trim();
-                            } else if (code.contains('CODE=')) {
-                              code = code
-                                  .split('CODE=')
-                                  .last
-                                  .split('&')
-                                  .first
-                                  .trim();
-                            }
+                            final code = _extractDuelRoomCode(controller.text);
                             if (code.isEmpty) return;
 
                             if (!await ArenaNetworkHelper.ensureOnline(context)) {
@@ -1155,10 +1159,13 @@ class _PvPArenaCardState extends State<_PvPArenaCard> {
 
                             setDialogState(() => isJoining = true);
                             try {
+                              final currentUser =
+                                  context.read<AuthBloc>().state.user ??
+                                  widget.user;
                               final repo = di.sl<ArenaRepository>();
                               final session = await repo.joinRoom(
                                 roomCode: code,
-                                currentUser: widget.user,
+                                currentUser: currentUser,
                               );
                               if (dialogCtx.mounted) {
                                 Navigator.of(dialogCtx).pop();
@@ -1226,7 +1233,11 @@ class _PvPArenaCardState extends State<_PvPArenaCard> {
           );
         },
       ),
-    ).then((_) => controller.dispose());
+    ).whenComplete(() {
+      isDialogDisposed = true;
+      clipboardCandidateNotifier.dispose();
+      controller.dispose();
+    });
   }
 
   Future<void> _createDuelInvite() async {

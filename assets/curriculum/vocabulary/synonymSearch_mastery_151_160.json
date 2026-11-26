@@ -1,518 +1,1510 @@
 {
-    "gameType": "synonymSearch",
-    "phase": "mastery",
-    "batchIndex": 16,
-    "levels": "151-160",
-    "quests": [
-        {
-            "id": "VOC_SYNONYMSEARCH_L151_Q1",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Postulate",
-            "hint": "To suggest a theory or idea as a basis for reasoning, without proof.",
-            "explanation": "\"Posit\" means to put forward an idea as true for the sake of argument, closely related to postulating it.",
-            "interactionType": "search",
-            "correctAnswer": "Posit",
-            "options": [
-                "Disprove",
-                "Refute",
-                "Debunk",
-                "Posit"
-            ],
-            "nuanceDifference": "\"Posit\" and \"postulate\" are close academic synonyms, both used to introduce an assumption before it's tested or proven.",
-            "contextSentence": "The researchers posited a new explanation for the anomaly."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L151_Q2",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Extrapolate",
-            "hint": "To estimate or conclude something by extending known information to an unknown situation.",
-            "explanation": "\"Generalize\" describes drawing a broader conclusion from limited information, closely related to extrapolating.",
-            "interactionType": "search",
-            "correctAnswer": "Generalize",
-            "options": [
-                "Specify",
-                "Generalize",
-                "Narrow",
-                "Restrict"
-            ],
-            "nuanceDifference": "\"Generalize\" often applies a conclusion broadly across a category, while \"extrapolate\" specifically extends existing data into an unmeasured range.",
-            "contextSentence": "It's risky to generalize about an entire generation from one small survey."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L151_Q3",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Tally",
-            "hint": "To match or be consistent with another set of information.",
-            "explanation": "Two sets of figures that \"align\" are consistent with each other, the same idea captured by saying they tally.",
-            "interactionType": "search",
-            "correctAnswer": "Agree",
-            "options": [
-                "Contradict",
-                "Conflict",
-                "Clash",
-                "Agree"
-            ],
-            "nuanceDifference": "\"Agree\" is the general everyday word for consistency between things, while \"tally\" specifically describes numerical or factual data matching up.",
-            "contextSentence": "The two inventory counts finally agreed after correcting the entry error."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L152_Q1",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Compelling",
-            "hint": "Evoking interest or attention in a powerful way; convincing.",
-            "explanation": "\"Persuasive\" describes an argument capable of convincing someone, closely related to being compelling.",
-            "interactionType": "search",
-            "correctAnswer": "Persuasive",
-            "options": [
-                "Unconvincing",
-                "Weak",
-                "Persuasive",
-                "Feeble"
-            ],
-            "nuanceDifference": "\"Persuasive\" specifically emphasizes the power to change someone's mind, while \"compelling\" more broadly emphasizes capturing attention or interest.",
-            "contextSentence": "Her persuasive presentation won over even the skeptical investors."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L152_Q2",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Provocative",
-            "hint": "Intended to cause discussion, argument, or strong feeling, often deliberately.",
-            "explanation": "\"Inflammatory\" describes language intended to provoke strong, often angry reactions, closely related to being provocative.",
-            "interactionType": "search",
-            "correctAnswer": "Inflammatory",
-            "options": [
-                "Soothing",
-                "Inflammatory",
-                "Calming",
-                "Neutral"
-            ],
-            "nuanceDifference": "\"Inflammatory\" implies a deliberate attempt to provoke anger or conflict, while \"provocative\" more broadly means intended to stir any strong reaction.",
-            "contextSentence": "The politician's inflammatory remarks sparked outrage online."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L152_Q3",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Emphatic",
-            "hint": "Expressed or done with forceful clarity and certainty.",
-            "explanation": "\"Adamant\" describes refusing to change your position, expressed with the same forcefulness as being emphatic.",
-            "interactionType": "search",
-            "correctAnswer": "Adamant",
-            "options": [
-                "Adamant",
-                "Wavering",
-                "Uncertain",
-                "Hesitant"
-            ],
-            "nuanceDifference": "\"Adamant\" specifically emphasizes refusal to change one's mind, while \"emphatic\" more broadly describes forceful, clear expression of any statement.",
-            "contextSentence": "She was adamant that the deadline could not be moved."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L153_Q1",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Delegate",
-            "hint": "To give a task or responsibility to someone else, usually someone in a lower position.",
-            "explanation": "\"Entrust\" describes giving someone responsibility because you trust them, closely related to delegating a task.",
-            "interactionType": "search",
-            "correctAnswer": "Entrust",
-            "options": [
-                "Withhold",
-                "Entrust",
-                "Retain",
-                "Reclaim"
-            ],
-            "nuanceDifference": "\"Entrust\" emphasizes the trust placed in the person receiving responsibility, while \"delegate\" more neutrally emphasizes the transfer of a task itself.",
-            "contextSentence": "She entrusted her most experienced staff member with the client relationship."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L153_Q2",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Micromanage",
-            "hint": "To control every small detail of someone else's work, often unnecessarily.",
-            "explanation": "\"Oversee\" can describe supervising someone's work, though without the excessive control implied by micromanaging.",
-            "interactionType": "search",
-            "correctAnswer": "Oversee",
-            "options": [
-                "Trust",
-                "Ignore",
-                "Abandon",
-                "Oversee"
-            ],
-            "nuanceDifference": "\"Oversee\" is a neutral word for general supervision, while \"micromanage\" specifically carries a critical tone about excessive, unwanted control.",
-            "contextSentence": "As project lead, she oversees every stage of development."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L153_Q3",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Empower",
-            "hint": "To give someone the confidence, authority, or means to do something.",
-            "explanation": "\"Enable\" describes giving someone the ability or means to do something, closely related to empowering them.",
-            "interactionType": "search",
-            "correctAnswer": "Enable",
-            "options": [
-                "Restrict",
-                "Limit",
-                "Enable",
-                "Constrain"
-            ],
-            "nuanceDifference": "\"Enable\" more neutrally focuses on giving practical ability or means, while \"empower\" often carries an added sense of confidence or authority.",
-            "contextSentence": "The training program enabled employees to handle complaints independently."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L154_Q1",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Jeopardize",
-            "hint": "To put something at risk of being harmed, damaged, or destroyed.",
-            "explanation": "\"Endanger\" describes putting something or someone at serious risk, closely related to jeopardizing it.",
-            "interactionType": "search",
-            "correctAnswer": "Endanger",
-            "options": [
-                "Endanger",
-                "Protect",
-                "Safeguard",
-                "Secure"
-            ],
-            "nuanceDifference": "\"Endanger\" often applies to physical safety specifically, while \"jeopardize\" applies more broadly, including to plans, reputations, and opportunities.",
-            "contextSentence": "The scandal endangered the company's reputation almost overnight."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L154_Q2",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Vulnerable",
-            "hint": "Open to being harmed, either physically or emotionally.",
-            "explanation": "\"Susceptible\" describes being likely to be affected or harmed by something specific, closely related to being vulnerable.",
-            "interactionType": "search",
-            "correctAnswer": "Susceptible",
-            "options": [
-                "Susceptible",
-                "Immune",
-                "Resistant",
-                "Protected"
-            ],
-            "nuanceDifference": "\"Susceptible\" often refers to a specific risk, like being susceptible to illness, while \"vulnerable\" is broader and can describe general exposure to harm.",
-            "contextSentence": "Older adults are more susceptible to certain infections."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L154_Q3",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Precarious",
-            "hint": "Not securely held or in position; likely to fall or fail.",
-            "explanation": "\"Unstable\" describes something at risk of sudden failure or collapse, closely related to being precarious.",
-            "interactionType": "search",
-            "correctAnswer": "Unstable",
-            "options": [
-                "Secure",
-                "Stable",
-                "Solid",
-                "Unstable"
-            ],
-            "nuanceDifference": "\"Unstable\" is the broader, everyday word, while \"precarious\" often specifically describes a situation dangerously close to failure or collapse.",
-            "contextSentence": "The company's finances remained unstable throughout the recession."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L155_Q1",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Wane",
-            "hint": "To gradually become smaller, weaker, or less intense.",
-            "explanation": "\"Recede\" describes something gradually moving back or lessening, closely related to waning.",
-            "interactionType": "search",
-            "correctAnswer": "Recede",
-            "options": [
-                "Intensify",
-                "Recede",
-                "Strengthen",
-                "Surge"
-            ],
-            "nuanceDifference": "\"Recede\" often describes something physically or figuratively moving away, like flood waters or fame, while \"wane\" more specifically emphasizes losing strength over time.",
-            "contextSentence": "Public interest in the scandal began to recede after a few weeks."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L155_Q2",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Wax",
-            "hint": "To increase gradually in size, strength, or intensity.",
-            "explanation": "\"Intensify\" describes something growing stronger over time, closely related to waxing.",
-            "interactionType": "search",
-            "correctAnswer": "Intensify",
-            "options": [
-                "Wane",
-                "Diminish",
-                "Intensify",
-                "Fade"
-            ],
-            "nuanceDifference": "\"Intensify\" is the everyday, widely used word, while \"wax\" in this sense is more literary, often paired with \"wane\" in the phrase \"wax and wane.\"",
-            "contextSentence": "Tensions between the two countries began to intensify."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L155_Q3",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Stagnate",
-            "hint": "To stop developing, improving, or progressing.",
-            "explanation": "\"Plateau\" describes reaching a level where progress stops, closely related to stagnating.",
-            "interactionType": "search",
-            "correctAnswer": "Plateau",
-            "options": [
-                "Advance",
-                "Plateau",
-                "Progress",
-                "Flourish"
-            ],
-            "nuanceDifference": "\"Plateau\" often implies reaching a stable level after growth, while \"stagnate\" more strongly implies an undesirable lack of progress that concerns people.",
-            "contextSentence": "Sales plateaued after the initial launch excitement wore off."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L156_Q1",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Collaborate",
-            "hint": "To work together with others toward a shared goal.",
-            "explanation": "\"Cooperate\" describes working together, though it can describe a lower level of joint effort than true collaboration.",
-            "interactionType": "search",
-            "correctAnswer": "Cooperate",
-            "options": [
-                "Compete",
-                "Obstruct",
-                "Cooperate",
-                "Sabotage"
-            ],
-            "nuanceDifference": "\"Cooperate\" can describe simply not getting in each other's way, while \"collaborate\" implies actively working together to build something shared.",
-            "contextSentence": "The two departments agreed to cooperate on the new initiative."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L156_Q2",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Undercut",
-            "hint": "To weaken someone's position or authority, often indirectly.",
-            "explanation": "\"Sabotage\" describes deliberately damaging someone's efforts, a stronger and more deliberate act than undercutting.",
-            "interactionType": "search",
-            "correctAnswer": "Sabotage",
-            "options": [
-                "Sabotage",
-                "Support",
-                "Reinforce",
-                "Bolster"
-            ],
-            "nuanceDifference": "\"Sabotage\" implies deliberate, active harm, while \"undercut\" can describe more subtle or indirect actions that weaken someone's position.",
-            "contextSentence": "Rumors suggested a rival had tried to sabotage the merger talks."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L156_Q3",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Antagonize",
-            "hint": "To cause someone to feel angry or hostile toward you.",
-            "explanation": "\"Alienate\" describes causing someone to feel isolated or unwelcome, closely related to antagonizing them.",
-            "interactionType": "search",
-            "correctAnswer": "Alienate",
-            "options": [
-                "Befriend",
-                "Welcome",
-                "Include",
-                "Alienate"
-            ],
-            "nuanceDifference": "\"Alienate\" often implies pushing someone away emotionally, while \"antagonize\" more specifically implies provoking active hostility or anger.",
-            "contextSentence": "His dismissive comments alienated several longtime clients."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L157_Q1",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Impeccable",
-            "hint": "Perfect; without any flaws or mistakes.",
-            "explanation": "\"Flawless\" describes something without any imperfections at all, closely related to being impeccable.",
-            "interactionType": "search",
-            "correctAnswer": "Flawless",
-            "options": [
-                "Defective",
-                "Imperfect",
-                "Flawed",
-                "Flawless"
-            ],
-            "nuanceDifference": "\"Flawless\" and \"impeccable\" are near-perfect synonyms; \"impeccable\" often applies to conduct or taste, while \"flawless\" applies more broadly to any object or performance.",
-            "contextSentence": "Her flawless manners impressed everyone at the dinner."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L157_Q2",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Mediocre",
-            "hint": "Of only average quality; not very good.",
-            "explanation": "\"Lackluster\" describes a performance or quality that fails to impress, closely related to being mediocre.",
-            "interactionType": "search",
-            "correctAnswer": "Lackluster",
-            "options": [
-                "Outstanding",
-                "Exceptional",
-                "Lackluster",
-                "Impressive"
-            ],
-            "nuanceDifference": "\"Lackluster\" often describes a disappointing performance specifically, while \"mediocre\" more broadly describes anything of merely average quality.",
-            "contextSentence": "Critics called the sequel a lackluster follow-up to the original."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L157_Q3",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Exemplary",
-            "hint": "Serving as an excellent example that others should try to follow.",
-            "explanation": "\"Model\" can describe something that serves as an excellent example for others, closely related to being exemplary.",
-            "interactionType": "search",
-            "correctAnswer": "Model",
-            "options": [
-                "Disgraceful",
-                "Model",
-                "Deficient",
-                "Substandard"
-            ],
-            "nuanceDifference": "\"Model\" is often used as an adjective before a noun, like a model employee, while \"exemplary\" can describe both people and their specific actions.",
-            "contextSentence": "She received an award for her model behavior during the crisis."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L158_Q1",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Correlate",
-            "hint": "To have a mutual relationship, especially where one thing affects another.",
-            "explanation": "\"Coincide\" can describe events happening together, though it doesn't necessarily imply the same causal relationship correlation suggests.",
-            "interactionType": "search",
-            "correctAnswer": "Coincide",
-            "options": [
-                "Coincide",
-                "Diverge",
-                "Differ",
-                "Separate"
-            ],
-            "nuanceDifference": "\"Coincide\" simply means happening at the same time, while \"correlate\" specifically implies a statistical relationship between two variables.",
-            "contextSentence": "The rise in sales seemed to coincide with the new advertising campaign."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L158_Q2",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Quantify",
-            "hint": "To express something as a specific number or amount.",
-            "explanation": "\"Measure\" describes determining the size, amount, or degree of something, closely related to quantifying it.",
-            "interactionType": "search",
-            "correctAnswer": "Measure",
-            "options": [
-                "Estimate",
-                "Guess",
-                "Measure",
-                "Approximate"
-            ],
-            "nuanceDifference": "\"Measure\" is the broader, more common word, while \"quantify\" specifically emphasizes expressing something in precise numerical terms.",
-            "contextSentence": "Scientists measured the exact concentration of the chemical in the water."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L158_Q3",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Delineate",
-            "hint": "To describe or portray something precisely, especially its boundaries or details.",
-            "explanation": "\"Specify\" describes stating something in precise, clear detail, closely related to delineating it.",
-            "interactionType": "search",
-            "correctAnswer": "Specify",
-            "options": [
-                "Obscure",
-                "Blur",
-                "Vague",
-                "Specify"
-            ],
-            "nuanceDifference": "\"Specify\" is the everyday word for stating precise detail, while \"delineate\" is more formal and often used for describing boundaries, roles, or structures.",
-            "contextSentence": "The contract specifies each party's exact responsibilities."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L159_Q1",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Impasse",
-            "hint": "A situation in which no progress can be made because opposing sides will not change their positions.",
-            "explanation": "\"Deadlock\" describes a situation where neither side will move, closely related to an impasse.",
-            "interactionType": "search",
-            "correctAnswer": "Deadlock",
-            "options": [
-                "Deadlock",
-                "Breakthrough",
-                "Resolution",
-                "Agreement"
-            ],
-            "nuanceDifference": "\"Deadlock\" and \"impasse\" are near-perfect synonyms in negotiation contexts; \"deadlock\" is slightly more common in political and legal settings.",
-            "contextSentence": "Negotiations reached a deadlock over the final terms."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L159_Q2",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Ultimatum",
-            "hint": "A final, firm statement of terms, with consequences if it's rejected.",
-            "explanation": "\"Demand\" can describe an insistent request, though not every demand carries the same finality as an ultimatum.",
-            "interactionType": "search",
-            "correctAnswer": "Demand",
-            "options": [
-                "Suggestion",
-                "Demand",
-                "Request",
-                "Proposal"
-            ],
-            "nuanceDifference": "\"Demand\" is a broader, everyday word for insisting on something, while \"ultimatum\" specifically implies a final warning with clear consequences if ignored.",
-            "contextSentence": "The union issued a demand for higher wages by the end of the week."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L159_Q3",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Appease",
-            "hint": "To bring peace or calm to someone by giving them what they want.",
-            "explanation": "\"Pacify\" describes calming someone down, especially someone angry or upset, closely related to appeasing them.",
-            "interactionType": "search",
-            "correctAnswer": "Pacify",
-            "options": [
-                "Provoke",
-                "Pacify",
-                "Incite",
-                "Agitate"
-            ],
-            "nuanceDifference": "\"Pacify\" often implies calming someone in the moment, while \"appease\" more specifically implies satisfying a demand to avoid conflict, sometimes at a cost.",
-            "contextSentence": "The company offered refunds to pacify angry customers."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L160_Q1",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Unprecedented",
-            "hint": "Never having happened or existed before.",
-            "explanation": "\"Unparalleled\" describes something without equal, closely related to being unprecedented, especially regarding scale or quality.",
-            "interactionType": "search",
-            "correctAnswer": "Unparalleled",
-            "options": [
-                "Commonplace",
-                "Typical",
-                "Ordinary",
-                "Unparalleled"
-            ],
-            "nuanceDifference": "\"Unparalleled\" often emphasizes superiority or scale without equal, while \"unprecedented\" more strongly emphasizes that nothing like it has happened before.",
-            "contextSentence": "The disaster caused unparalleled damage across the region."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L160_Q2",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Momentous",
-            "hint": "Of great importance, especially because of future effects.",
-            "explanation": "\"Landmark\" describes an event or decision so significant it marks a turning point, closely related to being momentous.",
-            "interactionType": "search",
-            "correctAnswer": "Landmark",
-            "options": [
-                "Insignificant",
-                "Trivial",
-                "Landmark",
-                "Minor"
-            ],
-            "nuanceDifference": "\"Landmark\" is often used specifically for decisions, rulings, or events that set a precedent, while \"momentous\" more broadly describes anything of great significance.",
-            "contextSentence": "The court's landmark ruling changed civil rights law nationwide."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L160_Q3",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Definitive",
-            "hint": "Conclusive and final; not able to be improved upon or questioned.",
-            "explanation": "\"Authoritative\" describes something so reliable and complete it can be trusted as the final word, closely related to being definitive.",
-            "interactionType": "search",
-            "correctAnswer": "Authoritative",
-            "options": [
-                "Authoritative",
-                "Inconclusive",
-                "Tentative",
-                "Uncertain"
-            ],
-            "nuanceDifference": "\"Authoritative\" often emphasizes trustworthiness of the source, while \"definitive\" more strongly emphasizes that nothing further needs to be said or added.",
-            "contextSentence": "The encyclopedia is considered the authoritative source on the subject."
-        }
-    ]
+  "gameType": "synonymSearch",
+  "phase": "mastery",
+  "cefr": "C1",
+  "difficulty": 4,
+  "batchIndex": 16,
+  "levels": "151-160",
+  "quests": [
+    {
+      "id": "VOC_SYNONYMSEARCH_L151_Q1",
+      "level": 151,
+      "cefr": "C1",
+      "subtype": "synonymSearch",
+      "difficulty": 4,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Close' in the sentence.",
+      "word": "Close",
+      "definition": "Constantly awake and watching for hidden threats.",
+      "synonym": "Vigilant",
+      "correctAnswer": "Vigilant",
+      "correctAnswerIndex": 0,
+      "options": [
+        "Vigilant",
+        "Keen",
+        "Sharp",
+        "Careful"
+      ],
+      "synonyms": [
+        "Vigilant",
+        "Alert",
+        "Watchful"
+      ],
+      "antonyms": [
+        "Keen",
+        "Sharp",
+        "Careful"
+      ],
+      "contextSentence": "Keep ___ against sneaky phishing messages mimicking banks.",
+      "usageExample": "Keep vigilant against sneaky phishing messages mimicking banks.",
+      "nuanceDifference": "'Close' examines bugs (`close look`). 'Vigilant' stays sharp-eyed against forest fires, scams, or shoreline currents (`vigilant lifeguards`).",
+      "explanation": "Natural — alert safety guarding takes 'vigilant'.",
+      "hint": "Fits expressions like \"___ lifeguards\" — starts with 'V'.",
+      "gradientScale": [
+        "Close",
+        "Vigilant",
+        "Watchful",
+        "Observant"
+      ],
+      "collocations": [
+        "vigilant lifeguards",
+        "stay vigilant during"
+      ],
+      "wrongCollocations": [
+        "a vigilant portrait"
+      ],
+      "registerLevel": 4,
+      "topicEmoji": "🎯"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L151_Q2",
+      "level": 151,
+      "cefr": "C1",
+      "subtype": "synonymSearch",
+      "difficulty": 4,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Raise' in the sentence.",
+      "word": "Raise",
+      "definition": "To lift tone, status, or quality noticeably upward.",
+      "synonym": "Elevate",
+      "correctAnswer": "Elevate",
+      "correctAnswerIndex": 1,
+      "options": [
+        "Boost",
+        "Elevate",
+        "Grow",
+        "Enhance"
+      ],
+      "synonyms": [
+        "Elevate",
+        "Lift",
+        "Upgrade"
+      ],
+      "antonyms": [
+        "Boost",
+        "Grow",
+        "Enhance"
+      ],
+      "contextSentence": "Warm lighting helps ___ ordinary basement booths effortlessly.",
+      "usageExample": "Warm lighting helps elevate ordinary basement booths effortlessly.",
+      "nuanceDifference": "'Raise' lifts hands (`raise hands`, `raise corn`). 'Elevate' polishes ordinary salads, lounges, or talks into refined high style (`elevate flavor`).",
+      "explanation": "Natural — upgrading quality or mood takes 'elevate'.",
+      "hint": "Fits expressions like \"___ flavor\" — starts with 'E'.",
+      "gradientScale": [
+        "Raise",
+        "Elevate",
+        "Upgrade",
+        "Heighten"
+      ],
+      "collocations": [
+        "elevate flavor",
+        "can elevate plain"
+      ],
+      "wrongCollocations": [
+        "to elevate honeybees"
+      ],
+      "registerLevel": 4,
+      "topicEmoji": "🛠️"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L151_Q3",
+      "level": 151,
+      "cefr": "C1",
+      "subtype": "synonymSearch",
+      "difficulty": 4,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Lower' in the sentence.",
+      "word": "Lower",
+      "definition": "To drop quality, respect, or ecosystems downward.",
+      "synonym": "Degrade",
+      "correctAnswer": "Degrade",
+      "correctAnswerIndex": 2,
+      "options": [
+        "Drop",
+        "Cut",
+        "Degrade",
+        "Shrink"
+      ],
+      "synonyms": [
+        "Degrade",
+        "Weaken",
+        "Corrode"
+      ],
+      "antonyms": [
+        "Drop",
+        "Cut",
+        "Shrink"
+      ],
+      "contextSentence": "Overcharging hot laptop batteries will steadily ___ capacity.",
+      "usageExample": "Overcharging hot laptop batteries will steadily degrade capacity.",
+      "nuanceDifference": "'Lower' drops blinds (`lower voice`). 'Degrade' damages soil health, batteries, or dignity smoothly over time (`batteries degrade`).",
+      "explanation": "Natural — worsening material or environmental quality takes 'degrade'.",
+      "hint": "Fits expressions like \"batteries ___\" — starts with 'D'.",
+      "gradientScale": [
+        "Lower",
+        "Degrade",
+        "Corrode",
+        "Deteriorate"
+      ],
+      "collocations": [
+        "batteries degrade",
+        "slowly degrade coastal"
+      ],
+      "wrongCollocations": [
+        "Please degrade your"
+      ],
+      "registerLevel": 4,
+      "topicEmoji": "🏃"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L152_Q1",
+      "level": 152,
+      "cefr": "C1",
+      "subtype": "synonymSearch",
+      "difficulty": 4,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Drop' in the sentence.",
+      "word": "Drop",
+      "definition": "To plunge sharply down at frightening speed.",
+      "synonym": "Plummet",
+      "correctAnswer": "Plummet",
+      "correctAnswerIndex": 1,
+      "options": [
+        "Fall",
+        "Plummet",
+        "Sink",
+        "Slide"
+      ],
+      "synonyms": [
+        "Plummet",
+        "Plunge",
+        "Dive"
+      ],
+      "antonyms": [
+        "Fall",
+        "Sink",
+        "Slide"
+      ],
+      "contextSentence": "Hawk wings tuck neatly before birds ___ toward field mice.",
+      "usageExample": "Hawk wings tuck neatly before birds plummet toward field mice.",
+      "nuanceDifference": "'Drop' falls gently (`leaves drop`). 'Plummet' plunges stocks, cliff temps, or birds vertically straight down (`temps plummet`).",
+      "explanation": "Natural — sudden vertical falls take 'plummet'.",
+      "hint": "Fits expressions like \"temps ___\" — starts with 'P'.",
+      "gradientScale": [
+        "Drop",
+        "Plummet",
+        "Dive",
+        "Tumble"
+      ],
+      "collocations": [
+        "temps plummet",
+        "often plummet twenty"
+      ],
+      "wrongCollocations": [
+        "to plummet signed"
+      ],
+      "registerLevel": 4,
+      "topicEmoji": "🗣️"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L152_Q2",
+      "level": 152,
+      "cefr": "C1",
+      "subtype": "synonymSearch",
+      "difficulty": 4,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Rise' in the sentence.",
+      "word": "Rise",
+      "definition": "To rush suddenly upward in huge numbers or waves.",
+      "synonym": "Surge",
+      "correctAnswer": "Surge",
+      "correctAnswerIndex": 2,
+      "options": [
+        "Grow",
+        "Jump",
+        "Surge",
+        "Lift"
+      ],
+      "synonyms": [
+        "Surge",
+        "Swell",
+        "Soar"
+      ],
+      "antonyms": [
+        "Grow",
+        "Jump",
+        "Lift"
+      ],
+      "contextSentence": "Electric bicycle sales began to ___ smoothly across summer months.",
+      "usageExample": "Electric bicycle sales began to surge smoothly across summer months.",
+      "nuanceDifference": "'Rise' climbs loaves (`sun rises`). 'Surge' describes storm tides, ticket demand, or crowd joy jumping wildly upward (`orders surge`).",
+      "explanation": "Natural — powerful sudden swells use 'surge'.",
+      "hint": "Fits expressions like \"orders ___\" — starts with 'S'.",
+      "gradientScale": [
+        "Rise",
+        "Surge",
+        "Soar",
+        "Spike"
+      ],
+      "collocations": [
+        "orders surge",
+        "to surge overnight"
+      ],
+      "wrongCollocations": [
+        "loaves surge double"
+      ],
+      "registerLevel": 4,
+      "topicEmoji": "🧭"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L152_Q3",
+      "level": 152,
+      "cefr": "C1",
+      "subtype": "synonymSearch",
+      "difficulty": 4,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Cut' in the sentence.",
+      "word": "Cut",
+      "definition": "To trim back budgets, hours, or services early due to limits.",
+      "synonym": "Curtail",
+      "correctAnswer": "Curtail",
+      "correctAnswerIndex": 3,
+      "options": [
+        "Drop",
+        "Reduce",
+        "End",
+        "Curtail"
+      ],
+      "synonyms": [
+        "Curtail",
+        "Trim",
+        "Slash"
+      ],
+      "antonyms": [
+        "Drop",
+        "Reduce",
+        "End"
+      ],
+      "contextSentence": "Power limits required mills to ___ noisy night shifts temporarily.",
+      "usageExample": "Power limits required mills to curtail noisy night shifts temporarily.",
+      "nuanceDifference": "'Cut' trims paper (`cut hair`). 'Curtail' trims back spending, library hours, or trips early (`curtail hours`).",
+      "explanation": "Natural — trimming scheduled hours or travel takes 'curtail'.",
+      "hint": "Fits expressions like \"___ hours\" — starts with 'C'.",
+      "gradientScale": [
+        "Cut",
+        "Curtail",
+        "Slash",
+        "Shorten"
+      ],
+      "collocations": [
+        "curtail hours",
+        "to curtail weekend"
+      ],
+      "wrongCollocations": [
+        "to curtail wrapping"
+      ],
+      "registerLevel": 4,
+      "topicEmoji": "✨"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L153_Q1",
+      "level": 153,
+      "cefr": "C1",
+      "subtype": "synonymSearch",
+      "difficulty": 4,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Fix' in the sentence.",
+      "word": "Fix",
+      "definition": "To adjust sensors accurately against exact test scales.",
+      "synonym": "Calibrate",
+      "correctAnswer": "Calibrate",
+      "correctAnswerIndex": 2,
+      "options": [
+        "Check",
+        "Set",
+        "Calibrate",
+        "Verify"
+      ],
+      "synonyms": [
+        "Calibrate",
+        "Tune",
+        "Adjust"
+      ],
+      "antonyms": [
+        "Check",
+        "Set",
+        "Verify"
+      ],
+      "contextSentence": "Astronomers regularly ___ mountain telescope mirrors cleanly.",
+      "usageExample": "Astronomers regularly calibrate mountain telescope mirrors cleanly.",
+      "nuanceDifference": "'Fix' nails fences (`fix roofs`). 'Calibrate' tunes lab scales, ovens, or thermometers smoothly against true zero (`calibrate ovens`).",
+      "explanation": "Natural — tuning precision scales uses 'calibrate'.",
+      "hint": "Fits expressions like \"___ ovens\" — starts with 'C'.",
+      "gradientScale": [
+        "Fix",
+        "Calibrate",
+        "Adjust",
+        "Balance"
+      ],
+      "collocations": [
+        "calibrate ovens",
+        "carefully calibrate bread"
+      ],
+      "wrongCollocations": [
+        "to calibrate loose"
+      ],
+      "registerLevel": 4,
+      "topicEmoji": "⚡"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L153_Q2",
+      "level": 153,
+      "cefr": "C1",
+      "subtype": "synonymSearch",
+      "difficulty": 4,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Check' in the sentence.",
+      "word": "Check",
+      "definition": "To officially review financial accounts or compliance files.",
+      "synonym": "Audit",
+      "correctAnswer": "Audit",
+      "correctAnswerIndex": 3,
+      "options": [
+        "Scan",
+        "Read",
+        "Track",
+        "Audit"
+      ],
+      "synonyms": [
+        "Audit",
+        "Inspect",
+        "Verify"
+      ],
+      "antonyms": [
+        "Scan",
+        "Read",
+        "Track"
+      ],
+      "contextSentence": "Clean energy plants ___ water filters quarterly without fail.",
+      "usageExample": "Clean energy plants audit water filters quarterly without fail.",
+      "nuanceDifference": "'Check' counts bags (`check baggage`). 'Audit' formally inspects tax books, security code, or waste trails (`audit expenses`).",
+      "explanation": "Natural — official record reviews require 'audit'.",
+      "hint": "Fits expressions like \"___ expenses\" — starts with 'A'.",
+      "gradientScale": [
+        "Check",
+        "Audit",
+        "Verify",
+        "Review"
+      ],
+      "collocations": [
+        "audit expenses",
+        "reviewers audit city"
+      ],
+      "wrongCollocations": [
+        "to audit loose"
+      ],
+      "registerLevel": 4,
+      "topicEmoji": "🛠️"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L153_Q3",
+      "level": 153,
+      "cefr": "C1",
+      "subtype": "synonymSearch",
+      "difficulty": 4,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Test' in the sentence.",
+      "word": "Test",
+      "definition": "To measure real skill level or storm damage carefully.",
+      "synonym": "Assess",
+      "correctAnswer": "Assess",
+      "correctAnswerIndex": 0,
+      "options": [
+        "Assess",
+        "Check",
+        "Gauge",
+        "Prove"
+      ],
+      "synonyms": [
+        "Assess",
+        "Evaluate",
+        "Judge"
+      ],
+      "antonyms": [
+        "Check",
+        "Gauge",
+        "Prove"
+      ],
+      "contextSentence": "Oral chats help coaches ___ speaking confidence fairly.",
+      "usageExample": "Oral chats help coaches assess speaking confidence fairly.",
+      "nuanceDifference": "'Test' tries software (`test brakes`). 'Assess' weighs skill mastery, housing damage, or health recovery cleanly (`assess readiness`).",
+      "explanation": "Natural — weighing true extent or skill takes 'assess'.",
+      "hint": "Fits expressions like \"___ readiness\" — starts with 'A'.",
+      "gradientScale": [
+        "Test",
+        "Assess",
+        "Judge",
+        "Appraise"
+      ],
+      "collocations": [
+        "assess readiness",
+        "to assess wind"
+      ],
+      "wrongCollocations": [
+        "to assess garlic"
+      ],
+      "registerLevel": 4,
+      "topicEmoji": "🏃"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L154_Q1",
+      "level": 154,
+      "cefr": "C1",
+      "subtype": "synonymSearch",
+      "difficulty": 4,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Share' in the sentence.",
+      "word": "Share",
+      "definition": "To assign limited time or cash cleanly across teams.",
+      "synonym": "Allocate",
+      "correctAnswer": "Allocate",
+      "correctAnswerIndex": 3,
+      "options": [
+        "Split",
+        "Divide",
+        "Pass",
+        "Allocate"
+      ],
+      "synonyms": [
+        "Allocate",
+        "Distribute",
+        "Assign"
+      ],
+      "antonyms": [
+        "Split",
+        "Divide",
+        "Pass"
+      ],
+      "contextSentence": "Smart teams ___ extra review mornings ahead of big releases.",
+      "usageExample": "Smart teams allocate extra review mornings ahead of big releases.",
+      "nuanceDifference": "'Share' splits cookies (`share snacks`). 'Allocate' officially distributes budget pools, hospital beds, or clinic slots (`allocate funds`).",
+      "explanation": "Natural — budgeting money or room slots takes 'allocate'.",
+      "hint": "Fits expressions like \"___ funds\" — starts with 'A'.",
+      "gradientScale": [
+        "Share",
+        "Allocate",
+        "Assign",
+        "Apportion"
+      ],
+      "collocations": [
+        "allocate funds",
+        "to allocate parks"
+      ],
+      "wrongCollocations": [
+        "to allocate dried"
+      ],
+      "registerLevel": 4,
+      "topicEmoji": "🗣️"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L154_Q2",
+      "level": 154,
+      "cefr": "C1",
+      "subtype": "synonymSearch",
+      "difficulty": 4,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Keep' in the sentence.",
+      "word": "Keep",
+      "definition": "To hold onto staff, soil water, or facts cleanly.",
+      "synonym": "Retain",
+      "correctAnswer": "Retain",
+      "correctAnswerIndex": 0,
+      "options": [
+        "Retain",
+        "Store",
+        "Guard",
+        "Pack"
+      ],
+      "synonyms": [
+        "Retain",
+        "Hold",
+        "Preserve"
+      ],
+      "antonyms": [
+        "Store",
+        "Guard",
+        "Pack"
+      ],
+      "contextSentence": "Fair schedules help small cafés ___ experienced morning baristas.",
+      "usageExample": "Fair schedules help small cafés retain experienced morning baristas.",
+      "nuanceDifference": "'Keep' packs socks (`keep books`). 'Retain' holds moisture, loyal customers, skilled staff, or childhood lyrics securely (`retain moisture`).",
+      "explanation": "Natural — holding moisture, memory, or staff takes 'retain'.",
+      "hint": "Fits expressions like \"___ moisture\" — starts with 'R'.",
+      "gradientScale": [
+        "Keep",
+        "Retain",
+        "Preserve",
+        "Conserve"
+      ],
+      "collocations": [
+        "retain moisture",
+        "beds retain cool"
+      ],
+      "wrongCollocations": [
+        "you retain my"
+      ],
+      "registerLevel": 4,
+      "topicEmoji": "🧭"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L154_Q3",
+      "level": 154,
+      "cefr": "C1",
+      "subtype": "synonymSearch",
+      "difficulty": 4,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Give' in the sentence.",
+      "word": "Give",
+      "definition": "To grant formal honors OR consult thoughtfully together.",
+      "synonym": "Confer",
+      "correctAnswer": "Confer",
+      "correctAnswerIndex": 1,
+      "options": [
+        "Offer",
+        "Confer",
+        "Share",
+        "Lend"
+      ],
+      "synonyms": [
+        "Confer",
+        "Bestow",
+        "Consult"
+      ],
+      "antonyms": [
+        "Offer",
+        "Share",
+        "Lend"
+      ],
+      "contextSentence": "Town mayors ___ heritage plaques on century-old workshops.",
+      "usageExample": "Town mayors confer heritage plaques on century-old workshops.",
+      "nuanceDifference": "'Give' wraps toys (`give gifts`). 'Confer' ceremonially grants degrees OR sits down with doctors to align advice (`confer with staff`).",
+      "explanation": "Natural — expert consultation or formal prizes take 'confer'.",
+      "hint": "Fits expressions like \"___ with staff\" — starts with 'C'.",
+      "gradientScale": [
+        "Give",
+        "Confer",
+        "Consult",
+        "Grant"
+      ],
+      "collocations": [
+        "confer with staff",
+        "briefly confer together"
+      ],
+      "wrongCollocations": [
+        "to confer elderly"
+      ],
+      "registerLevel": 4,
+      "topicEmoji": "✨"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L155_Q1",
+      "level": 155,
+      "cefr": "C1",
+      "subtype": "synonymSearch",
+      "difficulty": 4,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Ask' in the sentence.",
+      "word": "Ask",
+      "definition": "To dig deeper with sharp searching questions.",
+      "synonym": "Probe",
+      "correctAnswer": "Probe",
+      "correctAnswerIndex": 0,
+      "options": [
+        "Probe",
+        "Inquire",
+        "Check",
+        "Search"
+      ],
+      "synonyms": [
+        "Probe",
+        "Question",
+        "Investigate"
+      ],
+      "antonyms": [
+        "Inquire",
+        "Check",
+        "Search"
+      ],
+      "contextSentence": "Astronomers ___ distant icy moons for faint ocean plumes.",
+      "usageExample": "Astronomers probe distant icy moons for faint ocean plumes.",
+      "nuanceDifference": "'Ask' requests tea (`ask directions`). 'Probe' pushes carefully past polite replies to uncover hidden roots (`probe causes`).",
+      "explanation": "Natural — investigative digging questions take 'probe'.",
+      "hint": "Fits expressions like \"___ causes\" — starts with 'P'.",
+      "gradientScale": [
+        "Ask",
+        "Probe",
+        "Investigate",
+        "Examine"
+      ],
+      "collocations": [
+        "probe causes",
+        "to probe deeper"
+      ],
+      "wrongCollocations": [
+        "anyone probe waiters"
+      ],
+      "registerLevel": 4,
+      "topicEmoji": "⚡"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L155_Q2",
+      "level": 155,
+      "cefr": "C1",
+      "subtype": "synonymSearch",
+      "difficulty": 4,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Tell' in the sentence.",
+      "word": "Tell",
+      "definition": "To give official required notice clearly ahead of time.",
+      "synonym": "Notify",
+      "correctAnswer": "Notify",
+      "correctAnswerIndex": 1,
+      "options": [
+        "Warn",
+        "Notify",
+        "Guide",
+        "Advise"
+      ],
+      "synonyms": [
+        "Notify",
+        "Inform",
+        "Update"
+      ],
+      "antonyms": [
+        "Warn",
+        "Guide",
+        "Advise"
+      ],
+      "contextSentence": "Schools ___ parents swiftly when heavy snow closes gates.",
+      "usageExample": "Schools notify parents swiftly when heavy snow closes gates.",
+      "nuanceDifference": "'Tell' shares chats (`tell stories`). 'Notify' officially alerts pilots, tenants, or members of changes (`notify passengers`).",
+      "explanation": "Natural — formal operational alerts take 'notify'.",
+      "hint": "Fits expressions like \"___ passengers\" — starts with 'N'.",
+      "gradientScale": [
+        "Tell",
+        "Notify",
+        "Update",
+        "Instruct"
+      ],
+      "collocations": [
+        "notify passengers",
+        "Dispatchers notify pilots"
+      ],
+      "wrongCollocations": [
+        "to notify sleepy"
+      ],
+      "registerLevel": 4,
+      "topicEmoji": "🛠️"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L155_Q3",
+      "level": 155,
+      "cefr": "C1",
+      "subtype": "synonymSearch",
+      "difficulty": 4,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Show' in the sentence.",
+      "word": "Show",
+      "definition": "To reveal a new statue, car, or brand publicly.",
+      "synonym": "Unveil",
+      "correctAnswer": "Unveil",
+      "correctAnswerIndex": 2,
+      "options": [
+        "Open",
+        "Launch",
+        "Unveil",
+        "Expose"
+      ],
+      "synonyms": [
+        "Unveil",
+        "Reveal",
+        "Present"
+      ],
+      "antonyms": [
+        "Open",
+        "Launch",
+        "Expose"
+      ],
+      "contextSentence": "Design teams plan to ___ lighter electric tram cabins soon.",
+      "usageExample": "Design teams plan to unveil lighter electric tram cabins soon.",
+      "nuanceDifference": "'Show' opens books (`show drawings`). 'Unveil' dramatically pulls sheets off major monuments, stadium roofs, or annual flags (`unveil statue`).",
+      "explanation": "Natural — public dramatic debuts use 'unveil'.",
+      "hint": "Fits expressions like \"___ statue\" — starts with 'U'.",
+      "gradientScale": [
+        "Show",
+        "Unveil",
+        "Present",
+        "Debut"
+      ],
+      "collocations": [
+        "unveil statue",
+        "to unveil the"
+      ],
+      "wrongCollocations": [
+        "to unveil nearby"
+      ],
+      "registerLevel": 4,
+      "topicEmoji": "🏃"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L156_Q1",
+      "level": 156,
+      "cefr": "C1",
+      "subtype": "synonymSearch",
+      "difficulty": 4,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Notice' in the sentence.",
+      "word": "Notice",
+      "definition": "To pick up faint signs using keen senses or instruments.",
+      "synonym": "Detect",
+      "correctAnswer": "Detect",
+      "correctAnswerIndex": 1,
+      "options": [
+        "Watch",
+        "Detect",
+        "View",
+        "Scan"
+      ],
+      "synonyms": [
+        "Detect",
+        "Spot",
+        "Sense"
+      ],
+      "antonyms": [
+        "Watch",
+        "View",
+        "Scan"
+      ],
+      "contextSentence": "Trained tasters quickly ___ toasted almond notes inside coffee.",
+      "usageExample": "Trained tasters quickly detect toasted almond notes inside coffee.",
+      "nuanceDifference": "'Notice' sees typos (`notice hats`). 'Detect' picks up faint gas leaks, early flu hints, or radar echoes cleanly (`detect smoke`).",
+      "explanation": "Natural — sensors or keen noses catching subtle traces use 'detect'.",
+      "hint": "Fits expressions like \"___ smoke\" — starts with 'D'.",
+      "gradientScale": [
+        "Notice",
+        "Detect",
+        "Sense",
+        "Identify"
+      ],
+      "collocations": [
+        "detect smoke",
+        "alarms detect tiny"
+      ],
+      "wrongCollocations": [
+        "you detect Sam’s"
+      ],
+      "registerLevel": 4,
+      "topicEmoji": "🗣️"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L156_Q2",
+      "level": 156,
+      "cefr": "C1",
+      "subtype": "synonymSearch",
+      "difficulty": 4,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Avoid' in the sentence.",
+      "word": "Avoid",
+      "definition": "To deliberately stay completely away out of principle or dislike.",
+      "synonym": "Shun",
+      "correctAnswer": "Shun",
+      "correctAnswerIndex": 2,
+      "options": [
+        "Dodge",
+        "Skip",
+        "Shun",
+        "Miss"
+      ],
+      "synonyms": [
+        "Shun",
+        "Reject",
+        "Evade"
+      ],
+      "antonyms": [
+        "Dodge",
+        "Skip",
+        "Miss"
+      ],
+      "contextSentence": "Ethical buyers increasingly ___ single-use plastic coffee stirrers.",
+      "usageExample": "Ethical buyers increasingly shun single-use plastic coffee stirrers.",
+      "nuanceDifference": "'Avoid' skips bumps (`avoid rain`). 'Shun' publicly or firmly rejects junk ads, noisy crowds, or unethical sellers (`shun plastic`).",
+      "explanation": "Natural — principled or firm social rejection takes 'shun'.",
+      "hint": "Fits expressions like \"___ plastic\" — starts with 'S'.",
+      "gradientScale": [
+        "Avoid",
+        "Shun",
+        "Evade",
+        "Boycott"
+      ],
+      "collocations": [
+        "shun plastic",
+        "often shun bright"
+      ],
+      "wrongCollocations": [
+        "to shun wet"
+      ],
+      "registerLevel": 4,
+      "topicEmoji": "🧭"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L156_Q3",
+      "level": 156,
+      "cefr": "C1",
+      "subtype": "synonymSearch",
+      "difficulty": 4,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Copy' in the sentence.",
+      "word": "Copy",
+      "definition": "To match or surpass an admired role model’s excellence.",
+      "synonym": "Emulate",
+      "correctAnswer": "Emulate",
+      "correctAnswerIndex": 3,
+      "options": [
+        "Track",
+        "Learn",
+        "Match",
+        "Emulate"
+      ],
+      "synonyms": [
+        "Emulate",
+        "Imitate",
+        "Mirror"
+      ],
+      "antonyms": [
+        "Track",
+        "Learn",
+        "Match"
+      ],
+      "contextSentence": "City planners hope to ___ Copenhagen’s protected bicycle grids.",
+      "usageExample": "City planners hope to emulate Copenhagen’s protected bicycle grids.",
+      "nuanceDifference": "'Copy' duplicates lines (`copy notes`). 'Emulate' admires mentors or clean traditions cleanly to equal or beat their craft (`emulate mentors`).",
+      "explanation": "Natural — admiring positive imitation takes 'emulate'.",
+      "hint": "Fits expressions like \"___ mentors\" — starts with 'E'.",
+      "gradientScale": [
+        "Copy",
+        "Emulate",
+        "Mirror",
+        "Follow"
+      ],
+      "collocations": [
+        "emulate mentors",
+        "to emulate calm"
+      ],
+      "wrongCollocations": [
+        "Never emulate answers"
+      ],
+      "registerLevel": 4,
+      "topicEmoji": "✨"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L157_Q1",
+      "level": 157,
+      "cefr": "C1",
+      "subtype": "synonymSearch",
+      "difficulty": 4,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Follow' in the sentence.",
+      "word": "Follow",
+      "definition": "To stick firmly to clean rules, glue, or habits.",
+      "synonym": "Adhere",
+      "correctAnswer": "Adhere",
+      "correctAnswerIndex": 2,
+      "options": [
+        "Keep",
+        "Hold",
+        "Adhere",
+        "Trust"
+      ],
+      "synonyms": [
+        "Adhere",
+        "Comply",
+        "Obey"
+      ],
+      "antonyms": [
+        "Keep",
+        "Hold",
+        "Trust"
+      ],
+      "contextSentence": "Make sure window tape edges ___ cleanly along clean frames.",
+      "usageExample": "Make sure window tape edges adhere cleanly along clean frames.",
+      "nuanceDifference": "'Follow' walks dogs (`follow maps`). 'Adhere' stays loyal to strict recipes, medical steps (`adhere to safety`), or sticker glue (`adhere cleanly`).",
+      "explanation": "Natural — formal sticking to guidelines takes 'adhere to'.",
+      "hint": "Fits expressions like \"___ to safety\" — starts with 'A'.",
+      "gradientScale": [
+        "Follow",
+        "Adhere",
+        "Obey",
+        "Persist"
+      ],
+      "collocations": [
+        "adhere to safety",
+        "adhere cleanly"
+      ],
+      "wrongCollocations": [
+        "happily adhere painted"
+      ],
+      "registerLevel": 4,
+      "topicEmoji": "⚡"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L157_Q2",
+      "level": 157,
+      "cefr": "C1",
+      "subtype": "synonymSearch",
+      "difficulty": 4,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Lead' in the sentence.",
+      "word": "Lead",
+      "definition": "To step boldly out front starting a tough project.",
+      "synonym": "Spearhead",
+      "correctAnswer": "Spearhead",
+      "correctAnswerIndex": 3,
+      "options": [
+        "Guide",
+        "Start",
+        "Run",
+        "Spearhead"
+      ],
+      "synonyms": [
+        "Spearhead",
+        "Champion",
+        "Pioneer"
+      ],
+      "antonyms": [
+        "Guide",
+        "Start",
+        "Run"
+      ],
+      "contextSentence": "Veterinary clinics helped ___ free autumn rabies clinics.",
+      "usageExample": "Veterinary clinics helped spearhead free autumn rabies clinics.",
+      "nuanceDifference": "'Lead' heads rosters (`lead choruses`). 'Spearhead' actively pioneers clean-up drives, new campaigns, or medical trials from zero (`spearhead aid`).",
+      "explanation": "Natural — boldly initiating visible efforts takes 'spearhead'.",
+      "hint": "Fits expressions like \"___ aid\" — starts with 'S'.",
+      "gradientScale": [
+        "Lead",
+        "Spearhead",
+        "Pioneer",
+        "Direct"
+      ],
+      "collocations": [
+        "spearhead aid",
+        "helped spearhead local"
+      ],
+      "wrongCollocations": [
+        "puppies spearhead along"
+      ],
+      "registerLevel": 4,
+      "topicEmoji": "🛠️"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L157_Q3",
+      "level": 157,
+      "cefr": "C1",
+      "subtype": "synonymSearch",
+      "difficulty": 4,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Agree' in the sentence.",
+      "word": "Agree",
+      "definition": "To formally vote and sign treaties or group rules into active force.",
+      "synonym": "Ratify",
+      "correctAnswer": "Ratify",
+      "correctAnswerIndex": 0,
+      "options": [
+        "Ratify",
+        "Accept",
+        "Join",
+        "Pass"
+      ],
+      "synonyms": [
+        "Ratify",
+        "Approve",
+        "Validate"
+      ],
+      "antonyms": [
+        "Accept",
+        "Join",
+        "Pass"
+      ],
+      "contextSentence": "Club members met Sunday to ___ updated trail maintenance bylaws.",
+      "usageExample": "Club members met Sunday to ratify updated trail maintenance bylaws.",
+      "nuanceDifference": "'Agree' nods yes (`agree easily`). 'Ratify' puts national treaties, union deals, or bylaws into binding legal law (`ratify pact`).",
+      "explanation": "Natural — making group deals formally binding takes 'ratify'.",
+      "hint": "Fits expressions like \"___ pact\" — starts with 'R'.",
+      "gradientScale": [
+        "Agree",
+        "Ratify",
+        "Validate",
+        "Confirm"
+      ],
+      "collocations": [
+        "ratify pact",
+        "to ratify shared"
+      ],
+      "wrongCollocations": [
+        "immediately ratify on"
+      ],
+      "registerLevel": 4,
+      "topicEmoji": "🏃"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L158_Q1",
+      "level": 158,
+      "cefr": "C1",
+      "subtype": "synonymSearch",
+      "difficulty": 4,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Disagree' in the sentence.",
+      "word": "Disagree",
+      "definition": "To argue an opposing position firmly with strong conviction.",
+      "synonym": "Contend",
+      "correctAnswer": "Contend",
+      "correctAnswerIndex": 3,
+      "options": [
+        "Debate",
+        "Claim",
+        "Oppose",
+        "Contend"
+      ],
+      "synonyms": [
+        "Contend",
+        "Assert",
+        "Argue"
+      ],
+      "antonyms": [
+        "Debate",
+        "Claim",
+        "Oppose"
+      ],
+      "contextSentence": "Coastal growers regularly ___ with salty morning fogs.",
+      "usageExample": "Coastal growers regularly contend with salty morning fogs.",
+      "nuanceDifference": "'Disagree' shakes heads (`disagree gently`). 'Contend' asserts firm claims in debates OR struggles hard (`contend with frost`).",
+      "explanation": "Natural — arguing firm formal claims takes 'contend'.",
+      "hint": "Fits expressions like \"___ with frost\" — starts with 'C'.",
+      "gradientScale": [
+        "Disagree",
+        "Contend",
+        "Argue",
+        "Dispute"
+      ],
+      "collocations": [
+        "contend with frost",
+        "teams contend that"
+      ],
+      "wrongCollocations": [
+        "mildly contend on"
+      ],
+      "registerLevel": 4,
+      "topicEmoji": "🗣️"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L158_Q2",
+      "level": 158,
+      "cefr": "C1",
+      "subtype": "synonymSearch",
+      "difficulty": 4,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Join' in the sentence.",
+      "word": "Join",
+      "definition": "To unite cleanly for shared protection or goal.",
+      "synonym": "Ally",
+      "correctAnswer": "Ally",
+      "correctAnswerIndex": 0,
+      "options": [
+        "Ally",
+        "Link",
+        "Merge",
+        "Connect"
+      ],
+      "synonyms": [
+        "Ally",
+        "Unite",
+        "Partner"
+      ],
+      "antonyms": [
+        "Link",
+        "Merge",
+        "Connect"
+      ],
+      "contextSentence": "Neighborhood clinics ___ closely with rural rescue buses.",
+      "usageExample": "Neighborhood clinics ally closely with rural rescue buses.",
+      "nuanceDifference": "'Join' enters rooms (`join hands`). 'Ally' unites small shops, nations, or neighborhood groups against shared challenges (`ally together`).",
+      "explanation": "Natural — strategic partnership between groups takes 'ally'.",
+      "hint": "Fits expressions like \"___ together\" — starts with 'A'.",
+      "gradientScale": [
+        "Join",
+        "Ally",
+        "Partner",
+        "Align"
+      ],
+      "collocations": [
+        "ally together",
+        "to ally on"
+      ],
+      "wrongCollocations": [
+        "and ally our"
+      ],
+      "registerLevel": 4,
+      "topicEmoji": "🧭"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L158_Q3",
+      "level": 158,
+      "cefr": "C1",
+      "subtype": "synonymSearch",
+      "difficulty": 4,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Break' in the sentence.",
+      "word": "Break",
+      "definition": "To crack bone, rock, or tight community harmony.",
+      "synonym": "Fracture",
+      "correctAnswer": "Fracture",
+      "correctAnswerIndex": 1,
+      "options": [
+        "Cut",
+        "Fracture",
+        "Drop",
+        "Hurt"
+      ],
+      "synonyms": [
+        "Fracture",
+        "Crack",
+        "Split"
+      ],
+      "antonyms": [
+        "Cut",
+        "Drop",
+        "Hurt"
+      ],
+      "contextSentence": "Unresolved scheduling spats can quietly ___ workshop unity.",
+      "usageExample": "Unresolved scheduling spats can quietly fracture workshop unity.",
+      "nuanceDifference": "'Break' snaps twigs (`break glass`). 'Fracture' deals with hairline bone breaks, limestone strata, or fragile team harmony (`fracture unity`).",
+      "explanation": "Natural — bone, rock, or group cracks take 'fracture'.",
+      "hint": "Fits expressions like \"___ unity\" — starts with 'F'.",
+      "gradientScale": [
+        "Break",
+        "Fracture",
+        "Split",
+        "Splinter"
+      ],
+      "collocations": [
+        "fracture unity",
+        "might fracture bones"
+      ],
+      "wrongCollocations": [
+        "never fracture clear"
+      ],
+      "registerLevel": 4,
+      "topicEmoji": "✨"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L159_Q1",
+      "level": 159,
+      "cefr": "C1",
+      "subtype": "synonymSearch",
+      "difficulty": 4,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Build' in the sentence.",
+      "word": "Build",
+      "definition": "To raise vertical walls, tents, monuments, or barriers upright.",
+      "synonym": "Erect",
+      "correctAnswer": "Erect",
+      "correctAnswerIndex": 0,
+      "options": [
+        "Erect",
+        "Make",
+        "Form",
+        "Forge"
+      ],
+      "synonyms": [
+        "Erect",
+        "Construct",
+        "Raise"
+      ],
+      "antonyms": [
+        "Make",
+        "Form",
+        "Forge"
+      ],
+      "contextSentence": "Towns voted early to ___ sturdy coastal storm walls.",
+      "usageExample": "Towns voted early to erect sturdy coastal storm walls.",
+      "nuanceDifference": "'Build' writes code (`build habits`). 'Erect' physically lifts tall statues, tents, steel frames, or windbreaks straight upright (`erect tents`).",
+      "explanation": "Natural — raising vertical structures upright takes 'erect'.",
+      "hint": "Fits expressions like \"___ tents\" — starts with 'E'.",
+      "gradientScale": [
+        "Build",
+        "Erect",
+        "Raise",
+        "Assemble"
+      ],
+      "collocations": [
+        "erect tents",
+        "to erect canvas"
+      ],
+      "wrongCollocations": [
+        "help erect quiet"
+      ],
+      "registerLevel": 4,
+      "topicEmoji": "⚡"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L159_Q2",
+      "level": 159,
+      "cefr": "C1",
+      "subtype": "synonymSearch",
+      "difficulty": 4,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Harm' in the sentence.",
+      "word": "Harm",
+      "definition": "To quietly weaken vision, hearing, balance, or memory.",
+      "synonym": "Impair",
+      "correctAnswer": "Impair",
+      "correctAnswerIndex": 1,
+      "options": [
+        "Drop",
+        "Impair",
+        "Cut",
+        "Limit"
+      ],
+      "synonyms": [
+        "Impair",
+        "Damage",
+        "Hinder"
+      ],
+      "antonyms": [
+        "Drop",
+        "Cut",
+        "Limit"
+      ],
+      "contextSentence": "Earplugs keep loud concerts from helping ___ delicate hearing.",
+      "usageExample": "Earplugs keep loud concerts from helping impair delicate hearing.",
+      "nuanceDifference": "'Harm' scratches paint (`harm birds`). 'Impair' medically weakens normal ability like sight, sleep, or steering (`impair focus`).",
+      "explanation": "Natural — reducing healthy ability takes 'impair'.",
+      "hint": "Fits expressions like \"___ focus\" — starts with 'I'.",
+      "gradientScale": [
+        "Harm",
+        "Impair",
+        "Hinder",
+        "Weaken"
+      ],
+      "collocations": [
+        "impair focus",
+        "severely impair quick"
+      ],
+      "wrongCollocations": [
+        "may impair tender"
+      ],
+      "registerLevel": 4,
+      "topicEmoji": "🛠️"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L159_Q3",
+      "level": 159,
+      "cefr": "C1",
+      "subtype": "synonymSearch",
+      "difficulty": 4,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Protect' in the sentence.",
+      "word": "Protect",
+      "definition": "To physically block harm, glare, or wind cleanly.",
+      "synonym": "Shield",
+      "correctAnswer": "Shield",
+      "correctAnswerIndex": 2,
+      "options": [
+        "Keep",
+        "Cover",
+        "Shield",
+        "Save"
+      ],
+      "synonyms": [
+        "Shield",
+        "Guard",
+        "Screen"
+      ],
+      "antonyms": [
+        "Keep",
+        "Cover",
+        "Save"
+      ],
+      "contextSentence": "Dense cedar windbreaks ___ fragile spring orchards smoothly.",
+      "usageExample": "Dense cedar windbreaks shield fragile spring orchards smoothly.",
+      "nuanceDifference": "'Protect' passes laws (`protect whales`). 'Shield' places sunglasses, helmets, roofs, or hands directly between harm and target (`shield eyes`).",
+      "explanation": "Natural — standing physically between threat and target uses 'shield'.",
+      "hint": "Fits expressions like \"___ eyes\" — starts with 'S'.",
+      "gradientScale": [
+        "Protect",
+        "Shield",
+        "Screen",
+        "Defend"
+      ],
+      "collocations": [
+        "shield eyes",
+        "to shield eyes"
+      ],
+      "wrongCollocations": [
+        "help shield crowded"
+      ],
+      "registerLevel": 4,
+      "topicEmoji": "🏃"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L160_Q1",
+      "level": 160,
+      "cefr": "C1",
+      "subtype": "synonymSearch",
+      "difficulty": 4,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Calm' in the sentence.",
+      "word": "Calm",
+      "definition": "To softly ease acute pain, red skin, or crying nerves.",
+      "synonym": "Soothe",
+      "correctAnswer": "Soothe",
+      "correctAnswerIndex": 1,
+      "options": [
+        "Help",
+        "Soothe",
+        "Soft",
+        "Warm"
+      ],
+      "synonyms": [
+        "Soothe",
+        "Comfort",
+        "Ease"
+      ],
+      "antonyms": [
+        "Help",
+        "Soft",
+        "Warm"
+      ],
+      "contextSentence": "Cool aloe gel rapidly helps ___ mild summer sunburns.",
+      "usageExample": "Cool aloe gel rapidly helps soothe mild summer sunburns.",
+      "nuanceDifference": "'Calm' steadies crowds (`calm down`). 'Soothe' gently cools sunburns, sore throats, crying babies, or raw worries (`soothe throat`).",
+      "explanation": "Natural — comforting physical soreness or upset takes 'soothe'.",
+      "hint": "Fits expressions like \"___ throat\" — starts with 'S'.",
+      "gradientScale": [
+        "Calm",
+        "Soothe",
+        "Ease",
+        "Relax"
+      ],
+      "collocations": [
+        "soothe throat",
+        "helps soothe scratchy"
+      ],
+      "wrongCollocations": [
+        "to soothe shouting"
+      ],
+      "registerLevel": 4,
+      "topicEmoji": "🗣️"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L160_Q2",
+      "level": 160,
+      "cefr": "C1",
+      "subtype": "synonymSearch",
+      "difficulty": 4,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Worry' in the sentence.",
+      "word": "Worry",
+      "definition": "To stew restlessly over minor everyday bothers.",
+      "synonym": "Fret",
+      "correctAnswer": "Fret",
+      "correctAnswerIndex": 2,
+      "options": [
+        "Fear",
+        "Doubt",
+        "Fret",
+        "Panic"
+      ],
+      "synonyms": [
+        "Fret",
+        "Fuss",
+        "Stew"
+      ],
+      "antonyms": [
+        "Fear",
+        "Doubt",
+        "Panic"
+      ],
+      "contextSentence": "Do not ___ about missing a ferry — another leaves shortly.",
+      "usageExample": "Do not fret about missing a ferry — another leaves shortly.",
+      "nuanceDifference": "'Worry' watches illness (`worry deeply`). 'Fret' fusses nervously over spilled milk, outfit shades, or five-minute delays (`fret needlessly`).",
+      "explanation": "Natural — fussing over small worries uses 'fret'.",
+      "hint": "Fits expressions like \"___ needlessly\" — starts with 'F'.",
+      "gradientScale": [
+        "Worry",
+        "Fret",
+        "Stew",
+        "Stress"
+      ],
+      "collocations": [
+        "fret needlessly",
+        "always fret needlessly"
+      ],
+      "wrongCollocations": [
+        "engineers fret seriously"
+      ],
+      "registerLevel": 4,
+      "topicEmoji": "🧭"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L160_Q3",
+      "level": 160,
+      "cefr": "C1",
+      "subtype": "synonymSearch",
+      "difficulty": 4,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Enjoy' in the sentence.",
+      "word": "Enjoy",
+      "definition": "To savor deeply with bright cheerful appetite or eagerness.",
+      "synonym": "Relish",
+      "correctAnswer": "Relish",
+      "correctAnswerIndex": 3,
+      "options": [
+        "Love",
+        "Want",
+        "Taste",
+        "Relish"
+      ],
+      "synonyms": [
+        "Relish",
+        "Savor",
+        "Cherish"
+      ],
+      "antonyms": [
+        "Love",
+        "Want",
+        "Taste"
+      ],
+      "contextSentence": "Trail cooks ___ sizzling skillet vegetables after snowy hikes.",
+      "usageExample": "Trail cooks relish sizzling skillet vegetables after snowy hikes.",
+      "nuanceDifference": "'Enjoy' watches parks (`enjoy songs`). 'Relish' savors spicy food OR eagerly embraces tough exciting challenges (`relish challenge`).",
+      "explanation": "Natural — savoring bold flavors or hard tests takes 'relish'.",
+      "hint": "Fits expressions like \"___ challenge\" — starts with 'R'.",
+      "gradientScale": [
+        "Enjoy",
+        "Relish",
+        "Cherish",
+        "Appreciate"
+      ],
+      "collocations": [
+        "relish challenge",
+        "often relish the"
+      ],
+      "wrongCollocations": [
+        "to relish resting"
+      ],
+      "registerLevel": 4,
+      "topicEmoji": "✨"
+    }
+  ]
 }

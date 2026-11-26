@@ -1,517 +1,1497 @@
 {
-    "levels": "1-10",
-    "quests": [
-        {
-            "id": "VOC_SYNONYMSEARCH_L1_Q1",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Big",
-            "hint": "Describes something that takes up a lot of space.",
-            "explanation": "\"Large\" is the everyday word people reach for instead of \"big\" \u2014 it works for a large pizza, a large crowd, or a large house.",
-            "interactionType": "search",
-            "correctAnswer": "Large",
-            "options": [
-                "Tiny",
-                "Narrow",
-                "Large",
-                "Short"
-            ],
-            "nuanceDifference": "Both words are neutral and interchangeable in almost every situation; \"large\" simply sounds a touch more polished in writing.",
-            "contextSentence": "The elephant is a very large animal."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L1_Q2",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Happy",
-            "hint": "A feeling of joy or pleasure.",
-            "explanation": "\"Glad\" is a warm, everyday way to say you're happy about something specific, as in \"I'm so glad you came.\"",
-            "interactionType": "search",
-            "correctAnswer": "Glad",
-            "options": [
-                "Upset",
-                "Nervous",
-                "Bored",
-                "Glad"
-            ],
-            "nuanceDifference": "\"Glad\" is usually followed by a reason (glad that/glad you came), while \"happy\" can stand alone to describe a general mood.",
-            "contextSentence": "I am so glad you came to my party."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L1_Q3",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Fast",
-            "hint": "Moving or happening with great speed.",
-            "explanation": "\"Quick\" describes the same speed as \"fast,\" but it's often used for short actions \u2014 a quick shower, a quick reply, a quick trip.",
-            "interactionType": "search",
-            "correctAnswer": "Quick",
-            "options": [
-                "Slow",
-                "Quick",
-                "Lazy",
-                "Careful"
-            ],
-            "nuanceDifference": "\"Quick\" leans toward brief actions, while \"fast\" more often describes speed of movement itself, like a fast car.",
-            "contextSentence": "He took a quick shower before work."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L2_Q1",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Easy",
-            "hint": "Not difficult to do or understand.",
-            "explanation": "\"Simple\" describes a task with very little difficulty \u2014 instructions that are easy to follow are, by definition, simple ones.",
-            "interactionType": "search",
-            "correctAnswer": "Simple",
-            "options": [
-                "Simple",
-                "Confusing",
-                "Complicated",
-                "Risky"
-            ],
-            "nuanceDifference": "\"Simple\" often highlights a lack of unnecessary parts, while \"easy\" focuses on how little effort something takes.",
-            "contextSentence": "The instructions were simple to follow."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L2_Q2",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Begin",
-            "hint": "To do the first part of something.",
-            "explanation": "To \"start\" something is to begin it \u2014 the two are almost always interchangeable, as in \"Let's start the meeting.\"",
-            "interactionType": "search",
-            "correctAnswer": "Start",
-            "options": [
-                "Finish",
-                "Delay",
-                "Cancel",
-                "Start"
-            ],
-            "nuanceDifference": "\"Start\" is the more common, conversational choice; \"begin\" tends to appear in slightly more formal or written English.",
-            "contextSentence": "We will start the meeting at 9 AM."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L2_Q3",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Small",
-            "hint": "Not large in size, amount, or degree.",
-            "explanation": "\"Little\" means the same as \"small\" and is common in everyday speech, especially when describing size affectionately, like a little dog.",
-            "interactionType": "search",
-            "correctAnswer": "Little",
-            "options": [
-                "Huge",
-                "Little",
-                "Wide",
-                "Tall"
-            ],
-            "nuanceDifference": "\"Little\" often carries a warmer, more personal tone than the more neutral \"small.\"",
-            "contextSentence": "She adopted a little kitten from the shelter."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L3_Q1",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Buy",
-            "hint": "To get something by paying money for it.",
-            "explanation": "\"Purchase\" is simply a more formal word for \"buy,\" the kind you'll see printed on receipts and store signs.",
-            "interactionType": "search",
-            "correctAnswer": "Purchase",
-            "options": [
-                "Purchase",
-                "Return",
-                "Sell",
-                "Borrow"
-            ],
-            "nuanceDifference": "\"Purchase\" sounds more businesslike than \"buy,\" which is why it appears in contracts and store policies rather than casual chat.",
-            "contextSentence": "I need to purchase a new laptop."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L3_Q2",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Cheap",
-            "hint": "Costing very little money.",
-            "explanation": "\"Inexpensive\" is a softer, slightly more polite way of saying \"cheap\" \u2014 both describe a low price.",
-            "interactionType": "search",
-            "correctAnswer": "Inexpensive",
-            "options": [
-                "Costly",
-                "Priceless",
-                "Inexpensive",
-                "Overpriced"
-            ],
-            "nuanceDifference": "\"Inexpensive\" avoids the negative undertone \"cheap\" can carry, which sometimes suggests poor quality.",
-            "contextSentence": "We found an inexpensive restaurant for lunch."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L3_Q3",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Store",
-            "hint": "A place where people go to buy things.",
-            "explanation": "In everyday English, \"store\" and \"shop\" both name a place where you go to buy things.",
-            "interactionType": "search",
-            "correctAnswer": "Shop",
-            "options": [
-                "Library",
-                "Hospital",
-                "School",
-                "Shop"
-            ],
-            "nuanceDifference": "\"Shop\" is more common in British English, while \"store\" is the everyday choice in American English; both mean the same place.",
-            "contextSentence": "She went to the shop to buy some milk."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L4_Q1",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Tasty",
-            "hint": "Having a very pleasant flavor.",
-            "explanation": "Calling food \"delicious\" is just a stronger, equally common way of saying it's tasty.",
-            "interactionType": "search",
-            "correctAnswer": "Delicious",
-            "options": [
-                "Bland",
-                "Rotten",
-                "Delicious",
-                "Sour"
-            ],
-            "nuanceDifference": "\"Delicious\" is slightly more enthusiastic than \"tasty,\" which is why people reach for it when praising a great meal.",
-            "contextSentence": "The cake was absolutely delicious."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L4_Q2",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Meal",
-            "hint": "Food eaten at a particular time, like breakfast or dinner.",
-            "explanation": "\"Dish\" can describe a meal or a single item of food prepared and served, especially at a restaurant.",
-            "interactionType": "search",
-            "correctAnswer": "Dish",
-            "options": [
-                "Snack",
-                "Dish",
-                "Drink",
-                "Menu"
-            ],
-            "nuanceDifference": "\"Dish\" often refers to one prepared item within a meal, while \"meal\" covers the whole sitting, such as dinner.",
-            "contextSentence": "The chef's signature dish is a spicy noodle soup."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L4_Q3",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Cook",
-            "hint": "To make food ready to eat by heating it.",
-            "explanation": "To \"prepare\" a meal covers the same ground as \"cook\" \u2014 recipes and menus use \"prepare\" this way constantly.",
-            "interactionType": "search",
-            "correctAnswer": "Prepare",
-            "options": [
-                "Prepare",
-                "Order",
-                "Serve",
-                "Eat"
-            ],
-            "nuanceDifference": "\"Prepare\" is broader and can include chopping and mixing, not just applying heat, but it's commonly used for cooking overall.",
-            "contextSentence": "She likes to prepare dinner for her family every night."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L5_Q1",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Family",
-            "hint": "The people related to you, like parents and grandparents.",
-            "explanation": "\"Relatives\" refers to the people connected to you by blood or marriage \u2014 the same people you'd call your family.",
-            "interactionType": "search",
-            "correctAnswer": "Relatives",
-            "options": [
-                "Relatives",
-                "Strangers",
-                "Classmates",
-                "Neighbors"
-            ],
-            "nuanceDifference": "\"Relatives\" is often used for extended family, while \"family\" can also mean just parents and siblings.",
-            "contextSentence": "All my relatives are coming for Thanksgiving."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L5_Q2",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Kid",
-            "hint": "A young person who is not yet an adult.",
-            "explanation": "\"Kid\" is just a casual, everyday way of saying \"child\" \u2014 both describe a young person.",
-            "interactionType": "search",
-            "correctAnswer": "Child",
-            "options": [
-                "Adult",
-                "Parent",
-                "Child",
-                "Teenager"
-            ],
-            "nuanceDifference": "\"Child\" is the neutral, formal term you'd use in writing, while \"kid\" is the relaxed version used in conversation.",
-            "contextSentence": "The child was playing happily in the park."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L5_Q3",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Marry",
-            "hint": "To become someone's husband or wife.",
-            "explanation": "\"Wed\" is a shorter, slightly formal version of \"marry,\" often seen in headlines like \"Couple to Wed This Summer.\"",
-            "interactionType": "search",
-            "correctAnswer": "Wed",
-            "options": [
-                "Divorce",
-                "Date",
-                "Meet",
-                "Wed"
-            ],
-            "nuanceDifference": "\"Wed\" is common in formal announcements and news headlines, while \"marry\" is used in everyday speech.",
-            "contextSentence": "They plan to wed next spring."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L6_Q1",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Teach",
-            "hint": "To help someone learn something by giving them information.",
-            "explanation": "\"Instruct\" means the same as \"teach\" but sounds more formal, the kind of word used in official course descriptions.",
-            "interactionType": "search",
-            "correctAnswer": "Instruct",
-            "options": [
-                "Learn",
-                "Instruct",
-                "Study",
-                "Ignore"
-            ],
-            "nuanceDifference": "\"Instruct\" is more formal and often used for structured lessons, while \"teach\" fits any situation, formal or casual.",
-            "contextSentence": "The coach will instruct the new players on the rules."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L6_Q2",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Smart",
-            "hint": "Having the ability to learn and think quickly.",
-            "explanation": "\"Clever\" describes someone who picks things up quickly, which is exactly what \"smart\" means too.",
-            "interactionType": "search",
-            "correctAnswer": "Clever",
-            "options": [
-                "Foolish",
-                "Slow",
-                "Careless",
-                "Clever"
-            ],
-            "nuanceDifference": "\"Clever\" sometimes hints at quick, practical thinking or wit, while \"smart\" is the more general, everyday word for intelligence.",
-            "contextSentence": "The clever dog learned a new trick in minutes."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L6_Q3",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Test",
-            "hint": "A set of questions used to check what someone has learned.",
-            "explanation": "\"Exam\" is simply a more formal word for \"test\" \u2014 both describe questions used to check what you've learned.",
-            "interactionType": "search",
-            "correctAnswer": "Exam",
-            "options": [
-                "Exam",
-                "Lesson",
-                "Homework",
-                "Holiday"
-            ],
-            "nuanceDifference": "\"Exam\" usually refers to a bigger, more official test, like a final exam, while \"test\" can be small or large.",
-            "contextSentence": "She passed her final exam with flying colors."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L7_Q1",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Job",
-            "hint": "The regular activity someone does to earn money.",
-            "explanation": "In casual conversation, \"work\" often stands in for \"job\" \u2014 \"How's work going?\" means the same as \"How's your job going?\"",
-            "interactionType": "search",
-            "correctAnswer": "Work",
-            "options": [
-                "Hobby",
-                "Vacation",
-                "Work",
-                "Game"
-            ],
-            "nuanceDifference": "\"Work\" can also mean the activity of doing tasks, while \"job\" more specifically names the position you hold.",
-            "contextSentence": "He goes to work every morning at eight."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L7_Q2",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Boss",
-            "hint": "The person in charge of employees at a company.",
-            "explanation": "A \"manager\" is the person in charge at a workplace \u2014 in everyday speech, most people just call this person their boss.",
-            "interactionType": "search",
-            "correctAnswer": "Manager",
-            "options": [
-                "Customer",
-                "Manager",
-                "Trainee",
-                "Visitor"
-            ],
-            "nuanceDifference": "\"Manager\" is the official job title, while \"boss\" is the informal word employees use in conversation.",
-            "contextSentence": "The manager approved my vacation request."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L7_Q3",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Hire",
-            "hint": "To give someone a job.",
-            "explanation": "\"Employ\" means the same as \"hire,\" though it sounds more formal and is common in business writing.",
-            "interactionType": "search",
-            "correctAnswer": "Employ",
-            "options": [
-                "Employ",
-                "Fire",
-                "Train",
-                "Interview"
-            ],
-            "nuanceDifference": "\"Employ\" is often used to describe an ongoing arrangement (\"the company employs 200 people\"), while \"hire\" focuses on the moment someone joins.",
-            "contextSentence": "The company plans to employ ten new graduates this year."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L8_Q1",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Trip",
-            "hint": "An act of traveling from one place to another.",
-            "explanation": "\"Journey\" is a slightly more descriptive word for \"trip,\" especially when the travel covers real distance.",
-            "interactionType": "search",
-            "correctAnswer": "Journey",
-            "options": [
-                "Ticket",
-                "Map",
-                "Hotel",
-                "Journey"
-            ],
-            "nuanceDifference": "\"Journey\" often sounds longer or more meaningful, while \"trip\" is the everyday word for any travel, short or long.",
-            "contextSentence": "The journey across the desert was long and difficult."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L8_Q2",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Holiday",
-            "hint": "A period of time away from work or school for rest or travel.",
-            "explanation": "\"Vacation\" is the American English word for what British English calls a \"holiday\" \u2014 both mean time off for travel or rest.",
-            "interactionType": "search",
-            "correctAnswer": "Vacation",
-            "options": [
-                "Weekend",
-                "Vacation",
-                "Meeting",
-                "Deadline"
-            ],
-            "nuanceDifference": "\"Vacation\" is standard in American English, while \"holiday\" is used the same way in British English.",
-            "contextSentence": "We are planning a vacation to the coast this summer."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L8_Q3",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Arrive",
-            "hint": "To get to the place you were traveling to.",
-            "explanation": "To \"reach\" a place is to arrive there \u2014 you'll hear both used for finishing a trip, like \"We finally reached the hotel.\"",
-            "interactionType": "search",
-            "correctAnswer": "Reach",
-            "options": [
-                "Depart",
-                "Leave",
-                "Reach",
-                "Wait"
-            ],
-            "nuanceDifference": "\"Reach\" often emphasizes the effort of getting somewhere, while \"arrive\" simply states that you got there.",
-            "contextSentence": "We will reach the hotel by noon."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L9_Q1",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Call",
-            "hint": "To speak to someone by telephone.",
-            "explanation": "\"Ring\" is a common, informal way of saying \"call,\" especially in British English, as in \"I'll ring you later.\"",
-            "interactionType": "search",
-            "correctAnswer": "Ring",
-            "options": [
-                "Text",
-                "Email",
-                "Visit",
-                "Ring"
-            ],
-            "nuanceDifference": "\"Ring\" is used mainly in British English for phone calls, while \"call\" is understood everywhere.",
-            "contextSentence": "I'll ring you later this evening."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L9_Q2",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Message",
-            "hint": "A short piece of information sent to someone.",
-            "explanation": "\"Text\" can refer to a short written message sent by phone, the same thing many people mean by \"message.\"",
-            "interactionType": "search",
-            "correctAnswer": "Text",
-            "options": [
-                "Call",
-                "Text",
-                "Letter",
-                "Email"
-            ],
-            "nuanceDifference": "\"Text\" specifically means a message sent by phone, while \"message\" is the general word for any communication.",
-            "contextSentence": "She sent a quick text to confirm the plans."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L9_Q3",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Fix",
-            "hint": "To make something that is broken work again.",
-            "explanation": "When a repair shop \"fixes\" your phone, they're doing exactly what the word \"repair\" describes: correcting something broken.",
-            "interactionType": "search",
-            "correctAnswer": "Repair",
-            "options": [
-                "Break",
-                "Lose",
-                "Repair",
-                "Damage"
-            ],
-            "nuanceDifference": "\"Repair\" sounds slightly more technical or professional, while \"fix\" is the everyday word for the same action.",
-            "contextSentence": "The mechanic will repair my car today."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L10_Q1",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Sick",
-            "hint": "Not feeling well; suffering from a disease.",
-            "explanation": "\"Ill\" is a slightly more formal word for \"sick\" \u2014 both describe not feeling well.",
-            "interactionType": "search",
-            "correctAnswer": "Ill",
-            "options": [
-                "Ill",
-                "Healthy",
-                "Fit",
-                "Strong"
-            ],
-            "nuanceDifference": "\"Ill\" is common in British English and formal writing, while \"sick\" is the everyday word in American English.",
-            "contextSentence": "He felt ill and went home early."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L10_Q2",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Tired",
-            "hint": "Needing rest because you have little energy.",
-            "explanation": "\"Weary\" describes the same lack of energy as \"tired,\" though it often suggests tiredness built up over time.",
-            "interactionType": "search",
-            "correctAnswer": "Weary",
-            "options": [
-                "Energetic",
-                "Weary",
-                "Active",
-                "Refreshed"
-            ],
-            "nuanceDifference": "\"Weary\" often implies exhaustion from something long or difficult, while \"tired\" can describe any level of low energy.",
-            "contextSentence": "After the long shift, the nurse felt weary."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L10_Q3",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Doctor",
-            "hint": "A person trained to treat sick people.",
-            "explanation": "\"Physician\" is the formal term you'll see on medical paperwork for what most people simply call a doctor.",
-            "interactionType": "search",
-            "correctAnswer": "Physician",
-            "options": [
-                "Physician",
-                "Patient",
-                "Nurse",
-                "Pharmacist"
-            ],
-            "nuanceDifference": "\"Physician\" is used in official or medical contexts, while \"doctor\" is the word people use in everyday conversation.",
-            "contextSentence": "The physician examined the patient carefully."
-        }
-    ],
-    "gameType": "synonymSearch",
-    "batchIndex": 1
+  "gameType": "synonymSearch",
+  "phase": "mastery",
+  "cefr": "A2",
+  "difficulty": 1,
+  "batchIndex": 1,
+  "levels": "1-10",
+  "quests": [
+    {
+      "id": "VOC_SYNONYMSEARCH_L1_Q1",
+      "level": 1,
+      "cefr": "A2",
+      "subtype": "synonymSearch",
+      "difficulty": 1,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Big' in the sentence.",
+      "word": "Big",
+      "definition": "Of considerable physical size, capacity, or quantity.",
+      "synonym": "Large",
+      "correctAnswer": "Large",
+      "correctAnswerIndex": 2,
+      "options": [
+        "Grand",
+        "Wide",
+        "Large",
+        "Heavy"
+      ],
+      "synonyms": [
+        "Large",
+        "Huge",
+        "Massive"
+      ],
+      "antonyms": [
+        "Tiny",
+        "Narrow",
+        "Short"
+      ],
+      "contextSentence": "The elephant is a very ___ animal.",
+      "usageExample": "A large crowd waited outside the gates.",
+      "nuanceDifference": "'Big' carries emotional weight (big deal, big mistake). 'Large' is neutral, factual, and measurable.",
+      "explanation": "'Large' matches 'big' for measurable physical size — a large pizza, a large room, or a large crowd.",
+      "hint": "Look for a factual size word used in '___ crowd' or '___ amount'.",
+      "gradientScale": [
+        "Big",
+        "Large",
+        "Huge",
+        "Massive"
+      ],
+      "collocations": [
+        "large crowd",
+        "large amount"
+      ],
+      "wrongCollocations": [
+        "large mistake"
+      ],
+      "registerLevel": 2,
+      "topicEmoji": "📏"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L1_Q2",
+      "level": 1,
+      "cefr": "A2",
+      "subtype": "synonymSearch",
+      "difficulty": 1,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Happy' in the sentence.",
+      "word": "Happy",
+      "definition": "Pleased and relieved about a specific event or outcome.",
+      "synonym": "Glad",
+      "correctAnswer": "Glad",
+      "correctAnswerIndex": 3,
+      "options": [
+        "Merry",
+        "Calm",
+        "Proud",
+        "Glad"
+      ],
+      "synonyms": [
+        "Glad",
+        "Cheerful",
+        "Delighted"
+      ],
+      "antonyms": [
+        "Upset",
+        "Nervous",
+        "Bored"
+      ],
+      "contextSentence": "I am so ___ you came to my birthday dinner.",
+      "usageExample": "We are glad that the rain stopped early.",
+      "nuanceDifference": "'Happy' can describe your overall mood or life. 'Glad' almost always points to a specific event or relief.",
+      "explanation": "'Glad' pairs naturally with reasons and gratitude, such as 'I am so glad you came.'",
+      "hint": "Think of a 4-letter warm reaction word for 'I am so ___ you came'.",
+      "gradientScale": [
+        "Glad",
+        "Happy",
+        "Delighted",
+        "Ecstatic"
+      ],
+      "collocations": [
+        "glad you came",
+        "glad to help"
+      ],
+      "wrongCollocations": [
+        "a glad person"
+      ],
+      "registerLevel": 2,
+      "topicEmoji": "😊"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L1_Q3",
+      "level": 1,
+      "cefr": "A2",
+      "subtype": "synonymSearch",
+      "difficulty": 1,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Fast' in the sentence.",
+      "word": "Fast",
+      "definition": "Happening briefly or completed in very little time.",
+      "synonym": "Quick",
+      "correctAnswer": "Quick",
+      "correctAnswerIndex": 0,
+      "options": [
+        "Quick",
+        "Sudden",
+        "Steep",
+        "Active"
+      ],
+      "synonyms": [
+        "Quick",
+        "Brisk",
+        "Rapid"
+      ],
+      "antonyms": [
+        "Slow",
+        "Lazy",
+        "Delayed"
+      ],
+      "contextSentence": "He took one ___ shower before catching the bus.",
+      "usageExample": "She sent a quick message to confirm.",
+      "nuanceDifference": "'Fast' emphasizes high travel speed. 'Quick' emphasizes an action finished in brief duration.",
+      "explanation": "'Quick' shares the sense of speed with 'fast' but highlights short actions like a quick reply or quick lunch.",
+      "hint": "Commonly used in '___ reply' and '___ shower'.",
+      "gradientScale": [
+        "Brisk",
+        "Fast",
+        "Quick",
+        "Rapid"
+      ],
+      "collocations": [
+        "quick shower",
+        "quick reply"
+      ],
+      "wrongCollocations": [
+        "quick car"
+      ],
+      "registerLevel": 2,
+      "topicEmoji": "⚡"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L2_Q1",
+      "level": 2,
+      "cefr": "A2",
+      "subtype": "synonymSearch",
+      "difficulty": 1,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Easy' in the sentence.",
+      "word": "Easy",
+      "definition": "Uncomplicated, plain, and clear to understand.",
+      "synonym": "Simple",
+      "correctAnswer": "Simple",
+      "correctAnswerIndex": 3,
+      "options": [
+        "Gentle",
+        "Quiet",
+        "Mild",
+        "Simple"
+      ],
+      "synonyms": [
+        "Simple",
+        "Clear",
+        "Effortless"
+      ],
+      "antonyms": [
+        "Confusing",
+        "Hard",
+        "Risky"
+      ],
+      "contextSentence": "The new software steps are ___ to follow.",
+      "usageExample": "Keep your presentation clear and simple.",
+      "nuanceDifference": "'Easy' means requiring little effort. 'Simple' means plain, clear, and free of complex parts.",
+      "explanation": "'Simple' matches 'easy' when something has few steps or parts, like a simple recipe or simple rule.",
+      "hint": "Fits naturally in '___ rules' and '___ recipe'.",
+      "gradientScale": [
+        "Simple",
+        "Easy",
+        "Smooth",
+        "Effortless"
+      ],
+      "collocations": [
+        "simple rules",
+        "simple recipe"
+      ],
+      "wrongCollocations": [
+        "simple lifting"
+      ],
+      "registerLevel": 2,
+      "topicEmoji": "🧩"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L2_Q2",
+      "level": 2,
+      "cefr": "A2",
+      "subtype": "synonymSearch",
+      "difficulty": 1,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Begin' in the sentence.",
+      "word": "Begin",
+      "definition": "To set an activity, trip, or machine in motion.",
+      "synonym": "Start",
+      "correctAnswer": "Start",
+      "correctAnswerIndex": 0,
+      "options": [
+        "Start",
+        "Lead",
+        "Enter",
+        "Move"
+      ],
+      "synonyms": [
+        "Start",
+        "Launch",
+        "Commence"
+      ],
+      "antonyms": [
+        "Finish",
+        "Delay",
+        "Cancel"
+      ],
+      "contextSentence": "We will ___ the team meeting at nine.",
+      "usageExample": "Press green to start the coffee machine.",
+      "nuanceDifference": "'Start' works for everyday chat and physical machines. 'Begin' suits formal events and written stories.",
+      "explanation": "'Start' is the natural everyday synonym for 'begin' — and the only natural choice for engines and buttons.",
+      "hint": "Works for '___ a car' and '___ a meeting'.",
+      "gradientScale": [
+        "Start",
+        "Begin",
+        "Launch",
+        "Commence"
+      ],
+      "collocations": [
+        "start the car",
+        "start a meeting"
+      ],
+      "wrongCollocations": [
+        "begin the engine"
+      ],
+      "registerLevel": 1,
+      "topicEmoji": "🚀"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L2_Q3",
+      "level": 2,
+      "cefr": "A2",
+      "subtype": "synonymSearch",
+      "difficulty": 1,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Small' in the sentence.",
+      "word": "Small",
+      "definition": "Compact in size, often spoken with warmth or affection.",
+      "synonym": "Little",
+      "correctAnswer": "Little",
+      "correctAnswerIndex": 1,
+      "options": [
+        "Narrow",
+        "Little",
+        "Slight",
+        "Brief"
+      ],
+      "synonyms": [
+        "Little",
+        "Tiny",
+        "Compact"
+      ],
+      "antonyms": [
+        "Huge",
+        "Wide",
+        "Tall"
+      ],
+      "contextSentence": "She adopted a ___ kitten from the shelter.",
+      "usageExample": "Take a little break before lunch.",
+      "nuanceDifference": "'Small' is neutral and objective. 'Little' carries warmth, affection, or casual charm.",
+      "explanation": "'Little' matches 'small' in meaning while adding a warm, personal touch in everyday speech.",
+      "hint": "Used affectionately in 'a ___ kitten' or 'a ___ while'.",
+      "gradientScale": [
+        "Small",
+        "Little",
+        "Tiny",
+        "Microscopic"
+      ],
+      "collocations": [
+        "little kitten",
+        "little while"
+      ],
+      "wrongCollocations": [
+        "little shirt size"
+      ],
+      "registerLevel": 1,
+      "topicEmoji": "🐶"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L3_Q1",
+      "level": 3,
+      "cefr": "A2",
+      "subtype": "synonymSearch",
+      "difficulty": 1,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Buy' in the sentence.",
+      "word": "Buy",
+      "definition": "To obtain something formally by paying money, often on receipts or contracts.",
+      "synonym": "Purchase",
+      "correctAnswer": "Purchase",
+      "correctAnswerIndex": 0,
+      "options": [
+        "Purchase",
+        "Trade",
+        "Lease",
+        "Borrow"
+      ],
+      "synonyms": [
+        "Purchase",
+        "Shop for",
+        "Acquire"
+      ],
+      "antonyms": [
+        "Return",
+        "Sell",
+        "Borrow"
+      ],
+      "contextSentence": "I need to ___ a new laptop for work.",
+      "usageExample": "Thank you for your recent online purchase.",
+      "nuanceDifference": "'Buy' is everyday conversation. 'Purchase' appears on receipts, invoices, and business policies.",
+      "explanation": "'Purchase' means the same as 'buy' but fits business writing, invoices, and official store policies.",
+      "hint": "Common on store receipts: 'proof of ___'.",
+      "gradientScale": [
+        "Buy",
+        "Purchase",
+        "Acquire"
+      ],
+      "collocations": [
+        "purchase a ticket",
+        "proof of purchase"
+      ],
+      "wrongCollocations": [
+        "purchase an ice cream"
+      ],
+      "registerLevel": 3,
+      "topicEmoji": "🧾"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L3_Q2",
+      "level": 3,
+      "cefr": "A2",
+      "subtype": "synonymSearch",
+      "difficulty": 1,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Cheap' in the sentence.",
+      "word": "Cheap",
+      "definition": "Costing relatively little money without suggesting poor quality.",
+      "synonym": "Inexpensive",
+      "correctAnswer": "Inexpensive",
+      "correctAnswerIndex": 1,
+      "options": [
+        "Plain",
+        "Inexpensive",
+        "Simple",
+        "Modest"
+      ],
+      "synonyms": [
+        "Inexpensive",
+        "Budget",
+        "Affordable"
+      ],
+      "antonyms": [
+        "Costly",
+        "Priceless",
+        "Overpriced"
+      ],
+      "contextSentence": "We found one ___ cafe near the museum.",
+      "usageExample": "Handmade gifts can be thoughtful yet inexpensive.",
+      "nuanceDifference": "'Cheap' can insult quality as flimsy. 'Inexpensive' highlights fair value without insulting craft.",
+      "explanation": "'Inexpensive' replaces 'cheap' whenever you want to compliment good value politely.",
+      "hint": "Polite 11-letter synonym for low price + good quality.",
+      "gradientScale": [
+        "Cheap",
+        "Budget",
+        "Inexpensive",
+        "Economical"
+      ],
+      "collocations": [
+        "inexpensive meal",
+        "inexpensive gift"
+      ],
+      "wrongCollocations": [
+        "inexpensive junk"
+      ],
+      "registerLevel": 3,
+      "topicEmoji": "💎"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L3_Q3",
+      "level": 3,
+      "cefr": "A2",
+      "subtype": "synonymSearch",
+      "difficulty": 1,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Store' in the sentence.",
+      "word": "Store",
+      "definition": "A retail building or small business where customers buy goods.",
+      "synonym": "Shop",
+      "correctAnswer": "Shop",
+      "correctAnswerIndex": 2,
+      "options": [
+        "Market",
+        "Stand",
+        "Shop",
+        "Booth"
+      ],
+      "synonyms": [
+        "Shop",
+        "Stall",
+        "Boutique"
+      ],
+      "antonyms": [
+        "Library",
+        "Hospital",
+        "School"
+      ],
+      "contextSentence": "She walked to the local ___ for fresh milk.",
+      "usageExample": "The gift shop near the exit sells postcards.",
+      "nuanceDifference": "'Store' is the everyday American term. 'Shop' is the everyday British term, or a small boutique anywhere.",
+      "explanation": "'Shop' matches 'store' in meaning — standard across British English and small specialty boutiques.",
+      "hint": "4-letter synonym common in 'gift ___' and UK speech.",
+      "gradientScale": [
+        "Stall",
+        "Shop",
+        "Store"
+      ],
+      "collocations": [
+        "gift shop",
+        "corner shop"
+      ],
+      "wrongCollocations": [
+        "app shop"
+      ],
+      "registerLevel": 1,
+      "topicEmoji": "🏬"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L4_Q1",
+      "level": 4,
+      "cefr": "A2",
+      "subtype": "synonymSearch",
+      "difficulty": 1,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Tasty' in the sentence.",
+      "word": "Tasty",
+      "definition": "Delightfully pleasing to taste, inspiring strong praise.",
+      "synonym": "Delicious",
+      "correctAnswer": "Delicious",
+      "correctAnswerIndex": 1,
+      "options": [
+        "Fresh",
+        "Delicious",
+        "Sweet",
+        "Crisp"
+      ],
+      "synonyms": [
+        "Delicious",
+        "Flavorful",
+        "Savory"
+      ],
+      "antonyms": [
+        "Bland",
+        "Rotten",
+        "Sour"
+      ],
+      "contextSentence": "The homemade cake was absolutely ___.",
+      "usageExample": "That mango smoothie tastes delicious.",
+      "nuanceDifference": "'Tasty' gives a casual, moderate compliment. 'Delicious' expresses strong enthusiasm for great food.",
+      "explanation": "'Delicious' amplifies 'tasty' into warm, enthusiastic praise for a standout meal or dessert.",
+      "hint": "Often paired with 'absolutely ___'.",
+      "gradientScale": [
+        "Tasty",
+        "Delicious",
+        "Exquisite"
+      ],
+      "collocations": [
+        "absolutely delicious",
+        "delicious meal"
+      ],
+      "wrongCollocations": [
+        "very delicious"
+      ],
+      "registerLevel": 2,
+      "topicEmoji": "🍰"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L4_Q2",
+      "level": 4,
+      "cefr": "A2",
+      "subtype": "synonymSearch",
+      "difficulty": 1,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Meal' in the sentence.",
+      "word": "Meal",
+      "definition": "A specific prepared food item or recipe served on a plate.",
+      "synonym": "Dish",
+      "correctAnswer": "Dish",
+      "correctAnswerIndex": 2,
+      "options": [
+        "Plate",
+        "Bowl",
+        "Dish",
+        "Feast"
+      ],
+      "synonyms": [
+        "Dish",
+        "Snack",
+        "Course"
+      ],
+      "antonyms": [
+        "Drink",
+        "Menu",
+        "Napkin"
+      ],
+      "contextSentence": "The chef's signature ___ is spicy noodle soup.",
+      "usageExample": "Try their famous seafood dish tonight.",
+      "nuanceDifference": "'Meal' covers the entire sitting (breakfast, dinner). 'Dish' names one specific prepared recipe item.",
+      "explanation": "'Dish' overlaps with 'meal' at restaurants, focusing on one specific recipe rather than the whole sitting.",
+      "hint": "Paired in 'signature ___' and 'main ___'.",
+      "gradientScale": [
+        "Snack",
+        "Dish",
+        "Meal",
+        "Feast"
+      ],
+      "collocations": [
+        "signature dish",
+        "side dish"
+      ],
+      "wrongCollocations": [
+        "main snack"
+      ],
+      "registerLevel": 2,
+      "topicEmoji": "🍲"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L4_Q3",
+      "level": 4,
+      "cefr": "A2",
+      "subtype": "synonymSearch",
+      "difficulty": 1,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Cook' in the sentence.",
+      "word": "Cook",
+      "definition": "To get a dish or meal ready by chopping, mixing, or assembling.",
+      "synonym": "Prepare",
+      "correctAnswer": "Prepare",
+      "correctAnswerIndex": 3,
+      "options": [
+        "Mix",
+        "Roast",
+        "Warm",
+        "Prepare"
+      ],
+      "synonyms": [
+        "Prepare",
+        "Make",
+        "Simmer"
+      ],
+      "antonyms": [
+        "Order",
+        "Serve",
+        "Eat"
+      ],
+      "contextSentence": "She likes to ___ fresh salads for dinner.",
+      "usageExample": "Staff prepare every sauce fresh each morning.",
+      "nuanceDifference": "'Cook' requires applying heat. 'Prepare' covers washing, chopping, mixing, and planning with or without heat.",
+      "explanation": "'Prepare' broadens 'cook' to cover all kitchen steps — especially cold dishes and formal menus.",
+      "hint": "Covers cold dishes where you don't apply stove heat.",
+      "gradientScale": [
+        "Make",
+        "Cook",
+        "Prepare"
+      ],
+      "collocations": [
+        "prepare dinner",
+        "prepare a salad"
+      ],
+      "wrongCollocations": [
+        "cook a green salad"
+      ],
+      "registerLevel": 2,
+      "topicEmoji": "🥗"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L5_Q1",
+      "level": 5,
+      "cefr": "A2",
+      "subtype": "synonymSearch",
+      "difficulty": 1,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Family' in the sentence.",
+      "word": "Family",
+      "definition": "Members of your extended family such as aunts, uncles, and cousins.",
+      "synonym": "Relatives",
+      "correctAnswer": "Relatives",
+      "correctAnswerIndex": 2,
+      "options": [
+        "Guests",
+        "Hosts",
+        "Relatives",
+        "Friends"
+      ],
+      "synonyms": [
+        "Relatives",
+        "Household",
+        "Kin"
+      ],
+      "antonyms": [
+        "Strangers",
+        "Classmates",
+        "Neighbors"
+      ],
+      "contextSentence": "All my ___ are visiting for the autumn festival.",
+      "usageExample": "Many distant relatives sent warm cards.",
+      "nuanceDifference": "'Family' centers on your close household. 'Relatives' refers factually to extended aunts, uncles, and cousins.",
+      "explanation": "'Relatives' names the extended people connected by blood or marriage, while 'family' fits closer bonds.",
+      "hint": "Plural noun for extended aunts, uncles, and cousins.",
+      "gradientScale": [
+        "Household",
+        "Family",
+        "Relatives"
+      ],
+      "collocations": [
+        "distant relatives",
+        "visit relatives"
+      ],
+      "wrongCollocations": [
+        "my husband relative"
+      ],
+      "registerLevel": 2,
+      "topicEmoji": "👨‍👩‍👧"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L5_Q2",
+      "level": 5,
+      "cefr": "A2",
+      "subtype": "synonymSearch",
+      "difficulty": 1,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Kid' in the sentence.",
+      "word": "Kid",
+      "definition": "A young human being, used in neutral and formal contexts.",
+      "synonym": "Child",
+      "correctAnswer": "Child",
+      "correctAnswerIndex": 3,
+      "options": [
+        "Scout",
+        "Pupil",
+        "Baby",
+        "Child"
+      ],
+      "synonyms": [
+        "Child",
+        "Tot",
+        "Youth"
+      ],
+      "antonyms": [
+        "Adult",
+        "Parent",
+        "Elder"
+      ],
+      "contextSentence": "The ___ was playing safely near the oak tree.",
+      "usageExample": "Each child received a free museum booklet.",
+      "nuanceDifference": "'Kid' is playful, casual speech. 'Child' is neutral and required on school forms, news, and essays.",
+      "explanation": "'Child' carries the same meaning as 'kid' without the informal slang tone in essays or signs.",
+      "hint": "5-letter neutral/formal synonym of 'kid'.",
+      "gradientScale": [
+        "Kid",
+        "Child",
+        "Minor"
+      ],
+      "collocations": [
+        "young child",
+        "child seat"
+      ],
+      "wrongCollocations": [
+        "kids in the official survey"
+      ],
+      "registerLevel": 2,
+      "topicEmoji": "🎈"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L5_Q3",
+      "level": 5,
+      "cefr": "A2",
+      "subtype": "synonymSearch",
+      "difficulty": 1,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Marry' in the sentence.",
+      "word": "Marry",
+      "definition": "To join in marriage, frequently seen in headlines and formal notices.",
+      "synonym": "Wed",
+      "correctAnswer": "Wed",
+      "correctAnswerIndex": 0,
+      "options": [
+        "Wed",
+        "Join",
+        "Pair",
+        "Date"
+      ],
+      "synonyms": [
+        "Wed",
+        "Elope",
+        "Unite"
+      ],
+      "antonyms": [
+        "Divorce",
+        "Split",
+        "Part"
+      ],
+      "contextSentence": "The famous couple plan to ___ next spring.",
+      "usageExample": "Newspaper headlines read: Leaders Wed in Rome.",
+      "nuanceDifference": "'Marry' is standard spoken English. 'Wed' is reserved for newspaper headlines and formal announcements.",
+      "explanation": "'Wed' is a concise formal synonym of 'marry' used mostly in newspapers and wedding announcements.",
+      "hint": "Crisp 3-letter headline verb meaning 'marry'.",
+      "gradientScale": [
+        "Marry",
+        "Wed",
+        "Unite"
+      ],
+      "collocations": [
+        "set to wed",
+        "newly wed"
+      ],
+      "wrongCollocations": [
+        "will you wed me"
+      ],
+      "registerLevel": 2,
+      "topicEmoji": "💍"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L6_Q1",
+      "level": 6,
+      "cefr": "A2",
+      "subtype": "synonymSearch",
+      "difficulty": 1,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Teach' in the sentence.",
+      "word": "Teach",
+      "definition": "To give structured lessons, rules, or step-by-step directions.",
+      "synonym": "Instruct",
+      "correctAnswer": "Instruct",
+      "correctAnswerIndex": 3,
+      "options": [
+        "Advise",
+        "Mentor",
+        "Lead",
+        "Instruct"
+      ],
+      "synonyms": [
+        "Instruct",
+        "Show",
+        "Coach"
+      ],
+      "antonyms": [
+        "Learn",
+        "Study",
+        "Ignore"
+      ],
+      "contextSentence": "The coach will ___ new players on court rules.",
+      "usageExample": "Manuals instruct users how to reset devices.",
+      "nuanceDifference": "'Teach' nurtures broad understanding. 'Instruct' delivers structured rules, drills, or step-by-step orders.",
+      "explanation": "'Instruct' overlaps with 'teach' when training rules, drills, or formal coursework.",
+      "hint": "Formal 8-letter verb for structured training.",
+      "gradientScale": [
+        "Show",
+        "Teach",
+        "Instruct"
+      ],
+      "collocations": [
+        "instruct players",
+        "instruct staff"
+      ],
+      "wrongCollocations": [
+        "instruct reading joy"
+      ],
+      "registerLevel": 2,
+      "topicEmoji": "📋"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L6_Q2",
+      "level": 6,
+      "cefr": "A2",
+      "subtype": "synonymSearch",
+      "difficulty": 1,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Smart' in the sentence.",
+      "word": "Smart",
+      "definition": "Quick-witted, resourceful, and inventive in solving tricky problems.",
+      "synonym": "Clever",
+      "correctAnswer": "Clever",
+      "correctAnswerIndex": 0,
+      "options": [
+        "Clever",
+        "Polite",
+        "Eager",
+        "Calm"
+      ],
+      "synonyms": [
+        "Clever",
+        "Sharp",
+        "Bright"
+      ],
+      "antonyms": [
+        "Foolish",
+        "Slow",
+        "Careless"
+      ],
+      "contextSentence": "The ___ border collie learned three tricks today.",
+      "usageExample": "That clever design saves half the shelf space.",
+      "nuanceDifference": "'Smart' covers broad intelligence. 'Clever' highlights quick practical wit or an ingenious twist.",
+      "explanation": "'Clever' shares intelligence with 'smart' while spotlighting ingenuity, humor, or British everyday use.",
+      "hint": "6-letter word linked with quick wit and tricks.",
+      "gradientScale": [
+        "Clever",
+        "Smart",
+        "Bright",
+        "Brilliant"
+      ],
+      "collocations": [
+        "clever trick",
+        "clever solution"
+      ],
+      "wrongCollocations": [
+        "too clever scheme"
+      ],
+      "registerLevel": 2,
+      "topicEmoji": "💡"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L6_Q3",
+      "level": 6,
+      "cefr": "A2",
+      "subtype": "synonymSearch",
+      "difficulty": 1,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Test' in the sentence.",
+      "word": "Test",
+      "definition": "A formal, comprehensive evaluation such as a school final or license check.",
+      "synonym": "Exam",
+      "correctAnswer": "Exam",
+      "correctAnswerIndex": 1,
+      "options": [
+        "Draft",
+        "Exam",
+        "Essay",
+        "Grade"
+      ],
+      "synonyms": [
+        "Exam",
+        "Quiz",
+        "Checkup"
+      ],
+      "antonyms": [
+        "Lesson",
+        "Homework",
+        "Holiday"
+      ],
+      "contextSentence": "She passed her final university ___ with top marks.",
+      "usageExample": "Quiet halls are required during the state exam.",
+      "nuanceDifference": "'Test' fits quick checks or driving skills. 'Exam' designates major, high-stakes academic finals.",
+      "explanation": "'Exam' elevates 'test' to official, high-stakes evaluations that decide final grades or credentials.",
+      "hint": "Short for examination — 4 letters.",
+      "gradientScale": [
+        "Quiz",
+        "Test",
+        "Exam"
+      ],
+      "collocations": [
+        "final exam",
+        "entrance exam"
+      ],
+      "wrongCollocations": [
+        "three-question pop exam"
+      ],
+      "registerLevel": 2,
+      "topicEmoji": "🏛️"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L7_Q1",
+      "level": 7,
+      "cefr": "A2",
+      "subtype": "synonymSearch",
+      "difficulty": 1,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Job' in the sentence.",
+      "word": "Job",
+      "definition": "Regular paid activity or daily duties, used without 'a/an'.",
+      "synonym": "Work",
+      "correctAnswer": "Work",
+      "correctAnswerIndex": 0,
+      "options": [
+        "Work",
+        "Duty",
+        "Shift",
+        "Desk"
+      ],
+      "synonyms": [
+        "Work",
+        "Task",
+        "Role"
+      ],
+      "antonyms": [
+        "Hobby",
+        "Vacation",
+        "Game"
+      ],
+      "contextSentence": "He walks to ___ every morning at eight.",
+      "usageExample": "Too much late work leaves you drained.",
+      "nuanceDifference": "'Job' is a countable role ('a job, two jobs'). 'Work' is uncountable effort ('go to work', never 'a work').",
+      "explanation": "'Work' replaces 'job' when speaking about daily workplace routines without counting positions.",
+      "hint": "4-letter uncountable word in 'go to ___'.",
+      "gradientScale": [
+        "Task",
+        "Job",
+        "Work",
+        "Career"
+      ],
+      "collocations": [
+        "go to work",
+        "at work"
+      ],
+      "wrongCollocations": [
+        "a great work to earn pay"
+      ],
+      "registerLevel": 2,
+      "topicEmoji": "💼"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L7_Q2",
+      "level": 7,
+      "cefr": "A2",
+      "subtype": "synonymSearch",
+      "difficulty": 1,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Boss' in the sentence.",
+      "word": "Boss",
+      "definition": "The official workplace leader responsible for organizing a team.",
+      "synonym": "Manager",
+      "correctAnswer": "Manager",
+      "correctAnswerIndex": 1,
+      "options": [
+        "Clerk",
+        "Manager",
+        "Host",
+        "Agent"
+      ],
+      "synonyms": [
+        "Manager",
+        "Lead",
+        "Supervisor"
+      ],
+      "antonyms": [
+        "Customer",
+        "Trainee",
+        "Visitor"
+      ],
+      "contextSentence": "The department ___ approved my vacation request.",
+      "usageExample": "A supportive manager helps new staff thrive.",
+      "nuanceDifference": "'Boss' is casual spoken shorthand. 'Manager' is the polite official job title on resumes and emails.",
+      "explanation": "'Manager' serves as the respectful, formal title for the person coworkers casually call their 'boss'.",
+      "hint": "7-letter official workplace title.",
+      "gradientScale": [
+        "Lead",
+        "Boss",
+        "Manager",
+        "Executive"
+      ],
+      "collocations": [
+        "department manager",
+        "hiring manager"
+      ],
+      "wrongCollocations": [
+        "my official boss title on CV"
+      ],
+      "registerLevel": 2,
+      "topicEmoji": "👔"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L7_Q3",
+      "level": 7,
+      "cefr": "A2",
+      "subtype": "synonymSearch",
+      "difficulty": 1,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Hire' in the sentence.",
+      "word": "Hire",
+      "definition": "To keep staff on regular paid work, especially in formal writing.",
+      "synonym": "Employ",
+      "correctAnswer": "Employ",
+      "correctAnswerIndex": 2,
+      "options": [
+        "Train",
+        "Invite",
+        "Employ",
+        "Book"
+      ],
+      "synonyms": [
+        "Employ",
+        "Recruit",
+        "Staff"
+      ],
+      "antonyms": [
+        "Fire",
+        "Resign",
+        "Retire"
+      ],
+      "contextSentence": "The company plans to ___ ten engineering graduates.",
+      "usageExample": "These clinics employ skilled local therapists.",
+      "nuanceDifference": "'Hire' focuses on the initial decision to add someone. 'Employ' describes formal or ongoing employment.",
+      "explanation": "'Employ' pairs with 'hire' to describe formal, ongoing staffing across companies and institutions.",
+      "hint": "6-letter business synonym for 'hire'.",
+      "gradientScale": [
+        "Recruit",
+        "Hire",
+        "Employ"
+      ],
+      "collocations": [
+        "employ staff",
+        "employ graduates"
+      ],
+      "wrongCollocations": [
+        "employ a taxi"
+      ],
+      "registerLevel": 3,
+      "topicEmoji": "🏢"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L8_Q1",
+      "level": 8,
+      "cefr": "A2",
+      "subtype": "synonymSearch",
+      "difficulty": 1,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Trip' in the sentence.",
+      "word": "Trip",
+      "definition": "A significant or extended passage of travel from one point to another.",
+      "synonym": "Journey",
+      "correctAnswer": "Journey",
+      "correctAnswerIndex": 1,
+      "options": [
+        "Flight",
+        "Journey",
+        "Ride",
+        "Route"
+      ],
+      "synonyms": [
+        "Journey",
+        "Outing",
+        "Voyage"
+      ],
+      "antonyms": [
+        "Ticket",
+        "Map",
+        "Hotel"
+      ],
+      "contextSentence": "The ___ across the desert took four long days.",
+      "usageExample": "Every long train journey rewards patient travelers.",
+      "nuanceDifference": "'Trip' covers the whole getaway out and back. 'Journey' highlights the long travel passage itself.",
+      "explanation": "'Journey' narrows in on the travel distance and experience along the way, unlike a short 'trip'.",
+      "hint": "7-letter word highlighting the travel passage.",
+      "gradientScale": [
+        "Outing",
+        "Trip",
+        "Journey",
+        "Expedition"
+      ],
+      "collocations": [
+        "long journey",
+        "safe journey"
+      ],
+      "wrongCollocations": [
+        "short grocery journey"
+      ],
+      "registerLevel": 2,
+      "topicEmoji": "🚂"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L8_Q2",
+      "level": 8,
+      "cefr": "A2",
+      "subtype": "synonymSearch",
+      "difficulty": 1,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Holiday' in the sentence.",
+      "word": "Holiday",
+      "definition": "An extended period of rest and travel away from work or school.",
+      "synonym": "Vacation",
+      "correctAnswer": "Vacation",
+      "correctAnswerIndex": 2,
+      "options": [
+        "Weekend",
+        "Season",
+        "Vacation",
+        "Event"
+      ],
+      "synonyms": [
+        "Vacation",
+        "Break",
+        "Leave"
+      ],
+      "antonyms": [
+        "Weekend",
+        "Meeting",
+        "Deadline"
+      ],
+      "contextSentence": "We are planning one ___ to the coast this summer.",
+      "usageExample": "Taking a real vacation prevents burnout.",
+      "nuanceDifference": "'Holiday' is UK leisure time off (or a festival day in the US). 'Vacation' is the standard US word for travel leave.",
+      "explanation": "'Vacation' matches British 'holiday' for leisure trips while distinguishing personal travel from public holidays.",
+      "hint": "8-letter US term for leisure time away from work.",
+      "gradientScale": [
+        "Break",
+        "Leave",
+        "Holiday",
+        "Vacation"
+      ],
+      "collocations": [
+        "summer vacation",
+        "take a vacation"
+      ],
+      "wrongCollocations": [
+        "Thanksgiving vacation day"
+      ],
+      "registerLevel": 2,
+      "topicEmoji": "🏖️"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L8_Q3",
+      "level": 8,
+      "cefr": "A2",
+      "subtype": "synonymSearch",
+      "difficulty": 1,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Arrive' in the sentence.",
+      "word": "Arrive",
+      "definition": "To successfully get to a place without needing 'at' or 'in'.",
+      "synonym": "Reach",
+      "correctAnswer": "Reach",
+      "correctAnswerIndex": 3,
+      "options": [
+        "Enter",
+        "Visit",
+        "Cross",
+        "Reach"
+      ],
+      "synonyms": [
+        "Reach",
+        "Appear",
+        "Land"
+      ],
+      "antonyms": [
+        "Depart",
+        "Leave",
+        "Miss"
+      ],
+      "contextSentence": "We expect to ___ the coastal hotel by noon.",
+      "usageExample": "Our message should reach the office tomorrow.",
+      "nuanceDifference": "'Arrive' uses 'at' or 'in' ('arrive at school'). 'Reach' connects straight to the destination with zero preposition.",
+      "explanation": "'Reach' shares the meaning of 'arrive' while taking a direct destination and highlighting effort.",
+      "hint": "Takes a direct place name with NO 'at' or 'in'.",
+      "gradientScale": [
+        "Appear",
+        "Arrive",
+        "Reach"
+      ],
+      "collocations": [
+        "reach the hotel",
+        "reach home"
+      ],
+      "wrongCollocations": [
+        "reach at the hotel"
+      ],
+      "registerLevel": 2,
+      "topicEmoji": "🎯"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L9_Q1",
+      "level": 9,
+      "cefr": "A2",
+      "subtype": "synonymSearch",
+      "difficulty": 1,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Call' in the sentence.",
+      "word": "Call",
+      "definition": "To telephone someone, especially in British and Australian English.",
+      "synonym": "Ring",
+      "correctAnswer": "Ring",
+      "correctAnswerIndex": 2,
+      "options": [
+        "Speak",
+        "Ask",
+        "Ring",
+        "Text"
+      ],
+      "synonyms": [
+        "Ring",
+        "Ping",
+        "Dial"
+      ],
+      "antonyms": [
+        "Hang up",
+        "Mute",
+        "Ignore"
+      ],
+      "contextSentence": "I will ___ you later this evening after dinner.",
+      "usageExample": "Give the bakery a quick ring first.",
+      "nuanceDifference": "'Call' is understood worldwide. 'Ring' is natural everyday British and Australian usage for telephoning.",
+      "explanation": "'Ring' matches 'call' for making phone contact across the UK, Ireland, and Australia.",
+      "hint": "4-letter UK phone synonym of 'call'.",
+      "gradientScale": [
+        "Ping",
+        "Call",
+        "Ring",
+        "Telephone"
+      ],
+      "collocations": [
+        "give a ring",
+        "ring the office"
+      ],
+      "wrongCollocations": [
+        "ring a text"
+      ],
+      "registerLevel": 2,
+      "topicEmoji": "☎️"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L9_Q2",
+      "level": 9,
+      "cefr": "A2",
+      "subtype": "synonymSearch",
+      "difficulty": 1,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Message' in the sentence.",
+      "word": "Message",
+      "definition": "A short typed message sent via mobile phone or instant chat.",
+      "synonym": "Text",
+      "correctAnswer": "Text",
+      "correctAnswerIndex": 3,
+      "options": [
+        "Letter",
+        "Email",
+        "Alert",
+        "Text"
+      ],
+      "synonyms": [
+        "Text",
+        "Note",
+        "Memo"
+      ],
+      "antonyms": [
+        "Phone",
+        "Screen",
+        "Signal"
+      ],
+      "contextSentence": "She sent a quick ___ to confirm dinner plans.",
+      "usageExample": "Send a text when your flight lands.",
+      "nuanceDifference": "'Message' covers emails, voicemails, letters, or chats. 'Text' refers strictly to short phone SMS/chat notes.",
+      "explanation": "'Text' narrows 'message' specifically to typed mobile communication rather than audio or paper notes.",
+      "hint": "4-letter mobile SMS word.",
+      "gradientScale": [
+        "Text",
+        "Message",
+        "Notice"
+      ],
+      "collocations": [
+        "quick text",
+        "send a text"
+      ],
+      "wrongCollocations": [
+        "audio voice text"
+      ],
+      "registerLevel": 1,
+      "topicEmoji": "💬"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L9_Q3",
+      "level": 9,
+      "cefr": "A2",
+      "subtype": "synonymSearch",
+      "difficulty": 1,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Fix' in the sentence.",
+      "word": "Fix",
+      "definition": "To restore damaged equipment, structures, or machinery professionally.",
+      "synonym": "Repair",
+      "correctAnswer": "Repair",
+      "correctAnswerIndex": 0,
+      "options": [
+        "Repair",
+        "Clean",
+        "Paint",
+        "Check"
+      ],
+      "synonyms": [
+        "Repair",
+        "Patch",
+        "Mend"
+      ],
+      "antonyms": [
+        "Break",
+        "Damage",
+        "Drop"
+      ],
+      "contextSentence": "The garage mechanic will ___ my car today.",
+      "usageExample": "Workers arrived early to repair the roof.",
+      "nuanceDifference": "'Fix' fits casual issues and abstract problems. 'Repair' fits professional restoration of cars, roofs, or gear.",
+      "explanation": "'Repair' elevates 'fix' with a technical, professional tone for physical machinery and buildings.",
+      "hint": "6-letter technical synonym for fixing machines.",
+      "gradientScale": [
+        "Patch",
+        "Fix",
+        "Repair",
+        "Restore"
+      ],
+      "collocations": [
+        "repair a car",
+        "repair the roof"
+      ],
+      "wrongCollocations": [
+        "repair a typo"
+      ],
+      "registerLevel": 2,
+      "topicEmoji": "🔧"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L10_Q1",
+      "level": 10,
+      "cefr": "A2",
+      "subtype": "synonymSearch",
+      "difficulty": 1,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Sick' in the sentence.",
+      "word": "Sick",
+      "definition": "Suffering from poor health or disease, common in formal and UK writing.",
+      "synonym": "Ill",
+      "correctAnswer": "Ill",
+      "correctAnswerIndex": 3,
+      "options": [
+        "Tired",
+        "Weak",
+        "Pale",
+        "Ill"
+      ],
+      "synonyms": [
+        "Ill",
+        "Queasy",
+        "Unwell"
+      ],
+      "antonyms": [
+        "Healthy",
+        "Fit",
+        "Strong"
+      ],
+      "contextSentence": "He felt ___ and returned home early to rest.",
+      "usageExample": "The hospital treats critically ill patients.",
+      "nuanceDifference": "'Sick' is standard US speech (yet can mean nauseous in the UK). 'Ill' is formal and UK standard for disease.",
+      "explanation": "'Ill' mirrors 'sick' formally while avoiding the UK implication of vomiting.",
+      "hint": "Short 3-letter formal synonym for 'sick'.",
+      "gradientScale": [
+        "Queasy",
+        "Sick",
+        "Ill",
+        "Ailing"
+      ],
+      "collocations": [
+        "fall ill",
+        "critically ill"
+      ],
+      "wrongCollocations": [
+        "sickly formal report"
+      ],
+      "registerLevel": 2,
+      "topicEmoji": "🏥"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L10_Q2",
+      "level": 10,
+      "cefr": "A2",
+      "subtype": "synonymSearch",
+      "difficulty": 1,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Tired' in the sentence.",
+      "word": "Tired",
+      "definition": "Deeply worn down in body or spirit after sustained effort.",
+      "synonym": "Weary",
+      "correctAnswer": "Weary",
+      "correctAnswerIndex": 0,
+      "options": [
+        "Weary",
+        "Busy",
+        "Quiet",
+        "Tense"
+      ],
+      "synonyms": [
+        "Weary",
+        "Sleepy",
+        "Drained"
+      ],
+      "antonyms": [
+        "Energetic",
+        "Lively",
+        "Fresh"
+      ],
+      "contextSentence": "After the double shift, the nurse felt ___.",
+      "usageExample": "Weary hikers rested beside the cold stream.",
+      "nuanceDifference": "'Tired' covers everyday sleepiness. 'Weary' evokes deep, worn-down exhaustion after long strain.",
+      "explanation": "'Weary' intensifies 'tired' to express heavy fatigue built up over long, demanding work.",
+      "hint": "5-letter literary/deep synonym for 'tired'.",
+      "gradientScale": [
+        "Sleepy",
+        "Tired",
+        "Weary",
+        "Exhausted"
+      ],
+      "collocations": [
+        "weary travelers",
+        "feel weary"
+      ],
+      "wrongCollocations": [
+        "a little bit weary from a nap"
+      ],
+      "registerLevel": 3,
+      "topicEmoji": "🧗"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L10_Q3",
+      "level": 10,
+      "cefr": "A2",
+      "subtype": "synonymSearch",
+      "difficulty": 1,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Doctor' in the sentence.",
+      "word": "Doctor",
+      "definition": "A licensed medical practitioner (MD) in official or clinical usage.",
+      "synonym": "Physician",
+      "correctAnswer": "Physician",
+      "correctAnswerIndex": 1,
+      "options": [
+        "Dentist",
+        "Physician",
+        "Chemist",
+        "Coach"
+      ],
+      "synonyms": [
+        "Physician",
+        "Medic",
+        "Clinician"
+      ],
+      "antonyms": [
+        "Patient",
+        "Nurse",
+        "Intern"
+      ],
+      "contextSentence": "The attending ___ examined the patient carefully.",
+      "usageExample": "Primary care physicians guide routine health checks.",
+      "nuanceDifference": "'Doctor' covers everyday speech (plus PhDs and dentists). 'Physician' strictly means a licensed MD.",
+      "explanation": "'Physician' matches 'doctor' specifically for licensed medical practitioners on hospital and insurance records.",
+      "hint": "9-letter formal medical title starting with P.",
+      "gradientScale": [
+        "Medic",
+        "Doctor",
+        "Physician"
+      ],
+      "collocations": [
+        "primary physician",
+        "attending physician"
+      ],
+      "wrongCollocations": [
+        "PhD history physician"
+      ],
+      "registerLevel": 3,
+      "topicEmoji": "🩺"
+    }
+  ]
 }

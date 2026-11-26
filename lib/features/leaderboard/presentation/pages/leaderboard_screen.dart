@@ -470,6 +470,7 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
       totalXp: score,
       streak: user.currentStreak,
       referralCode: user.referralCode,
+      isWeekly: isWeekly,
     );
     ShareCardPreviewModal.show(context: context, data: data);
   }

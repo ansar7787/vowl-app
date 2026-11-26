@@ -1,518 +1,1510 @@
 {
-    "gameType": "synonymSearch",
-    "phase": "mastery",
-    "batchIndex": 20,
-    "levels": "191-200",
-    "quests": [
-        {
-            "id": "VOC_SYNONYMSEARCH_L191_Q1",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Assiduous",
-            "hint": "Showing great care, attention, and persistent effort.",
-            "explanation": "\"Diligent\" describes careful, persistent effort applied to a task, closely related to being assiduous.",
-            "interactionType": "search",
-            "correctAnswer": "Diligent",
-            "options": [
-                "Lazy",
-                "Negligent",
-                "Diligent",
-                "Careless"
-            ],
-            "nuanceDifference": "\"Diligent\" is the more common, everyday word, while \"assiduous\" is more formal and often emphasizes sustained, unrelenting effort over time.",
-            "contextSentence": "Her diligent research uncovered details the first investigators had missed."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L191_Q2",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Punctilious",
-            "hint": "Showing great attention to detail or correct behavior, especially in formal situations.",
-            "explanation": "\"Scrupulous\" describes extreme care about doing things correctly, especially regarding rules or ethics, closely related to being punctilious.",
-            "interactionType": "search",
-            "correctAnswer": "Scrupulous",
-            "options": [
-                "Scrupulous",
-                "Careless",
-                "Sloppy",
-                "Negligent"
-            ],
-            "nuanceDifference": "\"Scrupulous\" often emphasizes moral or procedural correctness, while \"punctilious\" more specifically emphasizes formal precision, especially regarding etiquette or protocol.",
-            "contextSentence": "The scrupulous clerk double-checked every figure before filing the report."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L191_Q3",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Circumspect",
-            "hint": "Wary and unwilling to take risks; cautious about possible consequences.",
-            "explanation": "\"Prudent\" describes careful, sensible judgment, especially about risk, closely related to being circumspect.",
-            "interactionType": "search",
-            "correctAnswer": "Prudent",
-            "options": [
-                "Reckless",
-                "Impulsive",
-                "Prudent",
-                "Careless"
-            ],
-            "nuanceDifference": "\"Prudent\" often emphasizes forward-thinking financial or practical caution, while \"circumspect\" more specifically emphasizes careful attention to how an action might be perceived or backfire.",
-            "contextSentence": "Given the sensitive topic, the spokesperson remained prudent in her wording."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L192_Q1",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Obfuscate",
-            "hint": "To make something unclear or difficult to understand, often deliberately.",
-            "explanation": "\"Muddle\" describes making something confused and unclear, closely related to obfuscating it, though often without the deliberate intent.",
-            "interactionType": "search",
-            "correctAnswer": "Muddle",
-            "options": [
-                "Clarify",
-                "Muddle",
-                "Simplify",
-                "Illuminate"
-            ],
-            "nuanceDifference": "\"Muddle\" can describe accidental confusion as well as deliberate, while \"obfuscate\" almost always implies a deliberate attempt to hide meaning.",
-            "contextSentence": "The dense legal jargon only muddled the contract's actual terms."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L192_Q2",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Equivocate",
-            "hint": "To use ambiguous language to avoid committing to a definite statement.",
-            "explanation": "\"Hedge\" describes avoiding a direct commitment by qualifying a statement, closely related to equivocating.",
-            "interactionType": "search",
-            "correctAnswer": "Hedge",
-            "options": [
-                "Commit",
-                "Declare",
-                "Assert",
-                "Hedge"
-            ],
-            "nuanceDifference": "\"Hedge\" is common in everyday speech about avoiding a firm position, while \"equivocate\" is more formal and often implies a deliberate strategy to mislead.",
-            "contextSentence": "The witness hedged every answer, refusing to give a straight response."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L192_Q3",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Prevaricate",
-            "hint": "To speak or act in an evasive way; to avoid telling the truth directly.",
-            "explanation": "\"Stall\" describes deliberately delaying to avoid giving a direct answer or taking action, closely related to prevaricating.",
-            "interactionType": "search",
-            "correctAnswer": "Stall",
-            "options": [
-                "Stall",
-                "Confess",
-                "Disclose",
-                "Reveal"
-            ],
-            "nuanceDifference": "\"Stall\" often implies delaying for time rather than lying outright, while \"prevaricate\" more strongly implies deliberately avoiding the truth through evasive speech.",
-            "contextSentence": "He stalled for another week before finally answering the question directly."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L193_Q1",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Anachronistic",
-            "hint": "Belonging to a period other than the one being portrayed or in which it exists.",
-            "explanation": "\"Outdated\" describes something no longer suited to the present time, closely related to being anachronistic.",
-            "interactionType": "search",
-            "correctAnswer": "Outdated",
-            "options": [
-                "Current",
-                "Outdated",
-                "Modern",
-                "Contemporary"
-            ],
-            "nuanceDifference": "\"Outdated\" is the everyday word for anything old-fashioned, while \"anachronistic\" more specifically emphasizes something out of place in its particular time period.",
-            "contextSentence": "The film's outdated special effects distracted from an otherwise strong story."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L193_Q2",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Antediluvian",
-            "hint": "Extremely old-fashioned; belonging to an ancient or primitive time.",
-            "explanation": "\"Archaic\" describes something extremely old or no longer in ordinary use, closely related to being antediluvian.",
-            "interactionType": "search",
-            "correctAnswer": "Archaic",
-            "options": [
-                "Archaic",
-                "Modern",
-                "Contemporary",
-                "Current"
-            ],
-            "nuanceDifference": "\"Archaic\" is the more common word for anything ancient or obsolete, while \"antediluvian\" is a dramatic, almost humorous exaggeration emphasizing extreme age.",
-            "contextSentence": "The office still ran on archaic paper filing systems."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L193_Q3",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Vestigial",
-            "hint": "Remaining as a small part of something that was once much larger or more significant.",
-            "explanation": "\"Residual\" describes something remaining after most of it has gone, closely related to being vestigial.",
-            "interactionType": "search",
-            "correctAnswer": "Residual",
-            "options": [
-                "Complete",
-                "Whole",
-                "Full",
-                "Residual"
-            ],
-            "nuanceDifference": "\"Residual\" is the broader, more common word for any leftover amount, while \"vestigial\" specifically emphasizes a remnant of something once fully functional or significant.",
-            "contextSentence": "Only a residual sense of loyalty kept him at the failing company."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L194_Q1",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Apocryphal",
-            "hint": "Widely circulated as true but likely to be untrue or unverifiable.",
-            "explanation": "\"Unsubstantiated\" describes a claim not backed by solid evidence, closely related to being apocryphal.",
-            "interactionType": "search",
-            "correctAnswer": "Unsubstantiated",
-            "options": [
-                "Verified",
-                "Confirmed",
-                "Unsubstantiated",
-                "Documented"
-            ],
-            "nuanceDifference": "\"Unsubstantiated\" emphasizes a lack of proof for any claim, while \"apocryphal\" more specifically describes a widely repeated story that is probably false.",
-            "contextSentence": "The company dismissed the rumor as entirely unsubstantiated."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L194_Q2",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Specious",
-            "hint": "Appearing to be true or correct, but actually false; superficially plausible.",
-            "explanation": "\"Fallacious\" describes reasoning based on a mistaken belief, closely related to being specious, especially in the structure of an argument.",
-            "interactionType": "search",
-            "correctAnswer": "Fallacious",
-            "options": [
-                "Sound",
-                "Fallacious",
-                "Valid",
-                "Logical"
-            ],
-            "nuanceDifference": "\"Fallacious\" specifically emphasizes flawed logical reasoning, while \"specious\" more broadly emphasizes surface-level plausibility that doesn't hold up to scrutiny.",
-            "contextSentence": "The lawyer dismantled the fallacious reasoning behind the defense's argument."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L194_Q3",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Tautological",
-            "hint": "Saying the same thing twice in different words, often unnecessarily.",
-            "explanation": "\"Redundant\" describes something repeated unnecessarily, closely related to being tautological, especially in language or wording.",
-            "interactionType": "search",
-            "correctAnswer": "Redundant",
-            "options": [
-                "Concise",
-                "Efficient",
-                "Streamlined",
-                "Redundant"
-            ],
-            "nuanceDifference": "\"Redundant\" is the broader, everyday word for unnecessary repetition, while \"tautological\" specifically describes a statement that repeats the same idea using different words.",
-            "contextSentence": "\"Free gift\" is a classic example of redundant phrasing, since gifts are free by definition."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L195_Q1",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Recondite",
-            "hint": "Little known; difficult or obscure, especially of knowledge.",
-            "explanation": "\"Esoteric\" describes knowledge understood by only a small, specialized group, closely related to being recondite.",
-            "interactionType": "search",
-            "correctAnswer": "Esoteric",
-            "options": [
-                "Esoteric",
-                "Common",
-                "Widespread",
-                "Mainstream"
-            ],
-            "nuanceDifference": "\"Esoteric\" often implies knowledge intended for a narrow, specialized audience, while \"recondite\" more broadly emphasizes obscurity or difficulty in general.",
-            "contextSentence": "His esoteric research into medieval manuscripts fascinated only a handful of scholars."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L195_Q2",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Abstruse",
-            "hint": "Difficult to understand; obscure due to complexity.",
-            "explanation": "\"Impenetrable\" describes something so complex it resists understanding, closely related to being abstruse.",
-            "interactionType": "search",
-            "correctAnswer": "Impenetrable",
-            "options": [
-                "Accessible",
-                "Clear",
-                "Impenetrable",
-                "Understandable"
-            ],
-            "nuanceDifference": "\"Impenetrable\" often emphasizes the frustration of trying and failing to understand something, while \"abstruse\" more neutrally describes genuine intellectual complexity.",
-            "contextSentence": "The philosopher's impenetrable prose discouraged all but the most determined readers."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L195_Q3",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Byzantine",
-            "hint": "Excessively complicated, typically involving many confusing levels or procedures.",
-            "explanation": "\"Labyrinthine\" describes something so complex it resembles a maze, closely related to being byzantine.",
-            "interactionType": "search",
-            "correctAnswer": "Labyrinthine",
-            "options": [
-                "Simple",
-                "Straightforward",
-                "Labyrinthine",
-                "Uncomplicated"
-            ],
-            "nuanceDifference": "\"Labyrinthine\" emphasizes a maze-like structure that's easy to get lost in, while \"byzantine\" more specifically emphasizes excessive, often bureaucratic complexity.",
-            "contextSentence": "Navigating the labyrinthine visa application process took nearly a year."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L196_Q1",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Ephemeral",
-            "hint": "Lasting for only a brief period, especially in trends or public attention.",
-            "explanation": "\"Transient\" describes something that exists only briefly before passing, closely related to being ephemeral.",
-            "interactionType": "search",
-            "correctAnswer": "Transient",
-            "options": [
-                "Permanent",
-                "Enduring",
-                "Lasting",
-                "Transient"
-            ],
-            "nuanceDifference": "\"Transient\" is used across a wide range of contexts, from people to phenomena, while \"ephemeral\" more often carries a poetic emphasis on fleeting beauty or fame.",
-            "contextSentence": "Viral fame on social media is often remarkably transient."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L196_Q2",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Perennial",
-            "hint": "Happening again and again over a long period, seemingly without end.",
-            "explanation": "\"Recurring\" describes something that happens again and again over time, closely related to being perennial.",
-            "interactionType": "search",
-            "correctAnswer": "Recurring",
-            "options": [
-                "Isolated",
-                "Recurring",
-                "One-time",
-                "Singular"
-            ],
-            "nuanceDifference": "\"Recurring\" simply emphasizes repetition over time, while \"perennial\" more strongly emphasizes an issue that seems permanent and unlikely to ever fully resolve.",
-            "contextSentence": "Traffic congestion remains a recurring problem for the city council."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L196_Q3",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Intermittent",
-            "hint": "Occurring at irregular intervals; not continuous.",
-            "explanation": "\"Sporadic\" describes something happening occasionally and without a clear pattern, closely related to being intermittent.",
-            "interactionType": "search",
-            "correctAnswer": "Sporadic",
-            "options": [
-                "Sporadic",
-                "Constant",
-                "Continuous",
-                "Steady"
-            ],
-            "nuanceDifference": "\"Sporadic\" often emphasizes the unpredictability and rarity of occurrences, while \"intermittent\" more neutrally describes any repeated stopping and starting.",
-            "contextSentence": "Sporadic power outages plagued the region throughout the storm season."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L197_Q1",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Magnanimity",
-            "hint": "Generosity of spirit, especially toward a rival or someone with less power.",
-            "explanation": "\"Benevolence\" describes a general disposition to do good and be kind toward others, closely related to magnanimity.",
-            "interactionType": "search",
-            "correctAnswer": "Benevolence",
-            "options": [
-                "Malice",
-                "Benevolence",
-                "Spite",
-                "Cruelty"
-            ],
-            "nuanceDifference": "\"Benevolence\" describes a general kindness toward others, while \"magnanimity\" more specifically emphasizes generosity shown from a position of strength, especially toward a rival.",
-            "contextSentence": "The retiring CEO's benevolence toward junior staff was widely admired."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L197_Q2",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Equanimity",
-            "hint": "A steady, calm state of mind, especially in a stressful situation.",
-            "explanation": "\"Composure\" describes calm self-control, especially under pressure, closely related to equanimity.",
-            "interactionType": "search",
-            "correctAnswer": "Composure",
-            "options": [
-                "Composure",
-                "Panic",
-                "Agitation",
-                "Distress"
-            ],
-            "nuanceDifference": "\"Composure\" is the more accessible everyday word, while \"equanimity\" is more formal and often emphasizes a deeper, more philosophical steadiness of mind.",
-            "contextSentence": "She handled the crisis with remarkable composure."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L197_Q3",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Sagacity",
-            "hint": "Deep, sound judgment built from experience and understanding.",
-            "explanation": "\"Wisdom\" describes the ability to make sound judgments based on experience and knowledge, closely related to sagacity.",
-            "interactionType": "search",
-            "correctAnswer": "Wisdom",
-            "options": [
-                "Foolishness",
-                "Ignorance",
-                "Wisdom",
-                "Naivety"
-            ],
-            "nuanceDifference": "\"Wisdom\" is the everyday, widely used word, while \"sagacity\" is more formal and literary, often reserved for describing especially penetrating insight.",
-            "contextSentence": "Her grandmother's wisdom shaped every major decision in her life."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L198_Q1",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Verisimilitude",
-            "hint": "The appearance of being true or real.",
-            "explanation": "\"Authenticity\" describes the quality of being genuine or real, closely related to verisimilitude, especially in art or storytelling.",
-            "interactionType": "search",
-            "correctAnswer": "Authenticity",
-            "options": [
-                "Artificiality",
-                "Falseness",
-                "Fakeness",
-                "Authenticity"
-            ],
-            "nuanceDifference": "\"Authenticity\" often describes something that actually is genuine, while \"verisimilitude\" more specifically describes the convincing appearance of realism, even in fiction.",
-            "contextSentence": "The novel's meticulous historical detail gave it remarkable authenticity."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L198_Q2",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Verities",
-            "hint": "Fundamental truths or principles considered universally valid.",
-            "explanation": "\"Truisms\" describes statements so obviously true they hardly need saying, closely related to verities, though often with a more mundane tone.",
-            "interactionType": "search",
-            "correctAnswer": "Truisms",
-            "options": [
-                "Falsehoods",
-                "Fallacies",
-                "Myths",
-                "Truisms"
-            ],
-            "nuanceDifference": "\"Truisms\" often refers to obvious, sometimes overused statements, while \"verities\" more often refers to deeper, timeless truths spoken of with reverence.",
-            "contextSentence": "The commencement speech was filled with familiar truisms about hard work."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L198_Q3",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Axiomatic",
-            "hint": "So obviously true that it needs no further proof or explanation.",
-            "explanation": "\"Self-evident\" describes something so obviously true it requires no proof, closely related to being axiomatic.",
-            "interactionType": "search",
-            "correctAnswer": "Self-evident",
-            "options": [
-                "Self-evident",
-                "Debatable",
-                "Questionable",
-                "Unproven"
-            ],
-            "nuanceDifference": "\"Self-evident\" is the everyday phrase for an obvious truth, while \"axiomatic\" is more formal, often used in mathematics, logic, or philosophy specifically.",
-            "contextSentence": "It seemed self-evident that cutting corners would eventually cause problems."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L199_Q1",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Apotheosis",
-            "hint": "The highest point in the development of something; the perfect example.",
-            "explanation": "\"Pinnacle\" describes the highest point of achievement or excellence, closely related to being the apotheosis of something.",
-            "interactionType": "search",
-            "correctAnswer": "Pinnacle",
-            "options": [
-                "Trough",
-                "Depths",
-                "Pinnacle",
-                "Anticlimax"
-            ],
-            "nuanceDifference": "\"Pinnacle\" is the more accessible word for a peak achievement, while \"apotheosis\" carries a grander, almost reverential tone, treating something as the ultimate ideal.",
-            "contextSentence": "Critics called the performance the pinnacle of her career."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L199_Q2",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Nadir",
-            "hint": "The lowest or most unsuccessful point of a situation or period.",
-            "explanation": "\"Bottom\" describes the lowest possible point of a situation, closely related to a nadir.",
-            "interactionType": "search",
-            "correctAnswer": "Bottom",
-            "options": [
-                "Peak",
-                "Bottom",
-                "Summit",
-                "Height"
-            ],
-            "nuanceDifference": "\"Bottom\" is the plain, everyday word for a low point, while \"nadir\" is more formal and literary, often used to describe the lowest point in a longer historical or personal narrative.",
-            "contextSentence": "The company's reputation hit bottom after the second scandal."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L199_Q3",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Zenith",
-            "hint": "The time at which something is most powerful or successful; the highest point.",
-            "explanation": "\"Apex\" describes the highest point of something, closely related to being at its zenith.",
-            "interactionType": "search",
-            "correctAnswer": "Apex",
-            "options": [
-                "Apex",
-                "Nadir",
-                "Trough",
-                "Bottom"
-            ],
-            "nuanceDifference": "\"Apex\" is slightly more common in everyday and scientific use, while \"zenith\" carries a more dramatic, often historical tone, describing peak power or fame.",
-            "contextSentence": "The empire reached its apex in the early second century."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L200_Q1",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Sui generis",
-            "hint": "Unique; in a class of its own, unable to be classified or compared.",
-            "explanation": "\"Unparalleled\" describes something so unique it cannot be matched or compared, closely related to being sui generis.",
-            "interactionType": "search",
-            "correctAnswer": "Unparalleled",
-            "options": [
-                "Typical",
-                "Ordinary",
-                "Unparalleled",
-                "Standard"
-            ],
-            "nuanceDifference": "\"Unparalleled\" emphasizes that nothing else compares in quality or scale, while \"sui generis\" more specifically emphasizes that something belongs to a category entirely of its own.",
-            "contextSentence": "Critics described the architect's style as truly unparalleled in modern design."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L200_Q2",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Consummate",
-            "hint": "Showing supreme skill and refinement; the complete embodiment of a quality.",
-            "explanation": "\"Quintessential\" describes the most perfect example of a quality or type, closely related to consummate mastery.",
-            "interactionType": "search",
-            "correctAnswer": "Quintessential",
-            "options": [
-                "Atypical",
-                "Quintessential",
-                "Poor",
-                "Mediocre"
-            ],
-            "nuanceDifference": "\"Quintessential\" emphasizes being the purest possible example of a category, while \"consummate\" more strongly emphasizes complete, polished skill in execution.",
-            "contextSentence": "Her performance was the quintessential display of operatic mastery."
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L200_Q3",
-            "instruction": "Find the synonym for the given word.",
-            "word": "Magnum opus",
-            "hint": "A person's greatest piece of work, especially in art or literature.",
-            "explanation": "\"Masterpiece\" describes an artist's finest achievement, closely related to a magnum opus.",
-            "interactionType": "search",
-            "correctAnswer": "Masterpiece",
-            "options": [
-                "Failure",
-                "Flop",
-                "Disappointment",
-                "Masterpiece"
-            ],
-            "nuanceDifference": "\"Masterpiece\" is the accessible, everyday word for an outstanding work, while \"magnum opus\" specifically refers to an artist's single greatest, most significant achievement.",
-            "contextSentence": "The film is widely considered the director's masterpiece."
-        }
-    ]
+  "gameType": "synonymSearch",
+  "phase": "mastery",
+  "cefr": "C2",
+  "difficulty": 5,
+  "batchIndex": 20,
+  "levels": "191-200",
+  "quests": [
+    {
+      "id": "VOC_SYNONYMSEARCH_L191_Q1",
+      "level": 191,
+      "cefr": "C2",
+      "subtype": "synonymSearch",
+      "difficulty": 5,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Praise' in the sentence.",
+      "word": "Praise",
+      "definition": "To honor someone’s life or work warmly in formal tribute.",
+      "synonym": "Eulogize",
+      "correctAnswer": "Eulogize",
+      "correctAnswerIndex": 0,
+      "options": [
+        "Eulogize",
+        "Laud",
+        "Bless",
+        "Admire"
+      ],
+      "synonyms": [
+        "Eulogize",
+        "Honor",
+        "Commend"
+      ],
+      "antonyms": [
+        "Laud",
+        "Bless",
+        "Admire"
+      ],
+      "contextSentence": "Essays fondly ___ classic wooden ferries sailing bays calmly.",
+      "usageExample": "Essays fondly eulogize classic wooden ferries sailing bays calmly.",
+      "nuanceDifference": "'Praise' cheers goals (`praise efforts`). 'Eulogize' delivers moving heartfelt speeches honoring lives or cherished legends (`eulogize heroes`).",
+      "explanation": "Natural — formal solemn tributes take 'eulogize'.",
+      "hint": "Fits expressions like \"___ heroes\" — starts with 'E'.",
+      "gradientScale": [
+        "Praise",
+        "Eulogize",
+        "Commend",
+        "Extol"
+      ],
+      "collocations": [
+        "eulogize heroes",
+        "to eulogize the"
+      ],
+      "wrongCollocations": [
+        "to eulogize crispy"
+      ],
+      "registerLevel": 4,
+      "topicEmoji": "⚡"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L191_Q2",
+      "level": 191,
+      "cefr": "C2",
+      "subtype": "synonymSearch",
+      "difficulty": 5,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Blame' in the sentence.",
+      "word": "Blame",
+      "definition": "To formally issue strong official public disapproval.",
+      "synonym": "Censure",
+      "correctAnswer": "Censure",
+      "correctAnswerIndex": 1,
+      "options": [
+        "Scold",
+        "Censure",
+        "Judge",
+        "Fault"
+      ],
+      "synonyms": [
+        "Censure",
+        "Rebuke",
+        "Reprimand"
+      ],
+      "antonyms": [
+        "Scold",
+        "Judge",
+        "Fault"
+      ],
+      "contextSentence": "Editorial panels moved quickly to ___ careless false ads.",
+      "usageExample": "Editorial panels moved quickly to censure careless false ads.",
+      "nuanceDifference": "'Blame' points fingers (`blame delays`). 'Censure' votes stern formal rebuke by boards or parliaments (`censure misconduct`).",
+      "explanation": "Natural — official institutional rebuke uses 'censure'.",
+      "hint": "Fits expressions like \"___ misconduct\" — starts with 'C'.",
+      "gradientScale": [
+        "Blame",
+        "Censure",
+        "Reprimand",
+        "Condemn"
+      ],
+      "collocations": [
+        "censure misconduct",
+        "to censure hidden"
+      ],
+      "wrongCollocations": [
+        "gently censure coastal"
+      ],
+      "registerLevel": 4,
+      "topicEmoji": "🛠️"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L191_Q3",
+      "level": 191,
+      "cefr": "C2",
+      "subtype": "synonymSearch",
+      "difficulty": 5,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Forgive' in the sentence.",
+      "word": "Forgive",
+      "definition": "To formally declare someone completely free of blame or debt.",
+      "synonym": "Absolve",
+      "correctAnswer": "Absolve",
+      "correctAnswerIndex": 2,
+      "options": [
+        "Free",
+        "Excuse",
+        "Absolve",
+        "Release"
+      ],
+      "synonyms": [
+        "Absolve",
+        "Pardon",
+        "Clear"
+      ],
+      "antonyms": [
+        "Free",
+        "Excuse",
+        "Release"
+      ],
+      "contextSentence": "Full inspections helped ___ trail crews over minor rockslides.",
+      "usageExample": "Full inspections helped absolve trail crews over minor rockslides.",
+      "nuanceDifference": "'Forgive' hugs friends (`forgive errors`). 'Absolve' lifts formal legal or moral responsibility completely off shoulders (`absolve blame`).",
+      "explanation": "Natural — clearing formal moral/legal blame takes 'absolve'.",
+      "hint": "Fits expressions like \"___ blame\" — starts with 'A'.",
+      "gradientScale": [
+        "Forgive",
+        "Absolve",
+        "Clear",
+        "Exonerate"
+      ],
+      "collocations": [
+        "absolve blame",
+        "completely absolve the"
+      ],
+      "wrongCollocations": [
+        "gently absolve toddlers"
+      ],
+      "registerLevel": 4,
+      "topicEmoji": "🏃"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L192_Q1",
+      "level": 192,
+      "cefr": "C2",
+      "subtype": "synonymSearch",
+      "difficulty": 5,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Remember' in the sentence.",
+      "word": "Remember",
+      "definition": "To hold dear lovingly inside memory and care.",
+      "synonym": "Cherish",
+      "correctAnswer": "Cherish",
+      "correctAnswerIndex": 1,
+      "options": [
+        "Love",
+        "Cherish",
+        "Keep",
+        "Hold"
+      ],
+      "synonyms": [
+        "Cherish",
+        "Treasure",
+        "Prize"
+      ],
+      "antonyms": [
+        "Love",
+        "Keep",
+        "Hold"
+      ],
+      "contextSentence": "Towns fiercely ___ ancient cedar groves shading central lanes.",
+      "usageExample": "Towns fiercely cherish ancient cedar groves shading central lanes.",
+      "nuanceDifference": "'Remember' recalls PINs (`remember dates`). 'Cherish' protects dear keepsakes, childhood moments, or quiet freedoms gently (`cherish memories`).",
+      "explanation": "Natural — tenderly treasuring love or memories takes 'cherish'.",
+      "hint": "Fits expressions like \"___ memories\" — starts with 'C'.",
+      "gradientScale": [
+        "Remember",
+        "Cherish",
+        "Prize",
+        "Adore"
+      ],
+      "collocations": [
+        "cherish memories",
+        "deeply cherish sunlit"
+      ],
+      "wrongCollocations": [
+        "anyone cherish locking"
+      ],
+      "registerLevel": 4,
+      "topicEmoji": "🗣️"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L192_Q2",
+      "level": 192,
+      "cefr": "C2",
+      "subtype": "synonymSearch",
+      "difficulty": 5,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Forget' in the sentence.",
+      "word": "Forget",
+      "definition": "To wipe away every last trace completely clean.",
+      "synonym": "Obliterate",
+      "correctAnswer": "Obliterate",
+      "correctAnswerIndex": 2,
+      "options": [
+        "Clear",
+        "Remove",
+        "Obliterate",
+        "Drop"
+      ],
+      "synonyms": [
+        "Obliterate",
+        "Erase",
+        "Delete"
+      ],
+      "antonyms": [
+        "Clear",
+        "Remove",
+        "Drop"
+      ],
+      "contextSentence": "Fresh winter paint helped ___ faded chalk murals outside.",
+      "usageExample": "Fresh winter paint helped obliterate faded chalk murals outside.",
+      "nuanceDifference": "'Forget' mislays hats (`forget names`). 'Obliterate' leaves zero traces remaining (`waves obliterated footprints`).",
+      "explanation": "Natural — erasing every physical mark uses 'obliterate'.",
+      "hint": "Fits expressions like \"waves ___d footprints\" — starts with 'O'.",
+      "gradientScale": [
+        "Forget",
+        "Obliterate",
+        "Delete",
+        "Eradicate"
+      ],
+      "collocations": [
+        "waves obliterated footprints",
+        "to obliterate sandy"
+      ],
+      "wrongCollocations": [
+        "to obliterate fresh"
+      ],
+      "registerLevel": 4,
+      "topicEmoji": "🧭"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L192_Q3",
+      "level": 192,
+      "cefr": "C2",
+      "subtype": "synonymSearch",
+      "difficulty": 5,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Win' in the sentence.",
+      "word": "Win",
+      "definition": "To lock down final victory cleanly with one decisive play.",
+      "synonym": "Clinch",
+      "correctAnswer": "Clinch",
+      "correctAnswerIndex": 3,
+      "options": [
+        "Grab",
+        "Take",
+        "Score",
+        "Clinch"
+      ],
+      "synonyms": [
+        "Clinch",
+        "Seal",
+        "Secure"
+      ],
+      "antonyms": [
+        "Grab",
+        "Take",
+        "Score"
+      ],
+      "contextSentence": "Calm closing data helped analysts ___ the major green grant.",
+      "usageExample": "Calm closing data helped analysts clinch the major green grant.",
+      "nuanceDifference": "'Win' plays tournaments (`win titles`). 'Clinch' dramatically seals tight matches, contracts, or playoffs cleanly (`clinch the title`).",
+      "explanation": "Natural — sealing uncertain victory decisively uses 'clinch'.",
+      "hint": "Fits expressions like \"___ the title\" — starts with 'C'.",
+      "gradientScale": [
+        "Win",
+        "Clinch",
+        "Secure",
+        "Capture"
+      ],
+      "collocations": [
+        "clinch the title",
+        "hosts clinch regional"
+      ],
+      "wrongCollocations": [
+        "might clinch a"
+      ],
+      "registerLevel": 4,
+      "topicEmoji": "✨"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L193_Q1",
+      "level": 193,
+      "cefr": "C2",
+      "subtype": "synonymSearch",
+      "difficulty": 5,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Drop' in the sentence.",
+      "word": "Drop",
+      "definition": "To give up old habits, places, or loyal friends permanently.",
+      "synonym": "Forsake",
+      "correctAnswer": "Forsake",
+      "correctAnswerIndex": 2,
+      "options": [
+        "Leave",
+        "Quit",
+        "Forsake",
+        "Pass"
+      ],
+      "synonyms": [
+        "Forsake",
+        "Abandon",
+        "Desert"
+      ],
+      "antonyms": [
+        "Leave",
+        "Quit",
+        "Pass"
+      ],
+      "contextSentence": "Dedicated athletes ___ late junk nights chasing marathon goals.",
+      "usageExample": "Dedicated athletes forsake late junk nights chasing marathon goals.",
+      "nuanceDifference": "'Drop' quits hobbies (`drop piano`). 'Forsake' poetically walks away from native valleys, principles, or promises cleanly (`forsake old ways`).",
+      "explanation": "Natural — abandoning deep roots or values takes 'forsake'.",
+      "hint": "Fits expressions like \"___ old ways\" — starts with 'F'.",
+      "gradientScale": [
+        "Drop",
+        "Forsake",
+        "Desert",
+        "Renounce"
+      ],
+      "collocations": [
+        "forsake old ways",
+        "to forsake quiet"
+      ],
+      "wrongCollocations": [
+        "can forsake slick"
+      ],
+      "registerLevel": 4,
+      "topicEmoji": "⚡"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L193_Q2",
+      "level": 193,
+      "cefr": "C2",
+      "subtype": "synonymSearch",
+      "difficulty": 5,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Make' in the sentence.",
+      "word": "Make",
+      "definition": "To invent something cleverly or artificially.",
+      "synonym": "Contrive",
+      "correctAnswer": "Contrive",
+      "correctAnswerIndex": 3,
+      "options": [
+        "Build",
+        "Create",
+        "Invent",
+        "Contrive"
+      ],
+      "synonyms": [
+        "Contrive",
+        "Devise",
+        "Fabricate"
+      ],
+      "antonyms": [
+        "Build",
+        "Create",
+        "Invent"
+      ],
+      "contextSentence": "Hikers managed to ___ a sturdy rain shelter using branches.",
+      "usageExample": "Hikers managed to contrive a sturdy rain shelter using branches.",
+      "nuanceDifference": "'Make' cooks bread (`make beds`). 'Contrive' builds ingenious fixes OR forces fake unnatural excuses (`contrived plot`).",
+      "explanation": "Natural — forced artificial fixes or clever gadgets take 'contrive'.",
+      "hint": "Fits expressions like \"___d plot\" — starts with 'C'.",
+      "gradientScale": [
+        "Make",
+        "Contrive",
+        "Fabricate",
+        "Engineer"
+      ],
+      "collocations": [
+        "contrived plot",
+        "slightly contrive"
+      ],
+      "wrongCollocations": [
+        "to contrive warm"
+      ],
+      "registerLevel": 4,
+      "topicEmoji": "🛠️"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L193_Q3",
+      "level": 193,
+      "cefr": "C2",
+      "subtype": "synonymSearch",
+      "difficulty": 5,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Fix' in the sentence.",
+      "word": "Fix",
+      "definition": "To smoothly heal broken seams, friendships, or fences.",
+      "synonym": "Mend",
+      "correctAnswer": "Mend",
+      "correctAnswerIndex": 0,
+      "options": [
+        "Mend",
+        "Patch",
+        "Tune",
+        "Clean"
+      ],
+      "synonyms": [
+        "Mend",
+        "Repair",
+        "Darn"
+      ],
+      "antonyms": [
+        "Patch",
+        "Tune",
+        "Clean"
+      ],
+      "contextSentence": "Kind apologies swiftly help ___ awkward neighborhood spats.",
+      "usageExample": "Kind apologies swiftly help mend awkward neighborhood spats.",
+      "nuanceDifference": "'Fix' repairs Wi-Fi (`fix laptops`). 'Mend' stitches torn wool coats softly AND heals bruised hearts/arguments warmly (`mend fences`).",
+      "explanation": "Natural — needle stitches or broken trust take 'mend'.",
+      "hint": "Fits expressions like \"___ fences\" — starts with 'M'.",
+      "gradientScale": [
+        "Fix",
+        "Mend",
+        "Darn",
+        "Heal"
+      ],
+      "collocations": [
+        "mend fences",
+        "to mend torn"
+      ],
+      "wrongCollocations": [
+        "to mend dark"
+      ],
+      "registerLevel": 4,
+      "topicEmoji": "🏃"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L194_Q1",
+      "level": 194,
+      "cefr": "C2",
+      "subtype": "synonymSearch",
+      "difficulty": 5,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Move' in the sentence.",
+      "word": "Move",
+      "definition": "To wind slowly along curves without rush or urgency.",
+      "synonym": "Meander",
+      "correctAnswer": "Meander",
+      "correctAnswerIndex": 3,
+      "options": [
+        "Walk",
+        "Roam",
+        "Stroll",
+        "Meander"
+      ],
+      "synonyms": [
+        "Meander",
+        "Wind",
+        "Wander"
+      ],
+      "antonyms": [
+        "Walk",
+        "Roam",
+        "Stroll"
+      ],
+      "contextSentence": "Weekend readers gladly ___ slowly down secondhand book aisles.",
+      "usageExample": "Weekend readers gladly meander slowly down secondhand book aisles.",
+      "nuanceDifference": "'Move' marches swiftly (`move fast`). 'Meander' curves lazily like meadow creeks, bookshop browsing, or wandering stories (`rivers meander`).",
+      "explanation": "Natural — lazy curving paths or walks earn 'meander'.",
+      "hint": "Fits expressions like \"rivers ___\" — starts with 'M'.",
+      "gradientScale": [
+        "Move",
+        "Meander",
+        "Wander",
+        "Drift"
+      ],
+      "collocations": [
+        "rivers meander",
+        "streams meander gently"
+      ],
+      "wrongCollocations": [
+        "should meander calmly"
+      ],
+      "registerLevel": 4,
+      "topicEmoji": "🗣️"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L194_Q2",
+      "level": 194,
+      "cefr": "C2",
+      "subtype": "synonymSearch",
+      "difficulty": 5,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Run' in the sentence.",
+      "word": "Run",
+      "definition": "To dash briskly with quick light little steps.",
+      "synonym": "Scamper",
+      "correctAnswer": "Scamper",
+      "correctAnswerIndex": 0,
+      "options": [
+        "Scamper",
+        "Dash",
+        "Bolt",
+        "Sprint"
+      ],
+      "synonyms": [
+        "Scamper",
+        "Scurry",
+        "Dart"
+      ],
+      "antonyms": [
+        "Dash",
+        "Bolt",
+        "Sprint"
+      ],
+      "contextSentence": "Playful kittens ___ swiftly across sunny wooden floors cleanly.",
+      "usageExample": "Playful kittens scamper swiftly across sunny wooden floors cleanly.",
+      "nuanceDifference": "'Run' trains races (`run laps`). 'Scamper' paints playful squirrels, mice, or little children skittering quickly (`squirrels scamper`).",
+      "explanation": "Natural — nimble quick scampering creatures take 'scamper'.",
+      "hint": "Fits expressions like \"squirrels ___\" — starts with 'S'.",
+      "gradientScale": [
+        "Run",
+        "Scamper",
+        "Dart",
+        "Trot"
+      ],
+      "collocations": [
+        "squirrels scamper",
+        "cheerfully scamper up"
+      ],
+      "wrongCollocations": [
+        "engines scamper straight"
+      ],
+      "registerLevel": 4,
+      "topicEmoji": "🧭"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L194_Q3",
+      "level": 194,
+      "cefr": "C2",
+      "subtype": "synonymSearch",
+      "difficulty": 5,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Fly' in the sentence.",
+      "word": "Fly",
+      "definition": "To glide high effortlessly on rising air — or leap rapidly.",
+      "synonym": "Soar",
+      "correctAnswer": "Soar",
+      "correctAnswerIndex": 1,
+      "options": [
+        "Rise",
+        "Soar",
+        "Surge",
+        "Lift"
+      ],
+      "synonyms": [
+        "Soar",
+        "Glide",
+        "Ascend"
+      ],
+      "antonyms": [
+        "Rise",
+        "Surge",
+        "Lift"
+      ],
+      "contextSentence": "Violin melodies ___ cleanly over hushed evening halls.",
+      "usageExample": "Violin melodies soar cleanly over hushed evening halls.",
+      "nuanceDifference": "'Fly' boards jets (`fly east`). 'Soar' celebrates eagles riding high thermals OR bakery sales, music, and hopes flying cleanly up (`prices soar`).",
+      "explanation": "Natural — soaring glides and vertical spikes use 'soar'.",
+      "hint": "Fits expressions like \"prices ___\" — starts with 'S'.",
+      "gradientScale": [
+        "Fly",
+        "Soar",
+        "Ascend",
+        "Rocket"
+      ],
+      "collocations": [
+        "prices soar",
+        "eagles soar effortlessly"
+      ],
+      "wrongCollocations": [
+        "uncle soar freight"
+      ],
+      "registerLevel": 4,
+      "topicEmoji": "✨"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L195_Q1",
+      "level": 195,
+      "cefr": "C2",
+      "subtype": "synonymSearch",
+      "difficulty": 5,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Swim' in the sentence.",
+      "word": "Swim",
+      "definition": "To walk steadily through shallow water or tall snow.",
+      "synonym": "Wade",
+      "correctAnswer": "Wade",
+      "correctAnswerIndex": 0,
+      "options": [
+        "Wade",
+        "Walk",
+        "Step",
+        "Pass"
+      ],
+      "synonyms": [
+        "Wade",
+        "Paddle",
+        "Splash"
+      ],
+      "antonyms": [
+        "Walk",
+        "Step",
+        "Pass"
+      ],
+      "contextSentence": "Volunteers had to ___ carefully through crates of old letters.",
+      "usageExample": "Volunteers had to wade carefully through crates of old letters.",
+      "nuanceDifference": "'Swim' dives deep (`swim laps`). 'Wade' steps slowly through ankle-deep creeks, puddles, or piles of mail (`wade through mail`).",
+      "explanation": "Natural — stepping slowly in shallows or piles takes 'wade'.",
+      "hint": "Fits expressions like \"___ through mail\" — starts with 'W'.",
+      "gradientScale": [
+        "Swim",
+        "Wade",
+        "Splash",
+        "Tread"
+      ],
+      "collocations": [
+        "wade through mail",
+        "to wade smoothly"
+      ],
+      "wrongCollocations": [
+        "swimmers wade forty"
+      ],
+      "registerLevel": 4,
+      "topicEmoji": "⚡"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L195_Q2",
+      "level": 195,
+      "cefr": "C2",
+      "subtype": "synonymSearch",
+      "difficulty": 5,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Empty' in the sentence.",
+      "word": "Empty",
+      "definition": "Completely lacking a quality, usually paired with of.",
+      "synonym": "Devoid",
+      "correctAnswer": "Devoid",
+      "correctAnswerIndex": 1,
+      "options": [
+        "Vacant",
+        "Devoid",
+        "Hollow",
+        "Clear"
+      ],
+      "synonyms": [
+        "Devoid",
+        "Lacking",
+        "Bare"
+      ],
+      "antonyms": [
+        "Vacant",
+        "Hollow",
+        "Clear"
+      ],
+      "contextSentence": "Cold desert basins lie completely ___ of winter trees.",
+      "usageExample": "Cold desert basins lie completely devoid of winter trees.",
+      "nuanceDifference": "'Empty' holds boxes (`empty jar`). 'Devoid' writes sharply (`devoid of humor`, `devoid of life`) saying none exists.",
+      "explanation": "Natural — always pairs cleanly as 'devoid of ...'.",
+      "hint": "Fits expressions like \"___ of humor\" — starts with 'D'.",
+      "gradientScale": [
+        "Empty",
+        "Devoid",
+        "Bare",
+        "Stripped"
+      ],
+      "collocations": [
+        "devoid of humor",
+        "devoid of life"
+      ],
+      "wrongCollocations": [
+        "any devoid glass"
+      ],
+      "registerLevel": 4,
+      "topicEmoji": "🌤️"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L195_Q3",
+      "level": 195,
+      "cefr": "C2",
+      "subtype": "synonymSearch",
+      "difficulty": 5,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Full' in the sentence.",
+      "word": "Full",
+      "definition": "Richly packed full with delightful things, paired with with.",
+      "synonym": "Replete",
+      "correctAnswer": "Replete",
+      "correctAnswerIndex": 2,
+      "options": [
+        "Crowded",
+        "Busy",
+        "Replete",
+        "Deep"
+      ],
+      "synonyms": [
+        "Replete",
+        "Brimming",
+        "Packed"
+      ],
+      "antonyms": [
+        "Crowded",
+        "Busy",
+        "Deep"
+      ],
+      "contextSentence": "Classic folktales stay ___ with gentle hidden humor cleanly.",
+      "usageExample": "Classic folktales stay replete with gentle hidden humor cleanly.",
+      "nuanceDifference": "'Full' fills bottles (`full glass`). 'Replete' admiringly paints books, markets, or dinners packed richly with treats (`replete with color`).",
+      "explanation": "Natural — 'replete with' celebrates richly packed scenes.",
+      "hint": "Fits expressions like \"___ with color\" — starts with 'R'.",
+      "gradientScale": [
+        "Full",
+        "Replete",
+        "Packed",
+        "Abundant"
+      ],
+      "collocations": [
+        "replete with color",
+        "arrived replete with"
+      ],
+      "wrongCollocations": [
+        "sat replete"
+      ],
+      "registerLevel": 4,
+      "topicEmoji": "🔍"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L196_Q1",
+      "level": 196,
+      "cefr": "C2",
+      "subtype": "synonymSearch",
+      "difficulty": 5,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Same' in the sentence.",
+      "word": "Same",
+      "definition": "Virtually equivalent in serious negative effect.",
+      "synonym": "Tantamount",
+      "correctAnswer": "Tantamount",
+      "correctAnswerIndex": 1,
+      "options": [
+        "Alike",
+        "Tantamount",
+        "Like",
+        "Fair"
+      ],
+      "synonyms": [
+        "Tantamount",
+        "Equivalent",
+        "Equal"
+      ],
+      "antonyms": [
+        "Alike",
+        "Like",
+        "Fair"
+      ],
+      "contextSentence": "Leaving emergency exits locked proves ___ to shutting escapes.",
+      "usageExample": "Leaving emergency exits locked proves tantamount to shutting escapes.",
+      "nuanceDifference": "'Same' wears identical shirts (`same coat`). 'Tantamount' judges acts virtually equal to breaking vows or quitting (`tantamount to cheating`).",
+      "explanation": "Natural — heavy moral equivalence uses 'tantamount to'.",
+      "hint": "Fits expressions like \"___ to cheating\" — starts with 'T'.",
+      "gradientScale": [
+        "Same",
+        "Tantamount",
+        "Equal",
+        "Identical"
+      ],
+      "collocations": [
+        "tantamount to cheating",
+        "is tantamount to"
+      ],
+      "wrongCollocations": [
+        "the tantamount plaid"
+      ],
+      "registerLevel": 4,
+      "topicEmoji": "🌿"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L196_Q2",
+      "level": 196,
+      "cefr": "C2",
+      "subtype": "synonymSearch",
+      "difficulty": 5,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Different' in the sentence.",
+      "word": "Different",
+      "definition": "Fundamentally distinct with almost nothing in common.",
+      "synonym": "Disparate",
+      "correctAnswer": "Disparate",
+      "correctAnswerIndex": 2,
+      "options": [
+        "Unique",
+        "Odd",
+        "Disparate",
+        "Apart"
+      ],
+      "synonyms": [
+        "Disparate",
+        "Distinct",
+        "Divergent"
+      ],
+      "antonyms": [
+        "Unique",
+        "Odd",
+        "Apart"
+      ],
+      "contextSentence": "Volunteers pulled together ___ neighborhood views cleanly.",
+      "usageExample": "Volunteers pulled together disparate neighborhood views cleanly.",
+      "nuanceDifference": "'Different' mixes flavors (`different color`). 'Disparate' contrasts radically varied backgrounds, parts, or tribes (`disparate threads`).",
+      "explanation": "Natural — deeply unrelated elements use 'disparate'.",
+      "hint": "Fits expressions like \"___ threads\" — starts with 'D'.",
+      "gradientScale": [
+        "Different",
+        "Disparate",
+        "Divergent",
+        "Varied"
+      ],
+      "collocations": [
+        "disparate threads",
+        "knit disparate folk"
+      ],
+      "wrongCollocations": [
+        "a disparate warm"
+      ],
+      "registerLevel": 4,
+      "topicEmoji": "⚖️"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L196_Q3",
+      "level": 196,
+      "cefr": "C2",
+      "subtype": "synonymSearch",
+      "difficulty": 5,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Clear' in the sentence.",
+      "word": "Clear",
+      "definition": "So intense in atmosphere you feel like touching it.",
+      "synonym": "Palpable",
+      "correctAnswer": "Palpable",
+      "correctAnswerIndex": 3,
+      "options": [
+        "Real",
+        "Strong",
+        "Live",
+        "Palpable"
+      ],
+      "synonyms": [
+        "Palpable",
+        "Tangible",
+        "Noticeable"
+      ],
+      "antonyms": [
+        "Real",
+        "Strong",
+        "Live"
+      ],
+      "contextSentence": "Smiles spread ___ relief once clean storms moved seaward cleanly.",
+      "usageExample": "Smiles spread palpable relief once clean storms moved seaward cleanly.",
+      "nuanceDifference": "'Clear' clarifies charts (`clear sign`). 'Palpable' captures electric room tension, excitement, or relief in air (`palpable relief`).",
+      "explanation": "Natural — thick emotional tension or relief takes 'palpable'.",
+      "hint": "Fits expressions like \"___ relief\" — starts with 'P'.",
+      "gradientScale": [
+        "Clear",
+        "Palpable",
+        "Noticeable",
+        "Unmistakable"
+      ],
+      "collocations": [
+        "palpable relief",
+        "with palpable tension"
+      ],
+      "wrongCollocations": [
+        "stays palpable"
+      ],
+      "registerLevel": 4,
+      "topicEmoji": "💬"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L197_Q1",
+      "level": 197,
+      "cefr": "C2",
+      "subtype": "synonymSearch",
+      "difficulty": 5,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Bright' in the sentence.",
+      "word": "Bright",
+      "definition": "Softly glowing with warm inner beauty or clarity.",
+      "synonym": "Luminous",
+      "correctAnswer": "Luminous",
+      "correctAnswerIndex": 2,
+      "options": [
+        "Vivid",
+        "Clear",
+        "Luminous",
+        "Pure"
+      ],
+      "synonyms": [
+        "Luminous",
+        "Radiant",
+        "Glowing"
+      ],
+      "antonyms": [
+        "Vivid",
+        "Clear",
+        "Pure"
+      ],
+      "contextSentence": "Curators praised her ___ watercolor clouds across seaside prints.",
+      "usageExample": "Curators praised her luminous watercolor clouds across seaside prints.",
+      "nuanceDifference": "'Bright' beams flashlights (`bright sun`). 'Luminous' admires glowing pearls, fireflies, starry eyes, or insightful prose (`luminous skies`).",
+      "explanation": "Natural — soft glowing radiance earns 'luminous'.",
+      "hint": "Fits expressions like \"___ skies\" — starts with 'L'.",
+      "gradientScale": [
+        "Bright",
+        "Luminous",
+        "Glowing",
+        "Incandescent"
+      ],
+      "collocations": [
+        "luminous skies",
+        "beneath luminous violet"
+      ],
+      "wrongCollocations": [
+        "for luminous 800-lumen"
+      ],
+      "registerLevel": 4,
+      "topicEmoji": "🎯"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L197_Q2",
+      "level": 197,
+      "cefr": "C2",
+      "subtype": "synonymSearch",
+      "difficulty": 5,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Dark' in the sentence.",
+      "word": "Dark",
+      "definition": "Blocking light completely OR impossible to decode.",
+      "synonym": "Opaque",
+      "correctAnswer": "Opaque",
+      "correctAnswerIndex": 3,
+      "options": [
+        "Dim",
+        "Murky",
+        "Vague",
+        "Opaque"
+      ],
+      "synonyms": [
+        "Opaque",
+        "Cloudy",
+        "Impenetrable"
+      ],
+      "antonyms": [
+        "Dim",
+        "Murky",
+        "Vague"
+      ],
+      "contextSentence": "Shoppers disliked ___ hidden service fees inside contracts.",
+      "usageExample": "Shoppers disliked opaque hidden service fees inside contracts.",
+      "nuanceDifference": "'Dark' switches lights off (`dark alley`). 'Opaque' describes non-transparent glass OR dense tangled tax laws (`opaque fees`).",
+      "explanation": "Natural — non-see-through surfaces and unclear prose take 'opaque'.",
+      "hint": "Fits expressions like \"___ fees\" — starts with 'O'.",
+      "gradientScale": [
+        "Dark",
+        "Opaque",
+        "Impenetrable",
+        "Dense"
+      ],
+      "collocations": [
+        "opaque fees",
+        "frosted opaque panels"
+      ],
+      "wrongCollocations": [
+        "turn opaque to"
+      ],
+      "registerLevel": 4,
+      "topicEmoji": "🌤️"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L197_Q3",
+      "level": 197,
+      "cefr": "C2",
+      "subtype": "synonymSearch",
+      "difficulty": 5,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Happy' in the sentence.",
+      "word": "Happy",
+      "definition": "Lifted into dizzy soaring joy above ordinary cheer.",
+      "synonym": "Euphoric",
+      "correctAnswer": "Euphoric",
+      "correctAnswerIndex": 0,
+      "options": [
+        "Euphoric",
+        "Glad",
+        "Joyful",
+        "Proud"
+      ],
+      "synonyms": [
+        "Euphoric",
+        "Ecstatic",
+        "Elated"
+      ],
+      "antonyms": [
+        "Glad",
+        "Joyful",
+        "Proud"
+      ],
+      "contextSentence": "Graduating nurses shared ___ hugs outdoors after final grades.",
+      "usageExample": "Graduating nurses shared euphoric hugs outdoors after final grades.",
+      "nuanceDifference": "'Happy' smiles warmly (`happy dog`). 'Euphoric' hits electric celebratory highs right after huge wins (`euphoric crowd`).",
+      "explanation": "Natural — dizzy peak celebration uses 'euphoric'.",
+      "hint": "Fits expressions like \"___ crowd\" — starts with 'E'.",
+      "gradientScale": [
+        "Happy",
+        "Euphoric",
+        "Elated",
+        "Rapturous"
+      ],
+      "collocations": [
+        "euphoric crowd",
+        "in euphoric cheers"
+      ],
+      "wrongCollocations": [
+        "warm, euphoric coastal"
+      ],
+      "registerLevel": 4,
+      "topicEmoji": "🔍"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L198_Q1",
+      "level": 198,
+      "cefr": "C2",
+      "subtype": "synonymSearch",
+      "difficulty": 5,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Sad' in the sentence.",
+      "word": "Sad",
+      "definition": "Low and losing hope after repeated setbacks.",
+      "synonym": "Despondent",
+      "correctAnswer": "Despondent",
+      "correctAnswerIndex": 3,
+      "options": [
+        "Upset",
+        "Low",
+        "Dim",
+        "Despondent"
+      ],
+      "synonyms": [
+        "Despondent",
+        "Dejected",
+        "Disheartened"
+      ],
+      "antonyms": [
+        "Upset",
+        "Low",
+        "Dim"
+      ],
+      "contextSentence": "Kind mentors lifted ___ applicants with calm practical edits.",
+      "usageExample": "Kind mentors lifted despondent applicants with calm practical edits.",
+      "nuanceDifference": "'Sad' cries cleanly (`sad song`). 'Despondent' marks heavy hopelessness after losing tries (`despondent team`) needing calm support.",
+      "explanation": "Natural — heavy discouraged hopelessness uses 'despondent'.",
+      "hint": "Fits expressions like \"___ team\" — starts with 'D'.",
+      "gradientScale": [
+        "Sad",
+        "Despondent",
+        "Disheartened",
+        "Forlorn"
+      ],
+      "collocations": [
+        "despondent team",
+        "temporarily despondent"
+      ],
+      "wrongCollocations": [
+        "touching, despondent final"
+      ],
+      "registerLevel": 4,
+      "topicEmoji": "🌿"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L198_Q2",
+      "level": 198,
+      "cefr": "C2",
+      "subtype": "synonymSearch",
+      "difficulty": 5,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Quiet' in the sentence.",
+      "word": "Quiet",
+      "definition": "Softened down gently in volume or color intensity.",
+      "synonym": "Muted",
+      "correctAnswer": "Muted",
+      "correctAnswerIndex": 0,
+      "options": [
+        "Muted",
+        "Dim",
+        "Calm",
+        "Pale"
+      ],
+      "synonyms": [
+        "Muted",
+        "Subdued",
+        "Softened"
+      ],
+      "antonyms": [
+        "Dim",
+        "Calm",
+        "Pale"
+      ],
+      "contextSentence": "Critics offered only ___ praise for the rushed sequel.",
+      "usageExample": "Critics offered only muted praise for the rushed sequel.",
+      "nuanceDifference": "'Quiet' hushes halls (`quiet zone`). 'Muted' turns down horn sound, bright neon hues, or mild applause cleanly (`muted sage`, `muted cheer`).",
+      "explanation": "Natural — toned-down hues and softened applause take 'muted'.",
+      "hint": "Fits expressions like \"___ sage\" — starts with 'M'.",
+      "gradientScale": [
+        "Quiet",
+        "Muted",
+        "Softened",
+        "Hushed"
+      ],
+      "collocations": [
+        "muted sage",
+        "muted cheer"
+      ],
+      "wrongCollocations": [
+        "through muted pine"
+      ],
+      "registerLevel": 4,
+      "topicEmoji": "⚖️"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L198_Q3",
+      "level": 198,
+      "cefr": "C2",
+      "subtype": "synonymSearch",
+      "difficulty": 5,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Loud' in the sentence.",
+      "word": "Loud",
+      "definition": "Harshly loud and grating sharply on sensitive ears.",
+      "synonym": "Strident",
+      "correctAnswer": "Strident",
+      "correctAnswerIndex": 1,
+      "options": [
+        "Sharp",
+        "Strident",
+        "Rough",
+        "Wild"
+      ],
+      "synonyms": [
+        "Strident",
+        "Shrill",
+        "Harsh"
+      ],
+      "antonyms": [
+        "Sharp",
+        "Rough",
+        "Wild"
+      ],
+      "contextSentence": "Avoid ___ demanding emails when calm firm requests work better.",
+      "usageExample": "Avoid strident demanding emails when calm firm requests work better.",
+      "nuanceDifference": "'Loud' shakes floors (`loud cheer`). 'Strident' flags piercing harsh demands or grating voices (`strident tone`).",
+      "explanation": "Natural — grating harsh voices take 'strident'.",
+      "hint": "Fits expressions like \"___ tone\" — starts with 'S'.",
+      "gradientScale": [
+        "Loud",
+        "Strident",
+        "Harsh",
+        "Piercing"
+      ],
+      "collocations": [
+        "strident tone",
+        "and strident"
+      ],
+      "wrongCollocations": [
+        "with strident joyful"
+      ],
+      "registerLevel": 4,
+      "topicEmoji": "💬"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L199_Q1",
+      "level": 199,
+      "cefr": "C2",
+      "subtype": "synonymSearch",
+      "difficulty": 5,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'New' in the sentence.",
+      "word": "New",
+      "definition": "First to blaze untouched paths that others follow later.",
+      "synonym": "Pioneering",
+      "correctAnswer": "Pioneering",
+      "correctAnswerIndex": 0,
+      "options": [
+        "Pioneering",
+        "Novel",
+        "Fresh",
+        "Modern"
+      ],
+      "synonyms": [
+        "Pioneering",
+        "Innovative",
+        "Groundbreaking"
+      ],
+      "antonyms": [
+        "Novel",
+        "Fresh",
+        "Modern"
+      ],
+      "contextSentence": "Engineers honored ___ wind turbine blades built in 1982.",
+      "usageExample": "Engineers honored pioneering wind turbine blades built in 1982.",
+      "nuanceDifference": "'New' prints flyers (`new menu`). 'Pioneering' honors bold original breakthroughs in clinics, green tech, or art (`pioneering study`).",
+      "explanation": "Natural — trailblazing first breakthroughs earn 'pioneering'.",
+      "hint": "Fits expressions like \"___ study\" — starts with 'P'.",
+      "gradientScale": [
+        "New",
+        "Pioneering",
+        "Groundbreaking",
+        "Trailblazing"
+      ],
+      "collocations": [
+        "pioneering study",
+        "her pioneering mobile"
+      ],
+      "wrongCollocations": [
+        "those pioneering leather"
+      ],
+      "registerLevel": 4,
+      "topicEmoji": "🎯"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L199_Q2",
+      "level": 199,
+      "cefr": "C2",
+      "subtype": "synonymSearch",
+      "difficulty": 5,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Old' in the sentence.",
+      "word": "Old",
+      "definition": "Respected deeply because of great age and wisdom.",
+      "synonym": "Venerable",
+      "correctAnswer": "Venerable",
+      "correctAnswerIndex": 1,
+      "options": [
+        "Ancient",
+        "Venerable",
+        "Historic",
+        "Wise"
+      ],
+      "synonyms": [
+        "Venerable",
+        "Revered",
+        "Distinguished"
+      ],
+      "antonyms": [
+        "Ancient",
+        "Historic",
+        "Wise"
+      ],
+      "contextSentence": "Scholars visited ___ alpine inns welcoming travelers since 1650.",
+      "usageExample": "Scholars visited venerable alpine inns welcoming travelers since 1650.",
+      "nuanceDifference": "'Old' wears boots (`old coat`). 'Venerable' bows gently before cherished centuries-old trees, libraries, or elders (`venerable oak`).",
+      "explanation": "Natural — deeply respected historic dignity takes 'venerable'.",
+      "hint": "Fits expressions like \"___ oak\" — starts with 'V'.",
+      "gradientScale": [
+        "Old",
+        "Venerable",
+        "Distinguished",
+        "Storied"
+      ],
+      "collocations": [
+        "venerable oak",
+        "the venerable brick"
+      ],
+      "wrongCollocations": [
+        "that venerable damp"
+      ],
+      "registerLevel": 4,
+      "topicEmoji": "🌤️"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L199_Q3",
+      "level": 199,
+      "cefr": "C2",
+      "subtype": "synonymSearch",
+      "difficulty": 5,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Clean' in the sentence.",
+      "word": "Clean",
+      "definition": "Untouched and pure just as nature or new craft made it.",
+      "synonym": "Pristine",
+      "correctAnswer": "Pristine",
+      "correctAnswerIndex": 2,
+      "options": [
+        "Pure",
+        "Fresh",
+        "Pristine",
+        "Clear"
+      ],
+      "synonyms": [
+        "Pristine",
+        "Spotless",
+        "Untouched"
+      ],
+      "antonyms": [
+        "Pure",
+        "Fresh",
+        "Clear"
+      ],
+      "contextSentence": "Rangers protect ___ coral reefs cleanly from anchor damage.",
+      "usageExample": "Rangers protect pristine coral reefs cleanly from anchor damage.",
+      "nuanceDifference": "'Clean' mops floors (`clean floor`). 'Pristine' admires untouched snowy peaks, wild rivers, or mint unread paperbacks (`pristine snow`).",
+      "explanation": "Natural — untouched pure snow or mint pages earn 'pristine'.",
+      "hint": "Fits expressions like \"___ snow\" — starts with 'P'.",
+      "gradientScale": [
+        "Clean",
+        "Pristine",
+        "Untouched",
+        "Unspoiled"
+      ],
+      "collocations": [
+        "pristine snow",
+        "down pristine powder"
+      ],
+      "wrongCollocations": [
+        "gleam pristine"
+      ],
+      "registerLevel": 4,
+      "topicEmoji": "🔍"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L200_Q1",
+      "level": 200,
+      "cefr": "C2",
+      "subtype": "synonymSearch",
+      "difficulty": 5,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Safe' in the sentence.",
+      "word": "Safe",
+      "definition": "Completely unbothered or impossible to soak or hurt.",
+      "synonym": "Impervious",
+      "correctAnswer": "Impervious",
+      "correctAnswerIndex": 1,
+      "options": [
+        "Secure",
+        "Impervious",
+        "Solid",
+        "Tight"
+      ],
+      "synonyms": [
+        "Impervious",
+        "Immune",
+        "Resistant"
+      ],
+      "antonyms": [
+        "Secure",
+        "Solid",
+        "Tight"
+      ],
+      "contextSentence": "Seasoned umpires appear remarkably ___ to loud stadium boos.",
+      "usageExample": "Seasoned umpires appear remarkably impervious to loud stadium boos.",
+      "nuanceDifference": "'Safe' locks helmets (`safe ride`). 'Impervious' shrugs off pouring rain (`impervious slate`) OR cold criticism cleanly (`impervious to praise`).",
+      "explanation": "Natural — unaffected by leaks or pressure takes 'impervious to'.",
+      "hint": "Fits expressions like \"___ slate\" — starts with 'I'.",
+      "gradientScale": [
+        "Safe",
+        "Impervious",
+        "Resistant",
+        "Watertight"
+      ],
+      "collocations": [
+        "impervious slate",
+        "impervious to praise"
+      ],
+      "wrongCollocations": [
+        "inside impervious tonight"
+      ],
+      "registerLevel": 4,
+      "topicEmoji": "🌿"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L200_Q2",
+      "level": 200,
+      "cefr": "C2",
+      "subtype": "synonymSearch",
+      "difficulty": 5,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Near' in the sentence.",
+      "word": "Near",
+      "definition": "About to happen cleanly any minute now.",
+      "synonym": "Imminent",
+      "correctAnswer": "Imminent",
+      "correctAnswerIndex": 2,
+      "options": [
+        "Close",
+        "Early",
+        "Imminent",
+        "Next"
+      ],
+      "synonyms": [
+        "Imminent",
+        "Impending",
+        "Approaching"
+      ],
+      "antonyms": [
+        "Close",
+        "Early",
+        "Next"
+      ],
+      "contextSentence": "Airline crews readied cabins for ___ runway touchdown cleanly.",
+      "usageExample": "Airline crews readied cabins for imminent runway touchdown cleanly.",
+      "nuanceDifference": "'Near' sits close (`near gate`). 'Imminent' alerts strictly to events — storms, arrivals, births — striking very soon (`imminent storm`).",
+      "explanation": "Natural — fast-approaching events in time take 'imminent'.",
+      "hint": "Fits expressions like \"___ storm\" — starts with 'I'.",
+      "gradientScale": [
+        "Near",
+        "Imminent",
+        "Approaching",
+        "Looming"
+      ],
+      "collocations": [
+        "imminent storm",
+        "an imminent afternoon"
+      ],
+      "wrongCollocations": [
+        "stands imminent home"
+      ],
+      "registerLevel": 4,
+      "topicEmoji": "⚖️"
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L200_Q3",
+      "level": 200,
+      "cefr": "C2",
+      "subtype": "synonymSearch",
+      "difficulty": 5,
+      "interactionType": "search",
+      "instruction": "Find and trace the synonym that replaces 'Far' in the sentence.",
+      "word": "Far",
+      "definition": "Far off in distance, wild terrain, OR slim chance.",
+      "synonym": "Remote",
+      "correctAnswer": "Remote",
+      "correctAnswerIndex": 3,
+      "options": [
+        "Wild",
+        "Tiny",
+        "Small",
+        "Remote"
+      ],
+      "synonyms": [
+        "Remote",
+        "Distant",
+        "Isolated"
+      ],
+      "antonyms": [
+        "Wild",
+        "Tiny",
+        "Small"
+      ],
+      "contextSentence": "Field nurses traveled to ___ valley clinics every winter.",
+      "usageExample": "Field nurses traveled to remote valley clinics every winter.",
+      "nuanceDifference": "'Far' asks miles (`far city`). 'Remote' isolates snow cabins (`remote lodge`) OR shrinks odds (`remote chance`).",
+      "explanation": "Natural — isolated wilderness or slim odds use 'remote'.",
+      "hint": "Fits expressions like \"___ lodge\" — starts with 'R'.",
+      "gradientScale": [
+        "Far",
+        "Remote",
+        "Isolated",
+        "Slim"
+      ],
+      "collocations": [
+        "remote lodge",
+        "remote chance"
+      ],
+      "wrongCollocations": [
+        "How remote do"
+      ],
+      "registerLevel": 4,
+      "topicEmoji": "💬"
+    }
+  ]
 }

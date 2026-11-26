@@ -1,1058 +1,1570 @@
 {
-    "gameType": "synonymSearch",
-    "phase": "learn",
-    "batchIndex": 2,
-    "levels": "11-20",
-    "quests": [
+  "gameType": "synonymSearch",
+  "phase": "learn",
+  "cefr": "A2",
+  "difficulty": 1,
+  "batchIndex": 2,
+  "levels": "11-20",
+  "quests": [
+    {
+      "id": "VOC_SYNONYMSEARCH_L11_LEARN_Q1",
+      "level": 11,
+      "cefr": "A2",
+      "difficulty": 1,
+      "pairTitle": "Clean ↔ Tidy",
+      "baseWord": "Clean",
+      "synonym": "Tidy",
+      "partOfSpeech": "Adjective",
+      "coreMeaning": "Free of mess, dirt, or clutter.",
+      "whyDifferent": "'Clean' means free of dirt or stains. 'Tidy' means objects are neatly arranged in order.",
+      "makeovers": [
         {
-            "id": "VOC_SYNONYMSEARCH_L11_LEARN_Q1",
-            "level": 11,
-            "conceptTitle": "Concept Exploration: HOUSE",
-            "word": "HOUSE",
-            "definition": "\"Home\" often means the same building as \"house,\" but with a warmer, more personal feeling attached to it.",
-            "example": "Example sentence",
-            "nativeTip": "A building where people live.",
-            "visualAnchor": "💡 HOUSE = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "\"Home\" often means the same building as \"house,\" but with a warmer, more personal feeling attached to it.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "A building where people live."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L11_Q1",
-                "instruction": "Find the synonym for the given word.",
-                "word": "House",
-                "hint": "A building where people live.",
-                "explanation": "\"Home\" often means the same building as \"house,\" but with a warmer, more personal feeling attached to it.",
-                "interactionType": "search",
-                "correctAnswer": "Home",
-                "options": [
-                    "Office",
-                    "Garage",
-                    "Home",
-                    "Hotel"
-                ],
-                "nuanceDifference": "\"Home\" emphasizes the feeling of belonging somewhere, while \"house\" simply names the physical building.",
-                "contextSentence": "They just moved into a new home on Maple Street."
-            }
+          "situationTag": "Office Desk",
+          "beforeSentence": "Please keep your desk ___ before leaving today.",
+          "targetSlotWord": "clean",
+          "swappedWord": "tidy",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — 'tidy' fits arranging papers and items neatly.",
+          "spokenSentence": "Please keep your desk tidy before leaving today."
         },
         {
-            "id": "VOC_SYNONYMSEARCH_L11_LEARN_Q2",
-            "level": 11,
-            "conceptTitle": "Concept Exploration: FRIEND",
-            "word": "FRIEND",
-            "definition": "\"Pal\" is a casual, friendly word for \"friend,\" common in relaxed conversation.",
-            "example": "Example sentence",
-            "nativeTip": "A person you know well and like.",
-            "visualAnchor": "💡 FRIEND = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "\"Pal\" is a casual, friendly word for \"friend,\" common in relaxed conversation.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "A person you know well and like."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L11_Q2",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Friend",
-                "hint": "A person you know well and like.",
-                "explanation": "\"Pal\" is a casual, friendly word for \"friend,\" common in relaxed conversation.",
-                "interactionType": "search",
-                "correctAnswer": "Pal",
-                "options": [
-                    "Stranger",
-                    "Rival",
-                    "Enemy",
-                    "Pal"
-                ],
-                "nuanceDifference": "\"Pal\" is informal and often used with a light, cheerful tone, while \"friend\" fits any situation, formal or casual.",
-                "contextSentence": "He grabbed lunch with his old pal from college."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L11_LEARN_Q3",
-            "level": 11,
-            "conceptTitle": "Concept Exploration: TALK",
-            "word": "TALK",
-            "definition": "\"Chat\" describes a relaxed, informal conversation — exactly what most everyday \"talks\" between friends look like.",
-            "example": "Example sentence",
-            "nativeTip": "To speak with someone, sharing information or ideas.",
-            "visualAnchor": "💡 TALK = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "\"Chat\" describes a relaxed, informal conversation — exactly what most everyday \"talks\" between friends look like.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "To speak with someone, sharing information or ideas."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L11_Q3",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Talk",
-                "hint": "To speak with someone, sharing information or ideas.",
-                "explanation": "\"Chat\" describes a relaxed, informal conversation — exactly what most everyday \"talks\" between friends look like.",
-                "interactionType": "search",
-                "correctAnswer": "Chat",
-                "options": [
-                    "Argue",
-                    "Chat",
-                    "Lecture",
-                    "Announce"
-                ],
-                "nuanceDifference": "\"Chat\" suggests a light, casual exchange, while \"talk\" can describe conversations of any tone, including serious ones.",
-                "contextSentence": "We sat down to chat over coffee."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L12_LEARN_Q1",
-            "level": 12,
-            "conceptTitle": "Concept Exploration: HELP",
-            "word": "HELP",
-            "definition": "\"Assist\" means the same as \"help,\" but it's the word you'll find on job descriptions and official instructions.",
-            "example": "Example sentence",
-            "nativeTip": "To make something easier for someone by doing part of the work.",
-            "visualAnchor": "💡 HELP = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "\"Assist\" means the same as \"help,\" but it's the word you'll find on job descriptions and official instructions.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "To make something easier for someone by doing part of the work."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L12_Q1",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Help",
-                "hint": "To make something easier for someone by doing part of the work.",
-                "explanation": "\"Assist\" means the same as \"help,\" but it's the word you'll find on job descriptions and official instructions.",
-                "interactionType": "search",
-                "correctAnswer": "Assist",
-                "options": [
-                    "Ignore",
-                    "Block",
-                    "Delay",
-                    "Assist"
-                ],
-                "nuanceDifference": "\"Assist\" sounds more formal and is common in professional settings, while \"help\" is used everywhere, including casual speech.",
-                "contextSentence": "The intern will assist the manager with the report."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L12_LEARN_Q2",
-            "level": 12,
-            "conceptTitle": "Concept Exploration: WANT",
-            "word": "WANT",
-            "definition": "\"Desire\" carries the same meaning as \"want,\" though it sounds more formal and slightly stronger.",
-            "example": "Example sentence",
-            "nativeTip": "To feel that you would like to have or do something.",
-            "visualAnchor": "💡 WANT = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "\"Desire\" carries the same meaning as \"want,\" though it sounds more formal and slightly stronger.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "To feel that you would like to have or do something."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L12_Q2",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Want",
-                "hint": "To feel that you would like to have or do something.",
-                "explanation": "\"Desire\" carries the same meaning as \"want,\" though it sounds more formal and slightly stronger.",
-                "interactionType": "search",
-                "correctAnswer": "Desire",
-                "options": [
-                    "Reject",
-                    "Avoid",
-                    "Desire",
-                    "Dislike"
-                ],
-                "nuanceDifference": "\"Desire\" is often used in writing or formal speech, while \"want\" is the natural choice in everyday conversation.",
-                "contextSentence": "Every customer wants to desire quality over quantity."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L12_LEARN_Q3",
-            "level": 12,
-            "conceptTitle": "Concept Exploration: NEED",
-            "word": "NEED",
-            "definition": "\"Require\" is a more formal way of saying \"need,\" often used in official instructions and paperwork.",
-            "example": "Example sentence",
-            "nativeTip": "To not be able to do without something because it's necessary.",
-            "visualAnchor": "💡 NEED = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "\"Require\" is a more formal way of saying \"need,\" often used in official instructions and paperwork.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "To not be able to do without something because it's necessary."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L12_Q3",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Need",
-                "hint": "To not be able to do without something because it's necessary.",
-                "explanation": "\"Require\" is a more formal way of saying \"need,\" often used in official instructions and paperwork.",
-                "interactionType": "search",
-                "correctAnswer": "Require",
-                "options": [
-                    "Require",
-                    "Prefer",
-                    "Offer",
-                    "Refuse"
-                ],
-                "nuanceDifference": "\"Require\" is common in formal or technical writing, such as job listings, while \"need\" is used in everyday speech.",
-                "contextSentence": "This form requires your full legal name."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L13_LEARN_Q1",
-            "level": 13,
-            "conceptTitle": "Concept Exploration: LOVE",
-            "word": "LOVE",
-            "definition": "\"Adore\" expresses the same deep affection as \"love,\" often with an extra note of warmth or enthusiasm.",
-            "example": "Example sentence",
-            "nativeTip": "To care about someone or something very deeply.",
-            "visualAnchor": "💡 LOVE = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "\"Adore\" expresses the same deep affection as \"love,\" often with an extra note of warmth or enthusiasm.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "To care about someone or something very deeply."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L13_Q1",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Love",
-                "hint": "To care about someone or something very deeply.",
-                "explanation": "\"Adore\" expresses the same deep affection as \"love,\" often with an extra note of warmth or enthusiasm.",
-                "interactionType": "search",
-                "correctAnswer": "Adore",
-                "options": [
-                    "Adore",
-                    "Dislike",
-                    "Ignore",
-                    "Resent"
-                ],
-                "nuanceDifference": "\"Adore\" tends to sound slightly stronger and more expressive than the everyday word \"love.\"",
-                "contextSentence": "She adores spending weekends with her grandchildren."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L13_LEARN_Q2",
-            "level": 13,
-            "conceptTitle": "Concept Exploration: GIVE",
-            "word": "GIVE",
-            "definition": "\"Provide\" describes the same action as \"give,\" but it's the word used in more formal or professional contexts.",
-            "example": "Example sentence",
-            "nativeTip": "To hand something to someone or make it available to them.",
-            "visualAnchor": "💡 GIVE = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "\"Provide\" describes the same action as \"give,\" but it's the word used in more formal or professional contexts.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "To hand something to someone or make it available to them."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L13_Q2",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Give",
-                "hint": "To hand something to someone or make it available to them.",
-                "explanation": "\"Provide\" describes the same action as \"give,\" but it's the word used in more formal or professional contexts.",
-                "interactionType": "search",
-                "correctAnswer": "Provide",
-                "options": [
-                    "Withhold",
-                    "Borrow",
-                    "Request",
-                    "Provide"
-                ],
-                "nuanceDifference": "\"Provide\" often implies giving something needed or requested, like a service, while \"give\" is more general.",
-                "contextSentence": "The hotel provides free breakfast for guests."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L13_LEARN_Q3",
-            "level": 13,
-            "conceptTitle": "Concept Exploration: SHOW",
-            "word": "SHOW",
-            "definition": "\"Display\" means to show something, usually in a way meant to be noticed, like items in a store window.",
-            "example": "Example sentence",
-            "nativeTip": "To let someone see something.",
-            "visualAnchor": "💡 SHOW = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "\"Display\" means to show something, usually in a way meant to be noticed, like items in a store window.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "To let someone see something."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L13_Q3",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Show",
-                "hint": "To let someone see something.",
-                "explanation": "\"Display\" means to show something, usually in a way meant to be noticed, like items in a store window.",
-                "interactionType": "search",
-                "correctAnswer": "Display",
-                "options": [
-                    "Hide",
-                    "Display",
-                    "Remove",
-                    "Return"
-                ],
-                "nuanceDifference": "\"Display\" often implies presenting something for others to look at, while \"show\" is a broader, everyday word.",
-                "contextSentence": "The museum will display the new painting next week."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L14_LEARN_Q1",
-            "level": 14,
-            "conceptTitle": "Concept Exploration: ASK",
-            "word": "ASK",
-            "definition": "\"Inquire\" means to ask, but it's the formal word used in emails, customer service, and official requests.",
-            "example": "Example sentence",
-            "nativeTip": "To put a question to someone.",
-            "visualAnchor": "💡 ASK = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "\"Inquire\" means to ask, but it's the formal word used in emails, customer service, and official requests.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "To put a question to someone."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L14_Q1",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Ask",
-                "hint": "To put a question to someone.",
-                "explanation": "\"Inquire\" means to ask, but it's the formal word used in emails, customer service, and official requests.",
-                "interactionType": "search",
-                "correctAnswer": "Inquire",
-                "options": [
-                    "Answer",
-                    "Assume",
-                    "Inquire",
-                    "Explain"
-                ],
-                "nuanceDifference": "\"Inquire\" is used in formal or written contexts, while \"ask\" fits naturally into everyday conversation.",
-                "contextSentence": "Please inquire at the front desk about checkout times."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L14_LEARN_Q2",
-            "level": 14,
-            "conceptTitle": "Concept Exploration: ANSWER",
-            "word": "ANSWER",
-            "definition": "\"Reply\" means almost exactly the same as \"answer,\" and the two are used interchangeably in most situations.",
-            "example": "Example sentence",
-            "nativeTip": "To respond to a question.",
-            "visualAnchor": "💡 ANSWER = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "\"Reply\" means almost exactly the same as \"answer,\" and the two are used interchangeably in most situations.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "To respond to a question."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L14_Q2",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Answer",
-                "hint": "To respond to a question.",
-                "explanation": "\"Reply\" means almost exactly the same as \"answer,\" and the two are used interchangeably in most situations.",
-                "interactionType": "search",
-                "correctAnswer": "Reply",
-                "options": [
-                    "Reply",
-                    "Question",
-                    "Repeat",
-                    "Interrupt"
-                ],
-                "nuanceDifference": "\"Reply\" is common for written communication, like emails, while \"answer\" is used for both speech and writing.",
-                "contextSentence": "Please reply to this email by Friday."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L14_LEARN_Q3",
-            "level": 14,
-            "conceptTitle": "Concept Exploration: FIND",
-            "word": "FIND",
-            "definition": "\"Discover\" carries the same core meaning as \"find,\" often with a sense of surprise or importance.",
-            "example": "Example sentence",
-            "nativeTip": "To come across something, either by searching or by chance.",
-            "visualAnchor": "💡 FIND = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "\"Discover\" carries the same core meaning as \"find,\" often with a sense of surprise or importance.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "To come across something, either by searching or by chance."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L14_Q3",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Find",
-                "hint": "To come across something, either by searching or by chance.",
-                "explanation": "\"Discover\" carries the same core meaning as \"find,\" often with a sense of surprise or importance.",
-                "interactionType": "search",
-                "correctAnswer": "Discover",
-                "options": [
-                    "Lose",
-                    "Hide",
-                    "Forget",
-                    "Discover"
-                ],
-                "nuanceDifference": "\"Discover\" often suggests finding something new or significant, while \"find\" can describe any everyday act of locating something.",
-                "contextSentence": "Scientists discovered a new species of frog in the rainforest."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L15_LEARN_Q1",
-            "level": 15,
-            "conceptTitle": "Concept Exploration: KEEP",
-            "word": "KEEP",
-            "definition": "\"Retain\" is a more formal word for \"keep,\" often used when talking about holding onto information, staff, or records.",
-            "example": "Example sentence",
-            "nativeTip": "To continue to have something and not get rid of it.",
-            "visualAnchor": "💡 KEEP = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "\"Retain\" is a more formal word for \"keep,\" often used when talking about holding onto information, staff, or records.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "To continue to have something and not get rid of it."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L15_Q1",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Keep",
-                "hint": "To continue to have something and not get rid of it.",
-                "explanation": "\"Retain\" is a more formal word for \"keep,\" often used when talking about holding onto information, staff, or records.",
-                "interactionType": "search",
-                "correctAnswer": "Retain",
-                "options": [
-                    "Discard",
-                    "Retain",
-                    "Release",
-                    "Abandon"
-                ],
-                "nuanceDifference": "\"Retain\" is common in formal or professional writing, such as \"retain employees,\" while \"keep\" fits everyday situations.",
-                "contextSentence": "The company works hard to retain its best employees."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L15_LEARN_Q2",
-            "level": 15,
-            "conceptTitle": "Concept Exploration: BREAK",
-            "word": "BREAK",
-            "definition": "\"Damage\" describes the harm that results when something breaks, and the two words often describe the same situation.",
-            "example": "Example sentence",
-            "nativeTip": "To harm something so that it no longer works properly.",
-            "visualAnchor": "💡 BREAK = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "\"Damage\" describes the harm that results when something breaks, and the two words often describe the same situation.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "To harm something so that it no longer works properly."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L15_Q2",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Break",
-                "hint": "To harm something so that it no longer works properly.",
-                "explanation": "\"Damage\" describes the harm that results when something breaks, and the two words often describe the same situation.",
-                "interactionType": "search",
-                "correctAnswer": "Damage",
-                "options": [
-                    "Repair",
-                    "Build",
-                    "Damage",
-                    "Improve"
-                ],
-                "nuanceDifference": "\"Damage\" can describe partial harm, while \"break\" often implies the object stops working completely.",
-                "contextSentence": "The storm damaged several roofs in the neighborhood."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L15_LEARN_Q3",
-            "level": 15,
-            "conceptTitle": "Concept Exploration: COLD",
-            "word": "COLD",
-            "definition": "\"Chilly\" describes a milder version of cold, the kind of temperature that makes you want a light jacket.",
-            "example": "Example sentence",
-            "nativeTip": "Having a low temperature.",
-            "visualAnchor": "💡 COLD = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "\"Chilly\" describes a milder version of cold, the kind of temperature that makes you want a light jacket.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "Having a low temperature."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L15_Q3",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Cold",
-                "hint": "Having a low temperature.",
-                "explanation": "\"Chilly\" describes a milder version of cold, the kind of temperature that makes you want a light jacket.",
-                "interactionType": "search",
-                "correctAnswer": "Chilly",
-                "options": [
-                    "Warm",
-                    "Boiling",
-                    "Chilly",
-                    "Humid"
-                ],
-                "nuanceDifference": "\"Chilly\" suggests a mild, tolerable cold, while \"cold\" can describe temperatures ranging from cool to freezing.",
-                "contextSentence": "It was a chilly morning, so she wore a scarf."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L16_LEARN_Q1",
-            "level": 16,
-            "conceptTitle": "Concept Exploration: CLEAN",
-            "word": "CLEAN",
-            "definition": "\"Spotless\" describes something that is extremely clean, without a single mark or trace of dirt.",
-            "example": "Example sentence",
-            "nativeTip": "Free from dirt or mess.",
-            "visualAnchor": "💡 CLEAN = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "\"Spotless\" describes something that is extremely clean, without a single mark or trace of dirt.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "Free from dirt or mess."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L16_Q1",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Clean",
-                "hint": "Free from dirt or mess.",
-                "explanation": "\"Spotless\" describes something that is extremely clean, without a single mark or trace of dirt.",
-                "interactionType": "search",
-                "correctAnswer": "Spotless",
-                "options": [
-                    "Spotless",
-                    "Filthy",
-                    "Messy",
-                    "Stained"
-                ],
-                "nuanceDifference": "\"Spotless\" is a stronger, more emphatic version of \"clean,\" used when something is clean to perfection.",
-                "contextSentence": "The hotel room was spotless when we arrived."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L16_LEARN_Q2",
-            "level": 16,
-            "conceptTitle": "Concept Exploration: DIRTY",
-            "word": "DIRTY",
-            "definition": "\"Filthy\" describes something extremely dirty, far beyond what the word \"dirty\" alone might suggest.",
-            "example": "Example sentence",
-            "nativeTip": "Marked or covered with an unwanted substance, like dust or mud.",
-            "visualAnchor": "💡 DIRTY = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "\"Filthy\" describes something extremely dirty, far beyond what the word \"dirty\" alone might suggest.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "Marked or covered with an unwanted substance, like dust or mud."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L16_Q2",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Dirty",
-                "hint": "Marked or covered with an unwanted substance, like dust or mud.",
-                "explanation": "\"Filthy\" describes something extremely dirty, far beyond what the word \"dirty\" alone might suggest.",
-                "interactionType": "search",
-                "correctAnswer": "Filthy",
-                "options": [
-                    "Spotless",
-                    "Filthy",
-                    "Fresh",
-                    "Polished"
-                ],
-                "nuanceDifference": "\"Filthy\" is a much stronger word than \"dirty\" and is usually reserved for genuinely unpleasant messes.",
-                "contextSentence": "His boots were filthy after the hike through the mud."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L16_LEARN_Q3",
-            "level": 16,
-            "conceptTitle": "Concept Exploration: NEAT",
-            "word": "NEAT",
-            "definition": "\"Tidy\" describes the same well-organized state as \"neat\" — a tidy desk is a neat one.",
-            "example": "Example sentence",
-            "nativeTip": "Arranged in an orderly, careful way.",
-            "visualAnchor": "💡 NEAT = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "\"Tidy\" describes the same well-organized state as \"neat\" — a tidy desk is a neat one.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "Arranged in an orderly, careful way."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L16_Q3",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Neat",
-                "hint": "Arranged in an orderly, careful way.",
-                "explanation": "\"Tidy\" describes the same well-organized state as \"neat\" — a tidy desk is a neat one.",
-                "interactionType": "search",
-                "correctAnswer": "Tidy",
-                "options": [
-                    "Messy",
-                    "Cluttered",
-                    "Chaotic",
-                    "Tidy"
-                ],
-                "nuanceDifference": "\"Tidy\" and \"neat\" are essentially interchangeable in everyday English, describing things kept in good order.",
-                "contextSentence": "She keeps her desk tidy at all times."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L17_LEARN_Q1",
-            "level": 17,
-            "conceptTitle": "Concept Exploration: FRIDGE",
-            "word": "FRIDGE",
-            "definition": "\"Refrigerator\" is the full, formal name for what people casually call a \"fridge.\"",
-            "example": "Example sentence",
-            "nativeTip": "An appliance used to keep food cold.",
-            "visualAnchor": "💡 FRIDGE = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "\"Refrigerator\" is the full, formal name for what people casually call a \"fridge.\"",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "An appliance used to keep food cold."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L17_Q1",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Fridge",
-                "hint": "An appliance used to keep food cold.",
-                "explanation": "\"Refrigerator\" is the full, formal name for what people casually call a \"fridge.\"",
-                "interactionType": "search",
-                "correctAnswer": "Refrigerator",
-                "options": [
-                    "Oven",
-                    "Refrigerator",
-                    "Freezer",
-                    "Microwave"
-                ],
-                "nuanceDifference": "\"Refrigerator\" is the complete, formal term, while \"fridge\" is the shortened word used in daily conversation.",
-                "contextSentence": "The refrigerator was completely empty by the end of the week."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L17_LEARN_Q2",
-            "level": 17,
-            "conceptTitle": "Concept Exploration: COUCH",
-            "word": "COUCH",
-            "definition": "\"Sofa\" names the same piece of furniture as \"couch\" — the two words are used interchangeably across English-speaking countries.",
-            "example": "Example sentence",
-            "nativeTip": "A long, soft piece of furniture for sitting.",
-            "visualAnchor": "💡 COUCH = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "\"Sofa\" names the same piece of furniture as \"couch\" — the two words are used interchangeably across English-speaking countries.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "A long, soft piece of furniture for sitting."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L17_Q2",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Couch",
-                "hint": "A long, soft piece of furniture for sitting.",
-                "explanation": "\"Sofa\" names the same piece of furniture as \"couch\" — the two words are used interchangeably across English-speaking countries.",
-                "interactionType": "search",
-                "correctAnswer": "Sofa",
-                "options": [
-                    "Stool",
-                    "Cabinet",
-                    "Mattress",
-                    "Sofa"
-                ],
-                "nuanceDifference": "\"Sofa\" and \"couch\" mean the same thing; \"sofa\" is slightly more common in British and formal American English.",
-                "contextSentence": "They bought a new sofa for the living room."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L17_LEARN_Q3",
-            "level": 17,
-            "conceptTitle": "Concept Exploration: RUG",
-            "word": "RUG",
-            "definition": "\"Carpet\" can describe the same floor covering as \"rug,\" though it sometimes refers to covering that spans a whole room.",
-            "example": "Example sentence",
-            "nativeTip": "A piece of fabric used to cover part of a floor.",
-            "visualAnchor": "💡 RUG = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "\"Carpet\" can describe the same floor covering as \"rug,\" though it sometimes refers to covering that spans a whole room.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "A piece of fabric used to cover part of a floor."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L17_Q3",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Rug",
-                "hint": "A piece of fabric used to cover part of a floor.",
-                "explanation": "\"Carpet\" can describe the same floor covering as \"rug,\" though it sometimes refers to covering that spans a whole room.",
-                "interactionType": "search",
-                "correctAnswer": "Carpet",
-                "options": [
-                    "Carpet",
-                    "Curtain",
-                    "Cushion",
-                    "Blanket"
-                ],
-                "nuanceDifference": "\"Carpet\" often covers an entire floor, while \"rug\" typically refers to a smaller, separate piece, but the words overlap in daily use.",
-                "contextSentence": "They rolled out a carpet to warm up the cold floor."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L18_LEARN_Q1",
-            "level": 18,
-            "conceptTitle": "Concept Exploration: WET",
-            "word": "WET",
-            "definition": "\"Damp\" describes a lighter form of wet — not soaked, just slightly moist.",
-            "example": "Example sentence",
-            "nativeTip": "Covered or soaked with liquid.",
-            "visualAnchor": "💡 WET = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "\"Damp\" describes a lighter form of wet — not soaked, just slightly moist.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "Covered or soaked with liquid."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L18_Q1",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Wet",
-                "hint": "Covered or soaked with liquid.",
-                "explanation": "\"Damp\" describes a lighter form of wet — not soaked, just slightly moist.",
-                "interactionType": "search",
-                "correctAnswer": "Damp",
-                "options": [
-                    "Dry",
-                    "Parched",
-                    "Damp",
-                    "Arid"
-                ],
-                "nuanceDifference": "\"Damp\" suggests only a small amount of moisture, while \"wet\" can describe anything from slightly moist to completely soaked.",
-                "contextSentence": "The towel was still damp from this morning."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L18_LEARN_Q2",
-            "level": 18,
-            "conceptTitle": "Concept Exploration: BRIGHT",
-            "word": "BRIGHT",
-            "definition": "\"Radiant\" describes light that is especially strong or glowing, a more vivid version of \"bright.\"",
-            "example": "Example sentence",
-            "nativeTip": "Giving off or full of light.",
-            "visualAnchor": "💡 BRIGHT = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "\"Radiant\" describes light that is especially strong or glowing, a more vivid version of \"bright.\"",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "Giving off or full of light."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L18_Q2",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Bright",
-                "hint": "Giving off or full of light.",
-                "explanation": "\"Radiant\" describes light that is especially strong or glowing, a more vivid version of \"bright.\"",
-                "interactionType": "search",
-                "correctAnswer": "Radiant",
-                "options": [
-                    "Dim",
-                    "Dull",
-                    "Radiant",
-                    "Faded"
-                ],
-                "nuanceDifference": "\"Radiant\" is a more vivid, almost poetic word than \"bright,\" often used to describe glowing light or a glowing smile.",
-                "contextSentence": "The bride looked radiant in the morning sunlight."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L18_LEARN_Q3",
-            "level": 18,
-            "conceptTitle": "Concept Exploration: LOUD",
-            "word": "LOUD",
-            "definition": "\"Noisy\" describes the same high volume as \"loud,\" often used for places or situations full of sound.",
-            "example": "Example sentence",
-            "nativeTip": "Producing a lot of noise.",
-            "visualAnchor": "💡 LOUD = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "\"Noisy\" describes the same high volume as \"loud,\" often used for places or situations full of sound.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "Producing a lot of noise."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L18_Q3",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Loud",
-                "hint": "Producing a lot of noise.",
-                "explanation": "\"Noisy\" describes the same high volume as \"loud,\" often used for places or situations full of sound.",
-                "interactionType": "search",
-                "correctAnswer": "Noisy",
-                "options": [
-                    "Silent",
-                    "Quiet",
-                    "Peaceful",
-                    "Noisy"
-                ],
-                "nuanceDifference": "\"Noisy\" often describes a place or situation full of many sounds, while \"loud\" can describe a single sound as well.",
-                "contextSentence": "The construction site next door was incredibly noisy."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L19_LEARN_Q1",
-            "level": 19,
-            "conceptTitle": "Concept Exploration: QUIET",
-            "word": "QUIET",
-            "definition": "\"Silent\" describes an even stronger absence of sound than \"quiet\" — a silent room has no noise at all.",
-            "example": "Example sentence",
-            "nativeTip": "Making very little noise.",
-            "visualAnchor": "💡 QUIET = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "\"Silent\" describes an even stronger absence of sound than \"quiet\" — a silent room has no noise at all.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "Making very little noise."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L19_Q1",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Quiet",
-                "hint": "Making very little noise.",
-                "explanation": "\"Silent\" describes an even stronger absence of sound than \"quiet\" — a silent room has no noise at all.",
-                "interactionType": "search",
-                "correctAnswer": "Silent",
-                "options": [
-                    "Silent",
-                    "Loud",
-                    "Noisy",
-                    "Chaotic"
-                ],
-                "nuanceDifference": "\"Silent\" means completely without sound, while \"quiet\" allows for some soft, low-level noise.",
-                "contextSentence": "The library stayed silent except for the turning of pages."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L19_LEARN_Q2",
-            "level": 19,
-            "conceptTitle": "Concept Exploration: BEAUTIFUL",
-            "word": "BEAUTIFUL",
-            "definition": "\"Gorgeous\" is an enthusiastic, informal way of saying something is beautiful, often used to express excitement.",
-            "example": "Example sentence",
-            "nativeTip": "Very pleasing to look at.",
-            "visualAnchor": "💡 BEAUTIFUL = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "\"Gorgeous\" is an enthusiastic, informal way of saying something is beautiful, often used to express excitement.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "Very pleasing to look at."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L19_Q2",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Beautiful",
-                "hint": "Very pleasing to look at.",
-                "explanation": "\"Gorgeous\" is an enthusiastic, informal way of saying something is beautiful, often used to express excitement.",
-                "interactionType": "search",
-                "correctAnswer": "Gorgeous",
-                "options": [
-                    "Plain",
-                    "Gorgeous",
-                    "Unattractive",
-                    "Ordinary"
-                ],
-                "nuanceDifference": "\"Gorgeous\" carries more energy and enthusiasm than \"beautiful,\" which sounds calmer and more neutral.",
-                "contextSentence": "The sunset over the ocean was absolutely gorgeous."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L19_LEARN_Q3",
-            "level": 19,
-            "conceptTitle": "Concept Exploration: UGLY",
-            "word": "UGLY",
-            "definition": "\"Hideous\" describes something far more unpleasant to look at than the word \"ugly\" alone suggests.",
-            "example": "Example sentence",
-            "nativeTip": "Unpleasant to look at.",
-            "visualAnchor": "💡 UGLY = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "\"Hideous\" describes something far more unpleasant to look at than the word \"ugly\" alone suggests.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "Unpleasant to look at."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L19_Q3",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Ugly",
-                "hint": "Unpleasant to look at.",
-                "explanation": "\"Hideous\" describes something far more unpleasant to look at than the word \"ugly\" alone suggests.",
-                "interactionType": "search",
-                "correctAnswer": "Hideous",
-                "options": [
-                    "Attractive",
-                    "Elegant",
-                    "Hideous",
-                    "Pleasant"
-                ],
-                "nuanceDifference": "\"Hideous\" is a much stronger, more dramatic word than \"ugly,\" reserved for things that are genuinely shocking to look at.",
-                "contextSentence": "The old, cracked statue looked hideous after years of neglect."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L20_LEARN_Q1",
-            "level": 20,
-            "conceptTitle": "Concept Exploration: FUNNY",
-            "word": "FUNNY",
-            "definition": "\"Hilarious\" describes something extremely funny, far beyond what a mild joke would produce.",
-            "example": "Example sentence",
-            "nativeTip": "Causing laughter or amusement.",
-            "visualAnchor": "💡 FUNNY = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "\"Hilarious\" describes something extremely funny, far beyond what a mild joke would produce.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "Causing laughter or amusement."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L20_Q1",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Funny",
-                "hint": "Causing laughter or amusement.",
-                "explanation": "\"Hilarious\" describes something extremely funny, far beyond what a mild joke would produce.",
-                "interactionType": "search",
-                "correctAnswer": "Hilarious",
-                "options": [
-                    "Hilarious",
-                    "Boring",
-                    "Tragic",
-                    "Serious"
-                ],
-                "nuanceDifference": "\"Hilarious\" is a stronger, more excited word than \"funny,\" used for things that genuinely make you laugh out loud.",
-                "contextSentence": "The comedian's new routine was absolutely hilarious."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L20_LEARN_Q2",
-            "level": 20,
-            "conceptTitle": "Concept Exploration: SCARY",
-            "word": "SCARY",
-            "definition": "\"Frightening\" describes the same fearful feeling as \"scary,\" though it sounds a little more formal in writing.",
-            "example": "Example sentence",
-            "nativeTip": "Causing fear.",
-            "visualAnchor": "💡 SCARY = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "\"Frightening\" describes the same fearful feeling as \"scary,\" though it sounds a little more formal in writing.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "Causing fear."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L20_Q2",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Scary",
-                "hint": "Causing fear.",
-                "explanation": "\"Frightening\" describes the same fearful feeling as \"scary,\" though it sounds a little more formal in writing.",
-                "interactionType": "search",
-                "correctAnswer": "Frightening",
-                "options": [
-                    "Comforting",
-                    "Frightening",
-                    "Calming",
-                    "Reassuring"
-                ],
-                "nuanceDifference": "\"Frightening\" and \"scary\" mean the same thing; \"frightening\" is more common in written English, \"scary\" in speech.",
-                "contextSentence": "The old house had a frightening, abandoned look to it."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L20_LEARN_Q3",
-            "level": 20,
-            "conceptTitle": "Concept Exploration: BRAVE",
-            "word": "BRAVE",
-            "definition": "\"Courageous\" is a more formal word for \"brave,\" often used to praise someone's actions in serious or difficult situations.",
-            "example": "Example sentence",
-            "nativeTip": "Willing to face danger or difficulty without fear.",
-            "visualAnchor": "💡 BRAVE = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "\"Courageous\" is a more formal word for \"brave,\" often used to praise someone's actions in serious or difficult situations.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "Willing to face danger or difficulty without fear."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L20_Q3",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Brave",
-                "hint": "Willing to face danger or difficulty without fear.",
-                "explanation": "\"Courageous\" is a more formal word for \"brave,\" often used to praise someone's actions in serious or difficult situations.",
-                "interactionType": "search",
-                "correctAnswer": "Courageous",
-                "options": [
-                    "Cowardly",
-                    "Timid",
-                    "Fearful",
-                    "Courageous"
-                ],
-                "nuanceDifference": "\"Courageous\" often appears in formal praise or writing about serious acts of bravery, while \"brave\" is used more casually too.",
-                "contextSentence": "The firefighter's courageous actions saved the entire family."
-            }
+          "situationTag": "Kitchen Sink",
+          "beforeSentence": "Wash the plates with soap until they are ___ again.",
+          "targetSlotWord": "clean",
+          "swappedWord": "tidy",
+          "isNaturalSwap": false,
+          "earVerdict": "Doesn't fit — dishes need dirt removed ('clean'), not neat shelves ('tidy').",
+          "spokenSentence": "Wash the plates with soap until they are clean again."
         }
-    ]
+      ],
+      "cousinWords": [
+        {
+          "word": "Neat",
+          "ipa": "",
+          "toneTag": "Everyday",
+          "miniContext": "Stack the loose folders into a neat pile before closing."
+        },
+        {
+          "word": "Orderly",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "Please keep your desk orderly before leaving today."
+        },
+        {
+          "word": "Spotless",
+          "ipa": "",
+          "toneTag": "Strongest",
+          "miniContext": "Freshly washed white tiles left halls spotless."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L11_LEARN_Q2",
+      "level": 11,
+      "cefr": "A2",
+      "difficulty": 1,
+      "pairTitle": "Home ↔ House",
+      "baseWord": "Home",
+      "synonym": "House",
+      "partOfSpeech": "Noun",
+      "coreMeaning": "A place where a person lives.",
+      "whyDifferent": "'Home' carries warmth and belonging. 'House' refers to the physical building.",
+      "makeovers": [
+        {
+          "situationTag": "Real Estate",
+          "beforeSentence": "They painted the brick ___ white before selling it.",
+          "targetSlotWord": "home",
+          "swappedWord": "house",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — 'house' refers to the physical structure.",
+          "spokenSentence": "They painted the brick house white before selling it."
+        },
+        {
+          "situationTag": "Warm Welcome",
+          "beforeSentence": "Come inside, sit down, and feel right at ___ here.",
+          "targetSlotWord": "home",
+          "swappedWord": "house",
+          "isNaturalSwap": false,
+          "earVerdict": "Doesn't fit — 'at home' is a fixed idiom never used with 'house'.",
+          "spokenSentence": "Come inside, sit down, and feel right at home here."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Flat",
+          "ipa": "",
+          "toneTag": "Warmth",
+          "miniContext": "We toured a quiet two-story flat at the end of the lane."
+        },
+        {
+          "word": "Cottage",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "They painted the brick cottage white before selling it."
+        },
+        {
+          "word": "Residence",
+          "ipa": "",
+          "toneTag": "Formality",
+          "miniContext": "The brick residence sits beside cedar trees."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L11_LEARN_Q3",
+      "level": 11,
+      "cefr": "A2",
+      "difficulty": 1,
+      "pairTitle": "Warm ↔ Cozy",
+      "baseWord": "Warm",
+      "synonym": "Cozy",
+      "partOfSpeech": "Adjective",
+      "coreMeaning": "Pleasant, comfortable, and inviting.",
+      "whyDifferent": "'Warm' refers to temperature or friendliness. 'Cozy' emphasizes snug, relaxed comfort indoors.",
+      "makeovers": [
+        {
+          "situationTag": "Cafe Corner",
+          "beforeSentence": "We found a ___ booth near the fireplace in winter.",
+          "targetSlotWord": "warm",
+          "swappedWord": "cozy",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — 'cozy' captures a snug, inviting small space.",
+          "spokenSentence": "We found a cozy booth near the fireplace in winter."
+        },
+        {
+          "situationTag": "Summer Weather",
+          "beforeSentence": "It stays ___ enough in April to swim outside.",
+          "targetSlotWord": "warm",
+          "swappedWord": "cozy",
+          "isNaturalSwap": false,
+          "earVerdict": "Doesn't fit — outdoor climate takes 'warm', never 'cozy'.",
+          "spokenSentence": "It stays warm enough in April to swim outside."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Snug",
+          "ipa": "",
+          "toneTag": "Everyday",
+          "miniContext": "Rain tapped the glass while they read inside the snug cabin."
+        },
+        {
+          "word": "Toasty",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "We found a toasty booth near the fireplace in winter."
+        },
+        {
+          "word": "Comfortable",
+          "ipa": "",
+          "toneTag": "Strongest",
+          "miniContext": "Soft wool socks keep hiking boots comfortable."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L12_LEARN_Q1",
+      "level": 12,
+      "cefr": "A2",
+      "difficulty": 1,
+      "pairTitle": "Quiet ↔ Silent",
+      "baseWord": "Quiet",
+      "synonym": "Silent",
+      "partOfSpeech": "Adjective",
+      "coreMeaning": "Making little or no sound.",
+      "whyDifferent": "'Quiet' means low noise. 'Silent' means completely zero sound at all.",
+      "makeovers": [
+        {
+          "situationTag": "Night Library",
+          "beforeSentence": "The empty hallway turned totally ___ after midnight.",
+          "targetSlotWord": "quiet",
+          "swappedWord": "silent",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — 'silent' marks a complete absence of sound.",
+          "spokenSentence": "The empty hallway turned totally silent after midnight."
+        },
+        {
+          "situationTag": "Gentle Voice",
+          "beforeSentence": "She spoke in a ___ voice so the baby kept sleeping.",
+          "targetSlotWord": "quiet",
+          "swappedWord": "silent",
+          "isNaturalSwap": false,
+          "earVerdict": "Doesn't fit — a soft speaking voice is 'quiet', not zero-sound 'silent'.",
+          "spokenSentence": "She spoke in a quiet voice so the baby kept sleeping."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Hushed",
+          "ipa": "",
+          "toneTag": "Everyday",
+          "miniContext": "The phone stayed completely hushed once alerts were switched off."
+        },
+        {
+          "word": "Mute",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "The empty hallway turned totally mute after midnight."
+        },
+        {
+          "word": "Still",
+          "ipa": "",
+          "toneTag": "Strongest",
+          "miniContext": "Dawn water rests glass-smooth and completely still."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L12_LEARN_Q2",
+      "level": 12,
+      "cefr": "A2",
+      "difficulty": 1,
+      "pairTitle": "Loud ↔ Noisy",
+      "baseWord": "Loud",
+      "synonym": "Noisy",
+      "partOfSpeech": "Adjective",
+      "coreMeaning": "Producing strong or distracting sound.",
+      "whyDifferent": "'Loud' describes volume of a single sound. 'Noisy' describes a busy place full of chaotic sounds.",
+      "makeovers": [
+        {
+          "situationTag": "City Street",
+          "beforeSentence": "The hotel faced a ___ intersection with constant traffic.",
+          "targetSlotWord": "loud",
+          "swappedWord": "noisy",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — places filled with overlapping sounds are 'noisy'.",
+          "spokenSentence": "The hotel faced a noisy intersection with constant traffic."
+        },
+        {
+          "situationTag": "Alarm Clock",
+          "beforeSentence": "The sudden ___ ring woke the whole apartment.",
+          "targetSlotWord": "loud",
+          "swappedWord": "noisy",
+          "isNaturalSwap": false,
+          "earVerdict": "Doesn't fit — a single sharp sound is 'loud', not 'noisy'.",
+          "spokenSentence": "The sudden loud ring woke the whole apartment."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Rowdy",
+          "ipa": "",
+          "toneTag": "Everyday",
+          "miniContext": "It was hard to study inside the rowdy downtown cafe."
+        },
+        {
+          "word": "Deafening",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "The hotel faced a deafening intersection with constant traffic."
+        },
+        {
+          "word": "Thundering",
+          "ipa": "",
+          "toneTag": "Strongest",
+          "miniContext": "Walkers watched thundering falls drop down cliffs."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L12_LEARN_Q3",
+      "level": 12,
+      "cefr": "A2",
+      "difficulty": 1,
+      "pairTitle": "Calm ↔ Peaceful",
+      "baseWord": "Calm",
+      "synonym": "Peaceful",
+      "partOfSpeech": "Adjective",
+      "coreMeaning": "Free from stress, noise, or worry.",
+      "whyDifferent": "'Calm' describes steady nerves or smooth water. 'Peaceful' describes a serene scene or mood.",
+      "makeovers": [
+        {
+          "situationTag": "Mountain View",
+          "beforeSentence": "A ___ lake reflected the morning pine trees.",
+          "targetSlotWord": "calm",
+          "swappedWord": "peaceful",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — 'peaceful' describes serene scenery.",
+          "spokenSentence": "A peaceful lake reflected the morning pine trees."
+        },
+        {
+          "situationTag": "Emergency Drill",
+          "beforeSentence": "Please stay ___ and walk toward the exit sign.",
+          "targetSlotWord": "calm",
+          "swappedWord": "peaceful",
+          "isNaturalSwap": false,
+          "earVerdict": "Doesn't fit — people control panic by staying 'calm', not 'peaceful'.",
+          "spokenSentence": "Please stay calm and walk toward the exit sign."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Serene",
+          "ipa": "",
+          "toneTag": "Everyday",
+          "miniContext": "They spent a serene Sunday reading under the garden trees."
+        },
+        {
+          "word": "Tranquil",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "A tranquil lake reflected the morning pine trees."
+        },
+        {
+          "word": "Relaxed",
+          "ipa": "",
+          "toneTag": "Strongest",
+          "miniContext": "Morning tea keeps conversations relaxed and warm."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L13_LEARN_Q1",
+      "level": 13,
+      "cefr": "A2",
+      "difficulty": 1,
+      "pairTitle": "Help ↔ Assist",
+      "baseWord": "Help",
+      "synonym": "Assist",
+      "partOfSpeech": "Verb",
+      "coreMeaning": "To make something easier for someone else.",
+      "whyDifferent": "'Help' fits everyday favors. 'Assist' sounds more formal, often in work or customer service.",
+      "makeovers": [
+        {
+          "situationTag": "Airport Gate",
+          "beforeSentence": "Staff stepped forward to ___ passengers with wheelchairs.",
+          "targetSlotWord": "help",
+          "swappedWord": "assist",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — 'assist' fits official staff helping customers.",
+          "spokenSentence": "Staff stepped forward to assist passengers with wheelchairs."
+        },
+        {
+          "situationTag": "Moving Boxes",
+          "beforeSentence": "Can you ___ me lift this table into the van?",
+          "targetSlotWord": "help",
+          "swappedWord": "assist",
+          "isNaturalSwap": false,
+          "earVerdict": "Doesn't fit — 'assist' usually needs 'assist someone with/in', not bare verb.",
+          "spokenSentence": "Can you help me lift this table into the van?"
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Aid",
+          "ipa": "",
+          "toneTag": "Everyday",
+          "miniContext": "Two paramedics arrived to aid the injured runner."
+        },
+        {
+          "word": "Support",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "Staff stepped forward to support passengers with wheelchairs."
+        },
+        {
+          "word": "Guide",
+          "ipa": "",
+          "toneTag": "Formal",
+          "miniContext": "Maps guide visitors smoothly toward north exits."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L13_LEARN_Q2",
+      "level": 13,
+      "cefr": "A2",
+      "difficulty": 1,
+      "pairTitle": "Choose ↔ Select",
+      "baseWord": "Choose",
+      "synonym": "Select",
+      "partOfSpeech": "Verb",
+      "coreMeaning": "To pick one option from a group.",
+      "whyDifferent": "'Choose' is personal and everyday. 'Select' is careful or formal, often for menus or lists.",
+      "makeovers": [
+        {
+          "situationTag": "Settings Menu",
+          "beforeSentence": "Tap your country and ___ a language from the list.",
+          "targetSlotWord": "choose",
+          "swappedWord": "select",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — interfaces and formal lists use 'select'.",
+          "spokenSentence": "Tap your country and select a language from the list."
+        },
+        {
+          "situationTag": "Favorite Color",
+          "beforeSentence": "Kids love to ___ bright crayons first.",
+          "targetSlotWord": "choose",
+          "swappedWord": "select",
+          "isNaturalSwap": false,
+          "earVerdict": "Doesn't fit — casual personal preference sounds stiff with 'select'.",
+          "spokenSentence": "Kids love to choose bright crayons first."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Pick",
+          "ipa": "",
+          "toneTag": "Casual",
+          "miniContext": "Customers may pick one free side dish with lunch."
+        },
+        {
+          "word": "Opt",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "Tap your country and opt a language from the list."
+        },
+        {
+          "word": "Elect",
+          "ipa": "",
+          "toneTag": "Official",
+          "miniContext": "Club members elect new captains each autumn."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L13_LEARN_Q3",
+      "level": 13,
+      "cefr": "A2",
+      "difficulty": 1,
+      "pairTitle": "Show ↔ Display",
+      "baseWord": "Show",
+      "synonym": "Display",
+      "partOfSpeech": "Verb",
+      "coreMeaning": "To let someone see something clearly.",
+      "whyDifferent": "'Show' means share with someone. 'Display' means arrange or present openly on a screen or shelf.",
+      "makeovers": [
+        {
+          "situationTag": "Museum Hall",
+          "beforeSentence": "Glass cases ___ ancient coins from the harbor.",
+          "targetSlotWord": "show",
+          "swappedWord": "display",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — exhibits and screens 'display' items.",
+          "spokenSentence": "Glass cases display ancient coins from the harbor."
+        },
+        {
+          "situationTag": "Way Home",
+          "beforeSentence": "Can you ___ me the fastest path to the bus stop?",
+          "targetSlotWord": "show",
+          "swappedWord": "display",
+          "isNaturalSwap": false,
+          "earVerdict": "Doesn't fit — guiding a friend personally uses 'show', not 'display'.",
+          "spokenSentence": "Can you show me the fastest path to the bus stop?"
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Present",
+          "ipa": "",
+          "toneTag": "Casual",
+          "miniContext": "The lobby screen will present updated train departure times."
+        },
+        {
+          "word": "Exhibit",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "Glass cases exhibit ancient coins from the harbor."
+        },
+        {
+          "word": "Reveal",
+          "ipa": "",
+          "toneTag": "Public",
+          "miniContext": "Drawn curtains reveal sunny ocean harbors."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L14_LEARN_Q1",
+      "level": 14,
+      "cefr": "A2",
+      "difficulty": 1,
+      "pairTitle": "Brave ↔ Bold",
+      "baseWord": "Brave",
+      "synonym": "Bold",
+      "partOfSpeech": "Adjective",
+      "coreMeaning": "Willing to take risks without fear.",
+      "whyDifferent": "'Brave' praises facing real danger or fear. 'Bold' describes confident, daring choices or colors.",
+      "makeovers": [
+        {
+          "situationTag": "Design Move",
+          "beforeSentence": "Painting the front door bright yellow was a ___ idea.",
+          "targetSlotWord": "brave",
+          "swappedWord": "bold",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — 'bold' fits daring style or business decisions.",
+          "spokenSentence": "Painting the front door bright yellow was a bold idea."
+        },
+        {
+          "situationTag": "Rescue Dog",
+          "beforeSentence": "The ___ firefighter carried two cats from the smoke.",
+          "targetSlotWord": "brave",
+          "swappedWord": "bold",
+          "isNaturalSwap": false,
+          "earVerdict": "Doesn't fit — physical rescue courage calls for 'brave', not 'bold'.",
+          "spokenSentence": "The brave firefighter carried two cats from the smoke."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Fearless",
+          "ipa": "",
+          "toneTag": "Everyday",
+          "miniContext": "Opening a bakery with one oven was a fearless step."
+        },
+        {
+          "word": "Courageous",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "Painting the front door bright yellow was a courageous idea."
+        },
+        {
+          "word": "Daring",
+          "ipa": "",
+          "toneTag": "Strongest",
+          "miniContext": "Skaters landed a daring spin along clean ice."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L14_LEARN_Q2",
+      "level": 14,
+      "cefr": "A2",
+      "difficulty": 1,
+      "pairTitle": "Rich ↔ Wealthy",
+      "baseWord": "Rich",
+      "synonym": "Wealthy",
+      "partOfSpeech": "Adjective",
+      "coreMeaning": "Having lots of money or valuable resources.",
+      "whyDifferent": "'Rich' describes money, flavor, or soil. 'Wealthy' describes people or families with high financial status.",
+      "makeovers": [
+        {
+          "situationTag": "City History",
+          "beforeSentence": "A ___ merchant funded the town library in 1920.",
+          "targetSlotWord": "rich",
+          "swappedWord": "wealthy",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — 'wealthy' describes affluent people and families.",
+          "spokenSentence": "A wealthy merchant funded the town library in 1920."
+        },
+        {
+          "situationTag": "Dark Chocolate",
+          "beforeSentence": "This cake has a ___ cocoa flavor.",
+          "targetSlotWord": "rich",
+          "swappedWord": "wealthy",
+          "isNaturalSwap": false,
+          "earVerdict": "Doesn't fit — food flavor and soil take 'rich', never 'wealthy'.",
+          "spokenSentence": "This cake has a rich cocoa flavor."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Affluent",
+          "ipa": "",
+          "toneTag": "Everyday",
+          "miniContext": "Several affluent donors paid for the new hospital wing."
+        },
+        {
+          "word": "Prosperous",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "A prosperous merchant funded the town library in 1920."
+        },
+        {
+          "word": "Loaded",
+          "ipa": "",
+          "toneTag": "Formal",
+          "miniContext": "Heaps of groceries filled the loaded wagon."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L14_LEARN_Q3",
+      "level": 14,
+      "cefr": "A2",
+      "difficulty": 1,
+      "pairTitle": "Poor ↔ Needy",
+      "baseWord": "Poor",
+      "synonym": "Needy",
+      "partOfSpeech": "Adjective",
+      "coreMeaning": "Lacking enough money, food, or support.",
+      "whyDifferent": "'Poor' describes low income, bad quality, or sympathy. 'Needy' describes people needing material aid or constant attention.",
+      "makeovers": [
+        {
+          "situationTag": "Food Drive",
+          "beforeSentence": "Volunteers packed winter coats for ___ families nearby.",
+          "targetSlotWord": "poor",
+          "swappedWord": "needy",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — charity drives often serve 'needy' households.",
+          "spokenSentence": "Volunteers packed winter coats for needy families nearby."
+        },
+        {
+          "situationTag": "Rainy Signal",
+          "beforeSentence": "My phone has ___ reception inside the tunnel.",
+          "targetSlotWord": "poor",
+          "swappedWord": "needy",
+          "isNaturalSwap": false,
+          "earVerdict": "Doesn't fit — weak quality or signal always takes 'poor', never 'needy'.",
+          "spokenSentence": "My phone has poor reception inside the tunnel."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Broke",
+          "ipa": "",
+          "toneTag": "Everyday",
+          "miniContext": "The shelter provides hot soup to broke residents nightly."
+        },
+        {
+          "word": "Struggling",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "Volunteers packed winter coats for struggling families nearby."
+        },
+        {
+          "word": "Impoverished",
+          "ipa": "",
+          "toneTag": "Strongest",
+          "miniContext": "Grants brought clean water to impoverished towns."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L15_LEARN_Q1",
+      "level": 15,
+      "cefr": "A2",
+      "difficulty": 1,
+      "pairTitle": "Old ↔ Ancient",
+      "baseWord": "Old",
+      "synonym": "Ancient",
+      "partOfSpeech": "Adjective",
+      "coreMeaning": "Existing for a long time.",
+      "whyDifferent": "'Old' covers years or decades. 'Ancient' means centuries or thousands of years old.",
+      "makeovers": [
+        {
+          "situationTag": "Stone Ruins",
+          "beforeSentence": "Archaeologists uncovered an ___ temple beneath the sand.",
+          "targetSlotWord": "old",
+          "swappedWord": "ancient",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — 'ancient' fits ruins from thousands of years ago.",
+          "spokenSentence": "Archaeologists uncovered an ancient temple beneath the sand."
+        },
+        {
+          "situationTag": "Friend Reunion",
+          "beforeSentence": "I met my ___ school friend for coffee yesterday.",
+          "targetSlotWord": "old",
+          "swappedWord": "ancient",
+          "isNaturalSwap": false,
+          "earVerdict": "Doesn't fit — calling a friend 'ancient' sounds comic or exaggerated.",
+          "spokenSentence": "I met my old school friend for coffee yesterday."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Aged",
+          "ipa": "",
+          "toneTag": "Everyday",
+          "miniContext": "The museum protects an aged bronze helmet from Greece."
+        },
+        {
+          "word": "Historic",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "Archaeologists uncovered a historic temple beneath the sand."
+        },
+        {
+          "word": "Prehistoric",
+          "ipa": "",
+          "toneTag": "Strongest",
+          "miniContext": "Museums house prehistoric stone tools cleanly."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L15_LEARN_Q2",
+      "level": 15,
+      "cefr": "A2",
+      "difficulty": 1,
+      "pairTitle": "New ↔ Fresh",
+      "baseWord": "New",
+      "synonym": "Fresh",
+      "partOfSpeech": "Adjective",
+      "coreMeaning": "Recently made, arrived, or started.",
+      "whyDifferent": "'New' applies to objects and inventions. 'Fresh' highlights newly picked food, clean air, or a clean start.",
+      "makeovers": [
+        {
+          "situationTag": "Bakery Morning",
+          "beforeSentence": "Grab a ___ loaf of bread straight from the oven.",
+          "targetSlotWord": "new",
+          "swappedWord": "fresh",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — 'fresh' highlights newly baked food and clean quality.",
+          "spokenSentence": "Grab a fresh loaf of bread straight from the oven."
+        },
+        {
+          "situationTag": "Car Model",
+          "beforeSentence": "He bought a ___ electric bike last weekend.",
+          "targetSlotWord": "new",
+          "swappedWord": "fresh",
+          "isNaturalSwap": false,
+          "earVerdict": "Doesn't fit — manufactured vehicles take 'new', not 'fresh'.",
+          "spokenSentence": "He bought a new electric bike last weekend."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Recent",
+          "ipa": "",
+          "toneTag": "Everyday",
+          "miniContext": "After walking outside, we breathed in the recent mountain air."
+        },
+        {
+          "word": "Modern",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "Grab a modern loaf of bread straight from the oven."
+        },
+        {
+          "word": "Crisp",
+          "ipa": "",
+          "toneTag": "Strongest",
+          "miniContext": "Autumn mornings arrive brisk, sunny, and crisp."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L15_LEARN_Q3",
+      "level": 15,
+      "cefr": "A2",
+      "difficulty": 1,
+      "pairTitle": "True ↔ Real",
+      "baseWord": "True",
+      "synonym": "Real",
+      "partOfSpeech": "Adjective",
+      "coreMeaning": "Not fake, imaginary, or false.",
+      "whyDifferent": "'True' matches facts and loyalty. 'Real' means genuine, physical, and not imitation.",
+      "makeovers": [
+        {
+          "situationTag": "Leather Bag",
+          "beforeSentence": "Check the label to ensure the jacket is ___ wool.",
+          "targetSlotWord": "true",
+          "swappedWord": "real",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — physical authenticity uses 'real', not 'true'.",
+          "spokenSentence": "Check the label to ensure the jacket is real wool."
+        },
+        {
+          "situationTag": "Story Check",
+          "beforeSentence": "Everything in her witness report turned out to be ___.",
+          "targetSlotWord": "true",
+          "swappedWord": "real",
+          "isNaturalSwap": false,
+          "earVerdict": "Doesn't fit — factual accuracy uses 'true'.",
+          "spokenSentence": "Everything in her witness report turned out to be true."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Genuine",
+          "ipa": "",
+          "toneTag": "Everyday",
+          "miniContext": "She prefers genuine vanilla beans rather than artificial drops."
+        },
+        {
+          "word": "Authentic",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "Check the label to ensure the jacket is authentic wool."
+        },
+        {
+          "word": "Actual",
+          "ipa": "",
+          "toneTag": "Strongest",
+          "miniContext": "Check the actual bill against earlier estimates."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L16_LEARN_Q1",
+      "level": 16,
+      "cefr": "A2",
+      "difficulty": 1,
+      "pairTitle": "Cold ↔ Chilly",
+      "baseWord": "Cold",
+      "synonym": "Chilly",
+      "partOfSpeech": "Adjective",
+      "coreMeaning": "Having a low temperature.",
+      "whyDifferent": "'Cold' covers freezing to mild chill. 'Chilly' means noticeably cool enough for a light jacket.",
+      "makeovers": [
+        {
+          "situationTag": "Autumn Walk",
+          "beforeSentence": "Bring a sweater because it gets ___ after sunset.",
+          "targetSlotWord": "cold",
+          "swappedWord": "chilly",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — 'chilly' fits crisp evening air.",
+          "spokenSentence": "Bring a sweater because it gets chilly after sunset."
+        },
+        {
+          "situationTag": "Ice Cream",
+          "beforeSentence": "Serve the mango sorbet straight from the freezer while ___.",
+          "targetSlotWord": "cold",
+          "swappedWord": "chilly",
+          "isNaturalSwap": false,
+          "earVerdict": "Doesn't fit — frozen desserts are 'cold' or freezing, not 'chilly'.",
+          "spokenSentence": "Serve the mango sorbet straight from the freezer while cold."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Cool",
+          "ipa": "",
+          "toneTag": "Everyday",
+          "miniContext": "A cool breeze blew across the soccer field in October."
+        },
+        {
+          "word": "Frosty",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "Bring a sweater because it gets frosty after sunset."
+        },
+        {
+          "word": "Freezing",
+          "ipa": "",
+          "toneTag": "Strongest",
+          "miniContext": "Wrap outdoor faucets before freezing nights."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L16_LEARN_Q2",
+      "level": 16,
+      "cefr": "A2",
+      "difficulty": 1,
+      "pairTitle": "Hot ↔ Warm",
+      "baseWord": "Hot",
+      "synonym": "Warm",
+      "partOfSpeech": "Adjective",
+      "coreMeaning": "Having pleasant or high heat.",
+      "whyDifferent": "'Hot' can mean burning or spicy. 'Warm' means comfortably heated or welcoming.",
+      "makeovers": [
+        {
+          "situationTag": "Tea Mug",
+          "beforeSentence": "Sip the soup slowly while it is ___ and soothing.",
+          "targetSlotWord": "hot",
+          "swappedWord": "warm",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — 'warm' suggests comfortable, gentle heat.",
+          "spokenSentence": "Sip the soup slowly while it is warm and soothing."
+        },
+        {
+          "situationTag": "Stove Warning",
+          "beforeSentence": "Do not touch the ___ frying pan with bare hands!",
+          "targetSlotWord": "hot",
+          "swappedWord": "warm",
+          "isNaturalSwap": false,
+          "earVerdict": "Doesn't fit — dangerous high heat requires 'hot', not 'warm'.",
+          "spokenSentence": "Do not touch the hot frying pan with bare hands!"
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Mild",
+          "ipa": "",
+          "toneTag": "Everyday",
+          "miniContext": "Visitors received a mild welcome with tea and blankets."
+        },
+        {
+          "word": "Toasty",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "Sip the soup slowly while it is toasty and soothing."
+        },
+        {
+          "word": "Boiling",
+          "ipa": "",
+          "toneTag": "Strongest",
+          "miniContext": "Wait until boiling water settles before pouring tea."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L16_LEARN_Q3",
+      "level": 16,
+      "cefr": "A2",
+      "difficulty": 1,
+      "pairTitle": "Hard ↔ Difficult",
+      "baseWord": "Hard",
+      "synonym": "Difficult",
+      "partOfSpeech": "Adjective",
+      "coreMeaning": "Requiring effort, skill, or patience.",
+      "whyDifferent": "'Hard' covers physical firmness and tough tasks. 'Difficult' focuses on mental challenge or tricky situations.",
+      "makeovers": [
+        {
+          "situationTag": "Math Exam",
+          "beforeSentence": "The final puzzle was too ___ to solve in two minutes.",
+          "targetSlotWord": "hard",
+          "swappedWord": "difficult",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — 'difficult' fits complex tasks and problems.",
+          "spokenSentence": "The final puzzle was too difficult to solve in two minutes."
+        },
+        {
+          "situationTag": "Bread Crust",
+          "beforeSentence": "Frozen butter is too ___ to spread smoothly.",
+          "targetSlotWord": "hard",
+          "swappedWord": "difficult",
+          "isNaturalSwap": false,
+          "earVerdict": "Doesn't fit — physical solidity requires 'hard', never 'difficult'.",
+          "spokenSentence": "Frozen butter is too hard to spread smoothly."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Tricky",
+          "ipa": "",
+          "toneTag": "Everyday",
+          "miniContext": "Learning proper violin posture can feel tricky at first."
+        },
+        {
+          "word": "Tough",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "The final puzzle was too tough to solve in two minutes."
+        },
+        {
+          "word": "Challenging",
+          "ipa": "",
+          "toneTag": "Strongest",
+          "miniContext": "Steep icy passes pose a challenging winter hike."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L17_LEARN_Q1",
+      "level": 17,
+      "cefr": "A2",
+      "difficulty": 1,
+      "pairTitle": "Walk ↔ Stroll",
+      "baseWord": "Walk",
+      "synonym": "Stroll",
+      "partOfSpeech": "Verb",
+      "coreMeaning": "To move on foot at a steady pace.",
+      "whyDifferent": "'Walk' covers any pace. 'Stroll' means walking slowly for pleasure without hurry.",
+      "makeovers": [
+        {
+          "situationTag": "Sunday Park",
+          "beforeSentence": "Couples love to ___ along the river path at dusk.",
+          "targetSlotWord": "walk",
+          "swappedWord": "stroll",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — relaxed leisure walking calls for 'stroll'.",
+          "spokenSentence": "Couples love to stroll along the river path at dusk."
+        },
+        {
+          "situationTag": "Morning Hurry",
+          "beforeSentence": "We have to ___ fast or we will miss the ferry.",
+          "targetSlotWord": "walk",
+          "swappedWord": "stroll",
+          "isNaturalSwap": false,
+          "earVerdict": "Doesn't fit — rushing fast contradicts 'stroll'.",
+          "spokenSentence": "We have to walk fast or we will miss the ferry."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Wander",
+          "ipa": "",
+          "toneTag": "Everyday",
+          "miniContext": "Tourists often wander through the old flower market."
+        },
+        {
+          "word": "March",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "Couples love to march along the river path at dusk."
+        },
+        {
+          "word": "Stride",
+          "ipa": "",
+          "toneTag": "Strongest",
+          "miniContext": "Long steady strides carried walkers past miles."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L17_LEARN_Q2",
+      "level": 17,
+      "cefr": "A2",
+      "difficulty": 1,
+      "pairTitle": "Run ↔ Dash",
+      "baseWord": "Run",
+      "synonym": "Dash",
+      "partOfSpeech": "Verb",
+      "coreMeaning": "To move swiftly on foot.",
+      "whyDifferent": "'Run' means steady running or jogging. 'Dash' means sprinting suddenly for a short distance.",
+      "makeovers": [
+        {
+          "situationTag": "Rain Storm",
+          "beforeSentence": "They had to ___ into the cafe when rain poured down.",
+          "targetSlotWord": "run",
+          "swappedWord": "dash",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — 'dash' captures a sudden burst toward shelter.",
+          "spokenSentence": "They had to dash into the cafe when rain poured down."
+        },
+        {
+          "situationTag": "Daily Habit",
+          "beforeSentence": "She likes to ___ five kilometers every Tuesday morning.",
+          "targetSlotWord": "run",
+          "swappedWord": "dash",
+          "isNaturalSwap": false,
+          "earVerdict": "Doesn't fit — endurance distance uses 'run', not sudden 'dash'.",
+          "spokenSentence": "She likes to run five kilometers every Tuesday morning."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Jog",
+          "ipa": "",
+          "toneTag": "Everyday",
+          "miniContext": "I will jog upstairs and grab my umbrella."
+        },
+        {
+          "word": "Sprint",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "They had to sprint into the cafe when rain poured down."
+        },
+        {
+          "word": "Race",
+          "ipa": "",
+          "toneTag": "Strongest",
+          "miniContext": "Cloud shadows race briskly across open meadows."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L17_LEARN_Q3",
+      "level": 17,
+      "cefr": "A2",
+      "difficulty": 1,
+      "pairTitle": "Drop ↔ Fall",
+      "baseWord": "Drop",
+      "synonym": "Fall",
+      "partOfSpeech": "Verb",
+      "coreMeaning": "To move downward rapidly.",
+      "whyDifferent": "'Drop' often means let something slip or sharp price dips. 'Fall' fits leaves, snow, or losing balance.",
+      "makeovers": [
+        {
+          "situationTag": "Winter Sky",
+          "beforeSentence": "Thick snow began to ___ across the quiet village.",
+          "targetSlotWord": "drop",
+          "swappedWord": "fall",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — rain and snow always 'fall', never 'drop'.",
+          "spokenSentence": "Thick snow began to fall across the quiet village."
+        },
+        {
+          "situationTag": "Clumsy Hands",
+          "beforeSentence": "Careful not to ___ that glass bowl on the tile floor.",
+          "targetSlotWord": "drop",
+          "swappedWord": "fall",
+          "isNaturalSwap": false,
+          "earVerdict": "Doesn't fit — releasing an object from your hands takes 'drop'.",
+          "spokenSentence": "Careful not to drop that glass bowl on the tile floor."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Slip",
+          "ipa": "",
+          "toneTag": "Everyday",
+          "miniContext": "Autumn leaves slowly slip from the oak trees."
+        },
+        {
+          "word": "Tumble",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "Thick snow began to tumble across the quiet village."
+        },
+        {
+          "word": "Plunge",
+          "ipa": "",
+          "toneTag": "Strongest",
+          "miniContext": "Divers plunge cleanly into deep turquoise bays."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L18_LEARN_Q1",
+      "level": 18,
+      "cefr": "A2",
+      "difficulty": 1,
+      "pairTitle": "Look ↔ Glance",
+      "baseWord": "Look",
+      "synonym": "Glance",
+      "partOfSpeech": "Verb",
+      "coreMeaning": "To direct your eyes toward something.",
+      "whyDifferent": "'Look' means pay visual attention. 'Glance' means take a quick one-second peek.",
+      "makeovers": [
+        {
+          "situationTag": "Watch Check",
+          "beforeSentence": "Waiters ___ at the wall clock before closing time.",
+          "targetSlotWord": "look",
+          "swappedWord": "glance",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — 'glance' fits a brief, quick look.",
+          "spokenSentence": "Waiters glance at the wall clock before closing time."
+        },
+        {
+          "situationTag": "Art Class",
+          "beforeSentence": "Take time to ___ closely at the brushwork.",
+          "targetSlotWord": "look",
+          "swappedWord": "glance",
+          "isNaturalSwap": false,
+          "earVerdict": "Doesn't fit — sustained close inspection contradicts quick 'glance'.",
+          "spokenSentence": "Take time to look closely at the brushwork."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Peek",
+          "ipa": "",
+          "toneTag": "Everyday",
+          "miniContext": "She stopped to peek at the menu before heading inside."
+        },
+        {
+          "word": "Stare",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "Waiters stare at the wall clock before closing time."
+        },
+        {
+          "word": "Examine",
+          "ipa": "",
+          "toneTag": "Strongest",
+          "miniContext": "Inspectors examine bridge bolts before traffic opens."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L18_LEARN_Q2",
+      "level": 18,
+      "cefr": "A2",
+      "difficulty": 1,
+      "pairTitle": "See ↔ Notice",
+      "baseWord": "See",
+      "synonym": "Notice",
+      "partOfSpeech": "Verb",
+      "coreMeaning": "To become aware of something with your eyes or mind.",
+      "whyDifferent": "'See' means perceive visually. 'Notice' means spot a specific detail you might have missed.",
+      "makeovers": [
+        {
+          "situationTag": "Small Detail",
+          "beforeSentence": "Did you ___ the small scratch near the door lock?",
+          "targetSlotWord": "see",
+          "swappedWord": "notice",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — 'notice' highlights spotting a subtle detail.",
+          "spokenSentence": "Did you notice the small scratch near the door lock?"
+        },
+        {
+          "situationTag": "Cinema Seat",
+          "beforeSentence": "From the front row you can ___ every actor clearly.",
+          "targetSlotWord": "see",
+          "swappedWord": "notice",
+          "isNaturalSwap": false,
+          "earVerdict": "Doesn't fit — general vision takes 'see'.",
+          "spokenSentence": "From the front row you can see every actor clearly."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Spot",
+          "ipa": "",
+          "toneTag": "Everyday",
+          "miniContext": "He did not spot the typo until reading the page twice."
+        },
+        {
+          "word": "Observe",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "Did you observe the small scratch near the door lock?"
+        },
+        {
+          "word": "Detect",
+          "ipa": "",
+          "toneTag": "Strongest",
+          "miniContext": "Smoke sensors detect faint wisps immediately."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L18_LEARN_Q3",
+      "level": 18,
+      "cefr": "A2",
+      "difficulty": 1,
+      "pairTitle": "Think ↔ Wonder",
+      "baseWord": "Think",
+      "synonym": "Wonder",
+      "partOfSpeech": "Verb",
+      "coreMeaning": "To use your mind to consider or ask yourself.",
+      "whyDifferent": "'Think' states an opinion or solves steps. 'Wonder' shows curiosity or polite uncertainty.",
+      "makeovers": [
+        {
+          "situationTag": "Curious Mind",
+          "beforeSentence": "I often ___ how birds navigate thousands of miles.",
+          "targetSlotWord": "think",
+          "swappedWord": "wonder",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — open curiosity uses 'wonder'.",
+          "spokenSentence": "I often wonder how birds navigate thousands of miles."
+        },
+        {
+          "situationTag": "Strong Opinion",
+          "beforeSentence": "I ___ this restaurant serves the best noodles nearby.",
+          "targetSlotWord": "think",
+          "swappedWord": "wonder",
+          "isNaturalSwap": false,
+          "earVerdict": "Doesn't fit — stating an opinion takes 'think', not 'wonder'.",
+          "spokenSentence": "I think this restaurant serves the best noodles nearby."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Guess",
+          "ipa": "",
+          "toneTag": "Certainty",
+          "miniContext": "Walkers look at the stars and guess what lies beyond."
+        },
+        {
+          "word": "Ponder",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "I often ponder how birds navigate thousands of miles."
+        },
+        {
+          "word": "Reflect",
+          "ipa": "",
+          "toneTag": "Curiosity",
+          "miniContext": "Still lakes reflect snowy peaks cleanly at dawn."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L19_LEARN_Q1",
+      "level": 19,
+      "cefr": "A2",
+      "difficulty": 1,
+      "pairTitle": "Say ↔ Tell",
+      "baseWord": "Say",
+      "synonym": "Tell",
+      "partOfSpeech": "Verb",
+      "coreMeaning": "To express thoughts using spoken words.",
+      "whyDifferent": "'Say' focuses on the exact words (`say hello`). 'Tell' needs a listener (`tell me`).",
+      "makeovers": [
+        {
+          "situationTag": "Giving News",
+          "beforeSentence": "Please ___ your sister that dinner starts at seven.",
+          "targetSlotWord": "say",
+          "swappedWord": "tell",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — 'tell' takes a direct person right after the verb.",
+          "spokenSentence": "Please tell your sister that dinner starts at seven."
+        },
+        {
+          "situationTag": "Simple Greeting",
+          "beforeSentence": "Always remember to ___ thank you to the bus driver.",
+          "targetSlotWord": "say",
+          "swappedWord": "tell",
+          "isNaturalSwap": false,
+          "earVerdict": "Doesn't fit — 'thank you' has no indirect object here, so 'say' is required.",
+          "spokenSentence": "Always remember to say thank you to the bus driver."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Speak",
+          "ipa": "",
+          "toneTag": "Everyday",
+          "miniContext": "Nobody could speak her the secret before the party."
+        },
+        {
+          "word": "State",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "Please state your sister that dinner starts at seven."
+        },
+        {
+          "word": "Inform",
+          "ipa": "",
+          "toneTag": "Strongest",
+          "miniContext": "Text parents promptly to inform them of delays."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L19_LEARN_Q2",
+      "level": 19,
+      "cefr": "A2",
+      "difficulty": 1,
+      "pairTitle": "Talk ↔ Chat",
+      "baseWord": "Talk",
+      "synonym": "Chat",
+      "partOfSpeech": "Verb",
+      "coreMeaning": "To speak with someone.",
+      "whyDifferent": "'Talk' works for serious or casual topics. 'Chat' always means light, friendly conversation.",
+      "makeovers": [
+        {
+          "situationTag": "Coffee Break",
+          "beforeSentence": "Neighbors stopped by the fence to ___ about gardening.",
+          "targetSlotWord": "talk",
+          "swappedWord": "chat",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — 'chat' fits relaxed, friendly small talk.",
+          "spokenSentence": "Neighbors stopped by the fence to chat about gardening."
+        },
+        {
+          "situationTag": "Serious Notice",
+          "beforeSentence": "The principal must ___ to students about lab safety rules.",
+          "targetSlotWord": "talk",
+          "swappedWord": "chat",
+          "isNaturalSwap": false,
+          "earVerdict": "Doesn't fit — formal warnings feel awkward as 'chat'.",
+          "spokenSentence": "The principal must talk to students about lab safety rules."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Converse",
+          "ipa": "",
+          "toneTag": "Casual",
+          "miniContext": "Old friends stayed late to converse over warm tea."
+        },
+        {
+          "word": "Gossip",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "Neighbors stopped by the fence to gossip about gardening."
+        },
+        {
+          "word": "Discuss",
+          "ipa": "",
+          "toneTag": "Formal",
+          "miniContext": "Teams gather Mondays to discuss weekly priorities."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L19_LEARN_Q3",
+      "level": 19,
+      "cefr": "A2",
+      "difficulty": 1,
+      "pairTitle": "Answer ↔ Reply",
+      "baseWord": "Answer",
+      "synonym": "Reply",
+      "partOfSpeech": "Verb",
+      "coreMeaning": "To respond to a question or message.",
+      "whyDifferent": "'Answer' takes direct nouns (`answer the phone`). 'Reply' fits emails, letters, and text threads (`reply to`).",
+      "makeovers": [
+        {
+          "situationTag": "Inbox Thread",
+          "beforeSentence": "I will ___ to your email before five o’clock.",
+          "targetSlotWord": "answer",
+          "swappedWord": "reply",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — messages and threads commonly use 'reply to'.",
+          "spokenSentence": "I will reply to your email before five o’clock."
+        },
+        {
+          "situationTag": "Doorbell Sound",
+          "beforeSentence": "Nobody walked over to ___ the ringing phone.",
+          "targetSlotWord": "answer",
+          "swappedWord": "reply",
+          "isNaturalSwap": false,
+          "earVerdict": "Doesn't fit — phones and doors take 'answer', never 'reply'.",
+          "spokenSentence": "Nobody walked over to answer the ringing phone."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Respond",
+          "ipa": "",
+          "toneTag": "Direct",
+          "miniContext": "Support agents respond quickly to urgent billing questions."
+        },
+        {
+          "word": "React",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "I will react to your email before five o’clock."
+        },
+        {
+          "word": "Acknowledge",
+          "ipa": "",
+          "toneTag": "Message",
+          "miniContext": "Drivers wave politely to acknowledge a kind merge."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L20_LEARN_Q1",
+      "level": 20,
+      "cefr": "A2",
+      "difficulty": 1,
+      "pairTitle": "Need ↔ Require",
+      "baseWord": "Need",
+      "synonym": "Require",
+      "partOfSpeech": "Verb",
+      "coreMeaning": "To depend on something essential.",
+      "whyDifferent": "'Need' fits daily wants or habits. 'Require' fits rules, laws, or official prerequisites.",
+      "makeovers": [
+        {
+          "situationTag": "Visa Rule",
+          "beforeSentence": "International flights ___ a valid passport at check-in.",
+          "targetSlotWord": "need",
+          "swappedWord": "require",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — official rules use 'require'.",
+          "spokenSentence": "International flights require a valid passport at check-in."
+        },
+        {
+          "situationTag": "Tired Nap",
+          "beforeSentence": "I really ___ a mug of coffee right now.",
+          "targetSlotWord": "need",
+          "swappedWord": "require",
+          "isNaturalSwap": false,
+          "earVerdict": "Doesn't fit — personal cravings sound stiff with 'require'.",
+          "spokenSentence": "I really need a mug of coffee right now."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Want",
+          "ipa": "",
+          "toneTag": "Personal",
+          "miniContext": "Science labs want safety goggles for every student."
+        },
+        {
+          "word": "Demand",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "International flights demand a valid passport at check-in."
+        },
+        {
+          "word": "Necessitate",
+          "ipa": "",
+          "toneTag": "Official",
+          "miniContext": "Heavy frost may necessitate early salting."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L20_LEARN_Q2",
+      "level": 20,
+      "cefr": "A2",
+      "difficulty": 1,
+      "pairTitle": "Get ↔ Receive",
+      "baseWord": "Get",
+      "synonym": "Receive",
+      "partOfSpeech": "Verb",
+      "coreMeaning": "To come into possession of something.",
+      "whyDifferent": "'Get' covers buying, fetching, or catching colds. 'Receive' highlights being handed or sent something officially.",
+      "makeovers": [
+        {
+          "situationTag": "Award Mail",
+          "beforeSentence": "Students will ___ their test certificates by mail.",
+          "targetSlotWord": "get",
+          "swappedWord": "receive",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — official mail and awards take 'receive'.",
+          "spokenSentence": "Students will receive their test certificates by mail."
+        },
+        {
+          "situationTag": "Morning Flu",
+          "beforeSentence": "Wear a coat so you do not ___ a bad cold.",
+          "targetSlotWord": "get",
+          "swappedWord": "receive",
+          "isNaturalSwap": false,
+          "earVerdict": "Doesn't fit — catching illness uses 'get', never 'receive'.",
+          "spokenSentence": "Wear a coat so you do not get a bad cold."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Earn",
+          "ipa": "",
+          "toneTag": "Casual",
+          "miniContext": "Subscribers earn a monthly magazine at their doorstep."
+        },
+        {
+          "word": "Obtain",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "Students will obtain their test certificates by mail."
+        },
+        {
+          "word": "Acquire",
+          "ipa": "",
+          "toneTag": "Official",
+          "miniContext": "Years of travel helped her acquire a calm accent."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L20_LEARN_Q3",
+      "level": 20,
+      "cefr": "A2",
+      "difficulty": 1,
+      "pairTitle": "Give ↔ Offer",
+      "baseWord": "Give",
+      "synonym": "Offer",
+      "partOfSpeech": "Verb",
+      "coreMeaning": "To hand or present something to another person.",
+      "whyDifferent": "'Give' completes the transfer (`give a gift`). 'Offer' holds something out so the person can accept or decline.",
+      "makeovers": [
+        {
+          "situationTag": "Polite Host",
+          "beforeSentence": "May I ___ you a cold glass of lemonade?",
+          "targetSlotWord": "give",
+          "swappedWord": "offer",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — polite invitations hold out a choice ('offer').",
+          "spokenSentence": "May I offer you a cold glass of lemonade?"
+        },
+        {
+          "situationTag": "Birthday Box",
+          "beforeSentence": "Aunt Maya wants to ___ her nephew a bicycle.",
+          "targetSlotWord": "give",
+          "swappedWord": "offer",
+          "isNaturalSwap": false,
+          "earVerdict": "Doesn't fit — handing a finished gift uses 'give'.",
+          "spokenSentence": "Aunt Maya wants to give her nephew a bicycle."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Hand",
+          "ipa": "",
+          "toneTag": "Everyday",
+          "miniContext": "Local shops hand free reusable bags on Mondays."
+        },
+        {
+          "word": "Provide",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "May I provide you a cold glass of lemonade?"
+        },
+        {
+          "word": "Donate",
+          "ipa": "",
+          "toneTag": "Strongest",
+          "miniContext": "Families donate extra picture books each spring."
+        }
+      ]
+    }
+  ]
 }

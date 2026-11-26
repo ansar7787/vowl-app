@@ -1,1058 +1,1570 @@
 {
-    "gameType": "synonymSearch",
-    "phase": "learn",
-    "batchIndex": 7,
-    "levels": "61-70",
-    "quests": [
+  "gameType": "synonymSearch",
+  "phase": "learn",
+  "cefr": "B1",
+  "difficulty": 2,
+  "batchIndex": 7,
+  "levels": "61-70",
+  "quests": [
+    {
+      "id": "VOC_SYNONYMSEARCH_L61_LEARN_Q1",
+      "level": 61,
+      "cefr": "B1",
+      "difficulty": 2,
+      "pairTitle": "Empty ↔ Vacant",
+      "baseWord": "Empty",
+      "synonym": "Vacant",
+      "partOfSpeech": "Adjective",
+      "coreMeaning": "Containing nothing or nobody.",
+      "whyDifferent": "'Empty' describes cups, boxes, and feelings. 'Vacant' officially marks unrented hotel rooms, seats, or open jobs.",
+      "makeovers": [
         {
-            "id": "VOC_SYNONYMSEARCH_L61_LEARN_Q1",
-            "level": 61,
-            "conceptTitle": "Concept Exploration: RUN",
-            "word": "RUN",
-            "definition": "In a business sense, to \"run\" a company means to \"operate\" it — the two describe the same responsibility.",
-            "example": "Example sentence",
-            "nativeTip": "To be in charge of the daily workings of a business or organization.",
-            "visualAnchor": "💡 RUN = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "In a business sense, to \"run\" a company means to \"operate\" it — the two describe the same responsibility.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "To be in charge of the daily workings of a business or organization."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L61_Q1",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Run",
-                "hint": "To be in charge of the daily workings of a business or organization.",
-                "explanation": "In a business sense, to \"run\" a company means to \"operate\" it — the two describe the same responsibility.",
-                "interactionType": "search",
-                "correctAnswer": "Operate",
-                "options": [
-                    "Sprint",
-                    "Jog",
-                    "Race",
-                    "Operate"
-                ],
-                "nuanceDifference": "\"Run\" has many meanings, but in the context of a business, \"operate\" captures the managerial sense, not the physical act of running.",
-                "contextSentence": "Her parents have operated the family bakery for thirty years."
-            }
+          "situationTag": "Hotel Sign",
+          "beforeSentence": "Only two ___ rooms remained for holiday weekend guests.",
+          "targetSlotWord": "empty",
+          "swappedWord": "vacant",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — available rooms, lots, and job posts take 'vacant'.",
+          "spokenSentence": "Only two vacant rooms remained for holiday weekend guests."
         },
         {
-            "id": "VOC_SYNONYMSEARCH_L61_LEARN_Q2",
-            "level": 61,
-            "conceptTitle": "Concept Exploration: LIGHT",
-            "word": "LIGHT",
-            "definition": "When describing weight, \"light\" means \"weightless\" in comparison to something else — a light bag is easy to carry.",
-            "example": "Example sentence",
-            "nativeTip": "Not heavy; easy to lift or carry.",
-            "visualAnchor": "💡 LIGHT = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "When describing weight, \"light\" means \"weightless\" in comparison to something else — a light bag is easy to carry.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "Not heavy; easy to lift or carry."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L61_Q2",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Light",
-                "hint": "Not heavy; easy to lift or carry.",
-                "explanation": "When describing weight, \"light\" means \"weightless\" in comparison to something else — a light bag is easy to carry.",
-                "interactionType": "search",
-                "correctAnswer": "Weightless",
-                "options": [
-                    "Illuminated",
-                    "Weightless",
-                    "Glowing",
-                    "Bright"
-                ],
-                "nuanceDifference": "\"Light\" can describe brightness or low weight; here the context of carrying something points clearly to the weight-related meaning.",
-                "contextSentence": "The backpack felt almost weightless once she removed the books."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L61_LEARN_Q3",
-            "level": 61,
-            "conceptTitle": "Concept Exploration: BOOK",
-            "word": "BOOK",
-            "definition": "To \"reserve\" a table or a room means the same as to \"book\" it in advance.",
-            "example": "Example sentence",
-            "nativeTip": "To arrange to use or have something at a future time.",
-            "visualAnchor": "💡 BOOK = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "To \"reserve\" a table or a room means the same as to \"book\" it in advance.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "To arrange to use or have something at a future time."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L61_Q3",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Book",
-                "hint": "To arrange to use or have something at a future time.",
-                "explanation": "To \"reserve\" a table or a room means the same as to \"book\" it in advance.",
-                "interactionType": "search",
-                "correctAnswer": "Reserve",
-                "options": [
-                    "Reserve",
-                    "Cancel",
-                    "Release",
-                    "Return"
-                ],
-                "nuanceDifference": "\"Book\" as a verb means to arrange something in advance, the same meaning carried by \"reserve\" for tables, flights, or rooms.",
-                "contextSentence": "We need to reserve a table for six before Friday night."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L62_LEARN_Q1",
-            "level": 62,
-            "conceptTitle": "Concept Exploration: FAIR",
-            "word": "FAIR",
-            "definition": "\"Just\" describes decisions or treatment based on what is morally right, much like being fair.",
-            "example": "Example sentence",
-            "nativeTip": "Treating people equally and in a way that is right or reasonable.",
-            "visualAnchor": "💡 FAIR = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "\"Just\" describes decisions or treatment based on what is morally right, much like being fair.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "Treating people equally and in a way that is right or reasonable."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L62_Q1",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Fair",
-                "hint": "Treating people equally and in a way that is right or reasonable.",
-                "explanation": "\"Just\" describes decisions or treatment based on what is morally right, much like being fair.",
-                "interactionType": "search",
-                "correctAnswer": "Just",
-                "options": [
-                    "Biased",
-                    "Unfair",
-                    "Just",
-                    "Corrupt"
-                ],
-                "nuanceDifference": "\"Just\" often carries a stronger moral or legal weight, while \"fair\" is the everyday word for equal, reasonable treatment.",
-                "contextSentence": "The judge was known for handing down just decisions."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L62_LEARN_Q2",
-            "level": 62,
-            "conceptTitle": "Concept Exploration: FIRM",
-            "word": "FIRM",
-            "definition": "\"Resolute\" describes a strong, unwavering determination, similar to being firm about a decision.",
-            "example": "Example sentence",
-            "nativeTip": "Not likely to change; steady and determined.",
-            "visualAnchor": "💡 FIRM = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "\"Resolute\" describes a strong, unwavering determination, similar to being firm about a decision.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "Not likely to change; steady and determined."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L62_Q2",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Firm",
-                "hint": "Not likely to change; steady and determined.",
-                "explanation": "\"Resolute\" describes a strong, unwavering determination, similar to being firm about a decision.",
-                "interactionType": "search",
-                "correctAnswer": "Resolute",
-                "options": [
-                    "Resolute",
-                    "Uncertain",
-                    "Hesitant",
-                    "Wavering"
-                ],
-                "nuanceDifference": "\"Resolute\" specifically emphasizes determination in the face of difficulty, while \"firm\" is broader and applies to physical steadiness too.",
-                "contextSentence": "Despite the criticism, she remained resolute in her decision."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L62_LEARN_Q3",
-            "level": 62,
-            "conceptTitle": "Concept Exploration: MILD",
-            "word": "MILD",
-            "definition": "\"Moderate\" describes something in the middle range, neither too strong nor too weak, much like \"mild.\"",
-            "example": "Example sentence",
-            "nativeTip": "Not strong or severe; gentle.",
-            "visualAnchor": "💡 MILD = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "\"Moderate\" describes something in the middle range, neither too strong nor too weak, much like \"mild.\"",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "Not strong or severe; gentle."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L62_Q3",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Mild",
-                "hint": "Not strong or severe; gentle.",
-                "explanation": "\"Moderate\" describes something in the middle range, neither too strong nor too weak, much like \"mild.\"",
-                "interactionType": "search",
-                "correctAnswer": "Moderate",
-                "options": [
-                    "Extreme",
-                    "Moderate",
-                    "Intense",
-                    "Severe"
-                ],
-                "nuanceDifference": "\"Moderate\" often describes a measured, balanced amount, while \"mild\" more specifically suggests gentleness or lack of intensity.",
-                "contextSentence": "The forecast predicts moderate temperatures for the weekend."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L63_LEARN_Q1",
-            "level": 63,
-            "conceptTitle": "Concept Exploration: SHARP",
-            "word": "SHARP",
-            "definition": "When describing someone's mind, \"sharp\" means \"quick-witted\" — able to think and respond fast.",
-            "example": "Example sentence",
-            "nativeTip": "Having an edge that can cut; describing someone's mind, it means fast and clever.",
-            "visualAnchor": "💡 SHARP = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "When describing someone's mind, \"sharp\" means \"quick-witted\" — able to think and respond fast.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "Having an edge that can cut; describing someone's mind, it means fast and clever."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L63_Q1",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Sharp",
-                "hint": "Having an edge that can cut; describing someone's mind, it means fast and clever.",
-                "explanation": "When describing someone's mind, \"sharp\" means \"quick-witted\" — able to think and respond fast.",
-                "interactionType": "search",
-                "correctAnswer": "Quick-witted",
-                "options": [
-                    "Dull",
-                    "Slow-thinking",
-                    "Forgetful",
-                    "Quick-witted"
-                ],
-                "nuanceDifference": "\"Sharp\" can describe a physical edge or a mental quality; here the context of thinking points to the mental meaning, not a blade.",
-                "contextSentence": "The lawyer was known for her quick-witted responses in court."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L63_LEARN_Q2",
-            "level": 63,
-            "conceptTitle": "Concept Exploration: COOL",
-            "word": "COOL",
-            "definition": "In describing behavior under pressure, \"cool\" means \"composed\" — staying calm rather than panicking.",
-            "example": "Example sentence",
-            "nativeTip": "Slightly cold; describing behavior, it means staying calm and controlled under pressure.",
-            "visualAnchor": "💡 COOL = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "In describing behavior under pressure, \"cool\" means \"composed\" — staying calm rather than panicking.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "Slightly cold; describing behavior, it means staying calm and controlled under pressure."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L63_Q2",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Cool",
-                "hint": "Slightly cold; describing behavior, it means staying calm and controlled under pressure.",
-                "explanation": "In describing behavior under pressure, \"cool\" means \"composed\" — staying calm rather than panicking.",
-                "interactionType": "search",
-                "correctAnswer": "Composed",
-                "options": [
-                    "Frantic",
-                    "Nervous",
-                    "Composed",
-                    "Panicked"
-                ],
-                "nuanceDifference": "\"Cool\" shifts meaning with context — here it describes emotional steadiness, not temperature.",
-                "contextSentence": "She stayed remarkably composed during the emergency landing."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L63_LEARN_Q3",
-            "level": 63,
-            "conceptTitle": "Concept Exploration: DRY",
-            "word": "DRY",
-            "definition": "\"Dry\" humor is delivered in a flat, serious tone that's still funny — often described as \"deadpan.\"",
-            "example": "Example sentence",
-            "nativeTip": "Without moisture; describing humor, it means delivered in a flat, serious tone that's still funny.",
-            "visualAnchor": "💡 DRY = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "\"Dry\" humor is delivered in a flat, serious tone that's still funny — often described as \"deadpan.\"",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "Without moisture; describing humor, it means delivered in a flat, serious tone that's still funny."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L63_Q3",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Dry",
-                "hint": "Without moisture; describing humor, it means delivered in a flat, serious tone that's still funny.",
-                "explanation": "\"Dry\" humor is delivered in a flat, serious tone that's still funny — often described as \"deadpan.\"",
-                "interactionType": "search",
-                "correctAnswer": "Deadpan",
-                "options": [
-                    "Emotional",
-                    "Exaggerated",
-                    "Deadpan",
-                    "Silly"
-                ],
-                "nuanceDifference": "\"Dry\" describes a subtle, understated kind of humor here, not the absence of moisture — context makes the intended sense clear.",
-                "contextSentence": "His deadpan delivery made the joke even funnier."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L64_LEARN_Q1",
-            "level": 64,
-            "conceptTitle": "Concept Exploration: ADDRESS",
-            "word": "ADDRESS",
-            "definition": "To \"tackle\" a problem means to confront and work on solving it, the same idea as addressing it.",
-            "example": "Example sentence",
-            "nativeTip": "To deal with or discuss a problem or topic directly.",
-            "visualAnchor": "💡 ADDRESS = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "To \"tackle\" a problem means to confront and work on solving it, the same idea as addressing it.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "To deal with or discuss a problem or topic directly."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L64_Q1",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Address",
-                "hint": "To deal with or discuss a problem or topic directly.",
-                "explanation": "To \"tackle\" a problem means to confront and work on solving it, the same idea as addressing it.",
-                "interactionType": "search",
-                "correctAnswer": "Tackle",
-                "options": [
-                    "Ignore",
-                    "Avoid",
-                    "Postpone",
-                    "Tackle"
-                ],
-                "nuanceDifference": "\"Tackle\" suggests an active, sometimes difficult effort to deal with something, similar to how \"address\" is used for problems, not locations.",
-                "contextSentence": "The new policy aims to tackle rising unemployment."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L64_LEARN_Q2",
-            "level": 64,
-            "conceptTitle": "Concept Exploration: COVER",
-            "word": "COVER",
-            "definition": "In a lesson or report, to \"cover\" a topic means to \"encompass\" it — including everything relevant within that subject.",
-            "example": "Example sentence",
-            "nativeTip": "To include or deal with a particular subject or area.",
-            "visualAnchor": "💡 COVER = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "In a lesson or report, to \"cover\" a topic means to \"encompass\" it — including everything relevant within that subject.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "To include or deal with a particular subject or area."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L64_Q2",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Cover",
-                "hint": "To include or deal with a particular subject or area.",
-                "explanation": "In a lesson or report, to \"cover\" a topic means to \"encompass\" it — including everything relevant within that subject.",
-                "interactionType": "search",
-                "correctAnswer": "Encompass",
-                "options": [
-                    "Encompass",
-                    "Exclude",
-                    "Omit",
-                    "Skip"
-                ],
-                "nuanceDifference": "\"Cover\" often describes a topic being included in a discussion, a meaning captured well by \"encompass,\" rather than covering a physical object.",
-                "contextSentence": "The training program encompasses everything from safety to customer service."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L64_LEARN_Q3",
-            "level": 64,
-            "conceptTitle": "Concept Exploration: DRAW",
-            "word": "DRAW",
-            "definition": "When used with attention or crowds, \"draw\" means to \"attract\" them — pulling people's interest toward something.",
-            "example": "Example sentence",
-            "nativeTip": "To pull people's interest or attention toward something; also, to sketch with a pencil.",
-            "visualAnchor": "💡 DRAW = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "When used with attention or crowds, \"draw\" means to \"attract\" them — pulling people's interest toward something.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "To pull people's interest or attention toward something; also, to sketch with a pencil."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L64_Q3",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Draw",
-                "hint": "To pull people's interest or attention toward something; also, to sketch with a pencil.",
-                "explanation": "When used with attention or crowds, \"draw\" means to \"attract\" them — pulling people's interest toward something.",
-                "interactionType": "search",
-                "correctAnswer": "Attract",
-                "options": [
-                    "Repel",
-                    "Attract",
-                    "Discourage",
-                    "Bore"
-                ],
-                "nuanceDifference": "\"Draw\" changes meaning depending on context; here it refers to attracting attention, not creating a picture.",
-                "contextSentence": "The festival attracts thousands of visitors every summer."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L65_LEARN_Q1",
-            "level": 65,
-            "conceptTitle": "Concept Exploration: HANDLE",
-            "word": "HANDLE",
-            "definition": "To \"manage\" a situation means to \"handle\" it — taking responsibility for keeping it under control.",
-            "example": "Example sentence",
-            "nativeTip": "To deal with a situation, problem, or responsibility.",
-            "visualAnchor": "💡 HANDLE = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "To \"manage\" a situation means to \"handle\" it — taking responsibility for keeping it under control.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "To deal with a situation, problem, or responsibility."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L65_Q1",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Handle",
-                "hint": "To deal with a situation, problem, or responsibility.",
-                "explanation": "To \"manage\" a situation means to \"handle\" it — taking responsibility for keeping it under control.",
-                "interactionType": "search",
-                "correctAnswer": "Manage",
-                "options": [
-                    "Ignore",
-                    "Neglect",
-                    "Abandon",
-                    "Manage"
-                ],
-                "nuanceDifference": "\"Manage\" often implies ongoing responsibility, while \"handle\" can describe dealing with something briefly or once.",
-                "contextSentence": "She manages customer complaints with patience and skill."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L65_LEARN_Q2",
-            "level": 65,
-            "conceptTitle": "Concept Exploration: DELIVER",
-            "word": "DELIVER",
-            "definition": "When talking about promises or results, to \"deliver\" means to \"fulfill\" them, not to physically carry an item.",
-            "example": "Example sentence",
-            "nativeTip": "To bring something to a place, or to carry out a promise or expectation.",
-            "visualAnchor": "💡 DELIVER = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "When talking about promises or results, to \"deliver\" means to \"fulfill\" them, not to physically carry an item.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "To bring something to a place, or to carry out a promise or expectation."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L65_Q2",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Deliver",
-                "hint": "To bring something to a place, or to carry out a promise or expectation.",
-                "explanation": "When talking about promises or results, to \"deliver\" means to \"fulfill\" them, not to physically carry an item.",
-                "interactionType": "search",
-                "correctAnswer": "Fulfill",
-                "options": [
-                    "Break",
-                    "Fulfill",
-                    "Abandon",
-                    "Ignore"
-                ],
-                "nuanceDifference": "\"Deliver\" refers to a physical drop-off in some contexts, but here it means completing what was promised, matching \"fulfill.\"",
-                "contextSentence": "The team worked overtime to fulfill the client's expectations."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L65_LEARN_Q3",
-            "level": 65,
-            "conceptTitle": "Concept Exploration: HANDLE",
-            "word": "HANDLE",
-            "definition": "In this physical sense, the \"handle\" of a tool is its \"grip\" — the part made for holding.",
-            "example": "Example sentence",
-            "nativeTip": "A part of an object designed to be held by the hand.",
-            "visualAnchor": "💡 HANDLE = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "In this physical sense, the \"handle\" of a tool is its \"grip\" — the part made for holding.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "A part of an object designed to be held by the hand."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L65_Q3",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Handle",
-                "hint": "A part of an object designed to be held by the hand.",
-                "explanation": "In this physical sense, the \"handle\" of a tool is its \"grip\" — the part made for holding.",
-                "interactionType": "search",
-                "correctAnswer": "Grip",
-                "options": [
-                    "Grip",
-                    "Blade",
-                    "Switch",
-                    "Frame"
-                ],
-                "nuanceDifference": "Unlike the earlier meaning of \"handle\" as managing a situation, this sense refers to a physical part designed for holding something.",
-                "contextSentence": "The knife's grip was made of smooth polished wood."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L66_LEARN_Q1",
-            "level": 66,
-            "conceptTitle": "Concept Exploration: SOUND",
-            "word": "SOUND",
-            "definition": "A \"sound\" argument is a \"valid\" one — logically strong and well-supported.",
-            "example": "Example sentence",
-            "nativeTip": "Based on good judgment; reasonable and reliable.",
-            "visualAnchor": "💡 SOUND = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "A \"sound\" argument is a \"valid\" one — logically strong and well-supported.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "Based on good judgment; reasonable and reliable."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L66_Q1",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Sound",
-                "hint": "Based on good judgment; reasonable and reliable.",
-                "explanation": "A \"sound\" argument is a \"valid\" one — logically strong and well-supported.",
-                "interactionType": "search",
-                "correctAnswer": "Valid",
-                "options": [
-                    "Weak",
-                    "Flawed",
-                    "Valid",
-                    "Baseless"
-                ],
-                "nuanceDifference": "\"Sound\" here describes logical strength, not an audible noise — the context of an argument makes the intended sense clear.",
-                "contextSentence": "The lawyer presented a valid argument backed by solid evidence."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L66_LEARN_Q2",
-            "level": 66,
-            "conceptTitle": "Concept Exploration: PLAIN",
-            "word": "PLAIN",
-            "definition": "When describing meaning, \"plain\" language is \"clear\" language — easy to understand without confusion.",
-            "example": "Example sentence",
-            "nativeTip": "Simple and easy to understand; also, without decoration.",
-            "visualAnchor": "💡 PLAIN = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "When describing meaning, \"plain\" language is \"clear\" language — easy to understand without confusion.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "Simple and easy to understand; also, without decoration."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L66_Q2",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Plain",
-                "hint": "Simple and easy to understand; also, without decoration.",
-                "explanation": "When describing meaning, \"plain\" language is \"clear\" language — easy to understand without confusion.",
-                "interactionType": "search",
-                "correctAnswer": "Clear",
-                "options": [
-                    "Confusing",
-                    "Vague",
-                    "Complicated",
-                    "Clear"
-                ],
-                "nuanceDifference": "\"Plain\" can describe simple decoration or, as here, clarity of meaning — the surrounding words point to the second sense.",
-                "contextSentence": "The instructions were written in clear, easy-to-follow language."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L66_LEARN_Q3",
-            "level": 66,
-            "conceptTitle": "Concept Exploration: LEVEL",
-            "word": "LEVEL",
-            "definition": "A \"level\" tone of voice is a \"steady\" one — calm and unchanging, without sudden shifts.",
-            "example": "Example sentence",
-            "nativeTip": "Staying constant and unwavering; also, having a flat, even surface.",
-            "visualAnchor": "💡 LEVEL = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "A \"level\" tone of voice is a \"steady\" one — calm and unchanging, without sudden shifts.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "Staying constant and unwavering; also, having a flat, even surface."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L66_Q3",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Level",
-                "hint": "Staying constant and unwavering; also, having a flat, even surface.",
-                "explanation": "A \"level\" tone of voice is a \"steady\" one — calm and unchanging, without sudden shifts.",
-                "interactionType": "search",
-                "correctAnswer": "Steady",
-                "options": [
-                    "Erratic",
-                    "Shaky",
-                    "Steady",
-                    "Unpredictable"
-                ],
-                "nuanceDifference": "\"Level\" describes emotional or vocal steadiness here, distinct from its meaning describing a flat physical surface.",
-                "contextSentence": "He kept a steady tone even while delivering the bad news."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L67_LEARN_Q1",
-            "level": 67,
-            "conceptTitle": "Concept Exploration: FIGURE",
-            "word": "FIGURE",
-            "definition": "To \"figure out\" a problem means to \"solve\" it through reasoning, distinct from a numerical figure.",
-            "example": "Example sentence",
-            "nativeTip": "To work out or understand something after thought.",
-            "visualAnchor": "💡 FIGURE = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "To \"figure out\" a problem means to \"solve\" it through reasoning, distinct from a numerical figure.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "To work out or understand something after thought."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L67_Q1",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Figure",
-                "hint": "To work out or understand something after thought.",
-                "explanation": "To \"figure out\" a problem means to \"solve\" it through reasoning, distinct from a numerical figure.",
-                "interactionType": "search",
-                "correctAnswer": "Solve",
-                "options": [
-                    "Solve",
-                    "Create",
-                    "Cause",
-                    "Ignore"
-                ],
-                "nuanceDifference": "\"Figure\" can mean a number or shape, but paired with \"out,\" it means working through a problem, matching \"solve.\"",
-                "contextSentence": "It took her an hour to solve the puzzle."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L67_LEARN_Q2",
-            "level": 67,
-            "conceptTitle": "Concept Exploration: TABLE",
-            "word": "TABLE",
-            "definition": "In a meeting, to \"table\" a topic means to \"postpone\" discussing it until a later time.",
-            "example": "Example sentence",
-            "nativeTip": "To set aside a proposal for later discussion.",
-            "visualAnchor": "💡 TABLE = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "In a meeting, to \"table\" a topic means to \"postpone\" discussing it until a later time.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "To set aside a proposal for later discussion."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L67_Q2",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Table",
-                "hint": "To set aside a proposal for later discussion.",
-                "explanation": "In a meeting, to \"table\" a topic means to \"postpone\" discussing it until a later time.",
-                "interactionType": "search",
-                "correctAnswer": "Postpone",
-                "options": [
-                    "Approve",
-                    "Postpone",
-                    "Discuss",
-                    "Finalize"
-                ],
-                "nuanceDifference": "\"Table\" usually names a piece of furniture, but as a verb in meetings, it means delaying discussion, matching \"postpone.\"",
-                "contextSentence": "The board decided to postpone the budget proposal until next month."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L67_LEARN_Q3",
-            "level": 67,
-            "conceptTitle": "Concept Exploration: CHARGE",
-            "word": "CHARGE",
-            "definition": "A store that \"charges\" you for an item is \"billing\" you for its cost.",
-            "example": "Example sentence",
-            "nativeTip": "To ask someone to pay a particular amount for goods or services.",
-            "visualAnchor": "💡 CHARGE = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "A store that \"charges\" you for an item is \"billing\" you for its cost.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "To ask someone to pay a particular amount for goods or services."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L67_Q3",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Charge",
-                "hint": "To ask someone to pay a particular amount for goods or services.",
-                "explanation": "A store that \"charges\" you for an item is \"billing\" you for its cost.",
-                "interactionType": "search",
-                "correctAnswer": "Bill",
-                "options": [
-                    "Bill",
-                    "Refund",
-                    "Discount",
-                    "Waive"
-                ],
-                "nuanceDifference": "\"Charge\" has several meanings, but in a shopping context, it refers to requesting payment, the same sense as \"bill.\"",
-                "contextSentence": "The hotel will bill guests for any damages to the room."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L68_LEARN_Q1",
-            "level": 68,
-            "conceptTitle": "Concept Exploration: NOVEL",
-            "word": "NOVEL",
-            "definition": "As an adjective, \"novel\" means \"original\" — a fresh idea unlike anything tried before.",
-            "example": "Example sentence",
-            "nativeTip": "New and not seen or done before.",
-            "visualAnchor": "💡 NOVEL = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "As an adjective, \"novel\" means \"original\" — a fresh idea unlike anything tried before.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "New and not seen or done before."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L68_Q1",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Novel",
-                "hint": "New and not seen or done before.",
-                "explanation": "As an adjective, \"novel\" means \"original\" — a fresh idea unlike anything tried before.",
-                "interactionType": "search",
-                "correctAnswer": "Original",
-                "options": [
-                    "Familiar",
-                    "Original",
-                    "Common",
-                    "Traditional"
-                ],
-                "nuanceDifference": "\"Novel\" can be a noun meaning a book, but as an adjective here, it means original and new, matching \"original.\"",
-                "contextSentence": "The scientists proposed an original solution to the water crisis."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L68_LEARN_Q2",
-            "level": 68,
-            "conceptTitle": "Concept Exploration: MINT",
-            "word": "MINT",
-            "definition": "Describing an object's condition, \"mint\" means \"pristine\" — as good as new, without flaws.",
-            "example": "Example sentence",
-            "nativeTip": "In excellent, unused condition.",
-            "visualAnchor": "💡 MINT = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "Describing an object's condition, \"mint\" means \"pristine\" — as good as new, without flaws.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "In excellent, unused condition."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L68_Q2",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Mint",
-                "hint": "In excellent, unused condition.",
-                "explanation": "Describing an object's condition, \"mint\" means \"pristine\" — as good as new, without flaws.",
-                "interactionType": "search",
-                "correctAnswer": "Pristine",
-                "options": [
-                    "Damaged",
-                    "Worn",
-                    "Pristine",
-                    "Faded"
-                ],
-                "nuanceDifference": "\"Mint\" can refer to the herb or the place where coins are made, but describing condition, it means flawless, matching \"pristine.\"",
-                "contextSentence": "The vintage car was kept in pristine condition for decades."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L68_LEARN_Q3",
-            "level": 68,
-            "conceptTitle": "Concept Exploration: FINE",
-            "word": "FINE",
-            "definition": "When describing craftsmanship, \"fine\" means \"exquisite\" — made with exceptional skill and quality.",
-            "example": "Example sentence",
-            "nativeTip": "Of high quality; also, describing weather that is pleasant.",
-            "visualAnchor": "💡 FINE = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "When describing craftsmanship, \"fine\" means \"exquisite\" — made with exceptional skill and quality.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "Of high quality; also, describing weather that is pleasant."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L68_Q3",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Fine",
-                "hint": "Of high quality; also, describing weather that is pleasant.",
-                "explanation": "When describing craftsmanship, \"fine\" means \"exquisite\" — made with exceptional skill and quality.",
-                "interactionType": "search",
-                "correctAnswer": "Exquisite",
-                "options": [
-                    "Crude",
-                    "Shoddy",
-                    "Sloppy",
-                    "Exquisite"
-                ],
-                "nuanceDifference": "\"Fine\" can mean acceptable or pleasant weather, but describing craftsmanship here, it points to exceptional quality, matching \"exquisite.\"",
-                "contextSentence": "The museum displayed an exquisite collection of antique jewelry."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L69_LEARN_Q1",
-            "level": 69,
-            "conceptTitle": "Concept Exploration: BRIGHT",
-            "word": "BRIGHT",
-            "definition": "Describing a person's mind, \"bright\" means \"intelligent\" — quick to learn and understand new things.",
-            "example": "Example sentence",
-            "nativeTip": "Quick to learn and understand new things.",
-            "visualAnchor": "💡 BRIGHT = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "Describing a person's mind, \"bright\" means \"intelligent\" — quick to learn and understand new things.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "Quick to learn and understand new things."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L69_Q1",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Bright",
-                "hint": "Quick to learn and understand new things.",
-                "explanation": "Describing a person's mind, \"bright\" means \"intelligent\" — quick to learn and understand new things.",
-                "interactionType": "search",
-                "correctAnswer": "Intelligent",
-                "options": [
-                    "Intelligent",
-                    "Dim",
-                    "Slow",
-                    "Dull"
-                ],
-                "nuanceDifference": "\"Bright\" describes light in some contexts, but describing a student's mind here, it means intelligent, not glowing.",
-                "contextSentence": "The intelligent young student solved the equation in seconds."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L69_LEARN_Q2",
-            "level": 69,
-            "conceptTitle": "Concept Exploration: SOLID",
-            "word": "SOLID",
-            "definition": "Describing evidence or reasoning, \"solid\" means \"substantial\" — strong enough to be trusted.",
-            "example": "Example sentence",
-            "nativeTip": "Reliable and well-founded; also, not liquid or gas.",
-            "visualAnchor": "💡 SOLID = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "Describing evidence or reasoning, \"solid\" means \"substantial\" — strong enough to be trusted.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "Reliable and well-founded; also, not liquid or gas."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L69_Q2",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Solid",
-                "hint": "Reliable and well-founded; also, not liquid or gas.",
-                "explanation": "Describing evidence or reasoning, \"solid\" means \"substantial\" — strong enough to be trusted.",
-                "interactionType": "search",
-                "correctAnswer": "Substantial",
-                "options": [
-                    "Flimsy",
-                    "Substantial",
-                    "Weak",
-                    "Shaky"
-                ],
-                "nuanceDifference": "\"Solid\" can describe physical matter, but describing evidence here, it means well-supported and convincing, matching \"substantial.\"",
-                "contextSentence": "The prosecution presented substantial evidence against the defendant."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L69_LEARN_Q3",
-            "level": 69,
-            "conceptTitle": "Concept Exploration: GREEN",
-            "word": "GREEN",
-            "definition": "Describing a new employee, \"green\" means \"inexperienced\" — new to the job and still learning.",
-            "example": "Example sentence",
-            "nativeTip": "Lacking experience; also, the color of grass.",
-            "visualAnchor": "💡 GREEN = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "Describing a new employee, \"green\" means \"inexperienced\" — new to the job and still learning.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "Lacking experience; also, the color of grass."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L69_Q3",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Green",
-                "hint": "Lacking experience; also, the color of grass.",
-                "explanation": "Describing a new employee, \"green\" means \"inexperienced\" — new to the job and still learning.",
-                "interactionType": "search",
-                "correctAnswer": "Inexperienced",
-                "options": [
-                    "Seasoned",
-                    "Skilled",
-                    "Inexperienced",
-                    "Expert"
-                ],
-                "nuanceDifference": "\"Green\" usually names a color, but describing a new hire here, it means inexperienced, a common idiom in workplaces.",
-                "contextSentence": "The inexperienced intern needed extra guidance during his first week."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L70_LEARN_Q1",
-            "level": 70,
-            "conceptTitle": "Concept Exploration: SOUND",
-            "word": "SOUND",
-            "definition": "In its most common sense, \"sound\" refers to a \"noise\" — anything that can be heard.",
-            "example": "Example sentence",
-            "nativeTip": "Something that can be heard.",
-            "visualAnchor": "💡 SOUND = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "In its most common sense, \"sound\" refers to a \"noise\" — anything that can be heard.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "Something that can be heard."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L70_Q1",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Sound",
-                "hint": "Something that can be heard.",
-                "explanation": "In its most common sense, \"sound\" refers to a \"noise\" — anything that can be heard.",
-                "interactionType": "search",
-                "correctAnswer": "Noise",
-                "options": [
-                    "Silence",
-                    "Stillness",
-                    "Calm",
-                    "Noise"
-                ],
-                "nuanceDifference": "Unlike its earlier meaning describing reasonable judgment, here \"sound\" refers to an audible noise, matched by the general word \"noise.\"",
-                "contextSentence": "A strange noise came from the basement late at night."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L70_LEARN_Q2",
-            "level": 70,
-            "conceptTitle": "Concept Exploration: TABLE",
-            "word": "TABLE",
-            "definition": "As a physical object, a \"table\" is a type of \"stand\" — furniture with a flat surface for placing things on.",
-            "example": "Example sentence",
-            "nativeTip": "A piece of furniture with a flat top, used for eating or working.",
-            "visualAnchor": "💡 TABLE = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "As a physical object, a \"table\" is a type of \"stand\" — furniture with a flat surface for placing things on.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "A piece of furniture with a flat top, used for eating or working."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L70_Q2",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Table",
-                "hint": "A piece of furniture with a flat top, used for eating or working.",
-                "explanation": "As a physical object, a \"table\" is a type of \"stand\" — furniture with a flat surface for placing things on.",
-                "interactionType": "search",
-                "correctAnswer": "Stand",
-                "options": [
-                    "Chair",
-                    "Shelf",
-                    "Cabinet",
-                    "Stand"
-                ],
-                "nuanceDifference": "Unlike its earlier meaning of postponing discussion, here \"table\" refers to the physical piece of furniture.",
-                "contextSentence": "They set up a folding stand for the outdoor market."
-            }
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L70_LEARN_Q3",
-            "level": 70,
-            "conceptTitle": "Concept Exploration: BOOK",
-            "word": "BOOK",
-            "definition": "In its most familiar sense, a \"book\" is a \"volume\" — a collection of pages bound and printed for reading.",
-            "example": "Example sentence",
-            "nativeTip": "A written or printed work consisting of pages bound together.",
-            "visualAnchor": "💡 BOOK = Key vocabulary anchor",
-            "teachingCards": [
-                {
-                    "title": "Core Mastery Principle",
-                    "explanation": "In its most familiar sense, a \"book\" is a \"volume\" — a collection of pages bound and printed for reading.",
-                    "audioExample": "Example sentence",
-                    "nativeSpeakerInsight": "A written or printed work consisting of pages bound together."
-                }
-            ],
-            "rawExtra": {
-                "id": "VOC_SYNONYMSEARCH_L70_Q3",
-                "instruction": "Find the synonym for the given word.",
-                "word": "Book",
-                "hint": "A written or printed work consisting of pages bound together.",
-                "explanation": "In its most familiar sense, a \"book\" is a \"volume\" — a collection of pages bound and printed for reading.",
-                "interactionType": "search",
-                "correctAnswer": "Volume",
-                "options": [
-                    "Chapter",
-                    "Volume",
-                    "Page",
-                    "Cover"
-                ],
-                "nuanceDifference": "Unlike its earlier meaning of reserving something in advance, here \"book\" refers to the physical object you read.",
-                "contextSentence": "She kept every volume of the encyclopedia set on the shelf."
-            }
+          "situationTag": "Coffee Mug",
+          "beforeSentence": "Pour more tea because the glass pot is ___.",
+          "targetSlotWord": "empty",
+          "swappedWord": "vacant",
+          "isNaturalSwap": false,
+          "earVerdict": "Doesn't fit — physical cups take 'empty', never 'vacant'.",
+          "spokenSentence": "Pour more tea because the glass pot is empty."
         }
-    ]
+      ],
+      "cousinWords": [
+        {
+          "word": "Bare",
+          "ipa": "",
+          "toneTag": "Everyday",
+          "miniContext": "Waiters led visitors to a bare booth by the window."
+        },
+        {
+          "word": "Hollow",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "Only two hollow rooms remained for holiday weekend guests."
+        },
+        {
+          "word": "Unoccupied",
+          "ipa": "",
+          "toneTag": "Official",
+          "miniContext": "Cleaners painted unoccupied second-floor rooms."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L61_LEARN_Q2",
+      "level": 61,
+      "cefr": "B1",
+      "difficulty": 2,
+      "pairTitle": "Open ↔ Public",
+      "baseWord": "Open",
+      "synonym": "Public",
+      "partOfSpeech": "Adjective",
+      "coreMeaning": "Available for people to use.",
+      "whyDifferent": "'Open' means unlocked or welcoming (`open shop`). 'Public' specifically means funded by/open to the whole community rather than private.",
+      "makeovers": [
+        {
+          "situationTag": "City Transit",
+          "beforeSentence": "Reliable ___ buses reduce downtown parking stress.",
+          "targetSlotWord": "open",
+          "swappedWord": "public",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — community services and parks take 'public'.",
+          "spokenSentence": "Reliable public buses reduce downtown parking stress."
+        },
+        {
+          "situationTag": "Late Cafe",
+          "beforeSentence": "Is the corner pharmacy still ___ past nine?",
+          "targetSlotWord": "open",
+          "swappedWord": "public",
+          "isNaturalSwap": false,
+          "earVerdict": "Doesn't fit — shop hours ('still open') cannot use 'public'.",
+          "spokenSentence": "Is the corner pharmacy still open past nine?"
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Free",
+          "ipa": "",
+          "toneTag": "Unlocked",
+          "miniContext": "Neighbors gathered in the free square to hear live music."
+        },
+        {
+          "word": "Civic",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "Reliable civic buses reduce downtown parking stress."
+        },
+        {
+          "word": "Accessible",
+          "ipa": "",
+          "toneTag": "Community",
+          "miniContext": "Flat paved ramps make the museum accessible to all."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L61_LEARN_Q3",
+      "level": 61,
+      "cefr": "B1",
+      "difficulty": 2,
+      "pairTitle": "Clean ↔ Spotless",
+      "baseWord": "Clean",
+      "synonym": "Spotless",
+      "partOfSpeech": "Adjective",
+      "coreMeaning": "Completely free of specks, dust, or marks.",
+      "whyDifferent": "'Clean' rinses soap (`clean socks`). 'Spotless' amazes guests with gleaming kitchen counters, guest suites, or driving records.",
+      "makeovers": [
+        {
+          "situationTag": "Lobby Desk",
+          "beforeSentence": "Housekeeping kept every marble reception counter ___ before guests arrived.",
+          "targetSlotWord": "clean",
+          "swappedWord": "spotless",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — gleaming zero-dust polish earns 'spotless'.",
+          "spokenSentence": "Housekeeping kept every marble reception counter spotless before guests arrived."
+        },
+        {
+          "situationTag": "Laundry Fold",
+          "beforeSentence": "Pack three pairs of ___ socks inside your gym bag.",
+          "targetSlotWord": "clean",
+          "swappedWord": "spotless",
+          "isNaturalSwap": false,
+          "earVerdict": "Doesn't fit — ordinary washed clothes take 'clean', not gleaming 'spotless'.",
+          "spokenSentence": "Pack three pairs of clean socks inside your gym bag."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Pure",
+          "ipa": "",
+          "toneTag": "Washed",
+          "miniContext": "Inspectors praised the bakery’s pure steel prep tables."
+        },
+        {
+          "word": "Immaculate",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "Housekeeping kept every marble reception counter immaculate before guests arrived."
+        },
+        {
+          "word": "Gleaming",
+          "ipa": "",
+          "toneTag": "Zero Specks",
+          "miniContext": "Polished brass bells shone bright and gleaming."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L62_LEARN_Q1",
+      "level": 62,
+      "cefr": "B1",
+      "difficulty": 2,
+      "pairTitle": "Habit ↔ Routine",
+      "baseWord": "Habit",
+      "synonym": "Routine",
+      "partOfSpeech": "Noun",
+      "coreMeaning": "Actions repeated regularly.",
+      "whyDifferent": "'Habit' covers tiny automatic quirks (`bite nails`). 'Routine' is an organized daily sequence (`morning routine`).",
+      "makeovers": [
+        {
+          "situationTag": "Daily Flow",
+          "beforeSentence": "Stretching, coffee, and reading form my morning ___.",
+          "targetSlotWord": "habit",
+          "swappedWord": "routine",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — planned daily sequences are a 'routine'.",
+          "spokenSentence": "Stretching, coffee, and reading form my morning routine."
+        },
+        {
+          "situationTag": "Bad Quirk",
+          "beforeSentence": "Checking texts during movies became a bad ___.",
+          "targetSlotWord": "habit",
+          "swappedWord": "routine",
+          "isNaturalSwap": false,
+          "earVerdict": "Doesn't fit — bad personal quirks take 'habit', never 'routine'.",
+          "spokenSentence": "Checking texts during movies became a bad habit."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Custom",
+          "ipa": "",
+          "toneTag": "Small Quirk",
+          "miniContext": "Keep a calm evening custom to fall asleep smoothly."
+        },
+        {
+          "word": "Pattern",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "Stretching, coffee, and reading form my morning pattern."
+        },
+        {
+          "word": "Ritual",
+          "ipa": "",
+          "toneTag": "Ordered Sequence",
+          "miniContext": "Pouring morning coffee became a calm ritual."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L62_LEARN_Q2",
+      "level": 62,
+      "cefr": "B1",
+      "difficulty": 2,
+      "pairTitle": "Plan ↔ Goal",
+      "baseWord": "Plan",
+      "synonym": "Goal",
+      "partOfSpeech": "Noun",
+      "coreMeaning": "What you organize or hope to reach.",
+      "whyDifferent": "'Plan' lists steps (`step-by-step plan`). 'Goal' states the final finish target (`reach a goal`).",
+      "makeovers": [
+        {
+          "situationTag": "Finish Line",
+          "beforeSentence": "Saving for college tuition is her biggest savings ___.",
+          "targetSlotWord": "plan",
+          "swappedWord": "goal",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — the end destination you work toward is your 'goal'.",
+          "spokenSentence": "Saving for college tuition is her biggest savings goal."
+        },
+        {
+          "situationTag": "Floor Map",
+          "beforeSentence": "Architects sketched a detailed floor ___ for the kitchen.",
+          "targetSlotWord": "plan",
+          "swappedWord": "goal",
+          "isNaturalSwap": false,
+          "earVerdict": "Doesn't fit — blueprints and step lists are a 'plan', not a 'goal'.",
+          "spokenSentence": "Architects sketched a detailed floor plan for the kitchen."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Aim",
+          "ipa": "",
+          "toneTag": "Steps",
+          "miniContext": "Scoring twice gave the striker his personal aim for the season."
+        },
+        {
+          "word": "Target",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "Saving for college tuition is her biggest savings target."
+        },
+        {
+          "word": "Dream",
+          "ipa": "",
+          "toneTag": "Finish Target",
+          "miniContext": "Young sailors dream of crossing open blue bays."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L62_LEARN_Q3",
+      "level": 62,
+      "cefr": "B1",
+      "difficulty": 2,
+      "pairTitle": "Choice ↔ Option",
+      "baseWord": "Choice",
+      "synonym": "Option",
+      "partOfSpeech": "Noun",
+      "coreMeaning": "Something you are able to pick.",
+      "whyDifferent": "'Choice' can mean your freedom or final selection (`good choice`). 'Option' highlights each listed menu alternative (`three options`).",
+      "makeovers": [
+        {
+          "situationTag": "Travel Menu",
+          "beforeSentence": "Taking an early train is the cheapest travel ___.",
+          "targetSlotWord": "choice",
+          "swappedWord": "option",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — listed alternatives and settings are 'options'.",
+          "spokenSentence": "Taking an early train is the cheapest travel option."
+        },
+        {
+          "situationTag": "Final Decision",
+          "beforeSentence": "Accepting that scholarship was a wise personal ___.",
+          "targetSlotWord": "choice",
+          "swappedWord": "option",
+          "isNaturalSwap": false,
+          "earVerdict": "Doesn't fit — praising the decision made uses 'choice'.",
+          "spokenSentence": "Accepting that scholarship was a wise personal choice."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Pick",
+          "ipa": "",
+          "toneTag": "Decision",
+          "miniContext": "Vegetarians appreciated having a warm soup pick on the menu."
+        },
+        {
+          "word": "Alternative",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "Taking an early train is the cheapest travel alternative."
+        },
+        {
+          "word": "Selection",
+          "ipa": "",
+          "toneTag": "Listed Item",
+          "miniContext": "Bakers display a rich selection of rye loaves."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L63_LEARN_Q1",
+      "level": 63,
+      "cefr": "B1",
+      "difficulty": 2,
+      "pairTitle": "Wind ↔ Breeze",
+      "baseWord": "Wind",
+      "synonym": "Breeze",
+      "partOfSpeech": "Noun",
+      "coreMeaning": "Moving air outdoors.",
+      "whyDifferent": "'Wind' covers light gusts to strong gales. 'Breeze' always means a pleasant, gentle refreshing wind.",
+      "makeovers": [
+        {
+          "situationTag": "Beach Porch",
+          "beforeSentence": "A gentle ocean ___ cooled shoppers along the pier.",
+          "targetSlotWord": "wind",
+          "swappedWord": "breeze",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — pleasant light winds earn 'breeze'.",
+          "spokenSentence": "A gentle ocean breeze cooled shoppers along the pier."
+        },
+        {
+          "situationTag": "Storm Alert",
+          "beforeSentence": "Fierce ___ knocked heavy oak branches onto power lines.",
+          "targetSlotWord": "wind",
+          "swappedWord": "breeze",
+          "isNaturalSwap": false,
+          "earVerdict": "Doesn't fit — destructive gales are 'wind', never gentle 'breeze'.",
+          "spokenSentence": "Fierce wind knocked heavy oak branches onto power lines."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Gust",
+          "ipa": "",
+          "toneTag": "Gentle",
+          "miniContext": "Sailboats drifted steadily with a light afternoon gust."
+        },
+        {
+          "word": "Draft",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "A gentle ocean draft cooled shoppers along the pier."
+        },
+        {
+          "word": "Gale",
+          "ipa": "",
+          "toneTag": "Fierce",
+          "miniContext": "Boats stayed moored while the winter gale roared."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L63_LEARN_Q2",
+      "level": 63,
+      "cefr": "B1",
+      "difficulty": 2,
+      "pairTitle": "Rain ↔ Shower",
+      "baseWord": "Rain",
+      "synonym": "Shower",
+      "partOfSpeech": "Noun",
+      "coreMeaning": "Water falling from clouds.",
+      "whyDifferent": "'Rain' covers steady rainfalls. 'Shower' means a brief passing burst of rain that stops quickly.",
+      "makeovers": [
+        {
+          "situationTag": "April Forecast",
+          "beforeSentence": "Expect a brief afternoon ___ followed by bright sun.",
+          "targetSlotWord": "rain",
+          "swappedWord": "shower",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — short passing bursts of rain take 'shower'.",
+          "spokenSentence": "Expect a brief afternoon shower followed by bright sun."
+        },
+        {
+          "situationTag": "Flood Watch",
+          "beforeSentence": "Three days of heavy ___ flooded low country bridges.",
+          "targetSlotWord": "rain",
+          "swappedWord": "shower",
+          "isNaturalSwap": false,
+          "earVerdict": "Doesn't fit — multi-day downpours are 'rain', not short 'shower'.",
+          "spokenSentence": "Three days of heavy rain flooded low country bridges."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Drizzle",
+          "ipa": "",
+          "toneTag": "Brief",
+          "miniContext": "Walkers sheltered under awnings during the quick summer drizzle."
+        },
+        {
+          "word": "Downpour",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "Expect a brief afternoon downpour followed by bright sun."
+        },
+        {
+          "word": "Storm",
+          "ipa": "",
+          "toneTag": "Heavy",
+          "miniContext": "Fishermen tied hulls tight before the storm hit."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L63_LEARN_Q3",
+      "level": 63,
+      "cefr": "B1",
+      "difficulty": 2,
+      "pairTitle": "Cold ↔ Freezing",
+      "baseWord": "Cold",
+      "synonym": "Freezing",
+      "partOfSpeech": "Adjective",
+      "coreMeaning": "Very low in temperature.",
+      "whyDifferent": "'Cold' stays comfortable to chilly. 'Freezing' means 0°C/ice temperature or bitterly icy air.",
+      "makeovers": [
+        {
+          "situationTag": "Winter Frost",
+          "beforeSentence": "Button your wool coat before walking into ___ wind!",
+          "targetSlotWord": "cold",
+          "swappedWord": "freezing",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — bitter ice-level cold takes 'freezing'.",
+          "spokenSentence": "Button your wool coat before walking into freezing wind!"
+        },
+        {
+          "situationTag": "Fridge Milk",
+          "beforeSentence": "Kids poured ___ milk straight over toasted oats.",
+          "targetSlotWord": "cold",
+          "swappedWord": "freezing",
+          "isNaturalSwap": false,
+          "earVerdict": "Doesn't fit — normal chilled fridge milk is 'cold', not rock-frozen 'freezing'.",
+          "spokenSentence": "Kids poured cold milk straight over toasted oats."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Chilly",
+          "ipa": "",
+          "toneTag": "Cool",
+          "miniContext": "Pipes wrapped in foam stayed safe during chilly nights."
+        },
+        {
+          "word": "Icy",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "Button your wool coat before walking into icy wind!"
+        },
+        {
+          "word": "Frigid",
+          "ipa": "",
+          "toneTag": "Arctic",
+          "miniContext": "Divers wore thick suits inside frigid waters."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L64_LEARN_Q1",
+      "level": 64,
+      "cefr": "B1",
+      "difficulty": 2,
+      "pairTitle": "Ask ↔ Inquire",
+      "baseWord": "Ask",
+      "synonym": "Inquire",
+      "partOfSpeech": "Verb",
+      "coreMeaning": "To request information.",
+      "whyDifferent": "'Ask' fits daily questions (`ask a friend`). 'Inquire' sounds formal and polished, especially for offices and travel desks.",
+      "makeovers": [
+        {
+          "situationTag": "Reception Desk",
+          "beforeSentence": "Visitors stopped by the desk to ___ about tour tickets.",
+          "targetSlotWord": "ask",
+          "swappedWord": "inquire",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — polite official inquiries take 'inquire'.",
+          "spokenSentence": "Visitors stopped by the desk to inquire about tour tickets."
+        },
+        {
+          "situationTag": "Friend Favor",
+          "beforeSentence": "Did you ___ Sam to bring extra folding chairs?",
+          "targetSlotWord": "ask",
+          "swappedWord": "inquire",
+          "isNaturalSwap": false,
+          "earVerdict": "Doesn't fit — requesting favors from people uses 'ask someone to', never 'inquire'.",
+          "spokenSentence": "Did you ask Sam to bring extra folding chairs?"
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Question",
+          "ipa": "",
+          "toneTag": "Casual",
+          "miniContext": "Customers may question inside regarding custom sizing options."
+        },
+        {
+          "word": "Query",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "Visitors stopped by the desk to query about tour tickets."
+        },
+        {
+          "word": "Investigate",
+          "ipa": "",
+          "toneTag": "Formal",
+          "miniContext": "Auditors investigate missing harbor invoices."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L64_LEARN_Q2",
+      "level": 64,
+      "cefr": "B1",
+      "difficulty": 2,
+      "pairTitle": "Explain ↔ Clarify",
+      "baseWord": "Explain",
+      "synonym": "Clarify",
+      "partOfSpeech": "Verb",
+      "coreMeaning": "To make meaning easier to grasp.",
+      "whyDifferent": "'Explain' teaches an idea from scratch. 'Clarify' clears up one confusing point or misunderstanding.",
+      "makeovers": [
+        {
+          "situationTag": "Rule Mix-up",
+          "beforeSentence": "Let me ___ that rule so nobody gets confused.",
+          "targetSlotWord": "explain",
+          "swappedWord": "clarify",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — resolving confusion on a specific detail takes 'clarify'.",
+          "spokenSentence": "Let me clarify that rule so nobody gets confused."
+        },
+        {
+          "situationTag": "Bike Class",
+          "beforeSentence": "Mechanics help ___ how disc brakes work to beginners.",
+          "targetSlotWord": "explain",
+          "swappedWord": "clarify",
+          "isNaturalSwap": false,
+          "earVerdict": "Doesn't fit — teaching something totally new from start takes 'explain'.",
+          "spokenSentence": "Mechanics help explain how disc brakes work to beginners."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Define",
+          "ipa": "",
+          "toneTag": "Teach",
+          "miniContext": "Managers sent a brief memo to define the new start time."
+        },
+        {
+          "word": "Detail",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "Let me detail that rule so nobody gets confused."
+        },
+        {
+          "word": "Elaborate",
+          "ipa": "",
+          "toneTag": "Clear Confusion",
+          "miniContext": "Guides elaborate on ancient pottery patterns."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L64_LEARN_Q3",
+      "level": 64,
+      "cefr": "B1",
+      "difficulty": 2,
+      "pairTitle": "Repeat ↔ Echo",
+      "baseWord": "Repeat",
+      "synonym": "Echo",
+      "partOfSpeech": "Verb",
+      "coreMeaning": "To say or sound again.",
+      "whyDifferent": "'Repeat' intentionally says words twice (`repeat the rule`). 'Echo' bounces sound off canyon walls or agrees smoothly.",
+      "makeovers": [
+        {
+          "situationTag": "Stone Cave",
+          "beforeSentence": "Footsteps ___ down the tall empty marble hall.",
+          "targetSlotWord": "repeat",
+          "swappedWord": "echo",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — bouncing acoustic sounds and shared views 'echo'.",
+          "spokenSentence": "Footsteps echo down the tall empty marble hall."
+        },
+        {
+          "situationTag": "Spelling Test",
+          "beforeSentence": "Could you kindly ___ that phone number slowly?",
+          "targetSlotWord": "repeat",
+          "swappedWord": "echo",
+          "isNaturalSwap": false,
+          "earVerdict": "Doesn't fit — asking someone to say digits again uses 'repeat'.",
+          "spokenSentence": "Could you kindly repeat that phone number slowly?"
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Restate",
+          "ipa": "",
+          "toneTag": "Say Again",
+          "miniContext": "Several board members rose to restate her smart proposal."
+        },
+        {
+          "word": "Reiterate",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "Footsteps reiterate down the tall empty marble hall."
+        },
+        {
+          "word": "Recap",
+          "ipa": "",
+          "toneTag": "Bounce Back",
+          "miniContext": "Captains recap main plays before second halves."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L65_LEARN_Q1",
+      "level": 65,
+      "cefr": "B1",
+      "difficulty": 2,
+      "pairTitle": "Memory ↔ Recall",
+      "baseWord": "Memory",
+      "synonym": "Recall",
+      "partOfSpeech": "Noun",
+      "coreMeaning": "Ability to keep and bring back past facts.",
+      "whyDifferent": "'Memory' covers childhood stories and device RAM. 'Recall' highlights active mental retrieval under test pressure.",
+      "makeovers": [
+        {
+          "situationTag": "Quiz Skill",
+          "beforeSentence": "Timed flashcards sharpen quick word ___ before tests.",
+          "targetSlotWord": "memory",
+          "swappedWord": "recall",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — fast active mental retrieval takes 'recall'.",
+          "spokenSentence": "Timed flashcards sharpen quick word recall before tests."
+        },
+        {
+          "situationTag": "Phone Space",
+          "beforeSentence": "Clean unused videos to free phone ___ quickly.",
+          "targetSlotWord": "memory",
+          "swappedWord": "recall",
+          "isNaturalSwap": false,
+          "earVerdict": "Doesn't fit — hardware RAM and storage take 'memory', never 'recall'.",
+          "spokenSentence": "Clean unused videos to free phone memory quickly."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Recollection",
+          "ipa": "",
+          "toneTag": "Storage",
+          "miniContext": "Practice strengthens fast vocabulary recollection during live talks."
+        },
+        {
+          "word": "Retention",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "Timed flashcards sharpen quick word retention before tests."
+        },
+        {
+          "word": "Remembrance",
+          "ipa": "",
+          "toneTag": "Retrieval",
+          "miniContext": "Villagers lit candles in quiet remembrance."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L65_LEARN_Q2",
+      "level": 65,
+      "cefr": "B1",
+      "difficulty": 2,
+      "pairTitle": "Idea ↔ Concept",
+      "baseWord": "Idea",
+      "synonym": "Concept",
+      "partOfSpeech": "Noun",
+      "coreMeaning": "A thought formed in the mind.",
+      "whyDifferent": "'Idea' can be sudden and playful (`great idea!`). 'Concept' describes an abstract principle or structured design theory.",
+      "makeovers": [
+        {
+          "situationTag": "Physics Class",
+          "beforeSentence": "Gravity is a basic science ___ taught early in school.",
+          "targetSlotWord": "idea",
+          "swappedWord": "concept",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — foundational abstract theories use 'concept'.",
+          "spokenSentence": "Gravity is a basic science concept taught early in school."
+        },
+        {
+          "situationTag": "Lunch Plan",
+          "beforeSentence": "Ordering tacos for team lunch sounds like a fun ___!",
+          "targetSlotWord": "idea",
+          "swappedWord": "concept",
+          "isNaturalSwap": false,
+          "earVerdict": "Doesn't fit — spontaneous casual plans take 'idea', not academic 'concept'.",
+          "spokenSentence": "Ordering tacos for team lunch sounds like a fun idea!"
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Notion",
+          "ipa": "",
+          "toneTag": "Spark",
+          "miniContext": "Sketches help explain the new product notion to investors."
+        },
+        {
+          "word": "Theory",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "Gravity is a basic science theory taught early in school."
+        },
+        {
+          "word": "Thought",
+          "ipa": "",
+          "toneTag": "Principle",
+          "miniContext": "Share one quiet thought after reading poems."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L65_LEARN_Q3",
+      "level": 65,
+      "cefr": "B1",
+      "difficulty": 2,
+      "pairTitle": "Reason ↔ Cause",
+      "baseWord": "Reason",
+      "synonym": "Cause",
+      "partOfSpeech": "Noun",
+      "coreMeaning": "Why something happens.",
+      "whyDifferent": "'Reason' explains human motives or logical thinking (`for no good reason`). 'Cause' points to the direct physical or scientific trigger (`cause of fire`).",
+      "makeovers": [
+        {
+          "situationTag": "Safety Report",
+          "beforeSentence": "Inspectors determined the exact ___ of the power failure.",
+          "targetSlotWord": "reason",
+          "swappedWord": "cause",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — physical triggers of events or disease use 'cause'.",
+          "spokenSentence": "Inspectors determined the exact cause of the power failure."
+        },
+        {
+          "situationTag": "Fair Sense",
+          "beforeSentence": "Listen to ___ before jumping to quick conclusions.",
+          "targetSlotWord": "reason",
+          "swappedWord": "cause",
+          "isNaturalSwap": false,
+          "earVerdict": "Doesn't fit — logical good sense ('listen to reason') uses 'reason'.",
+          "spokenSentence": "Listen to reason before jumping to quick conclusions."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Motive",
+          "ipa": "",
+          "toneTag": "Motive",
+          "miniContext": "Doctors studied the main motive behind seasonal allergies."
+        },
+        {
+          "word": "Origin",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "Inspectors determined the exact origin of the power failure."
+        },
+        {
+          "word": "Source",
+          "ipa": "",
+          "toneTag": "Scientific Trigger",
+          "miniContext": "Check the original source before sharing facts."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L66_LEARN_Q1",
+      "level": 66,
+      "cefr": "B1",
+      "difficulty": 2,
+      "pairTitle": "Allow ↔ Permit",
+      "baseWord": "Allow",
+      "synonym": "Permit",
+      "partOfSpeech": "Verb",
+      "coreMeaning": "To make it possible for someone to do something.",
+      "whyDifferent": "'Allow' fits family and polite consent (`allow dogs`). 'Permit' stresses formal written rules or law (`no parking permitted`).",
+      "makeovers": [
+        {
+          "situationTag": "Park Sign",
+          "beforeSentence": "City rules only ___ fishing near the southern pier.",
+          "targetSlotWord": "allow",
+          "swappedWord": "permit",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — official legal allowances favor 'permit'.",
+          "spokenSentence": "City rules only permit fishing near the southern pier."
+        },
+        {
+          "situationTag": "Time Margin",
+          "beforeSentence": "Leave ten extra minutes to ___ for slow traffic.",
+          "targetSlotWord": "allow",
+          "swappedWord": "permit",
+          "isNaturalSwap": false,
+          "earVerdict": "Doesn't fit — leaving room in a schedule ('allow for') never uses 'permit'.",
+          "spokenSentence": "Leave ten extra minutes to allow for slow traffic."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Let",
+          "ipa": "",
+          "toneTag": "Polite",
+          "miniContext": "New badges let staff to enter the science wing safely."
+        },
+        {
+          "word": "Approve",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "City rules only approve fishing near the southern pier."
+        },
+        {
+          "word": "Authorize",
+          "ipa": "",
+          "toneTag": "Legal Rule",
+          "miniContext": "Signed slips authorize trips outside town limits."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L66_LEARN_Q2",
+      "level": 66,
+      "cefr": "B1",
+      "difficulty": 2,
+      "pairTitle": "Stop ↔ Prevent",
+      "baseWord": "Stop",
+      "synonym": "Prevent",
+      "partOfSpeech": "Verb",
+      "coreMeaning": "To keep something from happening.",
+      "whyDifferent": "'Stop' halts ongoing action (`stop talking`). 'Prevent' takes early steps BEFORE trouble starts (`prevent rust`).",
+      "makeovers": [
+        {
+          "situationTag": "Health Tip",
+          "beforeSentence": "Washing hands regularly helps ___ winter colds.",
+          "targetSlotWord": "stop",
+          "swappedWord": "prevent",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — blocking trouble before it begins uses 'prevent'.",
+          "spokenSentence": "Washing hands regularly helps prevent winter colds."
+        },
+        {
+          "situationTag": "Bus Bell",
+          "beforeSentence": "Ring the red bell to ___ at the museum gate.",
+          "targetSlotWord": "stop",
+          "swappedWord": "prevent",
+          "isNaturalSwap": false,
+          "earVerdict": "Doesn't fit — halting a moving vehicle takes 'stop', never 'prevent'.",
+          "spokenSentence": "Ring the red bell to stop at the museum gate."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Halt",
+          "ipa": "",
+          "toneTag": "Halt Now",
+          "miniContext": "Steel barriers help halt coastal erosion during storms."
+        },
+        {
+          "word": "Block",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "Washing hands regularly helps block winter colds."
+        },
+        {
+          "word": "Avoid",
+          "ipa": "",
+          "toneTag": "Block Early",
+          "miniContext": "Cyclists swerve gently to avoid deep glass puddles."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L66_LEARN_Q3",
+      "level": 66,
+      "cefr": "B1",
+      "difficulty": 2,
+      "pairTitle": "Protect ↔ Guard",
+      "baseWord": "Protect",
+      "synonym": "Guard",
+      "partOfSpeech": "Verb",
+      "coreMeaning": "To keep someone or something from harm.",
+      "whyDifferent": "'Protect' shields broadly (`sunscreen protects skin`). 'Guard' actively watches closely like a soldier or goalkeeper.",
+      "makeovers": [
+        {
+          "situationTag": "Net Goal",
+          "beforeSentence": "Trained keepers ___ the soccer goal against fast kicks.",
+          "targetSlotWord": "protect",
+          "swappedWord": "guard",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — standing watch at a gate or goal takes 'guard'.",
+          "spokenSentence": "Trained keepers guard the soccer goal against fast kicks."
+        },
+        {
+          "situationTag": "Skin Cream",
+          "beforeSentence": "Wear wide hats to ___ your skin from strong UV rays.",
+          "targetSlotWord": "protect",
+          "swappedWord": "guard",
+          "isNaturalSwap": false,
+          "earVerdict": "Doesn't fit — passive protection like sunscreen takes 'protect', not 'guard'.",
+          "spokenSentence": "Wear wide hats to protect your skin from strong UV rays."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Shield",
+          "ipa": "",
+          "toneTag": "Broad Shield",
+          "miniContext": "Security dogs help shield the farm gate overnight."
+        },
+        {
+          "word": "Defend",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "Trained keepers defend the soccer goal against fast kicks."
+        },
+        {
+          "word": "Watch",
+          "ipa": "",
+          "toneTag": "Active Watch",
+          "miniContext": "Lifeguards watch choppy tides with binoculars."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L67_LEARN_Q1",
+      "level": 67,
+      "cefr": "B1",
+      "difficulty": 2,
+      "pairTitle": "Kind ↔ Gentle",
+      "baseWord": "Kind",
+      "synonym": "Gentle",
+      "partOfSpeech": "Adjective",
+      "coreMeaning": "Caring and soft toward others.",
+      "whyDifferent": "'Kind' stresses generous actions (`kind helper`). 'Gentle' describes soft touch, calm tones, and zero roughness (`gentle breeze`).",
+      "makeovers": [
+        {
+          "situationTag": "Baby Touch",
+          "beforeSentence": "Use a ___ hand when brushing the kitten’s fur.",
+          "targetSlotWord": "kind",
+          "swappedWord": "gentle",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — soft physical pressure or soft wind uses 'gentle'.",
+          "spokenSentence": "Use a gentle hand when brushing the kitten’s fur."
+        },
+        {
+          "situationTag": "Sweet Note",
+          "beforeSentence": "Sending flowers was a truly ___ surprise yesterday.",
+          "targetSlotWord": "kind",
+          "swappedWord": "gentle",
+          "isNaturalSwap": false,
+          "earVerdict": "Doesn't fit — generous thoughtful acts take 'kind', not physical 'gentle'.",
+          "spokenSentence": "Sending flowers was a truly kind surprise yesterday."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Warm",
+          "ipa": "",
+          "toneTag": "Generous",
+          "miniContext": "Physiotherapists recommend warm stretching after runs."
+        },
+        {
+          "word": "Tender",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "Use a tender hand when brushing the kitten’s fur."
+        },
+        {
+          "word": "Compassionate",
+          "ipa": "",
+          "toneTag": "Soft Touch",
+          "miniContext": "A compassionate nurse comforted nervous kids."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L67_LEARN_Q2",
+      "level": 67,
+      "cefr": "B1",
+      "difficulty": 2,
+      "pairTitle": "Strict ↔ Firm",
+      "baseWord": "Strict",
+      "synonym": "Firm",
+      "partOfSpeech": "Adjective",
+      "coreMeaning": "Holding clear rules without bending easily.",
+      "whyDifferent": "'Strict' enforces harsh or detailed rules (`strict diet`). 'Firm' combines calm strength with steady resolve (`firm grip`, `firm voice`).",
+      "makeovers": [
+        {
+          "situationTag": "Handshake",
+          "beforeSentence": "A confident, ___ handshake leaves a warm impression.",
+          "targetSlotWord": "strict",
+          "swappedWord": "firm",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — steady physical pressure or calm boundaries use 'firm'.",
+          "spokenSentence": "A confident, firm handshake leaves a warm impression."
+        },
+        {
+          "situationTag": "Exam Rules",
+          "beforeSentence": "Grading follows ___ timing limits at every desk.",
+          "targetSlotWord": "strict",
+          "swappedWord": "firm",
+          "isNaturalSwap": false,
+          "earVerdict": "Doesn't fit — rigid rule books take 'strict'.",
+          "spokenSentence": "Grading follows strict timing limits at every desk."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Tough",
+          "ipa": "",
+          "toneTag": "Steady",
+          "miniContext": "Speak in a calm yet tough voice so the puppy listens."
+        },
+        {
+          "word": "Rigid",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "A confident, rigid handshake leaves a warm impression."
+        },
+        {
+          "word": "Resolute",
+          "ipa": "",
+          "toneTag": "Severe",
+          "miniContext": "A resolute crew repaired dikes through storms."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L67_LEARN_Q3",
+      "level": 67,
+      "cefr": "B1",
+      "difficulty": 2,
+      "pairTitle": "Funny ↔ Amusing",
+      "baseWord": "Funny",
+      "synonym": "Amusing",
+      "partOfSpeech": "Adjective",
+      "coreMeaning": "Making people smile or laugh.",
+      "whyDifferent": "'Funny' causes big laughs OR means strange (`funny smell`). 'Amusing' brings light, witty entertainment or charming smiles.",
+      "makeovers": [
+        {
+          "situationTag": "Dinner Story",
+          "beforeSentence": "Grandpa shared this ___ story about chasing runaway hens.",
+          "targetSlotWord": "funny",
+          "swappedWord": "amusing",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — charming, witty anecdotes earn 'amusing'.",
+          "spokenSentence": "Grandpa shared this amusing story about chasing runaway hens."
+        },
+        {
+          "situationTag": "Odd Taste",
+          "beforeSentence": "This open milk smells a bit ___ — check the date.",
+          "targetSlotWord": "funny",
+          "swappedWord": "amusing",
+          "isNaturalSwap": false,
+          "earVerdict": "Doesn't fit — strange/spoiled smells ('funny smell') cannot use 'amusing'.",
+          "spokenSentence": "This open milk smells a bit funny — check the date."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Comical",
+          "ipa": "",
+          "toneTag": "Chuckle",
+          "miniContext": "Children watched the comical puppet show on the lawn."
+        },
+        {
+          "word": "Witty",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "Grandpa shared this witty story about chasing runaway hens."
+        },
+        {
+          "word": "Hilarious",
+          "ipa": "",
+          "toneTag": "Loud Laugh",
+          "miniContext": "Her hilarious mimicry made everyone laugh."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L68_LEARN_Q1",
+      "level": 68,
+      "cefr": "B1",
+      "difficulty": 2,
+      "pairTitle": "Middle ↔ Center",
+      "baseWord": "Middle",
+      "synonym": "Center",
+      "partOfSpeech": "Noun",
+      "coreMeaning": "Equal distance from outer edges.",
+      "whyDifferent": "'Middle' fits casual space/time (`middle of night`). 'Center' fits exact geometry, hubs, and British/US public buildings (`city center`).",
+      "makeovers": [
+        {
+          "situationTag": "Hub Spot",
+          "beforeSentence": "The old stone fountain stands in the ___ of the plaza.",
+          "targetSlotWord": "middle",
+          "swappedWord": "center",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — exact focal hubs and geometry take 'center'.",
+          "spokenSentence": "The old stone fountain stands in the center of the plaza."
+        },
+        {
+          "situationTag": "Mid Night",
+          "beforeSentence": "A loud siren woke everyone in the ___ of the night.",
+          "targetSlotWord": "middle",
+          "swappedWord": "center",
+          "isNaturalSwap": false,
+          "earVerdict": "Doesn't fit — time expressions ('middle of the night') always use 'middle'.",
+          "spokenSentence": "A loud siren woke everyone in the middle of the night."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Core",
+          "ipa": "",
+          "toneTag": "General",
+          "miniContext": "Shoppers walked toward the core of the lively market."
+        },
+        {
+          "word": "Heart",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "The old stone fountain stands in the heart of the plaza."
+        },
+        {
+          "word": "Midpoint",
+          "ipa": "",
+          "toneTag": "Exact Hub",
+          "miniContext": "Rest benches mark the midpoint of the ridge trail."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L68_LEARN_Q2",
+      "level": 68,
+      "cefr": "B1",
+      "difficulty": 2,
+      "pairTitle": "Side ↔ Edge",
+      "baseWord": "Side",
+      "synonym": "Edge",
+      "partOfSpeech": "Noun",
+      "coreMeaning": "Part near the outer limit of something.",
+      "whyDifferent": "'Side' names left, right, or team viewpoint (`my side`). 'Edge' focuses on the sharp outer rim or cliff border (`cliff edge`).",
+      "makeovers": [
+        {
+          "situationTag": "Table Rim",
+          "beforeSentence": "Do not set your laptop right on the ___ of the bench.",
+          "targetSlotWord": "side",
+          "swappedWord": "edge",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — narrow outer borders and blades use 'edge'.",
+          "spokenSentence": "Do not set your laptop right on the edge of the bench."
+        },
+        {
+          "situationTag": "Story View",
+          "beforeSentence": "Listen carefully to both people’s ___ of the story.",
+          "targetSlotWord": "side",
+          "swappedWord": "edge",
+          "isNaturalSwap": false,
+          "earVerdict": "Doesn't fit — personal viewpoints or left/right require 'side'.",
+          "spokenSentence": "Listen carefully to both people’s side of the story."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Border",
+          "ipa": "",
+          "toneTag": "Surface",
+          "miniContext": "Hikers rested safely back from the steep canyon border."
+        },
+        {
+          "word": "Rim",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "Do not set your laptop right on the rim of the bench."
+        },
+        {
+          "word": "Margin",
+          "ipa": "",
+          "toneTag": "Sharp Rim",
+          "miniContext": "Write clear notes along the wide page margin."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L68_LEARN_Q3",
+      "level": 68,
+      "cefr": "B1",
+      "difficulty": 2,
+      "pairTitle": "Top ↔ Peak",
+      "baseWord": "Top",
+      "synonym": "Peak",
+      "partOfSpeech": "Noun",
+      "coreMeaning": "The highest point of something.",
+      "whyDifferent": "'Top' fits boxes, pages, and stairs (`top shelf`). 'Peak' marks sharp mountain summits or highest business/traffic rush (`peak hour`).",
+      "makeovers": [
+        {
+          "situationTag": "Rush Hour",
+          "beforeSentence": "Trains fill fastest during ___ morning commute hours.",
+          "targetSlotWord": "top",
+          "swappedWord": "peak",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — maximum spikes and mountain tips use 'peak'.",
+          "spokenSentence": "Trains fill fastest during peak morning commute hours."
+        },
+        {
+          "situationTag": "Jar Lid",
+          "beforeSentence": "Twist the plastic ___ tightly onto the honey jar.",
+          "targetSlotWord": "top",
+          "swappedWord": "peak",
+          "isNaturalSwap": false,
+          "earVerdict": "Doesn't fit — bottle caps and lids use 'top', never 'peak'.",
+          "spokenSentence": "Twist the plastic top tightly onto the honey jar."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Summit",
+          "ipa": "",
+          "toneTag": "Surface",
+          "miniContext": "Climbers celebrated reaching the snowy mountain summit."
+        },
+        {
+          "word": "Crest",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "Trains fill fastest during crest morning commute hours."
+        },
+        {
+          "word": "Apex",
+          "ipa": "",
+          "toneTag": "Sharp Spike",
+          "miniContext": "Morning frost glistened on the mountain’s snowy apex."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L69_LEARN_Q1",
+      "level": 69,
+      "cefr": "B1",
+      "difficulty": 2,
+      "pairTitle": "Fresh (Mind) ↔ Alert",
+      "baseWord": "Fresh",
+      "synonym": "Alert",
+      "partOfSpeech": "Adjective",
+      "coreMeaning": "Wide awake and quick to notice things.",
+      "whyDifferent": "'Fresh' feels rested (`fresh start`). 'Alert' stays sharply watchful against sudden changes (`stay alert`).",
+      "makeovers": [
+        {
+          "situationTag": "Night Watch",
+          "beforeSentence": "Black coffee helped the night guard stay ___ until dawn.",
+          "targetSlotWord": "fresh",
+          "swappedWord": "alert",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — focused readiness against danger uses 'alert'.",
+          "spokenSentence": "Black coffee helped the night guard stay alert until dawn."
+        },
+        {
+          "situationTag": "Bread Box",
+          "beforeSentence": "Buy ___ rolls straight from the early bakery cart.",
+          "targetSlotWord": "fresh",
+          "swappedWord": "alert",
+          "isNaturalSwap": false,
+          "earVerdict": "Doesn't fit — food crispness uses 'fresh', never 'alert'.",
+          "spokenSentence": "Buy fresh rolls straight from the early bakery cart."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Awake",
+          "ipa": "",
+          "toneTag": "Rested",
+          "miniContext": "Crosswalks flash lights so drivers stay awake near schools."
+        },
+        {
+          "word": "Sharp",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "Black coffee helped the night guard stay sharp until dawn."
+        },
+        {
+          "word": "Vigilant",
+          "ipa": "",
+          "toneTag": "Watchful",
+          "miniContext": "Vigilant lookouts watch dry ridges for smoke."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L69_LEARN_Q2",
+      "level": 69,
+      "cefr": "B1",
+      "difficulty": 2,
+      "pairTitle": "Firm (Ground) ↔ Solid",
+      "baseWord": "Firm",
+      "synonym": "Solid",
+      "partOfSpeech": "Adjective",
+      "coreMeaning": "Hard and stable beneath you.",
+      "whyDifferent": "'Firm' gives steady resistance (`firm mattress`). 'Solid' means completely filled through, rock-steady, or dependable (`solid proof`).",
+      "makeovers": [
+        {
+          "situationTag": "Ice Safety",
+          "beforeSentence": "Walk only where the frozen lake is ___ and thick.",
+          "targetSlotWord": "firm",
+          "swappedWord": "solid",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — completely hard through without gaps uses 'solid'.",
+          "spokenSentence": "Walk only where the frozen lake is solid and thick."
+        },
+        {
+          "situationTag": "Peach Test",
+          "beforeSentence": "Gently press the peach — it should feel slightly ___.",
+          "targetSlotWord": "firm",
+          "swappedWord": "solid",
+          "isNaturalSwap": false,
+          "earVerdict": "Doesn't fit — healthy ripe give takes 'firm', not brick-hard 'solid'.",
+          "spokenSentence": "Gently press the peach — it should feel slightly firm."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Steady",
+          "ipa": "",
+          "toneTag": "Supportive",
+          "miniContext": "Build the garden deck over steady concrete blocks."
+        },
+        {
+          "word": "Dense",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "Walk only where the frozen lake is dense and thick."
+        },
+        {
+          "word": "Unbreakable",
+          "ipa": "",
+          "toneTag": "Rock-Hard",
+          "miniContext": "Tempered steel bolts feel nearly unbreakable."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L69_LEARN_Q3",
+      "level": 69,
+      "cefr": "B1",
+      "difficulty": 2,
+      "pairTitle": "Sound (Health) ↔ Healthy",
+      "baseWord": "Sound",
+      "synonym": "Healthy",
+      "partOfSpeech": "Adjective",
+      "coreMeaning": "Strong and working properly without fault.",
+      "whyDifferent": "'Sound' describes solid judgment (`sound advice`) or deep sleep (`sound sleep`). 'Healthy' describes living bodies, diets, and economies.",
+      "makeovers": [
+        {
+          "situationTag": "Meal Habit",
+          "beforeSentence": "Cook with fresh greens for a balanced, ___ supper.",
+          "targetSlotWord": "sound",
+          "swappedWord": "healthy",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — physical nutrition and fitness use 'healthy'.",
+          "spokenSentence": "Cook with fresh greens for a balanced, healthy supper."
+        },
+        {
+          "situationTag": "Good Night",
+          "beforeSentence": "Babies need a deep, ___ sleep to grow strong.",
+          "targetSlotWord": "sound",
+          "swappedWord": "healthy",
+          "isNaturalSwap": false,
+          "earVerdict": "Doesn't fit — 'sound sleep' and 'sound mind' take 'sound', not 'healthy sleep'.",
+          "spokenSentence": "Babies need a deep, sound sleep to grow strong."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Fit",
+          "ipa": "",
+          "toneTag": "Unbroken",
+          "miniContext": "Daily walks and clean water keep our bodies fit."
+        },
+        {
+          "word": "Whole",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "Cook with fresh greens for a balanced, whole supper."
+        },
+        {
+          "word": "Robust",
+          "ipa": "",
+          "toneTag": "Vibrant",
+          "miniContext": "Robust oak crates survive rough ocean shipping."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L70_LEARN_Q1",
+      "level": 70,
+      "cefr": "B1",
+      "difficulty": 2,
+      "pairTitle": "Deep ↔ Profound",
+      "baseWord": "Deep",
+      "synonym": "Profound",
+      "partOfSpeech": "Adjective",
+      "coreMeaning": "Reaching far below the surface.",
+      "whyDifferent": "'Deep' measures physical depth (`deep pool`, `deep blue`). 'Profound' describes powerful thoughts, gratitude, or lasting change.",
+      "makeovers": [
+        {
+          "situationTag": "Book Impact",
+          "beforeSentence": "That quiet novel had a ___ effect on my outlook.",
+          "targetSlotWord": "deep",
+          "swappedWord": "profound",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — weighty emotional or intellectual depth uses 'profound'.",
+          "spokenSentence": "That quiet novel had a profound effect on my outlook."
+        },
+        {
+          "situationTag": "Ocean Floor",
+          "beforeSentence": "Divers need flashlights inside the ___ underwater cave.",
+          "targetSlotWord": "deep",
+          "swappedWord": "profound",
+          "isNaturalSwap": false,
+          "earVerdict": "Doesn't fit — physical water depth takes 'deep', never 'profound'.",
+          "spokenSentence": "Divers need flashlights inside the deep underwater cave."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Intense",
+          "ipa": "",
+          "toneTag": "Physical",
+          "miniContext": "Teachers thanked donors with intense gratitude after the fire."
+        },
+        {
+          "word": "Thoughtful",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "That quiet novel had a thoughtful effect on my outlook."
+        },
+        {
+          "word": "Enduring",
+          "ipa": "",
+          "toneTag": "Intellectual",
+          "miniContext": "Grandpa left an enduring love for carpentry."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L70_LEARN_Q2",
+      "level": 70,
+      "cefr": "B1",
+      "difficulty": 2,
+      "pairTitle": "Wide ↔ Broad",
+      "baseWord": "Wide",
+      "synonym": "Broad",
+      "partOfSpeech": "Adjective",
+      "coreMeaning": "Measuring far from side to side.",
+      "whyDifferent": "'Wide' fits physical spans (`wide door`, `wide river`). 'Broad' pairs with shoulders, daylight, smiles, and general summaries.",
+      "makeovers": [
+        {
+          "situationTag": "Summary Topic",
+          "beforeSentence": "We covered a ___ range of history topics this term.",
+          "targetSlotWord": "wide",
+          "swappedWord": "broad",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — wide-ranging concepts and 'broad smile' take 'broad'.",
+          "spokenSentence": "We covered a broad range of history topics this term."
+        },
+        {
+          "situationTag": "Garage Door",
+          "beforeSentence": "Measure how ___ the hallway is before moving the sofa.",
+          "targetSlotWord": "wide",
+          "swappedWord": "broad",
+          "isNaturalSwap": false,
+          "earVerdict": "Doesn't fit — exact tape-measured width uses 'wide'.",
+          "spokenSentence": "Measure how wide the hallway is before moving the sofa."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Spacious",
+          "ipa": "",
+          "toneTag": "Measured",
+          "miniContext": "Waiters greeted guests with a spacious welcoming smile."
+        },
+        {
+          "word": "Expansive",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "We covered an expansive range of history topics this term."
+        },
+        {
+          "word": "Sweeping",
+          "ipa": "",
+          "toneTag": "Sweeping",
+          "miniContext": "Hilltop overlooks reward climbs with sweeping views."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L70_LEARN_Q3",
+      "level": 70,
+      "cefr": "B1",
+      "difficulty": 2,
+      "pairTitle": "Short ↔ Brief",
+      "baseWord": "Short",
+      "synonym": "Brief",
+      "partOfSpeech": "Adjective",
+      "coreMeaning": "Lasting only a small amount of time.",
+      "whyDifferent": "'Short' covers both physical height (`short rope`) and time. 'Brief' strictly describes short duration or concise notes.",
+      "makeovers": [
+        {
+          "situationTag": "Morning Call",
+          "beforeSentence": "Wait for a ___ update from the project lead at ten.",
+          "targetSlotWord": "short",
+          "swappedWord": "brief",
+          "isNaturalSwap": true,
+          "earVerdict": "Natural — concise time periods and summaries use 'brief'.",
+          "spokenSentence": "Wait for a brief update from the project lead at ten."
+        },
+        {
+          "situationTag": "Hair Trim",
+          "beforeSentence": "He asked the barber for a ___ summer haircut.",
+          "targetSlotWord": "short",
+          "swappedWord": "brief",
+          "isNaturalSwap": false,
+          "earVerdict": "Doesn't fit — physical length takes 'short', never 'brief'.",
+          "spokenSentence": "He asked the barber for a short summer haircut."
+        }
+      ],
+      "cousinWords": [
+        {
+          "word": "Quick",
+          "ipa": "",
+          "toneTag": "Length",
+          "miniContext": "Take a quick break between chapters to stretch your legs."
+        },
+        {
+          "word": "Fleeting",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "Wait for a fleeting update from the project lead at ten."
+        },
+        {
+          "word": "Concise",
+          "ipa": "",
+          "toneTag": "Short Time",
+          "miniContext": "Keep status notes concise so teams read fast."
+        }
+      ]
+    }
+  ]
 }

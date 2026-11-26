@@ -89,11 +89,14 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
   Future<void> _sharePlayerCard(UserEntity user) async {
     di.sl<HapticService>().selection();
-    final code = user.referralCode ?? '';
-    final shareText =
-        'Proud of my learning progress on Vowl! 🚀\n'
-        'Use my invite code $code to unlock 100 Bonus Coins & VIP perks:\n'
-        '${AppUrls.invite(code)}';
+    final code = user.referralCode?.trim() ?? '';
+    final shareText = code.isNotEmpty
+        ? 'Proud of my learning progress on Vowl! 🚀\n'
+              'Use my invite code $code to unlock 100 Bonus Coins & VIP perks:\n'
+              '${AppUrls.invite(code)}'
+        : 'Proud of my learning progress on Vowl! 🚀\n'
+              'Join me on Vowl to level up your English:\n'
+              '${AppUrls.baseDomain}';
 
     try {
       await SocialShareRasterizer.captureAndShare(

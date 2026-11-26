@@ -477,14 +477,18 @@ class _ArenaLobbyWaitingScreenState extends State<ArenaLobbyWaitingScreen>
                         ),
                       ),
                       SizedBox(height: 8.h),
-                      Text(
-                        widget.session.roomCode.toUpperCase(),
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 24.sp,
-                          fontWeight: FontWeight.w900,
-                          letterSpacing: 2.5,
-                          color: isDark ? Colors.white : AppColors.indigo600,
+                      FittedBox(
+                        fit: BoxFit.scaleDown,
+                        child: Text(
+                          widget.session.roomCode.toUpperCase(),
+                          maxLines: 1,
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 24.sp,
+                            fontWeight: FontWeight.w900,
+                            letterSpacing: 2.5,
+                            color: isDark ? Colors.white : AppColors.indigo600,
+                          ),
                         ),
                       ),
                       SizedBox(height: 4.h),

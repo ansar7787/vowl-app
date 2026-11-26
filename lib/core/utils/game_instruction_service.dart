@@ -1170,18 +1170,18 @@ class GameInstructionService {
           "Tip: Go with what sounds natural—native speakers rely on everyday word pairings.",
     ),
     GameSubtype.synonymSearch: GameBriefing(
-      title: "Synonym Match",
+      title: "Synonym Search",
       icon: Icons.compare_arrows_rounded,
       objective:
-          "Find the word that has the same meaning as the target word. Tap or drag the matching word to the center, then practice using it in a natural sentence.",
+          "Read the sentence and find a word with a similar meaning. Connect the letters in the grid before time runs out.",
       rules: [
-        "Find the matching synonym",
-        "Tap or drag to the center",
-        "Practice with a sentence",
+        "Read the given word and sentence",
+        "Slide or tap connected letters to spell a matching word",
+        "Watch out for similar-looking wrong words in the grid",
       ],
-      actionText: "Start Practice",
+      actionText: "Start Search",
       tip:
-          "Don't get tricked by words that just look similar. Focus entirely on the core meaning!",
+          "Tip: Count the blank spaces in the sentence, or tap Hint to highlight the first two letters.",
     ),
     GameSubtype.antonymSearch: GameBriefing(
       title: "Antonym Search",

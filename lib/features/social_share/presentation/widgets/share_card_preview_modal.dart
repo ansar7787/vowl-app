@@ -37,11 +37,22 @@ class _ShareCardPreviewModalState extends State<ShareCardPreviewModal> {
 
     final String shareText;
     if (widget.data.type == ShareCardType.arenaVictory) {
-      final code = widget.data.roomCode ?? 'VOWL';
       shareText =
           '⚔️ I just won a 1v1 English Duel on Vowl with ${widget.data.myScore ?? 0} points!\n'
-          'Can you beat my score? Enter room code: $code in the app, or tap:\n'
-          '${AppUrls.duel(code)}';
+          'Can you beat my score? Challenge me in the 1v1 Arena:\n'
+          '${AppUrls.baseDomain}';
+    } else if (widget.data.type == ShareCardType.arenaDefeat) {
+      final rival = widget.data.rivalName ?? 'a rival';
+      shareText =
+          '⚔️ Battled $rival in a 1v1 English Duel on Vowl (${widget.data.myScore ?? 0} vs ${widget.data.rivalScore ?? 0} pts)!\n'
+          'Rematch incoming — think you can beat me on Vowl?\n'
+          '${AppUrls.baseDomain}';
+    } else if (widget.data.type == ShareCardType.arenaDraw) {
+      final rival = widget.data.rivalName ?? 'a rival';
+      shareText =
+          '⚔️ Dead-even draw against $rival in a 1v1 English Duel on Vowl (${widget.data.myScore ?? 0} pts)!\n'
+          'Play 1v1 English duels on Vowl:\n'
+          '${AppUrls.baseDomain}';
     } else if (widget.data.type == ShareCardType.arenaInvite) {
       final code = widget.data.roomCode ?? 'VOWL';
       shareText =
@@ -57,11 +68,16 @@ class _ShareCardPreviewModalState extends State<ShareCardPreviewModal> {
           'Use my invite code $code to unlock 100 Bonus Coins + Free VIP access immediately:\n'
           '${AppUrls.invite(code)}';
     } else {
-      final inviteCopy = widget.data.referralCode != null
-          ? 'Join me on Vowl using code ${widget.data.referralCode} to claim 100 Bonus Coins & Free VIP!'
+      final hasReferral =
+          widget.data.referralCode != null &&
+          widget.data.referralCode!.trim().isNotEmpty;
+      final inviteCopy = hasReferral
+          ? 'Join me on Vowl using code ${widget.data.referralCode!.trim()} to claim 100 Bonus Coins & Free VIP!'
           : 'Leveling up my English skills on Vowl!';
-      shareText =
-          '🏆 ${widget.data.title} on Vowl!\n$inviteCopy\n${AppUrls.baseDomain}';
+      final headline = widget.data.title.toLowerCase().contains('vowl')
+          ? widget.data.title
+          : '${widget.data.title} on Vowl';
+      shareText = '🏆 $headline!\n$inviteCopy\n${AppUrls.baseDomain}';
     }
 
     await SocialShareRasterizer.captureAndShare(

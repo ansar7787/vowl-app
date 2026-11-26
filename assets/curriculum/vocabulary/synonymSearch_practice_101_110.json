@@ -1,968 +1,1600 @@
 {
-    "gameType": "synonymSearch",
-    "phase": "practice",
-    "batchIndex": 11,
-    "levels": "101-110",
-    "quests": [
+  "gameType": "synonymSearch",
+  "phase": "practice",
+  "cefr": "B2",
+  "difficulty": 3,
+  "batchIndex": 11,
+  "levels": "101-110",
+  "quests": [
+    {
+      "id": "VOC_SYNONYMSEARCH_L101_PRAC_Q1",
+      "level": 101,
+      "cefr": "B2",
+      "difficulty": 3,
+      "word": "Check",
+      "targetSynonym": "Monitor",
+      "exercises": [
         {
-            "id": "VOC_SYNONYMSEARCH_L101_PRAC_Q1",
-            "level": 101,
-            "word": "FACILITATE",
-            "targetMeaning": "Enable",
-            "exercises": [
-                {
-                    "exerciseType": "contextPick",
-                    "interactionType": "choice",
-                    "question": "Which definition best captures the natural usage of 'FACILITATE' in context?",
-                    "options": [
-                        "\"Enable\" means to make something possible or easier, closely related to facilitating it.",
-                        "A rare figurative expression with an unrelated meaning.",
-                        "An opposing concept that reverses the sentence intent."
-                    ],
-                    "correctAnswerIndex": 0,
-                    "feedbackPerOption": [
-                        "Correct! That precisely matches the contextual meaning of 'FACILITATE'.",
-                        "Incorrect: This describes an unrelated expression.",
-                        "Incorrect: This reverses the natural meaning."
-                    ]
-                },
-                {
-                    "exerciseType": "fillGap",
-                    "interactionType": "typing",
-                    "sentence": "Recall in context: In this exercise, the target term is _____.",
-                    "correctAnswer": "enable",
-                    "hint": "Recall the target word (6 letters, starts with 'E').",
-                    "feedbackIfWrong": "The correct target word is 'Enable'."
-                }
-            ]
+          "exerciseType": "contrastSwap",
+          "prompt": "Place 'Check' and 'Monitor' where each sounds natural.",
+          "pairWords": [
+            "Check",
+            "Monitor"
+          ],
+          "slots": [
+            {
+              "contextTag": "ICU Nurse",
+              "sentenceWithBlank": "Nurses continuously ___ blood pressure through recovery.",
+              "correctWord": "Monitor",
+              "feedback": "Ongoing tracking over hours takes 'monitor'."
+            },
+            {
+              "contextTag": "Bag Weight",
+              "sentenceWithBlank": "Please ___ your coat pocket quickly before leaving.",
+              "correctWord": "Check",
+              "feedback": "Single quick glances take 'check', never continuous 'monitor'."
+            }
+          ],
+          "hint": "'Check' looks once (`check email`). 'Monitor' tracks ongoing data continuously (`monitor heart rate`, `monitor air quality`)."
         },
         {
-            "id": "VOC_SYNONYMSEARCH_L101_PRAC_Q2",
-            "level": 101,
-            "word": "IMPLEMENT",
-            "targetMeaning": "Execute",
-            "exercises": [
-                {
-                    "exerciseType": "contextPick",
-                    "interactionType": "choice",
-                    "question": "Which definition best captures the natural usage of 'IMPLEMENT' in context?",
-                    "options": [
-                        "\"Execute\" describes carrying out a plan in practice, closely related to implementing it.",
-                        "A rare figurative expression with an unrelated meaning.",
-                        "An opposing concept that reverses the sentence intent."
-                    ],
-                    "correctAnswerIndex": 0,
-                    "feedbackPerOption": [
-                        "Correct! That precisely matches the contextual meaning of 'IMPLEMENT'.",
-                        "Incorrect: This describes an unrelated expression.",
-                        "Incorrect: This reverses the natural meaning."
-                    ]
-                },
-                {
-                    "exerciseType": "fillGap",
-                    "interactionType": "typing",
-                    "sentence": "Recall in context: In this exercise, the target term is _____.",
-                    "correctAnswer": "execute",
-                    "hint": "Recall the target word (7 letters, starts with 'E').",
-                    "feedbackIfWrong": "The correct target word is 'Execute'."
-                }
-            ]
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L101_PRAC_Q3",
-            "level": 101,
-            "word": "UNDERMINE",
-            "targetMeaning": "Erode",
-            "exercises": [
-                {
-                    "exerciseType": "contextPick",
-                    "interactionType": "choice",
-                    "question": "Which definition best captures the natural usage of 'UNDERMINE' in context?",
-                    "options": [
-                        "\"Erode\" describes something being worn away gradually, closely related to undermining it over time.",
-                        "A rare figurative expression with an unrelated meaning.",
-                        "An opposing concept that reverses the sentence intent."
-                    ],
-                    "correctAnswerIndex": 0,
-                    "feedbackPerOption": [
-                        "Correct! That precisely matches the contextual meaning of 'UNDERMINE'.",
-                        "Incorrect: This describes an unrelated expression.",
-                        "Incorrect: This reverses the natural meaning."
-                    ]
-                },
-                {
-                    "exerciseType": "fillGap",
-                    "interactionType": "typing",
-                    "sentence": "Recall in context: In this exercise, the target term is _____.",
-                    "correctAnswer": "erode",
-                    "hint": "Recall the target word (5 letters, starts with 'E').",
-                    "feedbackIfWrong": "The correct target word is 'Erode'."
-                }
-            ]
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L102_PRAC_Q1",
-            "level": 102,
-            "word": "CULMINATE",
-            "targetMeaning": "Peak",
-            "exercises": [
-                {
-                    "exerciseType": "contextPick",
-                    "interactionType": "choice",
-                    "question": "Which definition best captures the natural usage of 'CULMINATE' in context?",
-                    "options": [
-                        "\"Peak\" can describe the highest point something reaches, closely related to where a process culminates.",
-                        "A rare figurative expression with an unrelated meaning.",
-                        "An opposing concept that reverses the sentence intent."
-                    ],
-                    "correctAnswerIndex": 0,
-                    "feedbackPerOption": [
-                        "Correct! That precisely matches the contextual meaning of 'CULMINATE'.",
-                        "Incorrect: This describes an unrelated expression.",
-                        "Incorrect: This reverses the natural meaning."
-                    ]
-                },
-                {
-                    "exerciseType": "fillGap",
-                    "interactionType": "typing",
-                    "sentence": "Recall in context: In this exercise, the target term is _____.",
-                    "correctAnswer": "peak",
-                    "hint": "Recall the target word (4 letters, starts with 'P').",
-                    "feedbackIfWrong": "The correct target word is 'Peak'."
-                }
-            ]
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L102_PRAC_Q2",
-            "level": 102,
-            "word": "CONTEMPLATE",
-            "targetMeaning": "Ponder",
-            "exercises": [
-                {
-                    "exerciseType": "contextPick",
-                    "interactionType": "choice",
-                    "question": "Which definition best captures the natural usage of 'CONTEMPLATE' in context?",
-                    "options": [
-                        "\"Ponder\" describes thinking carefully about something, often turning it over slowly in your mind.",
-                        "A rare figurative expression with an unrelated meaning.",
-                        "An opposing concept that reverses the sentence intent."
-                    ],
-                    "correctAnswerIndex": 0,
-                    "feedbackPerOption": [
-                        "Correct! That precisely matches the contextual meaning of 'CONTEMPLATE'.",
-                        "Incorrect: This describes an unrelated expression.",
-                        "Incorrect: This reverses the natural meaning."
-                    ]
-                },
-                {
-                    "exerciseType": "fillGap",
-                    "interactionType": "typing",
-                    "sentence": "Recall in context: In this exercise, the target term is _____.",
-                    "correctAnswer": "ponder",
-                    "hint": "Recall the target word (6 letters, starts with 'P').",
-                    "feedbackIfWrong": "The correct target word is 'Ponder'."
-                }
-            ]
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L102_PRAC_Q3",
-            "level": 102,
-            "word": "RECONCILE",
-            "targetMeaning": "Harmonize",
-            "exercises": [
-                {
-                    "exerciseType": "contextPick",
-                    "interactionType": "choice",
-                    "question": "Which definition best captures the natural usage of 'RECONCILE' in context?",
-                    "options": [
-                        "\"Harmonize\" describes bringing different elements into agreement, closely related to reconciling them.",
-                        "A rare figurative expression with an unrelated meaning.",
-                        "An opposing concept that reverses the sentence intent."
-                    ],
-                    "correctAnswerIndex": 0,
-                    "feedbackPerOption": [
-                        "Correct! That precisely matches the contextual meaning of 'RECONCILE'.",
-                        "Incorrect: This describes an unrelated expression.",
-                        "Incorrect: This reverses the natural meaning."
-                    ]
-                },
-                {
-                    "exerciseType": "fillGap",
-                    "interactionType": "typing",
-                    "sentence": "Recall in context: In this exercise, the target term is _____.",
-                    "correctAnswer": "harmonize",
-                    "hint": "Recall the target word (9 letters, starts with 'H').",
-                    "feedbackIfWrong": "The correct target word is 'Harmonize'."
-                }
-            ]
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L103_PRAC_Q1",
-            "level": 103,
-            "word": "ASCERTAIN",
-            "targetMeaning": "Determine",
-            "exercises": [
-                {
-                    "exerciseType": "contextPick",
-                    "interactionType": "choice",
-                    "question": "Which definition best captures the natural usage of 'ASCERTAIN' in context?",
-                    "options": [
-                        "\"Determine\" can mean to find out something with certainty, closely related to ascertaining it.",
-                        "A rare figurative expression with an unrelated meaning.",
-                        "An opposing concept that reverses the sentence intent."
-                    ],
-                    "correctAnswerIndex": 0,
-                    "feedbackPerOption": [
-                        "Correct! That precisely matches the contextual meaning of 'ASCERTAIN'.",
-                        "Incorrect: This describes an unrelated expression.",
-                        "Incorrect: This reverses the natural meaning."
-                    ]
-                },
-                {
-                    "exerciseType": "fillGap",
-                    "interactionType": "typing",
-                    "sentence": "Recall in context: In this exercise, the target term is _____.",
-                    "correctAnswer": "determine",
-                    "hint": "Recall the target word (9 letters, starts with 'D').",
-                    "feedbackIfWrong": "The correct target word is 'Determine'."
-                }
-            ]
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L103_PRAC_Q2",
-            "level": 103,
-            "word": "DISCERN",
-            "targetMeaning": "Distinguish",
-            "exercises": [
-                {
-                    "exerciseType": "contextPick",
-                    "interactionType": "choice",
-                    "question": "Which definition best captures the natural usage of 'DISCERN' in context?",
-                    "options": [
-                        "\"Distinguish\" describes recognizing a difference between things, closely related to discerning something subtle.",
-                        "A rare figurative expression with an unrelated meaning.",
-                        "An opposing concept that reverses the sentence intent."
-                    ],
-                    "correctAnswerIndex": 0,
-                    "feedbackPerOption": [
-                        "Correct! That precisely matches the contextual meaning of 'DISCERN'.",
-                        "Incorrect: This describes an unrelated expression.",
-                        "Incorrect: This reverses the natural meaning."
-                    ]
-                },
-                {
-                    "exerciseType": "fillGap",
-                    "interactionType": "typing",
-                    "sentence": "Recall in context: In this exercise, the target term is _____.",
-                    "correctAnswer": "distinguish",
-                    "hint": "Recall the target word (11 letters, starts with 'D').",
-                    "feedbackIfWrong": "The correct target word is 'Distinguish'."
-                }
-            ]
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L103_PRAC_Q3",
-            "level": 103,
-            "word": "ELICIT",
-            "targetMeaning": "Evoke",
-            "exercises": [
-                {
-                    "exerciseType": "contextPick",
-                    "interactionType": "choice",
-                    "question": "Which definition best captures the natural usage of 'ELICIT' in context?",
-                    "options": [
-                        "\"Evoke\" describes bringing forth a feeling or memory, closely related to eliciting a response.",
-                        "A rare figurative expression with an unrelated meaning.",
-                        "An opposing concept that reverses the sentence intent."
-                    ],
-                    "correctAnswerIndex": 0,
-                    "feedbackPerOption": [
-                        "Correct! That precisely matches the contextual meaning of 'ELICIT'.",
-                        "Incorrect: This describes an unrelated expression.",
-                        "Incorrect: This reverses the natural meaning."
-                    ]
-                },
-                {
-                    "exerciseType": "fillGap",
-                    "interactionType": "typing",
-                    "sentence": "Recall in context: In this exercise, the target term is _____.",
-                    "correctAnswer": "evoke",
-                    "hint": "Recall the target word (5 letters, starts with 'E').",
-                    "feedbackIfWrong": "The correct target word is 'Evoke'."
-                }
-            ]
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L104_PRAC_Q1",
-            "level": 104,
-            "word": "METICULOUSLY",
-            "targetMeaning": "Painstakingly",
-            "exercises": [
-                {
-                    "exerciseType": "contextPick",
-                    "interactionType": "choice",
-                    "question": "Which definition best captures the natural usage of 'METICULOUSLY' in context?",
-                    "options": [
-                        "\"Painstakingly\" describes doing something with great care and effort, closely related to doing it meticulously.",
-                        "A rare figurative expression with an unrelated meaning.",
-                        "An opposing concept that reverses the sentence intent."
-                    ],
-                    "correctAnswerIndex": 0,
-                    "feedbackPerOption": [
-                        "Correct! That precisely matches the contextual meaning of 'METICULOUSLY'.",
-                        "Incorrect: This describes an unrelated expression.",
-                        "Incorrect: This reverses the natural meaning."
-                    ]
-                },
-                {
-                    "exerciseType": "fillGap",
-                    "interactionType": "typing",
-                    "sentence": "Recall in context: In this exercise, the target term is _____.",
-                    "correctAnswer": "painstakingly",
-                    "hint": "Recall the target word (13 letters, starts with 'P').",
-                    "feedbackIfWrong": "The correct target word is 'Painstakingly'."
-                }
-            ]
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L104_PRAC_Q2",
-            "level": 104,
-            "word": "INEVITABLY",
-            "targetMeaning": "Invariably",
-            "exercises": [
-                {
-                    "exerciseType": "contextPick",
-                    "interactionType": "choice",
-                    "question": "Which definition best captures the natural usage of 'INEVITABLY' in context?",
-                    "options": [
-                        "\"Invariably\" describes something that happens every time without exception, closely related to happening inevitably.",
-                        "A rare figurative expression with an unrelated meaning.",
-                        "An opposing concept that reverses the sentence intent."
-                    ],
-                    "correctAnswerIndex": 0,
-                    "feedbackPerOption": [
-                        "Correct! That precisely matches the contextual meaning of 'INEVITABLY'.",
-                        "Incorrect: This describes an unrelated expression.",
-                        "Incorrect: This reverses the natural meaning."
-                    ]
-                },
-                {
-                    "exerciseType": "fillGap",
-                    "interactionType": "typing",
-                    "sentence": "Recall in context: In this exercise, the target term is _____.",
-                    "correctAnswer": "invariably",
-                    "hint": "Recall the target word (10 letters, starts with 'I').",
-                    "feedbackIfWrong": "The correct target word is 'Invariably'."
-                }
-            ]
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L104_PRAC_Q3",
-            "level": 104,
-            "word": "DELIBERATELY",
-            "targetMeaning": "Intentionally",
-            "exercises": [
-                {
-                    "exerciseType": "contextPick",
-                    "interactionType": "choice",
-                    "question": "Which definition best captures the natural usage of 'DELIBERATELY' in context?",
-                    "options": [
-                        "\"Intentionally\" describes an action done on purpose, closely related to doing it deliberately.",
-                        "A rare figurative expression with an unrelated meaning.",
-                        "An opposing concept that reverses the sentence intent."
-                    ],
-                    "correctAnswerIndex": 0,
-                    "feedbackPerOption": [
-                        "Correct! That precisely matches the contextual meaning of 'DELIBERATELY'.",
-                        "Incorrect: This describes an unrelated expression.",
-                        "Incorrect: This reverses the natural meaning."
-                    ]
-                },
-                {
-                    "exerciseType": "fillGap",
-                    "interactionType": "typing",
-                    "sentence": "Recall in context: In this exercise, the target term is _____.",
-                    "correctAnswer": "intentionally",
-                    "hint": "Recall the target word (13 letters, starts with 'I').",
-                    "feedbackIfWrong": "The correct target word is 'Intentionally'."
-                }
-            ]
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L105_PRAC_Q1",
-            "level": 105,
-            "word": "FORMIDABLE",
-            "targetMeaning": "Daunting",
-            "exercises": [
-                {
-                    "exerciseType": "contextPick",
-                    "interactionType": "choice",
-                    "question": "Which definition best captures the natural usage of 'FORMIDABLE' in context?",
-                    "options": [
-                        "\"Daunting\" describes something that seems intimidating or difficult to face, closely related to being formidable.",
-                        "A rare figurative expression with an unrelated meaning.",
-                        "An opposing concept that reverses the sentence intent."
-                    ],
-                    "correctAnswerIndex": 0,
-                    "feedbackPerOption": [
-                        "Correct! That precisely matches the contextual meaning of 'FORMIDABLE'.",
-                        "Incorrect: This describes an unrelated expression.",
-                        "Incorrect: This reverses the natural meaning."
-                    ]
-                },
-                {
-                    "exerciseType": "fillGap",
-                    "interactionType": "typing",
-                    "sentence": "Recall in context: In this exercise, the target term is _____.",
-                    "correctAnswer": "daunting",
-                    "hint": "Recall the target word (8 letters, starts with 'D').",
-                    "feedbackIfWrong": "The correct target word is 'Daunting'."
-                }
-            ]
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L105_PRAC_Q2",
-            "level": 105,
-            "word": "RELENTLESS",
-            "targetMeaning": "Unyielding",
-            "exercises": [
-                {
-                    "exerciseType": "contextPick",
-                    "interactionType": "choice",
-                    "question": "Which definition best captures the natural usage of 'RELENTLESS' in context?",
-                    "options": [
-                        "\"Unyielding\" describes something that refuses to give way or stop, closely related to being relentless.",
-                        "A rare figurative expression with an unrelated meaning.",
-                        "An opposing concept that reverses the sentence intent."
-                    ],
-                    "correctAnswerIndex": 0,
-                    "feedbackPerOption": [
-                        "Correct! That precisely matches the contextual meaning of 'RELENTLESS'.",
-                        "Incorrect: This describes an unrelated expression.",
-                        "Incorrect: This reverses the natural meaning."
-                    ]
-                },
-                {
-                    "exerciseType": "fillGap",
-                    "interactionType": "typing",
-                    "sentence": "Recall in context: In this exercise, the target term is _____.",
-                    "correctAnswer": "unyielding",
-                    "hint": "Recall the target word (10 letters, starts with 'U').",
-                    "feedbackIfWrong": "The correct target word is 'Unyielding'."
-                }
-            ]
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L105_PRAC_Q3",
-            "level": 105,
-            "word": "VOLATILE",
-            "targetMeaning": "Unstable",
-            "exercises": [
-                {
-                    "exerciseType": "contextPick",
-                    "interactionType": "choice",
-                    "question": "Which definition best captures the natural usage of 'VOLATILE' in context?",
-                    "options": [
-                        "\"Unstable\" describes something prone to sudden, unpredictable change, closely related to being volatile.",
-                        "A rare figurative expression with an unrelated meaning.",
-                        "An opposing concept that reverses the sentence intent."
-                    ],
-                    "correctAnswerIndex": 0,
-                    "feedbackPerOption": [
-                        "Correct! That precisely matches the contextual meaning of 'VOLATILE'.",
-                        "Incorrect: This describes an unrelated expression.",
-                        "Incorrect: This reverses the natural meaning."
-                    ]
-                },
-                {
-                    "exerciseType": "fillGap",
-                    "interactionType": "typing",
-                    "sentence": "Recall in context: In this exercise, the target term is _____.",
-                    "correctAnswer": "unstable",
-                    "hint": "Recall the target word (8 letters, starts with 'U').",
-                    "feedbackIfWrong": "The correct target word is 'Unstable'."
-                }
-            ]
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L106_PRAC_Q1",
-            "level": 106,
-            "word": "UBIQUITOUS",
-            "targetMeaning": "Pervasive",
-            "exercises": [
-                {
-                    "exerciseType": "contextPick",
-                    "interactionType": "choice",
-                    "question": "Which definition best captures the natural usage of 'UBIQUITOUS' in context?",
-                    "options": [
-                        "\"Pervasive\" describes something spread throughout and present in every part of something, closely related to being ubiquitous.",
-                        "A rare figurative expression with an unrelated meaning.",
-                        "An opposing concept that reverses the sentence intent."
-                    ],
-                    "correctAnswerIndex": 0,
-                    "feedbackPerOption": [
-                        "Correct! That precisely matches the contextual meaning of 'UBIQUITOUS'.",
-                        "Incorrect: This describes an unrelated expression.",
-                        "Incorrect: This reverses the natural meaning."
-                    ]
-                },
-                {
-                    "exerciseType": "fillGap",
-                    "interactionType": "typing",
-                    "sentence": "Recall in context: In this exercise, the target term is _____.",
-                    "correctAnswer": "pervasive",
-                    "hint": "Recall the target word (9 letters, starts with 'P').",
-                    "feedbackIfWrong": "The correct target word is 'Pervasive'."
-                }
-            ]
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L106_PRAC_Q2",
-            "level": 106,
-            "word": "EPHEMERAL",
-            "targetMeaning": "Fleeting",
-            "exercises": [
-                {
-                    "exerciseType": "contextPick",
-                    "interactionType": "choice",
-                    "question": "Which definition best captures the natural usage of 'EPHEMERAL' in context?",
-                    "options": [
-                        "\"Fleeting\" describes something that passes quickly, closely related to being ephemeral.",
-                        "A rare figurative expression with an unrelated meaning.",
-                        "An opposing concept that reverses the sentence intent."
-                    ],
-                    "correctAnswerIndex": 0,
-                    "feedbackPerOption": [
-                        "Correct! That precisely matches the contextual meaning of 'EPHEMERAL'.",
-                        "Incorrect: This describes an unrelated expression.",
-                        "Incorrect: This reverses the natural meaning."
-                    ]
-                },
-                {
-                    "exerciseType": "fillGap",
-                    "interactionType": "typing",
-                    "sentence": "Recall in context: In this exercise, the target term is _____.",
-                    "correctAnswer": "fleeting",
-                    "hint": "Recall the target word (8 letters, starts with 'F').",
-                    "feedbackIfWrong": "The correct target word is 'Fleeting'."
-                }
-            ]
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L106_PRAC_Q3",
-            "level": 106,
-            "word": "INHERENT",
-            "targetMeaning": "Intrinsic",
-            "exercises": [
-                {
-                    "exerciseType": "contextPick",
-                    "interactionType": "choice",
-                    "question": "Which definition best captures the natural usage of 'INHERENT' in context?",
-                    "options": [
-                        "\"Intrinsic\" describes a quality that belongs naturally to something, closely related to being inherent.",
-                        "A rare figurative expression with an unrelated meaning.",
-                        "An opposing concept that reverses the sentence intent."
-                    ],
-                    "correctAnswerIndex": 0,
-                    "feedbackPerOption": [
-                        "Correct! That precisely matches the contextual meaning of 'INHERENT'.",
-                        "Incorrect: This describes an unrelated expression.",
-                        "Incorrect: This reverses the natural meaning."
-                    ]
-                },
-                {
-                    "exerciseType": "fillGap",
-                    "interactionType": "typing",
-                    "sentence": "Recall in context: In this exercise, the target term is _____.",
-                    "correctAnswer": "intrinsic",
-                    "hint": "Recall the target word (9 letters, starts with 'I').",
-                    "feedbackIfWrong": "The correct target word is 'Intrinsic'."
-                }
-            ]
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L107_PRAC_Q1",
-            "level": 107,
-            "word": "AMBIGUOUS",
-            "targetMeaning": "Equivocal",
-            "exercises": [
-                {
-                    "exerciseType": "contextPick",
-                    "interactionType": "choice",
-                    "question": "Which definition best captures the natural usage of 'AMBIGUOUS' in context?",
-                    "options": [
-                        "\"Equivocal\" describes language deliberately unclear or open to multiple meanings, closely related to being ambiguous.",
-                        "A rare figurative expression with an unrelated meaning.",
-                        "An opposing concept that reverses the sentence intent."
-                    ],
-                    "correctAnswerIndex": 0,
-                    "feedbackPerOption": [
-                        "Correct! That precisely matches the contextual meaning of 'AMBIGUOUS'.",
-                        "Incorrect: This describes an unrelated expression.",
-                        "Incorrect: This reverses the natural meaning."
-                    ]
-                },
-                {
-                    "exerciseType": "fillGap",
-                    "interactionType": "typing",
-                    "sentence": "Recall in context: In this exercise, the target term is _____.",
-                    "correctAnswer": "equivocal",
-                    "hint": "Recall the target word (9 letters, starts with 'E').",
-                    "feedbackIfWrong": "The correct target word is 'Equivocal'."
-                }
-            ]
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L107_PRAC_Q2",
-            "level": 107,
-            "word": "ARBITRARY",
-            "targetMeaning": "Capricious",
-            "exercises": [
-                {
-                    "exerciseType": "contextPick",
-                    "interactionType": "choice",
-                    "question": "Which definition best captures the natural usage of 'ARBITRARY' in context?",
-                    "options": [
-                        "\"Capricious\" describes decisions made on a whim, without a clear or consistent reason, closely related to being arbitrary.",
-                        "A rare figurative expression with an unrelated meaning.",
-                        "An opposing concept that reverses the sentence intent."
-                    ],
-                    "correctAnswerIndex": 0,
-                    "feedbackPerOption": [
-                        "Correct! That precisely matches the contextual meaning of 'ARBITRARY'.",
-                        "Incorrect: This describes an unrelated expression.",
-                        "Incorrect: This reverses the natural meaning."
-                    ]
-                },
-                {
-                    "exerciseType": "fillGap",
-                    "interactionType": "typing",
-                    "sentence": "Recall in context: In this exercise, the target term is _____.",
-                    "correctAnswer": "capricious",
-                    "hint": "Recall the target word (10 letters, starts with 'C').",
-                    "feedbackIfWrong": "The correct target word is 'Capricious'."
-                }
-            ]
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L107_PRAC_Q3",
-            "level": 107,
-            "word": "REDUNDANT",
-            "targetMeaning": "Superfluous",
-            "exercises": [
-                {
-                    "exerciseType": "contextPick",
-                    "interactionType": "choice",
-                    "question": "Which definition best captures the natural usage of 'REDUNDANT' in context?",
-                    "options": [
-                        "\"Superfluous\" describes something extra and unnecessary, closely related to being redundant.",
-                        "A rare figurative expression with an unrelated meaning.",
-                        "An opposing concept that reverses the sentence intent."
-                    ],
-                    "correctAnswerIndex": 0,
-                    "feedbackPerOption": [
-                        "Correct! That precisely matches the contextual meaning of 'REDUNDANT'.",
-                        "Incorrect: This describes an unrelated expression.",
-                        "Incorrect: This reverses the natural meaning."
-                    ]
-                },
-                {
-                    "exerciseType": "fillGap",
-                    "interactionType": "typing",
-                    "sentence": "Recall in context: In this exercise, the target term is _____.",
-                    "correctAnswer": "superfluous",
-                    "hint": "Recall the target word (11 letters, starts with 'S').",
-                    "feedbackIfWrong": "The correct target word is 'Superfluous'."
-                }
-            ]
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L108_PRAC_Q1",
-            "level": 108,
-            "word": "CORROBORATE",
-            "targetMeaning": "Validate",
-            "exercises": [
-                {
-                    "exerciseType": "contextPick",
-                    "interactionType": "choice",
-                    "question": "Which definition best captures the natural usage of 'CORROBORATE' in context?",
-                    "options": [
-                        "\"Validate\" describes confirming that something is correct or true, closely related to corroborating it.",
-                        "A rare figurative expression with an unrelated meaning.",
-                        "An opposing concept that reverses the sentence intent."
-                    ],
-                    "correctAnswerIndex": 0,
-                    "feedbackPerOption": [
-                        "Correct! That precisely matches the contextual meaning of 'CORROBORATE'.",
-                        "Incorrect: This describes an unrelated expression.",
-                        "Incorrect: This reverses the natural meaning."
-                    ]
-                },
-                {
-                    "exerciseType": "fillGap",
-                    "interactionType": "typing",
-                    "sentence": "Recall in context: In this exercise, the target term is _____.",
-                    "correctAnswer": "validate",
-                    "hint": "Recall the target word (8 letters, starts with 'V').",
-                    "feedbackIfWrong": "The correct target word is 'Validate'."
-                }
-            ]
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L108_PRAC_Q2",
-            "level": 108,
-            "word": "REFUTE",
-            "targetMeaning": "Rebut",
-            "exercises": [
-                {
-                    "exerciseType": "contextPick",
-                    "interactionType": "choice",
-                    "question": "Which definition best captures the natural usage of 'REFUTE' in context?",
-                    "options": [
-                        "\"Rebut\" describes arguing against a claim with evidence, closely related to refuting it.",
-                        "A rare figurative expression with an unrelated meaning.",
-                        "An opposing concept that reverses the sentence intent."
-                    ],
-                    "correctAnswerIndex": 0,
-                    "feedbackPerOption": [
-                        "Correct! That precisely matches the contextual meaning of 'REFUTE'.",
-                        "Incorrect: This describes an unrelated expression.",
-                        "Incorrect: This reverses the natural meaning."
-                    ]
-                },
-                {
-                    "exerciseType": "fillGap",
-                    "interactionType": "typing",
-                    "sentence": "Recall in context: In this exercise, the target term is _____.",
-                    "correctAnswer": "rebut",
-                    "hint": "Recall the target word (5 letters, starts with 'R').",
-                    "feedbackIfWrong": "The correct target word is 'Rebut'."
-                }
-            ]
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L108_PRAC_Q3",
-            "level": 108,
-            "word": "SUBSTANTIATE",
-            "targetMeaning": "Verify",
-            "exercises": [
-                {
-                    "exerciseType": "contextPick",
-                    "interactionType": "choice",
-                    "question": "Which definition best captures the natural usage of 'SUBSTANTIATE' in context?",
-                    "options": [
-                        "\"Verify\" describes checking that something is true or accurate, closely related to substantiating a claim.",
-                        "A rare figurative expression with an unrelated meaning.",
-                        "An opposing concept that reverses the sentence intent."
-                    ],
-                    "correctAnswerIndex": 0,
-                    "feedbackPerOption": [
-                        "Correct! That precisely matches the contextual meaning of 'SUBSTANTIATE'.",
-                        "Incorrect: This describes an unrelated expression.",
-                        "Incorrect: This reverses the natural meaning."
-                    ]
-                },
-                {
-                    "exerciseType": "fillGap",
-                    "interactionType": "typing",
-                    "sentence": "Recall in context: In this exercise, the target term is _____.",
-                    "correctAnswer": "verify",
-                    "hint": "Recall the target word (6 letters, starts with 'V').",
-                    "feedbackIfWrong": "The correct target word is 'Verify'."
-                }
-            ]
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L109_PRAC_Q1",
-            "level": 109,
-            "word": "CANDID",
-            "targetMeaning": "Frank",
-            "exercises": [
-                {
-                    "exerciseType": "contextPick",
-                    "interactionType": "choice",
-                    "question": "Which definition best captures the natural usage of 'CANDID' in context?",
-                    "options": [
-                        "\"Frank\" describes speaking honestly and directly, closely related to being candid.",
-                        "A rare figurative expression with an unrelated meaning.",
-                        "An opposing concept that reverses the sentence intent."
-                    ],
-                    "correctAnswerIndex": 0,
-                    "feedbackPerOption": [
-                        "Correct! That precisely matches the contextual meaning of 'CANDID'.",
-                        "Incorrect: This describes an unrelated expression.",
-                        "Incorrect: This reverses the natural meaning."
-                    ]
-                },
-                {
-                    "exerciseType": "fillGap",
-                    "interactionType": "typing",
-                    "sentence": "Recall in context: In this exercise, the target term is _____.",
-                    "correctAnswer": "frank",
-                    "hint": "Recall the target word (5 letters, starts with 'F').",
-                    "feedbackIfWrong": "The correct target word is 'Frank'."
-                }
-            ]
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L109_PRAC_Q2",
-            "level": 109,
-            "word": "TENUOUS",
-            "targetMeaning": "Flimsy",
-            "exercises": [
-                {
-                    "exerciseType": "contextPick",
-                    "interactionType": "choice",
-                    "question": "Which definition best captures the natural usage of 'TENUOUS' in context?",
-                    "options": [
-                        "\"Flimsy\" describes something weak and easily broken, closely related to being tenuous.",
-                        "A rare figurative expression with an unrelated meaning.",
-                        "An opposing concept that reverses the sentence intent."
-                    ],
-                    "correctAnswerIndex": 0,
-                    "feedbackPerOption": [
-                        "Correct! That precisely matches the contextual meaning of 'TENUOUS'.",
-                        "Incorrect: This describes an unrelated expression.",
-                        "Incorrect: This reverses the natural meaning."
-                    ]
-                },
-                {
-                    "exerciseType": "fillGap",
-                    "interactionType": "typing",
-                    "sentence": "Recall in context: In this exercise, the target term is _____.",
-                    "correctAnswer": "flimsy",
-                    "hint": "Recall the target word (6 letters, starts with 'F').",
-                    "feedbackIfWrong": "The correct target word is 'Flimsy'."
-                }
-            ]
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L109_PRAC_Q3",
-            "level": 109,
-            "word": "ASTUTE",
-            "targetMeaning": "Shrewd",
-            "exercises": [
-                {
-                    "exerciseType": "contextPick",
-                    "interactionType": "choice",
-                    "question": "Which definition best captures the natural usage of 'ASTUTE' in context?",
-                    "options": [
-                        "\"Shrewd\" describes sharp, practical judgment, especially in business or strategic situations, closely related to being astute.",
-                        "A rare figurative expression with an unrelated meaning.",
-                        "An opposing concept that reverses the sentence intent."
-                    ],
-                    "correctAnswerIndex": 0,
-                    "feedbackPerOption": [
-                        "Correct! That precisely matches the contextual meaning of 'ASTUTE'.",
-                        "Incorrect: This describes an unrelated expression.",
-                        "Incorrect: This reverses the natural meaning."
-                    ]
-                },
-                {
-                    "exerciseType": "fillGap",
-                    "interactionType": "typing",
-                    "sentence": "Recall in context: In this exercise, the target term is _____.",
-                    "correctAnswer": "shrewd",
-                    "hint": "Recall the target word (6 letters, starts with 'S').",
-                    "feedbackIfWrong": "The correct target word is 'Shrewd'."
-                }
-            ]
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L110_PRAC_Q1",
-            "level": 110,
-            "word": "COMPREHENSIVE",
-            "targetMeaning": "All-encompassing",
-            "exercises": [
-                {
-                    "exerciseType": "contextPick",
-                    "interactionType": "choice",
-                    "question": "Which definition best captures the natural usage of 'COMPREHENSIVE' in context?",
-                    "options": [
-                        "\"All-encompassing\" describes something so thorough it leaves nothing out, closely related to being comprehensive.",
-                        "A rare figurative expression with an unrelated meaning.",
-                        "An opposing concept that reverses the sentence intent."
-                    ],
-                    "correctAnswerIndex": 0,
-                    "feedbackPerOption": [
-                        "Correct! That precisely matches the contextual meaning of 'COMPREHENSIVE'.",
-                        "Incorrect: This describes an unrelated expression.",
-                        "Incorrect: This reverses the natural meaning."
-                    ]
-                },
-                {
-                    "exerciseType": "fillGap",
-                    "interactionType": "typing",
-                    "sentence": "Recall in context: In this exercise, the target term is _____.",
-                    "correctAnswer": "all-encompassing",
-                    "hint": "Recall the target word (16 letters, starts with 'A').",
-                    "feedbackIfWrong": "The correct target word is 'All-encompassing'."
-                }
-            ]
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L110_PRAC_Q2",
-            "level": 110,
-            "word": "COMPLEX",
-            "targetMeaning": "Multifaceted",
-            "exercises": [
-                {
-                    "exerciseType": "contextPick",
-                    "interactionType": "choice",
-                    "question": "Which definition best captures the natural usage of 'COMPLEX' in context?",
-                    "options": [
-                        "\"Multifaceted\" describes something with many different aspects or sides, much like a complex issue has many interacting parts.",
-                        "A rare figurative expression with an unrelated meaning.",
-                        "An opposing concept that reverses the sentence intent."
-                    ],
-                    "correctAnswerIndex": 0,
-                    "feedbackPerOption": [
-                        "Correct! That precisely matches the contextual meaning of 'COMPLEX'.",
-                        "Incorrect: This describes an unrelated expression.",
-                        "Incorrect: This reverses the natural meaning."
-                    ]
-                },
-                {
-                    "exerciseType": "fillGap",
-                    "interactionType": "typing",
-                    "sentence": "Recall in context: In this exercise, the target term is _____.",
-                    "correctAnswer": "multifaceted",
-                    "hint": "Recall the target word (12 letters, starts with 'M').",
-                    "feedbackIfWrong": "The correct target word is 'Multifaceted'."
-                }
-            ]
-        },
-        {
-            "id": "VOC_SYNONYMSEARCH_L110_PRAC_Q3",
-            "level": 110,
-            "word": "DISCRETIONARY",
-            "targetMeaning": "Optional",
-            "exercises": [
-                {
-                    "exerciseType": "contextPick",
-                    "interactionType": "choice",
-                    "question": "Which definition best captures the natural usage of 'DISCRETIONARY' in context?",
-                    "options": [
-                        "\"Optional\" describes something that isn't required, closely related to being discretionary.",
-                        "A rare figurative expression with an unrelated meaning.",
-                        "An opposing concept that reverses the sentence intent."
-                    ],
-                    "correctAnswerIndex": 0,
-                    "feedbackPerOption": [
-                        "Correct! That precisely matches the contextual meaning of 'DISCRETIONARY'.",
-                        "Incorrect: This describes an unrelated expression.",
-                        "Incorrect: This reverses the natural meaning."
-                    ]
-                },
-                {
-                    "exerciseType": "fillGap",
-                    "interactionType": "typing",
-                    "sentence": "Recall in context: In this exercise, the target term is _____.",
-                    "correctAnswer": "optional",
-                    "hint": "Recall the target word (8 letters, starts with 'O').",
-                    "feedbackIfWrong": "The correct target word is 'Optional'."
-                }
-            ]
+          "exerciseType": "synonymLadder",
+          "prompt": "Order these related words from mildest to strongest along the scale.",
+          "scaleAxis": "One Glance -> Continuous Track",
+          "lowLabel": "One Glance",
+          "highLabel": "Continuous Track",
+          "shuffledWords": [
+            "Supervise",
+            "Track",
+            "Watch"
+          ],
+          "orderedWords": [
+            "Track",
+            "Watch",
+            "Supervise"
+          ],
+          "explanation": "Track starts at One Glance, Watch builds nuance, and Supervise reaches Continuous Track.",
+          "hint": "Start with the word closest to One Glance and end near Continuous Track.",
+          "spokenExample": "Park sensors monitor reservoir levels throughout dry months."
         }
-    ]
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L101_PRAC_Q2",
+      "level": 101,
+      "cefr": "B2",
+      "difficulty": 3,
+      "word": "Allow",
+      "targetSynonym": "Enable",
+      "exercises": [
+        {
+          "exerciseType": "contrastSwap",
+          "prompt": "Place 'Allow' and 'Enable' where each sounds natural.",
+          "pairWords": [
+            "Allow",
+            "Enable"
+          ],
+          "slots": [
+            {
+              "contextTag": "House Rule",
+              "sentenceWithBlank": "Our apartment building does not ___ loud drums after ten.",
+              "correctWord": "Allow",
+              "feedback": "Granting social rules uses 'allow', not technical 'enable'."
+            },
+            {
+              "contextTag": "App Tool",
+              "sentenceWithBlank": "Offline maps ___ hikers to navigate deep forest valleys.",
+              "correctWord": "Enable",
+              "feedback": "Granting mechanical or software ability takes 'enable'."
+            }
+          ],
+          "hint": "'Allow' grants permission (`allow access`). 'Enable' turns on actual capability or features (`wheels enable speed`)."
+        },
+        {
+          "exerciseType": "synonymLadder",
+          "prompt": "Order these related words from mildest to strongest along the scale.",
+          "scaleAxis": "Permission -> Capability",
+          "lowLabel": "Permission",
+          "highLabel": "Capability",
+          "shuffledWords": [
+            "Permit",
+            "Empower",
+            "Let"
+          ],
+          "orderedWords": [
+            "Let",
+            "Permit",
+            "Empower"
+          ],
+          "explanation": "Let starts at Permission, Permit builds nuance, and Empower reaches Capability.",
+          "hint": "Start with the word closest to Permission and end near Capability.",
+          "spokenExample": "Better insulation will enable families to lower winter heat bills."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L101_PRAC_Q3",
+      "level": 101,
+      "cefr": "B2",
+      "difficulty": 3,
+      "word": "Force",
+      "targetSynonym": "Compel",
+      "exercises": [
+        {
+          "exerciseType": "contrastSwap",
+          "prompt": "Place 'Force' and 'Compel' where each sounds natural.",
+          "pairWords": [
+            "Force",
+            "Compel"
+          ],
+          "slots": [
+            {
+              "contextTag": "Clear Proof",
+              "sentenceWithBlank": "Overwhelming video evidence seemed to ___ a quick apology.",
+              "correctWord": "Compel",
+              "feedback": "Logical or legal pressure uses 'compel'."
+            },
+            {
+              "contextTag": "Jammed Lock",
+              "sentenceWithBlank": "Do not ___ the rusty key or it might snap in the lock!",
+              "correctWord": "Force",
+              "feedback": "Physical shoving takes 'force', never 'compel'."
+            }
+          ],
+          "hint": "'Force' uses physical push or blunt power (`force doors open`). 'Compel' presses cleanly through moral duty, strong proof, or legal rule."
+        },
+        {
+          "exerciseType": "synonymLadder",
+          "prompt": "Order these related words from mildest to strongest along the scale.",
+          "scaleAxis": "Physical -> Moral/Legal",
+          "lowLabel": "Physical",
+          "highLabel": "Moral/Legal",
+          "shuffledWords": [
+            "Oblige",
+            "Push",
+            "Drive"
+          ],
+          "orderedWords": [
+            "Push",
+            "Drive",
+            "Oblige"
+          ],
+          "explanation": "Push starts at Physical, Drive builds nuance, and Oblige reaches Moral/Legal.",
+          "hint": "Start with the word closest to Physical and end near Moral/Legal.",
+          "spokenExample": "Severe drought may compel towns to limit lawn watering."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L102_PRAC_Q1",
+      "level": 102,
+      "cefr": "B2",
+      "difficulty": 3,
+      "word": "Fair",
+      "targetSynonym": "Objective",
+      "exercises": [
+        {
+          "exerciseType": "contrastSwap",
+          "prompt": "Place 'Fair' and 'Objective' where each sounds natural.",
+          "pairWords": [
+            "Fair",
+            "Objective"
+          ],
+          "slots": [
+            {
+              "contextTag": "Coin Toss",
+              "sentenceWithBlank": "Flipping a quarter remains our ___ way to pick first kick.",
+              "correctWord": "Fair",
+              "feedback": "Game fairness uses 'fair', not analytical 'objective'."
+            },
+            {
+              "contextTag": "Lab Review",
+              "sentenceWithBlank": "Scientists draft their ___ summary using measured test results.",
+              "correctWord": "Objective",
+              "feedback": "Fact-based detachment free of bias takes 'objective'."
+            }
+          ],
+          "hint": "'Fair' treats teammates evenly (`fair turn`). 'Objective' separates cold facts from bias (`objective report`, `objective judge`)."
+        },
+        {
+          "exerciseType": "synonymLadder",
+          "prompt": "Order these related words from mildest to strongest along the scale.",
+          "scaleAxis": "Just -> Fact-Only",
+          "lowLabel": "Just",
+          "highLabel": "Fact-Only",
+          "shuffledWords": [
+            "Impartial",
+            "Unbiased",
+            "Neutral"
+          ],
+          "orderedWords": [
+            "Neutral",
+            "Impartial",
+            "Unbiased"
+          ],
+          "explanation": "Neutral starts at Just, Impartial builds nuance, and Unbiased reaches Fact-Only.",
+          "hint": "Start with the word closest to Just and end near Fact-Only.",
+          "spokenExample": "An objective panel reviewed every scholarship application evenly."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L102_PRAC_Q2",
+      "level": 102,
+      "cefr": "B2",
+      "difficulty": 3,
+      "word": "Clear",
+      "targetSynonym": "Distinctive",
+      "exercises": [
+        {
+          "exerciseType": "contrastSwap",
+          "prompt": "Place 'Clear' and 'Distinctive' where each sounds natural.",
+          "pairWords": [
+            "Clear",
+            "Distinctive"
+          ],
+          "slots": [
+            {
+              "contextTag": "Jazz Horn",
+              "sentenceWithBlank": "Miles played with a ___ warm brass tone.",
+              "correctWord": "Distinctive",
+              "feedback": "Recognizable signature traits take 'distinctive'."
+            },
+            {
+              "contextTag": "Tap Water",
+              "sentenceWithBlank": "Pour clean, ___ cold water into the tall glass.",
+              "correctWord": "Clear",
+              "feedback": "Transparent liquids take 'clear', never 'distinctive'."
+            }
+          ],
+          "hint": "'Clear' means transparent or obvious. 'Distinctive' means having a unique signature style you spot instantly (`distinctive voice`)."
+        },
+        {
+          "exerciseType": "synonymLadder",
+          "prompt": "Order these related words from mildest to strongest along the scale.",
+          "scaleAxis": "Visible -> Signature",
+          "lowLabel": "Visible",
+          "highLabel": "Signature",
+          "shuffledWords": [
+            "Characteristic",
+            "Signature",
+            "Unique"
+          ],
+          "orderedWords": [
+            "Signature",
+            "Unique",
+            "Characteristic"
+          ],
+          "explanation": "Signature starts at Visible, Unique builds nuance, and Characteristic reaches Signature.",
+          "hint": "Start with the word closest to Visible and end near Signature.",
+          "spokenExample": "Fresh rosemary adds a distinctive woody scent to roasted dishes."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L102_PRAC_Q3",
+      "level": 102,
+      "cefr": "B2",
+      "difficulty": 3,
+      "word": "Hard",
+      "targetSynonym": "Rigid",
+      "exercises": [
+        {
+          "exerciseType": "contrastSwap",
+          "prompt": "Place 'Hard' and 'Rigid' where each sounds natural.",
+          "pairWords": [
+            "Hard",
+            "Rigid"
+          ],
+          "slots": [
+            {
+              "contextTag": "Math Test",
+              "sentenceWithBlank": "Algebra homework felt surprisingly ___ without notes.",
+              "correctWord": "Hard",
+              "feedback": "Difficult study problems take 'hard', never 'rigid'."
+            },
+            {
+              "contextTag": "Rule Book",
+              "sentenceWithBlank": "Avoid ___ dress codes that ignore humid summer heat.",
+              "correctWord": "Rigid",
+              "feedback": "Unbending rules or stiff plastic rods take 'rigid'."
+            }
+          ],
+          "hint": "'Hard' measures solidity (`hard rock`) or effort. 'Rigid' stresses zero flexibility in plastic frames or unbending office rules."
+        },
+        {
+          "exerciseType": "synonymLadder",
+          "prompt": "Order these related words from mildest to strongest along the scale.",
+          "scaleAxis": "Tough -> Unbending",
+          "lowLabel": "Tough",
+          "highLabel": "Unbending",
+          "shuffledWords": [
+            "Inflexible",
+            "Unyielding",
+            "Stiff"
+          ],
+          "orderedWords": [
+            "Stiff",
+            "Inflexible",
+            "Unyielding"
+          ],
+          "explanation": "Stiff starts at Tough, Inflexible builds nuance, and Unyielding reaches Unbending.",
+          "hint": "Start with the word closest to Tough and end near Unbending.",
+          "spokenExample": "Pack cameras inside a rigid protective travel case."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L103_PRAC_Q1",
+      "level": 103,
+      "cefr": "B2",
+      "difficulty": 3,
+      "word": "Smooth",
+      "targetSynonym": "Fluent",
+      "exercises": [
+        {
+          "exerciseType": "contrastSwap",
+          "prompt": "Place 'Smooth' and 'Fluent' where each sounds natural.",
+          "pairWords": [
+            "Smooth",
+            "Fluent"
+          ],
+          "slots": [
+            {
+              "contextTag": "Oral Exam",
+              "sentenceWithBlank": "Consistent daily chat builds ___ English speaking habits.",
+              "correctWord": "Fluent",
+              "feedback": "Effortless natural language flow takes 'fluent'."
+            },
+            {
+              "contextTag": "Silk Scarf",
+              "sentenceWithBlank": "Ironing left the cotton shirt flat and ___.",
+              "correctWord": "Smooth",
+              "feedback": "Smooth cloth surfaces never take 'fluent'."
+            }
+          ],
+          "hint": "'Smooth' handles surfaces (`smooth glass`) and plans. 'Fluent' celebrates effortless spoken/written language flow without stumbling."
+        },
+        {
+          "exerciseType": "synonymLadder",
+          "prompt": "Order these related words from mildest to strongest along the scale.",
+          "scaleAxis": "Even Surface -> Language Flow",
+          "lowLabel": "Even Surface",
+          "highLabel": "Language Flow",
+          "shuffledWords": [
+            "Polished",
+            "Effortless",
+            "Articulate"
+          ],
+          "orderedWords": [
+            "Effortless",
+            "Articulate",
+            "Polished"
+          ],
+          "explanation": "Effortless starts at Even Surface, Articulate builds nuance, and Polished reaches Language Flow.",
+          "hint": "Start with the word closest to Even Surface and end near Language Flow.",
+          "spokenExample": "After six months abroad, Maya spoke fluent Spanish."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L103_PRAC_Q2",
+      "level": 103,
+      "cefr": "B2",
+      "difficulty": 3,
+      "word": "Exact",
+      "targetSynonym": "Accurate",
+      "exercises": [
+        {
+          "exerciseType": "contrastSwap",
+          "prompt": "Place 'Exact' and 'Accurate' where each sounds natural.",
+          "pairWords": [
+            "Exact",
+            "Accurate"
+          ],
+          "slots": [
+            {
+              "contextTag": "Twin Copies",
+              "sentenceWithBlank": "Compare both receipts for the ___ item codes.",
+              "correctWord": "Exact",
+              "feedback": "Identical numbers use 'exact', whereas 'accurate' means right against truth."
+            },
+            {
+              "contextTag": "Weather Map",
+              "sentenceWithBlank": "Radar forecasts stayed surprisingly ___ all hurricane week.",
+              "correctWord": "Accurate",
+              "feedback": "Reliable measurement truth takes 'accurate'."
+            }
+          ],
+          "hint": "'Exact' matches identically (`exact words`). 'Accurate' reliably hits facts without sloppy errors (`accurate clock`, `accurate weather forecast`)."
+        },
+        {
+          "exerciseType": "synonymLadder",
+          "prompt": "Order these related words from mildest to strongest along the scale.",
+          "scaleAxis": "Reliable Truth -> Identical",
+          "lowLabel": "Reliable Truth",
+          "highLabel": "Identical",
+          "shuffledWords": [
+            "Correct",
+            "True",
+            "Precise"
+          ],
+          "orderedWords": [
+            "Precise",
+            "Correct",
+            "True"
+          ],
+          "explanation": "Precise starts at Reliable Truth, Correct builds nuance, and True reaches Identical.",
+          "hint": "Start with the word closest to Reliable Truth and end near Identical.",
+          "spokenExample": "Reporters strive for accurate dates and verified speaker quotes."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L103_PRAC_Q3",
+      "level": 103,
+      "cefr": "B2",
+      "difficulty": 3,
+      "word": "Old",
+      "targetSynonym": "Outdated",
+      "exercises": [
+        {
+          "exerciseType": "contrastSwap",
+          "prompt": "Place 'Old' and 'Outdated' where each sounds natural.",
+          "pairWords": [
+            "Old",
+            "Outdated"
+          ],
+          "slots": [
+            {
+              "contextTag": "Paper Map",
+              "sentenceWithBlank": "An ___ subway map confused visitors at new stations.",
+              "correctWord": "Outdated",
+              "feedback": "Rules, files, or facts replaced by newer ones are 'outdated'."
+            },
+            {
+              "contextTag": "Stone Bridge",
+              "sentenceWithBlank": "Tourists photographed the charming ___ cobblestone bridge.",
+              "correctWord": "Old",
+              "feedback": "Respected historic landmarks are 'old', never 'outdated'."
+            }
+          ],
+          "hint": "'Old' values antiques (`old oak chest`). 'Outdated' criticizes software, maps, or rules left useless by newer facts."
+        },
+        {
+          "exerciseType": "synonymLadder",
+          "prompt": "Order these related words from mildest to strongest along the scale.",
+          "scaleAxis": "Aged -> Useless Today",
+          "lowLabel": "Aged",
+          "highLabel": "Useless Today",
+          "shuffledWords": [
+            "Antiquated",
+            "Dated",
+            "Obsolete"
+          ],
+          "orderedWords": [
+            "Dated",
+            "Obsolete",
+            "Antiquated"
+          ],
+          "explanation": "Dated starts at Aged, Obsolete builds nuance, and Antiquated reaches Useless Today.",
+          "hint": "Start with the word closest to Aged and end near Useless Today.",
+          "spokenExample": "Upgrade outdated antivirus apps to block recent threats."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L104_PRAC_Q1",
+      "level": 104,
+      "cefr": "B2",
+      "difficulty": 3,
+      "word": "New",
+      "targetSynonym": "Novel",
+      "exercises": [
+        {
+          "exerciseType": "contrastSwap",
+          "prompt": "Place 'New' and 'Novel' where each sounds natural.",
+          "pairWords": [
+            "New",
+            "Novel"
+          ],
+          "slots": [
+            {
+              "contextTag": "Shoe Box",
+              "sentenceWithBlank": "He wore ___ white running shoes straight out of the box.",
+              "correctWord": "New",
+              "feedback": "Ordinary newly bought goods take 'new', never creative 'novel'."
+            },
+            {
+              "contextTag": "Smart Pitch",
+              "sentenceWithBlank": "Folding solar roofs offered a ___ answer for camper vans.",
+              "correctWord": "Novel",
+              "feedback": "Inventive original ideas earn 'novel'."
+            }
+          ],
+          "hint": "'New' covers fresh shoes (`new sneakers`). 'Novel' celebrates clever, original ideas nobody tried before (`novel design`)."
+        },
+        {
+          "exerciseType": "synonymLadder",
+          "prompt": "Order these related words from mildest to strongest along the scale.",
+          "scaleAxis": "Recent -> Inventive",
+          "lowLabel": "Recent",
+          "highLabel": "Inventive",
+          "shuffledWords": [
+            "Original",
+            "Innovative",
+            "Fresh"
+          ],
+          "orderedWords": [
+            "Fresh",
+            "Original",
+            "Innovative"
+          ],
+          "explanation": "Fresh starts at Recent, Original builds nuance, and Innovative reaches Inventive.",
+          "hint": "Start with the word closest to Recent and end near Inventive.",
+          "spokenExample": "Chemists tested a novel method to recycle bottle caps."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L104_PRAC_Q2",
+      "level": 104,
+      "cefr": "B2",
+      "difficulty": 3,
+      "word": "Angry",
+      "targetSynonym": "Indignant",
+      "exercises": [
+        {
+          "exerciseType": "contrastSwap",
+          "prompt": "Place 'Angry' and 'Indignant' where each sounds natural.",
+          "pairWords": [
+            "Angry",
+            "Indignant"
+          ],
+          "slots": [
+            {
+              "contextTag": "Fair Refund",
+              "sentenceWithBlank": "Shoppers grew ___ when clerks refused valid return slips.",
+              "correctWord": "Indignant",
+              "feedback": "Anger sparked by perceived injustice uses 'indignant'."
+            },
+            {
+              "contextTag": "Banged Toe",
+              "sentenceWithBlank": "Ouch — stubbing his toe left him grumpy and ___.",
+              "correctWord": "Angry",
+              "feedback": "Physical toe pain takes 'angry'/annoyed, not moral 'indignant'."
+            }
+          ],
+          "hint": "'Angry' covers traffic rage or spilled coffee. 'Indignant' burns righteously against rude insults or unfair treatment."
+        },
+        {
+          "exerciseType": "synonymLadder",
+          "prompt": "Order these related words from mildest to strongest along the scale.",
+          "scaleAxis": "Annoyed -> Unfairness",
+          "lowLabel": "Annoyed",
+          "highLabel": "Unfairness",
+          "shuffledWords": [
+            "Offended",
+            "Outraged",
+            "Resentful"
+          ],
+          "orderedWords": [
+            "Outraged",
+            "Resentful",
+            "Offended"
+          ],
+          "explanation": "Outraged starts at Annoyed, Resentful builds nuance, and Offended reaches Unfairness.",
+          "hint": "Start with the word closest to Annoyed and end near Unfairness.",
+          "spokenExample": "Citizens wrote indignant letters over unfair bridge tolls."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L104_PRAC_Q3",
+      "level": 104,
+      "cefr": "B2",
+      "difficulty": 3,
+      "word": "Scared",
+      "targetSynonym": "Panic",
+      "exercises": [
+        {
+          "exerciseType": "contrastSwap",
+          "prompt": "Place 'Scared' and 'Panic' where each sounds natural.",
+          "pairWords": [
+            "Scared",
+            "Panic"
+          ],
+          "slots": [
+            {
+              "contextTag": "Boo Prank",
+              "sentenceWithBlank": "Hiding behind doors gave Sam a funny little ___.",
+              "correctWord": "Scared",
+              "feedback": "Brief harmless jumps take 'scare', never 'panic'."
+            },
+            {
+              "contextTag": "Stage Smoke",
+              "sentenceWithBlank": "Exit ushers stayed calm to prevent ___ inside the hall.",
+              "correctWord": "Panic",
+              "feedback": "Chaotic crowd fear uses 'panic'."
+            }
+          ],
+          "hint": "'Scare' surprises briefly (`give a scare`). 'Panic' hits crowds causing chaotic rushing (`crowd panic`, `calm panic`)."
+        },
+        {
+          "exerciseType": "synonymLadder",
+          "prompt": "Order these related words from mildest to strongest along the scale.",
+          "scaleAxis": "Startle -> Chaotic Fear",
+          "lowLabel": "Startle",
+          "highLabel": "Chaotic Fear",
+          "shuffledWords": [
+            "Terror",
+            "Dread",
+            "Alarm"
+          ],
+          "orderedWords": [
+            "Alarm",
+            "Terror",
+            "Dread"
+          ],
+          "explanation": "Alarm starts at Startle, Terror builds nuance, and Dread reaches Chaotic Fear.",
+          "hint": "Start with the word closest to Startle and end near Chaotic Fear.",
+          "spokenExample": "Double-check passports early to avoid last-minute panic at gates."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L105_PRAC_Q1",
+      "level": 105,
+      "cefr": "B2",
+      "difficulty": 3,
+      "word": "Happy",
+      "targetSynonym": "Content",
+      "exercises": [
+        {
+          "exerciseType": "contrastSwap",
+          "prompt": "Place 'Happy' and 'Content' where each sounds natural.",
+          "pairWords": [
+            "Happy",
+            "Content"
+          ],
+          "slots": [
+            {
+              "contextTag": "Quiet Porch",
+              "sentenceWithBlank": "Sipping tea beside sleeping cats, Leo felt completely ___.",
+              "correctWord": "Content",
+              "feedback": "Peaceful, calm satisfaction takes 'content'."
+            },
+            {
+              "contextTag": "Party Wish",
+              "sentenceWithBlank": "All cousins sang ___ Birthday around the candle cake!",
+              "correctWord": "Happy",
+              "feedback": "Celebratory songs say 'Happy', never 'Content'."
+            }
+          ],
+          "hint": "'Happy' smiles openly (`happy birthday`). 'Content' sits peacefully satisfied right where you are (`content at home`)."
+        },
+        {
+          "exerciseType": "synonymLadder",
+          "prompt": "Order these related words from mildest to strongest along the scale.",
+          "scaleAxis": "Peaceful -> Overjoyed",
+          "lowLabel": "Peaceful",
+          "highLabel": "Overjoyed",
+          "shuffledWords": [
+            "Joyful",
+            "Pleased",
+            "Satisfied"
+          ],
+          "orderedWords": [
+            "Pleased",
+            "Satisfied",
+            "Joyful"
+          ],
+          "explanation": "Pleased starts at Peaceful, Satisfied builds nuance, and Joyful reaches Overjoyed.",
+          "hint": "Start with the word closest to Peaceful and end near Overjoyed.",
+          "spokenExample": "True travelers remain content with one light carry-on bag."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L105_PRAC_Q2",
+      "level": 105,
+      "cefr": "B2",
+      "difficulty": 3,
+      "word": "Think",
+      "targetSynonym": "Consider",
+      "exercises": [
+        {
+          "exerciseType": "contrastSwap",
+          "prompt": "Place 'Think' and 'Consider' where each sounds natural.",
+          "pairWords": [
+            "Think",
+            "Consider"
+          ],
+          "slots": [
+            {
+              "contextTag": "Quick Answer",
+              "sentenceWithBlank": "Do you ___ this sweater matches blue denim?",
+              "correctWord": "Think",
+              "feedback": "Quick casual guesses use 'think', not weighty 'consider'."
+            },
+            {
+              "contextTag": "Job Offer",
+              "sentenceWithBlank": "Take the weekend to carefully ___ both salary offers.",
+              "correctWord": "Consider",
+              "feedback": "Weighing choices carefully takes 'consider'."
+            }
+          ],
+          "hint": "'Think' offers fast personal opinions (`I think so`). 'Consider' weighs pros and cons patiently before choosing (`consider moving`)."
+        },
+        {
+          "exerciseType": "synonymLadder",
+          "prompt": "Order these related words from mildest to strongest along the scale.",
+          "scaleAxis": "Quick Idea -> Deep Weigh",
+          "lowLabel": "Quick Idea",
+          "highLabel": "Deep Weigh",
+          "shuffledWords": [
+            "Weigh",
+            "Evaluate",
+            "Reflect"
+          ],
+          "orderedWords": [
+            "Reflect",
+            "Weigh",
+            "Evaluate"
+          ],
+          "explanation": "Reflect starts at Quick Idea, Weigh builds nuance, and Evaluate reaches Deep Weigh.",
+          "hint": "Start with the word closest to Quick Idea and end near Deep Weigh.",
+          "spokenExample": "City planners must consider winter traffic before building lanes."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L105_PRAC_Q3",
+      "level": 105,
+      "cefr": "B2",
+      "difficulty": 3,
+      "word": "Look",
+      "targetSynonym": "Examine",
+      "exercises": [
+        {
+          "exerciseType": "contrastSwap",
+          "prompt": "Place 'Look' and 'Examine' where each sounds natural.",
+          "pairWords": [
+            "Look",
+            "Examine"
+          ],
+          "slots": [
+            {
+              "contextTag": "Clinic Lab",
+              "sentenceWithBlank": "Doctors carefully ___ X-ray films beside clear light boards.",
+              "correctWord": "Examine",
+              "feedback": "Clinical diagnostic checks take 'examine'."
+            },
+            {
+              "contextTag": "Cloud Shape",
+              "sentenceWithBlank": "Come ___ at that pink cloud shaped like a whale!",
+              "correctWord": "Look",
+              "feedback": "Casual sightseeing takes 'look', never clinical 'examine'."
+            }
+          ],
+          "hint": "'Look' glides visually (`look left`). 'Examine' inspects eyes, slides, receipts, or evidence thoroughly (`examine blood samples`)."
+        },
+        {
+          "exerciseType": "synonymLadder",
+          "prompt": "Order these related words from mildest to strongest along the scale.",
+          "scaleAxis": "Casual Glance -> Clinical Check",
+          "lowLabel": "Casual Glance",
+          "highLabel": "Clinical Check",
+          "shuffledWords": [
+            "Scrutinize",
+            "Inspect",
+            "Audit"
+          ],
+          "orderedWords": [
+            "Inspect",
+            "Audit",
+            "Scrutinize"
+          ],
+          "explanation": "Inspect starts at Casual Glance, Audit builds nuance, and Scrutinize reaches Clinical Check.",
+          "hint": "Start with the word closest to Casual Glance and end near Clinical Check.",
+          "spokenExample": "Appraisers carefully examine old silver marks under bright lamps."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L106_PRAC_Q1",
+      "level": 106,
+      "cefr": "B2",
+      "difficulty": 3,
+      "word": "Speak",
+      "targetSynonym": "Express",
+      "exercises": [
+        {
+          "exerciseType": "contrastSwap",
+          "prompt": "Place 'Speak' and 'Express' where each sounds natural.",
+          "pairWords": [
+            "Speak",
+            "Express"
+          ],
+          "slots": [
+            {
+              "contextTag": "Language Use",
+              "sentenceWithBlank": "Can anyone here ___ fluent Portuguese politely?",
+              "correctWord": "Speak",
+              "feedback": "Speaking languages uses 'speak', never 'express'."
+            },
+            {
+              "contextTag": "Kind Speech",
+              "sentenceWithBlank": "Letters helped students ___ gratitude to retiring coaches.",
+              "correctWord": "Express",
+              "feedback": "Putting deep feelings into words uses 'express'."
+            }
+          ],
+          "hint": "'Speak' uses voice (`speak French`). 'Express' conveys exact emotion, thanks, or artistic ideas clearly (`express gratitude`)."
+        },
+        {
+          "exerciseType": "synonymLadder",
+          "prompt": "Order these related words from mildest to strongest along the scale.",
+          "scaleAxis": "Say -> Convey Emotion",
+          "lowLabel": "Say",
+          "highLabel": "Convey Emotion",
+          "shuffledWords": [
+            "Voice",
+            "Articulate",
+            "Convey"
+          ],
+          "orderedWords": [
+            "Convey",
+            "Voice",
+            "Articulate"
+          ],
+          "explanation": "Convey starts at Say, Voice builds nuance, and Articulate reaches Convey Emotion.",
+          "hint": "Start with the word closest to Say and end near Convey Emotion.",
+          "spokenExample": "Painters often express quiet grief through soft blue tones."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L106_PRAC_Q2",
+      "level": 106,
+      "cefr": "B2",
+      "difficulty": 3,
+      "word": "Show",
+      "targetSynonym": "Illustrate",
+      "exercises": [
+        {
+          "exerciseType": "contrastSwap",
+          "prompt": "Place 'Show' and 'Illustrate' where each sounds natural.",
+          "pairWords": [
+            "Show",
+            "Illustrate"
+          ],
+          "slots": [
+            {
+              "contextTag": "Math Chart",
+              "sentenceWithBlank": "Simple pie charts clearly ___ where city taxes go.",
+              "correctWord": "Illustrate",
+              "feedback": "Clarifying ideas with pictures or examples uses 'illustrate'."
+            },
+            {
+              "contextTag": "ID Gate",
+              "sentenceWithBlank": "Please ___ your library card at the main desk.",
+              "correctWord": "Show",
+              "feedback": "Holding out ID uses 'show', never 'illustrate'."
+            }
+          ],
+          "hint": "'Show' points with a finger or slides (`show photos`). 'Illustrate' proves a tricky point vividly with charts, drawings, or stories."
+        },
+        {
+          "exerciseType": "synonymLadder",
+          "prompt": "Order these related words from mildest to strongest along the scale.",
+          "scaleAxis": "Point -> Example Proof",
+          "lowLabel": "Point",
+          "highLabel": "Example Proof",
+          "shuffledWords": [
+            "Exemplify",
+            "Demonstrate",
+            "Clarify"
+          ],
+          "orderedWords": [
+            "Demonstrate",
+            "Clarify",
+            "Exemplify"
+          ],
+          "explanation": "Demonstrate starts at Point, Clarify builds nuance, and Exemplify reaches Example Proof.",
+          "hint": "Start with the word closest to Point and end near Example Proof.",
+          "spokenExample": "One honest story can illustrate why safety training matters."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L106_PRAC_Q3",
+      "level": 106,
+      "cefr": "B2",
+      "difficulty": 3,
+      "word": "Change",
+      "targetSynonym": "Adapt",
+      "exercises": [
+        {
+          "exerciseType": "contrastSwap",
+          "prompt": "Place 'Change' and 'Adapt' where each sounds natural.",
+          "pairWords": [
+            "Change",
+            "Adapt"
+          ],
+          "slots": [
+            {
+              "contextTag": "Bus Route",
+              "sentenceWithBlank": "Passengers must ___ trains twice before reaching Dover.",
+              "correctWord": "Change",
+              "feedback": "Transferring transit lines takes 'change', never 'adapt'."
+            },
+            {
+              "contextTag": "Cold Move",
+              "sentenceWithBlank": "Tropical plants struggle to ___ cleanly to frosty winters.",
+              "correctWord": "Adapt",
+              "feedback": "Adjusting to new environments requires 'adapt'."
+            }
+          ],
+          "hint": "'Change' switches anything (`change shoes`). 'Adapt' thoughtfully tweaks behavior or designs to thrive in a new setting (`adapt to winters`)."
+        },
+        {
+          "exerciseType": "synonymLadder",
+          "prompt": "Order these related words from mildest to strongest along the scale.",
+          "scaleAxis": "Swap -> Thrive in New Fit",
+          "lowLabel": "Swap",
+          "highLabel": "Thrive in New Fit",
+          "shuffledWords": [
+            "Modify",
+            "Transform",
+            "Adjust"
+          ],
+          "orderedWords": [
+            "Adjust",
+            "Modify",
+            "Transform"
+          ],
+          "explanation": "Adjust starts at Swap, Modify builds nuance, and Transform reaches Thrive in New Fit.",
+          "hint": "Start with the word closest to Swap and end near Thrive in New Fit.",
+          "spokenExample": "Smart cafés adapt menus quickly when seasonal prices rise."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L107_PRAC_Q1",
+      "level": 107,
+      "cefr": "B2",
+      "difficulty": 3,
+      "word": "Move",
+      "targetSynonym": "Shift",
+      "exercises": [
+        {
+          "exerciseType": "contrastSwap",
+          "prompt": "Place 'Move' and 'Shift' where each sounds natural.",
+          "pairWords": [
+            "Move",
+            "Shift"
+          ],
+          "slots": [
+            {
+              "contextTag": "Camera Angle",
+              "sentenceWithBlank": "Drivers smoothly ___ gears before climbing steeper hills.",
+              "correctWord": "Shift",
+              "feedback": "Moving gears, weight, or blame slightly takes 'shift'."
+            },
+            {
+              "contextTag": "New Home",
+              "sentenceWithBlank": "Next month our family plans to ___ closer to campus.",
+              "correctWord": "Move",
+              "feedback": "Relocating households takes 'move', never 'shift'."
+            }
+          ],
+          "hint": "'Move' walks houses or arms (`move chairs`). 'Shift' slides weights, gears, blame, or focus incrementally (`shift focus`)."
+        },
+        {
+          "exerciseType": "synonymLadder",
+          "prompt": "Order these related words from mildest to strongest along the scale.",
+          "scaleAxis": "Slide Slightly -> Relocate",
+          "lowLabel": "Slide Slightly",
+          "highLabel": "Relocate",
+          "shuffledWords": [
+            "Relocate",
+            "Slide",
+            "Transfer"
+          ],
+          "orderedWords": [
+            "Slide",
+            "Transfer",
+            "Relocate"
+          ],
+          "explanation": "Slide starts at Slide Slightly, Transfer builds nuance, and Relocate reaches Relocate.",
+          "hint": "Start with the word closest to Slide Slightly and end near Relocate.",
+          "spokenExample": "Afternoon conversations soon began to shift toward summer plans."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L107_PRAC_Q2",
+      "level": 107,
+      "cefr": "B2",
+      "difficulty": 3,
+      "word": "Keep",
+      "targetSynonym": "Maintain",
+      "exercises": [
+        {
+          "exerciseType": "contrastSwap",
+          "prompt": "Place 'Keep' and 'Maintain' where each sounds natural.",
+          "pairWords": [
+            "Keep",
+            "Maintain"
+          ],
+          "slots": [
+            {
+              "contextTag": "Raincoat",
+              "sentenceWithBlank": "Always ___ an extra rain poncho inside your car trunk.",
+              "correctWord": "Keep",
+              "feedback": "Storing passive items uses 'keep', not 'maintain'."
+            },
+            {
+              "contextTag": "Highway Pace",
+              "sentenceWithBlank": "Cruise control helps drivers ___ a steady sixty-mile speed.",
+              "correctWord": "Maintain",
+              "feedback": "Actively preserving speed or equipment takes 'maintain'."
+            }
+          ],
+          "hint": "'Keep' holds objects (`keep coins`). 'Maintain' actively services roads, machines, calm peace, or steady speeds (`maintain speed`)."
+        },
+        {
+          "exerciseType": "synonymLadder",
+          "prompt": "Order these related words from mildest to strongest along the scale.",
+          "scaleAxis": "Store -> Active Care",
+          "lowLabel": "Store",
+          "highLabel": "Active Care",
+          "shuffledWords": [
+            "Sustain",
+            "Uphold",
+            "Preserve"
+          ],
+          "orderedWords": [
+            "Preserve",
+            "Sustain",
+            "Uphold"
+          ],
+          "explanation": "Preserve starts at Store, Sustain builds nuance, and Uphold reaches Active Care.",
+          "hint": "Start with the word closest to Store and end near Active Care.",
+          "spokenExample": "Town crews pave cracks monthly to maintain safe cycling lanes."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L107_PRAC_Q3",
+      "level": 107,
+      "cefr": "B2",
+      "difficulty": 3,
+      "word": "Leave",
+      "targetSynonym": "Abandon",
+      "exercises": [
+        {
+          "exerciseType": "contrastSwap",
+          "prompt": "Place 'Leave' and 'Abandon' where each sounds natural.",
+          "pairWords": [
+            "Leave",
+            "Abandon"
+          ],
+          "slots": [
+            {
+              "contextTag": "Snowy Storm",
+              "sentenceWithBlank": "Hikers chose to ___ the icy climb before darkness fell.",
+              "correctWord": "Abandon",
+              "feedback": "Quitting tough plans or stranded vehicles takes 'abandon'."
+            },
+            {
+              "contextTag": "Book Desk",
+              "sentenceWithBlank": "Remember not to ___ wet mugs on polished wood.",
+              "correctWord": "Leave",
+              "feedback": "Setting down cups uses 'leave', never dramatic 'abandon'."
+            }
+          ],
+          "hint": "'Leave' steps out calmly (`leave at noon`). 'Abandon' walks away from broken cars, sinking ships, or failed plans completely."
+        },
+        {
+          "exerciseType": "synonymLadder",
+          "prompt": "Order these related words from mildest to strongest along the scale.",
+          "scaleAxis": "Walk Out -> Give Up Totally",
+          "lowLabel": "Walk Out",
+          "highLabel": "Give Up Totally",
+          "shuffledWords": [
+            "Quit",
+            "Desert",
+            "Forsake"
+          ],
+          "orderedWords": [
+            "Desert",
+            "Forsake",
+            "Quit"
+          ],
+          "explanation": "Desert starts at Walk Out, Forsake builds nuance, and Quit reaches Give Up Totally.",
+          "hint": "Start with the word closest to Walk Out and end near Give Up Totally.",
+          "spokenExample": "Sailors refused to abandon the leaking sailboat near rocks."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L108_PRAC_Q1",
+      "level": 108,
+      "cefr": "B2",
+      "difficulty": 3,
+      "word": "Use",
+      "targetSynonym": "Utilize",
+      "exercises": [
+        {
+          "exerciseType": "contrastSwap",
+          "prompt": "Place 'Use' and 'Utilize' where each sounds natural.",
+          "pairWords": [
+            "Use",
+            "Utilize"
+          ],
+          "slots": [
+            {
+              "contextTag": "Soup Bowl",
+              "sentenceWithBlank": "Kids should ___ spoons rather than fingers for stew.",
+              "correctWord": "Use",
+              "feedback": "Spoons and pencils sound absurdly stiff with 'utilize'."
+            },
+            {
+              "contextTag": "Green Home",
+              "sentenceWithBlank": "New greenhouses ___ leftover kitchen steam for winter warmth.",
+              "correctWord": "Utilize",
+              "feedback": "Putting spare resources cleanly to use fits 'utilize'."
+            }
+          ],
+          "hint": "'Use' works crisply everywhere (`use a spoon`). 'Utilize' sounds formal and spotlights creatively using hidden or idle resources (`utilize solar heat`)."
+        },
+        {
+          "exerciseType": "synonymLadder",
+          "prompt": "Order these related words from mildest to strongest along the scale.",
+          "scaleAxis": "Simple -> Resourceful",
+          "lowLabel": "Simple",
+          "highLabel": "Resourceful",
+          "shuffledWords": [
+            "Apply",
+            "Leverage",
+            "Employ"
+          ],
+          "orderedWords": [
+            "Employ",
+            "Apply",
+            "Leverage"
+          ],
+          "explanation": "Employ starts at Simple, Apply builds nuance, and Leverage reaches Resourceful.",
+          "hint": "Start with the word closest to Simple and end near Resourceful.",
+          "spokenExample": "Libraries can utilize empty rooftops as sunny reading gardens."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L108_PRAC_Q2",
+      "level": 108,
+      "cefr": "B2",
+      "difficulty": 3,
+      "word": "Begin",
+      "targetSynonym": "Initiate",
+      "exercises": [
+        {
+          "exerciseType": "contrastSwap",
+          "prompt": "Place 'Begin' and 'Initiate' where each sounds natural.",
+          "pairWords": [
+            "Begin",
+            "Initiate"
+          ],
+          "slots": [
+            {
+              "contextTag": "Peace Talks",
+              "sentenceWithBlank": "Envoys agreed to ___ formal trade talks next spring.",
+              "correctWord": "Initiate",
+              "feedback": "Formally opening processes uses 'initiate'."
+            },
+            {
+              "contextTag": "Piano Lesson",
+              "sentenceWithBlank": "Every afternoon practice should ___ with slow scales.",
+              "correctWord": "Begin",
+              "feedback": "Daily casual lessons take 'begin', not formal 'initiate'."
+            }
+          ],
+          "hint": "'Begin' starts songs or meals (`begin lunch`). 'Initiate' triggers official investigations, talks, or safety procedures."
+        },
+        {
+          "exerciseType": "synonymLadder",
+          "prompt": "Order these related words from mildest to strongest along the scale.",
+          "scaleAxis": "Casual -> Official Trigger",
+          "lowLabel": "Casual",
+          "highLabel": "Official Trigger",
+          "shuffledWords": [
+            "Launch",
+            "Start",
+            "Trigger"
+          ],
+          "orderedWords": [
+            "Start",
+            "Trigger",
+            "Launch"
+          ],
+          "explanation": "Start starts at Casual, Trigger builds nuance, and Launch reaches Official Trigger.",
+          "hint": "Start with the word closest to Casual and end near Official Trigger.",
+          "spokenExample": "Banks automatically initiate security checks on huge wire transfers."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L108_PRAC_Q3",
+      "level": 108,
+      "cefr": "B2",
+      "difficulty": 3,
+      "word": "End",
+      "targetSynonym": "Conclude",
+      "exercises": [
+        {
+          "exerciseType": "contrastSwap",
+          "prompt": "Place 'End' and 'Conclude' where each sounds natural.",
+          "pairWords": [
+            "End",
+            "Conclude"
+          ],
+          "slots": [
+            {
+              "contextTag": "Road Sign",
+              "sentenceWithBlank": "Main Street does not ___ until the river ferry dock.",
+              "correctWord": "End",
+              "feedback": "Physical streets 'end', they never 'conclude'."
+            },
+            {
+              "contextTag": "Study Proof",
+              "sentenceWithBlank": "Researchers ___ that morning walks sharpen focus markedly.",
+              "correctWord": "Conclude",
+              "feedback": "Drawing final logic or closing speeches uses 'conclude'."
+            }
+          ],
+          "hint": "'End' halts anything (`end the film`). 'Conclude' closes speeches cleanly OR draws final logical proof (`scientists conclude`)."
+        },
+        {
+          "exerciseType": "synonymLadder",
+          "prompt": "Order these related words from mildest to strongest along the scale.",
+          "scaleAxis": "Stop -> Final Logic",
+          "lowLabel": "Stop",
+          "highLabel": "Final Logic",
+          "shuffledWords": [
+            "Finish",
+            "Deduce",
+            "Close"
+          ],
+          "orderedWords": [
+            "Close",
+            "Finish",
+            "Deduce"
+          ],
+          "explanation": "Close starts at Stop, Finish builds nuance, and Deduce reaches Final Logic.",
+          "hint": "Start with the word closest to Stop and end near Final Logic.",
+          "spokenExample": "Wait for mayors to conclude their opening speeches before applause."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L109_PRAC_Q1",
+      "level": 109,
+      "cefr": "B2",
+      "difficulty": 3,
+      "word": "Big",
+      "targetSynonym": "Substantial",
+      "exercises": [
+        {
+          "exerciseType": "contrastSwap",
+          "prompt": "Place 'Big' and 'Substantial' where each sounds natural.",
+          "pairWords": [
+            "Big",
+            "Substantial"
+          ],
+          "slots": [
+            {
+              "contextTag": "Budget Savings",
+              "sentenceWithBlank": "Solar roofs bring ___ cuts to summer power bills.",
+              "correctWord": "Substantial",
+              "feedback": "Credible size/money gains take 'substantial'."
+            },
+            {
+              "contextTag": "Smile Card",
+              "sentenceWithBlank": "Toddlers flashed a ___ toothy grin at the camera.",
+              "correctWord": "Big",
+              "feedback": "Smiles and feelings use 'big', never formal 'substantial'."
+            }
+          ],
+          "hint": "'Big' sounds warm and casual (`big cake`). 'Substantial' sounds credible for evidence, budgets, savings, and hearty meals."
+        },
+        {
+          "exerciseType": "synonymLadder",
+          "prompt": "Order these related words from mildest to strongest along the scale.",
+          "scaleAxis": "Casual -> Credible Weight",
+          "lowLabel": "Casual",
+          "highLabel": "Credible Weight",
+          "shuffledWords": [
+            "Massive",
+            "Sizable",
+            "Considerable"
+          ],
+          "orderedWords": [
+            "Sizable",
+            "Considerable",
+            "Massive"
+          ],
+          "explanation": "Sizable starts at Casual, Considerable builds nuance, and Massive reaches Credible Weight.",
+          "hint": "Start with the word closest to Casual and end near Credible Weight.",
+          "spokenExample": "Athletes eat a substantial breakfast rich in oats and eggs."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L109_PRAC_Q2",
+      "level": 109,
+      "cefr": "B2",
+      "difficulty": 3,
+      "word": "Small",
+      "targetSynonym": "Minor",
+      "exercises": [
+        {
+          "exerciseType": "contrastSwap",
+          "prompt": "Place 'Small' and 'Minor' where each sounds natural.",
+          "pairWords": [
+            "Small",
+            "Minor"
+          ],
+          "slots": [
+            {
+              "contextTag": "Cup Size",
+              "sentenceWithBlank": "Order a ___ espresso if you want one quick sip.",
+              "correctWord": "Small",
+              "feedback": "Drink sizes are 'small', never 'minor'."
+            },
+            {
+              "contextTag": "Fender Bump",
+              "sentenceWithBlank": "Luckily, the parking bump left only a ___ paint scratch.",
+              "correctWord": "Minor",
+              "feedback": "Trivial problems and injuries take 'minor'."
+            }
+          ],
+          "hint": "'Small' measures physical size (`small shoe`). 'Minor' plays down low severity or minor cuts/edits (`minor delay`, `minor scratch`)."
+        },
+        {
+          "exerciseType": "synonymLadder",
+          "prompt": "Order these related words from mildest to strongest along the scale.",
+          "scaleAxis": "Physical Size -> Low Impact",
+          "lowLabel": "Physical Size",
+          "highLabel": "Low Impact",
+          "shuffledWords": [
+            "Trivial",
+            "Negligible",
+            "Tiny"
+          ],
+          "orderedWords": [
+            "Tiny",
+            "Trivial",
+            "Negligible"
+          ],
+          "explanation": "Tiny starts at Physical Size, Trivial builds nuance, and Negligible reaches Low Impact.",
+          "hint": "Start with the word closest to Physical Size and end near Low Impact.",
+          "spokenExample": "Editors fixed three minor spelling slips before printing."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L109_PRAC_Q3",
+      "level": 109,
+      "cefr": "B2",
+      "difficulty": 3,
+      "word": "Important",
+      "targetSynonym": "Significant",
+      "exercises": [
+        {
+          "exerciseType": "contrastSwap",
+          "prompt": "Place 'Important' and 'Significant' where each sounds natural.",
+          "pairWords": [
+            "Important",
+            "Significant"
+          ],
+          "slots": [
+            {
+              "contextTag": "Lab Trend",
+              "sentenceWithBlank": "Water filtering produced this ___ drop in lead levels.",
+              "correctWord": "Significant",
+              "feedback": "Meaningful measurable shifts take 'significant'."
+            },
+            {
+              "contextTag": "Lost Keys",
+              "sentenceWithBlank": "Do not misplace that ___ red spare house key!",
+              "correctWord": "Important",
+              "feedback": "Individual key objects use 'important', not 'significant'."
+            }
+          ],
+          "hint": "'Important' ranks priority (`important meeting`). 'Significant' measures noticeable scientific/statistical difference (`significant drop`)."
+        },
+        {
+          "exerciseType": "synonymLadder",
+          "prompt": "Order these related words from mildest to strongest along the scale.",
+          "scaleAxis": "Personal -> Measurable",
+          "lowLabel": "Personal",
+          "highLabel": "Measurable",
+          "shuffledWords": [
+            "Pivotal",
+            "Meaningful",
+            "Notable"
+          ],
+          "orderedWords": [
+            "Meaningful",
+            "Notable",
+            "Pivotal"
+          ],
+          "explanation": "Meaningful starts at Personal, Notable builds nuance, and Pivotal reaches Measurable.",
+          "hint": "Start with the word closest to Personal and end near Measurable.",
+          "spokenExample": "Regular exercise leads to significant gains in sleep depth."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L110_PRAC_Q1",
+      "level": 110,
+      "cefr": "B2",
+      "difficulty": 3,
+      "word": "Common",
+      "targetSynonym": "Widespread",
+      "exercises": [
+        {
+          "exerciseType": "contrastSwap",
+          "prompt": "Place 'Common' and 'Widespread' where each sounds natural.",
+          "pairWords": [
+            "Common",
+            "Widespread"
+          ],
+          "slots": [
+            {
+              "contextTag": "Grammar Error",
+              "sentenceWithBlank": "Confusing there and their is a ___ spelling slip.",
+              "correctWord": "Common",
+              "feedback": "Frequent small typos use 'common', not broad 'widespread'."
+            },
+            {
+              "contextTag": "Survey Poll",
+              "sentenceWithBlank": "Solar incentives gained ___ approval across coastal towns.",
+              "correctWord": "Widespread",
+              "feedback": "Stretching geographically or socially uses 'widespread'."
+            }
+          ],
+          "hint": "'Common' describes shared habits (`common cold`). 'Widespread' emphasizes spreading across an entire country or industry (`widespread support`)."
+        },
+        {
+          "exerciseType": "synonymLadder",
+          "prompt": "Order these related words from mildest to strongest along the scale.",
+          "scaleAxis": "Everyday -> Nationwide",
+          "lowLabel": "Everyday",
+          "highLabel": "Nationwide",
+          "shuffledWords": [
+            "Prevalent",
+            "Universal",
+            "Frequent"
+          ],
+          "orderedWords": [
+            "Frequent",
+            "Prevalent",
+            "Universal"
+          ],
+          "explanation": "Frequent starts at Everyday, Prevalent builds nuance, and Universal reaches Nationwide.",
+          "hint": "Start with the word closest to Everyday and end near Nationwide.",
+          "spokenExample": "Warm dry winds fueled widespread pollen allergies last May."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L110_PRAC_Q2",
+      "level": 110,
+      "cefr": "B2",
+      "difficulty": 3,
+      "word": "Rare",
+      "targetSynonym": "Scarce",
+      "exercises": [
+        {
+          "exerciseType": "contrastSwap",
+          "prompt": "Place 'Rare' and 'Scarce' where each sounds natural.",
+          "pairWords": [
+            "Rare",
+            "Scarce"
+          ],
+          "slots": [
+            {
+              "contextTag": "Dry Summer",
+              "sentenceWithBlank": "Clean well water grows ___ across drought-hit farms.",
+              "correctWord": "Scarce",
+              "feedback": "Shortages of needed goods always take 'scarce'."
+            },
+            {
+              "contextTag": "Art Stamp",
+              "sentenceWithBlank": "Collectors bid high for that ___ 1924 silver stamp.",
+              "correctWord": "Rare",
+              "feedback": "Valued collectible items are 'rare', not 'scarce'."
+            }
+          ],
+          "hint": "'Rare' prizes special coins or rare days (`rare coin`). 'Scarce' warns of shortages where essentials run dangerously short (`scarce water`)."
+        },
+        {
+          "exerciseType": "synonymLadder",
+          "prompt": "Order these related words from mildest to strongest along the scale.",
+          "scaleAxis": "Prized -> Shortage",
+          "lowLabel": "Prized",
+          "highLabel": "Shortage",
+          "shuffledWords": [
+            "Sparse",
+            "Uncommon",
+            "Limited"
+          ],
+          "orderedWords": [
+            "Uncommon",
+            "Limited",
+            "Sparse"
+          ],
+          "explanation": "Uncommon starts at Prized, Limited builds nuance, and Sparse reaches Shortage.",
+          "hint": "Start with the word closest to Prized and end near Shortage.",
+          "spokenExample": "Skilled watch repairers have become scarce in small towns."
+        }
+      ]
+    },
+    {
+      "id": "VOC_SYNONYMSEARCH_L110_PRAC_Q3",
+      "level": 110,
+      "cefr": "B2",
+      "difficulty": 3,
+      "word": "Clear",
+      "targetSynonym": "Transparent",
+      "exercises": [
+        {
+          "exerciseType": "contrastSwap",
+          "prompt": "Place 'Clear' and 'Transparent' where each sounds natural.",
+          "pairWords": [
+            "Clear",
+            "Transparent"
+          ],
+          "slots": [
+            {
+              "contextTag": "Loud Audio",
+              "sentenceWithBlank": "Turn up treble so voice notes stay crisp and ___.",
+              "correctWord": "Clear",
+              "feedback": "Audio clarity uses 'clear', never 'transparent'."
+            },
+            {
+              "contextTag": "Honest Fees",
+              "sentenceWithBlank": "Good lenders keep contract costs completely ___ up front.",
+              "correctWord": "Transparent",
+              "feedback": "Open, honest policies with nothing hidden earn 'transparent'."
+            }
+          ],
+          "hint": "'Clear' fits clean lakes and skies (`clear answer`). 'Transparent' handles clear glass AND honest open leadership with zero secrets (`transparent fees`)."
+        },
+        {
+          "exerciseType": "synonymLadder",
+          "prompt": "Order these related words from mildest to strongest along the scale.",
+          "scaleAxis": "Clean Sound -> Open Truth",
+          "lowLabel": "Clean Sound",
+          "highLabel": "Open Truth",
+          "shuffledWords": [
+            "Open",
+            "Candid",
+            "Lucid"
+          ],
+          "orderedWords": [
+            "Lucid",
+            "Open",
+            "Candid"
+          ],
+          "explanation": "Lucid starts at Clean Sound, Open builds nuance, and Candid reaches Open Truth.",
+          "hint": "Start with the word closest to Clean Sound and end near Open Truth.",
+          "spokenExample": "Wrap fresh bakery tarts in transparent boxes so fruit shines."
+        }
+      ]
+    }
+  ]
 }
