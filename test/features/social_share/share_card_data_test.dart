@@ -56,5 +56,49 @@ void main() {
       expect(card.roomCode, 'VOWL99');
       expect(card.payoutCoins, 50);
     });
+
+    test('creates arena defeat share card with arenaDefeat type and contender copy', () {
+      final card = ShareCardData.fromArenaDefeat(
+        userName: 'Ansar',
+        myScore: 280,
+        rivalScore: 410,
+        rivalName: 'John',
+        roomCode: 'VOWL-DUEL-482913',
+        payoutCoins: 10,
+      );
+
+      expect(card.type, ShareCardType.arenaDefeat);
+      expect(card.title, '1v1 DUEL CONTENDER');
+      expect(card.subtitle, 'Battled John in a 1v1 English Duel — rematch incoming!');
+      expect(card.payoutCoins, 10);
+    });
+
+    test('creates arena draw share card with arenaDraw type', () {
+      final card = ShareCardData.fromArenaDraw(
+        userName: 'Ansar',
+        myScore: 350,
+        rivalScore: 350,
+        rivalName: 'John',
+        roomCode: 'VOWL-DUEL-482913',
+        payoutCoins: 30,
+      );
+
+      expect(card.type, ShareCardType.arenaDraw);
+      expect(card.title, '1v1 DUEL DRAW');
+      expect(card.payoutCoins, 30);
+    });
+
+    test('creates weekly rank share card with Weekly XP label', () {
+      final card = ShareCardData.fromRank(
+        userName: 'Alex',
+        rank: 2,
+        totalXp: 450,
+        streak: 5,
+        isWeekly: true,
+      );
+
+      expect(card.isWeeklyRank, isTrue);
+      expect(card.subtitle, '450 Weekly XP · 5-Day Streak');
+    });
   });
 }

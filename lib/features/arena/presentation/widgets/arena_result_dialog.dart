@@ -76,21 +76,25 @@ class ArenaResultDialog extends StatelessWidget {
 
     final statusColor = isSpeedTieBreak
         ? AppColors.amber500
-        : (isWinner ? AppColors.emerald500 : AppColors.rose500);
+        : (isDraw
+              ? AppColors.indigo500
+              : (isWinner ? AppColors.emerald500 : AppColors.rose500));
 
     final statusTitle = isSpeedTieBreak
         ? (isWinner ? '⚡ SPEED VICTORY!' : '⚡ TIME TIEBREAKER')
-        : (isWinner ? 'VICTORY!' : 'DEFEAT');
+        : (isDraw ? 'DRAW!' : (isWinner ? 'VICTORY!' : 'DEFEAT'));
 
     final statusSubtitle = isSpeedTieBreak
         ? (isWinner
               ? 'Tied on points! You were ${speedDiffSeconds.toStringAsFixed(1)}s faster!'
               : 'Tied on points! Rival was ${speedDiffSeconds.toStringAsFixed(1)}s faster.')
-        : (isWinner
-              ? 'Great match! +$payoutCoins coins won.'
-              : 'Good match! +$payoutCoins coins returned.');
+        : (isDraw
+              ? 'Exact tie! Your $payoutCoins coins were refunded.'
+              : (isWinner
+                    ? 'Great match! +$payoutCoins coins won.'
+                    : 'Good match! +$payoutCoins coins returned.'));
 
-    final netCoins = isWinner ? 20 : -20;
+    final netCoins = payoutCoins - 30;
 
     final dialog = Dialog(
       backgroundColor: surfaceColor,
@@ -122,7 +126,11 @@ class ArenaResultDialog extends StatelessWidget {
                   child: Icon(
                     isSpeedTieBreak
                         ? LucideIcons.zap
-                        : (isWinner ? LucideIcons.trophy : LucideIcons.swords),
+                        : (isDraw
+                              ? LucideIcons.scale
+                              : (isWinner
+                                    ? LucideIcons.trophy
+                                    : LucideIcons.swords)),
                     size: 28.sp,
                     color: statusColor,
                   ),
@@ -312,7 +320,7 @@ class ArenaResultDialog extends StatelessWidget {
                               else
                                 CircleAvatar(
                                   radius: 10.r,
-                                  backgroundColor: !isWinner
+                                  backgroundColor: (!isWinner && !isDraw)
                                       ? AppColors.emerald500.withValues(
                                           alpha: 0.15,
                                         )
@@ -340,7 +348,7 @@ class ArenaResultDialog extends StatelessWidget {
                                       : null,
                                 ),
                               SizedBox(width: 4.w),
-                              if (!isWinner) ...[
+                              if (!isWinner && !isDraw) ...[
                                 Icon(
                                   LucideIcons.trophy,
                                   size: 12.sp,
@@ -375,7 +383,7 @@ class ArenaResultDialog extends StatelessWidget {
                               style: TextStyle(
                                 fontSize: 24.sp,
                                 fontWeight: FontWeight.w900,
-                                color: !isWinner
+                                color: (!isWinner && !isDraw)
                                     ? AppColors.emerald500
                                     : textPrimary,
                               ),
@@ -447,20 +455,29 @@ class ArenaResultDialog extends StatelessWidget {
                             vertical: 2.h,
                           ),
                           decoration: BoxDecoration(
-                            color: isWinner
-                                ? AppColors.emerald500.withValues(alpha: 0.15)
-                                : AppColors.rose500.withValues(alpha: 0.15),
+                            color: (isDraw
+                                    ? AppColors.indigo500
+                                    : (isWinner
+                                          ? AppColors.emerald500
+                                          : AppColors.rose500))
+                                .withValues(alpha: 0.15),
                             borderRadius: BorderRadius.circular(6.r),
                           ),
                           child: Text(
-                            isWinner ? '+$netCoins COINS' : '$netCoins COINS',
+                            netCoins > 0
+                                ? '+$netCoins COINS'
+                                : (netCoins == 0
+                                      ? '0 COINS'
+                                      : '$netCoins COINS'),
                             softWrap: true,
                             style: TextStyle(
                               fontSize: 10.sp,
                               fontWeight: FontWeight.w800,
-                              color: isWinner
-                                  ? AppColors.emerald500
-                                  : AppColors.rose500,
+                              color: isDraw
+                                  ? AppColors.indigo500
+                                  : (isWinner
+                                        ? AppColors.emerald500
+                                        : AppColors.rose500),
                             ),
                           ),
                         ),
@@ -674,16 +691,27 @@ class ArenaResultDialog extends StatelessWidget {
                           payoutCoins: payoutCoins,
                           isAiRival: isAiRival,
                         )
-                      : ShareCardData.fromArenaDefeat(
-                          userName: myName,
-                          userPhotoUrl: myPhotoUrl,
-                          myScore: myScore,
-                          rivalScore: rivalScore,
-                          rivalName: effectiveRival,
-                          roomCode: code,
-                          payoutCoins: payoutCoins,
-                          isAiRival: isAiRival,
-                        );
+                      : (isDraw
+                            ? ShareCardData.fromArenaDraw(
+                                userName: myName,
+                                userPhotoUrl: myPhotoUrl,
+                                myScore: myScore,
+                                rivalScore: rivalScore,
+                                rivalName: effectiveRival,
+                                roomCode: code,
+                                payoutCoins: payoutCoins,
+                                isAiRival: isAiRival,
+                              )
+                            : ShareCardData.fromArenaDefeat(
+                                userName: myName,
+                                userPhotoUrl: myPhotoUrl,
+                                myScore: myScore,
+                                rivalScore: rivalScore,
+                                rivalName: effectiveRival,
+                                roomCode: code,
+                                payoutCoins: payoutCoins,
+                                isAiRival: isAiRival,
+                              ));
                   ShareCardPreviewModal.show(context: context, data: shareData);
                 },
                 child: Container(
@@ -714,7 +742,9 @@ class ArenaResultDialog extends StatelessWidget {
                           child: Text(
                             isWinner
                                 ? 'Share Victory Card'
-                                : 'Share Battle Card',
+                                : (isDraw
+                                      ? 'Share Draw Card'
+                                      : 'Share Battle Card'),
                             softWrap: true,
                             style: TextStyle(
                               fontSize: 13.sp,

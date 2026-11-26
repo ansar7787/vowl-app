@@ -16,7 +16,7 @@ abstract class ArenaRepository {
     required int rivalRank,
   });
 
-  /// Generates a sharable room code (e.g. `VOWL-DUEL-882`) and creates the room document.
+  /// Generates a sharable room code (e.g. `VOWL-DUEL-482913`) and creates the room document.
   Future<ArenaDuelSession> createRoomCode({required UserEntity currentUser});
 
   /// Joins an existing room code created by a friend.

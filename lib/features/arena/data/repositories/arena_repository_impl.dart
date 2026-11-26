@@ -36,16 +36,24 @@ class MatchmakingCanceledException implements Exception {
 
 class ArenaRepositoryImpl implements ArenaRepository {
   final FirebaseFirestore _firestore;
+  final Random _secureRandom;
   int _sessionConsecutiveWins = 0;
   final Map<String, _ActiveQueueSearch> _activeSearches = {};
 
   static const Duration _kNetworkTimeout = Duration(seconds: 10);
+  static const int _kMaxRoomCodeAttempts = 5;
   static const int _kStakeCoins = 30;
   static const int _kWinnerPayout = 50;
   static const int _kLoserPayout = 10;
 
-  ArenaRepositoryImpl([FirebaseFirestore? firestore])
-    : _firestore = firestore ?? FirebaseFirestore.instance;
+  ArenaRepositoryImpl([FirebaseFirestore? firestore, Random? secureRandom])
+    : _firestore = firestore ?? FirebaseFirestore.instance,
+      _secureRandom = secureRandom ?? Random.secure();
+
+  String _generateRoomCode([String prefix = 'VOWL-DUEL']) {
+    final code = _secureRandom.nextInt(900000) + 100000;
+    return '$prefix-$code';
+  }
 
   @override
   Future<void> cancelMatchmaking({required String userId}) async {
@@ -109,8 +117,7 @@ class ArenaRepositoryImpl implements ArenaRepository {
             final oppName = oppData['displayName'] as String? ?? 'Challenger';
             final oppPhoto = oppData['photoUrl'] as String?;
             final roomCode =
-                oppData['roomCode'] as String? ??
-                'VOWL-DUEL-${(Random().nextInt(900) + 100)}';
+                oppData['roomCode'] as String? ?? _generateRoomCode();
 
             // Atomic claim via transaction to prevent concurrent matchmaking races
             bool claimed = false;
@@ -173,8 +180,7 @@ class ArenaRepositoryImpl implements ArenaRepository {
         }
 
         // B. No human waiting: register ticket and listen for real opponent
-        final myRoomCode =
-            'VOWL-DUEL-${(Random.secure().nextInt(900000) + 100000)}';
+        final myRoomCode = _generateRoomCode();
         final myTicketRef = queueRef.doc(currentUser.id);
         final completer = Completer<ArenaDuelSession?>();
 
@@ -253,7 +259,7 @@ class ArenaRepositoryImpl implements ArenaRepository {
         currentUser,
         consecutiveWins: _sessionConsecutiveWins,
       );
-      final roomCode = 'VOWL-AI-${(Random().nextInt(900) + 100)}';
+      final roomCode = _generateRoomCode('VOWL-AI');
 
       return ArenaDuelSession(
         roomCode: roomCode,
@@ -296,7 +302,7 @@ class ArenaRepositoryImpl implements ArenaRepository {
           );
       final accuracy = (0.95 - (rivalRank * 0.015)).clamp(0.65, 0.95);
 
-      final roomCode = 'VOWL-RIVAL-${(Random().nextInt(900) + 100)}';
+      final roomCode = _generateRoomCode('VOWL-RIVAL');
       return ArenaDuelSession(
         roomCode: roomCode,
         hostId: currentUser.id,
@@ -326,15 +332,59 @@ class ArenaRepositoryImpl implements ArenaRepository {
     await _deductEntryStake(currentUser.id);
 
     try {
-      final roomCode = 'VOWL-DUEL-${(Random().nextInt(900) + 100)}';
       final seed = DateTime.now().millisecondsSinceEpoch;
       final questions =
           await ArenaCurriculumEngine.generateProgressiveQuestionsAsync(
             seed: seed,
           );
+      final questionMaps = questions.map((q) => q.toMap()).toList();
 
-      final session = ArenaDuelSession(
-        roomCode: roomCode,
+      String? allocatedRoomCode;
+      for (var attempt = 0; attempt < _kMaxRoomCodeAttempts; attempt++) {
+        final candidate = _generateRoomCode();
+        final docRef = _firestore.collection('arena_rooms').doc(candidate);
+
+        final created = await _firestore
+            .runTransaction<bool>((tx) async {
+              final existing = await tx.get(docRef);
+              if (existing.exists) {
+                return false;
+              }
+              tx.set(docRef, {
+                'roomCode': candidate,
+                'hostId': currentUser.id,
+                'hostName': currentUser.safeDisplayName,
+                'hostPhotoUrl': currentUser.photoUrl,
+                'stake': _kStakeCoins,
+                'pot': _kStakeCoins * 2,
+                'status': 'waiting',
+                'hostScore': 0,
+                'guestScore': 0,
+                'hostCorrectCount': 0,
+                'guestCorrectCount': 0,
+                'hostTotalTimeMs': 0,
+                'guestTotalTimeMs': 0,
+                'questions': questionMaps,
+                'createdAt': FieldValue.serverTimestamp(),
+              });
+              return true;
+            })
+            .timeout(_kNetworkTimeout);
+
+        if (created) {
+          allocatedRoomCode = candidate;
+          break;
+        }
+      }
+
+      if (allocatedRoomCode == null) {
+        throw Exception(
+          'Could not generate a unique room code. Please try again.',
+        );
+      }
+
+      return ArenaDuelSession(
+        roomCode: allocatedRoomCode,
         hostId: currentUser.id,
         hostName: currentUser.safeDisplayName,
         hostPhotoUrl: currentUser.photoUrl,
@@ -344,30 +394,6 @@ class ArenaRepositoryImpl implements ArenaRepository {
         questions: questions,
         createdAt: DateTime.now(),
       );
-
-      await _firestore
-          .collection('arena_rooms')
-          .doc(roomCode)
-          .set({
-            'roomCode': roomCode,
-            'hostId': currentUser.id,
-            'hostName': currentUser.safeDisplayName,
-            'hostPhotoUrl': currentUser.photoUrl,
-            'stake': _kStakeCoins,
-            'pot': _kStakeCoins * 2,
-            'status': 'waiting',
-            'hostScore': 0,
-            'guestScore': 0,
-            'hostCorrectCount': 0,
-            'guestCorrectCount': 0,
-            'hostTotalTimeMs': 0,
-            'guestTotalTimeMs': 0,
-            'questions': questions.map((q) => q.toMap()).toList(),
-            'createdAt': FieldValue.serverTimestamp(),
-          })
-          .timeout(_kNetworkTimeout);
-
-      return session;
     } catch (e) {
       await _refundEntryStake(currentUser.id);
       rethrow;
