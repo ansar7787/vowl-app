@@ -179,20 +179,26 @@ class SynonymPracticeController {
     final next = !showHint.value;
     showHint.value = next;
 
-    // Scaffolding: when revealing hint before solved, pre-lock the first anchor slot/rung if empty.
+    // Scaffolding: when revealing hint before solved, pre-lock or fix anchor slot/rung 0.
     final ex = currentExercise;
     if (!next || ex == null || (hasChecked.value && isCorrect.value)) return;
     if (ex.type == SynonymPracticeExerciseType.contrastSwap &&
         ex.slots.isNotEmpty) {
       final current = List<String?>.from(contrastAssignments.value);
-      if (current[0] == null) {
-        assignContrastWord(ex.slots[0].correctWord);
+      final anchorWord = ex.slots[0].correctWord;
+      if ((current[0] ?? '').trim().toLowerCase() !=
+          anchorWord.trim().toLowerCase()) {
+        focusedSlotIndex.value = 0;
+        assignContrastWord(anchorWord);
       }
     } else if (ex.type == SynonymPracticeExerciseType.synonymLadder &&
         ex.orderedWords.isNotEmpty) {
       final current = List<String?>.from(ladderPlacements.value);
-      if (current[0] == null) {
-        placeLadderWord(ex.orderedWords[0]);
+      final anchorWord = ex.orderedWords[0];
+      if ((current[0] ?? '').trim().toLowerCase() !=
+          anchorWord.trim().toLowerCase()) {
+        focusedRungIndex.value = 0;
+        placeLadderWord(anchorWord);
       }
     }
   }

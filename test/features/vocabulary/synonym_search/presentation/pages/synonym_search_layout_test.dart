@@ -30,6 +30,7 @@ import 'package:vowl/features/vocabulary/synonym_search/presentation/models/syno
 import 'package:vowl/features/vocabulary/synonym_search/presentation/pages/synonym_search_learn_screen.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/pages/synonym_search_practice_screen.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/pages/synonym_search_screen.dart';
+import 'package:vowl/features/vocabulary/synonym_search/presentation/widgets/synonym_context_replace_card.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/widgets/synonym_contrast_swap_card.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/widgets/synonym_cousin_preview_strip.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/widgets/synonym_grid_context_header.dart';
@@ -190,6 +191,7 @@ void main() {
       SynonymCousinPreviewStrip,
       SynonymContrastSwapCard,
       SynonymLadderCard,
+      SynonymContextReplaceCard,
       SynonymGridContextHeader,
       SynonymStreakTimerBar,
       SynonymWordGridBoard,
@@ -281,8 +283,9 @@ void main() {
           await tester.pump(const Duration(milliseconds: 300));
           assertZeroEllipsisOnGameWidgets(tester);
 
-          // 3. Mastery Phase
-          activeStage = 'Mastery';
+          // 3. Mastery Phase (Grid Mode - questIndex 0)
+          activeStage = 'MasteryGrid';
+          when(() => mockVocabularyBloc.state).thenReturn(loadedState);
           await tester.pumpWidget(host(const SynonymSearchScreen(level: 1)));
           await tester.pump();
           await tester.pump(const Duration(milliseconds: 300));
@@ -293,6 +296,31 @@ void main() {
             expect(rect.width, greaterThanOrEqualTo(48.0));
             expect(rect.height, greaterThanOrEqualTo(48.0));
           }
+
+          // 4. Mastery Phase (Context Match - questIndex 1)
+          activeStage = 'MasteryContextReplace';
+          const ctxState = VocabularyLoaded(
+            quests: [masteryQuest, masteryQuest],
+            currentIndex: 1,
+            livesRemaining: 3,
+            answerStatus: AnswerStatus.unanswered,
+          );
+          when(() => mockVocabularyBloc.state).thenReturn(ctxState);
+          streamController.add(ctxState);
+          await tester.pump();
+          await tester.pump(const Duration(milliseconds: 300));
+          assertZeroEllipsisOnGameWidgets(tester);
+          for (int i = 0; i < 4; i++) {
+            final optRect = tester.getRect(
+              find.byKey(Key('context_replace_opt_$i')),
+            );
+            expect(optRect.height, greaterThanOrEqualTo(48.0));
+          }
+
+          // Reset BLoC state cleanly for next viewport
+          when(() => mockVocabularyBloc.state).thenReturn(loadedState);
+          streamController.add(loadedState);
+          await tester.pump();
 
           final barRect = tester.getRect(find.byType(SynonymStreakTimerBar));
           final innerRowRect = tester.getRect(
@@ -383,6 +411,17 @@ void main() {
         await tester.pump(const Duration(milliseconds: 300));
 
         await tester.pumpWidget(darkHost(const SynonymSearchScreen(level: 1)));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+
+        const darkCtxState = VocabularyLoaded(
+          quests: [masteryQuest, masteryQuest],
+          currentIndex: 1,
+          livesRemaining: 3,
+          answerStatus: AnswerStatus.unanswered,
+        );
+        when(() => mockVocabularyBloc.state).thenReturn(darkCtxState);
+        streamController.add(darkCtxState);
         await tester.pump();
         await tester.pump(const Duration(milliseconds: 300));
 

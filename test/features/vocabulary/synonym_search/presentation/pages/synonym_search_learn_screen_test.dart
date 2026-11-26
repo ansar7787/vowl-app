@@ -7,11 +7,13 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:go_router/go_router.dart';
 import 'package:mocktail/mocktail.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:vowl/core/theme/app_theme.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/tts_service.dart';
+import 'package:vowl/features/vocabulary/synonym_search/data/datasources/synonym_weak_words_store.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/models/synonym_phase_models.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/pages/synonym_search_learn_screen.dart';
 
@@ -48,8 +50,10 @@ class _DelayedAssetBundle extends CachingAssetBundle {
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
 
-  setUp(() {
+  setUp(() async {
     VowlMotion.lowAnimationModeOverride.value = true;
+    SharedPreferences.setMockInitialValues({});
+    await SynonymWeakWordsStore.resetForTest();
   });
 
   tearDown(() {
@@ -179,14 +183,18 @@ void main() {
         await tester.pump();
         expect(find.text('Read aloud on'), findsOneWidget);
 
+        // Soft gate blocks advancement before trying an example
+        expect(find.text('Check 1 Example'), findsOneWidget);
+
         // Tap first makeover slot to swap big -> large
         await tester.ensureVisible(find.byKey(const Key('makeover_slot_0')));
         await tester.pump();
         await tester.tap(find.byKey(const Key('makeover_slot_0')));
         await tester.pump(const Duration(milliseconds: 300));
 
-        expect(find.text('Sounds natural'), findsOneWidget);
+        expect(find.text('Sounds natural'), findsWidgets);
         expect(find.text('Checked 1/2'), findsOneWidget);
+        expect(find.text('Next Pair'), findsOneWidget);
 
         // Tap cousin chip
         await tester.ensureVisible(find.byKey(const Key('cousin_chip_0')));
@@ -200,6 +208,13 @@ void main() {
         await tester.pump(const Duration(milliseconds: 300));
         expect(find.text('Happy'), findsWidgets);
         expect(find.byIcon(Icons.arrow_back_rounded), findsOneWidget);
+        expect(find.text('Check 1 Example'), findsOneWidget);
+
+        // Predict natural on Pair 2 to unlock Start Practice
+        await tester.ensureVisible(find.byKey(const Key('predict_natural_0')));
+        await tester.pump();
+        await tester.tap(find.byKey(const Key('predict_natural_0')));
+        await tester.pump(const Duration(milliseconds: 300));
         expect(find.text('Start Practice'), findsOneWidget);
 
         // Test Previous returns to Pair 1
@@ -314,6 +329,33 @@ void main() {
         await tester.pumpWidget(const SizedBox.shrink());
         await tester.pump(const Duration(milliseconds: 300));
         verify(() => mockTts.stop()).called(greaterThanOrEqualTo(1));
+      },
+    );
+
+    testWidgets(
+      'appends 1 review pair from SynonymWeakWordsStore when prior misses exist',
+      (tester) async {
+        await SynonymWeakWordsStore.recordWeakPair(
+          level: 1,
+          baseWord: 'Big',
+          synonym: 'Large',
+        );
+        final raw1_10 = File(
+          'assets/curriculum/vocabulary/synonymSearch_learn_1_10.json',
+        ).readAsStringSync();
+        final bundle = _DelayedAssetBundle(payload: raw1_10);
+
+        await tester.pumpWidget(
+          wrapScreen(SynonymSearchLearnScreen(level: 2, assetBundle: bundle)),
+        );
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+
+        // Level 2 has 3 pairs + 1 injected weak review pair from Level 1 -> (1/4)
+        expect(find.text('Word Examples (1/4)'), findsOneWidget);
+
+        await tester.pumpWidget(const SizedBox.shrink());
+        await tester.pump(const Duration(milliseconds: 300));
       },
     );
   });

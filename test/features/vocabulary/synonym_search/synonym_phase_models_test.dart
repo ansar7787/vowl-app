@@ -3,9 +3,14 @@ import 'dart:io';
 
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/features/vocabulary/data/models/vocabulary_quest_model.dart';
+import 'package:vowl/features/vocabulary/domain/entities/vocabulary_quest.dart';
 import 'package:vowl/features/vocabulary/synonym_search/data/datasources/synonym_phase_local_data_source.dart';
+import 'package:vowl/features/vocabulary/synonym_search/data/datasources/synonym_weak_words_store.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/controllers/synonym_learn_controller.dart';
+import 'package:vowl/features/vocabulary/synonym_search/presentation/controllers/synonym_mastery_controller.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/controllers/synonym_practice_controller.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/models/synonym_phase_models.dart';
 
@@ -62,8 +67,13 @@ void main() {
             'assets/curriculum/vocabulary/synonymSearch_learn_${start}_$end.json',
           );
           expect(learnFile.existsSync(), isTrue, reason: learnFile.path);
-          final learnMap =
-              jsonDecode(learnFile.readAsStringSync()) as Map<String, dynamic>;
+          final learnRaw = learnFile.readAsStringSync();
+          expect(
+            learnRaw.contains('PLACEHOLDER'),
+            isFalse,
+            reason: learnFile.path,
+          );
+          final learnMap = jsonDecode(learnRaw) as Map<String, dynamic>;
           expect(learnMap['cefr'], expectedCefr);
           expect(learnMap['difficulty'], expectedDiff);
           final learnBatch = SynonymLearnBatch.fromJson(learnMap);
@@ -80,8 +90,13 @@ void main() {
             'assets/curriculum/vocabulary/synonymSearch_practice_${start}_$end.json',
           );
           expect(pracFile.existsSync(), isTrue, reason: pracFile.path);
-          final pracMap =
-              jsonDecode(pracFile.readAsStringSync()) as Map<String, dynamic>;
+          final pracRaw = pracFile.readAsStringSync();
+          expect(
+            pracRaw.contains('PLACEHOLDER'),
+            isFalse,
+            reason: pracFile.path,
+          );
+          final pracMap = jsonDecode(pracRaw) as Map<String, dynamic>;
           expect(pracMap['cefr'], expectedCefr);
           expect(pracMap['difficulty'], expectedDiff);
           final pracBatch = SynonymPracticeBatch.fromJson(pracMap);
@@ -97,8 +112,14 @@ void main() {
             'assets/curriculum/vocabulary/synonymSearch_mastery_${start}_$end.json',
           );
           expect(mastFile.existsSync(), isTrue, reason: mastFile.path);
-          final mastMap =
-              jsonDecode(mastFile.readAsStringSync()) as Map<String, dynamic>;
+          final mastRaw = mastFile.readAsStringSync();
+          expect(
+            mastRaw.contains('PLACEHOLDER'),
+            isFalse,
+            reason: mastFile.path,
+          );
+          final mastMap = jsonDecode(mastRaw) as Map<String, dynamic>;
+          jsonDecode(mastFile.readAsStringSync()) as Map<String, dynamic>;
           expect(mastMap['cefr'], expectedCefr);
           expect(mastMap['difficulty'], expectedDiff);
           final rawQuests = mastMap['quests'] as List<dynamic>;
@@ -255,6 +276,110 @@ void main() {
 
         expect(learnItems.length, 3);
         expect(practiceItems.length, 6);
+      },
+    );
+
+    test(
+      'SynonymWeakWordsStore persists priority ordering and marks reviewed pairs',
+      () async {
+        SharedPreferences.setMockInitialValues({});
+        await SynonymWeakWordsStore.resetForTest();
+
+        await SynonymWeakWordsStore.recordWeakPair(
+          level: 2,
+          baseWord: 'Begin',
+          synonym: 'Start',
+        );
+        await SynonymWeakWordsStore.recordWeakPair(
+          level: 5,
+          baseWord: 'Marry',
+          synonym: 'Wed',
+        );
+        await SynonymWeakWordsStore.recordWeakPair(
+          level: 5,
+          baseWord: 'Marry',
+          synonym: 'Wed',
+        );
+
+        final due = await SynonymWeakWordsStore.loadWeakPairs(excludeLevel: 1);
+        expect(due.length, 2);
+        expect(due.first.synonym, 'Wed');
+        expect(due.first.misses, 2);
+
+        final excluded = await SynonymWeakWordsStore.loadWeakPairs(
+          excludeLevel: 5,
+        );
+        expect(excluded.length, 1);
+        expect(excluded.first.synonym, 'Start');
+
+        await SynonymWeakWordsStore.markReviewed(
+          baseWord: 'Begin',
+          synonym: 'Start',
+        );
+        final afterReview = await SynonymWeakWordsStore.loadWeakPairs(
+          excludeLevel: 5,
+        );
+        expect(afterReview, isEmpty);
+      },
+    );
+
+    test(
+      'Practice toggleHint repairs wrong slot 0, Learn predictMakeover counts swaps, and Mastery helpers classify modes',
+      () {
+        final prac = SynonymPracticeController();
+        addTearDown(prac.dispose);
+        final exercises = SynonymPracticeQuest.fallbackExercises(1);
+        prac.setExercises(exercises);
+
+        // Put wrong word in slot 0 -> Hint fixes slot 0
+        final expectedSlot0 = exercises.first.slots[0].correctWord;
+        final wrongSlot0 = exercises.first.pairWords.firstWhere(
+          (w) => w.toLowerCase() != expectedSlot0.toLowerCase(),
+        );
+        prac.assignContrastWord(wrongSlot0);
+        expect(prac.contrastAssignments.value[0], wrongSlot0);
+        prac.toggleHint();
+        expect(
+          prac.contrastAssignments.value[0]?.toLowerCase(),
+          expectedSlot0.toLowerCase(),
+        );
+
+        final learn = SynonymLearnController();
+        addTearDown(learn.dispose);
+        learn.setItems([SynonymLearnItem.fallback(1)]);
+        learn.predictMakeover(0, predictedNatural: true);
+        expect(learn.predictionFor(0), isTrue);
+        expect(learn.isMakeoverSwapped(0), isTrue);
+        expect(learn.testedCountForCurrent(), 1);
+
+        const q = VocabularyQuest(
+          id: 'TEST_CTX',
+          type: QuestType.vocabulary,
+          subtype: GameSubtype.synonymSearch,
+          instruction: 'Pick the matching synonym.',
+          difficulty: 1,
+          word: 'Happy',
+          synonym: 'Glad',
+          correctAnswer: 'Glad',
+          options: ['Glad', 'Merry', 'Proud', 'Calm'],
+          contextSentence: 'I am ___ you came.',
+        );
+        expect(SynonymMasteryController.isContextReplaceRound(q, 0), isFalse);
+        expect(SynonymMasteryController.isContextReplaceRound(q, 1), isTrue);
+        expect(
+          SynonymMasteryController.shouldHideLengthForRecall(
+            level: 40,
+            questIndex: 2,
+          ),
+          isFalse,
+        );
+        expect(
+          SynonymMasteryController.shouldHideLengthForRecall(
+            level: 41,
+            questIndex: 2,
+          ),
+          isTrue,
+        );
       },
     );
   });

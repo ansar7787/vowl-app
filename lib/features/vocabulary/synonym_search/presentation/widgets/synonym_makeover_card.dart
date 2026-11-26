@@ -13,17 +13,28 @@ class SynonymMakeoverCard extends StatelessWidget {
   final SynonymMakeoverScenario scenario;
   final int scenarioIndex;
   final bool isSwapped;
+  final bool? predictedNatural;
   final Color primaryColor;
   final VoidCallback onToggleSwap;
+  final ValueChanged<bool>? onPredict;
 
   const SynonymMakeoverCard({
     super.key,
     required this.scenario,
     required this.scenarioIndex,
     required this.isSwapped,
+    this.predictedNatural,
     required this.primaryColor,
     required this.onToggleSwap,
+    this.onPredict,
   });
+
+  String get _verdictText {
+    if (predictedNatural == null) return scenario.earVerdict;
+    final matched = predictedNatural == scenario.isNaturalSwap;
+    final prefix = matched ? 'Right ear — ' : 'Good to check — ';
+    return '$prefix${scenario.earVerdict}';
+  }
 
   String get _activeWord =>
       isSwapped ? scenario.swappedWord : scenario.targetSlotWord;
@@ -120,26 +131,67 @@ class SynonymMakeoverCard extends StatelessWidget {
                 ? SynonymMakeoverVerdictBanner(
                     key: ValueKey('verdict_$scenarioIndex'),
                     isNatural: scenario.isNaturalSwap,
-                    verdictText: scenario.earVerdict,
+                    verdictText: _verdictText,
                     isDark: isDark,
                   )
-                : Row(
-                    key: ValueKey('prompt_$scenarioIndex'),
-                    children: [
-                      Icon(
-                        Icons.touch_app_rounded,
-                        size: 16.sp,
-                        color: primaryColor,
-                      ),
-                      SizedBox(width: 6.w),
-                      Expanded(
-                        child: Text(
-                          'Tap "${scenario.targetSlotWord}" to try "${scenario.swappedWord}" in this sentence.',
-                          style: SynonymUiTokens.supportBody(color: textMuted),
-                        ),
-                      ),
-                    ],
-                  ),
+                : (onPredict != null
+                      ? Column(
+                          key: ValueKey('prompt_$scenarioIndex'),
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Would "${scenario.swappedWord}" fit naturally here?',
+                              style: SynonymUiTokens.supportBody(
+                                color: textMuted,
+                              ),
+                            ),
+                            SizedBox(height: 8.h),
+                            Row(
+                              children: [
+                                Expanded(
+                                  child: _PredictChoiceButton(
+                                    key: Key('predict_natural_$scenarioIndex'),
+                                    label: 'Sounds natural',
+                                    icon: Icons.check_circle_outline_rounded,
+                                    color: AppColors.emerald600,
+                                    isDark: isDark,
+                                    onTap: () => onPredict!(true),
+                                  ),
+                                ),
+                                SizedBox(width: 8.w),
+                                Expanded(
+                                  child: _PredictChoiceButton(
+                                    key: Key('predict_awkward_$scenarioIndex'),
+                                    label: "Doesn't fit",
+                                    icon: Icons.highlight_off_rounded,
+                                    color: AppColors.rose500,
+                                    isDark: isDark,
+                                    onTap: () => onPredict!(false),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        )
+                      : Row(
+                          key: ValueKey('prompt_$scenarioIndex'),
+                          children: [
+                            Icon(
+                              Icons.touch_app_rounded,
+                              size: 16.sp,
+                              color: primaryColor,
+                            ),
+                            SizedBox(width: 6.w),
+                            Expanded(
+                              child: Text(
+                                'Tap "${scenario.targetSlotWord}" to try "${scenario.swappedWord}" in this sentence.',
+                                style: SynonymUiTokens.supportBody(
+                                  color: textMuted,
+                                ),
+                              ),
+                            ),
+                          ],
+                        )),
           ),
         ],
       ),
@@ -237,6 +289,63 @@ class _EarStatusBadge extends StatelessWidget {
             ),
           ),
         ],
+      ),
+    );
+  }
+}
+
+class _PredictChoiceButton extends StatelessWidget {
+  final String label;
+  final IconData icon;
+  final Color color;
+  final bool isDark;
+  final VoidCallback onTap;
+
+  const _PredictChoiceButton({
+    super.key,
+    required this.label,
+    required this.icon,
+    required this.color,
+    required this.isDark,
+    required this.onTap,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final bg = color.withValues(alpha: isDark ? 0.16 : 0.08);
+    final fg = isDark ? AppColors.slate50 : color;
+    return ConstrainedBox(
+      constraints: const BoxConstraints(minHeight: 50),
+      child: Material(
+        color: bg,
+        borderRadius: BorderRadius.circular(SynonymUiTokens.controlRadius),
+        child: InkWell(
+          borderRadius: BorderRadius.circular(SynonymUiTokens.controlRadius),
+          onTap: onTap,
+          child: Container(
+            padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 10.h),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(
+                SynonymUiTokens.controlRadius,
+              ),
+              border: Border.all(color: color.withValues(alpha: 0.45)),
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(icon, size: 16.sp, color: fg),
+                SizedBox(width: 6.w),
+                Flexible(
+                  child: Text(
+                    label,
+                    textAlign: TextAlign.center,
+                    style: SynonymUiTokens.controlLabel(color: fg),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
       ),
     );
   }

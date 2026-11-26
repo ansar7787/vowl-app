@@ -11,6 +11,8 @@ class SynonymLearnController {
   final ValueNotifier<int> currentIndex = ValueNotifier<int>(0);
   final ValueNotifier<Map<int, Set<int>>> swappedByQuest =
       ValueNotifier<Map<int, Set<int>>>(const {});
+  final ValueNotifier<Map<int, Map<int, bool>>> predictionByQuest =
+      ValueNotifier<Map<int, Map<int, bool>>>(const {});
   final ValueNotifier<Map<int, int?>> selectedCousinByQuest =
       ValueNotifier<Map<int, int?>>(const {});
   final ValueNotifier<bool> autoSpeak = ValueNotifier<bool>(false);
@@ -28,6 +30,7 @@ class SynonymLearnController {
     _items = List<SynonymLearnItem>.unmodifiable(items);
     currentIndex.value = 0;
     swappedByQuest.value = const {};
+    predictionByQuest.value = const {};
     selectedCousinByQuest.value = const {};
   }
 
@@ -36,8 +39,15 @@ class SynonymLearnController {
     return activeSet?.contains(scenarioIndex) ?? false;
   }
 
+  bool? predictionFor(int scenarioIndex) {
+    return predictionByQuest.value[currentIndex.value]?[scenarioIndex];
+  }
+
   int testedCountForCurrent() {
-    return swappedByQuest.value[currentIndex.value]?.length ?? 0;
+    final swapped = swappedByQuest.value[currentIndex.value] ?? const <int>{};
+    final predicted =
+        predictionByQuest.value[currentIndex.value]?.keys ?? const <int>[];
+    return {...swapped, ...predicted}.length;
   }
 
   int? selectedCousinIndexForCurrent() {
@@ -55,6 +65,26 @@ class SynonymLearnController {
     }
     updated[currentIndex.value] = currentSet;
     swappedByQuest.value = updated;
+  }
+
+  /// Records the learner's naturalness prediction and flips the sentence swap.
+  void predictMakeover(int scenarioIndex, {required bool predictedNatural}) {
+    hapticService?.selection();
+    final updatedPreds = Map<int, Map<int, bool>>.from(predictionByQuest.value);
+    final questPreds = Map<int, bool>.from(
+      updatedPreds[currentIndex.value] ?? const {},
+    );
+    questPreds[scenarioIndex] = predictedNatural;
+    updatedPreds[currentIndex.value] = questPreds;
+    predictionByQuest.value = updatedPreds;
+
+    final updatedSwaps = Map<int, Set<int>>.from(swappedByQuest.value);
+    final currentSet = Set<int>.from(
+      updatedSwaps[currentIndex.value] ?? const {},
+    );
+    currentSet.add(scenarioIndex);
+    updatedSwaps[currentIndex.value] = currentSet;
+    swappedByQuest.value = updatedSwaps;
   }
 
   void selectCousin(int cousinIndex) {
@@ -90,6 +120,7 @@ class SynonymLearnController {
   void dispose() {
     currentIndex.dispose();
     swappedByQuest.dispose();
+    predictionByQuest.dispose();
     selectedCousinByQuest.dispose();
     autoSpeak.dispose();
   }

@@ -12,9 +12,11 @@ import 'package:vowl/features/vocabulary/domain/entities/vocabulary_quest.dart';
 import 'package:vowl/features/vocabulary/presentation/bloc/vocabulary_bloc.dart';
 import 'package:vowl/features/vocabulary/presentation/layout/vocabulary_base_layout.dart';
 import 'package:vowl/features/vocabulary/presentation/mixins/vocabulary_game_screen_mixin.dart';
+import 'package:vowl/features/vocabulary/synonym_search/data/datasources/synonym_weak_words_store.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/controllers/synonym_grid_builder.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/controllers/synonym_mastery_controller.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/controllers/synonym_tts_helper.dart';
+import 'package:vowl/features/vocabulary/synonym_search/presentation/widgets/synonym_context_replace_card.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/widgets/synonym_grid_context_header.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/widgets/synonym_streak_timer_bar.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/widgets/synonym_word_grid_board.dart';
@@ -97,6 +99,18 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
     if (!mounted) return;
     timerKey?.currentState?.pause();
     SynonymTtsHelper.stopAll();
+    final state = context.read<VocabularyBloc>().state;
+    if (state is VocabularyLoaded && state.currentQuestOrNull != null) {
+      final q = state.currentQuestOrNull!;
+      final base = (q.word ?? '').trim();
+      final syn = (q.correctAnswer ?? q.synonym ?? '').trim();
+      if (base.isNotEmpty &&
+          syn.isNotEmpty &&
+          !_controller.isHintActive.value &&
+          _controller.shakeCount.value == 0) {
+        SynonymWeakWordsStore.markReviewed(baseWord: base, synonym: syn);
+      }
+    }
     submitCorrectAnswer();
   }
 
@@ -106,10 +120,17 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
     SynonymTtsHelper.stopAll();
     final state = context.read<VocabularyBloc>().state;
     if (state is VocabularyLoaded && state.currentQuestOrNull != null) {
-      submitWrongAnswer(
-        quest: state.currentQuestOrNull!,
-        userAnswer: attemptedWord,
-      );
+      final q = state.currentQuestOrNull!;
+      final base = (q.word ?? '').trim();
+      final syn = (q.correctAnswer ?? q.synonym ?? '').trim();
+      if (base.isNotEmpty && syn.isNotEmpty) {
+        SynonymWeakWordsStore.recordWeakPair(
+          level: widget.level,
+          baseWord: base,
+          synonym: syn,
+        );
+      }
+      submitWrongAnswer(quest: q, userAnswer: attemptedWord);
     }
   }
 
@@ -142,6 +163,12 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
         curr is VocabularyGameOver ||
         curr is VocabularyInitial) {
       _pendingRoundReset = true;
+    }
+    if (prev is VocabularyLoaded &&
+        curr is VocabularyLoaded &&
+        !prev.hintUsed &&
+        curr.hintUsed) {
+      return true;
     }
     return vocabularyListenWhen(prev, curr);
   }
@@ -233,6 +260,7 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
                     )
                   : _buildGameplayBody(
                       quest: quest,
+                      questIndex: isLoaded ? state.currentIndex : 0,
                       primaryColor: theme.primaryColor,
                     ),
             );
@@ -244,6 +272,7 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
 
   Widget _buildGameplayBody({
     required VocabularyQuest quest,
+    required int questIndex,
     required Color primaryColor,
   }) {
     final fallbackGrid = SynonymGridBuilder.build(
@@ -262,6 +291,7 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
         _controller.shakeCount,
         _controller.showSuccessFlash,
         _controller.subtleStatusMessage,
+        _controller.selectedContextOption,
       ]),
       builder: (context, _) {
         final activeGrid = _controller.grid.value ?? fallbackGrid;
@@ -271,6 +301,15 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
           quest,
           widget.level,
         );
+        final isContextReplace = SynonymMasteryController.isContextReplaceRound(
+          quest,
+          questIndex,
+        );
+        final hideLengthUntilHint =
+            SynonymMasteryController.shouldHideLengthForRecall(
+              level: widget.level,
+              questIndex: questIndex,
+            );
 
         return Column(
           mainAxisSize: MainAxisSize.min,
@@ -285,30 +324,43 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
               onTimeUp: _controller.handleTimerExpired,
             ),
             SizedBox(height: 10.h),
-            SynonymGridContextHeader(
-              quest: quest,
-              level: widget.level,
-              normalizedTarget: activeGrid.normalizedTarget,
-              currentSpelledWord: spelled,
-              isHintActive: _controller.isHintActive.value,
-              primaryColor: primaryColor,
-            ),
-            SizedBox(height: 12.h),
-            SynonymWordGridBoard(
-              grid: activeGrid,
-              activePath: path,
-              isHintActive: _controller.isHintActive.value,
-              shakeCount: _controller.shakeCount.value,
-              showSuccessFlash: _controller.showSuccessFlash.value,
-              subtleStatusMessage: _controller.subtleStatusMessage.value,
-              primaryColor: primaryColor,
-              onStartDrag: _controller.startDragAt,
-              onExtendDrag: _controller.extendDragTo,
-              onEndDrag: _controller.endDrag,
-              onTapCell: _controller.tapCell,
-              onBackspace: _controller.backspace,
-              onClear: _controller.clearPath,
-            ),
+            if (isContextReplace) ...[
+              SynonymContextReplaceCard(
+                quest: quest,
+                level: widget.level,
+                selectedOption: _controller.selectedContextOption.value,
+                isHintActive: _controller.isHintActive.value,
+                primaryColor: primaryColor,
+                onSelectOption: (option) =>
+                    _controller.submitContextChoice(option, quest),
+              ),
+            ] else ...[
+              SynonymGridContextHeader(
+                quest: quest,
+                level: widget.level,
+                normalizedTarget: activeGrid.normalizedTarget,
+                currentSpelledWord: spelled,
+                isHintActive: _controller.isHintActive.value,
+                hideLengthUntilHint: hideLengthUntilHint,
+                primaryColor: primaryColor,
+              ),
+              SizedBox(height: 12.h),
+              SynonymWordGridBoard(
+                grid: activeGrid,
+                activePath: path,
+                isHintActive: _controller.isHintActive.value,
+                shakeCount: _controller.shakeCount.value,
+                showSuccessFlash: _controller.showSuccessFlash.value,
+                subtleStatusMessage: _controller.subtleStatusMessage.value,
+                primaryColor: primaryColor,
+                onStartDrag: _controller.startDragAt,
+                onExtendDrag: _controller.extendDragTo,
+                onEndDrag: _controller.endDrag,
+                onTapCell: _controller.tapCell,
+                onBackspace: _controller.backspace,
+                onClear: _controller.clearPath,
+              ),
+            ],
             SizedBox(height: 12.h),
           ],
         );

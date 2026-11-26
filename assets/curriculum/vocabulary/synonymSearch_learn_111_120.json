@@ -7,1562 +7,1562 @@
   "levels": "111-120",
   "quests": [
     {
-      "id": "PLACEHOLDER_LEARN_L111_Q1",
+      "id": "VOC_SYNONYMSEARCH_L111_LEARN_Q1",
       "level": 111,
       "cefr": "B2",
       "difficulty": 3,
-      "pairTitle": "PLACEHOLDER_base_111_1 ↔ PLACEHOLDER_synonym_111_1",
-      "baseWord": "PLACEHOLDER_base_111_1",
-      "synonym": "PLACEHOLDER_synonym_111_1",
+      "pairTitle": "True ↔ Valid",
+      "baseWord": "True",
+      "synonym": "Valid",
       "partOfSpeech": "Adjective",
-      "coreMeaning": "PLACEHOLDER_coreMeaning_111_1",
-      "whyDifferent": "PLACEHOLDER_whyDifferent_111_1",
+      "coreMeaning": "Legally acceptable or logically sound.",
+      "whyDifferent": "'True' matches facts (`true story`). 'Valid' certifies unexpired tickets/passports (`valid ticket`) or sound arguments (`valid point`).",
       "makeovers": [
         {
-          "situationTag": "PLACEHOLDER_tag_111_1_1",
-          "beforeSentence": "PLACEHOLDER_sentence_111_1_1 ___.",
-          "targetSlotWord": "PLACEHOLDER_base_111_1",
-          "swappedWord": "PLACEHOLDER_synonym_111_1",
+          "situationTag": "Train Gate",
+          "beforeSentence": "Conductors scan every passenger’s ___ mobile pass.",
+          "targetSlotWord": "true",
+          "swappedWord": "valid",
           "isNaturalSwap": true,
-          "earVerdict": "PLACEHOLDER_naturalVerdict_111_1",
-          "spokenSentence": "PLACEHOLDER_spokenSentence_111_1_1"
+          "earVerdict": "Natural — unexpired legal passes and logical points use 'valid'.",
+          "spokenSentence": "Conductors scan every passenger’s valid mobile pass."
         },
         {
-          "situationTag": "PLACEHOLDER_tag_111_1_2",
-          "beforeSentence": "PLACEHOLDER_sentence_111_1_2 ___.",
-          "targetSlotWord": "PLACEHOLDER_base_111_1",
-          "swappedWord": "PLACEHOLDER_synonym_111_1",
+          "situationTag": "Love Tale",
+          "beforeSentence": "The film shares a touching ___ story from 1954.",
+          "targetSlotWord": "true",
+          "swappedWord": "valid",
           "isNaturalSwap": false,
-          "earVerdict": "PLACEHOLDER_awkwardVerdict_111_1",
-          "spokenSentence": "PLACEHOLDER_spokenSentence_111_1_2"
+          "earVerdict": "Doesn't fit — real-life historical events use 'true', not 'valid'.",
+          "spokenSentence": "The film shares a touching true story from 1954."
         }
       ],
       "cousinWords": [
         {
-          "word": "PLACEHOLDER_cousin_111_1_1",
-          "ipa": "/placeholder/",
-          "toneTag": "Neutral",
-          "miniContext": "PLACEHOLDER_cousinCtx_111_1_1"
+          "word": "Legal",
+          "ipa": "",
+          "toneTag": "Factual",
+          "miniContext": "You raised a very legal point about winter parking limits."
         },
         {
-          "word": "PLACEHOLDER_cousin_111_1_2",
-          "ipa": "/placeholder/",
-          "toneTag": "Strong",
-          "miniContext": "PLACEHOLDER_cousinCtx_111_1_2"
+          "word": "Sound",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "Conductors scan every passenger’s sound mobile pass."
         },
         {
-          "word": "PLACEHOLDER_cousin_111_1_3",
-          "ipa": "/placeholder/",
-          "toneTag": "Formal",
-          "miniContext": "PLACEHOLDER_cousinCtx_111_1_3"
+          "word": "Legitimate",
+          "ipa": "",
+          "toneTag": "Legally Active",
+          "miniContext": "Legitimate marks the strongest tone in factual -> legally active."
         }
       ]
     },
     {
-      "id": "PLACEHOLDER_LEARN_L111_Q2",
+      "id": "VOC_SYNONYMSEARCH_L111_LEARN_Q2",
       "level": 111,
       "cefr": "B2",
       "difficulty": 3,
-      "pairTitle": "PLACEHOLDER_base_111_2 ↔ PLACEHOLDER_synonym_111_2",
-      "baseWord": "PLACEHOLDER_base_111_2",
-      "synonym": "PLACEHOLDER_synonym_111_2",
+      "pairTitle": "Wrong ↔ Flawed",
+      "baseWord": "Wrong",
+      "synonym": "Flawed",
       "partOfSpeech": "Adjective",
-      "coreMeaning": "PLACEHOLDER_coreMeaning_111_2",
-      "whyDifferent": "PLACEHOLDER_whyDifferent_111_2",
+      "coreMeaning": "Having serious weak mistakes in design.",
+      "whyDifferent": "'Wrong' picks the bad choice (`wrong button`). 'Flawed' critiques broken logic, weak data, or cracked diamonds (`flawed plan`).",
       "makeovers": [
         {
-          "situationTag": "PLACEHOLDER_tag_111_2_1",
-          "beforeSentence": "PLACEHOLDER_sentence_111_2_1 ___.",
-          "targetSlotWord": "PLACEHOLDER_base_111_2",
-          "swappedWord": "PLACEHOLDER_synonym_111_2",
+          "situationTag": "Test Design",
+          "beforeSentence": "Using only ten surveys left the city report deeply ___.",
+          "targetSlotWord": "wrong",
+          "swappedWord": "flawed",
           "isNaturalSwap": true,
-          "earVerdict": "PLACEHOLDER_naturalVerdict_111_2",
-          "spokenSentence": "PLACEHOLDER_spokenSentence_111_2_1"
+          "earVerdict": "Natural — structurally broken plans or data take 'flawed'.",
+          "spokenSentence": "Using only ten surveys left the city report deeply flawed."
         },
         {
-          "situationTag": "PLACEHOLDER_tag_111_2_2",
-          "beforeSentence": "PLACEHOLDER_sentence_111_2_2 ___.",
-          "targetSlotWord": "PLACEHOLDER_base_111_2",
-          "swappedWord": "PLACEHOLDER_synonym_111_2",
+          "situationTag": "Wrong Number",
+          "beforeSentence": "Sorry! I dialed the ___ office extension by accident.",
+          "targetSlotWord": "wrong",
+          "swappedWord": "flawed",
           "isNaturalSwap": false,
-          "earVerdict": "PLACEHOLDER_awkwardVerdict_111_2",
-          "spokenSentence": "PLACEHOLDER_spokenSentence_111_2_2"
+          "earVerdict": "Doesn't fit — picking the wrong button/digit uses 'wrong', not 'flawed'.",
+          "spokenSentence": "Sorry! I dialed the wrong office extension by accident."
         }
       ],
       "cousinWords": [
         {
-          "word": "PLACEHOLDER_cousin_111_2_1",
-          "ipa": "/placeholder/",
-          "toneTag": "Neutral",
-          "miniContext": "PLACEHOLDER_cousinCtx_111_2_1"
+          "word": "Defective",
+          "ipa": "",
+          "toneTag": "Mistaken",
+          "miniContext": "Reviewers spotted a defective assumption inside the tax estimate."
         },
         {
-          "word": "PLACEHOLDER_cousin_111_2_2",
-          "ipa": "/placeholder/",
-          "toneTag": "Strong",
-          "miniContext": "PLACEHOLDER_cousinCtx_111_2_2"
+          "word": "Faulty",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "Using only ten surveys left the city report deeply faulty."
         },
         {
-          "word": "PLACEHOLDER_cousin_111_2_3",
-          "ipa": "/placeholder/",
-          "toneTag": "Formal",
-          "miniContext": "PLACEHOLDER_cousinCtx_111_2_3"
+          "word": "Imperfect",
+          "ipa": "",
+          "toneTag": "Broken Design",
+          "miniContext": "Imperfect marks the strongest tone in mistaken -> broken design."
         }
       ]
     },
     {
-      "id": "PLACEHOLDER_LEARN_L111_Q3",
+      "id": "VOC_SYNONYMSEARCH_L111_LEARN_Q3",
       "level": 111,
       "cefr": "B2",
       "difficulty": 3,
-      "pairTitle": "PLACEHOLDER_base_111_3 ↔ PLACEHOLDER_synonym_111_3",
-      "baseWord": "PLACEHOLDER_base_111_3",
-      "synonym": "PLACEHOLDER_synonym_111_3",
+      "pairTitle": "Weak ↔ Frail",
+      "baseWord": "Weak",
+      "synonym": "Frail",
       "partOfSpeech": "Adjective",
-      "coreMeaning": "PLACEHOLDER_coreMeaning_111_3",
-      "whyDifferent": "PLACEHOLDER_whyDifferent_111_3",
+      "coreMeaning": "Delicate and easily hurt in body.",
+      "whyDifferent": "'Weak' fits arms, coffee, or roofs (`weak tea`). 'Frail' highlights fragile elderly people or delicate bone health (`frail limbs`).",
       "makeovers": [
         {
-          "situationTag": "PLACEHOLDER_tag_111_3_1",
-          "beforeSentence": "PLACEHOLDER_sentence_111_3_1 ___.",
-          "targetSlotWord": "PLACEHOLDER_base_111_3",
-          "swappedWord": "PLACEHOLDER_synonym_111_3",
+          "situationTag": "Care Home",
+          "beforeSentence": "Nurses gently helped the ___ patient into the sunlit chair.",
+          "targetSlotWord": "weak",
+          "swappedWord": "frail",
           "isNaturalSwap": true,
-          "earVerdict": "PLACEHOLDER_naturalVerdict_111_3",
-          "spokenSentence": "PLACEHOLDER_spokenSentence_111_3_1"
+          "earVerdict": "Natural — elderly physical fragility takes 'frail'.",
+          "spokenSentence": "Nurses gently helped the frail patient into the sunlit chair."
         },
         {
-          "situationTag": "PLACEHOLDER_tag_111_3_2",
-          "beforeSentence": "PLACEHOLDER_sentence_111_3_2 ___.",
-          "targetSlotWord": "PLACEHOLDER_base_111_3",
-          "swappedWord": "PLACEHOLDER_synonym_111_3",
+          "situationTag": "Wi-Fi Bar",
+          "beforeSentence": "Concrete basement walls make wireless signals look ___.",
+          "targetSlotWord": "weak",
+          "swappedWord": "frail",
           "isNaturalSwap": false,
-          "earVerdict": "PLACEHOLDER_awkwardVerdict_111_3",
-          "spokenSentence": "PLACEHOLDER_spokenSentence_111_3_2"
+          "earVerdict": "Doesn't fit — phone bars and coffee take 'weak', never 'frail'.",
+          "spokenSentence": "Concrete basement walls make wireless signals look weak."
         }
       ],
       "cousinWords": [
         {
-          "word": "PLACEHOLDER_cousin_111_3_1",
-          "ipa": "/placeholder/",
-          "toneTag": "Neutral",
-          "miniContext": "PLACEHOLDER_cousinCtx_111_3_1"
+          "word": "Fragile",
+          "ipa": "",
+          "toneTag": "Low Power",
+          "miniContext": "Cold winter drafts pose risks for fragile newborns."
         },
         {
-          "word": "PLACEHOLDER_cousin_111_3_2",
-          "ipa": "/placeholder/",
-          "toneTag": "Strong",
-          "miniContext": "PLACEHOLDER_cousinCtx_111_3_2"
+          "word": "Feeble",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "Nurses gently helped the feeble patient into the sunlit chair."
         },
         {
-          "word": "PLACEHOLDER_cousin_111_3_3",
-          "ipa": "/placeholder/",
-          "toneTag": "Formal",
-          "miniContext": "PLACEHOLDER_cousinCtx_111_3_3"
+          "word": "Delicate",
+          "ipa": "",
+          "toneTag": "Elderly Delicate",
+          "miniContext": "Delicate marks the strongest tone in low power -> elderly delicate."
         }
       ]
     },
     {
-      "id": "PLACEHOLDER_LEARN_L112_Q1",
+      "id": "VOC_SYNONYMSEARCH_L112_LEARN_Q1",
       "level": 112,
       "cefr": "B2",
       "difficulty": 3,
-      "pairTitle": "PLACEHOLDER_base_112_1 ↔ PLACEHOLDER_synonym_112_1",
-      "baseWord": "PLACEHOLDER_base_112_1",
-      "synonym": "PLACEHOLDER_synonym_112_1",
+      "pairTitle": "Quick ↔ Brisk",
+      "baseWord": "Quick",
+      "synonym": "Brisk",
       "partOfSpeech": "Adjective",
-      "coreMeaning": "PLACEHOLDER_coreMeaning_112_1",
-      "whyDifferent": "PLACEHOLDER_whyDifferent_112_1",
+      "coreMeaning": "Energetically active, lively, and comfortably fast.",
+      "whyDifferent": "'Quick' runs fast errands (`quick bite`). 'Brisk' praises refreshing cold breezes, lively walks, or strong autumn coffee trade (`brisk walk`).",
       "makeovers": [
         {
-          "situationTag": "PLACEHOLDER_tag_112_1_1",
-          "beforeSentence": "PLACEHOLDER_sentence_112_1_1 ___.",
-          "targetSlotWord": "PLACEHOLDER_base_112_1",
-          "swappedWord": "PLACEHOLDER_synonym_112_1",
+          "situationTag": "Morning Air",
+          "beforeSentence": "Take a ___ twenty-minute morning walk before sunny errands.",
+          "targetSlotWord": "quick",
+          "swappedWord": "brisk",
           "isNaturalSwap": true,
-          "earVerdict": "PLACEHOLDER_naturalVerdict_112_1",
-          "spokenSentence": "PLACEHOLDER_spokenSentence_112_1_1"
+          "earVerdict": "Natural — refreshing active walks or autumn sales earn 'brisk'.",
+          "spokenSentence": "Take a brisk twenty-minute morning walk before sunny errands."
         },
         {
-          "situationTag": "PLACEHOLDER_tag_112_1_2",
-          "beforeSentence": "PLACEHOLDER_sentence_112_1_2 ___.",
-          "targetSlotWord": "PLACEHOLDER_base_112_1",
-          "swappedWord": "PLACEHOLDER_synonym_112_1",
+          "situationTag": "Fast Snack",
+          "beforeSentence": "Let us grab a ___ sandwich before catching the train.",
+          "targetSlotWord": "quick",
+          "swappedWord": "brisk",
           "isNaturalSwap": false,
-          "earVerdict": "PLACEHOLDER_awkwardVerdict_112_1",
-          "spokenSentence": "PLACEHOLDER_spokenSentence_112_1_2"
+          "earVerdict": "Doesn't fit — simple lunch snacks take 'quick', never lively 'brisk'.",
+          "spokenSentence": "Let us grab a quick sandwich before catching the train."
         }
       ],
       "cousinWords": [
         {
-          "word": "PLACEHOLDER_cousin_112_1_1",
-          "ipa": "/placeholder/",
-          "toneTag": "Neutral",
-          "miniContext": "PLACEHOLDER_cousinCtx_112_1_1"
+          "word": "Swift",
+          "ipa": "",
+          "toneTag": "Speedy",
+          "miniContext": "October frost brought swift crowds into small wool shops."
         },
         {
-          "word": "PLACEHOLDER_cousin_112_1_2",
-          "ipa": "/placeholder/",
-          "toneTag": "Strong",
-          "miniContext": "PLACEHOLDER_cousinCtx_112_1_2"
+          "word": "Lively",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "Take a lively twenty-minute morning walk before sunny errands."
         },
         {
-          "word": "PLACEHOLDER_cousin_112_1_3",
-          "ipa": "/placeholder/",
-          "toneTag": "Formal",
-          "miniContext": "PLACEHOLDER_cousinCtx_112_1_3"
+          "word": "Energetic",
+          "ipa": "",
+          "toneTag": "Refreshingly Active",
+          "miniContext": "Energetic marks the strongest tone in speedy -> refreshingly active."
         }
       ]
     },
     {
-      "id": "PLACEHOLDER_LEARN_L112_Q2",
+      "id": "VOC_SYNONYMSEARCH_L112_LEARN_Q2",
       "level": 112,
       "cefr": "B2",
       "difficulty": 3,
-      "pairTitle": "PLACEHOLDER_base_112_2 ↔ PLACEHOLDER_synonym_112_2",
-      "baseWord": "PLACEHOLDER_base_112_2",
-      "synonym": "PLACEHOLDER_synonym_112_2",
+      "pairTitle": "Slow ↔ Gradual",
+      "baseWord": "Slow",
+      "synonym": "Gradual",
       "partOfSpeech": "Adjective",
-      "coreMeaning": "PLACEHOLDER_coreMeaning_112_2",
-      "whyDifferent": "PLACEHOLDER_whyDifferent_112_2",
+      "coreMeaning": "Happening gently step by step over time.",
+      "whyDifferent": "'Slow' drags behind schedules (`slow train`). 'Gradual' neutrally tracks smooth steady shifts (`gradual healing`, `gradual slope`).",
       "makeovers": [
         {
-          "situationTag": "PLACEHOLDER_tag_112_2_1",
-          "beforeSentence": "PLACEHOLDER_sentence_112_2_1 ___.",
-          "targetSlotWord": "PLACEHOLDER_base_112_2",
-          "swappedWord": "PLACEHOLDER_synonym_112_2",
+          "situationTag": "Hill Trail",
+          "beforeSentence": "Beginners prefer the ___ southern path up the hill.",
+          "targetSlotWord": "slow",
+          "swappedWord": "gradual",
           "isNaturalSwap": true,
-          "earVerdict": "PLACEHOLDER_naturalVerdict_112_2",
-          "spokenSentence": "PLACEHOLDER_spokenSentence_112_2_1"
+          "earVerdict": "Natural — gentle steady progression takes 'gradual'.",
+          "spokenSentence": "Beginners prefer the gradual southern path up the hill."
         },
         {
-          "situationTag": "PLACEHOLDER_tag_112_2_2",
-          "beforeSentence": "PLACEHOLDER_sentence_112_2_2 ___.",
-          "targetSlotWord": "PLACEHOLDER_base_112_2",
-          "swappedWord": "PLACEHOLDER_synonym_112_2",
+          "situationTag": "Rush Traffic",
+          "beforeSentence": "Buses crawled along a terribly ___ highway jam today.",
+          "targetSlotWord": "slow",
+          "swappedWord": "gradual",
           "isNaturalSwap": false,
-          "earVerdict": "PLACEHOLDER_awkwardVerdict_112_2",
-          "spokenSentence": "PLACEHOLDER_spokenSentence_112_2_2"
+          "earVerdict": "Doesn't fit — frustrating delays use 'slow', not 'gradual'.",
+          "spokenSentence": "Buses crawled along a terribly slow highway jam today."
         }
       ],
       "cousinWords": [
         {
-          "word": "PLACEHOLDER_cousin_112_2_1",
-          "ipa": "/placeholder/",
-          "toneTag": "Neutral",
-          "miniContext": "PLACEHOLDER_cousinCtx_112_2_1"
+          "word": "Steady",
+          "ipa": "",
+          "toneTag": "Delayed",
+          "miniContext": "Doctors expect a steady recovery over three quiet weeks."
         },
         {
-          "word": "PLACEHOLDER_cousin_112_2_2",
-          "ipa": "/placeholder/",
-          "toneTag": "Strong",
-          "miniContext": "PLACEHOLDER_cousinCtx_112_2_2"
+          "word": "Gentle",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "Beginners prefer the gentle southern path up the hill."
         },
         {
-          "word": "PLACEHOLDER_cousin_112_2_3",
-          "ipa": "/placeholder/",
-          "toneTag": "Formal",
-          "miniContext": "PLACEHOLDER_cousinCtx_112_2_3"
+          "word": "Incremental",
+          "ipa": "",
+          "toneTag": "Smooth Step",
+          "miniContext": "Incremental marks the strongest tone in delayed -> smooth step."
         }
       ]
     },
     {
-      "id": "PLACEHOLDER_LEARN_L112_Q3",
+      "id": "VOC_SYNONYMSEARCH_L112_LEARN_Q3",
       "level": 112,
       "cefr": "B2",
       "difficulty": 3,
-      "pairTitle": "PLACEHOLDER_base_112_3 ↔ PLACEHOLDER_synonym_112_3",
-      "baseWord": "PLACEHOLDER_base_112_3",
-      "synonym": "PLACEHOLDER_synonym_112_3",
+      "pairTitle": "Nice ↔ Gracious",
+      "baseWord": "Nice",
+      "synonym": "Gracious",
       "partOfSpeech": "Adjective",
-      "coreMeaning": "PLACEHOLDER_coreMeaning_112_3",
-      "whyDifferent": "PLACEHOLDER_whyDifferent_112_3",
+      "coreMeaning": "Warmly welcoming and dignified toward others.",
+      "whyDifferent": "'Nice' covers ordinary kindness (`nice neighbor`). 'Gracious' praises thoughtful poise under awkward pressure (`gracious loser`).",
       "makeovers": [
         {
-          "situationTag": "PLACEHOLDER_tag_112_3_1",
-          "beforeSentence": "PLACEHOLDER_sentence_112_3_1 ___.",
-          "targetSlotWord": "PLACEHOLDER_base_112_3",
-          "swappedWord": "PLACEHOLDER_synonym_112_3",
+          "situationTag": "Dinner Host",
+          "beforeSentence": "Our hosts stayed warm and ___ even when rain moved us inside.",
+          "targetSlotWord": "nice",
+          "swappedWord": "gracious",
           "isNaturalSwap": true,
-          "earVerdict": "PLACEHOLDER_naturalVerdict_112_3",
-          "spokenSentence": "PLACEHOLDER_spokenSentence_112_3_1"
+          "earVerdict": "Natural — dignified warm hospitality earns 'gracious'.",
+          "spokenSentence": "Our hosts stayed warm and gracious even when rain moved us inside."
         },
         {
-          "situationTag": "PLACEHOLDER_tag_112_3_2",
-          "beforeSentence": "PLACEHOLDER_sentence_112_3_2 ___.",
-          "targetSlotWord": "PLACEHOLDER_base_112_3",
-          "swappedWord": "PLACEHOLDER_synonym_112_3",
+          "situationTag": "Tasty Pie",
+          "beforeSentence": "This fresh peach pie smells very ___ tonight!",
+          "targetSlotWord": "nice",
+          "swappedWord": "gracious",
           "isNaturalSwap": false,
-          "earVerdict": "PLACEHOLDER_awkwardVerdict_112_3",
-          "spokenSentence": "PLACEHOLDER_spokenSentence_112_3_2"
+          "earVerdict": "Doesn't fit — food taste uses 'nice', never 'gracious'.",
+          "spokenSentence": "This fresh peach pie smells very nice tonight!"
         }
       ],
       "cousinWords": [
         {
-          "word": "PLACEHOLDER_cousin_112_3_1",
-          "ipa": "/placeholder/",
-          "toneTag": "Neutral",
-          "miniContext": "PLACEHOLDER_cousinCtx_112_3_1"
+          "word": "Courteous",
+          "ipa": "",
+          "toneTag": "Everyday",
+          "miniContext": "The champion offered a courteous speech praising her rival."
         },
         {
-          "word": "PLACEHOLDER_cousin_112_3_2",
-          "ipa": "/placeholder/",
-          "toneTag": "Strong",
-          "miniContext": "PLACEHOLDER_cousinCtx_112_3_2"
+          "word": "Polite",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "Our hosts stayed warm and polite even when rain moved us inside."
         },
         {
-          "word": "PLACEHOLDER_cousin_112_3_3",
-          "ipa": "/placeholder/",
-          "toneTag": "Formal",
-          "miniContext": "PLACEHOLDER_cousinCtx_112_3_3"
+          "word": "Magnanimous",
+          "ipa": "",
+          "toneTag": "Dignified Grace",
+          "miniContext": "Magnanimous marks the strongest tone in everyday -> dignified grace."
         }
       ]
     },
     {
-      "id": "PLACEHOLDER_LEARN_L113_Q1",
+      "id": "VOC_SYNONYMSEARCH_L113_LEARN_Q1",
       "level": 113,
       "cefr": "B2",
       "difficulty": 3,
-      "pairTitle": "PLACEHOLDER_base_113_1 ↔ PLACEHOLDER_synonym_113_1",
-      "baseWord": "PLACEHOLDER_base_113_1",
-      "synonym": "PLACEHOLDER_synonym_113_1",
+      "pairTitle": "Bad ↔ Harmful",
+      "baseWord": "Bad",
+      "synonym": "Harmful",
       "partOfSpeech": "Adjective",
-      "coreMeaning": "PLACEHOLDER_coreMeaning_113_1",
-      "whyDifferent": "PLACEHOLDER_whyDifferent_113_1",
+      "coreMeaning": "Causing real damage or poor health.",
+      "whyDifferent": "'Bad' judges spoiled milk or mood (`bad weather`). 'Harmful' proves toxic or risky effects (`harmful UV rays`).",
       "makeovers": [
         {
-          "situationTag": "PLACEHOLDER_tag_113_1_1",
-          "beforeSentence": "PLACEHOLDER_sentence_113_1_1 ___.",
-          "targetSlotWord": "PLACEHOLDER_base_113_1",
-          "swappedWord": "PLACEHOLDER_synonym_113_1",
+          "situationTag": "Sun Alert",
+          "beforeSentence": "Sunglasses shield young eyes from ___ UV light.",
+          "targetSlotWord": "bad",
+          "swappedWord": "harmful",
           "isNaturalSwap": true,
-          "earVerdict": "PLACEHOLDER_naturalVerdict_113_1",
-          "spokenSentence": "PLACEHOLDER_spokenSentence_113_1_1"
+          "earVerdict": "Natural — proven medical/environmental risks take 'harmful'.",
+          "spokenSentence": "Sunglasses shield young eyes from harmful UV light."
         },
         {
-          "situationTag": "PLACEHOLDER_tag_113_1_2",
-          "beforeSentence": "PLACEHOLDER_sentence_113_1_2 ___.",
-          "targetSlotWord": "PLACEHOLDER_base_113_1",
-          "swappedWord": "PLACEHOLDER_synonym_113_1",
+          "situationTag": "Spoiled Milk",
+          "beforeSentence": "Pour out milk immediately if it smells sour or ___.",
+          "targetSlotWord": "bad",
+          "swappedWord": "harmful",
           "isNaturalSwap": false,
-          "earVerdict": "PLACEHOLDER_awkwardVerdict_113_1",
-          "spokenSentence": "PLACEHOLDER_spokenSentence_113_1_2"
+          "earVerdict": "Doesn't fit — spoiled milk takes 'bad', never 'harmful' directly.",
+          "spokenSentence": "Pour out milk immediately if it smells sour or bad."
         }
       ],
       "cousinWords": [
         {
-          "word": "PLACEHOLDER_cousin_113_1_1",
-          "ipa": "/placeholder/",
-          "toneTag": "Neutral",
-          "miniContext": "PLACEHOLDER_cousinCtx_113_1_1"
+          "word": "Damaging",
+          "ipa": "",
+          "toneTag": "Unpleasant",
+          "miniContext": "Excess salt can prove damaging to sensitive garden roots."
         },
         {
-          "word": "PLACEHOLDER_cousin_113_1_2",
-          "ipa": "/placeholder/",
-          "toneTag": "Strong",
-          "miniContext": "PLACEHOLDER_cousinCtx_113_1_2"
+          "word": "Toxic",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "Sunglasses shield young eyes from toxic UV light."
         },
         {
-          "word": "PLACEHOLDER_cousin_113_1_3",
-          "ipa": "/placeholder/",
-          "toneTag": "Formal",
-          "miniContext": "PLACEHOLDER_cousinCtx_113_1_3"
+          "word": "Detrimental",
+          "ipa": "",
+          "toneTag": "Damaging",
+          "miniContext": "Detrimental marks the strongest tone in unpleasant -> damaging."
         }
       ]
     },
     {
-      "id": "PLACEHOLDER_LEARN_L113_Q2",
+      "id": "VOC_SYNONYMSEARCH_L113_LEARN_Q2",
       "level": 113,
       "cefr": "B2",
       "difficulty": 3,
-      "pairTitle": "PLACEHOLDER_base_113_2 ↔ PLACEHOLDER_synonym_113_2",
-      "baseWord": "PLACEHOLDER_base_113_2",
-      "synonym": "PLACEHOLDER_synonym_113_2",
+      "pairTitle": "Loud ↔ Deafening",
+      "baseWord": "Loud",
+      "synonym": "Deafening",
       "partOfSpeech": "Adjective",
-      "coreMeaning": "PLACEHOLDER_coreMeaning_113_2",
-      "whyDifferent": "PLACEHOLDER_whyDifferent_113_2",
+      "coreMeaning": "So loud it overwhelms your ears.",
+      "whyDifferent": "'Loud' covers music or doors (`loud laugh`). 'Deafening' dramatically marks thunder, jet engines, or stadium roars.",
       "makeovers": [
         {
-          "situationTag": "PLACEHOLDER_tag_113_2_1",
-          "beforeSentence": "PLACEHOLDER_sentence_113_2_1 ___.",
-          "targetSlotWord": "PLACEHOLDER_base_113_2",
-          "swappedWord": "PLACEHOLDER_synonym_113_2",
+          "situationTag": "Jet Runway",
+          "beforeSentence": "Crews wear thick earmuffs beside ___ runway engines.",
+          "targetSlotWord": "loud",
+          "swappedWord": "deafening",
           "isNaturalSwap": true,
-          "earVerdict": "PLACEHOLDER_naturalVerdict_113_2",
-          "spokenSentence": "PLACEHOLDER_spokenSentence_113_2_1"
+          "earVerdict": "Natural — overwhelming ear-ringing roar takes 'deafening'.",
+          "spokenSentence": "Crews wear thick earmuffs beside deafening runway engines."
         },
         {
-          "situationTag": "PLACEHOLDER_tag_113_2_2",
-          "beforeSentence": "PLACEHOLDER_sentence_113_2_2 ___.",
-          "targetSlotWord": "PLACEHOLDER_base_113_2",
-          "swappedWord": "PLACEHOLDER_synonym_113_2",
+          "situationTag": "Kitchen Chat",
+          "beforeSentence": "Please lower your slightly ___ radio during study time.",
+          "targetSlotWord": "loud",
+          "swappedWord": "deafening",
           "isNaturalSwap": false,
-          "earVerdict": "PLACEHOLDER_awkwardVerdict_113_2",
-          "spokenSentence": "PLACEHOLDER_spokenSentence_113_2_2"
+          "earVerdict": "Doesn't fit — moderately high TV volume is 'loud', not 'deafening'.",
+          "spokenSentence": "Please lower your slightly loud radio during study time."
         }
       ],
       "cousinWords": [
         {
-          "word": "PLACEHOLDER_cousin_113_2_1",
-          "ipa": "/placeholder/",
-          "toneTag": "Neutral",
-          "miniContext": "PLACEHOLDER_cousinCtx_113_2_1"
+          "word": "Booming",
+          "ipa": "",
+          "toneTag": "High Volume",
+          "miniContext": "Stadium cheers turned booming after the winning kick."
         },
         {
-          "word": "PLACEHOLDER_cousin_113_2_2",
-          "ipa": "/placeholder/",
-          "toneTag": "Strong",
-          "miniContext": "PLACEHOLDER_cousinCtx_113_2_2"
+          "word": "Thunderous",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "Crews wear thick earmuffs beside thunderous runway engines."
         },
         {
-          "word": "PLACEHOLDER_cousin_113_2_3",
-          "ipa": "/placeholder/",
-          "toneTag": "Formal",
-          "miniContext": "PLACEHOLDER_cousinCtx_113_2_3"
+          "word": "Piercing",
+          "ipa": "",
+          "toneTag": "Ear-Ringing",
+          "miniContext": "Piercing marks the strongest tone in high volume -> ear-ringing."
         }
       ]
     },
     {
-      "id": "PLACEHOLDER_LEARN_L113_Q3",
+      "id": "VOC_SYNONYMSEARCH_L113_LEARN_Q3",
       "level": 113,
       "cefr": "B2",
       "difficulty": 3,
-      "pairTitle": "PLACEHOLDER_base_113_3 ↔ PLACEHOLDER_synonym_113_3",
-      "baseWord": "PLACEHOLDER_base_113_3",
-      "synonym": "PLACEHOLDER_synonym_113_3",
+      "pairTitle": "Quiet ↔ Subtle",
+      "baseWord": "Quiet",
+      "synonym": "Subtle",
       "partOfSpeech": "Adjective",
-      "coreMeaning": "PLACEHOLDER_coreMeaning_113_3",
-      "whyDifferent": "PLACEHOLDER_whyDifferent_113_3",
+      "coreMeaning": "Gentle and hard to notice unless paying attention.",
+      "whyDifferent": "'Quiet' reduces audio decibels (`quiet room`). 'Subtle' describes understated flavors, color shifts, or clever hints (`subtle hint`).",
       "makeovers": [
         {
-          "situationTag": "PLACEHOLDER_tag_113_3_1",
-          "beforeSentence": "PLACEHOLDER_sentence_113_3_1 ___.",
-          "targetSlotWord": "PLACEHOLDER_base_113_3",
-          "swappedWord": "PLACEHOLDER_synonym_113_3",
+          "situationTag": "Sauce Herb",
+          "beforeSentence": "A pinch of thyme gives soup a ___ earthy warmth.",
+          "targetSlotWord": "quiet",
+          "swappedWord": "subtle",
           "isNaturalSwap": true,
-          "earVerdict": "PLACEHOLDER_naturalVerdict_113_3",
-          "spokenSentence": "PLACEHOLDER_spokenSentence_113_3_1"
+          "earVerdict": "Natural — understated flavor, art, or humor earns 'subtle'.",
+          "spokenSentence": "A pinch of thyme gives soup a subtle earthy warmth."
         },
         {
-          "situationTag": "PLACEHOLDER_tag_113_3_2",
-          "beforeSentence": "PLACEHOLDER_sentence_113_3_2 ___.",
-          "targetSlotWord": "PLACEHOLDER_base_113_3",
-          "swappedWord": "PLACEHOLDER_synonym_113_3",
+          "situationTag": "Library Floor",
+          "beforeSentence": "Keep voices ___ near the third-floor reading tables.",
+          "targetSlotWord": "quiet",
+          "swappedWord": "subtle",
           "isNaturalSwap": false,
-          "earVerdict": "PLACEHOLDER_awkwardVerdict_113_3",
-          "spokenSentence": "PLACEHOLDER_spokenSentence_113_3_2"
+          "earVerdict": "Doesn't fit — room silence uses 'quiet', never 'subtle'.",
+          "spokenSentence": "Keep voices quiet near the third-floor reading tables."
         }
       ],
       "cousinWords": [
         {
-          "word": "PLACEHOLDER_cousin_113_3_1",
-          "ipa": "/placeholder/",
-          "toneTag": "Neutral",
-          "miniContext": "PLACEHOLDER_cousinCtx_113_3_1"
+          "word": "Understated",
+          "ipa": "",
+          "toneTag": "Low Sound",
+          "miniContext": "Good translators catch understated shifts in polite tone."
         },
         {
-          "word": "PLACEHOLDER_cousin_113_3_2",
-          "ipa": "/placeholder/",
-          "toneTag": "Strong",
-          "miniContext": "PLACEHOLDER_cousinCtx_113_3_2"
+          "word": "Faint",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "A pinch of thyme gives soup a faint earthy warmth."
         },
         {
-          "word": "PLACEHOLDER_cousin_113_3_3",
-          "ipa": "/placeholder/",
-          "toneTag": "Formal",
-          "miniContext": "PLACEHOLDER_cousinCtx_113_3_3"
+          "word": "Nuanced",
+          "ipa": "",
+          "toneTag": "Clever Restraint",
+          "miniContext": "Nuanced marks the strongest tone in low sound -> clever restraint."
         }
       ]
     },
     {
-      "id": "PLACEHOLDER_LEARN_L114_Q1",
+      "id": "VOC_SYNONYMSEARCH_L114_LEARN_Q1",
       "level": 114,
       "cefr": "B2",
       "difficulty": 3,
-      "pairTitle": "PLACEHOLDER_base_114_1 ↔ PLACEHOLDER_synonym_114_1",
-      "baseWord": "PLACEHOLDER_base_114_1",
-      "synonym": "PLACEHOLDER_synonym_114_1",
+      "pairTitle": "Old ↔ Mature",
+      "baseWord": "Old",
+      "synonym": "Mature",
       "partOfSpeech": "Adjective",
-      "coreMeaning": "PLACEHOLDER_coreMeaning_114_1",
-      "whyDifferent": "PLACEHOLDER_whyDifferent_114_1",
+      "coreMeaning": "Fully grown in body, flavor, or behavior.",
+      "whyDifferent": "'Old' counts years (`old house`). 'Mature' praises wise emotional balance (`mature decision`) or ripened cheese/trees.",
       "makeovers": [
         {
-          "situationTag": "PLACEHOLDER_tag_114_1_1",
-          "beforeSentence": "PLACEHOLDER_sentence_114_1_1 ___.",
-          "targetSlotWord": "PLACEHOLDER_base_114_1",
-          "swappedWord": "PLACEHOLDER_synonym_114_1",
+          "situationTag": "Calm Choice",
+          "beforeSentence": "Admitting mistakes early shows a calm, ___ mindset.",
+          "targetSlotWord": "old",
+          "swappedWord": "mature",
           "isNaturalSwap": true,
-          "earVerdict": "PLACEHOLDER_naturalVerdict_114_1",
-          "spokenSentence": "PLACEHOLDER_spokenSentence_114_1_1"
+          "earVerdict": "Natural — emotionally wise adults and ripened cheese earn 'mature'.",
+          "spokenSentence": "Admitting mistakes early shows a calm, mature mindset."
         },
         {
-          "situationTag": "PLACEHOLDER_tag_114_1_2",
-          "beforeSentence": "PLACEHOLDER_sentence_114_1_2 ___.",
-          "targetSlotWord": "PLACEHOLDER_base_114_1",
-          "swappedWord": "PLACEHOLDER_synonym_114_1",
+          "situationTag": "Rusty Gate",
+          "beforeSentence": "Painters scraped peeling coats off the ___ iron gate.",
+          "targetSlotWord": "old",
+          "swappedWord": "mature",
           "isNaturalSwap": false,
-          "earVerdict": "PLACEHOLDER_awkwardVerdict_114_1",
-          "spokenSentence": "PLACEHOLDER_spokenSentence_114_1_2"
+          "earVerdict": "Doesn't fit — peeling rust uses 'old', never 'mature'.",
+          "spokenSentence": "Painters scraped peeling coats off the old iron gate."
         }
       ],
       "cousinWords": [
         {
-          "word": "PLACEHOLDER_cousin_114_1_1",
-          "ipa": "/placeholder/",
-          "toneTag": "Neutral",
-          "miniContext": "PLACEHOLDER_cousinCtx_114_1_1"
+          "word": "Grown",
+          "ipa": "",
+          "toneTag": "Aged",
+          "miniContext": "Cheddar grows sharper as wheels become fully grown."
         },
         {
-          "word": "PLACEHOLDER_cousin_114_1_2",
-          "ipa": "/placeholder/",
-          "toneTag": "Strong",
-          "miniContext": "PLACEHOLDER_cousinCtx_114_1_2"
+          "word": "Ripe",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "Admitting mistakes early shows a calm, ripe mindset."
         },
         {
-          "word": "PLACEHOLDER_cousin_114_1_3",
-          "ipa": "/placeholder/",
-          "toneTag": "Formal",
-          "miniContext": "PLACEHOLDER_cousinCtx_114_1_3"
+          "word": "Seasoned",
+          "ipa": "",
+          "toneTag": "Emotionally Wise",
+          "miniContext": "Seasoned marks the strongest tone in aged -> emotionally wise."
         }
       ]
     },
     {
-      "id": "PLACEHOLDER_LEARN_L114_Q2",
+      "id": "VOC_SYNONYMSEARCH_L114_LEARN_Q2",
       "level": 114,
       "cefr": "B2",
       "difficulty": 3,
-      "pairTitle": "PLACEHOLDER_base_114_2 ↔ PLACEHOLDER_synonym_114_2",
-      "baseWord": "PLACEHOLDER_base_114_2",
-      "synonym": "PLACEHOLDER_synonym_114_2",
+      "pairTitle": "Young ↔ Youthful",
+      "baseWord": "Young",
+      "synonym": "Youthful",
       "partOfSpeech": "Adjective",
-      "coreMeaning": "PLACEHOLDER_coreMeaning_114_2",
-      "whyDifferent": "PLACEHOLDER_whyDifferent_114_2",
+      "coreMeaning": "Having the fresh energy of youth.",
+      "whyDifferent": "'Young' states biological age (`young puppy`). 'Youthful' praises lively spirit/glow at any age (`youthful energy`).",
       "makeovers": [
         {
-          "situationTag": "PLACEHOLDER_tag_114_2_1",
-          "beforeSentence": "PLACEHOLDER_sentence_114_2_1 ___.",
-          "targetSlotWord": "PLACEHOLDER_base_114_2",
-          "swappedWord": "PLACEHOLDER_synonym_114_2",
+          "situationTag": "Senior Runner",
+          "beforeSentence": "At seventy-two, Coach Lee still radiates ___ energy.",
+          "targetSlotWord": "young",
+          "swappedWord": "youthful",
           "isNaturalSwap": true,
-          "earVerdict": "PLACEHOLDER_naturalVerdict_114_2",
-          "spokenSentence": "PLACEHOLDER_spokenSentence_114_2_1"
+          "earVerdict": "Natural — ageless bright enthusiasm uses 'youthful'.",
+          "spokenSentence": "At seventy-two, Coach Lee still radiates youthful energy."
         },
         {
-          "situationTag": "PLACEHOLDER_tag_114_2_2",
-          "beforeSentence": "PLACEHOLDER_sentence_114_2_2 ___.",
-          "targetSlotWord": "PLACEHOLDER_base_114_2",
-          "swappedWord": "PLACEHOLDER_synonym_114_2",
+          "situationTag": "New Kitten",
+          "beforeSentence": "Our ___ golden puppy still chews every shoelace.",
+          "targetSlotWord": "young",
+          "swappedWord": "youthful",
           "isNaturalSwap": false,
-          "earVerdict": "PLACEHOLDER_awkwardVerdict_114_2",
-          "spokenSentence": "PLACEHOLDER_spokenSentence_114_2_2"
+          "earVerdict": "Doesn't fit — literal young baby animals take 'young', not 'youthful'.",
+          "spokenSentence": "Our young golden puppy still chews every shoelace."
         }
       ],
       "cousinWords": [
         {
-          "word": "PLACEHOLDER_cousin_114_2_1",
-          "ipa": "/placeholder/",
-          "toneTag": "Neutral",
-          "miniContext": "PLACEHOLDER_cousinCtx_114_2_1"
+          "word": "Fresh",
+          "ipa": "",
+          "toneTag": "Literal Age",
+          "miniContext": "Bright studio colors gave the old cafe a fresh look."
         },
         {
-          "word": "PLACEHOLDER_cousin_114_2_2",
-          "ipa": "/placeholder/",
-          "toneTag": "Strong",
-          "miniContext": "PLACEHOLDER_cousinCtx_114_2_2"
+          "word": "Sprightly",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "At seventy-two, Coach Lee still radiates sprightly energy."
         },
         {
-          "word": "PLACEHOLDER_cousin_114_2_3",
-          "ipa": "/placeholder/",
-          "toneTag": "Formal",
-          "miniContext": "PLACEHOLDER_cousinCtx_114_2_3"
+          "word": "Juvenile",
+          "ipa": "",
+          "toneTag": "Fresh Spirit",
+          "miniContext": "Juvenile marks the strongest tone in literal age -> fresh spirit."
         }
       ]
     },
     {
-      "id": "PLACEHOLDER_LEARN_L114_Q3",
+      "id": "VOC_SYNONYMSEARCH_L114_LEARN_Q3",
       "level": 114,
       "cefr": "B2",
       "difficulty": 3,
-      "pairTitle": "PLACEHOLDER_base_114_3 ↔ PLACEHOLDER_synonym_114_3",
-      "baseWord": "PLACEHOLDER_base_114_3",
-      "synonym": "PLACEHOLDER_synonym_114_3",
+      "pairTitle": "Fast ↔ Rapid",
+      "baseWord": "Fast",
+      "synonym": "Rapid",
       "partOfSpeech": "Adjective",
-      "coreMeaning": "PLACEHOLDER_coreMeaning_114_3",
-      "whyDifferent": "PLACEHOLDER_whyDifferent_114_3",
+      "coreMeaning": "Happening at a quick rate.",
+      "whyDifferent": "'Fast' drives fast cars (`fast runner`). 'Rapid' measures steep clinical growth, heartbeats, or economic progress (`rapid pulse`).",
       "makeovers": [
         {
-          "situationTag": "PLACEHOLDER_tag_114_3_1",
-          "beforeSentence": "PLACEHOLDER_sentence_114_3_1 ___.",
-          "targetSlotWord": "PLACEHOLDER_base_114_3",
-          "swappedWord": "PLACEHOLDER_synonym_114_3",
+          "situationTag": "City Growth",
+          "beforeSentence": "New rail links fueled ___ population growth downtown.",
+          "targetSlotWord": "fast",
+          "swappedWord": "rapid",
           "isNaturalSwap": true,
-          "earVerdict": "PLACEHOLDER_naturalVerdict_114_3",
-          "spokenSentence": "PLACEHOLDER_spokenSentence_114_3_1"
+          "earVerdict": "Natural — quick measurable expansion or pulse takes 'rapid'.",
+          "spokenSentence": "New rail links fueled rapid population growth downtown."
         },
         {
-          "situationTag": "PLACEHOLDER_tag_114_3_2",
-          "beforeSentence": "PLACEHOLDER_sentence_114_3_2 ___.",
-          "targetSlotWord": "PLACEHOLDER_base_114_3",
-          "swappedWord": "PLACEHOLDER_synonym_114_3",
+          "situationTag": "Highway Meal",
+          "beforeSentence": "Road travelers rarely order ___ food before winding mountain climbs.",
+          "targetSlotWord": "fast",
+          "swappedWord": "rapid",
           "isNaturalSwap": false,
-          "earVerdict": "PLACEHOLDER_awkwardVerdict_114_3",
-          "spokenSentence": "PLACEHOLDER_spokenSentence_114_3_2"
+          "earVerdict": "Doesn't fit — 'fast food' is a fixed everyday phrase that never changes to 'rapid food'.",
+          "spokenSentence": "Road travelers rarely order fast food before winding mountain climbs."
         }
       ],
       "cousinWords": [
         {
-          "word": "PLACEHOLDER_cousin_114_3_1",
-          "ipa": "/placeholder/",
-          "toneTag": "Neutral",
-          "miniContext": "PLACEHOLDER_cousinCtx_114_3_1"
+          "word": "Swift",
+          "ipa": "",
+          "toneTag": "Speed",
+          "miniContext": "Doctors checked the runner’s swift pulse after the sprint."
         },
         {
-          "word": "PLACEHOLDER_cousin_114_3_2",
-          "ipa": "/placeholder/",
-          "toneTag": "Strong",
-          "miniContext": "PLACEHOLDER_cousinCtx_114_3_2"
+          "word": "Brisk",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "New rail links fueled brisk population growth downtown."
         },
         {
-          "word": "PLACEHOLDER_cousin_114_3_3",
-          "ipa": "/placeholder/",
-          "toneTag": "Formal",
-          "miniContext": "PLACEHOLDER_cousinCtx_114_3_3"
+          "word": "Accelerated",
+          "ipa": "",
+          "toneTag": "Steep Rate",
+          "miniContext": "Accelerated marks the strongest tone in speed -> steep rate."
         }
       ]
     },
     {
-      "id": "PLACEHOLDER_LEARN_L115_Q1",
+      "id": "VOC_SYNONYMSEARCH_L115_LEARN_Q1",
       "level": 115,
       "cefr": "B2",
       "difficulty": 3,
-      "pairTitle": "PLACEHOLDER_base_115_1 ↔ PLACEHOLDER_synonym_115_1",
-      "baseWord": "PLACEHOLDER_base_115_1",
-      "synonym": "PLACEHOLDER_synonym_115_1",
+      "pairTitle": "Slow ↔ Sluggish",
+      "baseWord": "Slow",
+      "synonym": "Sluggish",
       "partOfSpeech": "Adjective",
-      "coreMeaning": "PLACEHOLDER_coreMeaning_115_1",
-      "whyDifferent": "PLACEHOLDER_whyDifferent_115_1",
+      "coreMeaning": "Moving with heavy lack of energy.",
+      "whyDifferent": "'Slow' ticks steadily (`slow pace`). 'Sluggish' complains about heavy tired brains, drains, or weak laptops (`sluggish Wi-Fi`).",
       "makeovers": [
         {
-          "situationTag": "PLACEHOLDER_tag_115_1_1",
-          "beforeSentence": "PLACEHOLDER_sentence_115_1_1 ___.",
-          "targetSlotWord": "PLACEHOLDER_base_115_1",
-          "swappedWord": "PLACEHOLDER_synonym_115_1",
+          "situationTag": "Cold Battery",
+          "beforeSentence": "Freezing mornings leave old phone batteries feeling ___.",
+          "targetSlotWord": "slow",
+          "swappedWord": "sluggish",
           "isNaturalSwap": true,
-          "earVerdict": "PLACEHOLDER_naturalVerdict_115_1",
-          "spokenSentence": "PLACEHOLDER_spokenSentence_115_1_1"
+          "earVerdict": "Natural — tired energy or lagging machines take 'sluggish'.",
+          "spokenSentence": "Freezing mornings leave old phone batteries feeling sluggish."
         },
         {
-          "situationTag": "PLACEHOLDER_tag_115_1_2",
-          "beforeSentence": "PLACEHOLDER_sentence_115_1_2 ___.",
-          "targetSlotWord": "PLACEHOLDER_base_115_1",
-          "swappedWord": "PLACEHOLDER_synonym_115_1",
+          "situationTag": "Scenic Boat",
+          "beforeSentence": "Tourists enjoyed a relaxing, ___ cruise down the canal.",
+          "targetSlotWord": "slow",
+          "swappedWord": "sluggish",
           "isNaturalSwap": false,
-          "earVerdict": "PLACEHOLDER_awkwardVerdict_115_1",
-          "spokenSentence": "PLACEHOLDER_spokenSentence_115_1_2"
+          "earVerdict": "Doesn't fit — pleasant unhurried boat rides are 'slow', not sluggishly broken.",
+          "spokenSentence": "Tourists enjoyed a relaxing, slow cruise down the canal."
         }
       ],
       "cousinWords": [
         {
-          "word": "PLACEHOLDER_cousin_115_1_1",
-          "ipa": "/placeholder/",
-          "toneTag": "Neutral",
-          "miniContext": "PLACEHOLDER_cousinCtx_115_1_1"
+          "word": "Lethargic",
+          "ipa": "",
+          "toneTag": "Steady",
+          "miniContext": "Too many open video tabs can make browsers lethargic."
         },
         {
-          "word": "PLACEHOLDER_cousin_115_1_2",
-          "ipa": "/placeholder/",
-          "toneTag": "Strong",
-          "miniContext": "PLACEHOLDER_cousinCtx_115_1_2"
+          "word": "Drained",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "Freezing mornings leave old phone batteries feeling drained."
         },
         {
-          "word": "PLACEHOLDER_cousin_115_1_3",
-          "ipa": "/placeholder/",
-          "toneTag": "Formal",
-          "miniContext": "PLACEHOLDER_cousinCtx_115_1_3"
+          "word": "Torpid",
+          "ipa": "",
+          "toneTag": "Dragging Heavily",
+          "miniContext": "Torpid marks the strongest tone in steady -> dragging heavily."
         }
       ]
     },
     {
-      "id": "PLACEHOLDER_LEARN_L115_Q2",
+      "id": "VOC_SYNONYMSEARCH_L115_LEARN_Q2",
       "level": 115,
       "cefr": "B2",
       "difficulty": 3,
-      "pairTitle": "PLACEHOLDER_base_115_2 ↔ PLACEHOLDER_synonym_115_2",
-      "baseWord": "PLACEHOLDER_base_115_2",
-      "synonym": "PLACEHOLDER_synonym_115_2",
+      "pairTitle": "Clean ↔ Sterile",
+      "baseWord": "Clean",
+      "synonym": "Sterile",
       "partOfSpeech": "Adjective",
-      "coreMeaning": "PLACEHOLDER_coreMeaning_115_2",
-      "whyDifferent": "PLACEHOLDER_whyDifferent_115_2",
+      "coreMeaning": "Completely free of living bacteria or germs.",
+      "whyDifferent": "'Clean' looks tidy and washed (`clean hands`). 'Sterile' meets surgical medical standards with zero microbes (`sterile needle`).",
       "makeovers": [
         {
-          "situationTag": "PLACEHOLDER_tag_115_2_1",
-          "beforeSentence": "PLACEHOLDER_sentence_115_2_1 ___.",
-          "targetSlotWord": "PLACEHOLDER_base_115_2",
-          "swappedWord": "PLACEHOLDER_synonym_115_2",
+          "situationTag": "Operating Room",
+          "beforeSentence": "Nurses keep every silver instrument ___ inside sealed trays.",
+          "targetSlotWord": "clean",
+          "swappedWord": "sterile",
           "isNaturalSwap": true,
-          "earVerdict": "PLACEHOLDER_naturalVerdict_115_2",
-          "spokenSentence": "PLACEHOLDER_spokenSentence_115_2_1"
+          "earVerdict": "Natural — hospital germ-free guarantees take 'sterile'.",
+          "spokenSentence": "Nurses keep every silver instrument sterile inside sealed trays."
         },
         {
-          "situationTag": "PLACEHOLDER_tag_115_2_2",
-          "beforeSentence": "PLACEHOLDER_sentence_115_2_2 ___.",
-          "targetSlotWord": "PLACEHOLDER_base_115_2",
-          "swappedWord": "PLACEHOLDER_synonym_115_2",
+          "situationTag": "Fresh Jeans",
+          "beforeSentence": "Fold ___ washed bath towels inside the hall closet.",
+          "targetSlotWord": "clean",
+          "swappedWord": "sterile",
           "isNaturalSwap": false,
-          "earVerdict": "PLACEHOLDER_awkwardVerdict_115_2",
-          "spokenSentence": "PLACEHOLDER_spokenSentence_115_2_2"
+          "earVerdict": "Doesn't fit — normal home laundry is 'clean', not hospital 'sterile'.",
+          "spokenSentence": "Fold clean washed bath towels inside the hall closet."
         }
       ],
       "cousinWords": [
         {
-          "word": "PLACEHOLDER_cousin_115_2_1",
-          "ipa": "/placeholder/",
-          "toneTag": "Neutral",
-          "miniContext": "PLACEHOLDER_cousinCtx_115_2_1"
+          "word": "Sanitary",
+          "ipa": "",
+          "toneTag": "Washed",
+          "miniContext": "Dentists open a fresh sanitary brush packet for every checkup."
         },
         {
-          "word": "PLACEHOLDER_cousin_115_2_2",
-          "ipa": "/placeholder/",
-          "toneTag": "Strong",
-          "miniContext": "PLACEHOLDER_cousinCtx_115_2_2"
+          "word": "Spotless",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "Nurses keep every silver instrument spotless inside sealed trays."
         },
         {
-          "word": "PLACEHOLDER_cousin_115_2_3",
-          "ipa": "/placeholder/",
-          "toneTag": "Formal",
-          "miniContext": "PLACEHOLDER_cousinCtx_115_2_3"
+          "word": "Disinfected",
+          "ipa": "",
+          "toneTag": "Germ-Free",
+          "miniContext": "Disinfected marks the strongest tone in washed -> germ-free."
         }
       ]
     },
     {
-      "id": "PLACEHOLDER_LEARN_L115_Q3",
+      "id": "VOC_SYNONYMSEARCH_L115_LEARN_Q3",
       "level": 115,
       "cefr": "B2",
       "difficulty": 3,
-      "pairTitle": "PLACEHOLDER_base_115_3 ↔ PLACEHOLDER_synonym_115_3",
-      "baseWord": "PLACEHOLDER_base_115_3",
-      "synonym": "PLACEHOLDER_synonym_115_3",
+      "pairTitle": "Dirty ↔ Filthy",
+      "baseWord": "Dirty",
+      "synonym": "Filthy",
       "partOfSpeech": "Adjective",
-      "coreMeaning": "PLACEHOLDER_coreMeaning_115_3",
-      "whyDifferent": "PLACEHOLDER_whyDifferent_115_3",
+      "coreMeaning": "Shockingly covered in dirt or grime.",
+      "whyDifferent": "'Dirty' gets dusty shoes (`dirty boots`). 'Filthy' reacts strongly to disgusting neglected grime (`filthy alley`).",
       "makeovers": [
         {
-          "situationTag": "PLACEHOLDER_tag_115_3_1",
-          "beforeSentence": "PLACEHOLDER_sentence_115_3_1 ___.",
-          "targetSlotWord": "PLACEHOLDER_base_115_3",
-          "swappedWord": "PLACEHOLDER_synonym_115_3",
+          "situationTag": "Flood Mud",
+          "beforeSentence": "Rescue crews scrubbed thick mud off ___ floor tiles.",
+          "targetSlotWord": "dirty",
+          "swappedWord": "filthy",
           "isNaturalSwap": true,
-          "earVerdict": "PLACEHOLDER_naturalVerdict_115_3",
-          "spokenSentence": "PLACEHOLDER_spokenSentence_115_3_1"
+          "earVerdict": "Natural — extreme disgusting grime earns 'filthy'.",
+          "spokenSentence": "Rescue crews scrubbed thick mud off filthy floor tiles."
         },
         {
-          "situationTag": "PLACEHOLDER_tag_115_3_2",
-          "beforeSentence": "PLACEHOLDER_sentence_115_3_2 ___.",
-          "targetSlotWord": "PLACEHOLDER_base_115_3",
-          "swappedWord": "PLACEHOLDER_synonym_115_3",
+          "situationTag": "Group Rule",
+          "beforeSentence": "Good teammates never air ___ laundry during noisy online chats.",
+          "targetSlotWord": "dirty",
+          "swappedWord": "filthy",
           "isNaturalSwap": false,
-          "earVerdict": "PLACEHOLDER_awkwardVerdict_115_3",
-          "spokenSentence": "PLACEHOLDER_spokenSentence_115_3_2"
+          "earVerdict": "Doesn't fit — the idiom 'air dirty laundry' never switches cleanly to 'filthy'.",
+          "spokenSentence": "Good teammates never air dirty laundry during noisy online chats."
         }
       ],
       "cousinWords": [
         {
-          "word": "PLACEHOLDER_cousin_115_3_1",
-          "ipa": "/placeholder/",
-          "toneTag": "Neutral",
-          "miniContext": "PLACEHOLDER_cousinCtx_115_3_1"
+          "word": "Grimy",
+          "ipa": "",
+          "toneTag": "Dusty",
+          "miniContext": "Mechanics wiped oil off their grimy wrenches after work."
         },
         {
-          "word": "PLACEHOLDER_cousin_115_3_2",
-          "ipa": "/placeholder/",
-          "toneTag": "Strong",
-          "miniContext": "PLACEHOLDER_cousinCtx_115_3_2"
+          "word": "Muddy",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "Rescue crews scrubbed thick mud off muddy floor tiles."
         },
         {
-          "word": "PLACEHOLDER_cousin_115_3_3",
-          "ipa": "/placeholder/",
-          "toneTag": "Formal",
-          "miniContext": "PLACEHOLDER_cousinCtx_115_3_3"
+          "word": "Squalid",
+          "ipa": "",
+          "toneTag": "Disgusting",
+          "miniContext": "Squalid marks the strongest tone in dusty -> disgusting."
         }
       ]
     },
     {
-      "id": "PLACEHOLDER_LEARN_L116_Q1",
+      "id": "VOC_SYNONYMSEARCH_L116_LEARN_Q1",
       "level": 116,
       "cefr": "B2",
       "difficulty": 3,
-      "pairTitle": "PLACEHOLDER_base_116_1 ↔ PLACEHOLDER_synonym_116_1",
-      "baseWord": "PLACEHOLDER_base_116_1",
-      "synonym": "PLACEHOLDER_synonym_116_1",
+      "pairTitle": "Big ↔ Enormous",
+      "baseWord": "Big",
+      "synonym": "Enormous",
       "partOfSpeech": "Adjective",
-      "coreMeaning": "PLACEHOLDER_coreMeaning_116_1",
-      "whyDifferent": "PLACEHOLDER_whyDifferent_116_1",
+      "coreMeaning": "Surprisingly huge far beyond normal scale.",
+      "whyDifferent": "'Big' describes standard larger sizes (`big desk`). 'Enormous' gasps at breathtaking scale (`enormous whale`, `enormous cost`).",
       "makeovers": [
         {
-          "situationTag": "PLACEHOLDER_tag_116_1_1",
-          "beforeSentence": "PLACEHOLDER_sentence_116_1_1 ___.",
-          "targetSlotWord": "PLACEHOLDER_base_116_1",
-          "swappedWord": "PLACEHOLDER_synonym_116_1",
+          "situationTag": "Museum Fossil",
+          "beforeSentence": "Kids stared up in awe at the ___ whale skeleton.",
+          "targetSlotWord": "big",
+          "swappedWord": "enormous",
           "isNaturalSwap": true,
-          "earVerdict": "PLACEHOLDER_naturalVerdict_116_1",
-          "spokenSentence": "PLACEHOLDER_spokenSentence_116_1_1"
+          "earVerdict": "Natural — awe-inspiring immense size uses 'enormous'.",
+          "spokenSentence": "Kids stared up in awe at the enormous whale skeleton."
         },
         {
-          "situationTag": "PLACEHOLDER_tag_116_1_2",
-          "beforeSentence": "PLACEHOLDER_sentence_116_1_2 ___.",
-          "targetSlotWord": "PLACEHOLDER_base_116_1",
-          "swappedWord": "PLACEHOLDER_synonym_116_1",
+          "situationTag": "Older Sibling",
+          "beforeSentence": "My ___ brother starts university in September.",
+          "targetSlotWord": "big",
+          "swappedWord": "enormous",
           "isNaturalSwap": false,
-          "earVerdict": "PLACEHOLDER_awkwardVerdict_116_1",
-          "spokenSentence": "PLACEHOLDER_spokenSentence_116_1_2"
+          "earVerdict": "Doesn't fit — older siblings are 'big brother/sister', never 'enormous brother'!",
+          "spokenSentence": "My big brother starts university in September."
         }
       ],
       "cousinWords": [
         {
-          "word": "PLACEHOLDER_cousin_116_1_1",
-          "ipa": "/placeholder/",
-          "toneTag": "Neutral",
-          "miniContext": "PLACEHOLDER_cousinCtx_116_1_1"
+          "word": "Huge",
+          "ipa": "",
+          "toneTag": "Large",
+          "miniContext": "Clearing snow across forty highways takes huge effort."
         },
         {
-          "word": "PLACEHOLDER_cousin_116_1_2",
-          "ipa": "/placeholder/",
-          "toneTag": "Strong",
-          "miniContext": "PLACEHOLDER_cousinCtx_116_1_2"
+          "word": "Gigantic",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "Kids stared up in awe at the gigantic whale skeleton."
         },
         {
-          "word": "PLACEHOLDER_cousin_116_1_3",
-          "ipa": "/placeholder/",
-          "toneTag": "Formal",
-          "miniContext": "PLACEHOLDER_cousinCtx_116_1_3"
+          "word": "Colossal",
+          "ipa": "",
+          "toneTag": "Breathtaking",
+          "miniContext": "Colossal marks the strongest tone in large -> breathtaking."
         }
       ]
     },
     {
-      "id": "PLACEHOLDER_LEARN_L116_Q2",
+      "id": "VOC_SYNONYMSEARCH_L116_LEARN_Q2",
       "level": 116,
       "cefr": "B2",
       "difficulty": 3,
-      "pairTitle": "PLACEHOLDER_base_116_2 ↔ PLACEHOLDER_synonym_116_2",
-      "baseWord": "PLACEHOLDER_base_116_2",
-      "synonym": "PLACEHOLDER_synonym_116_2",
+      "pairTitle": "Small ↔ Compact",
+      "baseWord": "Small",
+      "synonym": "Compact",
       "partOfSpeech": "Adjective",
-      "coreMeaning": "PLACEHOLDER_coreMeaning_116_2",
-      "whyDifferent": "PLACEHOLDER_whyDifferent_116_2",
+      "coreMeaning": "Designed cleanly to fit inside little space.",
+      "whyDifferent": "'Small' describes tiny scale (`small pebble`). 'Compact' praises smart tight engineering (`compact camera`, `compact car`).",
       "makeovers": [
         {
-          "situationTag": "PLACEHOLDER_tag_116_2_1",
-          "beforeSentence": "PLACEHOLDER_sentence_116_2_1 ___.",
-          "targetSlotWord": "PLACEHOLDER_base_116_2",
-          "swappedWord": "PLACEHOLDER_synonym_116_2",
+          "situationTag": "City Car",
+          "beforeSentence": "Drivers love ___ hatchbacks when squeezing into tight spots.",
+          "targetSlotWord": "small",
+          "swappedWord": "compact",
           "isNaturalSwap": true,
-          "earVerdict": "PLACEHOLDER_naturalVerdict_116_2",
-          "spokenSentence": "PLACEHOLDER_spokenSentence_116_2_1"
+          "earVerdict": "Natural — clever space-saving design earns 'compact'.",
+          "spokenSentence": "Drivers love compact hatchbacks when squeezing into tight spots."
         },
         {
-          "situationTag": "PLACEHOLDER_tag_116_2_2",
-          "beforeSentence": "PLACEHOLDER_sentence_116_2_2 ___.",
-          "targetSlotWord": "PLACEHOLDER_base_116_2",
-          "swappedWord": "PLACEHOLDER_synonym_116_2",
+          "situationTag": "Tear Drop",
+          "beforeSentence": "A ___ tear rolled quietly down the child’s cheek.",
+          "targetSlotWord": "small",
+          "swappedWord": "compact",
           "isNaturalSwap": false,
-          "earVerdict": "PLACEHOLDER_awkwardVerdict_116_2",
-          "spokenSentence": "PLACEHOLDER_spokenSentence_116_2_2"
+          "earVerdict": "Doesn't fit — natural tiny drops take 'small', never engineered 'compact'.",
+          "spokenSentence": "A small tear rolled quietly down the child’s cheek."
         }
       ],
       "cousinWords": [
         {
-          "word": "PLACEHOLDER_cousin_116_2_1",
-          "ipa": "/placeholder/",
-          "toneTag": "Neutral",
-          "miniContext": "PLACEHOLDER_cousinCtx_116_2_1"
+          "word": "Tight",
+          "ipa": "",
+          "toneTag": "Little",
+          "miniContext": "Foldable umbrellas fit easily inside a tight shoulder bag."
         },
         {
-          "word": "PLACEHOLDER_cousin_116_2_2",
-          "ipa": "/placeholder/",
-          "toneTag": "Strong",
-          "miniContext": "PLACEHOLDER_cousinCtx_116_2_2"
+          "word": "Neat",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "Drivers love neat hatchbacks when squeezing into tight spots."
         },
         {
-          "word": "PLACEHOLDER_cousin_116_2_3",
-          "ipa": "/placeholder/",
-          "toneTag": "Formal",
-          "miniContext": "PLACEHOLDER_cousinCtx_116_2_3"
+          "word": "Miniature",
+          "ipa": "",
+          "toneTag": "Space-Smart",
+          "miniContext": "Miniature marks the strongest tone in little -> space-smart."
         }
       ]
     },
     {
-      "id": "PLACEHOLDER_LEARN_L116_Q3",
+      "id": "VOC_SYNONYMSEARCH_L116_LEARN_Q3",
       "level": 116,
       "cefr": "B2",
       "difficulty": 3,
-      "pairTitle": "PLACEHOLDER_base_116_3 ↔ PLACEHOLDER_synonym_116_3",
-      "baseWord": "PLACEHOLDER_base_116_3",
-      "synonym": "PLACEHOLDER_synonym_116_3",
+      "pairTitle": "Easy ↔ Effortless",
+      "baseWord": "Easy",
+      "synonym": "Effortless",
       "partOfSpeech": "Adjective",
-      "coreMeaning": "PLACEHOLDER_coreMeaning_116_3",
-      "whyDifferent": "PLACEHOLDER_whyDifferent_116_3",
+      "coreMeaning": "Looking smooth with zero visible struggle.",
+      "whyDifferent": "'Easy' tests simple facts (`easy spelling`). 'Effortless' admires high skill that makes tough acts look gracefully smooth (`effortless glide`).",
       "makeovers": [
         {
-          "situationTag": "PLACEHOLDER_tag_116_3_1",
-          "beforeSentence": "PLACEHOLDER_sentence_116_3_1 ___.",
-          "targetSlotWord": "PLACEHOLDER_base_116_3",
-          "swappedWord": "PLACEHOLDER_synonym_116_3",
+          "situationTag": "Ballet Leap",
+          "beforeSentence": "Years of training made her high leap look completely ___.",
+          "targetSlotWord": "easy",
+          "swappedWord": "effortless",
           "isNaturalSwap": true,
-          "earVerdict": "PLACEHOLDER_naturalVerdict_116_3",
-          "spokenSentence": "PLACEHOLDER_spokenSentence_116_3_1"
+          "earVerdict": "Natural — graceful mastery without visible strain earns 'effortless'.",
+          "spokenSentence": "Years of training made her high leap look completely effortless."
         },
         {
-          "situationTag": "PLACEHOLDER_tag_116_3_2",
-          "beforeSentence": "PLACEHOLDER_sentence_116_3_2 ___.",
-          "targetSlotWord": "PLACEHOLDER_base_116_3",
-          "swappedWord": "PLACEHOLDER_synonym_116_3",
+          "situationTag": "Math Drill",
+          "beforeSentence": "Adding two and five feels ___ for first graders.",
+          "targetSlotWord": "easy",
+          "swappedWord": "effortless",
           "isNaturalSwap": false,
-          "earVerdict": "PLACEHOLDER_awkwardVerdict_116_3",
-          "spokenSentence": "PLACEHOLDER_spokenSentence_116_3_2"
+          "earVerdict": "Doesn't fit — trivial tasks are 'easy', not admiring 'effortless'.",
+          "spokenSentence": "Adding two and five feels easy for first graders."
         }
       ],
       "cousinWords": [
         {
-          "word": "PLACEHOLDER_cousin_116_3_1",
-          "ipa": "/placeholder/",
-          "toneTag": "Neutral",
-          "miniContext": "PLACEHOLDER_cousinCtx_116_3_1"
+          "word": "Smooth",
+          "ipa": "",
+          "toneTag": "Simple",
+          "miniContext": "Expert translators maintain an smooth flow during live speeches."
         },
         {
-          "word": "PLACEHOLDER_cousin_116_3_2",
-          "ipa": "/placeholder/",
-          "toneTag": "Strong",
-          "miniContext": "PLACEHOLDER_cousinCtx_116_3_2"
+          "word": "Natural",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "Years of training made her high leap look completely natural."
         },
         {
-          "word": "PLACEHOLDER_cousin_116_3_3",
-          "ipa": "/placeholder/",
-          "toneTag": "Formal",
-          "miniContext": "PLACEHOLDER_cousinCtx_116_3_3"
+          "word": "Seamless",
+          "ipa": "",
+          "toneTag": "Graceful Mastery",
+          "miniContext": "Seamless marks the strongest tone in simple -> graceful mastery."
         }
       ]
     },
     {
-      "id": "PLACEHOLDER_LEARN_L117_Q1",
+      "id": "VOC_SYNONYMSEARCH_L117_LEARN_Q1",
       "level": 117,
       "cefr": "B2",
       "difficulty": 3,
-      "pairTitle": "PLACEHOLDER_base_117_1 ↔ PLACEHOLDER_synonym_117_1",
-      "baseWord": "PLACEHOLDER_base_117_1",
-      "synonym": "PLACEHOLDER_synonym_117_1",
+      "pairTitle": "Hard ↔ Grueling",
+      "baseWord": "Hard",
+      "synonym": "Grueling",
       "partOfSpeech": "Adjective",
-      "coreMeaning": "PLACEHOLDER_coreMeaning_117_1",
-      "whyDifferent": "PLACEHOLDER_whyDifferent_117_1",
+      "coreMeaning": "Exhaustingly demanding in body or stamina.",
+      "whyDifferent": "'Hard' marks tricky tests (`hard quiz`). 'Grueling' warns of exhausting marathons, shifts, or climbs that drain all stamina.",
       "makeovers": [
         {
-          "situationTag": "PLACEHOLDER_tag_117_1_1",
-          "beforeSentence": "PLACEHOLDER_sentence_117_1_1 ___.",
-          "targetSlotWord": "PLACEHOLDER_base_117_1",
-          "swappedWord": "PLACEHOLDER_synonym_117_1",
+          "situationTag": "Mountain Stage",
+          "beforeSentence": "Cyclists pushed up a ___ five-hour alpine climb.",
+          "targetSlotWord": "hard",
+          "swappedWord": "grueling",
           "isNaturalSwap": true,
-          "earVerdict": "PLACEHOLDER_naturalVerdict_117_1",
-          "spokenSentence": "PLACEHOLDER_spokenSentence_117_1_1"
+          "earVerdict": "Natural — punishing endurance tests require 'grueling'.",
+          "spokenSentence": "Cyclists pushed up a grueling five-hour alpine climb."
         },
         {
-          "situationTag": "PLACEHOLDER_tag_117_1_2",
-          "beforeSentence": "PLACEHOLDER_sentence_117_1_2 ___.",
-          "targetSlotWord": "PLACEHOLDER_base_117_1",
-          "swappedWord": "PLACEHOLDER_synonym_117_1",
+          "situationTag": "Wood Floor",
+          "beforeSentence": "Waxing keeps ___ oak floorboards shining cleanly.",
+          "targetSlotWord": "hard",
+          "swappedWord": "grueling",
           "isNaturalSwap": false,
-          "earVerdict": "PLACEHOLDER_awkwardVerdict_117_1",
-          "spokenSentence": "PLACEHOLDER_spokenSentence_117_1_2"
+          "earVerdict": "Doesn't fit — physical surface firmness (`hard`) cannot take 'grueling'.",
+          "spokenSentence": "Waxing keeps hard oak floorboards shining cleanly."
         }
       ],
       "cousinWords": [
         {
-          "word": "PLACEHOLDER_cousin_117_1_1",
-          "ipa": "/placeholder/",
-          "toneTag": "Neutral",
-          "miniContext": "PLACEHOLDER_cousinCtx_117_1_1"
+          "word": "Brutal",
+          "ipa": "",
+          "toneTag": "Tricky",
+          "miniContext": "Hospital residents sometimes work brutal twelve-hour shifts."
         },
         {
-          "word": "PLACEHOLDER_cousin_117_1_2",
-          "ipa": "/placeholder/",
-          "toneTag": "Strong",
-          "miniContext": "PLACEHOLDER_cousinCtx_117_1_2"
+          "word": "Exhausting",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "Cyclists pushed up a exhausting five-hour alpine climb."
         },
         {
-          "word": "PLACEHOLDER_cousin_117_1_3",
-          "ipa": "/placeholder/",
-          "toneTag": "Formal",
-          "miniContext": "PLACEHOLDER_cousinCtx_117_1_3"
+          "word": "Punishing",
+          "ipa": "",
+          "toneTag": "Stamina-Draining",
+          "miniContext": "Punishing marks the strongest tone in tricky -> stamina-draining."
         }
       ]
     },
     {
-      "id": "PLACEHOLDER_LEARN_L117_Q2",
+      "id": "VOC_SYNONYMSEARCH_L117_LEARN_Q2",
       "level": 117,
       "cefr": "B2",
       "difficulty": 3,
-      "pairTitle": "PLACEHOLDER_base_117_2 ↔ PLACEHOLDER_synonym_117_2",
-      "baseWord": "PLACEHOLDER_base_117_2",
-      "synonym": "PLACEHOLDER_synonym_117_2",
+      "pairTitle": "Fair ↔ Ethical",
+      "baseWord": "Fair",
+      "synonym": "Ethical",
       "partOfSpeech": "Adjective",
-      "coreMeaning": "PLACEHOLDER_coreMeaning_117_2",
-      "whyDifferent": "PLACEHOLDER_whyDifferent_117_2",
+      "coreMeaning": "Following moral rules of right conduct.",
+      "whyDifferent": "'Fair' splits shares evenly (`fair price`). 'Ethical' enforces moral standards in medicine, journalism, and research (`ethical data use`).",
       "makeovers": [
         {
-          "situationTag": "PLACEHOLDER_tag_117_2_1",
-          "beforeSentence": "PLACEHOLDER_sentence_117_2_1 ___.",
-          "targetSlotWord": "PLACEHOLDER_base_117_2",
-          "swappedWord": "PLACEHOLDER_synonym_117_2",
+          "situationTag": "Clinic Rule",
+          "beforeSentence": "Hospital boards enforce strict ___ standards in drug trials.",
+          "targetSlotWord": "fair",
+          "swappedWord": "ethical",
           "isNaturalSwap": true,
-          "earVerdict": "PLACEHOLDER_naturalVerdict_117_2",
-          "spokenSentence": "PLACEHOLDER_spokenSentence_117_2_1"
+          "earVerdict": "Natural — formal moral standards in professions use 'ethical'.",
+          "spokenSentence": "Hospital boards enforce strict ethical standards in drug trials."
         },
         {
-          "situationTag": "PLACEHOLDER_tag_117_2_2",
-          "beforeSentence": "PLACEHOLDER_sentence_117_2_2 ___.",
-          "targetSlotWord": "PLACEHOLDER_base_117_2",
-          "swappedWord": "PLACEHOLDER_synonym_117_2",
+          "situationTag": "Birthday Pie",
+          "beforeSentence": "Waiters offered everyone a ___ slice of birthday pie.",
+          "targetSlotWord": "fair",
+          "swappedWord": "ethical",
           "isNaturalSwap": false,
-          "earVerdict": "PLACEHOLDER_awkwardVerdict_117_2",
-          "spokenSentence": "PLACEHOLDER_spokenSentence_117_2_2"
+          "earVerdict": "Doesn't fit — equal portion sizing uses 'fair', not 'ethical'.",
+          "spokenSentence": "Waiters offered everyone a fair slice of birthday pie."
         }
       ],
       "cousinWords": [
         {
-          "word": "PLACEHOLDER_cousin_117_2_1",
-          "ipa": "/placeholder/",
-          "toneTag": "Neutral",
-          "miniContext": "PLACEHOLDER_cousinCtx_117_2_1"
+          "word": "Moral",
+          "ipa": "",
+          "toneTag": "Even Share",
+          "miniContext": "Reporters respect moral guidelines before naming witnesses."
         },
         {
-          "word": "PLACEHOLDER_cousin_117_2_2",
-          "ipa": "/placeholder/",
-          "toneTag": "Strong",
-          "miniContext": "PLACEHOLDER_cousinCtx_117_2_2"
+          "word": "Principled",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "Hospital boards enforce strict principled standards in drug trials."
         },
         {
-          "word": "PLACEHOLDER_cousin_117_2_3",
-          "ipa": "/placeholder/",
-          "toneTag": "Formal",
-          "miniContext": "PLACEHOLDER_cousinCtx_117_2_3"
+          "word": "Righteous",
+          "ipa": "",
+          "toneTag": "Moral Code",
+          "miniContext": "Righteous marks the strongest tone in even share -> moral code."
         }
       ]
     },
     {
-      "id": "PLACEHOLDER_LEARN_L117_Q3",
+      "id": "VOC_SYNONYMSEARCH_L117_LEARN_Q3",
       "level": 117,
       "cefr": "B2",
       "difficulty": 3,
-      "pairTitle": "PLACEHOLDER_base_117_3 ↔ PLACEHOLDER_synonym_117_3",
-      "baseWord": "PLACEHOLDER_base_117_3",
-      "synonym": "PLACEHOLDER_synonym_117_3",
-      "partOfSpeech": "Adjective",
-      "coreMeaning": "PLACEHOLDER_coreMeaning_117_3",
-      "whyDifferent": "PLACEHOLDER_whyDifferent_117_3",
+      "pairTitle": "Improve ↔ Enhance",
+      "baseWord": "Improve",
+      "synonym": "Enhance",
+      "partOfSpeech": "Verb",
+      "coreMeaning": "To noticeably lift quality, sound, or looks.",
+      "whyDifferent": "'Improve' fixes flaws (`improve spelling`). 'Enhance' takes something already good and makes its features shine brighter (`enhance flavor`).",
       "makeovers": [
         {
-          "situationTag": "PLACEHOLDER_tag_117_3_1",
-          "beforeSentence": "PLACEHOLDER_sentence_117_3_1 ___.",
-          "targetSlotWord": "PLACEHOLDER_base_117_3",
-          "swappedWord": "PLACEHOLDER_synonym_117_3",
+          "situationTag": "Food Seasoning",
+          "beforeSentence": "Roasted garlic helps ___ the flavor of simple stews.",
+          "targetSlotWord": "improve",
+          "swappedWord": "enhance",
           "isNaturalSwap": true,
-          "earVerdict": "PLACEHOLDER_naturalVerdict_117_3",
-          "spokenSentence": "PLACEHOLDER_spokenSentence_117_3_1"
+          "earVerdict": "Natural — boosting already good features uses 'enhance'.",
+          "spokenSentence": "Roasted garlic helps enhance the flavor of simple stews."
         },
         {
-          "situationTag": "PLACEHOLDER_tag_117_3_2",
-          "beforeSentence": "PLACEHOLDER_sentence_117_3_2 ___.",
-          "targetSlotWord": "PLACEHOLDER_base_117_3",
-          "swappedWord": "PLACEHOLDER_synonym_117_3",
+          "situationTag": "Ankle Care",
+          "beforeSentence": "Gentle rest and warm wraps help ___ a sore sprained knee.",
+          "targetSlotWord": "improve",
+          "swappedWord": "enhance",
           "isNaturalSwap": false,
-          "earVerdict": "PLACEHOLDER_awkwardVerdict_117_3",
-          "spokenSentence": "PLACEHOLDER_spokenSentence_117_3_2"
+          "earVerdict": "Doesn't fit — healing injuries or fixing low grades takes 'improve', never cosmetic 'enhance'.",
+          "spokenSentence": "Gentle rest and warm wraps help improve a sore sprained knee."
         }
       ],
       "cousinWords": [
         {
-          "word": "PLACEHOLDER_cousin_117_3_1",
-          "ipa": "/placeholder/",
-          "toneTag": "Neutral",
-          "miniContext": "PLACEHOLDER_cousinCtx_117_3_1"
+          "word": "Enrich",
+          "ipa": "",
+          "toneTag": "Fix",
+          "miniContext": "Skylights naturally enrich indoor brightness across winter months."
         },
         {
-          "word": "PLACEHOLDER_cousin_117_3_2",
-          "ipa": "/placeholder/",
-          "toneTag": "Strong",
-          "miniContext": "PLACEHOLDER_cousinCtx_117_3_2"
+          "word": "Elevate",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "Roasted garlic helps elevate the flavor of simple stews."
         },
         {
-          "word": "PLACEHOLDER_cousin_117_3_3",
-          "ipa": "/placeholder/",
-          "toneTag": "Formal",
-          "miniContext": "PLACEHOLDER_cousinCtx_117_3_3"
+          "word": "Upgrade",
+          "ipa": "",
+          "toneTag": "Rich Polish",
+          "miniContext": "Upgrade marks the strongest tone in fix -> rich polish."
         }
       ]
     },
     {
-      "id": "PLACEHOLDER_LEARN_L118_Q1",
+      "id": "VOC_SYNONYMSEARCH_L118_LEARN_Q1",
       "level": 118,
       "cefr": "B2",
       "difficulty": 3,
-      "pairTitle": "PLACEHOLDER_base_118_1 ↔ PLACEHOLDER_synonym_118_1",
-      "baseWord": "PLACEHOLDER_base_118_1",
-      "synonym": "PLACEHOLDER_synonym_118_1",
-      "partOfSpeech": "Adjective",
-      "coreMeaning": "PLACEHOLDER_coreMeaning_118_1",
-      "whyDifferent": "PLACEHOLDER_whyDifferent_118_1",
+      "pairTitle": "Collect ↔ Compile",
+      "baseWord": "Collect",
+      "synonym": "Compile",
+      "partOfSpeech": "Verb",
+      "coreMeaning": "To organize gathered facts or records cleanly.",
+      "whyDifferent": "'Collect' picks shells or stamps (`collect coins`). 'Compile' arranges scattered notes, recipes, or songs systematically into one document.",
       "makeovers": [
         {
-          "situationTag": "PLACEHOLDER_tag_118_1_1",
-          "beforeSentence": "PLACEHOLDER_sentence_118_1_1 ___.",
-          "targetSlotWord": "PLACEHOLDER_base_118_1",
-          "swappedWord": "PLACEHOLDER_synonym_118_1",
+          "situationTag": "Report Prep",
+          "beforeSentence": "Analysts will ___ monthly safety records into one booklet.",
+          "targetSlotWord": "collect",
+          "swappedWord": "compile",
           "isNaturalSwap": true,
-          "earVerdict": "PLACEHOLDER_naturalVerdict_118_1",
-          "spokenSentence": "PLACEHOLDER_spokenSentence_118_1_1"
+          "earVerdict": "Natural — assembling structured lists or books takes 'compile'.",
+          "spokenSentence": "Analysts will compile monthly safety records into one booklet."
         },
         {
-          "situationTag": "PLACEHOLDER_tag_118_1_2",
-          "beforeSentence": "PLACEHOLDER_sentence_118_1_2 ___.",
-          "targetSlotWord": "PLACEHOLDER_base_118_1",
-          "swappedWord": "PLACEHOLDER_synonym_118_1",
+          "situationTag": "Sea Shells",
+          "beforeSentence": "Children ran to ___ smooth sea glass along wet sand.",
+          "targetSlotWord": "collect",
+          "swappedWord": "compile",
           "isNaturalSwap": false,
-          "earVerdict": "PLACEHOLDER_awkwardVerdict_118_1",
-          "spokenSentence": "PLACEHOLDER_spokenSentence_118_1_2"
+          "earVerdict": "Doesn't fit — picking loose beach items takes 'collect', never 'compile'.",
+          "spokenSentence": "Children ran to collect smooth sea glass along wet sand."
         }
       ],
       "cousinWords": [
         {
-          "word": "PLACEHOLDER_cousin_118_1_1",
-          "ipa": "/placeholder/",
-          "toneTag": "Neutral",
-          "miniContext": "PLACEHOLDER_cousinCtx_118_1_1"
+          "word": "Assemble",
+          "ipa": "",
+          "toneTag": "Pick Up",
+          "miniContext": "Chefs love to assemble grandmother recipes into printed cookbooks."
         },
         {
-          "word": "PLACEHOLDER_cousin_118_1_2",
-          "ipa": "/placeholder/",
-          "toneTag": "Strong",
-          "miniContext": "PLACEHOLDER_cousinCtx_118_1_2"
+          "word": "Organize",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "Analysts will organize monthly safety records into one booklet."
         },
         {
-          "word": "PLACEHOLDER_cousin_118_1_3",
-          "ipa": "/placeholder/",
-          "toneTag": "Formal",
-          "miniContext": "PLACEHOLDER_cousinCtx_118_1_3"
+          "word": "Curate",
+          "ipa": "",
+          "toneTag": "Structured Book",
+          "miniContext": "Curate marks the strongest tone in pick up -> structured book."
         }
       ]
     },
     {
-      "id": "PLACEHOLDER_LEARN_L118_Q2",
+      "id": "VOC_SYNONYMSEARCH_L118_LEARN_Q2",
       "level": 118,
       "cefr": "B2",
       "difficulty": 3,
-      "pairTitle": "PLACEHOLDER_base_118_2 ↔ PLACEHOLDER_synonym_118_2",
-      "baseWord": "PLACEHOLDER_base_118_2",
-      "synonym": "PLACEHOLDER_synonym_118_2",
-      "partOfSpeech": "Adjective",
-      "coreMeaning": "PLACEHOLDER_coreMeaning_118_2",
-      "whyDifferent": "PLACEHOLDER_whyDifferent_118_2",
+      "pairTitle": "Measure ↔ Gauge",
+      "baseWord": "Measure",
+      "synonym": "Gauge",
+      "partOfSpeech": "Verb",
+      "coreMeaning": "To judge size, mood, or pressure carefully.",
+      "whyDifferent": "'Measure' reads exact rulers (`measure inches`). 'Gauge' senses mood, reaction, depth, or tire pressure cleanly (`gauge mood`).",
       "makeovers": [
         {
-          "situationTag": "PLACEHOLDER_tag_118_2_1",
-          "beforeSentence": "PLACEHOLDER_sentence_118_2_1 ___.",
-          "targetSlotWord": "PLACEHOLDER_base_118_2",
-          "swappedWord": "PLACEHOLDER_synonym_118_2",
+          "situationTag": "Crowd Vibe",
+          "beforeSentence": "Speakers glance at faces to ___ audience interest quickly.",
+          "targetSlotWord": "measure",
+          "swappedWord": "gauge",
           "isNaturalSwap": true,
-          "earVerdict": "PLACEHOLDER_naturalVerdict_118_2",
-          "spokenSentence": "PLACEHOLDER_spokenSentence_118_2_1"
+          "earVerdict": "Natural — reading social reaction or pressure dials takes 'gauge'.",
+          "spokenSentence": "Speakers glance at faces to gauge audience interest quickly."
         },
         {
-          "situationTag": "PLACEHOLDER_tag_118_2_2",
-          "beforeSentence": "PLACEHOLDER_sentence_118_2_2 ___.",
-          "targetSlotWord": "PLACEHOLDER_base_118_2",
-          "swappedWord": "PLACEHOLDER_synonym_118_2",
+          "situationTag": "Window Cloth",
+          "beforeSentence": "Use a steel tape to ___ exact curtain lengths.",
+          "targetSlotWord": "measure",
+          "swappedWord": "gauge",
           "isNaturalSwap": false,
-          "earVerdict": "PLACEHOLDER_awkwardVerdict_118_2",
-          "spokenSentence": "PLACEHOLDER_spokenSentence_118_2_2"
+          "earVerdict": "Doesn't fit — ruler measurements take 'measure', not rough 'gauge'.",
+          "spokenSentence": "Use a steel tape to measure exact curtain lengths."
         }
       ],
       "cousinWords": [
         {
-          "word": "PLACEHOLDER_cousin_118_2_1",
-          "ipa": "/placeholder/",
-          "toneTag": "Neutral",
-          "miniContext": "PLACEHOLDER_cousinCtx_118_2_1"
+          "word": "Estimate",
+          "ipa": "",
+          "toneTag": "Ruler",
+          "miniContext": "Tasting tiny spoons helps cooks estimate chili heat safely."
         },
         {
-          "word": "PLACEHOLDER_cousin_118_2_2",
-          "ipa": "/placeholder/",
-          "toneTag": "Strong",
-          "miniContext": "PLACEHOLDER_cousinCtx_118_2_2"
+          "word": "Assess",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "Speakers glance at faces to assess audience interest quickly."
         },
         {
-          "word": "PLACEHOLDER_cousin_118_2_3",
-          "ipa": "/placeholder/",
-          "toneTag": "Formal",
-          "miniContext": "PLACEHOLDER_cousinCtx_118_2_3"
+          "word": "Evaluate",
+          "ipa": "",
+          "toneTag": "Sense Reaction",
+          "miniContext": "Evaluate marks the strongest tone in ruler -> sense reaction."
         }
       ]
     },
     {
-      "id": "PLACEHOLDER_LEARN_L118_Q3",
+      "id": "VOC_SYNONYMSEARCH_L118_LEARN_Q3",
       "level": 118,
       "cefr": "B2",
       "difficulty": 3,
-      "pairTitle": "PLACEHOLDER_base_118_3 ↔ PLACEHOLDER_synonym_118_3",
-      "baseWord": "PLACEHOLDER_base_118_3",
-      "synonym": "PLACEHOLDER_synonym_118_3",
-      "partOfSpeech": "Adjective",
-      "coreMeaning": "PLACEHOLDER_coreMeaning_118_3",
-      "whyDifferent": "PLACEHOLDER_whyDifferent_118_3",
+      "pairTitle": "Guess ↔ Estimate",
+      "baseWord": "Guess",
+      "synonym": "Estimate",
+      "partOfSpeech": "Verb",
+      "coreMeaning": "To judge a rough figure thoughtfully.",
+      "whyDifferent": "'Guess' takes wild playful stabs (`guess birthdays`). 'Estimate' calculates realistic repair bills, crowd counts, or arrival windows thoughtfully.",
       "makeovers": [
         {
-          "situationTag": "PLACEHOLDER_tag_118_3_1",
-          "beforeSentence": "PLACEHOLDER_sentence_118_3_1 ___.",
-          "targetSlotWord": "PLACEHOLDER_base_118_3",
-          "swappedWord": "PLACEHOLDER_synonym_118_3",
+          "situationTag": "Roof Quote",
+          "beforeSentence": "Builders carefully ___ lumber costs before bidding jobs.",
+          "targetSlotWord": "guess",
+          "swappedWord": "estimate",
           "isNaturalSwap": true,
-          "earVerdict": "PLACEHOLDER_naturalVerdict_118_3",
-          "spokenSentence": "PLACEHOLDER_spokenSentence_118_3_1"
+          "earVerdict": "Natural — thoughtful budget calculations take 'estimate'.",
+          "spokenSentence": "Builders carefully estimate lumber costs before bidding jobs."
         },
         {
-          "situationTag": "PLACEHOLDER_tag_118_3_2",
-          "beforeSentence": "PLACEHOLDER_sentence_118_3_2 ___.",
-          "targetSlotWord": "PLACEHOLDER_base_118_3",
-          "swappedWord": "PLACEHOLDER_synonym_118_3",
+          "situationTag": "Secret Card",
+          "beforeSentence": "Kids love to ___ which hidden shell hides the marble.",
+          "targetSlotWord": "guess",
+          "swappedWord": "estimate",
           "isNaturalSwap": false,
-          "earVerdict": "PLACEHOLDER_awkwardVerdict_118_3",
-          "spokenSentence": "PLACEHOLDER_spokenSentence_118_3_2"
+          "earVerdict": "Doesn't fit — lucky children’s games take 'guess', never calculated 'estimate'.",
+          "spokenSentence": "Kids love to guess which hidden shell hides the marble."
         }
       ],
       "cousinWords": [
         {
-          "word": "PLACEHOLDER_cousin_118_3_1",
-          "ipa": "/placeholder/",
-          "toneTag": "Neutral",
-          "miniContext": "PLACEHOLDER_cousinCtx_118_3_1"
+          "word": "Calculate",
+          "ipa": "",
+          "toneTag": "Wild Guess",
+          "miniContext": "Maps calculate thirty-five minutes for crossing downtown bridges."
         },
         {
-          "word": "PLACEHOLDER_cousin_118_3_2",
-          "ipa": "/placeholder/",
-          "toneTag": "Strong",
-          "miniContext": "PLACEHOLDER_cousinCtx_118_3_2"
+          "word": "Project",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "Builders carefully project lumber costs before bidding jobs."
         },
         {
-          "word": "PLACEHOLDER_cousin_118_3_3",
-          "ipa": "/placeholder/",
-          "toneTag": "Formal",
-          "miniContext": "PLACEHOLDER_cousinCtx_118_3_3"
+          "word": "Appraise",
+          "ipa": "",
+          "toneTag": "Educated Number",
+          "miniContext": "Appraise marks the strongest tone in wild guess -> educated number."
         }
       ]
     },
     {
-      "id": "PLACEHOLDER_LEARN_L119_Q1",
+      "id": "VOC_SYNONYMSEARCH_L119_LEARN_Q1",
       "level": 119,
       "cefr": "B2",
       "difficulty": 3,
-      "pairTitle": "PLACEHOLDER_base_119_1 ↔ PLACEHOLDER_synonym_119_1",
-      "baseWord": "PLACEHOLDER_base_119_1",
-      "synonym": "PLACEHOLDER_synonym_119_1",
-      "partOfSpeech": "Adjective",
-      "coreMeaning": "PLACEHOLDER_coreMeaning_119_1",
-      "whyDifferent": "PLACEHOLDER_whyDifferent_119_1",
+      "pairTitle": "Split ↔ Divide",
+      "baseWord": "Split",
+      "synonym": "Divide",
+      "partOfSpeech": "Verb",
+      "coreMeaning": "To separate into organized sections or teams.",
+      "whyDifferent": "'Split' snaps wood (`split bills`, `split logs`). 'Divide' distributes math numbers, garden beds, or classrooms neatly.",
       "makeovers": [
         {
-          "situationTag": "PLACEHOLDER_tag_119_1_1",
-          "beforeSentence": "PLACEHOLDER_sentence_119_1_1 ___.",
-          "targetSlotWord": "PLACEHOLDER_base_119_1",
-          "swappedWord": "PLACEHOLDER_synonym_119_1",
+          "situationTag": "Class Groups",
+          "beforeSentence": "Teachers ___ thirty students evenly across five tables.",
+          "targetSlotWord": "split",
+          "swappedWord": "divide",
           "isNaturalSwap": true,
-          "earVerdict": "PLACEHOLDER_naturalVerdict_119_1",
-          "spokenSentence": "PLACEHOLDER_spokenSentence_119_1_1"
+          "earVerdict": "Natural — structured group sorting and arithmetic use 'divide'.",
+          "spokenSentence": "Teachers divide thirty students evenly across five tables."
         },
         {
-          "situationTag": "PLACEHOLDER_tag_119_1_2",
-          "beforeSentence": "PLACEHOLDER_sentence_119_1_2 ___.",
-          "targetSlotWord": "PLACEHOLDER_base_119_1",
-          "swappedWord": "PLACEHOLDER_synonym_119_1",
+          "situationTag": "Log Chop",
+          "beforeSentence": "Use a steel wedge carefully to ___ thick oak firewood.",
+          "targetSlotWord": "split",
+          "swappedWord": "divide",
           "isNaturalSwap": false,
-          "earVerdict": "PLACEHOLDER_awkwardVerdict_119_1",
-          "spokenSentence": "PLACEHOLDER_spokenSentence_119_1_2"
+          "earVerdict": "Doesn't fit — physical chopping uses 'split', never mathematical 'divide'.",
+          "spokenSentence": "Use a steel wedge carefully to split thick oak firewood."
         }
       ],
       "cousinWords": [
         {
-          "word": "PLACEHOLDER_cousin_119_1_1",
-          "ipa": "/placeholder/",
-          "toneTag": "Neutral",
-          "miniContext": "PLACEHOLDER_cousinCtx_119_1_1"
+          "word": "Separate",
+          "ipa": "",
+          "toneTag": "Snap Open",
+          "miniContext": "Clear hedges neatly separate the orchard from soccer fields."
         },
         {
-          "word": "PLACEHOLDER_cousin_119_1_2",
-          "ipa": "/placeholder/",
-          "toneTag": "Strong",
-          "miniContext": "PLACEHOLDER_cousinCtx_119_1_2"
+          "word": "Partition",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "Teachers partition thirty students evenly across five tables."
         },
         {
-          "word": "PLACEHOLDER_cousin_119_1_3",
-          "ipa": "/placeholder/",
-          "toneTag": "Formal",
-          "miniContext": "PLACEHOLDER_cousinCtx_119_1_3"
+          "word": "Distribute",
+          "ipa": "",
+          "toneTag": "Sort Evenly",
+          "miniContext": "Distribute marks the strongest tone in snap open -> sort evenly."
         }
       ]
     },
     {
-      "id": "PLACEHOLDER_LEARN_L119_Q2",
+      "id": "VOC_SYNONYMSEARCH_L119_LEARN_Q2",
       "level": 119,
       "cefr": "B2",
       "difficulty": 3,
-      "pairTitle": "PLACEHOLDER_base_119_2 ↔ PLACEHOLDER_synonym_119_2",
-      "baseWord": "PLACEHOLDER_base_119_2",
-      "synonym": "PLACEHOLDER_synonym_119_2",
-      "partOfSpeech": "Adjective",
-      "coreMeaning": "PLACEHOLDER_coreMeaning_119_2",
-      "whyDifferent": "PLACEHOLDER_whyDifferent_119_2",
+      "pairTitle": "Join ↔ Merge",
+      "baseWord": "Join",
+      "synonym": "Merge",
+      "partOfSpeech": "Verb",
+      "coreMeaning": "To combine two roads, lanes, firms, or drafts smoothly.",
+      "whyDifferent": "'Join' connects people (`join teams`). 'Merge' blends moving traffic lanes, spreadsheets, or banks into one continuous stream (`merge lanes`).",
       "makeovers": [
         {
-          "situationTag": "PLACEHOLDER_tag_119_2_1",
-          "beforeSentence": "PLACEHOLDER_sentence_119_2_1 ___.",
-          "targetSlotWord": "PLACEHOLDER_base_119_2",
-          "swappedWord": "PLACEHOLDER_synonym_119_2",
+          "situationTag": "Highway Ramp",
+          "beforeSentence": "Watch mirrors closely before you ___ into fast traffic.",
+          "targetSlotWord": "join",
+          "swappedWord": "merge",
           "isNaturalSwap": true,
-          "earVerdict": "PLACEHOLDER_naturalVerdict_119_2",
-          "spokenSentence": "PLACEHOLDER_spokenSentence_119_2_1"
+          "earVerdict": "Natural — combining flowing streams or firms uses 'merge'.",
+          "spokenSentence": "Watch mirrors closely before you merge into fast traffic."
         },
         {
-          "situationTag": "PLACEHOLDER_tag_119_2_2",
-          "beforeSentence": "PLACEHOLDER_sentence_119_2_2 ___.",
-          "targetSlotWord": "PLACEHOLDER_base_119_2",
-          "swappedWord": "PLACEHOLDER_synonym_119_2",
+          "situationTag": "Choir Club",
+          "beforeSentence": "Beginners may ___ evening choir rehearsals without auditions.",
+          "targetSlotWord": "join",
+          "swappedWord": "merge",
           "isNaturalSwap": false,
-          "earVerdict": "PLACEHOLDER_awkwardVerdict_119_2",
-          "spokenSentence": "PLACEHOLDER_spokenSentence_119_2_2"
+          "earVerdict": "Doesn't fit — becoming a member uses 'join', never traffic 'merge'.",
+          "spokenSentence": "Beginners may join evening choir rehearsals without auditions."
         }
       ],
       "cousinWords": [
         {
-          "word": "PLACEHOLDER_cousin_119_2_1",
-          "ipa": "/placeholder/",
-          "toneTag": "Neutral",
-          "miniContext": "PLACEHOLDER_cousinCtx_119_2_1"
+          "word": "Combine",
+          "ipa": "",
+          "toneTag": "Connect",
+          "miniContext": "Two regional bus networks will combine schedules next autumn."
         },
         {
-          "word": "PLACEHOLDER_cousin_119_2_2",
-          "ipa": "/placeholder/",
-          "toneTag": "Strong",
-          "miniContext": "PLACEHOLDER_cousinCtx_119_2_2"
+          "word": "Unite",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "Watch mirrors closely before you unite into fast traffic."
         },
         {
-          "word": "PLACEHOLDER_cousin_119_2_3",
-          "ipa": "/placeholder/",
-          "toneTag": "Formal",
-          "miniContext": "PLACEHOLDER_cousinCtx_119_2_3"
+          "word": "Fuse",
+          "ipa": "",
+          "toneTag": "Flow Into One",
+          "miniContext": "Fuse marks the strongest tone in connect -> flow into one."
         }
       ]
     },
     {
-      "id": "PLACEHOLDER_LEARN_L119_Q3",
+      "id": "VOC_SYNONYMSEARCH_L119_LEARN_Q3",
       "level": 119,
       "cefr": "B2",
       "difficulty": 3,
-      "pairTitle": "PLACEHOLDER_base_119_3 ↔ PLACEHOLDER_synonym_119_3",
-      "baseWord": "PLACEHOLDER_base_119_3",
-      "synonym": "PLACEHOLDER_synonym_119_3",
-      "partOfSpeech": "Adjective",
-      "coreMeaning": "PLACEHOLDER_coreMeaning_119_3",
-      "whyDifferent": "PLACEHOLDER_whyDifferent_119_3",
+      "pairTitle": "Divide ↔ Separate",
+      "baseWord": "Divide",
+      "synonym": "Separate",
+      "partOfSpeech": "Verb",
+      "coreMeaning": "To place physical distance or boundaries cleanly.",
+      "whyDifferent": "'Divide' shares parts mathematically (`divide pie`). 'Separate' pulls tangled laundry, fights, or egg whites cleanly apart (`separate whites`).",
       "makeovers": [
         {
-          "situationTag": "PLACEHOLDER_tag_119_3_1",
-          "beforeSentence": "PLACEHOLDER_sentence_119_3_1 ___.",
-          "targetSlotWord": "PLACEHOLDER_base_119_3",
-          "swappedWord": "PLACEHOLDER_synonym_119_3",
+          "situationTag": "Egg Bowl",
+          "beforeSentence": "Crack eggs carefully to ___ yellow yolks cleanly from whites.",
+          "targetSlotWord": "divide",
+          "swappedWord": "separate",
           "isNaturalSwap": true,
-          "earVerdict": "PLACEHOLDER_naturalVerdict_119_3",
-          "spokenSentence": "PLACEHOLDER_spokenSentence_119_3_1"
+          "earVerdict": "Natural — isolating different materials takes 'separate'.",
+          "spokenSentence": "Crack eggs carefully to separate yellow yolks cleanly from whites."
         },
         {
-          "situationTag": "PLACEHOLDER_tag_119_3_2",
-          "beforeSentence": "PLACEHOLDER_sentence_119_3_2 ___.",
-          "targetSlotWord": "PLACEHOLDER_base_119_3",
-          "swappedWord": "PLACEHOLDER_synonym_119_3",
+          "situationTag": "Prize Fund",
+          "beforeSentence": "Organizers will ___ prize money equally across three teams.",
+          "targetSlotWord": "divide",
+          "swappedWord": "separate",
           "isNaturalSwap": false,
-          "earVerdict": "PLACEHOLDER_awkwardVerdict_119_3",
-          "spokenSentence": "PLACEHOLDER_spokenSentence_119_3_2"
+          "earVerdict": "Doesn't fit — splitting math amounts evenly takes 'divide'.",
+          "spokenSentence": "Organizers will divide prize money equally across three teams."
         }
       ],
       "cousinWords": [
         {
-          "word": "PLACEHOLDER_cousin_119_3_1",
-          "ipa": "/placeholder/",
-          "toneTag": "Neutral",
-          "miniContext": "PLACEHOLDER_cousinCtx_119_3_1"
+          "word": "Isolate",
+          "ipa": "",
+          "toneTag": "Distribute",
+          "miniContext": "Glass walls isolate quiet study booths from noisy lobby desks."
         },
         {
-          "word": "PLACEHOLDER_cousin_119_3_2",
-          "ipa": "/placeholder/",
-          "toneTag": "Strong",
-          "miniContext": "PLACEHOLDER_cousinCtx_119_3_2"
+          "word": "Detatch",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "Crack eggs carefully to detatch yellow yolks cleanly from whites."
         },
         {
-          "word": "PLACEHOLDER_cousin_119_3_3",
-          "ipa": "/placeholder/",
-          "toneTag": "Formal",
-          "miniContext": "PLACEHOLDER_cousinCtx_119_3_3"
+          "word": "Sort",
+          "ipa": "",
+          "toneTag": "Pull Apart",
+          "miniContext": "Sort marks the strongest tone in distribute -> pull apart."
         }
       ]
     },
     {
-      "id": "PLACEHOLDER_LEARN_L120_Q1",
+      "id": "VOC_SYNONYMSEARCH_L120_LEARN_Q1",
       "level": 120,
       "cefr": "B2",
       "difficulty": 3,
-      "pairTitle": "PLACEHOLDER_base_120_1 ↔ PLACEHOLDER_synonym_120_1",
-      "baseWord": "PLACEHOLDER_base_120_1",
-      "synonym": "PLACEHOLDER_synonym_120_1",
-      "partOfSpeech": "Adjective",
-      "coreMeaning": "PLACEHOLDER_coreMeaning_120_1",
-      "whyDifferent": "PLACEHOLDER_whyDifferent_120_1",
+      "pairTitle": "Protect ↔ Preserve",
+      "baseWord": "Protect",
+      "synonym": "Preserve",
+      "partOfSpeech": "Verb",
+      "coreMeaning": "To keep beauty, jam, or monuments unchanged.",
+      "whyDifferent": "'Protect' stops theft/rain (`protect bikes`). 'Preserve' freezes food freshness OR saves old trees, dialects, and heritage for future decades (`preserve heritage`).",
       "makeovers": [
         {
-          "situationTag": "PLACEHOLDER_tag_120_1_1",
-          "beforeSentence": "PLACEHOLDER_sentence_120_1_1 ___.",
-          "targetSlotWord": "PLACEHOLDER_base_120_1",
-          "swappedWord": "PLACEHOLDER_synonym_120_1",
+          "situationTag": "Fruit Jam",
+          "beforeSentence": "Clean sealed jars ___ summer peach jam for cold months.",
+          "targetSlotWord": "protect",
+          "swappedWord": "preserve",
           "isNaturalSwap": true,
-          "earVerdict": "PLACEHOLDER_naturalVerdict_120_1",
-          "spokenSentence": "PLACEHOLDER_spokenSentence_120_1_1"
+          "earVerdict": "Natural — keeping long-term freshness or heritage uses 'preserve'.",
+          "spokenSentence": "Clean sealed jars preserve summer peach jam for cold months."
         },
         {
-          "situationTag": "PLACEHOLDER_tag_120_1_2",
-          "beforeSentence": "PLACEHOLDER_sentence_120_1_2 ___.",
-          "targetSlotWord": "PLACEHOLDER_base_120_1",
-          "swappedWord": "PLACEHOLDER_synonym_120_1",
+          "situationTag": "Rain Shield",
+          "beforeSentence": "Heavy tarps help ___ outdoor wood benches from storms.",
+          "targetSlotWord": "protect",
+          "swappedWord": "preserve",
           "isNaturalSwap": false,
-          "earVerdict": "PLACEHOLDER_awkwardVerdict_120_1",
-          "spokenSentence": "PLACEHOLDER_spokenSentence_120_1_2"
+          "earVerdict": "Doesn't fit — stopping rain damage uses 'protect', not long-term 'preserve'.",
+          "spokenSentence": "Heavy tarps help protect outdoor wood benches from storms."
         }
       ],
       "cousinWords": [
         {
-          "word": "PLACEHOLDER_cousin_120_1_1",
-          "ipa": "/placeholder/",
-          "toneTag": "Neutral",
-          "miniContext": "PLACEHOLDER_cousinCtx_120_1_1"
+          "word": "Conserve",
+          "ipa": "",
+          "toneTag": "Guard Now",
+          "miniContext": "Parks work tirelessly to conserve ancient cedar groves cleanly."
         },
         {
-          "word": "PLACEHOLDER_cousin_120_1_2",
-          "ipa": "/placeholder/",
-          "toneTag": "Strong",
-          "miniContext": "PLACEHOLDER_cousinCtx_120_1_2"
+          "word": "Safeguard",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "Clean sealed jars safeguard summer peach jam for cold months."
         },
         {
-          "word": "PLACEHOLDER_cousin_120_1_3",
-          "ipa": "/placeholder/",
-          "toneTag": "Formal",
-          "miniContext": "PLACEHOLDER_cousinCtx_120_1_3"
+          "word": "Sustain",
+          "ipa": "",
+          "toneTag": "Keep For Decades",
+          "miniContext": "Sustain marks the strongest tone in guard now -> keep for decades."
         }
       ]
     },
     {
-      "id": "PLACEHOLDER_LEARN_L120_Q2",
+      "id": "VOC_SYNONYMSEARCH_L120_LEARN_Q2",
       "level": 120,
       "cefr": "B2",
       "difficulty": 3,
-      "pairTitle": "PLACEHOLDER_base_120_2 ↔ PLACEHOLDER_synonym_120_2",
-      "baseWord": "PLACEHOLDER_base_120_2",
-      "synonym": "PLACEHOLDER_synonym_120_2",
-      "partOfSpeech": "Adjective",
-      "coreMeaning": "PLACEHOLDER_coreMeaning_120_2",
-      "whyDifferent": "PLACEHOLDER_whyDifferent_120_2",
+      "pairTitle": "Hide ↔ Mask",
+      "baseWord": "Hide",
+      "synonym": "Mask",
+      "partOfSpeech": "Verb",
+      "coreMeaning": "To cover a smell, flavor, or flaw under another.",
+      "whyDifferent": "'Hide' locks boxes away (`hide shoes`). 'Mask' covers bitter medicine tastes, garlic breath, or stress behind bright citrus or smiles (`mask bitterness`).",
       "makeovers": [
         {
-          "situationTag": "PLACEHOLDER_tag_120_2_1",
-          "beforeSentence": "PLACEHOLDER_sentence_120_2_1 ___.",
-          "targetSlotWord": "PLACEHOLDER_base_120_2",
-          "swappedWord": "PLACEHOLDER_synonym_120_2",
+          "situationTag": "Herb Trick",
+          "beforeSentence": "Fresh mint leaves help ___ bitter herbal tea taste.",
+          "targetSlotWord": "hide",
+          "swappedWord": "mask",
           "isNaturalSwap": true,
-          "earVerdict": "PLACEHOLDER_naturalVerdict_120_2",
-          "spokenSentence": "PLACEHOLDER_spokenSentence_120_2_1"
+          "earVerdict": "Natural — covering smells, sounds, or feelings uses 'mask'.",
+          "spokenSentence": "Fresh mint leaves help mask bitter herbal tea taste."
         },
         {
-          "situationTag": "PLACEHOLDER_tag_120_2_2",
-          "beforeSentence": "PLACEHOLDER_sentence_120_2_2 ___.",
-          "targetSlotWord": "PLACEHOLDER_base_120_2",
-          "swappedWord": "PLACEHOLDER_synonym_120_2",
+          "situationTag": "Spare Key",
+          "beforeSentence": "Never ___ spare door keys under obvious welcome mats!",
+          "targetSlotWord": "hide",
+          "swappedWord": "mask",
           "isNaturalSwap": false,
-          "earVerdict": "PLACEHOLDER_awkwardVerdict_120_2",
-          "spokenSentence": "PLACEHOLDER_spokenSentence_120_2_2"
+          "earVerdict": "Doesn't fit — placing physical keys takes 'hide', never sensory 'mask'.",
+          "spokenSentence": "Never hide spare door keys under obvious welcome mats!"
         }
       ],
       "cousinWords": [
         {
-          "word": "PLACEHOLDER_cousin_120_2_1",
-          "ipa": "/placeholder/",
-          "toneTag": "Neutral",
-          "miniContext": "PLACEHOLDER_cousinCtx_120_2_1"
+          "word": "Disguise",
+          "ipa": "",
+          "toneTag": "Tuck Away",
+          "miniContext": "Playful humor can often disguise deep nervousness onstage."
         },
         {
-          "word": "PLACEHOLDER_cousin_120_2_2",
-          "ipa": "/placeholder/",
-          "toneTag": "Strong",
-          "miniContext": "PLACEHOLDER_cousinCtx_120_2_2"
+          "word": "Cover",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "Fresh mint leaves help cover bitter herbal tea taste."
         },
         {
-          "word": "PLACEHOLDER_cousin_120_2_3",
-          "ipa": "/placeholder/",
-          "toneTag": "Formal",
-          "miniContext": "PLACEHOLDER_cousinCtx_120_2_3"
+          "word": "Camouflage",
+          "ipa": "",
+          "toneTag": "Layer Over",
+          "miniContext": "Camouflage marks the strongest tone in tuck away -> layer over."
         }
       ]
     },
     {
-      "id": "PLACEHOLDER_LEARN_L120_Q3",
+      "id": "VOC_SYNONYMSEARCH_L120_LEARN_Q3",
       "level": 120,
       "cefr": "B2",
       "difficulty": 3,
-      "pairTitle": "PLACEHOLDER_base_120_3 ↔ PLACEHOLDER_synonym_120_3",
-      "baseWord": "PLACEHOLDER_base_120_3",
-      "synonym": "PLACEHOLDER_synonym_120_3",
-      "partOfSpeech": "Adjective",
-      "coreMeaning": "PLACEHOLDER_coreMeaning_120_3",
-      "whyDifferent": "PLACEHOLDER_whyDifferent_120_3",
+      "pairTitle": "Explain ↔ Demonstrate",
+      "baseWord": "Explain",
+      "synonym": "Demonstrate",
+      "partOfSpeech": "Verb",
+      "coreMeaning": "To prove visually how something works step by step.",
+      "whyDifferent": "'Explain' talks through reasons (`explain homework`). 'Demonstrate' physically performs live experiments, stretches, or recipes in front of learners (`demonstrate CPR`).",
       "makeovers": [
         {
-          "situationTag": "PLACEHOLDER_tag_120_3_1",
-          "beforeSentence": "PLACEHOLDER_sentence_120_3_1 ___.",
-          "targetSlotWord": "PLACEHOLDER_base_120_3",
-          "swappedWord": "PLACEHOLDER_synonym_120_3",
+          "situationTag": "Cooking Demo",
+          "beforeSentence": "Chefs ___ kneading bread dough live for morning classes.",
+          "targetSlotWord": "explain",
+          "swappedWord": "demonstrate",
           "isNaturalSwap": true,
-          "earVerdict": "PLACEHOLDER_naturalVerdict_120_3",
-          "spokenSentence": "PLACEHOLDER_spokenSentence_120_3_1"
+          "earVerdict": "Natural — showing hands-on movement or proof uses 'demonstrate'.",
+          "spokenSentence": "Chefs demonstrate kneading bread dough live for morning classes."
         },
         {
-          "situationTag": "PLACEHOLDER_tag_120_3_2",
-          "beforeSentence": "PLACEHOLDER_sentence_120_3_2 ___.",
-          "targetSlotWord": "PLACEHOLDER_base_120_3",
-          "swappedWord": "PLACEHOLDER_synonym_120_3",
+          "situationTag": "Late Excuse",
+          "beforeSentence": "Please ___ calmly why the parcel arrived two days late.",
+          "targetSlotWord": "explain",
+          "swappedWord": "demonstrate",
           "isNaturalSwap": false,
-          "earVerdict": "PLACEHOLDER_awkwardVerdict_120_3",
-          "spokenSentence": "PLACEHOLDER_spokenSentence_120_3_2"
+          "earVerdict": "Doesn't fit — giving spoken reasons takes 'explain', never stage 'demonstrate'.",
+          "spokenSentence": "Please explain calmly why the parcel arrived two days late."
         }
       ],
       "cousinWords": [
         {
-          "word": "PLACEHOLDER_cousin_120_3_1",
-          "ipa": "/placeholder/",
-          "toneTag": "Neutral",
-          "miniContext": "PLACEHOLDER_cousinCtx_120_3_1"
+          "word": "Show",
+          "ipa": "",
+          "toneTag": "Talk Through",
+          "miniContext": "Simple pendulum tests show clear gravity timing smoothly."
         },
         {
-          "word": "PLACEHOLDER_cousin_120_3_2",
-          "ipa": "/placeholder/",
-          "toneTag": "Strong",
-          "miniContext": "PLACEHOLDER_cousinCtx_120_3_2"
+          "word": "Prove",
+          "ipa": "",
+          "toneTag": "Mid-Scale",
+          "miniContext": "Chefs prove kneading bread dough live for morning classes."
         },
         {
-          "word": "PLACEHOLDER_cousin_120_3_3",
-          "ipa": "/placeholder/",
-          "toneTag": "Formal",
-          "miniContext": "PLACEHOLDER_cousinCtx_120_3_3"
+          "word": "Illustrate",
+          "ipa": "",
+          "toneTag": "Show Live",
+          "miniContext": "Illustrate marks the strongest tone in talk through -> show live."
         }
       ]
     }

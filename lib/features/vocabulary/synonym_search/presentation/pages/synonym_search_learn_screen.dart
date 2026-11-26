@@ -7,15 +7,18 @@ import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/presentation/widgets/game_error_view.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:vowl/core/theme/app_spacing.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/vocabulary/synonym_search/data/datasources/synonym_phase_local_data_source.dart';
+import 'package:vowl/features/vocabulary/synonym_search/data/datasources/synonym_weak_words_store.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/controllers/synonym_learn_controller.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/controllers/synonym_tts_helper.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/models/synonym_phase_models.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/widgets/synonym_cousin_preview_strip.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/widgets/synonym_learn_spotlight_header.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/widgets/synonym_makeover_card.dart';
+import 'package:vowl/features/vocabulary/synonym_search/presentation/widgets/synonym_ui_tokens.dart';
 
 /// Learn Phase for Synonym Search.
 ///
@@ -49,6 +52,7 @@ class _SynonymSearchLearnScreenState extends State<SynonymSearchLearnScreen> {
   bool _isLoading = true;
   bool _hasStartedLoad = false;
   String? _errorMessage;
+  Map<String, int> _reviewLevelsById = const {};
 
   @override
   void initState() {
@@ -91,10 +95,31 @@ class _SynonymSearchLearnScreenState extends State<SynonymSearchLearnScreen> {
         bundle: widget.assetBundle ?? DefaultAssetBundle.of(context),
       );
       final items = await dataSource.loadLearnItems(widget.level);
+      final weakPairs = await SynonymWeakWordsStore.loadWeakPairs(
+        excludeLevel: widget.level,
+        limit: 1,
+      );
+      final combined = List<SynonymLearnItem>.from(items);
+      final reviewLevels = <String, int>{};
+      for (final weak in weakPairs) {
+        try {
+          final priorItems = await dataSource.loadLearnItems(weak.level);
+          final match = priorItems.where(
+            (it) =>
+                it.baseWord.toLowerCase() == weak.baseWord.toLowerCase() &&
+                it.synonym.toLowerCase() == weak.synonym.toLowerCase(),
+          );
+          if (match.isNotEmpty) {
+            combined.add(match.first);
+            reviewLevels[match.first.id] = weak.level;
+          }
+        } catch (_) {}
+      }
 
       if (!mounted) return;
-      _controller.setItems(items);
+      _controller.setItems(combined);
       setState(() {
+        _reviewLevelsById = reviewLevels;
         _isLoading = false;
       });
     } catch (_) {
@@ -108,11 +133,15 @@ class _SynonymSearchLearnScreenState extends State<SynonymSearchLearnScreen> {
 
   void _scrollToTop() {
     if (_scrollController.hasClients) {
-      _scrollController.animateTo(
-        0,
-        duration: const Duration(milliseconds: 250),
-        curve: Curves.easeOutCubic,
-      );
+      if (VowlMotion.shouldReduceMotion(context)) {
+        _scrollController.jumpTo(0);
+      } else {
+        _scrollController.animateTo(
+          0,
+          duration: const Duration(milliseconds: 250),
+          curve: Curves.easeOutCubic,
+        );
+      }
     }
   }
 
@@ -136,6 +165,18 @@ class _SynonymSearchLearnScreenState extends State<SynonymSearchLearnScreen> {
 
   void _handleToggleMakeover(int scenarioIndex) {
     _controller.toggleMakeoverSwap(scenarioIndex);
+    _maybeSpeakMakeover(scenarioIndex);
+  }
+
+  void _handlePredictMakeover(int scenarioIndex, bool predictedNatural) {
+    _controller.predictMakeover(
+      scenarioIndex,
+      predictedNatural: predictedNatural,
+    );
+    _maybeSpeakMakeover(scenarioIndex);
+  }
+
+  void _maybeSpeakMakeover(int scenarioIndex) {
     if (!_controller.autoSpeak.value) return;
     final item = _controller.currentItem;
     if (item == null || scenarioIndex >= item.makeovers.length) return;
@@ -167,6 +208,14 @@ class _SynonymSearchLearnScreenState extends State<SynonymSearchLearnScreen> {
 
   void _handleCompleteOrNext() {
     SynonymTtsHelper.stopAll();
+    final finishedItem = _controller.currentItem;
+    if (finishedItem != null &&
+        _reviewLevelsById.containsKey(finishedItem.id)) {
+      SynonymWeakWordsStore.markReviewed(
+        baseWord: finishedItem.baseWord,
+        synonym: finishedItem.synonym,
+      );
+    }
     if (_controller.nextPair()) {
       _scrollToTop();
       _speakCurrentIfEnabled();
@@ -248,6 +297,7 @@ class _SynonymSearchLearnScreenState extends State<SynonymSearchLearnScreen> {
       listenable: Listenable.merge([
         _controller.currentIndex,
         _controller.swappedByQuest,
+        _controller.predictionByQuest,
         _controller.selectedCousinByQuest,
         _controller.autoSpeak,
       ]),
@@ -256,6 +306,8 @@ class _SynonymSearchLearnScreenState extends State<SynonymSearchLearnScreen> {
         final total = _controller.items.length;
         final item = _controller.currentItem ?? _controller.items.first;
         final tested = _controller.testedCountForCurrent();
+        final canContinue = tested > 0;
+        final reviewLevel = _reviewLevelsById[item.id];
 
         return LearnPhaseScaffold(
           title: 'Word Examples (${idx + 1}/$total)',
@@ -263,8 +315,10 @@ class _SynonymSearchLearnScreenState extends State<SynonymSearchLearnScreen> {
           level: widget.level,
           previousLabel: 'Previous',
           onPrevious: idx > 0 ? _handlePrevious : null,
-          actionLabel: idx < total - 1 ? 'Next Pair' : 'Start Practice',
-          isActionEnabled: true,
+          actionLabel: !canContinue
+              ? 'Check 1 Example'
+              : (idx < total - 1 ? 'Next Pair' : 'Start Practice'),
+          isActionEnabled: canContinue,
           onComplete: _handleCompleteOrNext,
           child: SingleChildScrollView(
             controller: _scrollController,
@@ -278,6 +332,25 @@ class _SynonymSearchLearnScreenState extends State<SynonymSearchLearnScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                if (reviewLevel != null) ...[
+                  Container(
+                    padding: SynonymUiTokens.badgePadding,
+                    decoration: BoxDecoration(
+                      color: theme.primaryColor.withValues(alpha: 0.12),
+                      borderRadius: BorderRadius.circular(
+                        SynonymUiTokens.badgeRadius,
+                      ),
+                    ),
+                    child: Text(
+                      'Review from Level $reviewLevel',
+                      style: SynonymUiTokens.badgeLabel(
+                        color: theme.primaryColor,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 8.h),
+                ],
                 SynonymLearnSpotlightHeader(
                   item: item,
                   pairIndex: idx,
@@ -293,8 +366,10 @@ class _SynonymSearchLearnScreenState extends State<SynonymSearchLearnScreen> {
                     scenario: item.makeovers[i],
                     scenarioIndex: i,
                     isSwapped: _controller.isMakeoverSwapped(i),
+                    predictedNatural: _controller.predictionFor(i),
                     primaryColor: theme.primaryColor,
                     onToggleSwap: () => _handleToggleMakeover(i),
+                    onPredict: (natural) => _handlePredictMakeover(i, natural),
                   ),
                   if (i < item.makeovers.length - 1) SizedBox(height: 12.h),
                 ],

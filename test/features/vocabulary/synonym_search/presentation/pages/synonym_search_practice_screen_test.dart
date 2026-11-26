@@ -257,5 +257,40 @@ void main() {
         expect(find.text(exercises.first.hint), findsOneWidget);
       },
     );
+
+    testWidgets(
+      'Hint repairs an incorrect placement in slot 0 with the correct word',
+      (tester) async {
+        final exercises = SynonymPracticeQuest.fallbackExercises(1);
+        final wrongWordIndex = exercises.first.pairWords.indexWhere(
+          (w) =>
+              w.toLowerCase() !=
+              exercises.first.slots[0].correctWord.toLowerCase(),
+        );
+        await tester.pumpWidget(
+          wrapScreen(
+            SynonymSearchPracticeScreen(level: 1, initialExercises: exercises),
+          ),
+        );
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+
+        await tapWithScroll(
+          tester,
+          find.byKey(Key('contrast_bank_word_$wrongWordIndex')),
+        );
+        await tester.tap(find.byTooltip('Hint'));
+        await tester.pump(const Duration(milliseconds: 200));
+
+        expect(find.text(exercises.first.hint), findsOneWidget);
+        expect(
+          find.descendant(
+            of: find.byKey(const Key('contrast_slot_0')),
+            matching: find.text(exercises.first.slots[0].correctWord),
+          ),
+          findsOneWidget,
+        );
+      },
+    );
   });
 }

@@ -7,1592 +7,1592 @@
   "levels": "11-20",
   "quests": [
     {
-      "id": "PLACEHOLDER_PRAC_L11_Q1",
+      "id": "VOC_SYNONYMSEARCH_L11_PRAC_Q1",
       "level": 11,
       "cefr": "A2",
       "difficulty": 1,
-      "word": "PLACEHOLDER_base_11_1",
-      "targetSynonym": "PLACEHOLDER_synonym_11_1",
+      "word": "Clean",
+      "targetSynonym": "Tidy",
       "exercises": [
         {
           "exerciseType": "contrastSwap",
-          "prompt": "PLACEHOLDER_swapPrompt_11_1",
+          "prompt": "Place 'Clean' and 'Tidy' where each sounds natural.",
           "pairWords": [
-            "PLACEHOLDER_base_11_1",
-            "PLACEHOLDER_synonym_11_1"
+            "Clean",
+            "Tidy"
           ],
           "slots": [
             {
-              "contextTag": "PLACEHOLDER_ctx_11_1_1",
-              "sentenceWithBlank": "PLACEHOLDER_blank_11_1_1 ___.",
-              "correctWord": "PLACEHOLDER_base_11_1",
-              "feedback": "PLACEHOLDER_fb_11_1_1"
+              "contextTag": "Office Desk",
+              "sentenceWithBlank": "Please keep your desk ___ before leaving today.",
+              "correctWord": "Tidy",
+              "feedback": "'tidy' fits arranging papers and items neatly."
             },
             {
-              "contextTag": "PLACEHOLDER_ctx_11_1_2",
-              "sentenceWithBlank": "PLACEHOLDER_blank_11_1_2 ___.",
-              "correctWord": "PLACEHOLDER_synonym_11_1",
-              "feedback": "PLACEHOLDER_fb_11_1_2"
+              "contextTag": "Kitchen Sink",
+              "sentenceWithBlank": "Wash the plates with soap until they are ___ again.",
+              "correctWord": "Clean",
+              "feedback": "Dishes need dirt removed ('clean'), not neat shelves ('tidy')."
             }
           ],
-          "hint": "PLACEHOLDER_swapHint_11_1"
+          "hint": "'Clean' means free of dirt or stains. 'Tidy' means objects are neatly arranged in order."
         },
         {
           "exerciseType": "synonymLadder",
-          "prompt": "PLACEHOLDER_ladderPrompt_11_1",
-          "scaleAxis": "PLACEHOLDER_axis_11_1",
+          "prompt": "Order these related words from mildest to strongest along the scale.",
+          "scaleAxis": "Order & Care",
           "lowLabel": "Everyday",
-          "highLabel": "Formal",
+          "highLabel": "Strongest",
           "shuffledWords": [
-            "PLACEHOLDER_high_11_1",
-            "PLACEHOLDER_base_11_1",
-            "PLACEHOLDER_synonym_11_1"
+            "Spotless",
+            "Neat",
+            "Orderly"
           ],
           "orderedWords": [
-            "PLACEHOLDER_base_11_1",
-            "PLACEHOLDER_synonym_11_1",
-            "PLACEHOLDER_high_11_1"
+            "Neat",
+            "Orderly",
+            "Spotless"
           ],
-          "explanation": "PLACEHOLDER_ladderExp_11_1",
-          "hint": "PLACEHOLDER_ladderHint_11_1",
-          "spokenExample": "PLACEHOLDER_ladderEx_11_1"
+          "explanation": "Neat starts at Everyday, Orderly builds nuance, and Spotless reaches Strongest.",
+          "hint": "Start with the word closest to Everyday and end near Strongest.",
+          "spokenExample": "Stack the loose folders into a tidy pile before closing."
         }
       ]
     },
     {
-      "id": "PLACEHOLDER_PRAC_L11_Q2",
+      "id": "VOC_SYNONYMSEARCH_L11_PRAC_Q2",
       "level": 11,
       "cefr": "A2",
       "difficulty": 1,
-      "word": "PLACEHOLDER_base_11_2",
-      "targetSynonym": "PLACEHOLDER_synonym_11_2",
+      "word": "Home",
+      "targetSynonym": "House",
       "exercises": [
         {
           "exerciseType": "contrastSwap",
-          "prompt": "PLACEHOLDER_swapPrompt_11_2",
+          "prompt": "Place 'Home' and 'House' where each sounds natural.",
           "pairWords": [
-            "PLACEHOLDER_base_11_2",
-            "PLACEHOLDER_synonym_11_2"
+            "Home",
+            "House"
           ],
           "slots": [
             {
-              "contextTag": "PLACEHOLDER_ctx_11_2_1",
-              "sentenceWithBlank": "PLACEHOLDER_blank_11_2_1 ___.",
-              "correctWord": "PLACEHOLDER_base_11_2",
-              "feedback": "PLACEHOLDER_fb_11_2_1"
+              "contextTag": "Warm Welcome",
+              "sentenceWithBlank": "Come inside, sit down, and feel right at ___ here.",
+              "correctWord": "Home",
+              "feedback": "'at home' is a fixed idiom never used with 'house'."
             },
             {
-              "contextTag": "PLACEHOLDER_ctx_11_2_2",
-              "sentenceWithBlank": "PLACEHOLDER_blank_11_2_2 ___.",
-              "correctWord": "PLACEHOLDER_synonym_11_2",
-              "feedback": "PLACEHOLDER_fb_11_2_2"
+              "contextTag": "Real Estate",
+              "sentenceWithBlank": "They painted the brick ___ white before selling it.",
+              "correctWord": "House",
+              "feedback": "'house' refers to the physical structure."
             }
           ],
-          "hint": "PLACEHOLDER_swapHint_11_2"
+          "hint": "'Home' carries warmth and belonging. 'House' refers to the physical building."
         },
         {
           "exerciseType": "synonymLadder",
-          "prompt": "PLACEHOLDER_ladderPrompt_11_2",
-          "scaleAxis": "PLACEHOLDER_axis_11_2",
-          "lowLabel": "Everyday",
-          "highLabel": "Formal",
+          "prompt": "Order these related words from mildest to strongest along the scale.",
+          "scaleAxis": "Warmth -> Formality",
+          "lowLabel": "Warmth",
+          "highLabel": "Formality",
           "shuffledWords": [
-            "PLACEHOLDER_high_11_2",
-            "PLACEHOLDER_base_11_2",
-            "PLACEHOLDER_synonym_11_2"
+            "Cottage",
+            "Residence",
+            "Flat"
           ],
           "orderedWords": [
-            "PLACEHOLDER_base_11_2",
-            "PLACEHOLDER_synonym_11_2",
-            "PLACEHOLDER_high_11_2"
+            "Flat",
+            "Cottage",
+            "Residence"
           ],
-          "explanation": "PLACEHOLDER_ladderExp_11_2",
-          "hint": "PLACEHOLDER_ladderHint_11_2",
-          "spokenExample": "PLACEHOLDER_ladderEx_11_2"
+          "explanation": "Flat starts at Warmth, Cottage builds nuance, and Residence reaches Formality.",
+          "hint": "Start with the word closest to Warmth and end near Formality.",
+          "spokenExample": "We toured a quiet two-story house at the end of the lane."
         }
       ]
     },
     {
-      "id": "PLACEHOLDER_PRAC_L11_Q3",
+      "id": "VOC_SYNONYMSEARCH_L11_PRAC_Q3",
       "level": 11,
       "cefr": "A2",
       "difficulty": 1,
-      "word": "PLACEHOLDER_base_11_3",
-      "targetSynonym": "PLACEHOLDER_synonym_11_3",
+      "word": "Warm",
+      "targetSynonym": "Cozy",
       "exercises": [
         {
           "exerciseType": "contrastSwap",
-          "prompt": "PLACEHOLDER_swapPrompt_11_3",
+          "prompt": "Place 'Warm' and 'Cozy' where each sounds natural.",
           "pairWords": [
-            "PLACEHOLDER_base_11_3",
-            "PLACEHOLDER_synonym_11_3"
+            "Warm",
+            "Cozy"
           ],
           "slots": [
             {
-              "contextTag": "PLACEHOLDER_ctx_11_3_1",
-              "sentenceWithBlank": "PLACEHOLDER_blank_11_3_1 ___.",
-              "correctWord": "PLACEHOLDER_base_11_3",
-              "feedback": "PLACEHOLDER_fb_11_3_1"
+              "contextTag": "Cafe Corner",
+              "sentenceWithBlank": "We found a ___ booth near the fireplace in winter.",
+              "correctWord": "Cozy",
+              "feedback": "'cozy' captures a snug, inviting small space."
             },
             {
-              "contextTag": "PLACEHOLDER_ctx_11_3_2",
-              "sentenceWithBlank": "PLACEHOLDER_blank_11_3_2 ___.",
-              "correctWord": "PLACEHOLDER_synonym_11_3",
-              "feedback": "PLACEHOLDER_fb_11_3_2"
+              "contextTag": "Summer Weather",
+              "sentenceWithBlank": "It stays ___ enough in April to swim outside.",
+              "correctWord": "Warm",
+              "feedback": "Outdoor climate takes 'warm', never 'cozy'."
             }
           ],
-          "hint": "PLACEHOLDER_swapHint_11_3"
+          "hint": "'Warm' refers to temperature or friendliness. 'Cozy' emphasizes snug, relaxed comfort indoors."
         },
         {
           "exerciseType": "synonymLadder",
-          "prompt": "PLACEHOLDER_ladderPrompt_11_3",
-          "scaleAxis": "PLACEHOLDER_axis_11_3",
+          "prompt": "Order these related words from mildest to strongest along the scale.",
+          "scaleAxis": "Comfort Level",
           "lowLabel": "Everyday",
-          "highLabel": "Formal",
+          "highLabel": "Strongest",
           "shuffledWords": [
-            "PLACEHOLDER_high_11_3",
-            "PLACEHOLDER_base_11_3",
-            "PLACEHOLDER_synonym_11_3"
+            "Comfortable",
+            "Snug",
+            "Toasty"
           ],
           "orderedWords": [
-            "PLACEHOLDER_base_11_3",
-            "PLACEHOLDER_synonym_11_3",
-            "PLACEHOLDER_high_11_3"
+            "Snug",
+            "Toasty",
+            "Comfortable"
           ],
-          "explanation": "PLACEHOLDER_ladderExp_11_3",
-          "hint": "PLACEHOLDER_ladderHint_11_3",
-          "spokenExample": "PLACEHOLDER_ladderEx_11_3"
+          "explanation": "Snug starts at Everyday, Toasty builds nuance, and Comfortable reaches Strongest.",
+          "hint": "Start with the word closest to Everyday and end near Strongest.",
+          "spokenExample": "Rain tapped the glass while they read inside the cozy cabin."
         }
       ]
     },
     {
-      "id": "PLACEHOLDER_PRAC_L12_Q1",
+      "id": "VOC_SYNONYMSEARCH_L12_PRAC_Q1",
       "level": 12,
       "cefr": "A2",
       "difficulty": 1,
-      "word": "PLACEHOLDER_base_12_1",
-      "targetSynonym": "PLACEHOLDER_synonym_12_1",
+      "word": "Quiet",
+      "targetSynonym": "Silent",
       "exercises": [
         {
           "exerciseType": "contrastSwap",
-          "prompt": "PLACEHOLDER_swapPrompt_12_1",
+          "prompt": "Place 'Quiet' and 'Silent' where each sounds natural.",
           "pairWords": [
-            "PLACEHOLDER_base_12_1",
-            "PLACEHOLDER_synonym_12_1"
+            "Quiet",
+            "Silent"
           ],
           "slots": [
             {
-              "contextTag": "PLACEHOLDER_ctx_12_1_1",
-              "sentenceWithBlank": "PLACEHOLDER_blank_12_1_1 ___.",
-              "correctWord": "PLACEHOLDER_base_12_1",
-              "feedback": "PLACEHOLDER_fb_12_1_1"
+              "contextTag": "Gentle Voice",
+              "sentenceWithBlank": "She spoke in a ___ voice so the baby kept sleeping.",
+              "correctWord": "Quiet",
+              "feedback": "A soft speaking voice is 'quiet', not zero-sound 'silent'."
             },
             {
-              "contextTag": "PLACEHOLDER_ctx_12_1_2",
-              "sentenceWithBlank": "PLACEHOLDER_blank_12_1_2 ___.",
-              "correctWord": "PLACEHOLDER_synonym_12_1",
-              "feedback": "PLACEHOLDER_fb_12_1_2"
+              "contextTag": "Night Library",
+              "sentenceWithBlank": "The empty hallway turned totally ___ after midnight.",
+              "correctWord": "Silent",
+              "feedback": "'silent' marks a complete absence of sound."
             }
           ],
-          "hint": "PLACEHOLDER_swapHint_12_1"
+          "hint": "'Quiet' means low noise. 'Silent' means completely zero sound at all."
         },
         {
           "exerciseType": "synonymLadder",
-          "prompt": "PLACEHOLDER_ladderPrompt_12_1",
-          "scaleAxis": "PLACEHOLDER_axis_12_1",
+          "prompt": "Order these related words from mildest to strongest along the scale.",
+          "scaleAxis": "Sound Level",
           "lowLabel": "Everyday",
-          "highLabel": "Formal",
+          "highLabel": "Strongest",
           "shuffledWords": [
-            "PLACEHOLDER_high_12_1",
-            "PLACEHOLDER_base_12_1",
-            "PLACEHOLDER_synonym_12_1"
+            "Mute",
+            "Still",
+            "Hushed"
           ],
           "orderedWords": [
-            "PLACEHOLDER_base_12_1",
-            "PLACEHOLDER_synonym_12_1",
-            "PLACEHOLDER_high_12_1"
+            "Hushed",
+            "Mute",
+            "Still"
           ],
-          "explanation": "PLACEHOLDER_ladderExp_12_1",
-          "hint": "PLACEHOLDER_ladderHint_12_1",
-          "spokenExample": "PLACEHOLDER_ladderEx_12_1"
+          "explanation": "Hushed starts at Everyday, Mute builds nuance, and Still reaches Strongest.",
+          "hint": "Start with the word closest to Everyday and end near Strongest.",
+          "spokenExample": "The phone stayed completely silent once alerts were switched off."
         }
       ]
     },
     {
-      "id": "PLACEHOLDER_PRAC_L12_Q2",
+      "id": "VOC_SYNONYMSEARCH_L12_PRAC_Q2",
       "level": 12,
       "cefr": "A2",
       "difficulty": 1,
-      "word": "PLACEHOLDER_base_12_2",
-      "targetSynonym": "PLACEHOLDER_synonym_12_2",
+      "word": "Loud",
+      "targetSynonym": "Noisy",
       "exercises": [
         {
           "exerciseType": "contrastSwap",
-          "prompt": "PLACEHOLDER_swapPrompt_12_2",
+          "prompt": "Place 'Loud' and 'Noisy' where each sounds natural.",
           "pairWords": [
-            "PLACEHOLDER_base_12_2",
-            "PLACEHOLDER_synonym_12_2"
+            "Loud",
+            "Noisy"
           ],
           "slots": [
             {
-              "contextTag": "PLACEHOLDER_ctx_12_2_1",
-              "sentenceWithBlank": "PLACEHOLDER_blank_12_2_1 ___.",
-              "correctWord": "PLACEHOLDER_base_12_2",
-              "feedback": "PLACEHOLDER_fb_12_2_1"
+              "contextTag": "City Street",
+              "sentenceWithBlank": "The hotel faced a ___ intersection with constant traffic.",
+              "correctWord": "Noisy",
+              "feedback": "Places filled with overlapping sounds are 'noisy'."
             },
             {
-              "contextTag": "PLACEHOLDER_ctx_12_2_2",
-              "sentenceWithBlank": "PLACEHOLDER_blank_12_2_2 ___.",
-              "correctWord": "PLACEHOLDER_synonym_12_2",
-              "feedback": "PLACEHOLDER_fb_12_2_2"
+              "contextTag": "Alarm Clock",
+              "sentenceWithBlank": "The sudden ___ ring woke the whole apartment.",
+              "correctWord": "Loud",
+              "feedback": "A single sharp sound is 'loud', not 'noisy'."
             }
           ],
-          "hint": "PLACEHOLDER_swapHint_12_2"
+          "hint": "'Loud' describes volume of a single sound. 'Noisy' describes a busy place full of chaotic sounds."
         },
         {
           "exerciseType": "synonymLadder",
-          "prompt": "PLACEHOLDER_ladderPrompt_12_2",
-          "scaleAxis": "PLACEHOLDER_axis_12_2",
+          "prompt": "Order these related words from mildest to strongest along the scale.",
+          "scaleAxis": "Noise Intensity",
           "lowLabel": "Everyday",
-          "highLabel": "Formal",
+          "highLabel": "Strongest",
           "shuffledWords": [
-            "PLACEHOLDER_high_12_2",
-            "PLACEHOLDER_base_12_2",
-            "PLACEHOLDER_synonym_12_2"
+            "Thundering",
+            "Rowdy",
+            "Deafening"
           ],
           "orderedWords": [
-            "PLACEHOLDER_base_12_2",
-            "PLACEHOLDER_synonym_12_2",
-            "PLACEHOLDER_high_12_2"
+            "Rowdy",
+            "Deafening",
+            "Thundering"
           ],
-          "explanation": "PLACEHOLDER_ladderExp_12_2",
-          "hint": "PLACEHOLDER_ladderHint_12_2",
-          "spokenExample": "PLACEHOLDER_ladderEx_12_2"
+          "explanation": "Rowdy starts at Everyday, Deafening builds nuance, and Thundering reaches Strongest.",
+          "hint": "Start with the word closest to Everyday and end near Strongest.",
+          "spokenExample": "It was hard to study inside the noisy downtown cafe."
         }
       ]
     },
     {
-      "id": "PLACEHOLDER_PRAC_L12_Q3",
+      "id": "VOC_SYNONYMSEARCH_L12_PRAC_Q3",
       "level": 12,
       "cefr": "A2",
       "difficulty": 1,
-      "word": "PLACEHOLDER_base_12_3",
-      "targetSynonym": "PLACEHOLDER_synonym_12_3",
+      "word": "Calm",
+      "targetSynonym": "Peaceful",
       "exercises": [
         {
           "exerciseType": "contrastSwap",
-          "prompt": "PLACEHOLDER_swapPrompt_12_3",
+          "prompt": "Place 'Calm' and 'Peaceful' where each sounds natural.",
           "pairWords": [
-            "PLACEHOLDER_base_12_3",
-            "PLACEHOLDER_synonym_12_3"
+            "Calm",
+            "Peaceful"
           ],
           "slots": [
             {
-              "contextTag": "PLACEHOLDER_ctx_12_3_1",
-              "sentenceWithBlank": "PLACEHOLDER_blank_12_3_1 ___.",
-              "correctWord": "PLACEHOLDER_base_12_3",
-              "feedback": "PLACEHOLDER_fb_12_3_1"
+              "contextTag": "Emergency Drill",
+              "sentenceWithBlank": "Please stay ___ and walk toward the exit sign.",
+              "correctWord": "Calm",
+              "feedback": "People control panic by staying 'calm', not 'peaceful'."
             },
             {
-              "contextTag": "PLACEHOLDER_ctx_12_3_2",
-              "sentenceWithBlank": "PLACEHOLDER_blank_12_3_2 ___.",
-              "correctWord": "PLACEHOLDER_synonym_12_3",
-              "feedback": "PLACEHOLDER_fb_12_3_2"
+              "contextTag": "Mountain View",
+              "sentenceWithBlank": "A ___ lake reflected the morning pine trees.",
+              "correctWord": "Peaceful",
+              "feedback": "'peaceful' describes serene scenery."
             }
           ],
-          "hint": "PLACEHOLDER_swapHint_12_3"
+          "hint": "'Calm' describes steady nerves or smooth water. 'Peaceful' describes a serene scene or mood."
         },
         {
           "exerciseType": "synonymLadder",
-          "prompt": "PLACEHOLDER_ladderPrompt_12_3",
-          "scaleAxis": "PLACEHOLDER_axis_12_3",
+          "prompt": "Order these related words from mildest to strongest along the scale.",
+          "scaleAxis": "Stillness & Tone",
           "lowLabel": "Everyday",
-          "highLabel": "Formal",
+          "highLabel": "Strongest",
           "shuffledWords": [
-            "PLACEHOLDER_high_12_3",
-            "PLACEHOLDER_base_12_3",
-            "PLACEHOLDER_synonym_12_3"
+            "Tranquil",
+            "Relaxed",
+            "Serene"
           ],
           "orderedWords": [
-            "PLACEHOLDER_base_12_3",
-            "PLACEHOLDER_synonym_12_3",
-            "PLACEHOLDER_high_12_3"
+            "Serene",
+            "Tranquil",
+            "Relaxed"
           ],
-          "explanation": "PLACEHOLDER_ladderExp_12_3",
-          "hint": "PLACEHOLDER_ladderHint_12_3",
-          "spokenExample": "PLACEHOLDER_ladderEx_12_3"
+          "explanation": "Serene starts at Everyday, Tranquil builds nuance, and Relaxed reaches Strongest.",
+          "hint": "Start with the word closest to Everyday and end near Strongest.",
+          "spokenExample": "They spent a peaceful Sunday reading under the garden trees."
         }
       ]
     },
     {
-      "id": "PLACEHOLDER_PRAC_L13_Q1",
+      "id": "VOC_SYNONYMSEARCH_L13_PRAC_Q1",
       "level": 13,
       "cefr": "A2",
       "difficulty": 1,
-      "word": "PLACEHOLDER_base_13_1",
-      "targetSynonym": "PLACEHOLDER_synonym_13_1",
+      "word": "Help",
+      "targetSynonym": "Assist",
       "exercises": [
         {
           "exerciseType": "contrastSwap",
-          "prompt": "PLACEHOLDER_swapPrompt_13_1",
+          "prompt": "Place 'Help' and 'Assist' where each sounds natural.",
           "pairWords": [
-            "PLACEHOLDER_base_13_1",
-            "PLACEHOLDER_synonym_13_1"
+            "Help",
+            "Assist"
           ],
           "slots": [
             {
-              "contextTag": "PLACEHOLDER_ctx_13_1_1",
-              "sentenceWithBlank": "PLACEHOLDER_blank_13_1_1 ___.",
-              "correctWord": "PLACEHOLDER_base_13_1",
-              "feedback": "PLACEHOLDER_fb_13_1_1"
+              "contextTag": "Airport Gate",
+              "sentenceWithBlank": "Staff stepped forward to ___ passengers with wheelchairs.",
+              "correctWord": "Assist",
+              "feedback": "'assist' fits official staff helping customers."
             },
             {
-              "contextTag": "PLACEHOLDER_ctx_13_1_2",
-              "sentenceWithBlank": "PLACEHOLDER_blank_13_1_2 ___.",
-              "correctWord": "PLACEHOLDER_synonym_13_1",
-              "feedback": "PLACEHOLDER_fb_13_1_2"
+              "contextTag": "Moving Boxes",
+              "sentenceWithBlank": "Can you ___ me lift this table into the van?",
+              "correctWord": "Help",
+              "feedback": "'assist' usually needs 'assist someone with/in', not bare verb."
             }
           ],
-          "hint": "PLACEHOLDER_swapHint_13_1"
+          "hint": "'Help' fits everyday favors. 'Assist' sounds more formal, often in work or customer service."
         },
         {
           "exerciseType": "synonymLadder",
-          "prompt": "PLACEHOLDER_ladderPrompt_13_1",
-          "scaleAxis": "PLACEHOLDER_axis_13_1",
+          "prompt": "Order these related words from mildest to strongest along the scale.",
+          "scaleAxis": "Everyday -> Formal",
           "lowLabel": "Everyday",
           "highLabel": "Formal",
           "shuffledWords": [
-            "PLACEHOLDER_high_13_1",
-            "PLACEHOLDER_base_13_1",
-            "PLACEHOLDER_synonym_13_1"
+            "Guide",
+            "Aid",
+            "Support"
           ],
           "orderedWords": [
-            "PLACEHOLDER_base_13_1",
-            "PLACEHOLDER_synonym_13_1",
-            "PLACEHOLDER_high_13_1"
+            "Aid",
+            "Support",
+            "Guide"
           ],
-          "explanation": "PLACEHOLDER_ladderExp_13_1",
-          "hint": "PLACEHOLDER_ladderHint_13_1",
-          "spokenExample": "PLACEHOLDER_ladderEx_13_1"
+          "explanation": "Aid starts at Everyday, Support builds nuance, and Guide reaches Formal.",
+          "hint": "Start with the word closest to Everyday and end near Formal.",
+          "spokenExample": "Two paramedics arrived to assist the injured runner."
         }
       ]
     },
     {
-      "id": "PLACEHOLDER_PRAC_L13_Q2",
+      "id": "VOC_SYNONYMSEARCH_L13_PRAC_Q2",
       "level": 13,
       "cefr": "A2",
       "difficulty": 1,
-      "word": "PLACEHOLDER_base_13_2",
-      "targetSynonym": "PLACEHOLDER_synonym_13_2",
+      "word": "Choose",
+      "targetSynonym": "Select",
       "exercises": [
         {
           "exerciseType": "contrastSwap",
-          "prompt": "PLACEHOLDER_swapPrompt_13_2",
+          "prompt": "Place 'Choose' and 'Select' where each sounds natural.",
           "pairWords": [
-            "PLACEHOLDER_base_13_2",
-            "PLACEHOLDER_synonym_13_2"
+            "Choose",
+            "Select"
           ],
           "slots": [
             {
-              "contextTag": "PLACEHOLDER_ctx_13_2_1",
-              "sentenceWithBlank": "PLACEHOLDER_blank_13_2_1 ___.",
-              "correctWord": "PLACEHOLDER_base_13_2",
-              "feedback": "PLACEHOLDER_fb_13_2_1"
+              "contextTag": "Favorite Color",
+              "sentenceWithBlank": "Kids love to ___ bright crayons first.",
+              "correctWord": "Choose",
+              "feedback": "Casual personal preference sounds stiff with 'select'."
             },
             {
-              "contextTag": "PLACEHOLDER_ctx_13_2_2",
-              "sentenceWithBlank": "PLACEHOLDER_blank_13_2_2 ___.",
-              "correctWord": "PLACEHOLDER_synonym_13_2",
-              "feedback": "PLACEHOLDER_fb_13_2_2"
+              "contextTag": "Settings Menu",
+              "sentenceWithBlank": "Tap your country and ___ a language from the list.",
+              "correctWord": "Select",
+              "feedback": "Interfaces and formal lists use 'select'."
             }
           ],
-          "hint": "PLACEHOLDER_swapHint_13_2"
+          "hint": "'Choose' is personal and everyday. 'Select' is careful or formal, often for menus or lists."
         },
         {
           "exerciseType": "synonymLadder",
-          "prompt": "PLACEHOLDER_ladderPrompt_13_2",
-          "scaleAxis": "PLACEHOLDER_axis_13_2",
-          "lowLabel": "Everyday",
-          "highLabel": "Formal",
+          "prompt": "Order these related words from mildest to strongest along the scale.",
+          "scaleAxis": "Casual -> Official",
+          "lowLabel": "Casual",
+          "highLabel": "Official",
           "shuffledWords": [
-            "PLACEHOLDER_high_13_2",
-            "PLACEHOLDER_base_13_2",
-            "PLACEHOLDER_synonym_13_2"
+            "Opt",
+            "Elect",
+            "Pick"
           ],
           "orderedWords": [
-            "PLACEHOLDER_base_13_2",
-            "PLACEHOLDER_synonym_13_2",
-            "PLACEHOLDER_high_13_2"
+            "Pick",
+            "Opt",
+            "Elect"
           ],
-          "explanation": "PLACEHOLDER_ladderExp_13_2",
-          "hint": "PLACEHOLDER_ladderHint_13_2",
-          "spokenExample": "PLACEHOLDER_ladderEx_13_2"
+          "explanation": "Pick starts at Casual, Opt builds nuance, and Elect reaches Official.",
+          "hint": "Start with the word closest to Casual and end near Official.",
+          "spokenExample": "Customers may select one free side dish with lunch."
         }
       ]
     },
     {
-      "id": "PLACEHOLDER_PRAC_L13_Q3",
+      "id": "VOC_SYNONYMSEARCH_L13_PRAC_Q3",
       "level": 13,
       "cefr": "A2",
       "difficulty": 1,
-      "word": "PLACEHOLDER_base_13_3",
-      "targetSynonym": "PLACEHOLDER_synonym_13_3",
+      "word": "Show",
+      "targetSynonym": "Display",
       "exercises": [
         {
           "exerciseType": "contrastSwap",
-          "prompt": "PLACEHOLDER_swapPrompt_13_3",
+          "prompt": "Place 'Show' and 'Display' where each sounds natural.",
           "pairWords": [
-            "PLACEHOLDER_base_13_3",
-            "PLACEHOLDER_synonym_13_3"
+            "Show",
+            "Display"
           ],
           "slots": [
             {
-              "contextTag": "PLACEHOLDER_ctx_13_3_1",
-              "sentenceWithBlank": "PLACEHOLDER_blank_13_3_1 ___.",
-              "correctWord": "PLACEHOLDER_base_13_3",
-              "feedback": "PLACEHOLDER_fb_13_3_1"
+              "contextTag": "Museum Hall",
+              "sentenceWithBlank": "Glass cases ___ ancient coins from the harbor.",
+              "correctWord": "Display",
+              "feedback": "Exhibits and screens 'display' items."
             },
             {
-              "contextTag": "PLACEHOLDER_ctx_13_3_2",
-              "sentenceWithBlank": "PLACEHOLDER_blank_13_3_2 ___.",
-              "correctWord": "PLACEHOLDER_synonym_13_3",
-              "feedback": "PLACEHOLDER_fb_13_3_2"
+              "contextTag": "Way Home",
+              "sentenceWithBlank": "Can you ___ me the fastest path to the bus stop?",
+              "correctWord": "Show",
+              "feedback": "Guiding a friend personally uses 'show', not 'display'."
             }
           ],
-          "hint": "PLACEHOLDER_swapHint_13_3"
+          "hint": "'Show' means share with someone. 'Display' means arrange or present openly on a screen or shelf."
         },
         {
           "exerciseType": "synonymLadder",
-          "prompt": "PLACEHOLDER_ladderPrompt_13_3",
-          "scaleAxis": "PLACEHOLDER_axis_13_3",
-          "lowLabel": "Everyday",
-          "highLabel": "Formal",
+          "prompt": "Order these related words from mildest to strongest along the scale.",
+          "scaleAxis": "Casual -> Public",
+          "lowLabel": "Casual",
+          "highLabel": "Public",
           "shuffledWords": [
-            "PLACEHOLDER_high_13_3",
-            "PLACEHOLDER_base_13_3",
-            "PLACEHOLDER_synonym_13_3"
+            "Reveal",
+            "Present",
+            "Exhibit"
           ],
           "orderedWords": [
-            "PLACEHOLDER_base_13_3",
-            "PLACEHOLDER_synonym_13_3",
-            "PLACEHOLDER_high_13_3"
+            "Present",
+            "Exhibit",
+            "Reveal"
           ],
-          "explanation": "PLACEHOLDER_ladderExp_13_3",
-          "hint": "PLACEHOLDER_ladderHint_13_3",
-          "spokenExample": "PLACEHOLDER_ladderEx_13_3"
+          "explanation": "Present starts at Casual, Exhibit builds nuance, and Reveal reaches Public.",
+          "hint": "Start with the word closest to Casual and end near Public.",
+          "spokenExample": "The lobby screen will display updated train departure times."
         }
       ]
     },
     {
-      "id": "PLACEHOLDER_PRAC_L14_Q1",
+      "id": "VOC_SYNONYMSEARCH_L14_PRAC_Q1",
       "level": 14,
       "cefr": "A2",
       "difficulty": 1,
-      "word": "PLACEHOLDER_base_14_1",
-      "targetSynonym": "PLACEHOLDER_synonym_14_1",
+      "word": "Brave",
+      "targetSynonym": "Bold",
       "exercises": [
         {
           "exerciseType": "contrastSwap",
-          "prompt": "PLACEHOLDER_swapPrompt_14_1",
+          "prompt": "Place 'Brave' and 'Bold' where each sounds natural.",
           "pairWords": [
-            "PLACEHOLDER_base_14_1",
-            "PLACEHOLDER_synonym_14_1"
+            "Brave",
+            "Bold"
           ],
           "slots": [
             {
-              "contextTag": "PLACEHOLDER_ctx_14_1_1",
-              "sentenceWithBlank": "PLACEHOLDER_blank_14_1_1 ___.",
-              "correctWord": "PLACEHOLDER_base_14_1",
-              "feedback": "PLACEHOLDER_fb_14_1_1"
+              "contextTag": "Rescue Dog",
+              "sentenceWithBlank": "The ___ firefighter carried two cats from the smoke.",
+              "correctWord": "Brave",
+              "feedback": "Physical rescue courage calls for 'brave', not 'bold'."
             },
             {
-              "contextTag": "PLACEHOLDER_ctx_14_1_2",
-              "sentenceWithBlank": "PLACEHOLDER_blank_14_1_2 ___.",
-              "correctWord": "PLACEHOLDER_synonym_14_1",
-              "feedback": "PLACEHOLDER_fb_14_1_2"
+              "contextTag": "Design Move",
+              "sentenceWithBlank": "Painting the front door bright yellow was a ___ idea.",
+              "correctWord": "Bold",
+              "feedback": "'bold' fits daring style or business decisions."
             }
           ],
-          "hint": "PLACEHOLDER_swapHint_14_1"
+          "hint": "'Brave' praises facing real danger or fear. 'Bold' describes confident, daring choices or colors."
         },
         {
           "exerciseType": "synonymLadder",
-          "prompt": "PLACEHOLDER_ladderPrompt_14_1",
-          "scaleAxis": "PLACEHOLDER_axis_14_1",
+          "prompt": "Order these related words from mildest to strongest along the scale.",
+          "scaleAxis": "Confidence Level",
           "lowLabel": "Everyday",
-          "highLabel": "Formal",
+          "highLabel": "Strongest",
           "shuffledWords": [
-            "PLACEHOLDER_high_14_1",
-            "PLACEHOLDER_base_14_1",
-            "PLACEHOLDER_synonym_14_1"
+            "Courageous",
+            "Daring",
+            "Fearless"
           ],
           "orderedWords": [
-            "PLACEHOLDER_base_14_1",
-            "PLACEHOLDER_synonym_14_1",
-            "PLACEHOLDER_high_14_1"
+            "Fearless",
+            "Courageous",
+            "Daring"
           ],
-          "explanation": "PLACEHOLDER_ladderExp_14_1",
-          "hint": "PLACEHOLDER_ladderHint_14_1",
-          "spokenExample": "PLACEHOLDER_ladderEx_14_1"
+          "explanation": "Fearless starts at Everyday, Courageous builds nuance, and Daring reaches Strongest.",
+          "hint": "Start with the word closest to Everyday and end near Strongest.",
+          "spokenExample": "Opening a bakery with one oven was a bold step."
         }
       ]
     },
     {
-      "id": "PLACEHOLDER_PRAC_L14_Q2",
+      "id": "VOC_SYNONYMSEARCH_L14_PRAC_Q2",
       "level": 14,
       "cefr": "A2",
       "difficulty": 1,
-      "word": "PLACEHOLDER_base_14_2",
-      "targetSynonym": "PLACEHOLDER_synonym_14_2",
+      "word": "Rich",
+      "targetSynonym": "Wealthy",
       "exercises": [
         {
           "exerciseType": "contrastSwap",
-          "prompt": "PLACEHOLDER_swapPrompt_14_2",
+          "prompt": "Place 'Rich' and 'Wealthy' where each sounds natural.",
           "pairWords": [
-            "PLACEHOLDER_base_14_2",
-            "PLACEHOLDER_synonym_14_2"
+            "Rich",
+            "Wealthy"
           ],
           "slots": [
             {
-              "contextTag": "PLACEHOLDER_ctx_14_2_1",
-              "sentenceWithBlank": "PLACEHOLDER_blank_14_2_1 ___.",
-              "correctWord": "PLACEHOLDER_base_14_2",
-              "feedback": "PLACEHOLDER_fb_14_2_1"
+              "contextTag": "City History",
+              "sentenceWithBlank": "A ___ merchant funded the town library in 1920.",
+              "correctWord": "Wealthy",
+              "feedback": "'wealthy' describes affluent people and families."
             },
             {
-              "contextTag": "PLACEHOLDER_ctx_14_2_2",
-              "sentenceWithBlank": "PLACEHOLDER_blank_14_2_2 ___.",
-              "correctWord": "PLACEHOLDER_synonym_14_2",
-              "feedback": "PLACEHOLDER_fb_14_2_2"
+              "contextTag": "Dark Chocolate",
+              "sentenceWithBlank": "This cake has a ___ cocoa flavor.",
+              "correctWord": "Rich",
+              "feedback": "Food flavor and soil take 'rich', never 'wealthy'."
             }
           ],
-          "hint": "PLACEHOLDER_swapHint_14_2"
+          "hint": "'Rich' describes money, flavor, or soil. 'Wealthy' describes people or families with high financial status."
         },
         {
           "exerciseType": "synonymLadder",
-          "prompt": "PLACEHOLDER_ladderPrompt_14_2",
-          "scaleAxis": "PLACEHOLDER_axis_14_2",
+          "prompt": "Order these related words from mildest to strongest along the scale.",
+          "scaleAxis": "Everyday -> Formal",
           "lowLabel": "Everyday",
           "highLabel": "Formal",
           "shuffledWords": [
-            "PLACEHOLDER_high_14_2",
-            "PLACEHOLDER_base_14_2",
-            "PLACEHOLDER_synonym_14_2"
+            "Loaded",
+            "Affluent",
+            "Prosperous"
           ],
           "orderedWords": [
-            "PLACEHOLDER_base_14_2",
-            "PLACEHOLDER_synonym_14_2",
-            "PLACEHOLDER_high_14_2"
+            "Affluent",
+            "Prosperous",
+            "Loaded"
           ],
-          "explanation": "PLACEHOLDER_ladderExp_14_2",
-          "hint": "PLACEHOLDER_ladderHint_14_2",
-          "spokenExample": "PLACEHOLDER_ladderEx_14_2"
+          "explanation": "Affluent starts at Everyday, Prosperous builds nuance, and Loaded reaches Formal.",
+          "hint": "Start with the word closest to Everyday and end near Formal.",
+          "spokenExample": "Several wealthy donors paid for the new hospital wing."
         }
       ]
     },
     {
-      "id": "PLACEHOLDER_PRAC_L14_Q3",
+      "id": "VOC_SYNONYMSEARCH_L14_PRAC_Q3",
       "level": 14,
       "cefr": "A2",
       "difficulty": 1,
-      "word": "PLACEHOLDER_base_14_3",
-      "targetSynonym": "PLACEHOLDER_synonym_14_3",
+      "word": "Poor",
+      "targetSynonym": "Needy",
       "exercises": [
         {
           "exerciseType": "contrastSwap",
-          "prompt": "PLACEHOLDER_swapPrompt_14_3",
+          "prompt": "Place 'Poor' and 'Needy' where each sounds natural.",
           "pairWords": [
-            "PLACEHOLDER_base_14_3",
-            "PLACEHOLDER_synonym_14_3"
+            "Poor",
+            "Needy"
           ],
           "slots": [
             {
-              "contextTag": "PLACEHOLDER_ctx_14_3_1",
-              "sentenceWithBlank": "PLACEHOLDER_blank_14_3_1 ___.",
-              "correctWord": "PLACEHOLDER_base_14_3",
-              "feedback": "PLACEHOLDER_fb_14_3_1"
+              "contextTag": "Rainy Signal",
+              "sentenceWithBlank": "My phone has ___ reception inside the tunnel.",
+              "correctWord": "Poor",
+              "feedback": "Weak quality or signal always takes 'poor', never 'needy'."
             },
             {
-              "contextTag": "PLACEHOLDER_ctx_14_3_2",
-              "sentenceWithBlank": "PLACEHOLDER_blank_14_3_2 ___.",
-              "correctWord": "PLACEHOLDER_synonym_14_3",
-              "feedback": "PLACEHOLDER_fb_14_3_2"
+              "contextTag": "Food Drive",
+              "sentenceWithBlank": "Volunteers packed winter coats for ___ families nearby.",
+              "correctWord": "Needy",
+              "feedback": "Charity drives often serve 'needy' households."
             }
           ],
-          "hint": "PLACEHOLDER_swapHint_14_3"
+          "hint": "'Poor' describes low income, bad quality, or sympathy. 'Needy' describes people needing material aid or constant attention."
         },
         {
           "exerciseType": "synonymLadder",
-          "prompt": "PLACEHOLDER_ladderPrompt_14_3",
-          "scaleAxis": "PLACEHOLDER_axis_14_3",
+          "prompt": "Order these related words from mildest to strongest along the scale.",
+          "scaleAxis": "Tone & Empathy",
           "lowLabel": "Everyday",
-          "highLabel": "Formal",
+          "highLabel": "Strongest",
           "shuffledWords": [
-            "PLACEHOLDER_high_14_3",
-            "PLACEHOLDER_base_14_3",
-            "PLACEHOLDER_synonym_14_3"
+            "Struggling",
+            "Impoverished",
+            "Broke"
           ],
           "orderedWords": [
-            "PLACEHOLDER_base_14_3",
-            "PLACEHOLDER_synonym_14_3",
-            "PLACEHOLDER_high_14_3"
+            "Broke",
+            "Struggling",
+            "Impoverished"
           ],
-          "explanation": "PLACEHOLDER_ladderExp_14_3",
-          "hint": "PLACEHOLDER_ladderHint_14_3",
-          "spokenExample": "PLACEHOLDER_ladderEx_14_3"
+          "explanation": "Broke starts at Everyday, Struggling builds nuance, and Impoverished reaches Strongest.",
+          "hint": "Start with the word closest to Everyday and end near Strongest.",
+          "spokenExample": "The shelter provides hot soup to needy residents nightly."
         }
       ]
     },
     {
-      "id": "PLACEHOLDER_PRAC_L15_Q1",
+      "id": "VOC_SYNONYMSEARCH_L15_PRAC_Q1",
       "level": 15,
       "cefr": "A2",
       "difficulty": 1,
-      "word": "PLACEHOLDER_base_15_1",
-      "targetSynonym": "PLACEHOLDER_synonym_15_1",
+      "word": "Old",
+      "targetSynonym": "Ancient",
       "exercises": [
         {
           "exerciseType": "contrastSwap",
-          "prompt": "PLACEHOLDER_swapPrompt_15_1",
+          "prompt": "Place 'Old' and 'Ancient' where each sounds natural.",
           "pairWords": [
-            "PLACEHOLDER_base_15_1",
-            "PLACEHOLDER_synonym_15_1"
+            "Old",
+            "Ancient"
           ],
           "slots": [
             {
-              "contextTag": "PLACEHOLDER_ctx_15_1_1",
-              "sentenceWithBlank": "PLACEHOLDER_blank_15_1_1 ___.",
-              "correctWord": "PLACEHOLDER_base_15_1",
-              "feedback": "PLACEHOLDER_fb_15_1_1"
+              "contextTag": "Stone Ruins",
+              "sentenceWithBlank": "Archaeologists uncovered an ___ temple beneath the sand.",
+              "correctWord": "Ancient",
+              "feedback": "'ancient' fits ruins from thousands of years ago."
             },
             {
-              "contextTag": "PLACEHOLDER_ctx_15_1_2",
-              "sentenceWithBlank": "PLACEHOLDER_blank_15_1_2 ___.",
-              "correctWord": "PLACEHOLDER_synonym_15_1",
-              "feedback": "PLACEHOLDER_fb_15_1_2"
+              "contextTag": "Friend Reunion",
+              "sentenceWithBlank": "I met my ___ school friend for coffee yesterday.",
+              "correctWord": "Old",
+              "feedback": "Calling a friend 'ancient' sounds comic or exaggerated."
             }
           ],
-          "hint": "PLACEHOLDER_swapHint_15_1"
+          "hint": "'Old' covers years or decades. 'Ancient' means centuries or thousands of years old."
         },
         {
           "exerciseType": "synonymLadder",
-          "prompt": "PLACEHOLDER_ladderPrompt_15_1",
-          "scaleAxis": "PLACEHOLDER_axis_15_1",
+          "prompt": "Order these related words from mildest to strongest along the scale.",
+          "scaleAxis": "Time Depth",
           "lowLabel": "Everyday",
-          "highLabel": "Formal",
+          "highLabel": "Strongest",
           "shuffledWords": [
-            "PLACEHOLDER_high_15_1",
-            "PLACEHOLDER_base_15_1",
-            "PLACEHOLDER_synonym_15_1"
+            "Prehistoric",
+            "Aged",
+            "Historic"
           ],
           "orderedWords": [
-            "PLACEHOLDER_base_15_1",
-            "PLACEHOLDER_synonym_15_1",
-            "PLACEHOLDER_high_15_1"
+            "Aged",
+            "Historic",
+            "Prehistoric"
           ],
-          "explanation": "PLACEHOLDER_ladderExp_15_1",
-          "hint": "PLACEHOLDER_ladderHint_15_1",
-          "spokenExample": "PLACEHOLDER_ladderEx_15_1"
+          "explanation": "Aged starts at Everyday, Historic builds nuance, and Prehistoric reaches Strongest.",
+          "hint": "Start with the word closest to Everyday and end near Strongest.",
+          "spokenExample": "The museum protects an ancient bronze helmet from Greece."
         }
       ]
     },
     {
-      "id": "PLACEHOLDER_PRAC_L15_Q2",
+      "id": "VOC_SYNONYMSEARCH_L15_PRAC_Q2",
       "level": 15,
       "cefr": "A2",
       "difficulty": 1,
-      "word": "PLACEHOLDER_base_15_2",
-      "targetSynonym": "PLACEHOLDER_synonym_15_2",
+      "word": "New",
+      "targetSynonym": "Fresh",
       "exercises": [
         {
           "exerciseType": "contrastSwap",
-          "prompt": "PLACEHOLDER_swapPrompt_15_2",
+          "prompt": "Place 'New' and 'Fresh' where each sounds natural.",
           "pairWords": [
-            "PLACEHOLDER_base_15_2",
-            "PLACEHOLDER_synonym_15_2"
+            "New",
+            "Fresh"
           ],
           "slots": [
             {
-              "contextTag": "PLACEHOLDER_ctx_15_2_1",
-              "sentenceWithBlank": "PLACEHOLDER_blank_15_2_1 ___.",
-              "correctWord": "PLACEHOLDER_base_15_2",
-              "feedback": "PLACEHOLDER_fb_15_2_1"
+              "contextTag": "Car Model",
+              "sentenceWithBlank": "He bought a ___ electric bike last weekend.",
+              "correctWord": "New",
+              "feedback": "Manufactured vehicles take 'new', not 'fresh'."
             },
             {
-              "contextTag": "PLACEHOLDER_ctx_15_2_2",
-              "sentenceWithBlank": "PLACEHOLDER_blank_15_2_2 ___.",
-              "correctWord": "PLACEHOLDER_synonym_15_2",
-              "feedback": "PLACEHOLDER_fb_15_2_2"
+              "contextTag": "Bakery Morning",
+              "sentenceWithBlank": "Grab a ___ loaf of bread straight from the oven.",
+              "correctWord": "Fresh",
+              "feedback": "'fresh' highlights newly baked food and clean quality."
             }
           ],
-          "hint": "PLACEHOLDER_swapHint_15_2"
+          "hint": "'New' applies to objects and inventions. 'Fresh' highlights newly picked food, clean air, or a clean start."
         },
         {
           "exerciseType": "synonymLadder",
-          "prompt": "PLACEHOLDER_ladderPrompt_15_2",
-          "scaleAxis": "PLACEHOLDER_axis_15_2",
+          "prompt": "Order these related words from mildest to strongest along the scale.",
+          "scaleAxis": "Time & Quality",
           "lowLabel": "Everyday",
-          "highLabel": "Formal",
+          "highLabel": "Strongest",
           "shuffledWords": [
-            "PLACEHOLDER_high_15_2",
-            "PLACEHOLDER_base_15_2",
-            "PLACEHOLDER_synonym_15_2"
+            "Modern",
+            "Crisp",
+            "Recent"
           ],
           "orderedWords": [
-            "PLACEHOLDER_base_15_2",
-            "PLACEHOLDER_synonym_15_2",
-            "PLACEHOLDER_high_15_2"
+            "Recent",
+            "Modern",
+            "Crisp"
           ],
-          "explanation": "PLACEHOLDER_ladderExp_15_2",
-          "hint": "PLACEHOLDER_ladderHint_15_2",
-          "spokenExample": "PLACEHOLDER_ladderEx_15_2"
+          "explanation": "Recent starts at Everyday, Modern builds nuance, and Crisp reaches Strongest.",
+          "hint": "Start with the word closest to Everyday and end near Strongest.",
+          "spokenExample": "After walking outside, we breathed in the fresh mountain air."
         }
       ]
     },
     {
-      "id": "PLACEHOLDER_PRAC_L15_Q3",
+      "id": "VOC_SYNONYMSEARCH_L15_PRAC_Q3",
       "level": 15,
       "cefr": "A2",
       "difficulty": 1,
-      "word": "PLACEHOLDER_base_15_3",
-      "targetSynonym": "PLACEHOLDER_synonym_15_3",
+      "word": "True",
+      "targetSynonym": "Real",
       "exercises": [
         {
           "exerciseType": "contrastSwap",
-          "prompt": "PLACEHOLDER_swapPrompt_15_3",
+          "prompt": "Place 'True' and 'Real' where each sounds natural.",
           "pairWords": [
-            "PLACEHOLDER_base_15_3",
-            "PLACEHOLDER_synonym_15_3"
+            "True",
+            "Real"
           ],
           "slots": [
             {
-              "contextTag": "PLACEHOLDER_ctx_15_3_1",
-              "sentenceWithBlank": "PLACEHOLDER_blank_15_3_1 ___.",
-              "correctWord": "PLACEHOLDER_base_15_3",
-              "feedback": "PLACEHOLDER_fb_15_3_1"
+              "contextTag": "Leather Bag",
+              "sentenceWithBlank": "Check the label to ensure the jacket is ___ wool.",
+              "correctWord": "Real",
+              "feedback": "Physical authenticity uses 'real', not 'true'."
             },
             {
-              "contextTag": "PLACEHOLDER_ctx_15_3_2",
-              "sentenceWithBlank": "PLACEHOLDER_blank_15_3_2 ___.",
-              "correctWord": "PLACEHOLDER_synonym_15_3",
-              "feedback": "PLACEHOLDER_fb_15_3_2"
+              "contextTag": "Story Check",
+              "sentenceWithBlank": "Everything in her witness report turned out to be ___.",
+              "correctWord": "True",
+              "feedback": "Factual accuracy uses 'true'."
             }
           ],
-          "hint": "PLACEHOLDER_swapHint_15_3"
+          "hint": "'True' matches facts and loyalty. 'Real' means genuine, physical, and not imitation."
         },
         {
           "exerciseType": "synonymLadder",
-          "prompt": "PLACEHOLDER_ladderPrompt_15_3",
-          "scaleAxis": "PLACEHOLDER_axis_15_3",
+          "prompt": "Order these related words from mildest to strongest along the scale.",
+          "scaleAxis": "Authenticity",
           "lowLabel": "Everyday",
-          "highLabel": "Formal",
+          "highLabel": "Strongest",
           "shuffledWords": [
-            "PLACEHOLDER_high_15_3",
-            "PLACEHOLDER_base_15_3",
-            "PLACEHOLDER_synonym_15_3"
+            "Actual",
+            "Genuine",
+            "Authentic"
           ],
           "orderedWords": [
-            "PLACEHOLDER_base_15_3",
-            "PLACEHOLDER_synonym_15_3",
-            "PLACEHOLDER_high_15_3"
+            "Genuine",
+            "Authentic",
+            "Actual"
           ],
-          "explanation": "PLACEHOLDER_ladderExp_15_3",
-          "hint": "PLACEHOLDER_ladderHint_15_3",
-          "spokenExample": "PLACEHOLDER_ladderEx_15_3"
+          "explanation": "Genuine starts at Everyday, Authentic builds nuance, and Actual reaches Strongest.",
+          "hint": "Start with the word closest to Everyday and end near Strongest.",
+          "spokenExample": "She prefers real vanilla beans rather than artificial drops."
         }
       ]
     },
     {
-      "id": "PLACEHOLDER_PRAC_L16_Q1",
+      "id": "VOC_SYNONYMSEARCH_L16_PRAC_Q1",
       "level": 16,
       "cefr": "A2",
       "difficulty": 1,
-      "word": "PLACEHOLDER_base_16_1",
-      "targetSynonym": "PLACEHOLDER_synonym_16_1",
+      "word": "Cold",
+      "targetSynonym": "Chilly",
       "exercises": [
         {
           "exerciseType": "contrastSwap",
-          "prompt": "PLACEHOLDER_swapPrompt_16_1",
+          "prompt": "Place 'Cold' and 'Chilly' where each sounds natural.",
           "pairWords": [
-            "PLACEHOLDER_base_16_1",
-            "PLACEHOLDER_synonym_16_1"
+            "Cold",
+            "Chilly"
           ],
           "slots": [
             {
-              "contextTag": "PLACEHOLDER_ctx_16_1_1",
-              "sentenceWithBlank": "PLACEHOLDER_blank_16_1_1 ___.",
-              "correctWord": "PLACEHOLDER_base_16_1",
-              "feedback": "PLACEHOLDER_fb_16_1_1"
+              "contextTag": "Ice Cream",
+              "sentenceWithBlank": "Serve the mango sorbet straight from the freezer while ___.",
+              "correctWord": "Cold",
+              "feedback": "Frozen desserts are 'cold' or freezing, not 'chilly'."
             },
             {
-              "contextTag": "PLACEHOLDER_ctx_16_1_2",
-              "sentenceWithBlank": "PLACEHOLDER_blank_16_1_2 ___.",
-              "correctWord": "PLACEHOLDER_synonym_16_1",
-              "feedback": "PLACEHOLDER_fb_16_1_2"
+              "contextTag": "Autumn Walk",
+              "sentenceWithBlank": "Bring a sweater because it gets ___ after sunset.",
+              "correctWord": "Chilly",
+              "feedback": "'chilly' fits crisp evening air."
             }
           ],
-          "hint": "PLACEHOLDER_swapHint_16_1"
+          "hint": "'Cold' covers freezing to mild chill. 'Chilly' means noticeably cool enough for a light jacket."
         },
         {
           "exerciseType": "synonymLadder",
-          "prompt": "PLACEHOLDER_ladderPrompt_16_1",
-          "scaleAxis": "PLACEHOLDER_axis_16_1",
+          "prompt": "Order these related words from mildest to strongest along the scale.",
+          "scaleAxis": "Cold Intensity",
           "lowLabel": "Everyday",
-          "highLabel": "Formal",
+          "highLabel": "Strongest",
           "shuffledWords": [
-            "PLACEHOLDER_high_16_1",
-            "PLACEHOLDER_base_16_1",
-            "PLACEHOLDER_synonym_16_1"
+            "Frosty",
+            "Freezing",
+            "Cool"
           ],
           "orderedWords": [
-            "PLACEHOLDER_base_16_1",
-            "PLACEHOLDER_synonym_16_1",
-            "PLACEHOLDER_high_16_1"
+            "Cool",
+            "Frosty",
+            "Freezing"
           ],
-          "explanation": "PLACEHOLDER_ladderExp_16_1",
-          "hint": "PLACEHOLDER_ladderHint_16_1",
-          "spokenExample": "PLACEHOLDER_ladderEx_16_1"
+          "explanation": "Cool starts at Everyday, Frosty builds nuance, and Freezing reaches Strongest.",
+          "hint": "Start with the word closest to Everyday and end near Strongest.",
+          "spokenExample": "A chilly breeze blew across the soccer field in October."
         }
       ]
     },
     {
-      "id": "PLACEHOLDER_PRAC_L16_Q2",
+      "id": "VOC_SYNONYMSEARCH_L16_PRAC_Q2",
       "level": 16,
       "cefr": "A2",
       "difficulty": 1,
-      "word": "PLACEHOLDER_base_16_2",
-      "targetSynonym": "PLACEHOLDER_synonym_16_2",
+      "word": "Hot",
+      "targetSynonym": "Warm",
       "exercises": [
         {
           "exerciseType": "contrastSwap",
-          "prompt": "PLACEHOLDER_swapPrompt_16_2",
+          "prompt": "Place 'Hot' and 'Warm' where each sounds natural.",
           "pairWords": [
-            "PLACEHOLDER_base_16_2",
-            "PLACEHOLDER_synonym_16_2"
+            "Hot",
+            "Warm"
           ],
           "slots": [
             {
-              "contextTag": "PLACEHOLDER_ctx_16_2_1",
-              "sentenceWithBlank": "PLACEHOLDER_blank_16_2_1 ___.",
-              "correctWord": "PLACEHOLDER_base_16_2",
-              "feedback": "PLACEHOLDER_fb_16_2_1"
+              "contextTag": "Tea Mug",
+              "sentenceWithBlank": "Sip the soup slowly while it is ___ and soothing.",
+              "correctWord": "Warm",
+              "feedback": "'warm' suggests comfortable, gentle heat."
             },
             {
-              "contextTag": "PLACEHOLDER_ctx_16_2_2",
-              "sentenceWithBlank": "PLACEHOLDER_blank_16_2_2 ___.",
-              "correctWord": "PLACEHOLDER_synonym_16_2",
-              "feedback": "PLACEHOLDER_fb_16_2_2"
+              "contextTag": "Stove Warning",
+              "sentenceWithBlank": "Do not touch the ___ frying pan with bare hands!",
+              "correctWord": "Hot",
+              "feedback": "Dangerous high heat requires 'hot', not 'warm'."
             }
           ],
-          "hint": "PLACEHOLDER_swapHint_16_2"
+          "hint": "'Hot' can mean burning or spicy. 'Warm' means comfortably heated or welcoming."
         },
         {
           "exerciseType": "synonymLadder",
-          "prompt": "PLACEHOLDER_ladderPrompt_16_2",
-          "scaleAxis": "PLACEHOLDER_axis_16_2",
+          "prompt": "Order these related words from mildest to strongest along the scale.",
+          "scaleAxis": "Heat Scale",
           "lowLabel": "Everyday",
-          "highLabel": "Formal",
+          "highLabel": "Strongest",
           "shuffledWords": [
-            "PLACEHOLDER_high_16_2",
-            "PLACEHOLDER_base_16_2",
-            "PLACEHOLDER_synonym_16_2"
+            "Boiling",
+            "Mild",
+            "Toasty"
           ],
           "orderedWords": [
-            "PLACEHOLDER_base_16_2",
-            "PLACEHOLDER_synonym_16_2",
-            "PLACEHOLDER_high_16_2"
+            "Mild",
+            "Toasty",
+            "Boiling"
           ],
-          "explanation": "PLACEHOLDER_ladderExp_16_2",
-          "hint": "PLACEHOLDER_ladderHint_16_2",
-          "spokenExample": "PLACEHOLDER_ladderEx_16_2"
+          "explanation": "Mild starts at Everyday, Toasty builds nuance, and Boiling reaches Strongest.",
+          "hint": "Start with the word closest to Everyday and end near Strongest.",
+          "spokenExample": "Visitors received a warm welcome with tea and blankets."
         }
       ]
     },
     {
-      "id": "PLACEHOLDER_PRAC_L16_Q3",
+      "id": "VOC_SYNONYMSEARCH_L16_PRAC_Q3",
       "level": 16,
       "cefr": "A2",
       "difficulty": 1,
-      "word": "PLACEHOLDER_base_16_3",
-      "targetSynonym": "PLACEHOLDER_synonym_16_3",
+      "word": "Hard",
+      "targetSynonym": "Difficult",
       "exercises": [
         {
           "exerciseType": "contrastSwap",
-          "prompt": "PLACEHOLDER_swapPrompt_16_3",
+          "prompt": "Place 'Hard' and 'Difficult' where each sounds natural.",
           "pairWords": [
-            "PLACEHOLDER_base_16_3",
-            "PLACEHOLDER_synonym_16_3"
+            "Hard",
+            "Difficult"
           ],
           "slots": [
             {
-              "contextTag": "PLACEHOLDER_ctx_16_3_1",
-              "sentenceWithBlank": "PLACEHOLDER_blank_16_3_1 ___.",
-              "correctWord": "PLACEHOLDER_base_16_3",
-              "feedback": "PLACEHOLDER_fb_16_3_1"
+              "contextTag": "Bread Crust",
+              "sentenceWithBlank": "Frozen butter is too ___ to spread smoothly.",
+              "correctWord": "Hard",
+              "feedback": "Physical solidity requires 'hard', never 'difficult'."
             },
             {
-              "contextTag": "PLACEHOLDER_ctx_16_3_2",
-              "sentenceWithBlank": "PLACEHOLDER_blank_16_3_2 ___.",
-              "correctWord": "PLACEHOLDER_synonym_16_3",
-              "feedback": "PLACEHOLDER_fb_16_3_2"
+              "contextTag": "Math Exam",
+              "sentenceWithBlank": "The final puzzle was too ___ to solve in two minutes.",
+              "correctWord": "Difficult",
+              "feedback": "'difficult' fits complex tasks and problems."
             }
           ],
-          "hint": "PLACEHOLDER_swapHint_16_3"
+          "hint": "'Hard' covers physical firmness and tough tasks. 'Difficult' focuses on mental challenge or tricky situations."
         },
         {
           "exerciseType": "synonymLadder",
-          "prompt": "PLACEHOLDER_ladderPrompt_16_3",
-          "scaleAxis": "PLACEHOLDER_axis_16_3",
+          "prompt": "Order these related words from mildest to strongest along the scale.",
+          "scaleAxis": "Effort Level",
           "lowLabel": "Everyday",
-          "highLabel": "Formal",
+          "highLabel": "Strongest",
           "shuffledWords": [
-            "PLACEHOLDER_high_16_3",
-            "PLACEHOLDER_base_16_3",
-            "PLACEHOLDER_synonym_16_3"
+            "Tough",
+            "Challenging",
+            "Tricky"
           ],
           "orderedWords": [
-            "PLACEHOLDER_base_16_3",
-            "PLACEHOLDER_synonym_16_3",
-            "PLACEHOLDER_high_16_3"
+            "Tricky",
+            "Tough",
+            "Challenging"
           ],
-          "explanation": "PLACEHOLDER_ladderExp_16_3",
-          "hint": "PLACEHOLDER_ladderHint_16_3",
-          "spokenExample": "PLACEHOLDER_ladderEx_16_3"
+          "explanation": "Tricky starts at Everyday, Tough builds nuance, and Challenging reaches Strongest.",
+          "hint": "Start with the word closest to Everyday and end near Strongest.",
+          "spokenExample": "Learning proper violin posture can feel difficult at first."
         }
       ]
     },
     {
-      "id": "PLACEHOLDER_PRAC_L17_Q1",
+      "id": "VOC_SYNONYMSEARCH_L17_PRAC_Q1",
       "level": 17,
       "cefr": "A2",
       "difficulty": 1,
-      "word": "PLACEHOLDER_base_17_1",
-      "targetSynonym": "PLACEHOLDER_synonym_17_1",
+      "word": "Walk",
+      "targetSynonym": "Stroll",
       "exercises": [
         {
           "exerciseType": "contrastSwap",
-          "prompt": "PLACEHOLDER_swapPrompt_17_1",
+          "prompt": "Place 'Walk' and 'Stroll' where each sounds natural.",
           "pairWords": [
-            "PLACEHOLDER_base_17_1",
-            "PLACEHOLDER_synonym_17_1"
+            "Walk",
+            "Stroll"
           ],
           "slots": [
             {
-              "contextTag": "PLACEHOLDER_ctx_17_1_1",
-              "sentenceWithBlank": "PLACEHOLDER_blank_17_1_1 ___.",
-              "correctWord": "PLACEHOLDER_base_17_1",
-              "feedback": "PLACEHOLDER_fb_17_1_1"
+              "contextTag": "Sunday Park",
+              "sentenceWithBlank": "Couples love to ___ along the river path at dusk.",
+              "correctWord": "Stroll",
+              "feedback": "Relaxed leisure walking calls for 'stroll'."
             },
             {
-              "contextTag": "PLACEHOLDER_ctx_17_1_2",
-              "sentenceWithBlank": "PLACEHOLDER_blank_17_1_2 ___.",
-              "correctWord": "PLACEHOLDER_synonym_17_1",
-              "feedback": "PLACEHOLDER_fb_17_1_2"
+              "contextTag": "Morning Hurry",
+              "sentenceWithBlank": "We have to ___ fast or we will miss the ferry.",
+              "correctWord": "Walk",
+              "feedback": "Rushing fast contradicts 'stroll'."
             }
           ],
-          "hint": "PLACEHOLDER_swapHint_17_1"
+          "hint": "'Walk' covers any pace. 'Stroll' means walking slowly for pleasure without hurry."
         },
         {
           "exerciseType": "synonymLadder",
-          "prompt": "PLACEHOLDER_ladderPrompt_17_1",
-          "scaleAxis": "PLACEHOLDER_axis_17_1",
+          "prompt": "Order these related words from mildest to strongest along the scale.",
+          "scaleAxis": "Speed & Mood",
           "lowLabel": "Everyday",
-          "highLabel": "Formal",
+          "highLabel": "Strongest",
           "shuffledWords": [
-            "PLACEHOLDER_high_17_1",
-            "PLACEHOLDER_base_17_1",
-            "PLACEHOLDER_synonym_17_1"
+            "Stride",
+            "Wander",
+            "March"
           ],
           "orderedWords": [
-            "PLACEHOLDER_base_17_1",
-            "PLACEHOLDER_synonym_17_1",
-            "PLACEHOLDER_high_17_1"
+            "Wander",
+            "March",
+            "Stride"
           ],
-          "explanation": "PLACEHOLDER_ladderExp_17_1",
-          "hint": "PLACEHOLDER_ladderHint_17_1",
-          "spokenExample": "PLACEHOLDER_ladderEx_17_1"
+          "explanation": "Wander starts at Everyday, March builds nuance, and Stride reaches Strongest.",
+          "hint": "Start with the word closest to Everyday and end near Strongest.",
+          "spokenExample": "Tourists often stroll through the old flower market."
         }
       ]
     },
     {
-      "id": "PLACEHOLDER_PRAC_L17_Q2",
+      "id": "VOC_SYNONYMSEARCH_L17_PRAC_Q2",
       "level": 17,
       "cefr": "A2",
       "difficulty": 1,
-      "word": "PLACEHOLDER_base_17_2",
-      "targetSynonym": "PLACEHOLDER_synonym_17_2",
+      "word": "Run",
+      "targetSynonym": "Dash",
       "exercises": [
         {
           "exerciseType": "contrastSwap",
-          "prompt": "PLACEHOLDER_swapPrompt_17_2",
+          "prompt": "Place 'Run' and 'Dash' where each sounds natural.",
           "pairWords": [
-            "PLACEHOLDER_base_17_2",
-            "PLACEHOLDER_synonym_17_2"
+            "Run",
+            "Dash"
           ],
           "slots": [
             {
-              "contextTag": "PLACEHOLDER_ctx_17_2_1",
-              "sentenceWithBlank": "PLACEHOLDER_blank_17_2_1 ___.",
-              "correctWord": "PLACEHOLDER_base_17_2",
-              "feedback": "PLACEHOLDER_fb_17_2_1"
+              "contextTag": "Daily Habit",
+              "sentenceWithBlank": "She likes to ___ five kilometers every Tuesday morning.",
+              "correctWord": "Run",
+              "feedback": "Endurance distance uses 'run', not sudden 'dash'."
             },
             {
-              "contextTag": "PLACEHOLDER_ctx_17_2_2",
-              "sentenceWithBlank": "PLACEHOLDER_blank_17_2_2 ___.",
-              "correctWord": "PLACEHOLDER_synonym_17_2",
-              "feedback": "PLACEHOLDER_fb_17_2_2"
+              "contextTag": "Rain Storm",
+              "sentenceWithBlank": "They had to ___ into the cafe when rain poured down.",
+              "correctWord": "Dash",
+              "feedback": "'dash' captures a sudden burst toward shelter."
             }
           ],
-          "hint": "PLACEHOLDER_swapHint_17_2"
+          "hint": "'Run' means steady running or jogging. 'Dash' means sprinting suddenly for a short distance."
         },
         {
           "exerciseType": "synonymLadder",
-          "prompt": "PLACEHOLDER_ladderPrompt_17_2",
-          "scaleAxis": "PLACEHOLDER_axis_17_2",
+          "prompt": "Order these related words from mildest to strongest along the scale.",
+          "scaleAxis": "Urgency & Distance",
           "lowLabel": "Everyday",
-          "highLabel": "Formal",
+          "highLabel": "Strongest",
           "shuffledWords": [
-            "PLACEHOLDER_high_17_2",
-            "PLACEHOLDER_base_17_2",
-            "PLACEHOLDER_synonym_17_2"
+            "Sprint",
+            "Race",
+            "Jog"
           ],
           "orderedWords": [
-            "PLACEHOLDER_base_17_2",
-            "PLACEHOLDER_synonym_17_2",
-            "PLACEHOLDER_high_17_2"
+            "Jog",
+            "Sprint",
+            "Race"
           ],
-          "explanation": "PLACEHOLDER_ladderExp_17_2",
-          "hint": "PLACEHOLDER_ladderHint_17_2",
-          "spokenExample": "PLACEHOLDER_ladderEx_17_2"
+          "explanation": "Jog starts at Everyday, Sprint builds nuance, and Race reaches Strongest.",
+          "hint": "Start with the word closest to Everyday and end near Strongest.",
+          "spokenExample": "I will dash upstairs and grab my umbrella."
         }
       ]
     },
     {
-      "id": "PLACEHOLDER_PRAC_L17_Q3",
+      "id": "VOC_SYNONYMSEARCH_L17_PRAC_Q3",
       "level": 17,
       "cefr": "A2",
       "difficulty": 1,
-      "word": "PLACEHOLDER_base_17_3",
-      "targetSynonym": "PLACEHOLDER_synonym_17_3",
+      "word": "Drop",
+      "targetSynonym": "Fall",
       "exercises": [
         {
           "exerciseType": "contrastSwap",
-          "prompt": "PLACEHOLDER_swapPrompt_17_3",
+          "prompt": "Place 'Drop' and 'Fall' where each sounds natural.",
           "pairWords": [
-            "PLACEHOLDER_base_17_3",
-            "PLACEHOLDER_synonym_17_3"
+            "Drop",
+            "Fall"
           ],
           "slots": [
             {
-              "contextTag": "PLACEHOLDER_ctx_17_3_1",
-              "sentenceWithBlank": "PLACEHOLDER_blank_17_3_1 ___.",
-              "correctWord": "PLACEHOLDER_base_17_3",
-              "feedback": "PLACEHOLDER_fb_17_3_1"
+              "contextTag": "Winter Sky",
+              "sentenceWithBlank": "Thick snow began to ___ across the quiet village.",
+              "correctWord": "Fall",
+              "feedback": "Rain and snow always 'fall', never 'drop'."
             },
             {
-              "contextTag": "PLACEHOLDER_ctx_17_3_2",
-              "sentenceWithBlank": "PLACEHOLDER_blank_17_3_2 ___.",
-              "correctWord": "PLACEHOLDER_synonym_17_3",
-              "feedback": "PLACEHOLDER_fb_17_3_2"
+              "contextTag": "Clumsy Hands",
+              "sentenceWithBlank": "Careful not to ___ that glass bowl on the tile floor.",
+              "correctWord": "Drop",
+              "feedback": "Releasing an object from your hands takes 'drop'."
             }
           ],
-          "hint": "PLACEHOLDER_swapHint_17_3"
+          "hint": "'Drop' often means let something slip or sharp price dips. 'Fall' fits leaves, snow, or losing balance."
         },
         {
           "exerciseType": "synonymLadder",
-          "prompt": "PLACEHOLDER_ladderPrompt_17_3",
-          "scaleAxis": "PLACEHOLDER_axis_17_3",
+          "prompt": "Order these related words from mildest to strongest along the scale.",
+          "scaleAxis": "Speed & Impact",
           "lowLabel": "Everyday",
-          "highLabel": "Formal",
+          "highLabel": "Strongest",
           "shuffledWords": [
-            "PLACEHOLDER_high_17_3",
-            "PLACEHOLDER_base_17_3",
-            "PLACEHOLDER_synonym_17_3"
+            "Plunge",
+            "Slip",
+            "Tumble"
           ],
           "orderedWords": [
-            "PLACEHOLDER_base_17_3",
-            "PLACEHOLDER_synonym_17_3",
-            "PLACEHOLDER_high_17_3"
+            "Slip",
+            "Tumble",
+            "Plunge"
           ],
-          "explanation": "PLACEHOLDER_ladderExp_17_3",
-          "hint": "PLACEHOLDER_ladderHint_17_3",
-          "spokenExample": "PLACEHOLDER_ladderEx_17_3"
+          "explanation": "Slip starts at Everyday, Tumble builds nuance, and Plunge reaches Strongest.",
+          "hint": "Start with the word closest to Everyday and end near Strongest.",
+          "spokenExample": "Autumn leaves slowly fall from the oak trees."
         }
       ]
     },
     {
-      "id": "PLACEHOLDER_PRAC_L18_Q1",
+      "id": "VOC_SYNONYMSEARCH_L18_PRAC_Q1",
       "level": 18,
       "cefr": "A2",
       "difficulty": 1,
-      "word": "PLACEHOLDER_base_18_1",
-      "targetSynonym": "PLACEHOLDER_synonym_18_1",
+      "word": "Look",
+      "targetSynonym": "Glance",
       "exercises": [
         {
           "exerciseType": "contrastSwap",
-          "prompt": "PLACEHOLDER_swapPrompt_18_1",
+          "prompt": "Place 'Look' and 'Glance' where each sounds natural.",
           "pairWords": [
-            "PLACEHOLDER_base_18_1",
-            "PLACEHOLDER_synonym_18_1"
+            "Look",
+            "Glance"
           ],
           "slots": [
             {
-              "contextTag": "PLACEHOLDER_ctx_18_1_1",
-              "sentenceWithBlank": "PLACEHOLDER_blank_18_1_1 ___.",
-              "correctWord": "PLACEHOLDER_base_18_1",
-              "feedback": "PLACEHOLDER_fb_18_1_1"
+              "contextTag": "Art Class",
+              "sentenceWithBlank": "Take time to ___ closely at the brushwork.",
+              "correctWord": "Look",
+              "feedback": "Sustained close inspection contradicts quick 'glance'."
             },
             {
-              "contextTag": "PLACEHOLDER_ctx_18_1_2",
-              "sentenceWithBlank": "PLACEHOLDER_blank_18_1_2 ___.",
-              "correctWord": "PLACEHOLDER_synonym_18_1",
-              "feedback": "PLACEHOLDER_fb_18_1_2"
+              "contextTag": "Watch Check",
+              "sentenceWithBlank": "Waiters ___ at the wall clock before closing time.",
+              "correctWord": "Glance",
+              "feedback": "'glance' fits a brief, quick look."
             }
           ],
-          "hint": "PLACEHOLDER_swapHint_18_1"
+          "hint": "'Look' means pay visual attention. 'Glance' means take a quick one-second peek."
         },
         {
           "exerciseType": "synonymLadder",
-          "prompt": "PLACEHOLDER_ladderPrompt_18_1",
-          "scaleAxis": "PLACEHOLDER_axis_18_1",
+          "prompt": "Order these related words from mildest to strongest along the scale.",
+          "scaleAxis": "Attention Length",
           "lowLabel": "Everyday",
-          "highLabel": "Formal",
+          "highLabel": "Strongest",
           "shuffledWords": [
-            "PLACEHOLDER_high_18_1",
-            "PLACEHOLDER_base_18_1",
-            "PLACEHOLDER_synonym_18_1"
+            "Stare",
+            "Examine",
+            "Peek"
           ],
           "orderedWords": [
-            "PLACEHOLDER_base_18_1",
-            "PLACEHOLDER_synonym_18_1",
-            "PLACEHOLDER_high_18_1"
+            "Peek",
+            "Stare",
+            "Examine"
           ],
-          "explanation": "PLACEHOLDER_ladderExp_18_1",
-          "hint": "PLACEHOLDER_ladderHint_18_1",
-          "spokenExample": "PLACEHOLDER_ladderEx_18_1"
+          "explanation": "Peek starts at Everyday, Stare builds nuance, and Examine reaches Strongest.",
+          "hint": "Start with the word closest to Everyday and end near Strongest.",
+          "spokenExample": "She stopped to glance at the menu before heading inside."
         }
       ]
     },
     {
-      "id": "PLACEHOLDER_PRAC_L18_Q2",
+      "id": "VOC_SYNONYMSEARCH_L18_PRAC_Q2",
       "level": 18,
       "cefr": "A2",
       "difficulty": 1,
-      "word": "PLACEHOLDER_base_18_2",
-      "targetSynonym": "PLACEHOLDER_synonym_18_2",
+      "word": "See",
+      "targetSynonym": "Notice",
       "exercises": [
         {
           "exerciseType": "contrastSwap",
-          "prompt": "PLACEHOLDER_swapPrompt_18_2",
+          "prompt": "Place 'See' and 'Notice' where each sounds natural.",
           "pairWords": [
-            "PLACEHOLDER_base_18_2",
-            "PLACEHOLDER_synonym_18_2"
+            "See",
+            "Notice"
           ],
           "slots": [
             {
-              "contextTag": "PLACEHOLDER_ctx_18_2_1",
-              "sentenceWithBlank": "PLACEHOLDER_blank_18_2_1 ___.",
-              "correctWord": "PLACEHOLDER_base_18_2",
-              "feedback": "PLACEHOLDER_fb_18_2_1"
+              "contextTag": "Small Detail",
+              "sentenceWithBlank": "Did you ___ the small scratch near the door lock?",
+              "correctWord": "Notice",
+              "feedback": "'notice' highlights spotting a subtle detail."
             },
             {
-              "contextTag": "PLACEHOLDER_ctx_18_2_2",
-              "sentenceWithBlank": "PLACEHOLDER_blank_18_2_2 ___.",
-              "correctWord": "PLACEHOLDER_synonym_18_2",
-              "feedback": "PLACEHOLDER_fb_18_2_2"
+              "contextTag": "Cinema Seat",
+              "sentenceWithBlank": "From the front row you can ___ every actor clearly.",
+              "correctWord": "See",
+              "feedback": "General vision takes 'see'."
             }
           ],
-          "hint": "PLACEHOLDER_swapHint_18_2"
+          "hint": "'See' means perceive visually. 'Notice' means spot a specific detail you might have missed."
         },
         {
           "exerciseType": "synonymLadder",
-          "prompt": "PLACEHOLDER_ladderPrompt_18_2",
-          "scaleAxis": "PLACEHOLDER_axis_18_2",
+          "prompt": "Order these related words from mildest to strongest along the scale.",
+          "scaleAxis": "Focus Depth",
           "lowLabel": "Everyday",
-          "highLabel": "Formal",
+          "highLabel": "Strongest",
           "shuffledWords": [
-            "PLACEHOLDER_high_18_2",
-            "PLACEHOLDER_base_18_2",
-            "PLACEHOLDER_synonym_18_2"
+            "Detect",
+            "Spot",
+            "Observe"
           ],
           "orderedWords": [
-            "PLACEHOLDER_base_18_2",
-            "PLACEHOLDER_synonym_18_2",
-            "PLACEHOLDER_high_18_2"
+            "Spot",
+            "Observe",
+            "Detect"
           ],
-          "explanation": "PLACEHOLDER_ladderExp_18_2",
-          "hint": "PLACEHOLDER_ladderHint_18_2",
-          "spokenExample": "PLACEHOLDER_ladderEx_18_2"
+          "explanation": "Spot starts at Everyday, Observe builds nuance, and Detect reaches Strongest.",
+          "hint": "Start with the word closest to Everyday and end near Strongest.",
+          "spokenExample": "He did not notice the typo until reading the page twice."
         }
       ]
     },
     {
-      "id": "PLACEHOLDER_PRAC_L18_Q3",
+      "id": "VOC_SYNONYMSEARCH_L18_PRAC_Q3",
       "level": 18,
       "cefr": "A2",
       "difficulty": 1,
-      "word": "PLACEHOLDER_base_18_3",
-      "targetSynonym": "PLACEHOLDER_synonym_18_3",
+      "word": "Think",
+      "targetSynonym": "Wonder",
       "exercises": [
         {
           "exerciseType": "contrastSwap",
-          "prompt": "PLACEHOLDER_swapPrompt_18_3",
+          "prompt": "Place 'Think' and 'Wonder' where each sounds natural.",
           "pairWords": [
-            "PLACEHOLDER_base_18_3",
-            "PLACEHOLDER_synonym_18_3"
+            "Think",
+            "Wonder"
           ],
           "slots": [
             {
-              "contextTag": "PLACEHOLDER_ctx_18_3_1",
-              "sentenceWithBlank": "PLACEHOLDER_blank_18_3_1 ___.",
-              "correctWord": "PLACEHOLDER_base_18_3",
-              "feedback": "PLACEHOLDER_fb_18_3_1"
+              "contextTag": "Strong Opinion",
+              "sentenceWithBlank": "I ___ this restaurant serves the best noodles nearby.",
+              "correctWord": "Think",
+              "feedback": "Stating an opinion takes 'think', not 'wonder'."
             },
             {
-              "contextTag": "PLACEHOLDER_ctx_18_3_2",
-              "sentenceWithBlank": "PLACEHOLDER_blank_18_3_2 ___.",
-              "correctWord": "PLACEHOLDER_synonym_18_3",
-              "feedback": "PLACEHOLDER_fb_18_3_2"
+              "contextTag": "Curious Mind",
+              "sentenceWithBlank": "I often ___ how birds navigate thousands of miles.",
+              "correctWord": "Wonder",
+              "feedback": "Open curiosity uses 'wonder'."
             }
           ],
-          "hint": "PLACEHOLDER_swapHint_18_3"
+          "hint": "'Think' states an opinion or solves steps. 'Wonder' shows curiosity or polite uncertainty."
         },
         {
           "exerciseType": "synonymLadder",
-          "prompt": "PLACEHOLDER_ladderPrompt_18_3",
-          "scaleAxis": "PLACEHOLDER_axis_18_3",
-          "lowLabel": "Everyday",
-          "highLabel": "Formal",
+          "prompt": "Order these related words from mildest to strongest along the scale.",
+          "scaleAxis": "Certainty -> Curiosity",
+          "lowLabel": "Certainty",
+          "highLabel": "Curiosity",
           "shuffledWords": [
-            "PLACEHOLDER_high_18_3",
-            "PLACEHOLDER_base_18_3",
-            "PLACEHOLDER_synonym_18_3"
+            "Ponder",
+            "Reflect",
+            "Guess"
           ],
           "orderedWords": [
-            "PLACEHOLDER_base_18_3",
-            "PLACEHOLDER_synonym_18_3",
-            "PLACEHOLDER_high_18_3"
+            "Guess",
+            "Ponder",
+            "Reflect"
           ],
-          "explanation": "PLACEHOLDER_ladderExp_18_3",
-          "hint": "PLACEHOLDER_ladderHint_18_3",
-          "spokenExample": "PLACEHOLDER_ladderEx_18_3"
+          "explanation": "Guess starts at Certainty, Ponder builds nuance, and Reflect reaches Curiosity.",
+          "hint": "Start with the word closest to Certainty and end near Curiosity.",
+          "spokenExample": "Walkers look at the stars and wonder what lies beyond."
         }
       ]
     },
     {
-      "id": "PLACEHOLDER_PRAC_L19_Q1",
+      "id": "VOC_SYNONYMSEARCH_L19_PRAC_Q1",
       "level": 19,
       "cefr": "A2",
       "difficulty": 1,
-      "word": "PLACEHOLDER_base_19_1",
-      "targetSynonym": "PLACEHOLDER_synonym_19_1",
+      "word": "Say",
+      "targetSynonym": "Tell",
       "exercises": [
         {
           "exerciseType": "contrastSwap",
-          "prompt": "PLACEHOLDER_swapPrompt_19_1",
+          "prompt": "Place 'Say' and 'Tell' where each sounds natural.",
           "pairWords": [
-            "PLACEHOLDER_base_19_1",
-            "PLACEHOLDER_synonym_19_1"
+            "Say",
+            "Tell"
           ],
           "slots": [
             {
-              "contextTag": "PLACEHOLDER_ctx_19_1_1",
-              "sentenceWithBlank": "PLACEHOLDER_blank_19_1_1 ___.",
-              "correctWord": "PLACEHOLDER_base_19_1",
-              "feedback": "PLACEHOLDER_fb_19_1_1"
+              "contextTag": "Giving News",
+              "sentenceWithBlank": "Please ___ your sister that dinner starts at seven.",
+              "correctWord": "Tell",
+              "feedback": "'tell' takes a direct person right after the verb."
             },
             {
-              "contextTag": "PLACEHOLDER_ctx_19_1_2",
-              "sentenceWithBlank": "PLACEHOLDER_blank_19_1_2 ___.",
-              "correctWord": "PLACEHOLDER_synonym_19_1",
-              "feedback": "PLACEHOLDER_fb_19_1_2"
+              "contextTag": "Simple Greeting",
+              "sentenceWithBlank": "Always remember to ___ thank you to the bus driver.",
+              "correctWord": "Say",
+              "feedback": "'thank you' has no indirect object here, so 'say' is required."
             }
           ],
-          "hint": "PLACEHOLDER_swapHint_19_1"
+          "hint": "'Say' focuses on the exact words (`say hello`). 'Tell' needs a listener (`tell me`)."
         },
         {
           "exerciseType": "synonymLadder",
-          "prompt": "PLACEHOLDER_ladderPrompt_19_1",
-          "scaleAxis": "PLACEHOLDER_axis_19_1",
+          "prompt": "Order these related words from mildest to strongest along the scale.",
+          "scaleAxis": "Grammar & Formality",
           "lowLabel": "Everyday",
-          "highLabel": "Formal",
+          "highLabel": "Strongest",
           "shuffledWords": [
-            "PLACEHOLDER_high_19_1",
-            "PLACEHOLDER_base_19_1",
-            "PLACEHOLDER_synonym_19_1"
+            "Inform",
+            "Speak",
+            "State"
           ],
           "orderedWords": [
-            "PLACEHOLDER_base_19_1",
-            "PLACEHOLDER_synonym_19_1",
-            "PLACEHOLDER_high_19_1"
+            "Speak",
+            "State",
+            "Inform"
           ],
-          "explanation": "PLACEHOLDER_ladderExp_19_1",
-          "hint": "PLACEHOLDER_ladderHint_19_1",
-          "spokenExample": "PLACEHOLDER_ladderEx_19_1"
+          "explanation": "Speak starts at Everyday, State builds nuance, and Inform reaches Strongest.",
+          "hint": "Start with the word closest to Everyday and end near Strongest.",
+          "spokenExample": "Nobody could tell her the secret before the party."
         }
       ]
     },
     {
-      "id": "PLACEHOLDER_PRAC_L19_Q2",
+      "id": "VOC_SYNONYMSEARCH_L19_PRAC_Q2",
       "level": 19,
       "cefr": "A2",
       "difficulty": 1,
-      "word": "PLACEHOLDER_base_19_2",
-      "targetSynonym": "PLACEHOLDER_synonym_19_2",
+      "word": "Talk",
+      "targetSynonym": "Chat",
       "exercises": [
         {
           "exerciseType": "contrastSwap",
-          "prompt": "PLACEHOLDER_swapPrompt_19_2",
+          "prompt": "Place 'Talk' and 'Chat' where each sounds natural.",
           "pairWords": [
-            "PLACEHOLDER_base_19_2",
-            "PLACEHOLDER_synonym_19_2"
+            "Talk",
+            "Chat"
           ],
           "slots": [
             {
-              "contextTag": "PLACEHOLDER_ctx_19_2_1",
-              "sentenceWithBlank": "PLACEHOLDER_blank_19_2_1 ___.",
-              "correctWord": "PLACEHOLDER_base_19_2",
-              "feedback": "PLACEHOLDER_fb_19_2_1"
+              "contextTag": "Serious Notice",
+              "sentenceWithBlank": "The principal must ___ to students about lab safety rules.",
+              "correctWord": "Talk",
+              "feedback": "Formal warnings feel awkward as 'chat'."
             },
             {
-              "contextTag": "PLACEHOLDER_ctx_19_2_2",
-              "sentenceWithBlank": "PLACEHOLDER_blank_19_2_2 ___.",
-              "correctWord": "PLACEHOLDER_synonym_19_2",
-              "feedback": "PLACEHOLDER_fb_19_2_2"
+              "contextTag": "Coffee Break",
+              "sentenceWithBlank": "Neighbors stopped by the fence to ___ about gardening.",
+              "correctWord": "Chat",
+              "feedback": "'chat' fits relaxed, friendly small talk."
             }
           ],
-          "hint": "PLACEHOLDER_swapHint_19_2"
+          "hint": "'Talk' works for serious or casual topics. 'Chat' always means light, friendly conversation."
         },
         {
           "exerciseType": "synonymLadder",
-          "prompt": "PLACEHOLDER_ladderPrompt_19_2",
-          "scaleAxis": "PLACEHOLDER_axis_19_2",
-          "lowLabel": "Everyday",
+          "prompt": "Order these related words from mildest to strongest along the scale.",
+          "scaleAxis": "Casual -> Formal",
+          "lowLabel": "Casual",
           "highLabel": "Formal",
           "shuffledWords": [
-            "PLACEHOLDER_high_19_2",
-            "PLACEHOLDER_base_19_2",
-            "PLACEHOLDER_synonym_19_2"
+            "Gossip",
+            "Discuss",
+            "Converse"
           ],
           "orderedWords": [
-            "PLACEHOLDER_base_19_2",
-            "PLACEHOLDER_synonym_19_2",
-            "PLACEHOLDER_high_19_2"
+            "Converse",
+            "Gossip",
+            "Discuss"
           ],
-          "explanation": "PLACEHOLDER_ladderExp_19_2",
-          "hint": "PLACEHOLDER_ladderHint_19_2",
-          "spokenExample": "PLACEHOLDER_ladderEx_19_2"
+          "explanation": "Converse starts at Casual, Gossip builds nuance, and Discuss reaches Formal.",
+          "hint": "Start with the word closest to Casual and end near Formal.",
+          "spokenExample": "Old friends stayed late to chat over warm tea."
         }
       ]
     },
     {
-      "id": "PLACEHOLDER_PRAC_L19_Q3",
+      "id": "VOC_SYNONYMSEARCH_L19_PRAC_Q3",
       "level": 19,
       "cefr": "A2",
       "difficulty": 1,
-      "word": "PLACEHOLDER_base_19_3",
-      "targetSynonym": "PLACEHOLDER_synonym_19_3",
+      "word": "Answer",
+      "targetSynonym": "Reply",
       "exercises": [
         {
           "exerciseType": "contrastSwap",
-          "prompt": "PLACEHOLDER_swapPrompt_19_3",
+          "prompt": "Place 'Answer' and 'Reply' where each sounds natural.",
           "pairWords": [
-            "PLACEHOLDER_base_19_3",
-            "PLACEHOLDER_synonym_19_3"
+            "Answer",
+            "Reply"
           ],
           "slots": [
             {
-              "contextTag": "PLACEHOLDER_ctx_19_3_1",
-              "sentenceWithBlank": "PLACEHOLDER_blank_19_3_1 ___.",
-              "correctWord": "PLACEHOLDER_base_19_3",
-              "feedback": "PLACEHOLDER_fb_19_3_1"
+              "contextTag": "Inbox Thread",
+              "sentenceWithBlank": "I will ___ to your email before five o’clock.",
+              "correctWord": "Reply",
+              "feedback": "Messages and threads commonly use 'reply to'."
             },
             {
-              "contextTag": "PLACEHOLDER_ctx_19_3_2",
-              "sentenceWithBlank": "PLACEHOLDER_blank_19_3_2 ___.",
-              "correctWord": "PLACEHOLDER_synonym_19_3",
-              "feedback": "PLACEHOLDER_fb_19_3_2"
+              "contextTag": "Doorbell Sound",
+              "sentenceWithBlank": "Nobody walked over to ___ the ringing phone.",
+              "correctWord": "Answer",
+              "feedback": "Phones and doors take 'answer', never 'reply'."
             }
           ],
-          "hint": "PLACEHOLDER_swapHint_19_3"
+          "hint": "'Answer' takes direct nouns (`answer the phone`). 'Reply' fits emails, letters, and text threads (`reply to`)."
         },
         {
           "exerciseType": "synonymLadder",
-          "prompt": "PLACEHOLDER_ladderPrompt_19_3",
-          "scaleAxis": "PLACEHOLDER_axis_19_3",
-          "lowLabel": "Everyday",
-          "highLabel": "Formal",
+          "prompt": "Order these related words from mildest to strongest along the scale.",
+          "scaleAxis": "Direct -> Message",
+          "lowLabel": "Direct",
+          "highLabel": "Message",
           "shuffledWords": [
-            "PLACEHOLDER_high_19_3",
-            "PLACEHOLDER_base_19_3",
-            "PLACEHOLDER_synonym_19_3"
+            "Acknowledge",
+            "Respond",
+            "React"
           ],
           "orderedWords": [
-            "PLACEHOLDER_base_19_3",
-            "PLACEHOLDER_synonym_19_3",
-            "PLACEHOLDER_high_19_3"
+            "Respond",
+            "React",
+            "Acknowledge"
           ],
-          "explanation": "PLACEHOLDER_ladderExp_19_3",
-          "hint": "PLACEHOLDER_ladderHint_19_3",
-          "spokenExample": "PLACEHOLDER_ladderEx_19_3"
+          "explanation": "Respond starts at Direct, React builds nuance, and Acknowledge reaches Message.",
+          "hint": "Start with the word closest to Direct and end near Message.",
+          "spokenExample": "Support agents reply quickly to urgent billing questions."
         }
       ]
     },
     {
-      "id": "PLACEHOLDER_PRAC_L20_Q1",
+      "id": "VOC_SYNONYMSEARCH_L20_PRAC_Q1",
       "level": 20,
       "cefr": "A2",
       "difficulty": 1,
-      "word": "PLACEHOLDER_base_20_1",
-      "targetSynonym": "PLACEHOLDER_synonym_20_1",
+      "word": "Need",
+      "targetSynonym": "Require",
       "exercises": [
         {
           "exerciseType": "contrastSwap",
-          "prompt": "PLACEHOLDER_swapPrompt_20_1",
+          "prompt": "Place 'Need' and 'Require' where each sounds natural.",
           "pairWords": [
-            "PLACEHOLDER_base_20_1",
-            "PLACEHOLDER_synonym_20_1"
+            "Need",
+            "Require"
           ],
           "slots": [
             {
-              "contextTag": "PLACEHOLDER_ctx_20_1_1",
-              "sentenceWithBlank": "PLACEHOLDER_blank_20_1_1 ___.",
-              "correctWord": "PLACEHOLDER_base_20_1",
-              "feedback": "PLACEHOLDER_fb_20_1_1"
+              "contextTag": "Tired Nap",
+              "sentenceWithBlank": "I really ___ a mug of coffee right now.",
+              "correctWord": "Need",
+              "feedback": "Personal cravings sound stiff with 'require'."
             },
             {
-              "contextTag": "PLACEHOLDER_ctx_20_1_2",
-              "sentenceWithBlank": "PLACEHOLDER_blank_20_1_2 ___.",
-              "correctWord": "PLACEHOLDER_synonym_20_1",
-              "feedback": "PLACEHOLDER_fb_20_1_2"
+              "contextTag": "Visa Rule",
+              "sentenceWithBlank": "International flights ___ a valid passport at check-in.",
+              "correctWord": "Require",
+              "feedback": "Official rules use 'require'."
             }
           ],
-          "hint": "PLACEHOLDER_swapHint_20_1"
+          "hint": "'Need' fits daily wants or habits. 'Require' fits rules, laws, or official prerequisites."
         },
         {
           "exerciseType": "synonymLadder",
-          "prompt": "PLACEHOLDER_ladderPrompt_20_1",
-          "scaleAxis": "PLACEHOLDER_axis_20_1",
-          "lowLabel": "Everyday",
-          "highLabel": "Formal",
+          "prompt": "Order these related words from mildest to strongest along the scale.",
+          "scaleAxis": "Personal -> Official",
+          "lowLabel": "Personal",
+          "highLabel": "Official",
           "shuffledWords": [
-            "PLACEHOLDER_high_20_1",
-            "PLACEHOLDER_base_20_1",
-            "PLACEHOLDER_synonym_20_1"
+            "Demand",
+            "Necessitate",
+            "Want"
           ],
           "orderedWords": [
-            "PLACEHOLDER_base_20_1",
-            "PLACEHOLDER_synonym_20_1",
-            "PLACEHOLDER_high_20_1"
+            "Want",
+            "Demand",
+            "Necessitate"
           ],
-          "explanation": "PLACEHOLDER_ladderExp_20_1",
-          "hint": "PLACEHOLDER_ladderHint_20_1",
-          "spokenExample": "PLACEHOLDER_ladderEx_20_1"
+          "explanation": "Want starts at Personal, Demand builds nuance, and Necessitate reaches Official.",
+          "hint": "Start with the word closest to Personal and end near Official.",
+          "spokenExample": "Science labs require safety goggles for every student."
         }
       ]
     },
     {
-      "id": "PLACEHOLDER_PRAC_L20_Q2",
+      "id": "VOC_SYNONYMSEARCH_L20_PRAC_Q2",
       "level": 20,
       "cefr": "A2",
       "difficulty": 1,
-      "word": "PLACEHOLDER_base_20_2",
-      "targetSynonym": "PLACEHOLDER_synonym_20_2",
+      "word": "Get",
+      "targetSynonym": "Receive",
       "exercises": [
         {
           "exerciseType": "contrastSwap",
-          "prompt": "PLACEHOLDER_swapPrompt_20_2",
+          "prompt": "Place 'Get' and 'Receive' where each sounds natural.",
           "pairWords": [
-            "PLACEHOLDER_base_20_2",
-            "PLACEHOLDER_synonym_20_2"
+            "Get",
+            "Receive"
           ],
           "slots": [
             {
-              "contextTag": "PLACEHOLDER_ctx_20_2_1",
-              "sentenceWithBlank": "PLACEHOLDER_blank_20_2_1 ___.",
-              "correctWord": "PLACEHOLDER_base_20_2",
-              "feedback": "PLACEHOLDER_fb_20_2_1"
+              "contextTag": "Award Mail",
+              "sentenceWithBlank": "Students will ___ their test certificates by mail.",
+              "correctWord": "Receive",
+              "feedback": "Official mail and awards take 'receive'."
             },
             {
-              "contextTag": "PLACEHOLDER_ctx_20_2_2",
-              "sentenceWithBlank": "PLACEHOLDER_blank_20_2_2 ___.",
-              "correctWord": "PLACEHOLDER_synonym_20_2",
-              "feedback": "PLACEHOLDER_fb_20_2_2"
+              "contextTag": "Morning Flu",
+              "sentenceWithBlank": "Wear a coat so you do not ___ a bad cold.",
+              "correctWord": "Get",
+              "feedback": "Catching illness uses 'get', never 'receive'."
             }
           ],
-          "hint": "PLACEHOLDER_swapHint_20_2"
+          "hint": "'Get' covers buying, fetching, or catching colds. 'Receive' highlights being handed or sent something officially."
         },
         {
           "exerciseType": "synonymLadder",
-          "prompt": "PLACEHOLDER_ladderPrompt_20_2",
-          "scaleAxis": "PLACEHOLDER_axis_20_2",
-          "lowLabel": "Everyday",
-          "highLabel": "Formal",
+          "prompt": "Order these related words from mildest to strongest along the scale.",
+          "scaleAxis": "Casual -> Official",
+          "lowLabel": "Casual",
+          "highLabel": "Official",
           "shuffledWords": [
-            "PLACEHOLDER_high_20_2",
-            "PLACEHOLDER_base_20_2",
-            "PLACEHOLDER_synonym_20_2"
+            "Acquire",
+            "Earn",
+            "Obtain"
           ],
           "orderedWords": [
-            "PLACEHOLDER_base_20_2",
-            "PLACEHOLDER_synonym_20_2",
-            "PLACEHOLDER_high_20_2"
+            "Earn",
+            "Obtain",
+            "Acquire"
           ],
-          "explanation": "PLACEHOLDER_ladderExp_20_2",
-          "hint": "PLACEHOLDER_ladderHint_20_2",
-          "spokenExample": "PLACEHOLDER_ladderEx_20_2"
+          "explanation": "Earn starts at Casual, Obtain builds nuance, and Acquire reaches Official.",
+          "hint": "Start with the word closest to Casual and end near Official.",
+          "spokenExample": "Subscribers receive a monthly magazine at their doorstep."
         }
       ]
     },
     {
-      "id": "PLACEHOLDER_PRAC_L20_Q3",
+      "id": "VOC_SYNONYMSEARCH_L20_PRAC_Q3",
       "level": 20,
       "cefr": "A2",
       "difficulty": 1,
-      "word": "PLACEHOLDER_base_20_3",
-      "targetSynonym": "PLACEHOLDER_synonym_20_3",
+      "word": "Give",
+      "targetSynonym": "Offer",
       "exercises": [
         {
           "exerciseType": "contrastSwap",
-          "prompt": "PLACEHOLDER_swapPrompt_20_3",
+          "prompt": "Place 'Give' and 'Offer' where each sounds natural.",
           "pairWords": [
-            "PLACEHOLDER_base_20_3",
-            "PLACEHOLDER_synonym_20_3"
+            "Give",
+            "Offer"
           ],
           "slots": [
             {
-              "contextTag": "PLACEHOLDER_ctx_20_3_1",
-              "sentenceWithBlank": "PLACEHOLDER_blank_20_3_1 ___.",
-              "correctWord": "PLACEHOLDER_base_20_3",
-              "feedback": "PLACEHOLDER_fb_20_3_1"
+              "contextTag": "Birthday Box",
+              "sentenceWithBlank": "Aunt Maya wants to ___ her nephew a bicycle.",
+              "correctWord": "Give",
+              "feedback": "Handing a finished gift uses 'give'."
             },
             {
-              "contextTag": "PLACEHOLDER_ctx_20_3_2",
-              "sentenceWithBlank": "PLACEHOLDER_blank_20_3_2 ___.",
-              "correctWord": "PLACEHOLDER_synonym_20_3",
-              "feedback": "PLACEHOLDER_fb_20_3_2"
+              "contextTag": "Polite Host",
+              "sentenceWithBlank": "May I ___ you a cold glass of lemonade?",
+              "correctWord": "Offer",
+              "feedback": "Polite invitations hold out a choice ('offer')."
             }
           ],
-          "hint": "PLACEHOLDER_swapHint_20_3"
+          "hint": "'Give' completes the transfer (`give a gift`). 'Offer' holds something out so the person can accept or decline."
         },
         {
           "exerciseType": "synonymLadder",
-          "prompt": "PLACEHOLDER_ladderPrompt_20_3",
-          "scaleAxis": "PLACEHOLDER_axis_20_3",
+          "prompt": "Order these related words from mildest to strongest along the scale.",
+          "scaleAxis": "Choice vs Final",
           "lowLabel": "Everyday",
-          "highLabel": "Formal",
+          "highLabel": "Strongest",
           "shuffledWords": [
-            "PLACEHOLDER_high_20_3",
-            "PLACEHOLDER_base_20_3",
-            "PLACEHOLDER_synonym_20_3"
+            "Provide",
+            "Donate",
+            "Hand"
           ],
           "orderedWords": [
-            "PLACEHOLDER_base_20_3",
-            "PLACEHOLDER_synonym_20_3",
-            "PLACEHOLDER_high_20_3"
+            "Hand",
+            "Provide",
+            "Donate"
           ],
-          "explanation": "PLACEHOLDER_ladderExp_20_3",
-          "hint": "PLACEHOLDER_ladderHint_20_3",
-          "spokenExample": "PLACEHOLDER_ladderEx_20_3"
+          "explanation": "Hand starts at Everyday, Provide builds nuance, and Donate reaches Strongest.",
+          "hint": "Start with the word closest to Everyday and end near Strongest.",
+          "spokenExample": "Local shops offer free reusable bags on Mondays."
         }
       ]
     }

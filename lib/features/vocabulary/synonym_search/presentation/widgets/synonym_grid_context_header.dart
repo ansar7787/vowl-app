@@ -14,6 +14,7 @@ class SynonymGridContextHeader extends StatelessWidget {
   final String normalizedTarget;
   final String currentSpelledWord;
   final bool isHintActive;
+  final bool hideLengthUntilHint;
   final Color primaryColor;
 
   const SynonymGridContextHeader({
@@ -23,6 +24,7 @@ class SynonymGridContextHeader extends StatelessWidget {
     required this.normalizedTarget,
     required this.currentSpelledWord,
     required this.isHintActive,
+    this.hideLengthUntilHint = false,
     required this.primaryColor,
   });
 
@@ -111,17 +113,29 @@ class SynonymGridContextHeader extends StatelessWidget {
               clueText: clueText,
               targetLength: normalizedTarget.length,
               currentSpelled: currentSpelledWord,
+              hideLength:
+                  hideLengthUntilHint &&
+                  !isHintActive &&
+                  currentSpelledWord.isEmpty,
               primaryColor: primaryColor,
               isDark: isDark,
             ),
           ] else ...[
             SizedBox(height: 10.h),
-            _LiveLetterSlotsRow(
-              targetLength: normalizedTarget.length,
-              currentSpelled: currentSpelledWord,
-              primaryColor: primaryColor,
-              isDark: isDark,
-            ),
+            if (hideLengthUntilHint &&
+                !isHintActive &&
+                currentSpelledWord.isEmpty)
+              _RecallLengthHiddenPill(
+                primaryColor: primaryColor,
+                isDark: isDark,
+              )
+            else
+              _LiveLetterSlotsRow(
+                targetLength: normalizedTarget.length,
+                currentSpelled: currentSpelledWord,
+                primaryColor: primaryColor,
+                isDark: isDark,
+              ),
           ],
           if (isHintActive && hintText.isNotEmpty) ...[
             SizedBox(height: 10.h),
@@ -170,6 +184,7 @@ class _ContextClueWithLiveSlot extends StatelessWidget {
   final String clueText;
   final int targetLength;
   final String currentSpelled;
+  final bool hideLength;
   final Color primaryColor;
   final bool isDark;
 
@@ -177,6 +192,7 @@ class _ContextClueWithLiveSlot extends StatelessWidget {
     required this.clueText,
     required this.targetLength,
     required this.currentSpelled,
+    required this.hideLength,
     required this.primaryColor,
     required this.isDark,
   });
@@ -192,12 +208,15 @@ class _ContextClueWithLiveSlot extends StatelessWidget {
         children: [
           Text(clueText, style: SynonymUiTokens.sentenceBody(color: textColor)),
           SizedBox(height: 10.h),
-          _LiveLetterSlotsRow(
-            targetLength: targetLength,
-            currentSpelled: currentSpelled,
-            primaryColor: primaryColor,
-            isDark: isDark,
-          ),
+          if (hideLength)
+            _RecallLengthHiddenPill(primaryColor: primaryColor, isDark: isDark)
+          else
+            _LiveLetterSlotsRow(
+              targetLength: targetLength,
+              currentSpelled: currentSpelled,
+              primaryColor: primaryColor,
+              isDark: isDark,
+            ),
         ],
       );
     }
@@ -218,12 +237,18 @@ class _ContextClueWithLiveSlot extends StatelessWidget {
           children: [
             for (final w in beforeWords)
               Text(w, style: SynonymUiTokens.sentenceBody(color: textColor)),
-            _LiveLetterSlotsRow(
-              targetLength: targetLength,
-              currentSpelled: currentSpelled,
-              primaryColor: primaryColor,
-              isDark: isDark,
-            ),
+            if (hideLength)
+              _RecallLengthHiddenPill(
+                primaryColor: primaryColor,
+                isDark: isDark,
+              )
+            else
+              _LiveLetterSlotsRow(
+                targetLength: targetLength,
+                currentSpelled: currentSpelled,
+                primaryColor: primaryColor,
+                isDark: isDark,
+              ),
             for (final w in afterWords)
               Text(w, style: SynonymUiTokens.sentenceBody(color: textColor)),
           ],
@@ -238,6 +263,36 @@ class _ContextClueWithLiveSlot extends StatelessWidget {
         .split(RegExp(r'\s+'))
         .where((s) => s.isNotEmpty)
         .toList();
+  }
+}
+
+class _RecallLengthHiddenPill extends StatelessWidget {
+  final Color primaryColor;
+  final bool isDark;
+
+  const _RecallLengthHiddenPill({
+    required this.primaryColor,
+    required this.isDark,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      key: const Key('recall_length_hidden_badge'),
+      padding: SynonymUiTokens.badgePadding,
+      decoration: BoxDecoration(
+        color: primaryColor.withValues(alpha: isDark ? 0.22 : 0.10),
+        borderRadius: BorderRadius.circular(SynonymUiTokens.badgeRadius),
+        border: Border.all(color: primaryColor.withValues(alpha: 0.45)),
+      ),
+      child: Text(
+        '[ ? ]  Trace or tap Hint for length',
+        style: SynonymUiTokens.badgeLabel(
+          color: isDark ? AppColors.slate50 : primaryColor,
+          fontWeight: FontWeight.w600,
+        ),
+      ),
+    );
   }
 }
 

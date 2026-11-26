@@ -10,6 +10,7 @@ import 'package:vowl/core/theme/app_spacing.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/vocabulary/synonym_search/data/datasources/synonym_phase_local_data_source.dart';
+import 'package:vowl/features/vocabulary/synonym_search/data/datasources/synonym_weak_words_store.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/controllers/synonym_practice_controller.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/controllers/synonym_tts_helper.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/models/synonym_phase_models.dart';
@@ -120,15 +121,38 @@ class _SynonymSearchPracticeScreenState
   void _handlePrimaryAction() {
     final checked = _controller.hasChecked.value;
     final correct = _controller.isCorrect.value;
+    final ex = _controller.currentExercise;
 
     if (!checked) {
-      _controller.checkAnswer();
+      final passed = _controller.checkAnswer();
+      if (ex != null) {
+        if (!passed) {
+          SynonymWeakWordsStore.recordWeakPair(
+            level: widget.level,
+            baseWord: ex.baseWord,
+            synonym: ex.targetSynonym,
+          );
+        } else if (_controller.wrongAttempts.value == 0 &&
+            !_controller.showHint.value) {
+          SynonymWeakWordsStore.markReviewed(
+            baseWord: ex.baseWord,
+            synonym: ex.targetSynonym,
+          );
+        }
+      }
       return;
     }
 
     if (!correct) {
       if (_controller.wrongAttempts.value >= 2) {
         _controller.revealGuidedSolution();
+        if (ex != null) {
+          SynonymWeakWordsStore.recordWeakPair(
+            level: widget.level,
+            baseWord: ex.baseWord,
+            synonym: ex.targetSynonym,
+          );
+        }
       }
       return;
     }

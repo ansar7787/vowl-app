@@ -27,6 +27,7 @@ import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
 import 'package:vowl/features/vocabulary/domain/entities/vocabulary_quest.dart';
 import 'package:vowl/features/vocabulary/presentation/bloc/vocabulary_bloc.dart';
+import 'package:vowl/features/vocabulary/synonym_search/data/datasources/synonym_weak_words_store.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/controllers/synonym_grid_builder.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/pages/synonym_search_mastery_screen.dart';
 
@@ -146,6 +147,7 @@ void main() {
     SharedPreferences.setMockInitialValues({
       'has_seen_briefing_synonymSearch': true,
     });
+    await SynonymWeakWordsStore.resetForTest();
     await di.sl.reset();
 
     mockVocabularyBloc = _MockVocabularyBloc();
@@ -427,6 +429,92 @@ void main() {
         await tester.pump(const Duration(milliseconds: 300));
 
         expect(find.text('Slide or tap nearby letters'), findsOneWidget);
+
+        await tester.pumpWidget(const SizedBox.shrink());
+        await tester.pump(const Duration(milliseconds: 300));
+      },
+    );
+
+    testWidgets(
+      'renders Context Match mode on questIndex 1 and dispatches SubmitAnswer',
+      (tester) async {
+        const ctxState = VocabularyLoaded(
+          quests: [quest1, quest2],
+          currentIndex: 1,
+          livesRemaining: 3,
+          wrongCount: 0,
+          hintUsed: false,
+          hintsAvailable: 2,
+          answerStatus: AnswerStatus.unanswered,
+        );
+        when(() => mockVocabularyBloc.state).thenReturn(ctxState);
+        whenListen(
+          mockVocabularyBloc,
+          streamController.stream,
+          initialState: ctxState,
+        );
+
+        await pumpMastery(tester, level: 1);
+
+        expect(
+          find.byKey(const Key('synonym_context_replace_card')),
+          findsOneWidget,
+        );
+        expect(find.byKey(const Key('synonym_word_grid')), findsNothing);
+
+        final correctOpt = find.byKey(const Key('context_replace_opt_1'));
+        await tester.ensureVisible(correctOpt);
+        await tester.pump();
+        await tester.tap(correctOpt);
+        await tester.pump(const Duration(milliseconds: 300));
+
+        verify(
+          () => mockVocabularyBloc.add(const SubmitAnswer(true)),
+        ).called(1);
+
+        await tester.pumpWidget(const SizedBox.shrink());
+        await tester.pump(const Duration(milliseconds: 300));
+      },
+    );
+
+    testWidgets(
+      'hides letter boxes at Level 45 questIndex 2 until Hint is activated',
+      (tester) async {
+        const recallState = VocabularyLoaded(
+          quests: [quest1, quest2, quest1],
+          currentIndex: 2,
+          livesRemaining: 3,
+          wrongCount: 0,
+          hintUsed: false,
+          hintsAvailable: 2,
+          answerStatus: AnswerStatus.unanswered,
+        );
+        when(() => mockVocabularyBloc.state).thenReturn(recallState);
+        whenListen(
+          mockVocabularyBloc,
+          streamController.stream,
+          initialState: recallState,
+        );
+
+        await pumpMastery(tester, level: 45);
+
+        expect(
+          find.byKey(const Key('recall_length_hidden_badge')),
+          findsOneWidget,
+        );
+        expect(find.byKey(const Key('synonym_word_grid')), findsOneWidget);
+
+        final hintedState = recallState.copyWith(hintUsed: true);
+        when(() => mockVocabularyBloc.state).thenReturn(hintedState);
+        streamController.add(hintedState);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 200));
+
+        expect(
+          find.byKey(const Key('recall_length_hidden_badge')),
+          findsNothing,
+        );
+        expect(find.text(quest1.hint!), findsOneWidget);
 
         await tester.pumpWidget(const SizedBox.shrink());
         await tester.pump(const Duration(milliseconds: 300));
