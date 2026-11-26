@@ -470,11 +470,16 @@ void main() {
     });
 
     testWidgets(
-      '1.8 displays briefing dialog on level 1 and dismisses on tap',
+      '1.8 displays briefing dialog on info button tap and dismisses on tap',
       (tester) async {
         await pumpScreen(tester, level: 1);
 
-        final startBtn = find.text('INVESTIGATE CASE');
+        final infoBtn = find.byIcon(Icons.info_outline_rounded);
+        expect(infoBtn, findsOneWidget);
+        await tester.tap(infoBtn);
+        await tester.pumpAndSettle();
+
+        final startBtn = find.text('RESUME PLAYING');
         expect(startBtn, findsOneWidget);
         await tester.ensureVisible(startBtn);
         await tester.pumpAndSettle();
@@ -482,7 +487,7 @@ void main() {
         await tester.pump(const Duration(milliseconds: 300));
         await tester.pump(const Duration(milliseconds: 300));
 
-        expect(find.text('INVESTIGATE CASE'), findsNothing);
+        expect(find.text('RESUME PLAYING'), findsNothing);
       },
     );
   });

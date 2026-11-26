@@ -61,7 +61,7 @@ void main() {
       await tester.pumpAndSettle();
 
       expect(find.text('Word Gym'), findsOneWidget);
-      expect(find.text('PRACTICE PHASE • LEVEL 1'), findsOneWidget);
+      expect(find.text('PRACTICE PHASE • LEVEL 1 • A2'), findsOneWidget);
       expect(find.text('Practice Question Body'), findsOneWidget);
       expect(find.byType(LinearProgressIndicator), findsOneWidget);
 
