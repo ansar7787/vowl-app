@@ -46,17 +46,10 @@ class SynonymLearnSpotlightHeader extends StatelessWidget {
         width: double.infinity,
         padding: SynonymUiTokens.cardPadding,
         decoration: BoxDecoration(
-          gradient: LinearGradient(
-            colors: isDark
-                ? [primaryColor.withValues(alpha: 0.26), AppColors.slate800]
-                : [primaryColor.withValues(alpha: 0.12), Colors.white],
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-          ),
+          color: SynonymUiTokens.cardSurface(isDark),
           borderRadius: BorderRadius.circular(SynonymUiTokens.cardRadius),
-          border: Border.all(
-            color: primaryColor.withValues(alpha: isDark ? 0.45 : 0.25),
-          ),
+          border: Border.all(color: SynonymUiTokens.subtleBorder(isDark)),
+          boxShadow: SynonymUiTokens.softCardShadow(isDark),
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -170,9 +163,12 @@ class SynonymLearnSpotlightHeader extends StatelessWidget {
                 decoration: BoxDecoration(
                   color: isDark
                       ? AppColors.slate900.withValues(alpha: 0.72)
-                      : Colors.white.withValues(alpha: 0.88),
+                      : AppColors.slate50,
                   borderRadius: BorderRadius.circular(
                     SynonymUiTokens.controlRadius,
+                  ),
+                  border: Border.all(
+                    color: SynonymUiTokens.subtleBorder(isDark),
                   ),
                 ),
                 child: Text(

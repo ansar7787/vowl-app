@@ -18,6 +18,7 @@ import 'package:vowl/features/vocabulary/synonym_search/presentation/models/syno
 import 'package:vowl/features/vocabulary/synonym_search/presentation/widgets/synonym_contrast_swap_card.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/widgets/synonym_ladder_card.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/widgets/synonym_learn_status_banner.dart';
+import 'package:vowl/features/vocabulary/synonym_search/presentation/widgets/synonym_practice_learn_peek_sheet.dart';
 
 /// Practice Phase for Synonym Search.
 ///
@@ -52,7 +53,9 @@ class _SynonymSearchPracticeScreenState
   bool _isLoading = true;
   bool _hasStartedLoad = false;
   String? _errorMessage;
+  int _sessionWrongCount = 0;
   Map<String, int> _reviewLevelsByParentId = const {};
+  Map<String, SynonymLearnItem> _learnItemsByPair = const {};
 
   @override
   void initState() {
@@ -96,6 +99,10 @@ class _SynonymSearchPracticeScreenState
         bundle: widget.assetBundle ?? DefaultAssetBundle.of(context),
       );
       final exercises = await dataSource.loadPracticeExercises(widget.level);
+      final learnMap = await SynonymPracticeLearnPeekSheet.loadPairLookup(
+        dataSource,
+        widget.level,
+      );
       final weakPairs = await SynonymWeakWordsStore.loadDueWeakPairs(
         excludeLevel: widget.level,
         limit: 1,
@@ -122,6 +129,7 @@ class _SynonymSearchPracticeScreenState
       _controller.setExercises(combined);
       setState(() {
         _reviewLevelsByParentId = reviewMap;
+        _learnItemsByPair = learnMap;
         _isLoading = false;
       });
     } catch (_) {
@@ -147,6 +155,14 @@ class _SynonymSearchPracticeScreenState
     }
   }
 
+  void _recordWeak(SynonymPracticeExercise ex) {
+    SynonymWeakWordsStore.recordWeakPair(
+      level: _reviewLevelsByParentId[ex.parentId] ?? widget.level,
+      baseWord: ex.baseWord,
+      synonym: ex.targetSynonym,
+    );
+  }
+
   void _handlePrimaryAction() {
     final checked = _controller.hasChecked.value;
     final correct = _controller.isCorrect.value;
@@ -154,20 +170,16 @@ class _SynonymSearchPracticeScreenState
 
     if (!checked) {
       final passed = _controller.checkAnswer();
-      if (ex != null) {
-        if (!passed) {
-          SynonymWeakWordsStore.recordWeakPair(
-            level: _reviewLevelsByParentId[ex.parentId] ?? widget.level,
-            baseWord: ex.baseWord,
-            synonym: ex.targetSynonym,
-          );
-        } else if (_controller.wrongAttempts.value == 0 &&
-            !_controller.showHint.value) {
-          SynonymWeakWordsStore.markReviewed(
-            baseWord: ex.baseWord,
-            synonym: ex.targetSynonym,
-          );
-        }
+      if (ex != null && !passed) {
+        _sessionWrongCount++;
+        _recordWeak(ex);
+      } else if (ex != null &&
+          _controller.wrongAttempts.value == 0 &&
+          !_controller.showHint.value) {
+        SynonymWeakWordsStore.markReviewed(
+          baseWord: ex.baseWord,
+          synonym: ex.targetSynonym,
+        );
       }
       return;
     }
@@ -175,13 +187,7 @@ class _SynonymSearchPracticeScreenState
     if (!correct) {
       if (_controller.wrongAttempts.value >= 2) {
         _controller.revealGuidedSolution();
-        if (ex != null) {
-          SynonymWeakWordsStore.recordWeakPair(
-            level: widget.level,
-            baseWord: ex.baseWord,
-            synonym: ex.targetSynonym,
-          );
-        }
+        if (ex != null) _recordWeak(ex);
       }
       return;
     }
@@ -332,6 +338,24 @@ class _SynonymSearchPracticeScreenState
                     icon: Icons.history_rounded,
                     message: 'Review from Level $reviewLevel',
                     color: theme.primaryColor,
+                  ),
+                  SizedBox(height: 10.h),
+                ],
+                if (!isCorrect &&
+                    (wrongCount >= 2 || _sessionWrongCount >= 3)) ...[
+                  SynonymPracticeLearnCueBanner(
+                    key: const Key('practice_review_learn_cue'),
+                    pairLabel: '${ex.baseWord} ↔ ${ex.targetSynonym}',
+                    primaryColor: theme.primaryColor,
+                    onSeeExample: () =>
+                        SynonymPracticeLearnPeekSheet.showForExercise(
+                          context,
+                          exercise: ex,
+                          lookup: _learnItemsByPair,
+                          reviewLevel: reviewLevel,
+                          currentLevel: widget.level,
+                          primaryColor: theme.primaryColor,
+                        ),
                   ),
                   SizedBox(height: 10.h),
                 ],

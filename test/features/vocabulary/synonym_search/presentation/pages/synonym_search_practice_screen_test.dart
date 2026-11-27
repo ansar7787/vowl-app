@@ -405,5 +405,69 @@ void main() {
         await tester.pump(const Duration(milliseconds: 300));
       },
     );
+
+    testWidgets(
+      'shows quick Learn refresher cue after repeated misses without losing Practice progress',
+      (tester) async {
+        final exercises = SynonymPracticeQuest.fallbackExercises(1);
+        await tester.pumpWidget(
+          wrapScreen(
+            SynonymSearchPracticeScreen(level: 1, initialExercises: exercises),
+          ),
+        );
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+
+        expect(
+          find.byKey(const Key('practice_review_learn_cue')),
+          findsNothing,
+        );
+
+        // Two wrong submissions on the first exercise trigger the refresher cue.
+        await tapWithScroll(
+          tester,
+          find.byKey(const Key('contrast_bank_word_1')),
+        );
+        await tapWithScroll(
+          tester,
+          find.byKey(const Key('contrast_bank_word_0')),
+        );
+        await tester.tap(find.text('Check Answer'));
+        await tester.pump(const Duration(milliseconds: 250));
+        expect(
+          find.byKey(const Key('practice_review_learn_cue')),
+          findsNothing,
+        );
+
+        await tapWithScroll(tester, find.byKey(const Key('contrast_slot_0')));
+        await tapWithScroll(
+          tester,
+          find.byKey(const Key('contrast_bank_word_1')),
+        );
+        await tester.tap(find.text('Check Answer'));
+        await tester.pump(const Duration(milliseconds: 250));
+
+        expect(
+          find.byKey(const Key('practice_review_learn_cue')),
+          findsOneWidget,
+        );
+        await tapWithScroll(
+          tester,
+          find.byKey(const Key('practice_see_example_btn')),
+        );
+        await tester.pump(const Duration(milliseconds: 300));
+
+        expect(
+          find.byKey(const Key('peek_resume_practice_btn')),
+          findsOneWidget,
+        );
+        await tester.tap(find.byKey(const Key('peek_resume_practice_btn')));
+        await tester.pump(const Duration(milliseconds: 300));
+        expect(find.text('Show Answer'), findsOneWidget);
+
+        await tester.pumpWidget(const SizedBox.shrink());
+        await tester.pump(const Duration(milliseconds: 300));
+      },
+    );
   });
 }
