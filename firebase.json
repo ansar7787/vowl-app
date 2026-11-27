@@ -4,6 +4,10 @@
     "cleanUrls": true,
     "rewrites": [
       {
+        "source": "/google32658a3601624fb2.html",
+        "destination": "/google32658a3601624fb2.txt"
+      },
+      {
         "source": "/arena",
         "destination": "/duel.html"
       },
@@ -29,6 +33,15 @@
       }
     ],
     "headers": [
+      {
+        "source": "/google32658a3601624fb2.html",
+        "headers": [
+          {
+            "key": "Content-Type",
+            "value": "text/html; charset=utf-8"
+          }
+        ]
+      },
       {
         "source": "**/*.@(html|htm)",
         "headers": [
