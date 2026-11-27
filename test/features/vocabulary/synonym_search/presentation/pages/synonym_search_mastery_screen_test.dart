@@ -436,7 +436,7 @@ void main() {
     );
 
     testWidgets(
-      'renders Context Match mode on questIndex 1 and dispatches SubmitAnswer',
+      'renders Connected-Letter Word Grid on questIndex 1 and dispatches SubmitAnswer',
       (tester) async {
         const ctxState = VocabularyLoaded(
           quests: [quest1, quest2],
@@ -456,16 +456,20 @@ void main() {
 
         await pumpMastery(tester, level: 1);
 
-        expect(
-          find.byKey(const Key('synonym_context_replace_card')),
-          findsOneWidget,
-        );
-        expect(find.byKey(const Key('synonym_word_grid')), findsNothing);
+        expect(find.byKey(const Key('synonym_word_grid')), findsOneWidget);
 
-        final correctOpt = find.byKey(const Key('context_replace_opt_1'));
-        await tester.ensureVisible(correctOpt);
-        await tester.pump();
-        await tester.tap(correctOpt);
+        final grid = SynonymGridBuilder.build(
+          questId: quest2.id,
+          correctAnswer: quest2.correctAnswer!,
+          options: quest2.options!,
+        );
+        for (final cellIdx in grid.targetPathIndices) {
+          final cellFinder = find.byKey(Key('grid_cell_$cellIdx'));
+          await tester.ensureVisible(cellFinder);
+          await tester.pump();
+          await tester.tap(cellFinder);
+          await tester.pump();
+        }
         await tester.pump(const Duration(milliseconds: 300));
 
         verify(
@@ -587,7 +591,7 @@ void main() {
         await tester.pump(const Duration(seconds: 28));
         await tester.pump(const Duration(milliseconds: 200));
 
-        // Advance cleanly to Quest 2 (Context Replace round for Happy -> Glad).
+        // Advance cleanly to Quest 2 (Word Grid round for Happy -> Glad).
         final q2State = VocabularyLoaded(
           quests: const [quest1, quest2],
           currentIndex: 1,
@@ -602,10 +606,18 @@ void main() {
         await tester.pump();
         await tester.pump(const Duration(milliseconds: 250));
 
-        final gladFinder = find.text('Glad');
-        await tester.ensureVisible(gladFinder);
-        await tester.pump();
-        await tester.tap(gladFinder);
+        final q2Grid = SynonymGridBuilder.build(
+          questId: quest2.id,
+          correctAnswer: quest2.correctAnswer!,
+          options: quest2.options!,
+        );
+        for (final cellIdx in q2Grid.targetPathIndices) {
+          final cellFinder = find.byKey(Key('grid_cell_$cellIdx'));
+          await tester.ensureVisible(cellFinder);
+          await tester.pump();
+          await tester.tap(cellFinder);
+          await tester.pump();
+        }
         await tester.pump(const Duration(milliseconds: 300));
 
         final remaining = await SynonymWeakWordsStore.loadWeakPairs();

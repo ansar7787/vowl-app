@@ -34,9 +34,6 @@ class SynonymMasteryController {
   final ValueNotifier<String?> subtleStatusMessage = ValueNotifier<String?>(
     null,
   );
-  final ValueNotifier<String?> selectedContextOption = ValueNotifier<String?>(
-    null,
-  );
 
   String? _loadedQuestKey;
   bool _isSubmitting = false;
@@ -48,15 +45,6 @@ class SynonymMasteryController {
 
   String get currentSpelledWord =>
       grid.value?.spellPath(activePath.value) ?? '';
-
-  /// True for mid-level round (`questIndex == 1`) when the quest provides full
-  /// sentence-replacement choices cleanly.
-  static bool isContextReplaceRound(VocabularyQuest quest, int questIndex) {
-    return questIndex == 1 &&
-        (quest.word ?? '').trim().isNotEmpty &&
-        (quest.contextSentence ?? '').contains('___') &&
-        (quest.options?.length ?? 0) >= 2;
-  }
 
   /// True on the final round of B1+ levels where word length is hidden until Hint.
   static bool shouldHideLengthForRecall({
@@ -82,7 +70,6 @@ class SynonymMasteryController {
     showSuccessFlash.value = false;
     subtleStatusMessage.value = null;
     activePath.value = const [];
-    selectedContextOption.value = null;
     if (forceReset) {
       isHintActive.value = false;
     }
@@ -111,28 +98,11 @@ class SynonymMasteryController {
     _flashTimer?.cancel();
     _statusTimer?.cancel();
     activePath.value = const [];
-    selectedContextOption.value = null;
     isHintActive.value = false;
     showSuccessFlash.value = false;
     subtleStatusMessage.value = null;
     if (!keepComboOnNext) {
       comboStreak.value = 0;
-    }
-  }
-
-  /// Submits a choice during Context Match mode (`questIndex == 1`).
-  void submitContextChoice(String option, VocabularyQuest quest) {
-    if (_isSubmitting) return;
-    selectedContextOption.value = option;
-    final expected = (quest.correctAnswer ?? quest.synonym ?? '')
-        .trim()
-        .toLowerCase();
-    if (option.trim().toLowerCase() == expected) {
-      hapticService?.success();
-      _triggerSuccess();
-    } else {
-      hapticService?.error();
-      _triggerTrapFailure(option);
     }
   }
 
@@ -316,6 +286,5 @@ class SynonymMasteryController {
     shakeCount.dispose();
     showSuccessFlash.dispose();
     subtleStatusMessage.dispose();
-    selectedContextOption.dispose();
   }
 }

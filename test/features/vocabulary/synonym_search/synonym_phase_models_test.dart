@@ -4,9 +4,7 @@ import 'dart:io';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/features/vocabulary/data/models/vocabulary_quest_model.dart';
-import 'package:vowl/features/vocabulary/domain/entities/vocabulary_quest.dart';
 import 'package:vowl/features/vocabulary/synonym_search/data/datasources/synonym_phase_local_data_source.dart';
 import 'package:vowl/features/vocabulary/synonym_search/data/datasources/synonym_weak_words_store.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/controllers/synonym_learn_controller.dart';
@@ -391,20 +389,6 @@ void main() {
         expect(learn.isMakeoverSwapped(0), isTrue);
         expect(learn.testedCountForCurrent(), 1);
 
-        const q = VocabularyQuest(
-          id: 'TEST_CTX',
-          type: QuestType.vocabulary,
-          subtype: GameSubtype.synonymSearch,
-          instruction: 'Pick the matching synonym.',
-          difficulty: 1,
-          word: 'Happy',
-          synonym: 'Glad',
-          correctAnswer: 'Glad',
-          options: ['Glad', 'Merry', 'Proud', 'Calm'],
-          contextSentence: 'I am ___ you came.',
-        );
-        expect(SynonymMasteryController.isContextReplaceRound(q, 0), isFalse);
-        expect(SynonymMasteryController.isContextReplaceRound(q, 1), isTrue);
         expect(
           SynonymMasteryController.shouldHideLengthForRecall(
             level: 40,

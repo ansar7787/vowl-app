@@ -30,7 +30,6 @@ import 'package:vowl/features/vocabulary/synonym_search/presentation/models/syno
 import 'package:vowl/features/vocabulary/synonym_search/presentation/pages/synonym_search_learn_screen.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/pages/synonym_search_practice_screen.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/pages/synonym_search_screen.dart';
-import 'package:vowl/features/vocabulary/synonym_search/presentation/widgets/synonym_context_replace_card.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/widgets/synonym_contrast_swap_card.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/widgets/synonym_cousin_preview_strip.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/widgets/synonym_grid_context_header.dart';
@@ -191,7 +190,6 @@ void main() {
       SynonymCousinPreviewStrip,
       SynonymContrastSwapCard,
       SynonymLadderCard,
-      SynonymContextReplaceCard,
       SynonymGridContextHeader,
       SynonymStreakTimerBar,
       SynonymWordGridBoard,
@@ -297,8 +295,8 @@ void main() {
             expect(rect.height, greaterThanOrEqualTo(48.0));
           }
 
-          // 4. Mastery Phase (Context Match - questIndex 1)
-          activeStage = 'MasteryContextReplace';
+          // 4. Mastery Phase (Round 2 uses Connected-Letter Word Grid cleanly)
+          activeStage = 'MasteryGridRound2';
           const ctxState = VocabularyLoaded(
             quests: [masteryQuest, masteryQuest],
             currentIndex: 1,
@@ -310,12 +308,7 @@ void main() {
           await tester.pump();
           await tester.pump(const Duration(milliseconds: 300));
           assertZeroEllipsisOnGameWidgets(tester);
-          for (int i = 0; i < 4; i++) {
-            final optRect = tester.getRect(
-              find.byKey(Key('context_replace_opt_$i')),
-            );
-            expect(optRect.height, greaterThanOrEqualTo(48.0));
-          }
+          expect(find.byKey(const Key('synonym_word_grid')), findsOneWidget);
 
           // 5. Mastery Phase (Recall-First Mode - Level 45 questIndex 2)
           activeStage = 'MasteryRecallFirst';
