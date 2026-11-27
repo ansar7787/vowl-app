@@ -98,38 +98,13 @@ class _SynonymSearchPracticeScreenState
       final dataSource = SynonymPhaseLocalDataSource(
         bundle: widget.assetBundle ?? DefaultAssetBundle.of(context),
       );
-      final exercises = await dataSource.loadPracticeExercises(widget.level);
-      final learnMap = await SynonymPracticeLearnPeekSheet.loadPairLookup(
-        dataSource,
-        widget.level,
-      );
-      final weakPairs = await SynonymWeakWordsStore.loadDueWeakPairs(
-        excludeLevel: widget.level,
-        limit: 1,
-      );
-      final combined = List<SynonymPracticeExercise>.from(exercises);
-      final reviewMap = <String, int>{};
-      for (final weak in weakPairs) {
-        try {
-          final prior = await dataSource.loadPracticeExercises(weak.level);
-          final match = prior.where(
-            (ex) =>
-                ex.type == SynonymPracticeExerciseType.contrastSwap &&
-                ex.baseWord.toLowerCase() == weak.baseWord.toLowerCase() &&
-                ex.targetSynonym.toLowerCase() == weak.synonym.toLowerCase(),
-          );
-          if (match.isNotEmpty) {
-            combined.add(match.first);
-            reviewMap[match.first.parentId] = weak.level;
-          }
-        } catch (_) {}
-      }
+      final loaded = await dataSource.loadPracticeWithWeakReviews(widget.level);
 
       if (!mounted) return;
-      _controller.setExercises(combined);
+      _controller.setExercises(loaded.exercises);
       setState(() {
-        _reviewLevelsByParentId = reviewMap;
-        _learnItemsByPair = learnMap;
+        _reviewLevelsByParentId = loaded.reviewLevels;
+        _learnItemsByPair = loaded.learnLookup;
         _isLoading = false;
       });
     } catch (_) {

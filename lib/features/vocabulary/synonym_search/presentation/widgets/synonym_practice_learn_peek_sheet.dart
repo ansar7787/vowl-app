@@ -6,7 +6,6 @@ import 'package:go_router/go_router.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/presentation/widgets/tts_speaker_button_widget.dart';
 import 'package:vowl/core/theme/app_colors.dart';
-import 'package:vowl/features/vocabulary/synonym_search/data/datasources/synonym_phase_local_data_source.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/controllers/synonym_tts_helper.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/models/synonym_phase_models.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/widgets/synonym_translatable_block.dart';
@@ -95,20 +94,6 @@ class SynonymPracticeLearnPeekSheet extends StatelessWidget {
   static String pairKey(String baseWord, String synonym) =>
       '${baseWord.trim().toLowerCase()}__${synonym.trim().toLowerCase()}';
 
-  static Future<Map<String, SynonymLearnItem>> loadPairLookup(
-    SynonymPhaseLocalDataSource dataSource,
-    int level,
-  ) async {
-    try {
-      final items = await dataSource.loadLearnItems(level);
-      return {
-        for (final item in items) pairKey(item.baseWord, item.synonym): item,
-      };
-    } catch (_) {
-      return const {};
-    }
-  }
-
   static SynonymLearnItem resolveItem({
     required Map<String, SynonymLearnItem> lookup,
     required SynonymPracticeExercise exercise,
@@ -142,6 +127,7 @@ class SynonymPracticeLearnPeekSheet extends StatelessWidget {
     required int currentLevel,
     required Color primaryColor,
   }) {
+    final router = GoRouter.maybeOf(context);
     final item = resolveItem(
       lookup: lookup,
       exercise: exercise,
@@ -151,7 +137,7 @@ class SynonymPracticeLearnPeekSheet extends StatelessWidget {
       context,
       item: item,
       primaryColor: primaryColor,
-      onOpenFullLearn: () => context.pushReplacement(
+      onOpenFullLearn: () => router?.pushReplacement(
         '/learn?category=vocabulary&gameType=synonymSearch&level=$currentLevel',
       ),
     );
@@ -342,14 +328,30 @@ class SynonymPracticeLearnPeekSheet extends StatelessWidget {
                       onOpenFullLearn();
                     },
                     style: OutlinedButton.styleFrom(
-                      padding: EdgeInsets.symmetric(vertical: 12.h),
+                      foregroundColor: isDark
+                          ? AppColors.slate200
+                          : AppColors.slate700,
+                      side: BorderSide(
+                        color: SynonymUiTokens.subtleBorder(isDark),
+                      ),
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 8.w,
+                        vertical: 12.h,
+                      ),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(
                           SynonymUiTokens.controlRadius,
                         ),
                       ),
                     ),
-                    child: const Text('Back to Learn'),
+                    child: const FittedBox(
+                      fit: BoxFit.scaleDown,
+                      child: Text(
+                        'Back to Learn',
+                        maxLines: 1,
+                        softWrap: false,
+                      ),
+                    ),
                   ),
                 ),
                 SizedBox(width: 10.w),
@@ -361,14 +363,24 @@ class SynonymPracticeLearnPeekSheet extends StatelessWidget {
                       backgroundColor: primaryColor,
                       foregroundColor: Colors.white,
                       elevation: 0,
-                      padding: EdgeInsets.symmetric(vertical: 12.h),
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 8.w,
+                        vertical: 12.h,
+                      ),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(
                           SynonymUiTokens.controlRadius,
                         ),
                       ),
                     ),
-                    child: const Text('Back to Practice'),
+                    child: const FittedBox(
+                      fit: BoxFit.scaleDown,
+                      child: Text(
+                        'Back to Practice',
+                        maxLines: 1,
+                        softWrap: false,
+                      ),
+                    ),
                   ),
                 ),
               ],

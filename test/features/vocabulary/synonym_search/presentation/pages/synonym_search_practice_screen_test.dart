@@ -469,5 +469,77 @@ void main() {
         await tester.pump(const Duration(milliseconds: 300));
       },
     );
+
+    testWidgets('PeekSheet Back to Learn navigates cleanly via GoRouter', (
+      tester,
+    ) async {
+      String? navigatedLocation;
+      final router = GoRouter(
+        initialLocation: '/practice',
+        routes: [
+          GoRoute(
+            path: '/practice',
+            builder: (_, _) => SynonymSearchPracticeScreen(
+              level: 1,
+              initialExercises: SynonymPracticeQuest.fallbackExercises(1),
+            ),
+          ),
+          GoRoute(
+            path: '/learn',
+            builder: (_, state) {
+              navigatedLocation = state.uri.toString();
+              return const Scaffold(body: Text('Learn Route'));
+            },
+          ),
+        ],
+      );
+
+      await tester.pumpWidget(
+        ScreenUtilInit(
+          designSize: const Size(390, 844),
+          minTextAdapt: true,
+          builder: (context, _) => MaterialApp.router(
+            theme: AppTheme.lightTheme,
+            routerConfig: router,
+          ),
+        ),
+      );
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 300));
+
+      await tapWithScroll(
+        tester,
+        find.byKey(const Key('contrast_bank_word_1')),
+      );
+      await tapWithScroll(
+        tester,
+        find.byKey(const Key('contrast_bank_word_0')),
+      );
+      await tester.tap(find.text('Check Answer'));
+      await tester.pump(const Duration(milliseconds: 200));
+
+      await tapWithScroll(tester, find.byKey(const Key('contrast_slot_0')));
+      await tapWithScroll(
+        tester,
+        find.byKey(const Key('contrast_bank_word_1')),
+      );
+      await tester.tap(find.text('Check Answer'));
+      await tester.pump(const Duration(milliseconds: 200));
+
+      await tapWithScroll(
+        tester,
+        find.byKey(const Key('practice_see_example_btn')),
+      );
+      await tester.pump(const Duration(milliseconds: 300));
+      await tester.tap(find.byKey(const Key('peek_back_to_learn_btn')));
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 300));
+
+      expect(
+        navigatedLocation,
+        '/learn?category=vocabulary&gameType=synonymSearch&level=1',
+      );
+      expect(find.text('Learn Route'), findsOneWidget);
+    });
   });
 }
