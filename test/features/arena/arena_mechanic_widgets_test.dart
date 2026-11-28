@@ -423,9 +423,12 @@ void main() {
             roundResults: const [
               ArenaRoundResult(
                 mechanic: ArenaMechanicType.wordSnap,
-                isCorrect: true,
+                isCorrect: false,
                 myTimeMs: 4000,
-                myPoints: 73,
+                myPoints: 0,
+                prompt: 'Unscramble: very large',
+                correctAnswer: 'enormous',
+                explanation: 'Enormous means very large.',
               ),
               ArenaRoundResult(
                 mechanic: ArenaMechanicType.rapidJudge,
@@ -444,6 +447,15 @@ void main() {
 
       expect(find.text('ROUND BREAKDOWN'), findsOneWidget);
       expect(find.textContaining('7/7'), findsAtLeastNWidgets(1));
+
+      // Tapping a round breakdown chip expands the mistake/explanation review card
+      final chipFinder = find.textContaining('Word Snap');
+      await tester.ensureVisible(chipFinder);
+      await tester.pump();
+      await tester.tap(chipFinder);
+      await tester.pump();
+      expect(find.text('Answer: enormous'), findsOneWidget);
+      expect(find.text('Enormous means very large.'), findsOneWidget);
     });
   });
 }

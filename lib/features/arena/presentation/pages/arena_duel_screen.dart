@@ -95,6 +95,7 @@ class _ArenaDuelViewState extends State<_ArenaDuelView>
   // Live PvP rematch handshake state
   bool _waitingForRematchAccept = false;
   bool _isProcessingRematchNav = false;
+  bool _isResultDialogOpen = false;
   String? _incomingRematchRequester;
 
   @override
@@ -150,20 +151,25 @@ class _ArenaDuelViewState extends State<_ArenaDuelView>
               _enterAcceptedRematch(newRoomCode, authUser);
             }
           } else if (status == 'declined') {
+            final wasWaiting = _waitingForRematchAccept;
             setState(() {
               _incomingRematchRequester = null;
-              if (_waitingForRematchAccept) {
-                _waitingForRematchAccept = false;
-                CustomSnackBar.show(
-                  context: context,
-                  message: context.tr(
-                    'arena.rematch_declined',
-                    fallback: 'Rival declined the rematch.',
-                  ),
-                  type: CustomSnackBarType.info,
-                );
-              }
+              _waitingForRematchAccept = false;
             });
+            if (wasWaiting) {
+              CustomSnackBar.show(
+                context: context,
+                message: context.tr(
+                  'arena.rematch_declined',
+                  fallback: 'Rival declined the rematch.',
+                ),
+                type: CustomSnackBarType.info,
+              );
+              final cubitState = context.read<ArenaDuelCubit>().state;
+              if (cubitState.isCompleted && !_isResultDialogOpen) {
+                _showResultDialog(context, cubitState);
+              }
+            }
           }
         });
   }
@@ -201,6 +207,23 @@ class _ArenaDuelViewState extends State<_ArenaDuelView>
 
   Future<void> _acceptIncomingRematch(UserEntity user) async {
     if (_isProcessingRematchNav) return;
+    if (user.coins < 30) {
+      setState(() => _incomingRematchRequester = null);
+      if (di.sl.isRegistered<ArenaRepository>()) {
+        await di.sl<ArenaRepository>().declineRematch(
+          roomCode: widget.initialSession.roomCode,
+        );
+      }
+      if (mounted) {
+        CustomSnackBar.show(
+          context: context,
+          message: 'Not enough coins (30🪙 required) for rematch.',
+          type: CustomSnackBarType.warning,
+        );
+      }
+      return;
+    }
+
     _isProcessingRematchNav = true;
     setState(() => _incomingRematchRequester = null);
 
@@ -218,6 +241,11 @@ class _ArenaDuelViewState extends State<_ArenaDuelView>
       }
     } catch (e) {
       _isProcessingRematchNav = false;
+      if (di.sl.isRegistered<ArenaRepository>()) {
+        await di.sl<ArenaRepository>().declineRematch(
+          roomCode: widget.initialSession.roomCode,
+        );
+      }
       if (mounted) {
         CustomSnackBar.show(
           context: context,
@@ -225,6 +253,19 @@ class _ArenaDuelViewState extends State<_ArenaDuelView>
           type: CustomSnackBarType.error,
         );
       }
+    }
+  }
+
+  void _cancelRematchWait(BuildContext context) {
+    setState(() => _waitingForRematchAccept = false);
+    if (di.sl.isRegistered<ArenaRepository>()) {
+      di.sl<ArenaRepository>().declineRematch(
+        roomCode: widget.initialSession.roomCode,
+      );
+    }
+    final cubitState = context.read<ArenaDuelCubit>().state;
+    if (cubitState.isCompleted && !_isResultDialogOpen) {
+      _showResultDialog(context, cubitState);
     }
   }
 
@@ -413,7 +454,6 @@ class _ArenaDuelViewState extends State<_ArenaDuelView>
                     ),
                     color: AppColors.indigo500,
                     child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Icon(
                           LucideIcons.swords,
@@ -421,13 +461,41 @@ class _ArenaDuelViewState extends State<_ArenaDuelView>
                           color: Colors.white,
                         ),
                         SizedBox(width: 8.w),
-                        Text(
-                          'Waiting for rival to accept rematch...',
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 12.sp,
-                            fontWeight: FontWeight.w700,
-                            color: Colors.white,
+                        Expanded(
+                          child: Text(
+                            context.tr(
+                              'arena.waiting_rematch',
+                              fallback: 'Waiting for rival to accept rematch...',
+                            ),
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 12.sp,
+                              fontWeight: FontWeight.w700,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+                        SizedBox(width: 8.w),
+                        TextButton(
+                          onPressed: () => _cancelRematchWait(context),
+                          style: TextButton.styleFrom(
+                            padding: EdgeInsets.symmetric(
+                              horizontal: 8.w,
+                              vertical: 2.h,
+                            ),
+                            minimumSize: Size.zero,
+                            tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                          ),
+                          child: Text(
+                            context.tr('arena.cancel', fallback: 'Cancel'),
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 11.5.sp,
+                              fontWeight: FontWeight.w800,
+                              color: Colors.white,
+                            ),
                           ),
                         ),
                       ],
@@ -494,7 +562,7 @@ class _ArenaDuelViewState extends State<_ArenaDuelView>
                         }
                       }
 
-                      if (state.isCompleted) {
+                      if (state.isCompleted && !_isResultDialogOpen) {
                         context.read<AuthBloc>().add(const AuthReloadUser());
                         if (di.sl.isRegistered<SoundService>()) {
                           if (state.isWinner) {
@@ -513,77 +581,7 @@ class _ArenaDuelViewState extends State<_ArenaDuelView>
                           }
                         }
 
-                        final authState = context.read<AuthBloc>().state;
-                        final currentUserId = authState.user?.id ?? '';
-                        final session = state.session;
-                        final rivalName =
-                            session?.opponentName(currentUserId) ??
-                            'Challenger';
-                        final rivalPhoto =
-                            session?.opponentPhotoUrl(currentUserId);
-                        final myName =
-                            session?.myName(currentUserId) ??
-                            (authState.user?.safeDisplayName ?? 'You');
-                        final myPhoto =
-                            session?.myPhotoUrl(currentUserId) ??
-                            authState.user?.photoUrl;
-                        final totalRounds = session?.challenges.length ?? 7;
-
-                        showDialog(
-                          context: context,
-                          barrierDismissible: false,
-                          builder: (dialogCtx) => ArenaResultDialog(
-                            isWinner: state.isWinner,
-                            isDraw: state.isDraw,
-                            isSpeedTieBreak: state.isSpeedTieBreak,
-                            speedDiffSeconds: state.speedDiffSeconds,
-                            myScore: state.myScore,
-                            rivalScore: state.rivalScore,
-                            myCorrectCount: state.myCorrectCount,
-                            rivalCorrectCount: state.rivalCorrectCount,
-                            myTotalTimeMs: state.myTotalTimeMs,
-                            rivalTotalTimeMs: state.rivalTotalTimeMs,
-                            rivalName: rivalName,
-                            rivalPhotoUrl: rivalPhoto,
-                            myName: myName,
-                            myPhotoUrl: myPhoto,
-                            payoutCoins: state.payoutCoins,
-                            roomCode: session?.roomCode ?? '',
-                            isAiRival: session?.isGhostRival ?? false,
-                            totalRounds: totalRounds,
-                            myDuelWins: authState.user?.duelWins ?? 0,
-                            rivalDuelWins:
-                                session?.opponentDuelWins(currentUserId) ?? 0,
-                            roundResults: state.roundResults,
-                            onRematch: () {
-                              Navigator.of(dialogCtx).pop();
-                              if (authState.status ==
-                                      AuthStatus.authenticated &&
-                                  authState.user != null) {
-                                _triggerRematch(
-                                  context,
-                                  authState.user!,
-                                  session,
-                                );
-                              }
-                            },
-                            onClose: () {
-                              Navigator.of(dialogCtx).pop();
-                              context.read<AuthBloc>().add(
-                                const AuthReloadUser(),
-                              );
-                              final nav = Navigator.of(
-                                context,
-                                rootNavigator: true,
-                              );
-                              if (nav.canPop()) {
-                                nav.pop();
-                              } else {
-                                GoRouter.of(context).go(AppRouter.gamesRoute);
-                              }
-                            },
-                          ),
-                        );
+                        _showResultDialog(context, state);
                       }
                     },
                     builder: (context, state) {
@@ -969,10 +967,75 @@ class _ArenaDuelViewState extends State<_ArenaDuelView>
     );
   }
 
+  void _showResultDialog(BuildContext context, ArenaDuelState state) {
+    if (_isResultDialogOpen || !mounted) return;
+    _isResultDialogOpen = true;
+
+    final authState = context.read<AuthBloc>().state;
+    final currentUserId = authState.user?.id ?? '';
+    final session = state.session;
+    final rivalName = session?.opponentName(currentUserId) ?? 'Challenger';
+    final rivalPhoto = session?.opponentPhotoUrl(currentUserId);
+    final myName =
+        session?.myName(currentUserId) ??
+        (authState.user?.safeDisplayName ?? 'You');
+    final myPhoto =
+        session?.myPhotoUrl(currentUserId) ?? authState.user?.photoUrl;
+    final totalRounds = session?.challenges.length ?? 7;
+
+    showDialog<void>(
+      context: context,
+      barrierDismissible: false,
+      builder: (dialogCtx) => ArenaResultDialog(
+        isWinner: state.isWinner,
+        isDraw: state.isDraw,
+        isSpeedTieBreak: state.isSpeedTieBreak,
+        speedDiffSeconds: state.speedDiffSeconds,
+        myScore: state.myScore,
+        rivalScore: state.rivalScore,
+        myCorrectCount: state.myCorrectCount,
+        rivalCorrectCount: state.rivalCorrectCount,
+        myTotalTimeMs: state.myTotalTimeMs,
+        rivalTotalTimeMs: state.rivalTotalTimeMs,
+        rivalName: rivalName,
+        rivalPhotoUrl: rivalPhoto,
+        myName: myName,
+        myPhotoUrl: myPhoto,
+        payoutCoins: state.payoutCoins,
+        roomCode: session?.roomCode ?? '',
+        isAiRival: session?.isGhostRival ?? false,
+        totalRounds: totalRounds,
+        myDuelWins: authState.user?.duelWins ?? 0,
+        rivalDuelWins: session?.opponentDuelWins(currentUserId) ?? 0,
+        roundResults: state.roundResults,
+        onRematch: () {
+          if (authState.status == AuthStatus.authenticated &&
+              authState.user != null) {
+            _triggerRematch(context, authState.user!, session, dialogCtx);
+          }
+        },
+        onClose: () {
+          _isResultDialogOpen = false;
+          Navigator.of(dialogCtx).pop();
+          context.read<AuthBloc>().add(const AuthReloadUser());
+          final nav = Navigator.of(context, rootNavigator: true);
+          if (nav.canPop()) {
+            nav.pop();
+          } else {
+            GoRouter.of(context).go(AppRouter.gamesRoute);
+          }
+        },
+      ),
+    ).whenComplete(() {
+      _isResultDialogOpen = false;
+    });
+  }
+
   Future<void> _triggerRematch(
     BuildContext context,
     UserEntity user,
     ArenaDuelSession? completedSession,
+    BuildContext dialogCtx,
   ) async {
     final authState = context.read<AuthBloc>().state;
     final currentUser = authState.user ?? user;
@@ -987,11 +1050,16 @@ class _ArenaDuelViewState extends State<_ArenaDuelView>
         onRefuelSuccess: () {
           if (context.mounted) {
             context.read<AuthBloc>().add(const AuthReloadUser());
-            _triggerRematch(context, currentUser, completedSession);
+            _triggerRematch(context, currentUser, completedSession, dialogCtx);
           }
         },
       );
       return;
+    }
+
+    if (dialogCtx.mounted && Navigator.of(dialogCtx).canPop()) {
+      Navigator.of(dialogCtx).pop();
+      _isResultDialogOpen = false;
     }
 
     // Ghost AI rematch: instant launch with same AI tier & new challenges
@@ -1024,6 +1092,7 @@ class _ArenaDuelViewState extends State<_ArenaDuelView>
             message: 'Could not start AI rematch.',
             type: CustomSnackBarType.error,
           );
+          _showResultDialog(context, context.read<ArenaDuelCubit>().state);
         }
       }
       return;
@@ -1054,6 +1123,7 @@ class _ArenaDuelViewState extends State<_ArenaDuelView>
             message: 'Failed to send rematch request.',
             type: CustomSnackBarType.error,
           );
+          _showResultDialog(context, context.read<ArenaDuelCubit>().state);
         }
       }
     }

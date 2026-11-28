@@ -77,7 +77,6 @@ class ArenaDuelCubit extends Cubit<ArenaDuelState> {
         if (state.isWaitingForGuest && !updated.isWaiting) {
           emit(state.copyWith(session: updated, isWaitingForGuest: false));
           _startQuestionTimer(currentUser);
-          _attachLiveTypingListener(updated, currentUser);
         } else {
           final isHost = currentUser.id == updated.hostId;
           final oppScore = isHost ? updated.guestScore : updated.hostScore;
@@ -103,22 +102,19 @@ class ArenaDuelCubit extends Cubit<ArenaDuelState> {
           }
 
           if (state.isWaitingForOpponentFinish && !state.isCompleted) {
-            if (updated.isCompleted) {
+            if (updated.isCompleted || updated.bothPlayersFinished) {
               _finalizeMatch(currentUser);
             }
           }
         }
       });
-
-      if (!session.isWaiting) {
-        _attachLiveTypingListener(session, currentUser);
-      }
     }
   }
 
   void _attachLiveTypingListener(
     ArenaDuelSession session,
     UserEntity currentUser,
+    int roundIndex,
   ) {
     final isHost = currentUser.id == session.hostId;
     final rivalId = isHost ? session.guestId : session.hostId;
@@ -129,10 +125,12 @@ class ArenaDuelCubit extends Cubit<ArenaDuelState> {
         .listenToRivalTypingProgress(
           roomCode: session.roomCode,
           rivalId: rivalId,
+          roundIndex: roundIndex,
         )
         .listen((chars) {
           if (isClosed || state.isCompleted) return;
-          if (state.currentChallenge?.mechanic == ArenaMechanicType.typeDuel) {
+          if (state.currentQuestionIndex == roundIndex &&
+              state.currentChallenge?.mechanic == ArenaMechanicType.typeDuel) {
             emit(state.copyWith(rivalCharactersTyped: chars));
           }
         });
@@ -178,8 +176,19 @@ class ArenaDuelCubit extends Cubit<ArenaDuelState> {
       ),
     );
 
+    // Scope live rival typing progress strictly to Type Duel rounds in live PvP.
+    final liveSession = state.session;
+    if (liveSession != null && !liveSession.isGhostRival) {
+      if (mechanic == ArenaMechanicType.typeDuel) {
+        _attachLiveTypingListener(liveSession, currentUser, qIndex);
+      } else {
+        _typingSub?.cancel();
+        _typingSub = null;
+      }
+    }
+
     // Simulate ghost opponent answering this round
-    if (state.session?.isGhostRival == true) {
+    if (liveSession?.isGhostRival == true) {
       _scheduleGhostAnswer(qIndex);
     }
 
@@ -437,6 +446,7 @@ class ArenaDuelCubit extends Cubit<ArenaDuelState> {
             roomCode: session.roomCode,
             userId: currentUser.id,
             charactersTyped: len,
+            roundIndex: state.currentQuestionIndex,
           ),
         );
       }
@@ -578,6 +588,16 @@ class ArenaDuelCubit extends Cubit<ArenaDuelState> {
         isCorrect &&
         state.rivalScore == 0;
 
+    final items = challenge.rapidItems ?? const <RapidJudgeItem>[];
+    final judgments = state.rapidMyJudgments ?? const <bool?>[];
+    final missedNotes = <String>[];
+    for (var i = 0; i < items.length; i++) {
+      final j = i < judgments.length ? judgments[i] : null;
+      if (j == null || j != items[i].isCorrect) {
+        missedNotes.add('${items[i].sentence} (${items[i].rule})');
+      }
+    }
+
     final roundResult = ArenaRoundResult(
       mechanic: ArenaMechanicType.rapidJudge,
       isCorrect: isCorrect,
@@ -585,6 +605,11 @@ class ArenaDuelCubit extends Cubit<ArenaDuelState> {
       myPoints: speedPoints,
       rapidCorrectItems: correctItems,
       rapidTotalItems: totalItems,
+      prompt: challenge.prompt,
+      correctAnswer: '$correctItems/$totalItems correct',
+      explanation: missedNotes.isEmpty
+          ? 'All statements judged accurately!'
+          : 'Missed: ${missedNotes.take(3).join(' • ')}',
     );
 
     emit(
@@ -690,11 +715,23 @@ class ArenaDuelCubit extends Cubit<ArenaDuelState> {
         isCorrect &&
         state.rivalScore == 0;
 
+    final String reviewAnswer;
+    if (challenge.mechanic == ArenaMechanicType.spotError &&
+        challenge.correctedToken != null &&
+        challenge.errorToken != null) {
+      reviewAnswer = '${challenge.errorToken} → ${challenge.correctedToken}';
+    } else {
+      reviewAnswer = challenge.correctAnswer;
+    }
+
     final roundResult = ArenaRoundResult(
       mechanic: challenge.mechanic,
       isCorrect: isCorrect,
       myTimeMs: elapsedMs,
       myPoints: speedPoints,
+      prompt: challenge.prompt,
+      correctAnswer: reviewAnswer,
+      explanation: challenge.explanation,
     );
 
     emit(
@@ -777,8 +814,9 @@ class ArenaDuelCubit extends Cubit<ArenaDuelState> {
     UserEntity currentUser,
     int score,
     int correctCount,
-    int totalTimeMs,
-  ) {
+    int totalTimeMs, {
+    bool finished = false,
+  }) {
     if (state.session != null && !state.session!.isGhostRival) {
       final isHost = currentUser.id == state.session!.hostId;
       _repository.submitScore(
@@ -788,6 +826,7 @@ class ArenaDuelCubit extends Cubit<ArenaDuelState> {
         correctCount: correctCount,
         totalTimeMs: totalTimeMs,
         isHost: isHost,
+        finished: finished,
       );
     }
   }
@@ -815,10 +854,11 @@ class ArenaDuelCubit extends Cubit<ArenaDuelState> {
           state.myScore,
           state.myCorrectCount,
           state.myTotalTimeMs,
+          finished: true,
         );
-        // Fallback auto-finalize after 12s if opponent lags
+        // Generous fallback auto-finalize after 45s if opponent stalls cleanly
         _finishTimer?.cancel();
-        _finishTimer = Timer(const Duration(seconds: 12), () {
+        _finishTimer = Timer(const Duration(seconds: 45), () {
           if (!isClosed && !state.isCompleted) {
             _finalizeMatch(currentUser);
           }

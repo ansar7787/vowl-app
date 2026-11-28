@@ -3,13 +3,14 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lucide_icons/lucide_icons.dart';
 import 'package:vowl/core/presentation/widgets/user_avatar.dart';
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/arena/domain/entities/arena_challenge.dart';
 import 'package:vowl/features/arena/domain/entities/arena_match_record.dart';
 import 'package:vowl/features/arena/presentation/widgets/arena_rank_badge.dart';
 
 /// Card tile displaying one completed match record in [ArenaMatchHistoryScreen],
-/// including opponent rank badge, score, win/loss/draw outcome, and per-round breakdown.
-class ArenaMatchHistoryTile extends StatelessWidget {
+/// including opponent rank badge, score, outcome, and tappable per-round review.
+class ArenaMatchHistoryTile extends StatefulWidget {
   final ArenaMatchRecord record;
   final bool isDark;
   final bool isMidnight;
@@ -21,9 +22,18 @@ class ArenaMatchHistoryTile extends StatelessWidget {
     this.isMidnight = false,
   });
 
-  String _formatRelativeTime(DateTime dt) {
+  @override
+  State<ArenaMatchHistoryTile> createState() => _ArenaMatchHistoryTileState();
+}
+
+class _ArenaMatchHistoryTileState extends State<ArenaMatchHistoryTile> {
+  int? _selectedRoundIndex;
+
+  String _formatRelativeTime(BuildContext context, DateTime dt) {
     final diff = DateTime.now().difference(dt.toLocal());
-    if (diff.isNegative || diff.inSeconds < 60) return 'Just now';
+    if (diff.isNegative || diff.inSeconds < 60) {
+      return context.tr('arena.just_now', fallback: 'Just now');
+    }
     if (diff.inMinutes < 60) return '${diff.inMinutes}m ago';
     if (diff.inHours < 24) return '${diff.inHours}h ago';
     if (diff.inDays < 7) return '${diff.inDays}d ago';
@@ -32,12 +42,18 @@ class ArenaMatchHistoryTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final record = widget.record;
+    final isDark = widget.isDark;
+    final isMidnight = widget.isMidnight;
+
     final Color statusColor = record.isWin
         ? AppColors.emerald500
         : (record.isDraw ? AppColors.amber500 : AppColors.rose500);
     final String statusLabel = record.isWin
-        ? 'VICTORY'
-        : (record.isDraw ? 'DRAW' : 'DEFEAT');
+        ? context.tr('arena.victory', fallback: 'VICTORY')
+        : (record.isDraw
+              ? context.tr('arena.draw', fallback: 'DRAW')
+              : context.tr('arena.defeat', fallback: 'DEFEAT'));
     final IconData statusIcon = record.isWin
         ? LucideIcons.trophy
         : (record.isDraw ? LucideIcons.scale : LucideIcons.shieldAlert);
@@ -50,6 +66,18 @@ class ArenaMatchHistoryTile extends StatelessWidget {
         : (isDark ? Colors.white.withValues(alpha: 0.08) : AppColors.slate200);
     final textPrimary = isDark ? Colors.white : AppColors.slate900;
     final textSecondary = isDark ? AppColors.slate400 : AppColors.slate600;
+
+    final selectedRound =
+        (_selectedRoundIndex != null &&
+            _selectedRoundIndex! >= 0 &&
+            _selectedRoundIndex! < record.rounds.length)
+        ? record.rounds[_selectedRoundIndex!]
+        : null;
+    final hasReviewDetails =
+        selectedRound != null &&
+        ((selectedRound.prompt?.isNotEmpty ?? false) ||
+            (selectedRound.correctAnswer?.isNotEmpty ?? false) ||
+            (selectedRound.explanation?.isNotEmpty ?? false));
 
     return Container(
       padding: EdgeInsets.all(14.r),
@@ -131,7 +159,15 @@ class ArenaMatchHistoryTile extends StatelessWidget {
                             borderRadius: BorderRadius.circular(4.r),
                           ),
                           child: Text(
-                            record.isGhostRival ? 'AI RIVAL' : 'LIVE PVP',
+                            record.isGhostRival
+                                ? context.tr(
+                                    'arena.ai_rival',
+                                    fallback: 'AI RIVAL',
+                                  )
+                                : context.tr(
+                                    'arena.live_pvp',
+                                    fallback: 'LIVE PVP',
+                                  ),
                             style: TextStyle(
                               fontFamily: 'Outfit',
                               fontSize: 8.5.sp,
@@ -144,7 +180,7 @@ class ArenaMatchHistoryTile extends StatelessWidget {
                         ),
                         SizedBox(width: 6.w),
                         Text(
-                          _formatRelativeTime(record.timestamp),
+                          _formatRelativeTime(context, record.timestamp),
                           style: TextStyle(
                             fontFamily: 'Outfit',
                             fontSize: 10.sp,
@@ -207,37 +243,106 @@ class ArenaMatchHistoryTile extends StatelessWidget {
             Wrap(
               spacing: 6.w,
               runSpacing: 6.h,
-              children: record.rounds.map((r) {
+              children: List.generate(record.rounds.length, (idx) {
+                final r = record.rounds[idx];
                 final chipColor = r.isCorrect
                     ? AppColors.emerald500
                     : AppColors.rose500;
-                return Container(
-                  padding: EdgeInsets.symmetric(
-                    horizontal: 6.w,
-                    vertical: 3.h,
-                  ),
-                  decoration: BoxDecoration(
-                    color: chipColor.withValues(alpha: 0.10),
-                    borderRadius: BorderRadius.circular(6.r),
-                    border: Border.all(
-                      color: chipColor.withValues(alpha: 0.30),
-                      width: 0.8,
+                final isSelected = _selectedRoundIndex == idx;
+                return GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      _selectedRoundIndex = isSelected ? null : idx;
+                    });
+                  },
+                  child: Container(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 6.w,
+                      vertical: 3.h,
                     ),
-                  ),
-                  child: Text(
-                    r.rapidCorrectItems != null
-                        ? '${r.mechanic.icon} ${r.rapidCorrectItems}/${r.rapidTotalItems ?? 6}'
-                        : '${r.mechanic.icon} ${r.isCorrect ? "✓" : "✗"}',
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 9.5.sp,
-                      fontWeight: FontWeight.w800,
-                      color: chipColor,
+                    decoration: BoxDecoration(
+                      color: chipColor.withValues(alpha: isSelected ? 0.22 : 0.10),
+                      borderRadius: BorderRadius.circular(6.r),
+                      border: Border.all(
+                        color: chipColor.withValues(alpha: isSelected ? 0.90 : 0.30),
+                        width: isSelected ? 1.3 : 0.8,
+                      ),
+                    ),
+                    child: Text(
+                      r.rapidCorrectItems != null
+                          ? '${r.mechanic.icon} ${r.rapidCorrectItems}/${r.rapidTotalItems ?? 6}'
+                          : '${r.mechanic.icon} ${r.isCorrect ? "✓" : "✗"}',
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 9.5.sp,
+                        fontWeight: FontWeight.w800,
+                        color: chipColor,
+                      ),
                     ),
                   ),
                 );
-              }).toList(),
+              }),
             ),
+            if (hasReviewDetails) ...[
+              SizedBox(height: 8.h),
+              Container(
+                padding: EdgeInsets.all(10.r),
+                decoration: BoxDecoration(
+                  color: isDark ? AppColors.slate900 : AppColors.slate50,
+                  borderRadius: BorderRadius.circular(10.r),
+                  border: Border.all(color: borderColor),
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      '${selectedRound.mechanic.icon} ${selectedRound.mechanic.displayName}',
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 10.5.sp,
+                        fontWeight: FontWeight.w900,
+                        color: selectedRound.isCorrect
+                            ? AppColors.emerald500
+                            : AppColors.rose500,
+                      ),
+                    ),
+                    if (selectedRound.prompt?.isNotEmpty ?? false) ...[
+                      SizedBox(height: 3.h),
+                      Text(
+                        selectedRound.prompt!,
+                        style: TextStyle(
+                          fontSize: 11.sp,
+                          fontWeight: FontWeight.w600,
+                          color: textPrimary,
+                        ),
+                      ),
+                    ],
+                    if (selectedRound.correctAnswer?.isNotEmpty ?? false) ...[
+                      SizedBox(height: 2.h),
+                      Text(
+                        'Answer: ${selectedRound.correctAnswer!}',
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 11.sp,
+                          fontWeight: FontWeight.w800,
+                          color: AppColors.emerald500,
+                        ),
+                      ),
+                    ],
+                    if (selectedRound.explanation?.isNotEmpty ?? false) ...[
+                      SizedBox(height: 2.h),
+                      Text(
+                        selectedRound.explanation!,
+                        style: TextStyle(
+                          fontSize: 10.5.sp,
+                          color: textSecondary,
+                        ),
+                      ),
+                    ],
+                  ],
+                ),
+              ),
+            ],
           ],
         ],
       ),

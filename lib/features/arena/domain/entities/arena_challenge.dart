@@ -409,6 +409,9 @@ class ArenaRoundResult {
   final int myPoints;
   final int? rapidCorrectItems;
   final int? rapidTotalItems;
+  final String? prompt;
+  final String? correctAnswer;
+  final String? explanation;
 
   const ArenaRoundResult({
     required this.mechanic,
@@ -417,6 +420,9 @@ class ArenaRoundResult {
     required this.myPoints,
     this.rapidCorrectItems,
     this.rapidTotalItems,
+    this.prompt,
+    this.correctAnswer,
+    this.explanation,
   });
 
   factory ArenaRoundResult.fromMap(Map<String, dynamic> map) {
@@ -429,6 +435,9 @@ class ArenaRoundResult {
       myPoints: (map['myPoints'] as num?)?.toInt() ?? 0,
       rapidCorrectItems: (map['rapidCorrectItems'] as num?)?.toInt(),
       rapidTotalItems: (map['rapidTotalItems'] as num?)?.toInt(),
+      prompt: map['prompt'] as String?,
+      correctAnswer: map['correctAnswer'] as String?,
+      explanation: map['explanation'] as String?,
     );
   }
 
@@ -440,6 +449,11 @@ class ArenaRoundResult {
       'myPoints': myPoints,
       if (rapidCorrectItems != null) 'rapidCorrectItems': rapidCorrectItems,
       if (rapidTotalItems != null) 'rapidTotalItems': rapidTotalItems,
+      if (prompt != null && prompt!.isNotEmpty) 'prompt': prompt,
+      if (correctAnswer != null && correctAnswer!.isNotEmpty)
+        'correctAnswer': correctAnswer,
+      if (explanation != null && explanation!.isNotEmpty)
+        'explanation': explanation,
     };
   }
 }

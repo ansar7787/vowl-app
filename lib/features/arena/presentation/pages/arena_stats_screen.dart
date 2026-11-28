@@ -11,6 +11,7 @@ import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/app_theme.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/arena/domain/entities/arena_rank.dart';
 import 'package:vowl/features/arena/presentation/pages/arena_match_history_screen.dart';
 import 'package:vowl/features/arena/presentation/pages/arena_matchmaking_screen.dart';
@@ -1213,15 +1214,20 @@ class _ArenaRecentMatches extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text(
-              'Recent Matches',
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 13.sp,
-                fontWeight: FontWeight.w900,
-                color: isDark ? Colors.white : AppColors.slate900,
+            Expanded(
+              child: Text(
+                context.tr('arena.recent_matches', fallback: 'Recent Matches'),
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 13.sp,
+                  fontWeight: FontWeight.w900,
+                  color: isDark ? Colors.white : AppColors.slate900,
+                ),
               ),
             ),
+            SizedBox(width: 8.w),
             TextButton.icon(
               onPressed: () {
                 Navigator.of(
@@ -1240,7 +1246,7 @@ class _ArenaRecentMatches extends StatelessWidget {
                 color: isDark ? AppColors.indigo400 : AppColors.indigo600,
               ),
               label: Text(
-                'Match History',
+                context.tr('arena.match_history', fallback: 'Match History'),
                 style: TextStyle(
                   fontFamily: 'Outfit',
                   fontSize: 11.sp,

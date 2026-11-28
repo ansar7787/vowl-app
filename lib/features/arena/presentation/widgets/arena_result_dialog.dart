@@ -699,67 +699,12 @@ class ArenaResultDialog extends StatelessWidget {
 
               if (roundResults.isNotEmpty) ...[
                 SizedBox(height: 12.h),
-                Container(
-                  padding: EdgeInsets.all(10.r),
-                  decoration: BoxDecoration(
-                    color: cardBg,
-                    borderRadius: BorderRadius.circular(14.r),
-                    border: Border.all(color: borderColor),
-                  ),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        context.tr(
-                          'arena.round_breakdown',
-                          fallback: 'ROUND BREAKDOWN',
-                        ),
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 9.5.sp,
-                          fontWeight: FontWeight.w800,
-                          letterSpacing: 1.0,
-                          color: textSecondary,
-                        ),
-                      ),
-                      SizedBox(height: 6.h),
-                      Wrap(
-                        spacing: 6.w,
-                        runSpacing: 6.h,
-                        children: roundResults.map((r) {
-                          final col = r.isCorrect
-                              ? AppColors.emerald500
-                              : AppColors.rose500;
-                          final label = r.rapidCorrectItems != null
-                              ? '${r.mechanic.icon} ${r.mechanic.displayName} (${r.rapidCorrectItems}/${r.rapidTotalItems ?? 6})'
-                              : '${r.mechanic.icon} ${r.mechanic.displayName} ${r.isCorrect ? "✓" : "✗"}';
-                          return Container(
-                            padding: EdgeInsets.symmetric(
-                              horizontal: 7.w,
-                              vertical: 3.h,
-                            ),
-                            decoration: BoxDecoration(
-                              color: col.withValues(alpha: 0.12),
-                              borderRadius: BorderRadius.circular(7.r),
-                              border: Border.all(
-                                color: col.withValues(alpha: 0.35),
-                                width: 0.8,
-                              ),
-                            ),
-                            child: Text(
-                              label,
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontSize: 9.5.sp,
-                                fontWeight: FontWeight.w800,
-                                color: col,
-                              ),
-                            ),
-                          );
-                        }).toList(),
-                      ),
-                    ],
-                  ),
+                _RoundBreakdownPanel(
+                  roundResults: roundResults,
+                  cardBg: cardBg,
+                  borderColor: borderColor,
+                  textPrimary: textPrimary,
+                  textSecondary: textSecondary,
                 ),
               ],
 
@@ -1013,6 +958,188 @@ class _MetricPill extends StatelessWidget {
             ),
           ],
         ),
+      ),
+    );
+  }
+}
+
+class _RoundBreakdownPanel extends StatefulWidget {
+  final List<ArenaRoundResult> roundResults;
+  final Color cardBg;
+  final Color borderColor;
+  final Color textPrimary;
+  final Color textSecondary;
+
+  const _RoundBreakdownPanel({
+    required this.roundResults,
+    required this.cardBg,
+    required this.borderColor,
+    required this.textPrimary,
+    required this.textSecondary,
+  });
+
+  @override
+  State<_RoundBreakdownPanel> createState() => _RoundBreakdownPanelState();
+}
+
+class _RoundBreakdownPanelState extends State<_RoundBreakdownPanel> {
+  int? _selectedRoundIndex;
+
+  @override
+  Widget build(BuildContext context) {
+    final selected =
+        (_selectedRoundIndex != null &&
+            _selectedRoundIndex! >= 0 &&
+            _selectedRoundIndex! < widget.roundResults.length)
+        ? widget.roundResults[_selectedRoundIndex!]
+        : null;
+    final hasDetails =
+        selected != null &&
+        ((selected.prompt?.isNotEmpty ?? false) ||
+            (selected.correctAnswer?.isNotEmpty ?? false) ||
+            (selected.explanation?.isNotEmpty ?? false));
+
+    return Container(
+      padding: EdgeInsets.all(10.r),
+      decoration: BoxDecoration(
+        color: widget.cardBg,
+        borderRadius: BorderRadius.circular(14.r),
+        border: Border.all(color: widget.borderColor),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Expanded(
+                child: Text(
+                  context.tr(
+                    'arena.round_breakdown',
+                    fallback: 'ROUND BREAKDOWN',
+                  ),
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 9.5.sp,
+                    fontWeight: FontWeight.w800,
+                    letterSpacing: 1.0,
+                    color: widget.textSecondary,
+                  ),
+                ),
+              ),
+              if (widget.roundResults.any(
+                (r) =>
+                    (r.correctAnswer?.isNotEmpty ?? false) ||
+                    (r.explanation?.isNotEmpty ?? false),
+              ))
+                Text(
+                  context.tr(
+                    'arena.tap_round_review',
+                    fallback: 'Tap any round to review',
+                  ),
+                  style: TextStyle(
+                    fontSize: 8.5.sp,
+                    fontWeight: FontWeight.w600,
+                    color: widget.textSecondary,
+                  ),
+                ),
+            ],
+          ),
+          SizedBox(height: 6.h),
+          Wrap(
+            spacing: 6.w,
+            runSpacing: 6.h,
+            children: List.generate(widget.roundResults.length, (idx) {
+              final r = widget.roundResults[idx];
+              final col = r.isCorrect
+                  ? AppColors.emerald500
+                  : AppColors.rose500;
+              final isSelected = _selectedRoundIndex == idx;
+              final label = r.rapidCorrectItems != null
+                  ? '${r.mechanic.icon} ${r.mechanic.displayName} (${r.rapidCorrectItems}/${r.rapidTotalItems ?? 6})'
+                  : '${r.mechanic.icon} ${r.mechanic.displayName} ${r.isCorrect ? "✓" : "✗"}';
+              return GestureDetector(
+                onTap: () {
+                  setState(() {
+                    _selectedRoundIndex = isSelected ? null : idx;
+                  });
+                },
+                child: Container(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 7.w,
+                    vertical: 3.h,
+                  ),
+                  decoration: BoxDecoration(
+                    color: col.withValues(alpha: isSelected ? 0.24 : 0.12),
+                    borderRadius: BorderRadius.circular(7.r),
+                    border: Border.all(
+                      color: col.withValues(alpha: isSelected ? 0.90 : 0.35),
+                      width: isSelected ? 1.3 : 0.8,
+                    ),
+                  ),
+                  child: Text(
+                    label,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 9.5.sp,
+                      fontWeight: FontWeight.w800,
+                      color: col,
+                    ),
+                  ),
+                ),
+              );
+            }),
+          ),
+          if (hasDetails) ...[
+            SizedBox(height: 8.h),
+            Container(
+              width: double.infinity,
+              padding: EdgeInsets.all(8.r),
+              decoration: BoxDecoration(
+                color: widget.borderColor.withValues(alpha: 0.25),
+                borderRadius: BorderRadius.circular(9.r),
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  if (selected.prompt?.isNotEmpty ?? false)
+                    Text(
+                      selected.prompt!,
+                      style: TextStyle(
+                        fontSize: 10.5.sp,
+                        fontWeight: FontWeight.w600,
+                        color: widget.textPrimary,
+                      ),
+                    ),
+                  if (selected.correctAnswer?.isNotEmpty ?? false) ...[
+                    SizedBox(height: 2.h),
+                    Text(
+                      'Answer: ${selected.correctAnswer!}',
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 10.5.sp,
+                        fontWeight: FontWeight.w800,
+                        color: AppColors.emerald500,
+                      ),
+                    ),
+                  ],
+                  if (selected.explanation?.isNotEmpty ?? false) ...[
+                    SizedBox(height: 2.h),
+                    Text(
+                      selected.explanation!,
+                      style: TextStyle(
+                        fontSize: 10.sp,
+                        color: widget.textSecondary,
+                      ),
+                    ),
+                  ],
+                ],
+              ),
+            ),
+          ],
+        ],
       ),
     );
   }

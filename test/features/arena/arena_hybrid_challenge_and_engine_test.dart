@@ -268,6 +268,9 @@ void main() {
             isCorrect: true,
             myTimeMs: 4500,
             myPoints: 70,
+            prompt: 'Very large in size',
+            correctAnswer: 'enormous',
+            explanation: 'Enormous means huge.',
           ),
           ArenaRoundResult(
             mechanic: ArenaMechanicType.rapidJudge,
@@ -287,7 +290,23 @@ void main() {
       expect(decoded.opponentRank, ArenaRank.gladiator);
       expect(decoded.isWin, isTrue);
       expect(decoded.rounds.length, 2);
+      expect(decoded.rounds[0].prompt, 'Very large in size');
+      expect(decoded.rounds[0].correctAnswer, 'enormous');
+      expect(decoded.rounds[0].explanation, 'Enormous means huge.');
       expect(decoded.rounds[1].rapidCorrectItems, 5);
+    });
+
+    test('generateHybridPentathlon avoids repeating the same answer across rounds', () async {
+      for (final seed in [1, 7, 42, 99, 2026]) {
+        final pentathlon =
+            await ArenaCurriculumEngine.generateHybridPentathlon(seed: seed);
+        expect(pentathlon.length, 7);
+        final answers = pentathlon
+            .map((c) => c.correctAnswer.trim().toLowerCase())
+            .where((a) => a.isNotEmpty)
+            .toList();
+        expect(answers.toSet().length, answers.length);
+      }
     });
   });
 }

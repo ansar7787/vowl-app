@@ -40,7 +40,8 @@ abstract class ArenaRepository {
   /// Listens to real-time updates for an active duel room.
   Stream<ArenaDuelSession> listenToRoom(String roomCode);
 
-  /// Submits player's quiz score, round correct count, and total response time to the room.
+  /// Submits player's quiz score, round correct count, total response time,
+  /// and optional completion flag to the room.
   Future<void> submitScore({
     required String roomCode,
     required String userId,
@@ -48,6 +49,7 @@ abstract class ArenaRepository {
     required bool isHost,
     int correctCount = 0,
     int totalTimeMs = 0,
+    bool finished = false,
   });
 
   /// Updates live character count typed in Type Duel for PvP opponent preview.
@@ -55,12 +57,14 @@ abstract class ArenaRepository {
     required String roomCode,
     required String userId,
     required int charactersTyped,
+    int roundIndex = 0,
   });
 
-  /// Streams rival's live character count in Type Duel (PvP).
+  /// Streams rival's live character count in Type Duel (PvP), scoped to [roundIndex].
   Stream<int> listenToRivalTypingProgress({
     required String roomCode,
     required String rivalId,
+    int? roundIndex,
   });
 
   /// Sends a rematch request in a live PvP room using a Firestore transaction.

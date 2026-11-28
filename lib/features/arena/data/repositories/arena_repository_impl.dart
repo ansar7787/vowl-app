@@ -539,6 +539,7 @@ class ArenaRepositoryImpl implements ArenaRepository {
     required bool isHost,
     int correctCount = 0,
     int totalTimeMs = 0,
+    bool finished = false,
   }) async {
     final cleanCode = roomCode.trim().toUpperCase();
     if (cleanCode.startsWith('VOWL-AI-') ||
@@ -552,6 +553,7 @@ class ArenaRepositoryImpl implements ArenaRepository {
         isHost ? 'hostScore' : 'guestScore': score,
         isHost ? 'hostCorrectCount' : 'guestCorrectCount': correctCount,
         isHost ? 'hostTotalTimeMs' : 'guestTotalTimeMs': totalTimeMs,
+        if (finished) (isHost ? 'hostFinished' : 'guestFinished'): true,
         'lastHeartbeat': FieldValue.serverTimestamp(),
       });
     } catch (_) {
@@ -564,6 +566,7 @@ class ArenaRepositoryImpl implements ArenaRepository {
     required String roomCode,
     required String userId,
     required int charactersTyped,
+    int roundIndex = 0,
   }) async {
     final cleanCode = roomCode.trim().toUpperCase();
     if (cleanCode.startsWith('VOWL-AI-') ||
@@ -579,6 +582,7 @@ class ArenaRepositoryImpl implements ArenaRepository {
           .doc(userId)
           .set({
             'charactersTyped': charactersTyped,
+            'roundIndex': roundIndex,
             'updatedAt': FieldValue.serverTimestamp(),
           });
     } catch (_) {}
@@ -588,6 +592,7 @@ class ArenaRepositoryImpl implements ArenaRepository {
   Stream<int> listenToRivalTypingProgress({
     required String roomCode,
     required String rivalId,
+    int? roundIndex,
   }) {
     final cleanCode = roomCode.trim().toUpperCase();
     if (cleanCode.startsWith('VOWL-AI-') ||
@@ -603,7 +608,12 @@ class ArenaRepositoryImpl implements ArenaRepository {
         .snapshots()
         .map((snap) {
           if (!snap.exists || snap.data() == null) return 0;
-          return (snap.data()!['charactersTyped'] as num?)?.toInt() ?? 0;
+          final data = snap.data()!;
+          if (roundIndex != null) {
+            final docRound = (data['roundIndex'] as num?)?.toInt();
+            if (docRound != roundIndex) return 0;
+          }
+          return (data['charactersTyped'] as num?)?.toInt() ?? 0;
         });
   }
 
@@ -651,6 +661,7 @@ class ArenaRepositoryImpl implements ArenaRepository {
                 _firestore.collection('arena_rooms').doc(candidateNewRoomCode);
             tx.set(newRoomRef, {
               'roomCode': candidateNewRoomCode,
+              'rematchFromRoomCode': cleanCode,
               'hostId': orig['hostId'],
               'hostName': orig['hostName'],
               'hostPhotoUrl': orig['hostPhotoUrl'],
@@ -668,6 +679,8 @@ class ArenaRepositoryImpl implements ArenaRepository {
               'guestCorrectCount': 0,
               'hostTotalTimeMs': 0,
               'guestTotalTimeMs': 0,
+              'hostFinished': false,
+              'guestFinished': false,
               'challenges': challengeMaps,
               'createdAt': FieldValue.serverTimestamp(),
             });
@@ -748,6 +761,7 @@ class ArenaRepositoryImpl implements ArenaRepository {
 
         tx.set(newRoomRef, {
           'roomCode': newRoomCode,
+          'rematchFromRoomCode': cleanOrigCode,
           'hostId': orig['hostId'],
           'hostName': orig['hostName'],
           'hostPhotoUrl': orig['hostPhotoUrl'],
@@ -765,6 +779,8 @@ class ArenaRepositoryImpl implements ArenaRepository {
           'guestCorrectCount': 0,
           'hostTotalTimeMs': 0,
           'guestTotalTimeMs': 0,
+          'hostFinished': false,
+          'guestFinished': false,
           'challenges': challengeMaps,
           'createdAt': FieldValue.serverTimestamp(),
         });
@@ -1150,6 +1166,8 @@ class ArenaRepositoryImpl implements ArenaRepository {
       guestCorrectCount: (data['guestCorrectCount'] as num?)?.toInt() ?? 0,
       hostTotalTimeMs: (data['hostTotalTimeMs'] as num?)?.toInt() ?? 0,
       guestTotalTimeMs: (data['guestTotalTimeMs'] as num?)?.toInt() ?? 0,
+      hostFinished: data['hostFinished'] as bool? ?? false,
+      guestFinished: data['guestFinished'] as bool? ?? false,
       winnerId: data['winnerId'] as String?,
       challenges: challenges,
       createdAt: (data['createdAt'] as Timestamp?)?.toDate() ?? DateTime.now(),

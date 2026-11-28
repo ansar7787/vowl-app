@@ -67,6 +67,8 @@ class ArenaDuelSession {
   final int guestCorrectCount;
   final int hostTotalTimeMs;
   final int guestTotalTimeMs;
+  final bool hostFinished;
+  final bool guestFinished;
   final String? winnerId;
   final bool isGhostRival;
   final double ghostAccuracy;
@@ -93,6 +95,8 @@ class ArenaDuelSession {
     this.guestCorrectCount = 0,
     this.hostTotalTimeMs = 0,
     this.guestTotalTimeMs = 0,
+    this.hostFinished = false,
+    this.guestFinished = false,
     this.winnerId,
     this.isGhostRival = false,
     this.ghostAccuracy = 0.8,
@@ -111,6 +115,8 @@ class ArenaDuelSession {
   bool get isCompleted => status == 'completed' || status == 'abandoned';
   bool get isInProgress => status == 'in_progress';
   bool get isWaiting => status == 'waiting';
+  bool get bothPlayersFinished => hostFinished && guestFinished;
+  bool didFinish(String userId) => isHost(userId) ? hostFinished : guestFinished;
 
   /// Deprecated backward compat — returns only MCQ challenges as ArenaQuestion.
   @Deprecated('Use challenges instead')
@@ -204,6 +210,8 @@ class ArenaDuelSession {
     int? guestCorrectCount,
     int? hostTotalTimeMs,
     int? guestTotalTimeMs,
+    bool? hostFinished,
+    bool? guestFinished,
     String? winnerId,
     bool? isGhostRival,
     double? ghostAccuracy,
@@ -230,6 +238,8 @@ class ArenaDuelSession {
       guestCorrectCount: guestCorrectCount ?? this.guestCorrectCount,
       hostTotalTimeMs: hostTotalTimeMs ?? this.hostTotalTimeMs,
       guestTotalTimeMs: guestTotalTimeMs ?? this.guestTotalTimeMs,
+      hostFinished: hostFinished ?? this.hostFinished,
+      guestFinished: guestFinished ?? this.guestFinished,
       winnerId: winnerId ?? this.winnerId,
       isGhostRival: isGhostRival ?? this.isGhostRival,
       ghostAccuracy: ghostAccuracy ?? this.ghostAccuracy,
@@ -259,6 +269,8 @@ class ArenaDuelSession {
       'guestCorrectCount': guestCorrectCount,
       'hostTotalTimeMs': hostTotalTimeMs,
       'guestTotalTimeMs': guestTotalTimeMs,
+      'hostFinished': hostFinished,
+      'guestFinished': guestFinished,
       'winnerId': winnerId,
       'isGhostRival': isGhostRival,
       'ghostAccuracy': ghostAccuracy,

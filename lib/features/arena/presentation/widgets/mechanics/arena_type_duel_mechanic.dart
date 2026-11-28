@@ -7,6 +7,7 @@ import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/app_spacing.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/arena/domain/entities/arena_challenge.dart';
 import 'package:vowl/features/arena/presentation/bloc/arena_duel_state.dart';
@@ -136,7 +137,10 @@ class _ArenaTypeDuelMechanicState extends State<ArenaTypeDuelMechanic> {
                   children: [
                     Expanded(
                       child: Text(
-                        'TYPE THE EXACT WORD',
+                        context.tr(
+                          'arena.type_duel_label',
+                          fallback: 'TYPE THE EXACT WORD',
+                        ),
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
                         style: TextStyle(
@@ -206,7 +210,7 @@ class _ArenaTypeDuelMechanicState extends State<ArenaTypeDuelMechanic> {
                 ),
                 SizedBox(width: 8.w),
                 Text(
-                  'Rival typing:',
+                  context.tr('arena.rival_typing', fallback: 'Rival typing:'),
                   style: TextStyle(
                     fontFamily: 'Outfit',
                     fontSize: 11.sp,
@@ -343,7 +347,7 @@ class _ArenaTypeDuelMechanicState extends State<ArenaTypeDuelMechanic> {
                     ),
                     SizedBox(width: 8.w),
                     Text(
-                      'Submit Word',
+                      context.tr('arena.submit_word', fallback: 'Submit Word'),
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         fontSize: 14.sp,

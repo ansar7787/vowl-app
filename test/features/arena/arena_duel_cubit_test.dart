@@ -61,6 +61,7 @@ class FakeArenaRepository implements ArenaRepository {
     required bool isHost,
     int correctCount = 0,
     int totalTimeMs = 0,
+    bool finished = false,
   }) async {}
 
   @override
@@ -68,6 +69,7 @@ class FakeArenaRepository implements ArenaRepository {
     required String roomCode,
     required String userId,
     required int charactersTyped,
+    int roundIndex = 0,
   }) async {
     typingProgressUpdates++;
   }
@@ -76,6 +78,7 @@ class FakeArenaRepository implements ArenaRepository {
   Stream<int> listenToRivalTypingProgress({
     required String roomCode,
     required String rivalId,
+    int? roundIndex,
   }) => typingStreamController?.stream ?? const Stream.empty();
 
   @override

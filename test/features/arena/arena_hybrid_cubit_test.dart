@@ -63,6 +63,7 @@ class _TestArenaRepo implements ArenaRepository {
     required bool isHost,
     int correctCount = 0,
     int totalTimeMs = 0,
+    bool finished = false,
   }) async {}
 
   @override
@@ -70,6 +71,7 @@ class _TestArenaRepo implements ArenaRepository {
     required String roomCode,
     required String userId,
     required int charactersTyped,
+    int roundIndex = 0,
   }) async {
     typingSyncCalls++;
   }
@@ -78,6 +80,7 @@ class _TestArenaRepo implements ArenaRepository {
   Stream<int> listenToRivalTypingProgress({
     required String roomCode,
     required String rivalId,
+    int? roundIndex,
   }) => typingController?.stream ?? const Stream.empty();
 
   @override
@@ -414,7 +417,53 @@ void main() {
       expect(repo.completeMatchCalled, isTrue);
       expect(repo.historyRecords.length, 1);
       expect(repo.historyRecords.first.rounds.length, 7);
+      expect(repo.historyRecords.first.rounds.first.correctAnswer, isNotEmpty);
 
+      await cubit.close();
+    });
+
+    test('live PvP finalizes immediately when bothPlayersFinished is true', () async {
+      final repo = _TestArenaRepo();
+      final controller = StreamController<ArenaDuelSession>.broadcast();
+      repo.roomController = controller;
+
+      final liveSession = ArenaDuelSession(
+        roomCode: 'VOWL-DUEL-SYNC1',
+        hostId: user.id,
+        hostName: user.safeDisplayName,
+        guestId: 'rival_1',
+        guestName: 'Rival',
+        status: 'in_progress',
+        isGhostRival: false,
+        challenges: [buildSamplePentathlon()[0]],
+        createdAt: DateTime.now(),
+      );
+
+      final cubit = ArenaDuelCubit(repository: repo);
+      cubit.startSession(liveSession, user);
+
+      cubit.submitWordSnap('ENORMOUS', user);
+      await Future<void>.delayed(const Duration(milliseconds: 1600));
+      expect(cubit.state.isWaitingForOpponentFinish, isTrue);
+      expect(cubit.state.isCompleted, isFalse);
+
+      // Rival completes too -> emits bothPlayersFinished without waiting 45s
+      controller.add(
+        liveSession.copyWith(
+          hostFinished: true,
+          guestFinished: true,
+          guestScore: 40,
+          guestCorrectCount: 1,
+          guestTotalTimeMs: 9000,
+        ),
+      );
+      await Future<void>.delayed(const Duration(milliseconds: 40));
+
+      expect(cubit.state.isCompleted, isTrue);
+      expect(cubit.state.isWinner, isTrue);
+      expect(repo.completeMatchCalled, isTrue);
+
+      await controller.close();
       await cubit.close();
     });
   });

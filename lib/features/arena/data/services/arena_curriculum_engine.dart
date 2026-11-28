@@ -689,11 +689,13 @@ class ArenaCurriculumEngine {
 
   /// Generates 7 deterministically seeded [ArenaChallenge] rounds—one for
   /// each mechanic type—loading strictly from `assets/curriculum/arena/`.
+  /// Tracks chosen answers across rounds so the same target word cannot repeat.
   static Future<List<ArenaChallenge>> generateHybridPentathlon({
     int? seed,
   }) async {
     final rand = Random(seed ?? DateTime.now().millisecondsSinceEpoch);
     final challenges = <ArenaChallenge>[];
+    final usedAnswers = <String>{};
 
     for (var i = 0; i < kPentathlonRoundOrder.length; i++) {
       final mechanic = kPentathlonRoundOrder[i];
@@ -702,7 +704,12 @@ class ArenaCurriculumEngine {
         mechanic,
         rand,
         preferredDifficulty: preferredDifficulty,
+        excludeAnswers: usedAnswers,
       );
+      final normalized = challenge.correctAnswer.trim().toLowerCase();
+      if (normalized.isNotEmpty) {
+        usedAnswers.add(normalized);
+      }
       challenges.add(challenge);
     }
 
@@ -740,16 +747,18 @@ class ArenaCurriculumEngine {
   }
 
   /// Loads one random challenge for [mechanic], respecting [preferredDifficulty]
-  /// when available, using dedicated `assets/curriculum/arena/` batches.
+  /// and avoiding any answer already chosen in [excludeAnswers].
   static Future<ArenaChallenge> _loadRandomChallengeForMechanic(
     ArenaMechanicType mechanic,
     Random rand, {
     String? preferredDifficulty,
+    Set<String> excludeAnswers = const {},
   }) async {
     if (mechanic == ArenaMechanicType.mcq) {
       return _loadMcqArenaChallenge(
         rand,
         preferredDifficulty: preferredDifficulty,
+        excludeAnswers: excludeAnswers,
       );
     }
 
@@ -761,8 +770,16 @@ class ArenaCurriculumEngine {
         batchNum: batchNum,
       );
       if (loaded.isNotEmpty) {
+        final unused = loaded
+            .where(
+              (c) => !excludeAnswers.contains(
+                c.correctAnswer.trim().toLowerCase(),
+              ),
+            )
+            .toList();
+        final candidatePool = unused.isNotEmpty ? unused : loaded;
         final matching = preferredDifficulty != null
-            ? loaded
+            ? candidatePool
                   .where(
                     (c) =>
                         c.difficulty?.toLowerCase() ==
@@ -771,13 +788,17 @@ class ArenaCurriculumEngine {
                   .toList()
             : <ArenaChallenge>[];
         final pool = List<ArenaChallenge>.from(
-          matching.isNotEmpty ? matching : loaded,
+          matching.isNotEmpty ? matching : candidatePool,
         )..shuffle(rand);
         return pool.first;
       }
     }
 
-    return _curatedFallbackForMechanic(mechanic, rand);
+    return _curatedFallbackForMechanic(
+      mechanic,
+      rand,
+      excludeAnswers: excludeAnswers,
+    );
   }
 
   /// Loads and parses all challenges in a dedicated batch file for [mechanic].
@@ -869,35 +890,63 @@ class ArenaCurriculumEngine {
   static Future<ArenaChallenge> _loadMcqArenaChallenge(
     Random rand, {
     String? preferredDifficulty,
+    Set<String> excludeAnswers = const {},
   }) async {
     try {
       final dedicated = await _loadDedicatedArenaBatches(rand, count: 4);
       if (dedicated.isNotEmpty) {
+        final mapped = dedicated
+            .map(ArenaChallenge.fromLegacyQuestion)
+            .toList();
+        final unused = mapped
+            .where(
+              (c) => !excludeAnswers.contains(
+                c.correctAnswer.trim().toLowerCase(),
+              ),
+            )
+            .toList();
+        final candidates = unused.isNotEmpty ? unused : mapped;
         final matching = preferredDifficulty != null
-            ? dedicated
+            ? candidates
                   .where(
-                    (q) =>
-                        q.difficulty?.toLowerCase() ==
+                    (c) =>
+                        c.difficulty?.toLowerCase() ==
                         preferredDifficulty.toLowerCase(),
                   )
                   .toList()
-            : <ArenaQuestion>[];
-        final pool = List<ArenaQuestion>.from(
-          matching.isNotEmpty ? matching : dedicated,
+            : <ArenaChallenge>[];
+        final pool = List<ArenaChallenge>.from(
+          matching.isNotEmpty ? matching : candidates,
         )..shuffle(rand);
-        return ArenaChallenge.fromLegacyQuestion(pool.first);
+        return pool.first;
       }
     } catch (_) {}
 
-    final bank = List<Map<String, dynamic>>.from(_kQuestionBank)..shuffle(rand);
-    return ArenaChallenge.fromLegacyQuestion(ArenaQuestion.fromMap(bank.first));
+    final bank = _kQuestionBank
+        .map((m) => ArenaChallenge.fromLegacyQuestion(ArenaQuestion.fromMap(m)))
+        .where(
+          (c) =>
+              !excludeAnswers.contains(c.correctAnswer.trim().toLowerCase()),
+        )
+        .toList();
+    final pool = List<ArenaChallenge>.from(
+      bank.isNotEmpty
+          ? bank
+          : _kQuestionBank.map(
+              (m) => ArenaChallenge.fromLegacyQuestion(
+                ArenaQuestion.fromMap(m),
+              ),
+            ),
+    )..shuffle(rand);
+    return pool.first;
   }
 
   /// Curated independent offline fallbacks (used only if asset bundle is unavailable).
   static ArenaChallenge _curatedFallbackForMechanic(
     ArenaMechanicType mechanic,
-    Random rand,
-  ) {
+    Random rand, {
+    Set<String> excludeAnswers = const {},
+  }) {
     switch (mechanic) {
       case ArenaMechanicType.wordSnap:
         return const ArenaChallenge(
@@ -1022,11 +1071,28 @@ class ArenaCurriculumEngine {
         );
       case ArenaMechanicType.mcq:
       case ArenaMechanicType.voiceDuel:
-        final bank = List<Map<String, dynamic>>.from(_kQuestionBank)
-          ..shuffle(rand);
-        return ArenaChallenge.fromLegacyQuestion(
-          ArenaQuestion.fromMap(bank.first),
-        );
+        final filtered = _kQuestionBank
+            .map(
+              (m) => ArenaChallenge.fromLegacyQuestion(
+                ArenaQuestion.fromMap(m),
+              ),
+            )
+            .where(
+              (c) => !excludeAnswers.contains(
+                c.correctAnswer.trim().toLowerCase(),
+              ),
+            )
+            .toList();
+        final pool = List<ArenaChallenge>.from(
+          filtered.isNotEmpty
+              ? filtered
+              : _kQuestionBank.map(
+                  (m) => ArenaChallenge.fromLegacyQuestion(
+                    ArenaQuestion.fromMap(m),
+                  ),
+                ),
+        )..shuffle(rand);
+        return pool.first;
     }
   }
 }

@@ -60,6 +60,25 @@ service cloud.firestore {
     //   - lastDuelDate: timestamp (optional) - timestamp of last 1v1 staking duel played
     //   - duelWins: int (optional, default 0) - lifetime 1v1 staking duel victories
     //   - duelLosses: int (optional, default 0) - lifetime 1v1 staking duel defeats
+    //
+    // Subcollection: users/{userId}/arena_match_history/{matchId}
+    // Document ID: {matchId}
+    // Fields:
+    //   - id: string (optional, <= 128 chars) - match record identifier
+    //   - roomCode: string (required, 1-30 chars) - arena duel room code
+    //   - opponentName: string (optional, <= 100 chars) - rival display name
+    //   - opponentPhotoUrl: string (optional, <= 1000 chars or null) - rival avatar URL
+    //   - opponentRank: string (optional, <= 30 chars) - rival arena rank key
+    //   - isGhostRival: bool (optional) - whether rival was AI/ghost
+    //   - result: string (required, 'win' | 'loss' | 'draw') - match outcome
+    //   - myScore: int (required, 0..2000) - player's final score
+    //   - rivalScore: int (required, 0..2000) - rival's final score
+    //   - myCorrectCount: int (optional, 0..20) - player's correct rounds count
+    //   - rivalCorrectCount: int (optional, 0..20) - rival's correct rounds count
+    //   - myTotalTimeMs: int (optional, 0..300000) - player's cumulative answer time
+    //   - rivalTotalTimeMs: int (optional, 0..300000) - rival's cumulative answer time
+    //   - rounds: list (required, <= 20 items) - per-round breakdown entries
+    //   - timestamp: timestamp (required) - match completion timestamp
 
     //
     // Collection: referrals/{referralCode}
@@ -99,8 +118,32 @@ service cloud.firestore {
     //   - guestTotalTimeMs: int (optional, >= 0 && <= 300000) - guest total elapsed duel time in ms
     //   - hostFinished: bool (optional)
     //   - guestFinished: bool (optional)
+    //   - hostDuelWins: int (optional, >= 0) - host lifetime duel wins
+    //   - guestDuelWins: int (optional, >= 0) - guest lifetime duel wins
+    //   - rematchFromRoomCode: string (optional, <= 30 chars) - source room code for rematch creation
+    //   - hostReady: bool (optional)
+    //   - guestReady: bool (optional)
     //   - winnerId: string (optional)
-    //   - questions: list (optional, <= 20 items)
+    //   - questions: list (optional, <= 20 items) - legacy MCQ questions (backward compatibility)
+    //   - challenges: list (optional, <= 20 items) - 1v1 Hybrid Pentathlon challenge maps
+    //
+    // Subcollection: arena_rooms/{roomCode}/liveProgress/{playerId}
+    // Document ID: {playerId} (matches participant's request.auth.uid)
+    // Fields:
+    //   - charactersTyped: int (required, 0..200) - live Type Duel characters typed
+    //   - roundIndex: int (optional, 0..20) - active round index
+    //   - updatedAt: timestamp (optional) - server update timestamp
+    //
+    // Subcollection: arena_rooms/{roomCode}/rematch/{docId}
+    // Document ID: 'request'
+    // Fields:
+    //   - status: string (required, 'pending' | 'accepted' | 'declined' | 'expired') - rematch state
+    //   - requesterId: string (optional, <= 128 chars) - requester auth UID
+    //   - requesterName: string (optional, <= 100 chars) - requester display name
+    //   - newRoomCode: string (optional, <= 30 chars) - accepted rematch room code
+    //   - acceptedBy: string (optional, <= 128 chars) - acceptor auth UID
+    //   - createdAt: timestamp (optional) - request timestamp
+    //   - updatedAt: timestamp (optional) - update timestamp
     //
     // Collection: arena_queue/{queueId}
     // Document ID: {queueId} (e.g. unique ticket ID or user UID)
@@ -194,17 +237,29 @@ service cloud.firestore {
 
     // Validates 1v1 PvP Arena Room schema and bounds
     function isValidArenaRoom(data) {
-      return data.hostId is string && data.hostId.size() > 0 && data.hostId.size() <= 128
-        && data.stake is int && data.stake == 30
+      return data.keys().hasOnly([
+          'roomCode', 'code', 'hostId', 'hostName', 'hostPhotoUrl', 'hostDuelWins',
+          'guestId', 'guestName', 'guestPhotoUrl', 'guestDuelWins',
+          'stake', 'pot', 'status', 'createdAt', 'updatedAt', 'lastHeartbeat',
+          'hostScore', 'guestScore', 'hostCorrectCount', 'guestCorrectCount',
+          'hostTotalTimeMs', 'guestTotalTimeMs', 'hostFinished', 'guestFinished',
+          'hostReady', 'guestReady', 'winnerId', 'questions', 'challenges',
+          'rematchFromRoomCode'
+        ])
+        && ('hostId' in data) && data.hostId is string && data.hostId.size() > 0 && data.hostId.size() <= 128
+        && ('stake' in data) && data.stake is int && data.stake == 30
         && (!('pot' in data) || (data.pot is int && data.pot == 60))
-        && data.createdAt is timestamp
+        && ('createdAt' in data) && data.createdAt is timestamp
         && (!('code' in data) || (data.code is string && data.code.size() <= 20))
         && (!('roomCode' in data) || (data.roomCode is string && data.roomCode.size() <= 20))
         && (!('hostName' in data) || data.hostName == null || (data.hostName is string && data.hostName.size() <= 100))
         && (!('hostPhotoUrl' in data) || data.hostPhotoUrl == null || (data.hostPhotoUrl is string && data.hostPhotoUrl.size() <= 1000))
+        && (!('hostDuelWins' in data) || (data.hostDuelWins is int && data.hostDuelWins >= 0))
         && (!('guestId' in data) || data.guestId == null || (data.guestId is string && data.guestId.size() <= 128))
         && (!('guestName' in data) || data.guestName == null || (data.guestName is string && data.guestName.size() <= 100))
         && (!('guestPhotoUrl' in data) || data.guestPhotoUrl == null || (data.guestPhotoUrl is string && data.guestPhotoUrl.size() <= 1000))
+        && (!('guestDuelWins' in data) || (data.guestDuelWins is int && data.guestDuelWins >= 0))
+        && (!('rematchFromRoomCode' in data) || data.rematchFromRoomCode == null || (data.rematchFromRoomCode is string && data.rematchFromRoomCode.size() <= 30))
         && (!('status' in data) || (data.status is string && data.status.size() <= 30))
         && (!('updatedAt' in data) || data.updatedAt == null || data.updatedAt is timestamp)
         && (!('lastHeartbeat' in data) || data.lastHeartbeat == null || data.lastHeartbeat is timestamp)
@@ -218,8 +273,97 @@ service cloud.firestore {
         && (!('guestFinished' in data) || data.guestFinished is bool)
         && (!('winnerId' in data) || data.winnerId == null || (data.winnerId is string && data.winnerId.size() <= 128 && (data.winnerId == data.hostId || (('guestId' in data) && data.winnerId == data.guestId))))
         && (!('questions' in data) || (data.questions is list && data.questions.size() <= 20))
+        && (!('challenges' in data) || (data.challenges is list && data.challenges.size() <= 20))
         && (!('hostReady' in data) || data.hostReady is bool)
         && (!('guestReady' in data) || data.guestReady is bool);
+    }
+
+    // Checks if the authenticated caller is hostId or guestId of an existing arena room
+    function isParticipantInRoomData(roomData) {
+      return (('hostId' in roomData) && roomData.hostId is string && request.auth.uid == roomData.hostId)
+        || (('guestId' in roomData) && roomData.guestId is string && request.auth.uid == roomData.guestId);
+    }
+
+    function isArenaRoomParticipant(roomCode) {
+      return isAuthenticated()
+        && exists(/databases/$(database)/documents/arena_rooms/$(roomCode))
+        && isParticipantInRoomData(get(/databases/$(database)/documents/arena_rooms/$(roomCode)).data);
+    }
+
+    // Validates rematch room creation against the parent arena room's verified participants
+    function isRematchParticipantsMatch(parentData, newData) {
+      return ('hostId' in parentData) && parentData.hostId is string && parentData.hostId.size() > 0
+        && ('guestId' in parentData) && parentData.guestId is string && parentData.guestId.size() > 0
+        && (request.auth.uid == parentData.hostId || request.auth.uid == parentData.guestId)
+        && newData.hostId == parentData.hostId
+        && ('guestId' in newData) && newData.guestId == parentData.guestId
+        && newData.hostId != newData.guestId;
+    }
+
+    function isValidRematchRoomCreate(roomCode, newData) {
+      return ('rematchFromRoomCode' in newData)
+        && newData.rematchFromRoomCode is string
+        && newData.rematchFromRoomCode.size() > 0
+        && newData.rematchFromRoomCode.size() <= 30
+        && !newData.rematchFromRoomCode.matches('.*/.*')
+        && newData.rematchFromRoomCode != roomCode
+        && exists(/databases/$(database)/documents/arena_rooms/$(newData.rematchFromRoomCode))
+        && isRematchParticipantsMatch(
+          get(/databases/$(database)/documents/arena_rooms/$(newData.rematchFromRoomCode)).data,
+          newData
+        );
+    }
+
+    // Validates live Type Duel typing progress subcollection documents
+    function isValidLiveProgress(data) {
+      return data.keys().hasOnly(['charactersTyped', 'roundIndex', 'updatedAt'])
+        && ('charactersTyped' in data)
+        && data.charactersTyped is int
+        && data.charactersTyped >= 0
+        && data.charactersTyped <= 200
+        && (!('roundIndex' in data) || (data.roundIndex is int && data.roundIndex >= 0 && data.roundIndex <= 20))
+        && (!('updatedAt' in data) || data.updatedAt is timestamp);
+    }
+
+    // Validates live PvP post-match rematch handshake documents
+    function isValidRematchRequest(data) {
+      return data.keys().hasOnly(['status', 'requesterId', 'requesterName', 'newRoomCode', 'acceptedBy', 'createdAt', 'updatedAt'])
+        && ('status' in data)
+        && data.status in ['pending', 'accepted', 'declined', 'expired']
+        && (!('requesterId' in data) || data.requesterId == null || (data.requesterId is string && data.requesterId.size() <= 128))
+        && (!('requesterName' in data) || data.requesterName == null || (data.requesterName is string && data.requesterName.size() <= 100))
+        && (!('newRoomCode' in data) || data.newRoomCode == null || (data.newRoomCode is string && data.newRoomCode.size() <= 30))
+        && (!('acceptedBy' in data) || data.acceptedBy == null || (data.acceptedBy is string && data.acceptedBy.size() <= 128))
+        && (!('createdAt' in data) || data.createdAt == null || data.createdAt is timestamp)
+        && (!('updatedAt' in data) || data.updatedAt == null || data.updatedAt is timestamp)
+        && (data.status != 'pending' || !('requesterId' in data) || data.requesterId == null || data.requesterId == request.auth.uid)
+        && (data.status != 'accepted' || !('acceptedBy' in data) || data.acceptedBy == null || data.acceptedBy == request.auth.uid);
+    }
+
+    // Validates per-user 1v1 Arena match history records
+    function isValidArenaMatchHistory(data) {
+      return data.keys().hasOnly([
+          'id', 'roomCode', 'opponentName', 'opponentPhotoUrl',
+          'opponentRank', 'isGhostRival', 'result', 'myScore',
+          'rivalScore', 'myCorrectCount', 'rivalCorrectCount',
+          'myTotalTimeMs', 'rivalTotalTimeMs', 'rounds', 'timestamp'
+        ])
+        && data.keys().hasAll(['roomCode', 'result', 'myScore', 'rivalScore', 'rounds', 'timestamp'])
+        && data.roomCode is string && data.roomCode.size() > 0 && data.roomCode.size() <= 30
+        && data.result in ['win', 'loss', 'draw']
+        && data.myScore is int && data.myScore >= 0 && data.myScore <= 2000
+        && data.rivalScore is int && data.rivalScore >= 0 && data.rivalScore <= 2000
+        && data.rounds is list && data.rounds.size() <= 20
+        && data.timestamp is timestamp
+        && (!('id' in data) || (data.id is string && data.id.size() <= 128))
+        && (!('opponentName' in data) || (data.opponentName is string && data.opponentName.size() <= 100))
+        && (!('opponentPhotoUrl' in data) || data.opponentPhotoUrl == null || (data.opponentPhotoUrl is string && data.opponentPhotoUrl.size() <= 1000))
+        && (!('opponentRank' in data) || (data.opponentRank is string && data.opponentRank.size() <= 30))
+        && (!('isGhostRival' in data) || data.isGhostRival is bool)
+        && (!('myCorrectCount' in data) || (data.myCorrectCount is int && data.myCorrectCount >= 0 && data.myCorrectCount <= 20))
+        && (!('rivalCorrectCount' in data) || (data.rivalCorrectCount is int && data.rivalCorrectCount >= 0 && data.rivalCorrectCount <= 20))
+        && (!('myTotalTimeMs' in data) || (data.myTotalTimeMs is int && data.myTotalTimeMs >= 0 && data.myTotalTimeMs <= 300000))
+        && (!('rivalTotalTimeMs' in data) || (data.rivalTotalTimeMs is int && data.rivalTotalTimeMs >= 0 && data.rivalTotalTimeMs <= 300000));
     }
 
     // Validates 1v1 PvP Arena Queue ticket schema and bounds
@@ -399,6 +543,13 @@ service cloud.firestore {
 
       // DELETE: Only own document
       allow delete: if isOwner(userId);
+
+      // 1v1 Arena match history (strictly private to owner)
+      match /arena_match_history/{matchId} {
+        allow read, delete: if isOwner(userId);
+        allow create, update: if isOwner(userId)
+          && isValidArenaMatchHistory(request.resource.data);
+      }
     }
 
     // ─── VIRAL REFERRAL ENGINE & AMBASSADOR CUP ───────────────────────
@@ -462,7 +613,8 @@ service cloud.firestore {
       // Authenticated users can list/read rooms to discover lobbies and observe duel progress
       allow read: if isAuthenticated();
 
-      // Host creates an open lobby room OR matched guest creates duel room with a queued host
+      // Host creates an open lobby room, matched guest creates duel room with a queued host,
+      // OR either participant of a completed room creates a rematch room
       allow create: if isAuthenticated()
         && roomCode.size() >= 6 && roomCode.size() <= 20
         && request.resource.data.stake == 30
@@ -471,14 +623,18 @@ service cloud.firestore {
         && (
           // Case 1: Host creating an open lobby room
           (
-            request.resource.data.hostId == request.auth.uid
+            (!('rematchFromRoomCode' in request.resource.data) || request.resource.data.rematchFromRoomCode == null)
+            && request.resource.data.hostId == request.auth.uid
             && (!('guestId' in request.resource.data) || request.resource.data.guestId == null)
           )
           // Case 2: Guest matched with a queued host, creating the room
           || (
-            request.resource.data.guestId == request.auth.uid
+            (!('rematchFromRoomCode' in request.resource.data) || request.resource.data.rematchFromRoomCode == null)
+            && request.resource.data.guestId == request.auth.uid
             && request.resource.data.hostId != request.auth.uid
           )
+          // Case 3: Rematch room creation from an existing room by either participant
+          || isValidRematchRoomCreate(roomCode, request.resource.data)
         );
 
       // Host, joined guest, or new guest joining an open room can update game state
@@ -492,6 +648,7 @@ service cloud.firestore {
         && request.resource.data.hostId == resource.data.hostId
         && request.resource.data.stake == 30
         && request.resource.data.createdAt == resource.data.createdAt
+        && request.resource.data.get('rematchFromRoomCode', null) == resource.data.get('rematchFromRoomCode', null)
         // Once guestId is set, prevent hijacking by a third player
         && (
           resource.data.get('guestId', null) == null
@@ -501,6 +658,26 @@ service cloud.firestore {
 
       // Only host can cancel / dissolve an arena room
       allow delete: if isAuthenticated() && request.auth.uid == resource.data.hostId;
+
+      // Live Type Duel typing progress synced between room participants
+      match /liveProgress/{playerId} {
+        allow read: if isArenaRoomParticipant(roomCode);
+        allow create, update: if isOwner(playerId)
+          && isArenaRoomParticipant(roomCode)
+          && isValidLiveProgress(request.resource.data);
+        allow delete: if isOwner(playerId);
+      }
+
+      // Live PvP post-match rematch handshake
+      match /rematch/{docId} {
+        allow read: if isArenaRoomParticipant(roomCode);
+        allow create, update: if isArenaRoomParticipant(roomCode)
+          && docId == 'request'
+          && isValidRematchRequest(request.resource.data);
+        allow delete: if isAuthenticated()
+          && exists(/databases/$(database)/documents/arena_rooms/$(roomCode))
+          && request.auth.uid == get(/databases/$(database)/documents/arena_rooms/$(roomCode)).data.get('hostId', '');
+      }
     }
 
     // ─── 1v1 PVP MATCHMAKING QUEUE ────────────────────────────────────

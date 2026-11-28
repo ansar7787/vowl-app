@@ -76,6 +76,7 @@ class _ScreenFakeArenaRepository implements ArenaRepository {
     required bool isHost,
     int correctCount = 0,
     int totalTimeMs = 0,
+    bool finished = false,
   }) async {}
 
   @override
@@ -83,12 +84,14 @@ class _ScreenFakeArenaRepository implements ArenaRepository {
     required String roomCode,
     required String userId,
     required int charactersTyped,
+    int roundIndex = 0,
   }) async {}
 
   @override
   Stream<int> listenToRivalTypingProgress({
     required String roomCode,
     required String rivalId,
+    int? roundIndex,
   }) => const Stream.empty();
 
   @override
@@ -421,6 +424,54 @@ void main() {
     await tester.tap(find.text('Accept (30🪙)'));
     await tester.pump(const Duration(milliseconds: 50));
     expect(fakeRepo.acceptRematchCalled, isTrue);
+
+    await tester.pumpWidget(const SizedBox.shrink());
+    await tester.pump(const Duration(milliseconds: 50));
+  });
+
+  testWidgets('ArenaDuelScreen declines rematch cleanly when rival has insufficient coins', (
+    tester,
+  ) async {
+    const brokeUser = UserEntity(
+      id: 'host_user_1',
+      email: 'host@vowl.app',
+      displayName: 'HostPlayer',
+      coins: 10,
+      duelWins: 5,
+    );
+    when(() => mockAuthBloc.state)
+        .thenReturn(AuthState.authenticated(brokeUser));
+
+    final liveSession = ArenaDuelSession(
+      roomCode: 'VOWL-DUEL-666666',
+      hostId: brokeUser.id,
+      hostName: brokeUser.safeDisplayName,
+      guestId: 'rival_99',
+      guestName: 'LexiconRival',
+      status: 'completed',
+      isGhostRival: false,
+      hostScore: 500,
+      guestScore: 420,
+      challenges: _build7Challenges(),
+      createdAt: DateTime.now(),
+    );
+
+    await tester.pumpWidget(buildHarness(liveSession));
+    await tester.pump();
+
+    fakeRepo.rematchController.add({
+      'status': 'pending',
+      'requesterId': 'rival_99',
+      'requesterName': 'LexiconRival',
+    });
+    await tester.pump();
+
+    await tester.tap(find.text('Accept (30🪙)'));
+    await tester.pump(const Duration(milliseconds: 50));
+
+    // Must NOT try to accept or stall requester — auto-declines instead
+    expect(fakeRepo.acceptRematchCalled, isFalse);
+    expect(fakeRepo.declineRematchCalled, isTrue);
 
     await tester.pumpWidget(const SizedBox.shrink());
     await tester.pump(const Duration(milliseconds: 50));
