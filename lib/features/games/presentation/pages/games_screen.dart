@@ -17,6 +17,7 @@ import 'package:vowl/features/arena/presentation/pages/arena_lobby_waiting_scree
 import 'package:vowl/features/arena/presentation/pages/arena_matchmaking_screen.dart';
 import 'package:vowl/features/arena/presentation/utils/arena_network_helper.dart';
 import 'package:vowl/features/arena/presentation/utils/arena_refuel_helper.dart';
+import 'package:vowl/features/arena/presentation/widgets/arena_rank_badge.dart';
 import 'package:vowl/features/social_share/domain/entities/share_card_data.dart';
 import 'package:vowl/features/social_share/presentation/widgets/share_card_preview_modal.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
@@ -1384,21 +1385,33 @@ class _PvPArenaCardState extends State<_PvPArenaCard> {
                               Row(
                                 children: [
                                   Expanded(
-                                    child: Text(
-                                      context.tr(
-                                        'games.pvp_title',
-                                        fallback: '1v1 Duel',
-                                      ),
-                                      maxLines: 2,
-                                      softWrap: true,
-                                      style: TextStyle(
-                                        fontFamily: 'Outfit',
-                                        fontSize: 15.sp,
-                                        fontWeight: FontWeight.w900,
-                                        color: widget.isDark
-                                            ? Colors.white
-                                            : AppColors.slate900,
-                                      ),
+                                    child: Wrap(
+                                      crossAxisAlignment:
+                                          WrapCrossAlignment.center,
+                                      spacing: 6.w,
+                                      runSpacing: 4.h,
+                                      children: [
+                                        Text(
+                                          context.tr(
+                                            'games.pvp_title',
+                                            fallback: '1v1 Duel',
+                                          ),
+                                          maxLines: 2,
+                                          softWrap: true,
+                                          style: TextStyle(
+                                            fontFamily: 'Outfit',
+                                            fontSize: 15.sp,
+                                            fontWeight: FontWeight.w900,
+                                            color: widget.isDark
+                                                ? Colors.white
+                                                : AppColors.slate900,
+                                          ),
+                                        ),
+                                        ArenaRankBadge.fromWins(
+                                          duelWins: widget.user.duelWins,
+                                          isDark: widget.isDark,
+                                        ),
+                                      ],
                                     ),
                                   ),
                                   SizedBox(width: 8.w),
@@ -1452,7 +1465,7 @@ class _PvPArenaCardState extends State<_PvPArenaCard> {
                                 context.tr(
                                   'games.pvp_subtitle',
                                   fallback:
-                                      '30🪙 entry • 5-round live vocabulary duel',
+                                      '30🪙 entry • 7-round live pentathlon duel',
                                 ),
                                 maxLines: 2,
                                 softWrap: true,

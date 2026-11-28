@@ -3,12 +3,14 @@ import 'dart:math';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/foundation.dart';
 import 'package:vowl/core/utils/coin_ledger_helper.dart';
-import 'package:vowl/features/auth/domain/constants/user_game_constants.dart';
-import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/features/arena/data/services/arena_curriculum_engine.dart';
 import 'package:vowl/features/arena/data/utils/arena_ai_difficulty_engine.dart';
+import 'package:vowl/features/arena/domain/entities/arena_challenge.dart';
 import 'package:vowl/features/arena/domain/entities/arena_duel_session.dart';
+import 'package:vowl/features/arena/domain/entities/arena_match_record.dart';
 import 'package:vowl/features/arena/domain/repositories/arena_repository.dart';
+import 'package:vowl/features/auth/domain/constants/user_game_constants.dart';
+import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 
 class _ActiveQueueSearch {
   final String userId;
@@ -45,6 +47,7 @@ class ArenaRepositoryImpl implements ArenaRepository {
   static const int _kStakeCoins = 30;
   static const int _kWinnerPayout = 50;
   static const int _kLoserPayout = 10;
+  static const int _kMaxMatchHistoryCount = 50;
 
   ArenaRepositoryImpl([FirebaseFirestore? firestore, Random? secureRandom])
     : _firestore = firestore ?? FirebaseFirestore.instance,
@@ -53,6 +56,17 @@ class ArenaRepositoryImpl implements ArenaRepository {
   String _generateRoomCode([String prefix = 'VOWL-DUEL']) {
     final code = _secureRandom.nextInt(900000) + 100000;
     return '$prefix-$code';
+  }
+
+  int _virtualWinsForAiTier(ArenaAiDifficultyTier tier) {
+    switch (tier) {
+      case ArenaAiDifficultyTier.easy:
+        return 2;
+      case ArenaAiDifficultyTier.medium:
+        return 8;
+      case ArenaAiDifficultyTier.hard:
+        return 20;
+    }
   }
 
   @override
@@ -78,7 +92,7 @@ class ArenaRepositoryImpl implements ArenaRepository {
 
   @override
   Future<ArenaDuelSession> quickMatch({required UserEntity currentUser}) async {
-    // 0. Ensure any stale or orphaned queue state for this user from an interrupted session is purged
+    // 0. Ensure any stale or orphaned queue state for this user is purged
     await cancelMatchmaking(userId: currentUser.id);
 
     // 1. Deduct entry stake (30 coins)
@@ -86,10 +100,9 @@ class ArenaRepositoryImpl implements ArenaRepository {
 
     try {
       final seed = DateTime.now().millisecondsSinceEpoch;
-      final questions =
-          await ArenaCurriculumEngine.generateProgressiveQuestionsAsync(
-            seed: seed,
-          );
+      final challenges = await ArenaCurriculumEngine.generateHybridPentathlon(
+        seed: seed,
+      );
 
       try {
         final queueRef = _firestore.collection('arena_queue');
@@ -110,16 +123,15 @@ class ArenaRepositoryImpl implements ArenaRepository {
               DateTime.now().difference(createdAt).inSeconds > 15;
 
           if (isStale) {
-            // Delete stale/abandoned queue ticket to keep collection clean
             await queueRef.doc(oppDoc.id).delete();
           } else {
             final oppId = oppData['userId'] as String;
             final oppName = oppData['displayName'] as String? ?? 'Challenger';
             final oppPhoto = oppData['photoUrl'] as String?;
+            final oppWins = (oppData['duelWins'] as num?)?.toInt() ?? 0;
             final roomCode =
                 oppData['roomCode'] as String? ?? _generateRoomCode();
 
-            // Atomic claim via transaction to prevent concurrent matchmaking races
             bool claimed = false;
             try {
               await _firestore.runTransaction((tx) async {
@@ -142,10 +154,12 @@ class ArenaRepositoryImpl implements ArenaRepository {
                 guestId: currentUser.id,
                 guestName: currentUser.safeDisplayName,
                 guestPhotoUrl: currentUser.photoUrl,
+                hostDuelWins: oppWins,
+                guestDuelWins: currentUser.duelWins,
                 stake: _kStakeCoins,
                 pot: _kStakeCoins * 2,
                 status: 'in_progress',
-                questions: questions,
+                challenges: challenges,
                 createdAt: DateTime.now(),
               );
 
@@ -157,9 +171,11 @@ class ArenaRepositoryImpl implements ArenaRepository {
                     'hostId': oppId,
                     'hostName': oppName,
                     'hostPhotoUrl': oppPhoto,
+                    'hostDuelWins': oppWins,
                     'guestId': currentUser.id,
                     'guestName': currentUser.safeDisplayName,
                     'guestPhotoUrl': currentUser.photoUrl,
+                    'guestDuelWins': currentUser.duelWins,
                     'stake': _kStakeCoins,
                     'pot': _kStakeCoins * 2,
                     'status': 'in_progress',
@@ -169,7 +185,7 @@ class ArenaRepositoryImpl implements ArenaRepository {
                     'guestCorrectCount': 0,
                     'hostTotalTimeMs': 0,
                     'guestTotalTimeMs': 0,
-                    'questions': questions.map((q) => q.toMap()).toList(),
+                    'challenges': challenges.map((c) => c.toMap()).toList(),
                     'createdAt': FieldValue.serverTimestamp(),
                   })
                   .timeout(_kNetworkTimeout);
@@ -195,6 +211,7 @@ class ArenaRepositoryImpl implements ArenaRepository {
           'userId': currentUser.id,
           'displayName': currentUser.safeDisplayName,
           'photoUrl': currentUser.photoUrl,
+          'duelWins': currentUser.duelWins,
           'roomCode': myRoomCode,
           'createdAt': FieldValue.serverTimestamp(),
         });
@@ -221,7 +238,6 @@ class ArenaRepositoryImpl implements ArenaRepository {
 
         ArenaDuelSession? liveMatched;
         try {
-          // Real-world queue wait: Listen for up to 8 seconds for a real human player
           liveMatched = await completer.future.timeout(
             const Duration(seconds: 8),
           );
@@ -247,14 +263,12 @@ class ArenaRepositoryImpl implements ArenaRepository {
         // Fall through to calibrated Computer/AI opponent
       }
 
-      // Check if user cancelled while in between checks
       final active = _activeSearches[currentUser.id];
       if (active != null && active.isCanceled) {
         throw const MatchmakingCanceledException();
       }
 
-      // 3. Fallback: If no real human player queued within 8s, match with calibrated Computer/AI
-      // via 3-Pillar Skill-Based Matchmaking (Career Win Rate + Level + Session Streak).
+      // 3. Fallback: calibrated Computer/AI opponent via 3-Pillar SBMM
       final aiOpponent = ArenaAiOpponent.forPlayer(
         currentUser,
         consecutiveWins: _sessionConsecutiveWins,
@@ -269,16 +283,17 @@ class ArenaRepositoryImpl implements ArenaRepository {
         guestId: aiOpponent.id,
         guestName: aiOpponent.displayName,
         guestPhotoUrl: null,
+        hostDuelWins: currentUser.duelWins,
+        guestDuelWins: _virtualWinsForAiTier(aiOpponent.tier),
         stake: _kStakeCoins,
         pot: _kStakeCoins * 2,
         status: 'in_progress',
         isGhostRival: true,
         ghostAccuracy: aiOpponent.accuracy,
-        questions: questions,
+        challenges: challenges,
         createdAt: DateTime.now(),
       );
     } on MatchmakingCanceledException {
-      // User explicitly cancelled - stake refund is handled by caller (ArenaMatchmakingScreen)
       rethrow;
     } catch (e) {
       await _refundEntryStake(currentUser.id);
@@ -296,10 +311,9 @@ class ArenaRepositoryImpl implements ArenaRepository {
 
     try {
       final seed = DateTime.now().millisecondsSinceEpoch;
-      final questions =
-          await ArenaCurriculumEngine.generateProgressiveQuestionsAsync(
-            seed: seed,
-          );
+      final challenges = await ArenaCurriculumEngine.generateHybridPentathlon(
+        seed: seed,
+      );
       final accuracy = (0.95 - (rivalRank * 0.015)).clamp(0.65, 0.95);
 
       final roomCode = _generateRoomCode('VOWL-RIVAL');
@@ -311,12 +325,59 @@ class ArenaRepositoryImpl implements ArenaRepository {
         guestId: rival.id,
         guestName: rival.safeDisplayName,
         guestPhotoUrl: rival.photoUrl,
+        hostDuelWins: currentUser.duelWins,
+        guestDuelWins: rival.duelWins,
         stake: _kStakeCoins,
         pot: _kStakeCoins * 2,
         status: 'in_progress',
         isGhostRival: true,
         ghostAccuracy: accuracy,
-        questions: questions,
+        challenges: challenges,
+        createdAt: DateTime.now(),
+      );
+    } catch (e) {
+      await _refundEntryStake(currentUser.id);
+      rethrow;
+    }
+  }
+
+  @override
+  Future<ArenaDuelSession> rematchGhostAi({
+    required UserEntity currentUser,
+    required String previousGuestId,
+    required String previousGuestName,
+    String? previousGuestPhotoUrl,
+    required double previousAccuracy,
+    int previousOpponentDuelWins = 0,
+  }) async {
+    await _deductEntryStake(currentUser.id);
+
+    try {
+      final seed = DateTime.now().millisecondsSinceEpoch;
+      final challenges = await ArenaCurriculumEngine.generateHybridPentathlon(
+        seed: seed,
+      );
+      final prefix = previousGuestId.startsWith('computer_')
+          ? 'VOWL-AI'
+          : 'VOWL-RIVAL';
+      final roomCode = _generateRoomCode(prefix);
+
+      return ArenaDuelSession(
+        roomCode: roomCode,
+        hostId: currentUser.id,
+        hostName: currentUser.safeDisplayName,
+        hostPhotoUrl: currentUser.photoUrl,
+        guestId: previousGuestId,
+        guestName: previousGuestName,
+        guestPhotoUrl: previousGuestPhotoUrl,
+        hostDuelWins: currentUser.duelWins,
+        guestDuelWins: previousOpponentDuelWins,
+        stake: _kStakeCoins,
+        pot: _kStakeCoins * 2,
+        status: 'in_progress',
+        isGhostRival: true,
+        ghostAccuracy: previousAccuracy,
+        challenges: challenges,
         createdAt: DateTime.now(),
       );
     } catch (e) {
@@ -333,11 +394,10 @@ class ArenaRepositoryImpl implements ArenaRepository {
 
     try {
       final seed = DateTime.now().millisecondsSinceEpoch;
-      final questions =
-          await ArenaCurriculumEngine.generateProgressiveQuestionsAsync(
-            seed: seed,
-          );
-      final questionMaps = questions.map((q) => q.toMap()).toList();
+      final challenges = await ArenaCurriculumEngine.generateHybridPentathlon(
+        seed: seed,
+      );
+      final challengeMaps = challenges.map((c) => c.toMap()).toList();
 
       String? allocatedRoomCode;
       for (var attempt = 0; attempt < _kMaxRoomCodeAttempts; attempt++) {
@@ -355,6 +415,7 @@ class ArenaRepositoryImpl implements ArenaRepository {
                 'hostId': currentUser.id,
                 'hostName': currentUser.safeDisplayName,
                 'hostPhotoUrl': currentUser.photoUrl,
+                'hostDuelWins': currentUser.duelWins,
                 'stake': _kStakeCoins,
                 'pot': _kStakeCoins * 2,
                 'status': 'waiting',
@@ -364,7 +425,7 @@ class ArenaRepositoryImpl implements ArenaRepository {
                 'guestCorrectCount': 0,
                 'hostTotalTimeMs': 0,
                 'guestTotalTimeMs': 0,
-                'questions': questionMaps,
+                'challenges': challengeMaps,
                 'createdAt': FieldValue.serverTimestamp(),
               });
               return true;
@@ -388,10 +449,11 @@ class ArenaRepositoryImpl implements ArenaRepository {
         hostId: currentUser.id,
         hostName: currentUser.safeDisplayName,
         hostPhotoUrl: currentUser.photoUrl,
+        hostDuelWins: currentUser.duelWins,
         stake: _kStakeCoins,
         pot: _kStakeCoins * 2,
         status: 'waiting',
-        questions: questions,
+        challenges: challenges,
         createdAt: DateTime.now(),
       );
     } catch (e) {
@@ -417,7 +479,6 @@ class ArenaRepositoryImpl implements ArenaRepository {
     final hostId = data['hostId'] as String;
 
     if (hostId == currentUser.id) {
-      // Re-joining own room
       return _mapSession(cleanCode, data);
     }
 
@@ -439,13 +500,15 @@ class ArenaRepositoryImpl implements ArenaRepository {
         }
         final roomData = snap.data()!;
         if (roomData['status'] != 'waiting' ||
-            (roomData['guestId'] != null && roomData['guestId'] != currentUser.id)) {
+            (roomData['guestId'] != null &&
+                roomData['guestId'] != currentUser.id)) {
           throw Exception('This duel room is already full.');
         }
         tx.update(docRef, {
           'guestId': currentUser.id,
           'guestName': currentUser.safeDisplayName,
           'guestPhotoUrl': currentUser.photoUrl,
+          'guestDuelWins': currentUser.duelWins,
           'status': 'in_progress',
         });
       }).timeout(_kNetworkTimeout);
@@ -478,7 +541,8 @@ class ArenaRepositoryImpl implements ArenaRepository {
     int totalTimeMs = 0,
   }) async {
     final cleanCode = roomCode.trim().toUpperCase();
-    if (cleanCode.startsWith('VOWL-AI-') || cleanCode.startsWith('VOWL-RIVAL-')) {
+    if (cleanCode.startsWith('VOWL-AI-') ||
+        cleanCode.startsWith('VOWL-RIVAL-')) {
       return;
     }
 
@@ -492,6 +556,332 @@ class ArenaRepositoryImpl implements ArenaRepository {
       });
     } catch (_) {
       // Silently catch for ghost/offline matches
+    }
+  }
+
+  @override
+  Future<void> updateTypingProgress({
+    required String roomCode,
+    required String userId,
+    required int charactersTyped,
+  }) async {
+    final cleanCode = roomCode.trim().toUpperCase();
+    if (cleanCode.startsWith('VOWL-AI-') ||
+        cleanCode.startsWith('VOWL-RIVAL-') ||
+        userId.isEmpty) {
+      return;
+    }
+    try {
+      await _firestore
+          .collection('arena_rooms')
+          .doc(cleanCode)
+          .collection('liveProgress')
+          .doc(userId)
+          .set({
+            'charactersTyped': charactersTyped,
+            'updatedAt': FieldValue.serverTimestamp(),
+          });
+    } catch (_) {}
+  }
+
+  @override
+  Stream<int> listenToRivalTypingProgress({
+    required String roomCode,
+    required String rivalId,
+  }) {
+    final cleanCode = roomCode.trim().toUpperCase();
+    if (cleanCode.startsWith('VOWL-AI-') ||
+        cleanCode.startsWith('VOWL-RIVAL-') ||
+        rivalId.isEmpty) {
+      return const Stream.empty();
+    }
+    return _firestore
+        .collection('arena_rooms')
+        .doc(cleanCode)
+        .collection('liveProgress')
+        .doc(rivalId)
+        .snapshots()
+        .map((snap) {
+          if (!snap.exists || snap.data() == null) return 0;
+          return (snap.data()!['charactersTyped'] as num?)?.toInt() ?? 0;
+        });
+  }
+
+  DocumentReference<Map<String, dynamic>> _rematchDocRef(String roomCode) {
+    return _firestore
+        .collection('arena_rooms')
+        .doc(roomCode.trim().toUpperCase())
+        .collection('rematch')
+        .doc('request');
+  }
+
+  @override
+  Future<void> sendRematchRequest({
+    required String roomCode,
+    required String requesterId,
+    required String requesterName,
+  }) async {
+    final cleanCode = roomCode.trim().toUpperCase();
+    final rematchRef = _rematchDocRef(cleanCode);
+    final origRoomRef = _firestore.collection('arena_rooms').doc(cleanCode);
+
+    // Pre-generate hybrid challenges outside transaction cleanly
+    final seed = DateTime.now().millisecondsSinceEpoch;
+    final challenges = await ArenaCurriculumEngine.generateHybridPentathlon(
+      seed: seed,
+    );
+    final challengeMaps = challenges.map((c) => c.toMap()).toList();
+    final candidateNewRoomCode = _generateRoomCode();
+
+    await _firestore.runTransaction((tx) async {
+      final existing = await tx.get(rematchRef);
+      if (existing.exists && existing.data() != null) {
+        final data = existing.data()!;
+        final status = data['status'] as String?;
+        final existingRequesterId = data['requesterId'] as String?;
+
+        // Mutual simultaneous tap race condition → auto-accept!
+        if (status == 'pending' &&
+            existingRequesterId != null &&
+            existingRequesterId != requesterId) {
+          final origSnap = await tx.get(origRoomRef);
+          if (origSnap.exists && origSnap.data() != null) {
+            final orig = origSnap.data()!;
+            final newRoomRef =
+                _firestore.collection('arena_rooms').doc(candidateNewRoomCode);
+            tx.set(newRoomRef, {
+              'roomCode': candidateNewRoomCode,
+              'hostId': orig['hostId'],
+              'hostName': orig['hostName'],
+              'hostPhotoUrl': orig['hostPhotoUrl'],
+              'hostDuelWins': orig['hostDuelWins'] ?? 0,
+              'guestId': orig['guestId'],
+              'guestName': orig['guestName'],
+              'guestPhotoUrl': orig['guestPhotoUrl'],
+              'guestDuelWins': orig['guestDuelWins'] ?? 0,
+              'stake': _kStakeCoins,
+              'pot': _kStakeCoins * 2,
+              'status': 'in_progress',
+              'hostScore': 0,
+              'guestScore': 0,
+              'hostCorrectCount': 0,
+              'guestCorrectCount': 0,
+              'hostTotalTimeMs': 0,
+              'guestTotalTimeMs': 0,
+              'challenges': challengeMaps,
+              'createdAt': FieldValue.serverTimestamp(),
+            });
+            tx.update(rematchRef, {
+              'status': 'accepted',
+              'newRoomCode': candidateNewRoomCode,
+              'acceptedBy': requesterId,
+            });
+            return;
+          }
+        }
+      }
+
+      tx.set(rematchRef, {
+        'requesterId': requesterId,
+        'requesterName': requesterName,
+        'status': 'pending',
+        'createdAt': FieldValue.serverTimestamp(),
+      });
+    }).timeout(_kNetworkTimeout);
+  }
+
+  @override
+  Stream<Map<String, dynamic>> listenToRematchRequest({
+    required String roomCode,
+  }) {
+    final cleanCode = roomCode.trim().toUpperCase();
+    if (cleanCode.startsWith('VOWL-AI-') ||
+        cleanCode.startsWith('VOWL-RIVAL-')) {
+      return const Stream.empty();
+    }
+    return _rematchDocRef(cleanCode)
+        .snapshots()
+        .where((snap) => snap.exists && snap.data() != null)
+        .map((snap) => snap.data()!);
+  }
+
+  @override
+  Future<ArenaDuelSession> acceptRematch({
+    required String originalRoomCode,
+    required UserEntity currentUser,
+  }) async {
+    final cleanOrigCode = originalRoomCode.trim().toUpperCase();
+    final origSnap = await _firestore
+        .collection('arena_rooms')
+        .doc(cleanOrigCode)
+        .get()
+        .timeout(_kNetworkTimeout);
+    if (!origSnap.exists || origSnap.data() == null) {
+      throw Exception('Original duel room not found.');
+    }
+
+    await _deductEntryStake(currentUser.id);
+
+    try {
+      final orig = origSnap.data()!;
+      final seed = DateTime.now().millisecondsSinceEpoch;
+      final challenges = await ArenaCurriculumEngine.generateHybridPentathlon(
+        seed: seed,
+      );
+      final challengeMaps = challenges.map((c) => c.toMap()).toList();
+      final newRoomCode = _generateRoomCode();
+
+      final newRoomRef = _firestore.collection('arena_rooms').doc(newRoomCode);
+      final rematchRef = _rematchDocRef(cleanOrigCode);
+
+      await _firestore.runTransaction((tx) async {
+        final rematchSnap = await tx.get(rematchRef);
+        final existingNewCode =
+            rematchSnap.data()?['newRoomCode'] as String?;
+        if (rematchSnap.exists &&
+            rematchSnap.data()?['status'] == 'accepted' &&
+            existingNewCode != null &&
+            existingNewCode.isNotEmpty) {
+          // Room already auto-created via simultaneous accept
+          return;
+        }
+
+        tx.set(newRoomRef, {
+          'roomCode': newRoomCode,
+          'hostId': orig['hostId'],
+          'hostName': orig['hostName'],
+          'hostPhotoUrl': orig['hostPhotoUrl'],
+          'hostDuelWins': orig['hostDuelWins'] ?? 0,
+          'guestId': orig['guestId'],
+          'guestName': orig['guestName'],
+          'guestPhotoUrl': orig['guestPhotoUrl'],
+          'guestDuelWins': orig['guestDuelWins'] ?? 0,
+          'stake': _kStakeCoins,
+          'pot': _kStakeCoins * 2,
+          'status': 'in_progress',
+          'hostScore': 0,
+          'guestScore': 0,
+          'hostCorrectCount': 0,
+          'guestCorrectCount': 0,
+          'hostTotalTimeMs': 0,
+          'guestTotalTimeMs': 0,
+          'challenges': challengeMaps,
+          'createdAt': FieldValue.serverTimestamp(),
+        });
+
+        tx.set(rematchRef, {
+          'status': 'accepted',
+          'newRoomCode': newRoomCode,
+          'acceptedBy': currentUser.id,
+        }, SetOptions(merge: true));
+      }).timeout(_kNetworkTimeout);
+
+      // Re-fetch rematch request to guarantee exact winning room code
+      final finalRematch = await rematchRef.get().timeout(_kNetworkTimeout);
+      final winningCode =
+          (finalRematch.data()?['newRoomCode'] as String?) ?? newRoomCode;
+      final createdRoomSnap = await _firestore
+          .collection('arena_rooms')
+          .doc(winningCode)
+          .get()
+          .timeout(_kNetworkTimeout);
+      return _mapSession(winningCode, createdRoomSnap.data()!);
+    } catch (e) {
+      await _refundEntryStake(currentUser.id);
+      rethrow;
+    }
+  }
+
+  @override
+  Future<ArenaDuelSession> enterAcceptedRematch({
+    required String newRoomCode,
+    required UserEntity currentUser,
+  }) async {
+    final cleanCode = newRoomCode.trim().toUpperCase();
+    await _deductEntryStake(currentUser.id);
+    try {
+      final snap = await _firestore
+          .collection('arena_rooms')
+          .doc(cleanCode)
+          .get()
+          .timeout(_kNetworkTimeout);
+      if (!snap.exists || snap.data() == null) {
+        throw Exception('Rematch room $cleanCode not found.');
+      }
+      return _mapSession(cleanCode, snap.data()!);
+    } catch (e) {
+      await _refundEntryStake(currentUser.id);
+      rethrow;
+    }
+  }
+
+  @override
+  Future<void> declineRematch({required String roomCode}) async {
+    try {
+      await _rematchDocRef(roomCode).set({
+        'status': 'declined',
+      }, SetOptions(merge: true)).timeout(const Duration(seconds: 5));
+    } catch (_) {}
+  }
+
+  @override
+  Future<void> writeMatchHistory({
+    required String userId,
+    required ArenaMatchRecord record,
+  }) async {
+    if (userId.isEmpty) return;
+    try {
+      final historyColl = _firestore
+          .collection('users')
+          .doc(userId)
+          .collection('arena_match_history');
+      final newDocRef = historyColl.doc(record.id);
+
+      // Fetch existing records ordered newest-first to enforce 50-doc cap atomically
+      final existingSnap = await historyColl
+          .orderBy('timestamp', descending: true)
+          .get()
+          .timeout(_kNetworkTimeout);
+
+      final batch = _firestore.batch();
+      batch.set(newDocRef, record.toMap());
+
+      if (existingSnap.docs.length >= _kMaxMatchHistoryCount) {
+        final overflowDocs = existingSnap.docs.skip(_kMaxMatchHistoryCount - 1);
+        for (final doc in overflowDocs) {
+          if (doc.id != record.id) {
+            batch.delete(doc.reference);
+          }
+        }
+      }
+
+      await batch.commit().timeout(_kNetworkTimeout);
+    } catch (e) {
+      debugPrint('[ArenaRepositoryImpl] writeMatchHistory error: $e');
+    }
+  }
+
+  @override
+  Future<List<ArenaMatchRecord>> getMatchHistory({
+    required String userId,
+    int limit = 50,
+  }) async {
+    if (userId.isEmpty) return const [];
+    try {
+      final snap = await _firestore
+          .collection('users')
+          .doc(userId)
+          .collection('arena_match_history')
+          .orderBy('timestamp', descending: true)
+          .limit(limit)
+          .get()
+          .timeout(_kNetworkTimeout);
+      return snap.docs
+          .map((d) => ArenaMatchRecord.fromMap(d.data(), docId: d.id))
+          .toList();
+    } catch (e) {
+      debugPrint('[ArenaRepositoryImpl] getMatchHistory error: $e');
+      return const [];
     }
   }
 
@@ -512,17 +902,15 @@ class ArenaRepositoryImpl implements ArenaRepository {
     final int payout;
     final String titleKey;
     if (isDraw) {
-      payout = _kStakeCoins; // 30 back to each
+      payout = _kStakeCoins;
       titleKey = 'coin_history.arena_duel_refund';
     } else if (isWinner) {
-      payout = isPerfect
-          ? (_kWinnerPayout + 10)
-          : _kWinnerPayout; // 60 if 5/5 perfect, 50 if win
+      payout = isPerfect ? (_kWinnerPayout + 10) : _kWinnerPayout;
       titleKey = isPerfect
           ? 'coin_history.arena_duel_perfect'
           : 'coin_history.arena_duel_win';
     } else {
-      payout = _kLoserPayout; // 10 to loser
+      payout = _kLoserPayout;
       titleKey = 'coin_history.arena_duel_consolation';
     }
 
@@ -542,7 +930,6 @@ class ArenaRepositoryImpl implements ArenaRepository {
         isEarned: true,
       );
 
-      // Wire duel XP into recentActivities so it appears in Adventure XP screen
       final rawActivities =
           (userDoc.data()?['recentActivities'] as List<dynamic>?)
               ?.map((e) => Map<String, dynamic>.from(e as Map))
@@ -563,7 +950,6 @@ class ArenaRepositoryImpl implements ArenaRepository {
           ? rawActivities.sublist(0, UserGameConstants.kActivityHistoryLimit)
           : rawActivities;
 
-      // Wire duel XP into dailyXpHistory so the Adventure XP chart reflects today's XP
       Map<String, int>? updatedDailyXpHistory;
       if (isWinner) {
         final rawDailyXp = Map<String, int>.from(
@@ -585,7 +971,6 @@ class ArenaRepositoryImpl implements ArenaRepository {
         updatedDailyXpHistory = rawDailyXp;
       }
 
-      // Calculate daily duels: reset to 1 on a new day or increment if today
       final now = DateTime.now();
       final lastDuel =
           (userDoc.data()?['lastDuelDate'] as Timestamp?)?.toDate();
@@ -594,15 +979,15 @@ class ArenaRepositoryImpl implements ArenaRepository {
           lastDuel.month == now.month &&
           lastDuel.day == now.day;
       final int newDailyDuels = isSameCalendarDay
-          ? (((userDoc.data()?['dailyDuelsPlayedToday'] as num?)?.toInt() ?? 0) + 1)
+          ? (((userDoc.data()?['dailyDuelsPlayedToday'] as num?)?.toInt() ??
+                    0) +
+                1)
           : 1;
 
-      // Update user profile in Firestore
       final userRef = _firestore.collection('users').doc(currentUser.id);
       await userRef.update({
         'coins': FieldValue.increment(payout),
-        if (isWinner)
-          'totalExp': FieldValue.increment(5), // +5 XP TO DUEL WINNER
+        if (isWinner) 'totalExp': FieldValue.increment(5),
         if (isWinner) 'duelWins': FieldValue.increment(1),
         if (!isWinner && !isDraw) 'duelLosses': FieldValue.increment(1),
         'dailyDuelsPlayedToday': newDailyDuels,
@@ -638,7 +1023,8 @@ class ArenaRepositoryImpl implements ArenaRepository {
   }) async {
     _sessionConsecutiveWins = 0;
     final cleanCode = roomCode.trim().toUpperCase();
-    if (cleanCode.startsWith('VOWL-AI-') || cleanCode.startsWith('VOWL-RIVAL-')) {
+    if (cleanCode.startsWith('VOWL-AI-') ||
+        cleanCode.startsWith('VOWL-RIVAL-')) {
       return;
     }
 
@@ -651,7 +1037,6 @@ class ArenaRepositoryImpl implements ArenaRepository {
         final guestId = data?['guestId'] as String?;
         final hostId = data?['hostId'] as String?;
 
-        // If room is still waiting and no opponent joined yet, dissolve room and refund the host
         if (status == 'waiting' && (guestId == null || guestId.isEmpty)) {
           await docRef.delete().timeout(_kNetworkTimeout);
           if (hostId == userId) {
@@ -733,9 +1118,17 @@ class ArenaRepositoryImpl implements ArenaRepository {
   }
 
   ArenaDuelSession _mapSession(String roomCode, Map<String, dynamic> data) {
-    final rawQuestions = (data['questions'] as List<dynamic>?) ?? [];
-    final questions = rawQuestions
-        .map((q) => ArenaQuestion.fromMap(Map<String, dynamic>.from(q as Map)))
+    // Support new 'challenges' key first, fallback to legacy 'questions' key.
+    final rawChallenges =
+        (data['challenges'] as List<dynamic>?) ??
+        (data['questions'] as List<dynamic>?) ??
+        [];
+    final challenges = rawChallenges
+        .map(
+          (c) =>
+              ArenaChallenge.tryFromMap(Map<String, dynamic>.from(c as Map)),
+        )
+        .whereType<ArenaChallenge>()
         .toList();
 
     return ArenaDuelSession(
@@ -746,6 +1139,8 @@ class ArenaRepositoryImpl implements ArenaRepository {
       guestId: data['guestId'] as String?,
       guestName: data['guestName'] as String?,
       guestPhotoUrl: data['guestPhotoUrl'] as String?,
+      hostDuelWins: (data['hostDuelWins'] as num?)?.toInt() ?? 0,
+      guestDuelWins: (data['guestDuelWins'] as num?)?.toInt() ?? 0,
       stake: (data['stake'] as num?)?.toInt() ?? _kStakeCoins,
       pot: (data['pot'] as num?)?.toInt() ?? (_kStakeCoins * 2),
       status: data['status'] as String? ?? 'in_progress',
@@ -756,7 +1151,7 @@ class ArenaRepositoryImpl implements ArenaRepository {
       hostTotalTimeMs: (data['hostTotalTimeMs'] as num?)?.toInt() ?? 0,
       guestTotalTimeMs: (data['guestTotalTimeMs'] as num?)?.toInt() ?? 0,
       winnerId: data['winnerId'] as String?,
-      questions: questions,
+      challenges: challenges,
       createdAt: (data['createdAt'] as Timestamp?)?.toDate() ?? DateTime.now(),
       lastHeartbeat: (data['lastHeartbeat'] as Timestamp?)?.toDate(),
     );

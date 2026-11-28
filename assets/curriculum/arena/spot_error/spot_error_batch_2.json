@@ -1,0 +1,206 @@
+{
+  "mechanic": "spot_error",
+  "batch": 1,
+  "challenges": [
+    {
+      "id": "ARENA_SE_B1_C1",
+      "instruction": "Tap the WRONG word",
+      "sentenceTokens": ["The", "students", "submitted", "they're", "assignments", "on", "time"],
+      "errorTokenIndex": 3,
+      "errorToken": "they're",
+      "correctedToken": "their",
+      "explanation": "'They're' means 'they are'. The possessive form needed here is 'their'.",
+      "difficulty": "easy"
+    },
+    {
+      "id": "ARENA_SE_B1_C2",
+      "instruction": "Tap the WRONG word",
+      "sentenceTokens": ["She", "speaks", "English", "more", "better", "than", "her", "sister"],
+      "errorTokenIndex": 3,
+      "errorToken": "more",
+      "correctedToken": "—remove 'more'—",
+      "explanation": "'Better' is already comparative. 'More better' is a double comparative error.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "ARENA_SE_B1_C3",
+      "instruction": "Tap the WRONG word",
+      "sentenceTokens": ["I", "have", "less", "friends", "than", "my", "brother"],
+      "errorTokenIndex": 2,
+      "errorToken": "less",
+      "correctedToken": "fewer",
+      "explanation": "'Friends' is countable, so use 'fewer'. 'Less' is for uncountable nouns.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "ARENA_SE_B1_C4",
+      "instruction": "Tap the WRONG word",
+      "sentenceTokens": ["He", "don't", "want", "to", "go", "outside", "today"],
+      "errorTokenIndex": 1,
+      "errorToken": "don't",
+      "correctedToken": "doesn't",
+      "explanation": "Third person singular 'He' requires 'doesn't', not 'don't'.",
+      "difficulty": "easy"
+    },
+    {
+      "id": "ARENA_SE_B1_C5",
+      "instruction": "Tap the WRONG word",
+      "sentenceTokens": ["We", "have", "been", "waiting", "since", "three", "hours"],
+      "errorTokenIndex": 4,
+      "errorToken": "since",
+      "correctedToken": "for",
+      "explanation": "Use 'for' with duration (three hours). 'Since' is for a point in time.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "ARENA_SE_B1_C6",
+      "instruction": "Tap the WRONG word",
+      "sentenceTokens": ["The", "children", "was", "playing", "in", "the", "garden"],
+      "errorTokenIndex": 2,
+      "errorToken": "was",
+      "correctedToken": "were",
+      "explanation": "Plural subject 'children' requires 'were', not 'was'.",
+      "difficulty": "easy"
+    },
+    {
+      "id": "ARENA_SE_B1_C7",
+      "instruction": "Tap the WRONG word",
+      "sentenceTokens": ["She", "has", "went", "to", "the", "market", "already"],
+      "errorTokenIndex": 2,
+      "errorToken": "went",
+      "correctedToken": "gone",
+      "explanation": "Present perfect requires past participle 'gone', not past tense 'went'.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "ARENA_SE_B1_C8",
+      "instruction": "Tap the WRONG word",
+      "sentenceTokens": ["Its", "important", "to", "arrive", "on", "time", "everyday"],
+      "errorTokenIndex": 0,
+      "errorToken": "Its",
+      "correctedToken": "It's",
+      "explanation": "'Its' is possessive. 'It's' (it is) is needed here as a subject + verb.",
+      "difficulty": "easy"
+    },
+    {
+      "id": "ARENA_SE_B1_C9",
+      "instruction": "Tap the WRONG word",
+      "sentenceTokens": ["The", "informations", "provided", "were", "very", "useful"],
+      "errorTokenIndex": 1,
+      "errorToken": "informations",
+      "correctedToken": "information",
+      "explanation": "'Information' is uncountable — it has no plural form.",
+      "difficulty": "easy"
+    },
+    {
+      "id": "ARENA_SE_B1_C10",
+      "instruction": "Tap the WRONG word",
+      "sentenceTokens": ["If", "I", "was", "you", "I", "would", "accept", "the", "offer"],
+      "errorTokenIndex": 2,
+      "errorToken": "was",
+      "correctedToken": "were",
+      "explanation": "Subjunctive mood: 'If I were you' is correct for hypothetical situations.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "ARENA_SE_B1_C11",
+      "instruction": "Tap the WRONG word",
+      "sentenceTokens": ["She", "enjoyed", "to", "play", "tennis", "after", "school"],
+      "errorTokenIndex": 2,
+      "errorToken": "to",
+      "correctedToken": "—remove 'to'—",
+      "explanation": "'Enjoy' takes a gerund (playing), not an infinitive (to play).",
+      "difficulty": "medium"
+    },
+    {
+      "id": "ARENA_SE_B1_C12",
+      "instruction": "Tap the WRONG word",
+      "sentenceTokens": ["Their", "going", "to", "the", "concert", "tonight"],
+      "errorTokenIndex": 0,
+      "errorToken": "Their",
+      "correctedToken": "They're",
+      "explanation": "'Their' is possessive. 'They're' (they are) is needed here.",
+      "difficulty": "easy"
+    },
+    {
+      "id": "ARENA_SE_B1_C13",
+      "instruction": "Tap the WRONG word",
+      "sentenceTokens": ["He", "suggested", "me", "to", "apply", "for", "the", "scholarship"],
+      "errorTokenIndex": 2,
+      "errorToken": "me",
+      "correctedToken": "that I",
+      "explanation": "'Suggest' takes a that-clause: 'He suggested that I apply', not 'suggested me to'.",
+      "difficulty": "hard"
+    },
+    {
+      "id": "ARENA_SE_B1_C14",
+      "instruction": "Tap the WRONG word",
+      "sentenceTokens": ["The", "news", "are", "very", "surprising", "this", "morning"],
+      "errorTokenIndex": 2,
+      "errorToken": "are",
+      "correctedToken": "is",
+      "explanation": "'News' is uncountable — always takes singular verb 'is'.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "ARENA_SE_B1_C15",
+      "instruction": "Tap the WRONG word",
+      "sentenceTokens": ["Despite", "of", "the", "rain", "they", "continued", "walking"],
+      "errorTokenIndex": 1,
+      "errorToken": "of",
+      "correctedToken": "—remove 'of'—",
+      "explanation": "'Despite' doesn't take 'of'. Either 'despite the rain' or 'in spite of the rain'.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "ARENA_SE_B1_C16",
+      "instruction": "Tap the WRONG word",
+      "sentenceTokens": ["Each", "of", "the", "students", "have", "submitted", "their", "work"],
+      "errorTokenIndex": 4,
+      "errorToken": "have",
+      "correctedToken": "has",
+      "explanation": "'Each' is singular — requires 'has', not 'have'.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "ARENA_SE_B1_C17",
+      "instruction": "Tap the WRONG word",
+      "sentenceTokens": ["I", "am", "agree", "with", "your", "decision", "completely"],
+      "errorTokenIndex": 1,
+      "errorToken": "am",
+      "correctedToken": "—remove 'am'—",
+      "explanation": "'Agree' is a verb, not an adjective. Say 'I agree' not 'I am agree'.",
+      "difficulty": "easy"
+    },
+    {
+      "id": "ARENA_SE_B1_C18",
+      "instruction": "Tap the WRONG word",
+      "sentenceTokens": ["She", "made", "me", "to", "clean", "the", "entire", "kitchen"],
+      "errorTokenIndex": 3,
+      "errorToken": "to",
+      "correctedToken": "—remove 'to'—",
+      "explanation": "'Make' + object + bare infinitive (no 'to'). 'She made me clean'.",
+      "difficulty": "hard"
+    },
+    {
+      "id": "ARENA_SE_B1_C19",
+      "instruction": "Tap the WRONG word",
+      "sentenceTokens": ["They", "discussed", "about", "the", "new", "company", "policy"],
+      "errorTokenIndex": 2,
+      "errorToken": "about",
+      "correctedToken": "—remove 'about'—",
+      "explanation": "'Discuss' is transitive — no preposition needed. 'They discussed the policy'.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "ARENA_SE_B1_C20",
+      "instruction": "Tap the WRONG word",
+      "sentenceTokens": ["He", "is", "the", "most", "tallest", "player", "on", "the", "team"],
+      "errorTokenIndex": 3,
+      "errorToken": "most",
+      "correctedToken": "—remove 'most'—",
+      "explanation": "Double superlative: 'tallest' already is superlative. Remove 'most'.",
+      "difficulty": "easy"
+    }
+  ]
+}

@@ -1,6 +1,8 @@
 import 'package:flutter/foundation.dart';
+import 'package:vowl/features/arena/domain/entities/arena_challenge.dart';
 
 /// Single multiple-choice question inside an Arena Duel.
+/// Kept for backward compat — new code should use [ArenaChallenge].
 @immutable
 class ArenaQuestion {
   final String question;
@@ -68,11 +70,13 @@ class ArenaDuelSession {
   final String? winnerId;
   final bool isGhostRival;
   final double ghostAccuracy;
-  final List<ArenaQuestion> questions;
+  final int hostDuelWins;
+  final int guestDuelWins;
+  final List<ArenaChallenge> challenges;
   final DateTime createdAt;
   final DateTime? lastHeartbeat;
 
-  const ArenaDuelSession({
+  ArenaDuelSession({
     required this.roomCode,
     required this.hostId,
     required this.hostName,
@@ -92,14 +96,31 @@ class ArenaDuelSession {
     this.winnerId,
     this.isGhostRival = false,
     this.ghostAccuracy = 0.8,
-    required this.questions,
+    this.hostDuelWins = 0,
+    this.guestDuelWins = 0,
+    List<ArenaChallenge>? challenges,
+    @Deprecated('Use challenges instead') List<ArenaQuestion>? questions,
     required this.createdAt,
     this.lastHeartbeat,
-  });
+  }) : challenges =
+            challenges ??
+            (questions != null
+                ? questions.map(ArenaChallenge.fromLegacyQuestion).toList()
+                : const []);
 
   bool get isCompleted => status == 'completed' || status == 'abandoned';
   bool get isInProgress => status == 'in_progress';
   bool get isWaiting => status == 'waiting';
+
+  /// Deprecated backward compat — returns only MCQ challenges as ArenaQuestion.
+  @Deprecated('Use challenges instead')
+  List<ArenaQuestion> get questions => challenges
+      .where((c) => c.mechanic == ArenaMechanicType.mcq)
+      .map((c) => c.toLegacyQuestion())
+      .toList();
+
+  /// Returns the total number of rounds (all mechanic types).
+  int get totalRounds => challenges.length;
 
   /// Returns true if [userId] is the host of this duel room.
   bool isHost(String userId) => hostId == userId;
@@ -156,6 +177,16 @@ class ArenaDuelSession {
     return isHost(currentUserId) ? guestTotalTimeMs : hostTotalTimeMs;
   }
 
+  /// Resolves the opponent's lifetime duel wins relative to [currentUserId].
+  int opponentDuelWins(String currentUserId) {
+    return isHost(currentUserId) ? guestDuelWins : hostDuelWins;
+  }
+
+  /// Resolves the current player's lifetime duel wins relative to [currentUserId].
+  int myDuelWins(String currentUserId) {
+    return isHost(currentUserId) ? hostDuelWins : guestDuelWins;
+  }
+
   ArenaDuelSession copyWith({
     String? roomCode,
     String? hostId,
@@ -176,7 +207,9 @@ class ArenaDuelSession {
     String? winnerId,
     bool? isGhostRival,
     double? ghostAccuracy,
-    List<ArenaQuestion>? questions,
+    int? hostDuelWins,
+    int? guestDuelWins,
+    List<ArenaChallenge>? challenges,
     DateTime? createdAt,
     DateTime? lastHeartbeat,
   }) {
@@ -200,7 +233,9 @@ class ArenaDuelSession {
       winnerId: winnerId ?? this.winnerId,
       isGhostRival: isGhostRival ?? this.isGhostRival,
       ghostAccuracy: ghostAccuracy ?? this.ghostAccuracy,
-      questions: questions ?? this.questions,
+      hostDuelWins: hostDuelWins ?? this.hostDuelWins,
+      guestDuelWins: guestDuelWins ?? this.guestDuelWins,
+      challenges: challenges ?? this.challenges,
       createdAt: createdAt ?? this.createdAt,
       lastHeartbeat: lastHeartbeat ?? this.lastHeartbeat,
     );
@@ -227,7 +262,9 @@ class ArenaDuelSession {
       'winnerId': winnerId,
       'isGhostRival': isGhostRival,
       'ghostAccuracy': ghostAccuracy,
-      'questions': questions.map((q) => q.toMap()).toList(),
+      'hostDuelWins': hostDuelWins,
+      'guestDuelWins': guestDuelWins,
+      'challenges': challenges.map((c) => c.toMap()).toList(),
       'createdAt': createdAt.toIso8601String(),
       'lastHeartbeat': lastHeartbeat?.toIso8601String(),
     };

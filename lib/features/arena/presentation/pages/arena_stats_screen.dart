@@ -11,9 +11,12 @@ import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/app_theme.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/features/arena/domain/entities/arena_rank.dart';
+import 'package:vowl/features/arena/presentation/pages/arena_match_history_screen.dart';
 import 'package:vowl/features/arena/presentation/pages/arena_matchmaking_screen.dart';
 import 'package:vowl/features/arena/presentation/utils/arena_network_helper.dart';
 import 'package:vowl/features/arena/presentation/utils/arena_refuel_helper.dart';
+import 'package:vowl/features/arena/presentation/widgets/arena_rank_badge.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 
@@ -441,6 +444,9 @@ class _ArenaHeroCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final Color gaugeColor =
         winRatePercent >= 50 ? AppColors.emerald500 : AppColors.indigo500;
+    final rank = user.duelWins.arenaRank;
+    final nextRank = rank.nextRank;
+    final rankProgress = rank.progressToNext(user.duelWins);
 
     final cardBg = isMidnight
         ? AppColors.midnightSurface
@@ -464,74 +470,137 @@ class _ArenaHeroCard extends StatelessWidget {
           ),
         ],
       ),
-      child: Row(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          // Cached User Avatar
-          UserAvatar(
-            photoUrl: user.photoUrl,
-            size: 54.r,
-            border: Border.all(
-              color: gaugeColor.withValues(alpha: 0.4),
-              width: 2,
-            ),
-          ),
-
-          SizedBox(width: 14.w),
-
-          // Player Name & Real All-time 1v1 Arena Matches Record
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                FittedBox(
-                  fit: BoxFit.scaleDown,
-                  alignment: Alignment.centerLeft,
-                  child: Text(
-                    user.safeDisplayName,
-                    softWrap: true,
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 17.sp,
-                      fontWeight: FontWeight.w900,
-                      color: isDark ? Colors.white : AppColors.slate900,
-                      letterSpacing: -0.2,
-                    ),
-                  ),
+          Row(
+            children: [
+              // Cached User Avatar
+              UserAvatar(
+                photoUrl: user.photoUrl,
+                size: 54.r,
+                border: Border.all(
+                  color: gaugeColor.withValues(alpha: 0.4),
+                  width: 2,
                 ),
-                SizedBox(height: 4.h),
-                Row(
+              ),
+
+              SizedBox(width: 14.w),
+
+              // Player Name, Rank Badge & Matches Count
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    Icon(
-                      LucideIcons.swords,
-                      size: 13.r,
-                      color: isDark ? AppColors.indigo400 : AppColors.indigo600,
-                    ),
-                    SizedBox(width: 5.w),
-                    Text(
-                      '$totalDuels ${totalDuels == 1 ? "match" : "matches"} played',
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 11.5.sp,
-                        fontWeight: FontWeight.w700,
-                        color: isDark ? Colors.white70 : AppColors.slate600,
+                    FittedBox(
+                      fit: BoxFit.scaleDown,
+                      alignment: Alignment.centerLeft,
+                      child: Text(
+                        user.safeDisplayName,
+                        softWrap: true,
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 17.sp,
+                          fontWeight: FontWeight.w900,
+                          color: isDark ? Colors.white : AppColors.slate900,
+                          letterSpacing: -0.2,
+                        ),
                       ),
+                    ),
+                    SizedBox(height: 4.h),
+                    ArenaRankBadge(
+                      rank: rank,
+                      compact: false,
+                      isDark: isDark,
+                    ),
+                    SizedBox(height: 4.h),
+                    Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Icon(
+                          LucideIcons.swords,
+                          size: 13.r,
+                          color:
+                              isDark ? AppColors.indigo400 : AppColors.indigo600,
+                        ),
+                        SizedBox(width: 5.w),
+                        Text(
+                          '$totalDuels ${totalDuels == 1 ? "match" : "matches"} played',
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 11.5.sp,
+                            fontWeight: FontWeight.w700,
+                            color: isDark ? Colors.white70 : AppColors.slate600,
+                          ),
+                        ),
+                      ],
                     ),
                   ],
                 ),
-              ],
-            ),
+              ),
+
+              SizedBox(width: 10.w),
+
+              // Compact Radial Win Rate Gauge
+              _CircularGauge(
+                percent: winRatePercent,
+                ratio: winRateRatio,
+                color: gaugeColor,
+                isDark: isDark,
+              ),
+            ],
           ),
 
-          SizedBox(width: 10.w),
+          SizedBox(height: 12.h),
 
-          // Compact Radial Win Rate Gauge
-          _CircularGauge(
-            percent: winRatePercent,
-            ratio: winRateRatio,
-            color: gaugeColor,
-            isDark: isDark,
+          // Progress bar to next Arena Rank
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Expanded(
+                    child: Text(
+                      nextRank != null
+                          ? 'Next: ${nextRank.emoji} ${nextRank.label}'
+                          : '👑 Max Arena Rank Reached',
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 10.5.sp,
+                        fontWeight: FontWeight.w700,
+                        color: rank.color,
+                      ),
+                    ),
+                  ),
+                  SizedBox(width: 8.w),
+                  Text(
+                    nextRank != null
+                        ? '${user.duelWins}/${nextRank.minWins} wins'
+                        : '${user.duelWins} wins',
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 10.5.sp,
+                      fontWeight: FontWeight.w800,
+                      color: isDark ? Colors.white60 : AppColors.slate600,
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(height: 5.h),
+              ClipRRect(
+                borderRadius: BorderRadius.circular(4.r),
+                child: LinearProgressIndicator(
+                  value: rankProgress,
+                  minHeight: 5.h,
+                  backgroundColor: rank.color.withValues(alpha: 0.14),
+                  valueColor: AlwaysStoppedAnimation<Color>(rank.color),
+                ),
+              ),
+            ],
           ),
         ],
       ),
@@ -990,7 +1059,7 @@ class _ArenaCoinSummaryCard extends StatelessWidget {
 
           SizedBox(height: 12.h),
 
-          // 5-Rounds Preview Strip
+          // 7-Rounds Hybrid Pentathlon Preview Strip
           Container(
             padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 8.h),
             decoration: BoxDecoration(
@@ -1004,7 +1073,7 @@ class _ArenaCoinSummaryCard extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      '5 Rounds per Match',
+                      '7 Hybrid Rounds per Match',
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         fontSize: 9.sp,
@@ -1026,21 +1095,18 @@ class _ArenaCoinSummaryCard extends StatelessWidget {
                   ],
                 ),
                 SizedBox(height: 6.h),
-                FittedBox(
-                  fit: BoxFit.scaleDown,
-                  child: Row(
-                    children: [
-                      _roundChip('R1 Clash', AppColors.indigo500),
-                      SizedBox(width: 4.w),
-                      _roundChip('R2 Phrase', AppColors.emerald500),
-                      SizedBox(width: 4.w),
-                      _roundChip('R3 Strike', AppColors.rose500),
-                      SizedBox(width: 4.w),
-                      _roundChip('R4 Blitz', AppColors.blue500),
-                      SizedBox(width: 4.w),
-                      _roundChip('R5 Climax', AppColors.amber500),
-                    ],
-                  ),
+                Wrap(
+                  spacing: 4.w,
+                  runSpacing: 4.h,
+                  children: [
+                    _roundChip('R1 Snap', AppColors.indigo500),
+                    _roundChip('R2 Type', AppColors.emerald500),
+                    _roundChip('R3 Judge', AppColors.blue500),
+                    _roundChip('R4 Build', AppColors.violet500),
+                    _roundChip('R5 Error', AppColors.rose500),
+                    _roundChip('R6 MCQ', AppColors.teal500),
+                    _roundChip('R7 Spell', AppColors.amber500),
+                  ],
                 ),
               ],
             ),
@@ -1156,16 +1222,33 @@ class _ArenaRecentMatches extends StatelessWidget {
                 color: isDark ? Colors.white : AppColors.slate900,
               ),
             ),
-            if (displayHistory.isNotEmpty)
-              Text(
-                '${displayHistory.length} matches',
+            TextButton.icon(
+              onPressed: () {
+                Navigator.of(
+                  context,
+                  rootNavigator: true,
+                ).push(ArenaMatchHistoryScreen.route(user: user));
+              },
+              style: TextButton.styleFrom(
+                padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 2.h),
+                minimumSize: Size.zero,
+                tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+              ),
+              icon: Icon(
+                LucideIcons.history,
+                size: 13.sp,
+                color: isDark ? AppColors.indigo400 : AppColors.indigo600,
+              ),
+              label: Text(
+                'Match History',
                 style: TextStyle(
                   fontFamily: 'Outfit',
-                  fontSize: 10.sp,
-                  fontWeight: FontWeight.w700,
-                  color: isDark ? Colors.white54 : AppColors.slate500,
+                  fontSize: 11.sp,
+                  fontWeight: FontWeight.w800,
+                  color: isDark ? AppColors.indigo400 : AppColors.indigo600,
                 ),
               ),
+            ),
           ],
         ),
 

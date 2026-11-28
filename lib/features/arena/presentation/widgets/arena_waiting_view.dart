@@ -33,14 +33,17 @@ class ArenaWaitingView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.symmetric(
-        horizontal: AppSpacing.compact,
-        vertical: 16.h,
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
+    return SingleChildScrollView(
+      physics: const BouncingScrollPhysics(),
+      child: Padding(
+        padding: EdgeInsets.symmetric(
+          horizontal: AppSpacing.compact,
+          vertical: 16.h,
+        ),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
           Center(
             child: Container(
               padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 5.h),
@@ -95,7 +98,7 @@ class ArenaWaitingView extends StatelessWidget {
           ),
           SizedBox(height: 6.h),
           Text(
-            'All 5 rounds submitted. Rival is concluding their match.',
+            'All ${state.session?.challenges.length ?? 7} rounds submitted. Rival is concluding their match.',
             textAlign: TextAlign.center,
             softWrap: true,
             style: TextStyle(
@@ -428,6 +431,7 @@ class ArenaWaitingView extends StatelessWidget {
             ),
           ),
         ],
+      ),
       ),
     );
   }

@@ -4,6 +4,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:vowl/core/data/services/asset_quest_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/features/arena/domain/entities/arena_challenge.dart';
 import 'package:vowl/features/arena/domain/entities/arena_duel_session.dart';
 
 /// Production curriculum engine orchestrating authentic 1v1 Arena questions.
@@ -668,6 +669,364 @@ class ArenaCurriculumEngine {
       );
     } catch (_) {
       return null;
+    }
+  }
+
+  // =========================================================================
+  // HYBRID PENTATHLON ENGINE v2 (100% Independent Arena Curriculum)
+  // =========================================================================
+
+  /// Fixed 7-round Hybrid Pentathlon mechanic progression.
+  static const List<ArenaMechanicType> kPentathlonRoundOrder = [
+    ArenaMechanicType.wordSnap, // Round 1
+    ArenaMechanicType.typeDuel, // Round 2
+    ArenaMechanicType.rapidJudge, // Round 3
+    ArenaMechanicType.sentenceBuild, // Round 4
+    ArenaMechanicType.spotError, // Round 5
+    ArenaMechanicType.mcq, // Round 6
+    ArenaMechanicType.speedSpell, // Round 7
+  ];
+
+  /// Generates 7 deterministically seeded [ArenaChallenge] rounds—one for
+  /// each mechanic type—loading strictly from `assets/curriculum/arena/`.
+  static Future<List<ArenaChallenge>> generateHybridPentathlon({
+    int? seed,
+  }) async {
+    final rand = Random(seed ?? DateTime.now().millisecondsSinceEpoch);
+    final challenges = <ArenaChallenge>[];
+
+    for (var i = 0; i < kPentathlonRoundOrder.length; i++) {
+      final mechanic = kPentathlonRoundOrder[i];
+      final preferredDifficulty = _preferredDifficultyForRound(i);
+      final challenge = await _loadRandomChallengeForMechanic(
+        mechanic,
+        rand,
+        preferredDifficulty: preferredDifficulty,
+      );
+      challenges.add(challenge);
+    }
+
+    return challenges;
+  }
+
+  /// Target progressive difficulty curve across the 7 rounds.
+  static String _preferredDifficultyForRound(int roundIndex) {
+    if (roundIndex <= 1) return 'easy';
+    if (roundIndex <= 4) return 'medium';
+    return 'hard';
+  }
+
+  /// Maps an [ArenaMechanicType] to its dedicated folder under `assets/curriculum/arena/`.
+  /// Returns null for [ArenaMechanicType.mcq] (which uses the 4 existing MCQ folders).
+  static String? folderForMechanic(ArenaMechanicType type) {
+    switch (type) {
+      case ArenaMechanicType.wordSnap:
+        return 'word_snap';
+      case ArenaMechanicType.typeDuel:
+        return 'type_duel';
+      case ArenaMechanicType.rapidJudge:
+        return 'rapid_judge';
+      case ArenaMechanicType.sentenceBuild:
+        return 'sentence_build';
+      case ArenaMechanicType.spotError:
+        return 'spot_error';
+      case ArenaMechanicType.speedSpell:
+        return 'speed_spell';
+      case ArenaMechanicType.mcq:
+        return null;
+      case ArenaMechanicType.voiceDuel:
+        return 'voice_duel';
+    }
+  }
+
+  /// Loads one random challenge for [mechanic], respecting [preferredDifficulty]
+  /// when available, using dedicated `assets/curriculum/arena/` batches.
+  static Future<ArenaChallenge> _loadRandomChallengeForMechanic(
+    ArenaMechanicType mechanic,
+    Random rand, {
+    String? preferredDifficulty,
+  }) async {
+    if (mechanic == ArenaMechanicType.mcq) {
+      return _loadMcqArenaChallenge(
+        rand,
+        preferredDifficulty: preferredDifficulty,
+      );
+    }
+
+    final folder = folderForMechanic(mechanic);
+    if (folder != null) {
+      final batchNum = rand.nextInt(20) + 1;
+      final loaded = await loadBatchFromAssets(
+        mechanic,
+        batchNum: batchNum,
+      );
+      if (loaded.isNotEmpty) {
+        final matching = preferredDifficulty != null
+            ? loaded
+                  .where(
+                    (c) =>
+                        c.difficulty?.toLowerCase() ==
+                        preferredDifficulty.toLowerCase(),
+                  )
+                  .toList()
+            : <ArenaChallenge>[];
+        final pool = List<ArenaChallenge>.from(
+          matching.isNotEmpty ? matching : loaded,
+        )..shuffle(rand);
+        return pool.first;
+      }
+    }
+
+    return _curatedFallbackForMechanic(mechanic, rand);
+  }
+
+  /// Loads and parses all challenges in a dedicated batch file for [mechanic].
+  static Future<List<ArenaChallenge>> loadBatchFromAssets(
+    ArenaMechanicType mechanic, {
+    int batchNum = 1,
+  }) async {
+    final folder = folderForMechanic(mechanic);
+    if (folder == null) return const [];
+
+    String? jsonString;
+    final candidates = [
+      'assets/curriculum/arena/$folder/${folder}_batch_$batchNum.json',
+      if (batchNum != 1)
+        'assets/curriculum/arena/$folder/${folder}_batch_1.json',
+    ];
+    for (final path in candidates) {
+      try {
+        jsonString = await rootBundle.loadString(path);
+        if (jsonString.isNotEmpty) break;
+      } catch (_) {}
+    }
+
+    if (jsonString == null || jsonString.isEmpty) return const [];
+    return parseMechanicBatchJson(jsonString, mechanic);
+  }
+
+  /// Parses raw JSON batch text for a given [mechanic].
+  static List<ArenaChallenge> parseMechanicBatchJson(
+    String jsonString,
+    ArenaMechanicType mechanic,
+  ) {
+    try {
+      final data = jsonDecode(jsonString) as Map<String, dynamic>;
+      final listKey = mechanic == ArenaMechanicType.rapidJudge
+          ? 'challengeSets'
+          : 'challenges';
+      final rawItems = (data[listKey] as List<dynamic>?) ?? const [];
+
+      final results = <ArenaChallenge>[];
+      for (final raw in rawItems) {
+        if (raw is! Map) continue;
+        final parsed = parseChallengeItem(
+          Map<String, dynamic>.from(raw),
+          mechanic,
+        );
+        if (parsed != null) {
+          results.add(parsed);
+        }
+      }
+      return results;
+    } catch (e) {
+      debugPrint('[ArenaCurriculumEngine] Failed to parse ${mechanic.key}: $e');
+      return const [];
+    }
+  }
+
+  /// Parses a single challenge item JSON map into an [ArenaChallenge] for [mechanic].
+  static ArenaChallenge? parseChallengeItem(
+    Map<String, dynamic> map,
+    ArenaMechanicType mechanic,
+  ) {
+    try {
+      final normalized = <String, dynamic>{
+        ...map,
+        'mechanic': mechanic.key,
+      };
+      if (mechanic == ArenaMechanicType.typeDuel &&
+          (normalized['prompt'] == null ||
+              normalized['prompt'].toString().isEmpty)) {
+        normalized['prompt'] = normalized['definition'] ?? '';
+      }
+      if (mechanic == ArenaMechanicType.sentenceBuild &&
+          (normalized['correctAnswer'] == null ||
+              normalized['correctAnswer'].toString().isEmpty)) {
+        normalized['correctAnswer'] = normalized['correctSentence'] ?? '';
+      }
+      if (mechanic == ArenaMechanicType.spotError &&
+          (normalized['correctAnswer'] == null ||
+              normalized['correctAnswer'].toString().isEmpty)) {
+        normalized['correctAnswer'] = normalized['errorToken'] ?? '';
+      }
+      return ArenaChallenge.fromMap(normalized);
+    } catch (_) {
+      return null;
+    }
+  }
+
+  static Future<ArenaChallenge> _loadMcqArenaChallenge(
+    Random rand, {
+    String? preferredDifficulty,
+  }) async {
+    try {
+      final dedicated = await _loadDedicatedArenaBatches(rand, count: 4);
+      if (dedicated.isNotEmpty) {
+        final matching = preferredDifficulty != null
+            ? dedicated
+                  .where(
+                    (q) =>
+                        q.difficulty?.toLowerCase() ==
+                        preferredDifficulty.toLowerCase(),
+                  )
+                  .toList()
+            : <ArenaQuestion>[];
+        final pool = List<ArenaQuestion>.from(
+          matching.isNotEmpty ? matching : dedicated,
+        )..shuffle(rand);
+        return ArenaChallenge.fromLegacyQuestion(pool.first);
+      }
+    } catch (_) {}
+
+    final bank = List<Map<String, dynamic>>.from(_kQuestionBank)..shuffle(rand);
+    return ArenaChallenge.fromLegacyQuestion(ArenaQuestion.fromMap(bank.first));
+  }
+
+  /// Curated independent offline fallbacks (used only if asset bundle is unavailable).
+  static ArenaChallenge _curatedFallbackForMechanic(
+    ArenaMechanicType mechanic,
+    Random rand,
+  ) {
+    switch (mechanic) {
+      case ArenaMechanicType.wordSnap:
+        return const ArenaChallenge(
+          mechanic: ArenaMechanicType.wordSnap,
+          id: 'FALLBACK_WS_1',
+          prompt: "Unscramble: a word meaning 'very large in size'",
+          correctAnswer: 'enormous',
+          scrambledLetters: 'ONURMOSE',
+          hint: '8 letters, starts with E',
+          explanation:
+              "Enormous means extremely large. From Latin 'enormis' — out of the norm.",
+          difficulty: 'easy',
+        );
+      case ArenaMechanicType.typeDuel:
+        return const ArenaChallenge(
+          mechanic: ArenaMechanicType.typeDuel,
+          id: 'FALLBACK_TD_1',
+          prompt: 'The feeling of great happiness and triumph after winning',
+          correctAnswer: 'victory',
+          acceptedSpellings: ['victory'],
+          letterCount: 7,
+          explanation: "Victory means winning or achieving success.",
+          difficulty: 'easy',
+        );
+      case ArenaMechanicType.rapidJudge:
+        return const ArenaChallenge(
+          mechanic: ArenaMechanicType.rapidJudge,
+          id: 'FALLBACK_RJ_1',
+          prompt: 'Is each sentence grammatically CORRECT or WRONG?',
+          correctAnswer: '',
+          explanation: 'Evaluate grammar accuracy for all 6 sentences.',
+          difficulty: 'medium',
+          rapidItems: [
+            RapidJudgeItem(
+              sentence: "She don't like coffee in the morning.",
+              isCorrect: false,
+              correction: "She doesn't like coffee in the morning.",
+              rule: "Third person singular requires 'doesn't', not 'don't'.",
+            ),
+            RapidJudgeItem(
+              sentence: 'They have been waiting for an hour.',
+              isCorrect: true,
+              rule: 'Present perfect continuous is correctly formed.',
+            ),
+            RapidJudgeItem(
+              sentence: 'He goed to the store yesterday.',
+              isCorrect: false,
+              correction: 'He went to the store yesterday.',
+              rule: "'Go' is irregular. Past tense is 'went'.",
+            ),
+            RapidJudgeItem(
+              sentence: 'I am taller than my older brother.',
+              isCorrect: true,
+              rule: "Comparative 'taller than' is correct.",
+            ),
+            RapidJudgeItem(
+              sentence: 'We was happy to see you at the party.',
+              isCorrect: false,
+              correction: 'We were happy to see you at the party.',
+              rule: "Plural subject 'we' requires 'were'.",
+            ),
+            RapidJudgeItem(
+              sentence: 'The children are playing outside right now.',
+              isCorrect: true,
+              rule: 'Present continuous with plural subject is correct.',
+            ),
+          ],
+        );
+      case ArenaMechanicType.sentenceBuild:
+        return const ArenaChallenge(
+          mechanic: ArenaMechanicType.sentenceBuild,
+          id: 'FALLBACK_SB_1',
+          prompt: 'Arrange the words into the correct sentence',
+          correctAnswer: 'The students submitted their assignments on time',
+          shuffledWords: [
+            'on',
+            'submitted',
+            'The',
+            'their',
+            'time',
+            'students',
+            'assignments',
+          ],
+          wordCount: 7,
+          explanation:
+              'Subject (The students) + verb (submitted) + object + adverb phrase.',
+          difficulty: 'medium',
+        );
+      case ArenaMechanicType.spotError:
+        return const ArenaChallenge(
+          mechanic: ArenaMechanicType.spotError,
+          id: 'FALLBACK_SE_1',
+          prompt: 'Tap the WRONG word',
+          correctAnswer: "they're",
+          sentenceTokens: [
+            'The',
+            'students',
+            'submitted',
+            "they're",
+            'assignments',
+            'on',
+            'time',
+          ],
+          errorTokenIndex: 3,
+          errorToken: "they're",
+          correctedToken: 'their',
+          explanation:
+              "'They're' means 'they are'. Possessive 'their' is needed here.",
+          difficulty: 'medium',
+        );
+      case ArenaMechanicType.speedSpell:
+        return const ArenaChallenge(
+          mechanic: ArenaMechanicType.speedSpell,
+          id: 'FALLBACK_SP_1',
+          prompt: "Fill the blanks — meaning: 'extremely large in size'",
+          correctAnswer: 'enormous',
+          displayMask: 'e_o_m_us',
+          missingLetters: ['n', 'r', 'o'],
+          missingPositions: [1, 3, 5],
+          explanation: 'Enormous: e-N-o-R-m-O-us.',
+          difficulty: 'hard',
+        );
+      case ArenaMechanicType.mcq:
+      case ArenaMechanicType.voiceDuel:
+        final bank = List<Map<String, dynamic>>.from(_kQuestionBank)
+          ..shuffle(rand);
+        return ArenaChallenge.fromLegacyQuestion(
+          ArenaQuestion.fromMap(bank.first),
+        );
     }
   }
 }

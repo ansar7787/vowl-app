@@ -1,6 +1,8 @@
 import 'dart:async';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:vowl/features/arena/domain/entities/arena_challenge.dart';
 import 'package:vowl/features/arena/domain/entities/arena_duel_session.dart';
+import 'package:vowl/features/arena/domain/entities/arena_match_record.dart';
 import 'package:vowl/features/arena/domain/repositories/arena_repository.dart';
 import 'package:vowl/features/arena/presentation/bloc/arena_duel_cubit.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
@@ -9,7 +11,10 @@ class FakeArenaRepository implements ArenaRepository {
   bool completeMatchCalled = false;
   bool lastIsWinner = false;
   bool lastIsDraw = false;
+  final List<ArenaMatchRecord> savedRecords = [];
+  int typingProgressUpdates = 0;
   StreamController<ArenaDuelSession>? roomStreamController;
+  StreamController<int>? typingStreamController;
 
   @override
   Future<ArenaDuelSession> quickMatch({
@@ -21,6 +26,16 @@ class FakeArenaRepository implements ArenaRepository {
     required UserEntity currentUser,
     required UserEntity rival,
     required int rivalRank,
+  }) async => throw UnimplementedError();
+
+  @override
+  Future<ArenaDuelSession> rematchGhostAi({
+    required UserEntity currentUser,
+    required String previousGuestId,
+    required String previousGuestName,
+    String? previousGuestPhotoUrl,
+    required double previousAccuracy,
+    int previousOpponentDuelWins = 0,
   }) async => throw UnimplementedError();
 
   @override
@@ -47,6 +62,62 @@ class FakeArenaRepository implements ArenaRepository {
     int correctCount = 0,
     int totalTimeMs = 0,
   }) async {}
+
+  @override
+  Future<void> updateTypingProgress({
+    required String roomCode,
+    required String userId,
+    required int charactersTyped,
+  }) async {
+    typingProgressUpdates++;
+  }
+
+  @override
+  Stream<int> listenToRivalTypingProgress({
+    required String roomCode,
+    required String rivalId,
+  }) => typingStreamController?.stream ?? const Stream.empty();
+
+  @override
+  Future<void> sendRematchRequest({
+    required String roomCode,
+    required String requesterId,
+    required String requesterName,
+  }) async {}
+
+  @override
+  Stream<Map<String, dynamic>> listenToRematchRequest({
+    required String roomCode,
+  }) => const Stream.empty();
+
+  @override
+  Future<ArenaDuelSession> acceptRematch({
+    required String originalRoomCode,
+    required UserEntity currentUser,
+  }) async => throw UnimplementedError();
+
+  @override
+  Future<ArenaDuelSession> enterAcceptedRematch({
+    required String newRoomCode,
+    required UserEntity currentUser,
+  }) async => throw UnimplementedError();
+
+  @override
+  Future<void> declineRematch({required String roomCode}) async {}
+
+  @override
+  Future<void> writeMatchHistory({
+    required String userId,
+    required ArenaMatchRecord record,
+  }) async {
+    savedRecords.add(record);
+  }
+
+  @override
+  Future<List<ArenaMatchRecord>> getMatchHistory({
+    required String userId,
+    int limit = 50,
+  }) async => savedRecords.take(limit).toList();
 
   @override
   Future<void> completeMatch({
@@ -100,7 +171,7 @@ void main() {
       pot: 60,
       status: 'in_progress',
       isGhostRival: false,
-      questions: questions,
+      challenges: questions.map(ArenaChallenge.fromLegacyQuestion).toList(),
       createdAt: DateTime.now(),
     );
 
@@ -221,7 +292,9 @@ void main() {
               status: 'in_progress',
               isGhostRival: true,
               ghostAccuracy: ghostAccuracy,
-              questions: duelQuestions,
+              challenges: duelQuestions
+                  .map(ArenaChallenge.fromLegacyQuestion)
+                  .toList(),
               createdAt: DateTime.now(),
             );
 
@@ -282,7 +355,7 @@ void main() {
         guestCorrectCount: 4,
         hostTotalTimeMs: 14200,
         guestTotalTimeMs: 11800,
-        questions: questions,
+        challenges: questions.map(ArenaChallenge.fromLegacyQuestion).toList(),
         createdAt: DateTime.now(),
       );
 
@@ -342,7 +415,7 @@ void main() {
           guestCorrectCount: 0,
           hostTotalTimeMs: 0,
           guestTotalTimeMs: 0,
-          questions: questions,
+          challenges: questions.map(ArenaChallenge.fromLegacyQuestion).toList(),
           createdAt: DateTime.now(),
         );
 

@@ -511,7 +511,7 @@ class _ArenaMatchmakingScreenState extends State<ArenaMatchmakingScreen> {
             ),
           ),
           child: Text(
-            'ARENA PENTATHLON • 5 ROUNDS',
+            'HYBRID PENTATHLON • 7 ROUNDS',
             style: TextStyle(
               fontFamily: 'Outfit',
               fontSize: 11.sp,
@@ -584,7 +584,7 @@ class _ArenaMatchmakingScreenState extends State<ArenaMatchmakingScreen> {
 
         SizedBox(height: 14.h),
 
-        // 5-Round Disciplines Strip with Icon Preview (⚡🎯💥🧠👑)
+        // 7-Round Hybrid Mechanics Strip
         Container(
           padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 8.h),
           decoration: BoxDecoration(
@@ -597,53 +597,60 @@ class _ArenaMatchmakingScreenState extends State<ArenaMatchmakingScreen> {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              FittedBox(
-                fit: BoxFit.scaleDown,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    _disciplineChip(
-                      icon: LucideIcons.zap,
-                      label: 'R1 Clash',
-                      color: AppColors.indigo500,
-                      isDark: isDark,
-                    ),
-                    SizedBox(width: 4.w),
-                    _disciplineChip(
-                      icon: LucideIcons.target,
-                      label: 'R2 Phrase',
-                      color: AppColors.emerald500,
-                      isDark: isDark,
-                    ),
-                    SizedBox(width: 4.w),
-                    _disciplineChip(
-                      icon: LucideIcons.flame,
-                      label: 'R3 Strike',
-                      color: AppColors.rose500,
-                      isDark: isDark,
-                    ),
-                    SizedBox(width: 4.w),
-                    _disciplineChip(
-                      icon: LucideIcons.brainCircuit,
-                      label: 'R4 Blitz',
-                      color: AppColors.blue500,
-                      isDark: isDark,
-                    ),
-                    SizedBox(width: 4.w),
-                    _disciplineChip(
-                      icon: LucideIcons.crown,
-                      label: 'R5 Climax',
-                      color: AppColors.amber500,
-                      isDark: isDark,
-                    ),
-                  ],
-                ),
+              Wrap(
+                alignment: WrapAlignment.center,
+                spacing: 4.w,
+                runSpacing: 4.h,
+                children: [
+                  _disciplineChip(
+                    icon: LucideIcons.zap,
+                    label: 'R1 Snap',
+                    color: AppColors.indigo500,
+                    isDark: isDark,
+                  ),
+                  _disciplineChip(
+                    icon: LucideIcons.keyboard,
+                    label: 'R2 Type',
+                    color: AppColors.emerald500,
+                    isDark: isDark,
+                  ),
+                  _disciplineChip(
+                    icon: LucideIcons.checkSquare,
+                    label: 'R3 Judge',
+                    color: AppColors.blue500,
+                    isDark: isDark,
+                  ),
+                  _disciplineChip(
+                    icon: LucideIcons.puzzle,
+                    label: 'R4 Build',
+                    color: AppColors.violet500,
+                    isDark: isDark,
+                  ),
+                  _disciplineChip(
+                    icon: LucideIcons.target,
+                    label: 'R5 Error',
+                    color: AppColors.rose500,
+                    isDark: isDark,
+                  ),
+                  _disciplineChip(
+                    icon: LucideIcons.helpCircle,
+                    label: 'R6 MCQ',
+                    color: AppColors.teal500,
+                    isDark: isDark,
+                  ),
+                  _disciplineChip(
+                    icon: LucideIcons.trophy,
+                    label: 'R7 Spell',
+                    color: AppColors.amber500,
+                    isDark: isDark,
+                  ),
+                ],
               ),
               SizedBox(height: 5.h),
               FittedBox(
                 fit: BoxFit.scaleDown,
                 child: Text(
-                  '5 PROGRESSIVE ROUNDS • EASY → MEDIUM → HARD',
+                  '7 UNIQUE MECHANICS • EASY → MEDIUM → HARD',
                   style: TextStyle(
                     fontFamily: 'Outfit',
                     fontSize: 8.5.sp,

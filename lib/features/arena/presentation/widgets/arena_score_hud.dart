@@ -10,6 +10,8 @@ import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/features/arena/domain/entities/arena_challenge.dart';
+import 'package:vowl/features/arena/presentation/widgets/arena_rank_badge.dart';
 
 class ArenaScoreHud extends StatefulWidget {
   final String myName;
@@ -27,6 +29,10 @@ class ArenaScoreHud extends StatefulWidget {
   final String? aiTierLabel;
   final bool animateTimer;
   final int comboStreak;
+  final int maxRoundSeconds;
+  final ArenaMechanicType? mechanic;
+  final int myDuelWins;
+  final int rivalDuelWins;
 
   const ArenaScoreHud({
     super.key,
@@ -45,6 +51,10 @@ class ArenaScoreHud extends StatefulWidget {
     this.aiTierLabel,
     this.animateTimer = true,
     this.comboStreak = 0,
+    this.maxRoundSeconds = 15,
+    this.mechanic,
+    this.myDuelWins = 0,
+    this.rivalDuelWins = 0,
   });
 
   @override
@@ -74,10 +84,12 @@ class _ArenaScoreHudState extends State<ArenaScoreHud>
       _comboScale = 0.0;
     }
 
+    final roundMax = widget.maxRoundSeconds > 0 ? widget.maxRoundSeconds : 15;
+
     if (widget.animateTimer) {
       _controller = AnimationController(
         vsync: this,
-        duration: const Duration(seconds: 15),
+        duration: Duration(seconds: roundMax),
       );
       _controller!.addListener(_onTick);
       _controller!.addStatusListener(_onStatus);
@@ -122,18 +134,21 @@ class _ArenaScoreHudState extends State<ArenaScoreHud>
 
     if (!widget.animateTimer) return;
 
+    final roundMax = widget.maxRoundSeconds > 0 ? widget.maxRoundSeconds : 15;
+
     if (_controller == null) {
       _controller = AnimationController(
         vsync: this,
-        duration: const Duration(seconds: 15),
+        duration: Duration(seconds: roundMax),
       );
       _controller!.addListener(_onTick);
       _controller!.addStatusListener(_onStatus);
     }
 
-    if (oldWidget.currentQuestionIndex != widget.currentQuestionIndex) {
+    if (oldWidget.currentQuestionIndex != widget.currentQuestionIndex ||
+        oldWidget.maxRoundSeconds != widget.maxRoundSeconds) {
       _lastHapticSecond = -1;
-      _controller!.duration = const Duration(seconds: 15);
+      _controller!.duration = Duration(seconds: roundMax);
       if (!widget.isAnswered) {
         _controller!.forward(from: 0.0);
       }
@@ -144,8 +159,12 @@ class _ArenaScoreHudState extends State<ArenaScoreHud>
 
   void _onTick() {
     if (_controller == null) return;
+    final roundMax = widget.maxRoundSeconds > 0 ? widget.maxRoundSeconds : 15;
     final remainingFraction = 1.0 - _controller!.value;
-    final remainingSec = (remainingFraction * 15).ceil().clamp(0, 15);
+    final remainingSec = (remainingFraction * roundMax).ceil().clamp(
+      0,
+      roundMax,
+    );
 
     if (remainingSec <= 5 &&
         remainingSec > 0 &&
@@ -195,11 +214,12 @@ class _ArenaScoreHudState extends State<ArenaScoreHud>
   }
 
   Widget _buildAnimatedTimerBadge(bool isDark) {
+    final roundMax = widget.maxRoundSeconds > 0 ? widget.maxRoundSeconds : 15;
     return AnimatedBuilder(
       animation: _controller!,
       builder: (context, _) {
         final fraction = (1.0 - _controller!.value).clamp(0.0, 1.0);
-        final secondsLeft = (fraction * 15).ceil().clamp(0, 15);
+        final secondsLeft = (fraction * roundMax).ceil().clamp(0, roundMax);
         final barColor = _getBarColor(fraction);
         final isUrgent = secondsLeft <= 5;
 
@@ -216,6 +236,13 @@ class _ArenaScoreHudState extends State<ArenaScoreHud>
               child: Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
+                  if (widget.mechanic != null) ...[
+                    Text(
+                      widget.mechanic!.icon,
+                      style: TextStyle(fontSize: 10.sp),
+                    ),
+                    SizedBox(width: 3.w),
+                  ],
                   Icon(LucideIcons.clock, size: 11.5.sp, color: barColor),
                   SizedBox(width: 4.w),
                   FittedBox(
@@ -246,7 +273,8 @@ class _ArenaScoreHudState extends State<ArenaScoreHud>
   }
 
   Widget _buildStaticTimerBadge(bool isDark) {
-    final fraction = (widget.timeRemaining / 15.0).clamp(0.0, 1.0);
+    final roundMax = widget.maxRoundSeconds > 0 ? widget.maxRoundSeconds : 15;
+    final fraction = (widget.timeRemaining / roundMax).clamp(0.0, 1.0);
     final barColor = _getBarColor(fraction);
     final isUrgent = widget.timeRemaining <= 5;
 
@@ -263,6 +291,10 @@ class _ArenaScoreHudState extends State<ArenaScoreHud>
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
+          if (widget.mechanic != null) ...[
+            Text(widget.mechanic!.icon, style: TextStyle(fontSize: 10.sp)),
+            SizedBox(width: 3.w),
+          ],
           Icon(LucideIcons.clock, size: 11.5.sp, color: barColor),
           SizedBox(width: 4.w),
           FittedBox(
@@ -401,15 +433,25 @@ class _ArenaScoreHudState extends State<ArenaScoreHud>
                       FittedBox(
                         fit: BoxFit.scaleDown,
                         alignment: Alignment.centerLeft,
-                        child: Text(
-                          '${widget.myScore} pts',
-                          softWrap: true,
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 13.sp,
-                            fontWeight: FontWeight.w800,
-                            color: AppColors.indigo500,
-                          ),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Text(
+                              '${widget.myScore} pts',
+                              softWrap: true,
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 13.sp,
+                                fontWeight: FontWeight.w800,
+                                color: AppColors.indigo500,
+                              ),
+                            ),
+                            SizedBox(width: 5.w),
+                            ArenaRankBadge.fromWins(
+                              duelWins: widget.myDuelWins,
+                              isDark: isDark,
+                            ),
+                          ],
                         ),
                       ),
                     ],
@@ -506,6 +548,11 @@ class _ArenaScoreHudState extends State<ArenaScoreHud>
                                 ],
                               ),
                             ),
+                            SizedBox(width: 4.w),
+                            ArenaRankBadge.fromWins(
+                              duelWins: widget.rivalDuelWins,
+                              isDark: isDark,
+                            ),
                             SizedBox(width: 5.w),
                             Text(
                               '${widget.rivalScore} pts',
@@ -561,10 +608,13 @@ class _ArenaScoreHudState extends State<ArenaScoreHud>
               AnimatedBuilder(
                 animation: _controller!,
                 builder: (context, _) {
+                  final roundMax = widget.maxRoundSeconds > 0
+                      ? widget.maxRoundSeconds.toDouble()
+                      : 15.0;
                   final progress = _controller!.value;
                   final remaining = (1.0 - progress).clamp(0.0, 1.0);
                   final barColor = _getBarColor(remaining);
-                  final isUrgent = (remaining * 15.0) <= 5.0;
+                  final isUrgent = (remaining * roundMax) <= 5.0;
 
                   return SizedBox(
                         height: 5.h,
@@ -587,18 +637,27 @@ class _ArenaScoreHudState extends State<ArenaScoreHud>
                 },
               )
             else
-              SizedBox(
-                height: 5.h,
-                width: double.infinity,
-                child: CustomPaint(
-                  painter: _CountdownBarPainter(
-                    progress: (widget.timeRemaining / 15.0).clamp(0.0, 1.0),
-                    barColor: _getBarColor(
-                      (widget.timeRemaining / 15.0).clamp(0.0, 1.0),
+              Builder(
+                builder: (_) {
+                  final roundMax = widget.maxRoundSeconds > 0
+                      ? widget.maxRoundSeconds.toDouble()
+                      : 15.0;
+                  final ratio = (widget.timeRemaining / roundMax).clamp(
+                    0.0,
+                    1.0,
+                  );
+                  return SizedBox(
+                    height: 5.h,
+                    width: double.infinity,
+                    child: CustomPaint(
+                      painter: _CountdownBarPainter(
+                        progress: ratio,
+                        barColor: _getBarColor(ratio),
+                        isDark: isDark,
+                      ),
                     ),
-                    isDark: isDark,
-                  ),
-                ),
+                  );
+                },
               ),
 
             SizedBox(height: 8.h),

@@ -24,6 +24,7 @@ import 'package:vowl/features/arena/presentation/pages/arena_matchmaking_screen.
 import 'package:vowl/features/arena/domain/entities/arena_duel_session.dart';
 import 'package:vowl/features/arena/presentation/pages/arena_duel_screen.dart';
 import 'package:vowl/features/arena/presentation/pages/arena_deep_link_resolver_screen.dart';
+import 'package:vowl/features/arena/presentation/pages/arena_match_history_screen.dart';
 
 import 'package:vowl/core/utils/app_router.dart';
 
@@ -241,6 +242,23 @@ class HomeRoutes {
         }
         return fadeTransitionPage(
           child: ArenaDuelScreen(initialSession: session),
+          state: state,
+        );
+      },
+    ),
+    GoRoute(
+      path: AppRouter.arenaHistoryRoute,
+      parentNavigatorKey: AppRouter.rootNavigatorKey,
+      pageBuilder: (context, state) {
+        final authUser = context.read<AuthBloc>().state.user;
+        if (authUser == null) {
+          return fadeTransitionPage(
+            child: const LeaderboardScreen(),
+            state: state,
+          );
+        }
+        return fadeTransitionPage(
+          child: ArenaMatchHistoryScreen(user: authUser),
           state: state,
         );
       },

@@ -1,0 +1,136 @@
+{
+  "mechanic": "rapid_judge",
+  "batch": 1,
+  "challengeSets": [
+    {
+      "id": "ARENA_RJ_B1_S1",
+      "instruction": "Is each sentence grammatically CORRECT or WRONG?",
+      "items": [
+        { "sentence": "She don't like coffee in the morning.", "isCorrect": false, "correction": "She doesn't like coffee in the morning.", "rule": "Third person singular requires 'doesn't', not 'don't'." },
+        { "sentence": "They have been waiting for an hour.", "isCorrect": true, "correction": null, "rule": "Present perfect continuous is correctly formed." },
+        { "sentence": "He goed to the store yesterday.", "isCorrect": false, "correction": "He went to the store yesterday.", "rule": "'Go' is irregular. Past tense is 'went', not 'goed'." },
+        { "sentence": "I am taller than my older brother.", "isCorrect": true, "correction": null, "rule": "Comparative 'taller than' is correct for two people." },
+        { "sentence": "We was happy to see you at the party.", "isCorrect": false, "correction": "We were happy to see you at the party.", "rule": "Plural subject 'we' requires 'were', not 'was'." },
+        { "sentence": "The children are playing outside right now.", "isCorrect": true, "correction": null, "rule": "Present continuous with plural subject and 'are' is correct." }
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "id": "ARENA_RJ_B1_S2",
+      "instruction": "Is each sentence grammatically CORRECT or WRONG?",
+      "items": [
+        { "sentence": "If I was you, I would study harder.", "isCorrect": false, "correction": "If I were you, I would study harder.", "rule": "Subjunctive mood requires 'were', not 'was' for hypotheticals." },
+        { "sentence": "Neither the teacher nor the students were late.", "isCorrect": true, "correction": null, "rule": "With 'neither...nor', verb agrees with the nearest subject." },
+        { "sentence": "She has went to the library already.", "isCorrect": false, "correction": "She has gone to the library already.", "rule": "Present perfect requires past participle 'gone', not past tense 'went'." },
+        { "sentence": "He asked me where I lived.", "isCorrect": true, "correction": null, "rule": "Reported speech with backshift of tense is correct." },
+        { "sentence": "The news are very surprising today.", "isCorrect": false, "correction": "The news is very surprising today.", "rule": "'News' is an uncountable noun — always takes singular verb 'is'." },
+        { "sentence": "She speaks both French and German fluently.", "isCorrect": true, "correction": null, "rule": "Correct use of 'both...and' with appropriate verb form." }
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "ARENA_RJ_B1_S3",
+      "instruction": "Is each sentence grammatically CORRECT or WRONG?",
+      "items": [
+        { "sentence": "I have been living here since five years.", "isCorrect": false, "correction": "I have been living here for five years.", "rule": "Use 'for' with duration and 'since' with a point in time." },
+        { "sentence": "She suggested that he take the early train.", "isCorrect": true, "correction": null, "rule": "Subjunctive after 'suggest' correctly uses base form 'take'." },
+        { "sentence": "Me and my friend went to the cinema.", "isCorrect": false, "correction": "My friend and I went to the cinema.", "rule": "Subject pronoun 'I' is correct; 'me' is object form. 'I' comes last." },
+        { "sentence": "The book which I borrowed was fascinating.", "isCorrect": true, "correction": null, "rule": "Relative clause with 'which' for a thing is grammatically correct." },
+        { "sentence": "He made me to clean the entire kitchen.", "isCorrect": false, "correction": "He made me clean the entire kitchen.", "rule": "'Make' + object + bare infinitive (no 'to')." },
+        { "sentence": "Had I known earlier, I would have helped you.", "isCorrect": true, "correction": null, "rule": "Inverted third conditional is correctly formed." }
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "ARENA_RJ_B1_S4",
+      "instruction": "Is each sentence grammatically CORRECT or WRONG?",
+      "items": [
+        { "sentence": "Each of the students have their own laptop.", "isCorrect": false, "correction": "Each of the students has their own laptop.", "rule": "'Each' is singular — requires 'has', not 'have'." },
+        { "sentence": "By the time we arrived, the movie had already started.", "isCorrect": true, "correction": null, "rule": "Past perfect 'had started' correctly shows prior action." },
+        { "sentence": "She is more smarter than her classmates.", "isCorrect": false, "correction": "She is smarter than her classmates.", "rule": "Double comparative: 'smarter' already includes comparison." },
+        { "sentence": "The teacher, along with her students, is attending the event.", "isCorrect": true, "correction": null, "rule": "'Along with' doesn't change subject — verb agrees with 'teacher' (singular)." },
+        { "sentence": "I look forward to hear from you soon.", "isCorrect": false, "correction": "I look forward to hearing from you soon.", "rule": "'Look forward to' takes a gerund (-ing), not infinitive." },
+        { "sentence": "Were the assignment submitted on time?", "isCorrect": false, "correction": "Was the assignment submitted on time?", "rule": "'Assignment' is singular — requires 'was', not 'were'." }
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "ARENA_RJ_B1_S5",
+      "instruction": "Is each sentence grammatically CORRECT or WRONG?",
+      "items": [
+        { "sentence": "He run very fast during the race yesterday.", "isCorrect": false, "correction": "He ran very fast during the race yesterday.", "rule": "Past tense of 'run' is 'ran'." },
+        { "sentence": "The committee has reached a unanimous decision.", "isCorrect": true, "correction": null, "rule": "Collective noun 'committee' with singular verb is correct." },
+        { "sentence": "There is many reasons to study English.", "isCorrect": false, "correction": "There are many reasons to study English.", "rule": "'Reasons' is plural — requires 'are', not 'is'." },
+        { "sentence": "She would rather walk than drive to work.", "isCorrect": true, "correction": null, "rule": "'Would rather' + base verb + 'than' + base verb is correct." },
+        { "sentence": "Despite of the rain, we continued the match.", "isCorrect": false, "correction": "Despite the rain, we continued the match.", "rule": "'Despite' doesn't take 'of'. Use 'in spite of' or 'despite' alone." },
+        { "sentence": "Not only does he speak English, but he also speaks Japanese.", "isCorrect": true, "correction": null, "rule": "Correct correlative conjunction with subject-verb inversion." }
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "ARENA_RJ_B1_S6",
+      "instruction": "Is each sentence grammatically CORRECT or WRONG?",
+      "items": [
+        { "sentence": "I wish I can speak more languages.", "isCorrect": false, "correction": "I wish I could speak more languages.", "rule": "'Wish' for present unreal situation takes 'could', not 'can'." },
+        { "sentence": "She has been working here since 2019.", "isCorrect": true, "correction": null, "rule": "Present perfect continuous with 'since' + point in time is correct." },
+        { "sentence": "The team is consisted of twelve players.", "isCorrect": false, "correction": "The team consists of twelve players.", "rule": "'Consist of' is active voice — no passive 'is consisted of'." },
+        { "sentence": "Hardly had he arrived when the meeting started.", "isCorrect": true, "correction": null, "rule": "Inverted sentence with 'hardly...when' is correct formal English." },
+        { "sentence": "She asked me that where I was going.", "isCorrect": false, "correction": "She asked me where I was going.", "rule": "Indirect questions don't use 'that' before question words." },
+        { "sentence": "He is used to working late at night.", "isCorrect": true, "correction": null, "rule": "'Be used to' + gerund correctly means accustomed to." }
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "id": "ARENA_RJ_B1_S7",
+      "instruction": "Is each sentence grammatically CORRECT or WRONG?",
+      "items": [
+        { "sentence": "The furnitures in the office need to be replaced.", "isCorrect": false, "correction": "The furniture in the office needs to be replaced.", "rule": "'Furniture' is uncountable — no plural 's', singular verb." },
+        { "sentence": "It is essential that every student attend the orientation.", "isCorrect": true, "correction": null, "rule": "Mandative subjunctive after 'essential that' uses base form 'attend'." },
+        { "sentence": "She speaks English very well, isn't she?", "isCorrect": false, "correction": "She speaks English very well, doesn't she?", "rule": "Tag question must match the main verb — 'speaks' → 'doesn't she'." },
+        { "sentence": "The more you practise, the better you become.", "isCorrect": true, "correction": null, "rule": "Correlative comparative 'the more...the better' is correct." },
+        { "sentence": "He suggested me to apply for the scholarship.", "isCorrect": false, "correction": "He suggested that I apply for the scholarship.", "rule": "'Suggest' takes a that-clause, not 'suggest someone to do'." },
+        { "sentence": "I would have called you if I had known your number.", "isCorrect": true, "correction": null, "rule": "Third conditional is correctly formed." }
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "id": "ARENA_RJ_B1_S8",
+      "instruction": "Is each sentence grammatically CORRECT or WRONG?",
+      "items": [
+        { "sentence": "She enjoyed to play tennis after school.", "isCorrect": false, "correction": "She enjoyed playing tennis after school.", "rule": "'Enjoy' always takes a gerund (-ing), never infinitive." },
+        { "sentence": "He denied having stolen the documents.", "isCorrect": true, "correction": null, "rule": "'Deny' + gerund (perfect gerund here) is correct." },
+        { "sentence": "The informations provided were very helpful.", "isCorrect": false, "correction": "The information provided was very helpful.", "rule": "'Information' is uncountable — no plural, singular verb." },
+        { "sentence": "She needn't have worried about the exam.", "isCorrect": true, "correction": null, "rule": "'Needn't have' + past participle — unnecessary past action — is correct." },
+        { "sentence": "I am agree with your proposal completely.", "isCorrect": false, "correction": "I agree with your proposal completely.", "rule": "'Agree' is a verb, not an adjective — no 'am' before it." },
+        { "sentence": "Scarcely had the game begun when it started raining.", "isCorrect": true, "correction": null, "rule": "Inverted sentence with 'scarcely...when' is correct formal usage." }
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "ARENA_RJ_B1_S9",
+      "instruction": "Is each sentence grammatically CORRECT or WRONG?",
+      "items": [
+        { "sentence": "He has less friends than his brother.", "isCorrect": false, "correction": "He has fewer friends than his brother.", "rule": "'Friends' is countable — use 'fewer', not 'less'." },
+        { "sentence": "The teacher asked us to hand in our assignments.", "isCorrect": true, "correction": null, "rule": "Phrasal verb 'hand in' used correctly with direct object." },
+        { "sentence": "She speaks English more better than before.", "isCorrect": false, "correction": "She speaks English much better than before.", "rule": "Double comparative: 'better' is already comparative; use 'much better'." },
+        { "sentence": "Were I in your position, I would accept the offer.", "isCorrect": true, "correction": null, "rule": "Inverted conditional with subjunctive 'were' is correct formal English." },
+        { "sentence": "The meeting will be holded in the conference room.", "isCorrect": false, "correction": "The meeting will be held in the conference room.", "rule": "'Hold' is irregular — past participle is 'held', not 'holded'." },
+        { "sentence": "She insisted on paying for everyone's dinner.", "isCorrect": true, "correction": null, "rule": "'Insist on' + gerund is the correct pattern." }
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "ARENA_RJ_B1_S10",
+      "instruction": "Is each sentence grammatically CORRECT or WRONG?",
+      "items": [
+        { "sentence": "They discussed about the new company policy.", "isCorrect": false, "correction": "They discussed the new company policy.", "rule": "'Discuss' is transitive — no preposition 'about' needed." },
+        { "sentence": "No sooner had she finished than the phone rang.", "isCorrect": true, "correction": null, "rule": "'No sooner...than' with past perfect inversion is correct." },
+        { "sentence": "I am boring with this lecture.", "isCorrect": false, "correction": "I am bored with this lecture.", "rule": "Use 'bored' (feeling) not 'boring' (causing boredom) for the person." },
+        { "sentence": "The report must be submitted by Friday at the latest.", "isCorrect": true, "correction": null, "rule": "Passive voice with modal 'must be' + past participle is correct." },
+        { "sentence": "She apologized for arrive late to the meeting.", "isCorrect": false, "correction": "She apologized for arriving late to the meeting.", "rule": "Preposition 'for' takes a gerund (-ing), not base form." },
+        { "sentence": "Little did they know what was about to happen.", "isCorrect": true, "correction": null, "rule": "Inverted sentence with negative adverb 'little' is correct." }
+      ],
+      "difficulty": "hard"
+    }
+  ]
+}

@@ -6,6 +6,9 @@ import 'package:vowl/core/presentation/widgets/game_confetti.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/features/arena/domain/entities/arena_challenge.dart';
+import 'package:vowl/features/arena/presentation/widgets/arena_rank_badge.dart';
 import 'package:vowl/features/social_share/domain/entities/share_card_data.dart';
 import 'package:vowl/features/social_share/presentation/widgets/share_card_preview_modal.dart';
 
@@ -28,6 +31,10 @@ class ArenaResultDialog extends StatelessWidget {
   final String roomCode;
   final bool isAiRival;
   final bool showConfetti;
+  final int totalRounds;
+  final int myDuelWins;
+  final int rivalDuelWins;
+  final List<ArenaRoundResult> roundResults;
   final VoidCallback onRematch;
   final VoidCallback onClose;
 
@@ -51,6 +58,10 @@ class ArenaResultDialog extends StatelessWidget {
     this.roomCode = '',
     this.isAiRival = false,
     this.showConfetti = true,
+    this.totalRounds = 5,
+    this.myDuelWins = 0,
+    this.rivalDuelWins = 0,
+    this.roundResults = const [],
     required this.onRematch,
     required this.onClose,
   });
@@ -94,6 +105,9 @@ class ArenaResultDialog extends StatelessWidget {
                     ? 'Great match! +$payoutCoins coins won.'
                     : 'Good match! +$payoutCoins coins returned.'));
 
+    final effectiveRounds = totalRounds > 0
+        ? totalRounds
+        : (roundResults.isNotEmpty ? roundResults.length : 5);
     final netCoins = payoutCoins - 30;
 
     final dialog = Dialog(
@@ -253,7 +267,7 @@ class ArenaResultDialog extends StatelessWidget {
                           FittedBox(
                             fit: BoxFit.scaleDown,
                             child: Text(
-                              '$myCorrectCount/5 • ${(myTotalTimeMs / 1000).toStringAsFixed(1)}s',
+                              '$myCorrectCount/$effectiveRounds • ${(myTotalTimeMs / 1000).toStringAsFixed(1)}s',
                               softWrap: true,
                               style: TextStyle(
                                 fontSize: 10.sp,
@@ -261,6 +275,11 @@ class ArenaResultDialog extends StatelessWidget {
                                 color: textSecondary,
                               ),
                             ),
+                          ),
+                          SizedBox(height: 4.h),
+                          ArenaRankBadge.fromWins(
+                            duelWins: myDuelWins,
+                            isDark: isDark,
                           ),
                         ],
                       ),
@@ -393,7 +412,7 @@ class ArenaResultDialog extends StatelessWidget {
                           FittedBox(
                             fit: BoxFit.scaleDown,
                             child: Text(
-                              '$rivalCorrectCount/5 • ${(rivalTotalTimeMs / 1000).toStringAsFixed(1)}s',
+                              '$rivalCorrectCount/$effectiveRounds • ${(rivalTotalTimeMs / 1000).toStringAsFixed(1)}s',
                               softWrap: true,
                               style: TextStyle(
                                 fontSize: 10.sp,
@@ -401,6 +420,11 @@ class ArenaResultDialog extends StatelessWidget {
                                 color: textSecondary,
                               ),
                             ),
+                          ),
+                          SizedBox(height: 4.h),
+                          ArenaRankBadge.fromWins(
+                            duelWins: rivalDuelWins,
+                            isDark: isDark,
                           ),
                         ],
                       ),
@@ -572,14 +596,14 @@ class ArenaResultDialog extends StatelessWidget {
                           ),
                         ],
                       ),
-                      if (myCorrectCount >= 5) ...[
+                      if (myCorrectCount >= effectiveRounds) ...[
                         SizedBox(height: 4.h),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Expanded(
                               child: Text(
-                                'Perfect 5/5 Bonus',
+                                'Perfect $effectiveRounds/$effectiveRounds Bonus',
                                 maxLines: 2,
                                 softWrap: true,
                                 style: TextStyle(
@@ -642,7 +666,8 @@ class ArenaResultDialog extends StatelessWidget {
                   _MetricPill(
                     icon: LucideIcons.target,
                     label: 'Accuracy',
-                    value: '${((myCorrectCount / 5) * 100).toInt()}%',
+                    value:
+                        '${((myCorrectCount / effectiveRounds) * 100).round()}%',
                     borderColor: borderColor,
                     cardBg: cardBg,
                     textPrimary: textPrimary,
@@ -662,7 +687,8 @@ class ArenaResultDialog extends StatelessWidget {
                   _MetricPill(
                     icon: LucideIcons.zap,
                     label: 'Speed/Q',
-                    value: '${(myTotalTimeMs / 5000).toStringAsFixed(1)}s',
+                    value:
+                        '${(myTotalTimeMs / (effectiveRounds * 1000)).toStringAsFixed(1)}s',
                     borderColor: borderColor,
                     cardBg: cardBg,
                     textPrimary: textPrimary,
@@ -670,6 +696,72 @@ class ArenaResultDialog extends StatelessWidget {
                   ),
                 ],
               ),
+
+              if (roundResults.isNotEmpty) ...[
+                SizedBox(height: 12.h),
+                Container(
+                  padding: EdgeInsets.all(10.r),
+                  decoration: BoxDecoration(
+                    color: cardBg,
+                    borderRadius: BorderRadius.circular(14.r),
+                    border: Border.all(color: borderColor),
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        context.tr(
+                          'arena.round_breakdown',
+                          fallback: 'ROUND BREAKDOWN',
+                        ),
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 9.5.sp,
+                          fontWeight: FontWeight.w800,
+                          letterSpacing: 1.0,
+                          color: textSecondary,
+                        ),
+                      ),
+                      SizedBox(height: 6.h),
+                      Wrap(
+                        spacing: 6.w,
+                        runSpacing: 6.h,
+                        children: roundResults.map((r) {
+                          final col = r.isCorrect
+                              ? AppColors.emerald500
+                              : AppColors.rose500;
+                          final label = r.rapidCorrectItems != null
+                              ? '${r.mechanic.icon} ${r.mechanic.displayName} (${r.rapidCorrectItems}/${r.rapidTotalItems ?? 6})'
+                              : '${r.mechanic.icon} ${r.mechanic.displayName} ${r.isCorrect ? "✓" : "✗"}';
+                          return Container(
+                            padding: EdgeInsets.symmetric(
+                              horizontal: 7.w,
+                              vertical: 3.h,
+                            ),
+                            decoration: BoxDecoration(
+                              color: col.withValues(alpha: 0.12),
+                              borderRadius: BorderRadius.circular(7.r),
+                              border: Border.all(
+                                color: col.withValues(alpha: 0.35),
+                                width: 0.8,
+                              ),
+                            ),
+                            child: Text(
+                              label,
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 9.5.sp,
+                                fontWeight: FontWeight.w800,
+                                color: col,
+                              ),
+                            ),
+                          );
+                        }).toList(),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
 
               SizedBox(height: 18.h),
 

@@ -59,6 +59,7 @@ class AppRouter {
   static const String questSequenceRoute = '/quest-sequence';
   static const String referralRoute = '/referral';
   static const String arenaRoute = '/arena';
+  static const String arenaHistoryRoute = '/arena-history';
   static const String duelRoute = '/duel/:roomCode';
   static const String inviteRoute = '/invite/:code';
 
